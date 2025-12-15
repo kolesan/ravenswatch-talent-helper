@@ -23,7 +23,7 @@ availableTalents.onclick = (event) => {
     const target = event.target;
     if (target.localName === "li") {
         usedTalents.appendChild(target);
-    } else {
+    } else if (target.parentNode.localName === "li") {
         usedTalents.appendChild(target.parentNode);
     }
     console.log("clicked", target.localName, target, event);
@@ -32,7 +32,7 @@ usedTalents.onclick = (event) => {
     const target = event.target;
     if (target.localName === "li") {
         availableTalents.appendChild(target);
-    } else {
+    } else if (target.parentNode.localName === "li") {
         availableTalents.appendChild(target.parentNode);
     }
     console.log("clicked", target.localName, target, event);
