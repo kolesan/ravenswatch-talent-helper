@@ -12,7 +12,7 @@
     "Helper"
   ],
   "scripts": {
-    "start": "tsx src/scripts/scrapeWiki.ts"
+    "scrape": "tsx src/scripts/scrapeWiki/scrapeWiki.ts"
   },
   "homepage": "https://github.com/kolesan/ravenswatch-talent-helper#readme",
   "bugs": {
@@ -26,6 +26,7 @@
   "author": "Konstantin Lebedev",
   "type": "module",
   "devDependencies": {
+    "@types/node": "^25.0.2",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
