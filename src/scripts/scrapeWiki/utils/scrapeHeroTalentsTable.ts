@@ -1,9 +1,9 @@
 import { writeFile } from "fs/promises";
 
-import { fetchPage } from "./fetchPage";
+import { Hero } from "../../../data/heroes";
+import { heroTalentTableFileName } from "../../utils/heroTalentTableFileName";
 
-import { Hero } from "../../data/heroes.js";
-import { heroTalentTableFileName } from "../../utils/heroTalentTableFileName.js";
+import { fetchPage } from "./fetchPage";
 
 export function scrapeHeroTalentsTable(hero: Hero) {
     console.log(`Scraping '${hero.name}' from '${hero.wikiUrl}'`);
