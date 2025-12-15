@@ -1,0 +1,32 @@
+{
+  "name": "ravenswatch-talent-helper",
+  "version": "1.0.0",
+  "description": "A web app that shows you what talents are still available for your character during a Ravenswatch run. Helps decide whether it is worth spending a reroll during a level up.",
+  "keywords": [
+    "Ravenswatch",
+    "Game",
+    "Talents",
+    "Calculator",
+    "Builder",
+    "Tool",
+    "Helper"
+  ],
+  "scripts": {
+    "test": "npm test"
+  },
+  "homepage": "https://github.com/kolesan/ravenswatch-talent-helper#readme",
+  "bugs": {
+    "url": "https://github.com/kolesan/ravenswatch-talent-helper/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kolesan/ravenswatch-talent-helper.git"
+  },
+  "license": "ISC",
+  "author": "Konstantin Lebedev",
+  "type": "module",
+  "main": "index.ts",
+  "dependencies": {
+    "typescript": "^5.9.3"
+  }
+}
