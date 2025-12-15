@@ -19,6 +19,9 @@ scarletTalents.forEach(it => {
 
     availableTalents.appendChild(elem);
 });
+const currentListHeader = availableTalents.parentNode.querySelector("h1");
+currentListHeader.textContent = currentListHeader.textContent.split(" ")[0] + " " + availableTalents.childElementCount;
+
 
 usedTalents.onclick = (event) => {
     const target = event.target;
@@ -34,7 +37,11 @@ usedTalents.onclick = (event) => {
         : availableTalents;
 
     if (toMove) {
+        const currentListHeader = usedTalents.parentNode.querySelector("h1");
         moveTo.appendChild(toMove);
+        const header = moveTo.parentNode.querySelector("h1");
+        header.textContent = header.textContent.split(" ")[0] + " " + moveTo.childElementCount;
+        currentListHeader.textContent = currentListHeader.textContent.split(" ")[0] + " " + usedTalents.childElementCount;
     }
 
     console.log("clicked", target.localName, target, event);
@@ -53,7 +60,11 @@ preferredTalents.onclick = (event) => {
         : usedTalents;
 
     if (toMove) {
+        const currentListHeader = preferredTalents.parentNode.querySelector("h1");
         moveTo.appendChild(toMove);
+        const header = moveTo.parentNode.querySelector("h1");
+        header.textContent = header.textContent.split(" ")[0] + " " + moveTo.childElementCount;
+        currentListHeader.textContent = currentListHeader.textContent.split(" ")[0] + " " + preferredTalents.childElementCount;
     }
 
     console.log("clicked", target.localName, target, event);
@@ -72,7 +83,11 @@ availableTalents.onclick = (event) => {
         : usedTalents;
 
     if (toMove) {
+        const currentListHeader = availableTalents.parentNode.querySelector("h1");
         moveTo.appendChild(toMove);
+        const header = moveTo.parentNode.querySelector("h1");
+        header.textContent = header.textContent.split(" ")[0] + " " + moveTo.childElementCount;
+        currentListHeader.textContent = currentListHeader.textContent.split(" ")[0] + " " + availableTalents.childElementCount;
     }
 
     console.log("clicked", target.localName, target, event);
