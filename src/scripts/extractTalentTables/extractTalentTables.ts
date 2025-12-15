@@ -4,7 +4,7 @@ import { JSDOM } from "jsdom";
 
 import { heroes } from "../../data/heroes";
 import { heroPageFileName } from "../utils/heroPageFileName";
-import { heroTalentsTableFileName } from "../utils/heroTalentsTableFileName";
+import { heroTalentTableFileName } from "../utils/heroTalentTableFileName";
 
 heroes.asArray.forEach(hero => {
     const fileName = heroPageFileName(hero);
@@ -15,7 +15,7 @@ heroes.asArray.forEach(hero => {
         .querySelector(".fandom-table");
 
     if (tableElem) {
-        writeFile(heroTalentsTableFileName(hero), tableElem.outerHTML)
+        writeFile(heroTalentTableFileName(hero), tableElem.outerHTML)
             .then(() => console.log(
                 `Success writing '${hero.name}' talents table page to file`
             ))

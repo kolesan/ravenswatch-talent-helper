@@ -1,5 +1,5 @@
 import { Hero } from "../../data/heroes";
 
-export function heroTalentsTableFileName(hero: Hero) {
+export function heroTalentTableFileName(hero: Hero) {
     return `./src/scrapedData/heroTalentTables/${hero.code}.html`;
 }
