@@ -73,7 +73,7 @@ const juliet: Hero = {
     wikiUrl: "https://ravenswatch.fandom.com/wiki/Juliet",
 }
 
-export const heroes = {
+const all = {
     scarlet,
     piper,
     beowulf,
@@ -85,4 +85,8 @@ export const heroes = {
     carmilla,
     romeo,
     juliet,
+};
+
+export const heroes = {
+    asArray: Object.values(all),
 }
