@@ -28,7 +28,7 @@ heroes.asArray.slice(0, 1).forEach(hero => {
 
     const rows = [...tableElem.querySelectorAll("tr")].slice(1);
 
-    const rowsToParse = rows.slice(0, 1);
+    const rowsToParse = rows;
 
     const talents = rowsToParse.map(it => {
         const cells = [...it.querySelectorAll("td")];

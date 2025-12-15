@@ -1,4 +1,4 @@
 export function getDescription(cell: HTMLTableCellElement) {
-    const text = cell.textContent.replaceAll("\n", ". ").trim();
+    const text = cell.textContent.trim().split("\n");
     return text;
 }

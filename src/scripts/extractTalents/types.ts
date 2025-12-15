@@ -3,13 +3,13 @@ export type Talent = {
     iconUrl: string | null;
     type: TalentType;
     unlockedAtRank: number;
-    description: string;
-    changePerLevel: string;
+    description: string[];
+    changePerLevel: string[];
 }
 
 export type TalentType = 
       "starting" 
-    | "standart" 
+    | "standard" 
     | "ultimate" 
     | "final"
     | "unknown_talent_type";

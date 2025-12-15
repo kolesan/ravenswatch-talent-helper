@@ -7,7 +7,7 @@ export function getType(cell: HTMLTableCellElement): TalentType {
 
 const map: Record<string, TalentType> = {
     "Starting": "starting",
-    "Standart": "standart",
+    "Standard": "standard",
     "Ultimate": "ultimate",
     "Final": "final",
 }
