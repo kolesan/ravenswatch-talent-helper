@@ -1,0 +1,13 @@
+body {
+    /* background-color: yellowgreen; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+li {
+    cursor: pointer;
+}
+
+li:hover {
+    background-color: yellowgreen;
+}
