@@ -13,7 +13,9 @@
   ],
   "scripts": {
     "scrape": "tsx src/scripts/scrapeWiki/scrapeWiki.ts",
-    "extractTalentTables": "tsx src/scripts/extractTalentTables/extractTalentTables.ts"
+    "extractTalentTables": "tsx src/scripts/extractTalentTables/extractTalentTables.ts",
+    "extractTalents": "tsx src/scripts/extractTalents/extractTalents.ts",
+    "extractTalentsWatch": "tsx watch src/scripts/extractTalents/extractTalents.ts"
   },
   "homepage": "https://github.com/kolesan/ravenswatch-talent-helper#readme",
   "bugs": {

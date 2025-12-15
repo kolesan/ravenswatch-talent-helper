@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Distant Explosions",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/f/ff/Distant_Explosions_icon.jpg/revision/latest?cb=20251024142639",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": "SPECIAL now targets a farther location and deals +40% damage. The longer it’s held, the further it aims.",
+        "changePerLevel": "+10% damage."
+    }
+]
