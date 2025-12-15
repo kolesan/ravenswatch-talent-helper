@@ -1,5 +1,5 @@
 import { heroes } from "../../data/heroes";
 
-import { scrapeHeroTalentsTable } from "./utils/scrapeHeroTalentsTable";
+import { scrapeHeroPage } from "./utils/scrapeHeroPage";
 
-scrapeHeroTalentsTable(heroes.scarlet);
+scrapeHeroPage(heroes.scarlet);

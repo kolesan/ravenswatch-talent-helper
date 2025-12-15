@@ -5,7 +5,7 @@ import { heroTalentTableFileName } from "../../utils/heroTalentTableFileName";
 
 import { fetchPage } from "./fetchPage";
 
-export function scrapeHeroTalentsTable(hero: Hero) {
+export function scrapeHeroPage(hero: Hero) {
     console.log(`Scraping '${hero.name}' from '${hero.wikiUrl}'`);
     return fetchPage(hero.wikiUrl)
         .then(pageText => {
