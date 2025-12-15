@@ -2,6 +2,7 @@ const scarletTalents = getScarletTalents().filter(it => it.type === "standard");
 
 
 const usedTalents = document.querySelector(".used-talents");
+const preferredTalents = document.querySelector(".preferred-talents");
 const availableTalents = document.querySelector(".available-talents");
 
 scarletTalents.forEach(it => {
@@ -19,22 +20,61 @@ scarletTalents.forEach(it => {
     availableTalents.appendChild(elem);
 });
 
-availableTalents.onclick = (event) => {
-    const target = event.target;
-    if (target.localName === "li") {
-        usedTalents.appendChild(target);
-    } else if (target.parentNode.localName === "li") {
-        usedTalents.appendChild(target.parentNode);
-    }
-    console.log("clicked", target.localName, target, event);
-};
 usedTalents.onclick = (event) => {
     const target = event.target;
-    if (target.localName === "li") {
-        availableTalents.appendChild(target);
-    } else if (target.parentNode.localName === "li") {
-        availableTalents.appendChild(target.parentNode);
+
+    const toMove = target.localName === "li"
+        ? target
+        : target.parentNode.localName === "li"
+            ? target.parentNode
+            : null;
+
+    const moveTo = event.altKey
+        ? preferredTalents
+        : availableTalents;
+
+    if (toMove) {
+        moveTo.appendChild(toMove);
     }
+
+    console.log("clicked", target.localName, target, event);
+};
+preferredTalents.onclick = (event) => {
+    const target = event.target;
+
+    const toMove = target.localName === "li"
+        ? target
+        : target.parentNode.localName === "li"
+            ? target.parentNode
+            : null;
+
+    const moveTo = event.altKey
+        ? availableTalents
+        : usedTalents;
+
+    if (toMove) {
+        moveTo.appendChild(toMove);
+    }
+
+    console.log("clicked", target.localName, target, event);
+};
+availableTalents.onclick = (event) => {
+    const target = event.target;
+
+    const toMove = target.localName === "li"
+        ? target
+        : target.parentNode.localName === "li"
+            ? target.parentNode
+            : null;
+
+    const moveTo = event.altKey
+        ? preferredTalents
+        : usedTalents;
+
+    if (toMove) {
+        moveTo.appendChild(toMove);
+    }
+
     console.log("clicked", target.localName, target, event);
 };
 
