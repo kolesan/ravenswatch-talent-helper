@@ -13,7 +13,7 @@ import { getNameAndIconUrl } from "./utils/getNameAndIconUrl";
 import { getType } from "./utils/getType";
 import { getUnlockedAtRank } from "./utils/getUnlockedAtRank";
 
-heroes.asArray.slice(0, 1).forEach(hero => {
+heroes.asArray.slice(0, 2).forEach(hero => {
     const fileName = heroTalentTableFileName(hero);
     const fileText = readFileSync(fileName, 'utf-8');
     const fileDom = new JSDOM(fileText);
