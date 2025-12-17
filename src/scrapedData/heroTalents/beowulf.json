@@ -55,7 +55,7 @@
         "type": "standard",
         "unlockedAtRank": 1,
         "description": [
-            "POWER’s shockwaves explode at the end and deal 60% additional damage all around"
+            "POWER's shockwaves explode at the end and deal 60% additional damage all around"
         ],
         "changePerLevel": [
             "+15% additional damage"
@@ -104,7 +104,7 @@
         "type": "standard",
         "unlockedAtRank": 1,
         "description": [
-            "Wyrm SPECIAL’s finisher strikes 3 times with a growing radius for 45% damage each"
+            "Wyrm SPECIAL's finisher strikes 3 times with a growing radius for 45% damage each"
         ],
         "changePerLevel": [
             "+5% damage"

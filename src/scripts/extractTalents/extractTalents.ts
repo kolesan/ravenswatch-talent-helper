@@ -6,6 +6,7 @@ import { heroes } from "../../data/heroes";
 import { heroTalentsFileName } from "../utils/heroTalentsFileName";
 import { heroTalentTableFileName } from "../utils/heroTalentTableFileName";
 
+import { fixApostrophes } from "./utils/fixApostrophes";
 import { parseBeowulfTable } from "./utils/parseBeowulfTable/parseBeowulfTable";
 import { parseCommonTable } from "./utils/parseCommonTable";
 
@@ -31,7 +32,7 @@ heroes.asArray.slice(0, 3).forEach(hero => {
             return parseBeowulfTable(it);
         }
         return parseCommonTable(it);
-    });
+    }).map(fixApostrophes);
 
     console.log(rowsToParse.map(it => it.innerHTML));
     console.log(talents);

@@ -68,7 +68,7 @@
         "type": "standard",
         "unlockedAtRank": 1,
         "description": [
-            "Rats’ attacks WEAKEN enemies and deal +20% damage"
+            "Rats' attacks WEAKEN enemies and deal +20% damage"
         ],
         "changePerLevel": [
             "+5% damage"
