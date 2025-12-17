@@ -1,19 +1,30 @@
 const scarletTalents = getScarletTalents().filter(it => it.type === "standard");
 const piperTalents = getPiperTalents().filter(it => it.type === "standard");
+const beowulfTalents = getBeowulfTalents().filter(it => it.type === "standard");
 
 const usedTalents = document.querySelector(".used-talents");
 const preferredTalents = document.querySelector(".preferred-talents");
 const availableTalents = document.querySelector(".available-talents");
 
-piperTalents.forEach(it => {
-    const name = document.createElement("p");
+beowulfTalents.forEach(it => {
+    const name = document.createElement("div");
+    name.className = "name";
     name.textContent = it.name;
-    const description = document.createElement("p");
-    description.textContent = it.description.join(". ");
 
+    const description = document.createElement("div");
+    description.className = "description"
+    if (it.description.length > 1) {
+        it.description.forEach(dscItem => {
+            const dscListItem = document.createElement("div");
+            dscListItem.className = "description-list-item";
+            dscListItem.textContent = dscItem;
+            description.appendChild(dscListItem);
+        })
+    } else {
+        description.textContent = it.description[0];
+    }
 
     const elem = document.createElement("li");
-
     elem.appendChild(name);
     elem.appendChild(description);
 
@@ -22,6 +33,9 @@ piperTalents.forEach(it => {
 const currentListHeader = availableTalents.parentNode.querySelector("h1");
 currentListHeader.textContent = currentListHeader.textContent.split(" ")[0] + " " + availableTalents.childElementCount;
 
+function saveToLocalStorage() {
+    localStorage.setItem("usedTalents", JSON.stringify(usedTalents.ch, null, "  "))
+}
 
 usedTalents.onclick = (event) => {
     const target = event.target;
@@ -105,7 +119,7 @@ function getScarletTalents() {
             "unlockedAtRank": 1,
             "description": [
                 "SPECIAL now targets a farther location and deals +40% damage",
-                "The longer it’s held, the further it aims"
+                "The longer it's held, the further it aims"
             ],
             "changePerLevel": [
                 "+10% damage"
@@ -503,7 +517,7 @@ function getPiperTalents() {
         "type": "standard",
         "unlockedAtRank": 1,
         "description": [
-            "Rats’ attacks WEAKEN enemies and deal +20% damage"
+            "Rats' attacks WEAKEN enemies and deal +20% damage"
         ],
         "changePerLevel": [
             "+5% damage"
@@ -753,4 +767,325 @@ function getPiperTalents() {
         ]
     }
 ];
+}
+
+function getBeowulfTalents() {
+    return [
+        {
+            "name": "Shield Charge",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/0/07/Shield_charge_2.webp/revision/latest?cb=20250322172928",
+            "type": "starting",
+            "unlockedAtRank": 1,
+            "description": [
+                "DEFENSE makes Beowulf dash forward and deal +100% damage along the path"
+            ],
+            "changePerLevel": [
+                "+25% damage"
+            ]
+        },
+        {
+            "name": "Explosive Fire",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/e4/Explosive_fire.webp/revision/latest?cb=20250324163301",
+            "type": "starting",
+            "unlockedAtRank": 1,
+            "description": [
+                "IGNITED enemies explode when they die, dealing 20 damage and applying IGNITE to all nearby enemies"
+            ],
+            "changePerLevel": [
+                "+5 damage + Hero Level + DMG"
+            ]
+        },
+        {
+            "name": "Rampart",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/b5/Rampart.webp/revision/latest?cb=20250324163331",
+            "type": "starting",
+            "unlockedAtRank": 2,
+            "description": [
+                "Quest (x20): Blocking at least one attack during DEFENSE grants +1 ARMOR",
+                "Complete: Wyrm DEFENSE heals 50% more and increases the area of effect by +3m"
+            ],
+            "changePerLevel": [
+                "+10% more healing"
+            ]
+        },
+        {
+            "name": "Draconic Binds",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/a6/Draconic_binds.webp/revision/latest?cb=20250324164517",
+            "type": "starting",
+            "unlockedAtRank": 5,
+            "description": [
+                "Quest (x20): Hitting 2 enemies with a single Wyrm ability grants +0.5 DMG",
+                "Complete: TRAIT cooldown -25%. Wyrm abilities deal +10% damage"
+            ],
+            "changePerLevel": [
+                "+5% Wyrm ability damage"
+            ]
+        },
+        {
+            "name": "Eruption",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/6/6f/Eruption.webp/revision/latest?cb=20250324164551",
+            "type": "standard",
+            "unlockedAtRank": 1,
+            "description": [
+                "POWER's shockwaves explode at the end and deal 60% additional damage all around"
+            ],
+            "changePerLevel": [
+                "+15% additional damage"
+            ]
+        },
+        {
+            "name": "Breath of Fire",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/ad/Breath_of_fire.webp/revision/latest?cb=20250324164634",
+            "type": "standard",
+            "unlockedAtRank": 1,
+            "description": [
+                "Wyrm breathes in a cone of fire during ATTACK finisher, dealing 200% damage and applying IGNITE to enemies hit"
+            ],
+            "changePerLevel": [
+                "+50% damage"
+            ]
+        },
+        {
+            "name": "Blademaster",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/95/Blademaster.webp/revision/latest?cb=20250324164704",
+            "type": "standard",
+            "unlockedAtRank": 1,
+            "description": [
+                "After each TRAIT activation, the next 3 ATTACKS gain +100% Crit Chance",
+                "Permanently gain +10% ATTACK SPEED"
+            ],
+            "changePerLevel": [
+                "+2% ATTACK SPEED"
+            ]
+        },
+        {
+            "name": "Heavy Strikes",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/3/3d/Heavy_strikes.webp/revision/latest?cb=20250324164731",
+            "type": "standard",
+            "unlockedAtRank": 1,
+            "description": [
+                "ATTACK is slower but cleaves in a wide area and deals +50% damage"
+            ],
+            "changePerLevel": [
+                "+10% damage"
+            ]
+        },
+        {
+            "name": "Fiery Seismo",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/3/30/Fiery_sismo.webp/revision/latest?cb=20250324164806",
+            "type": "standard",
+            "unlockedAtRank": 1,
+            "description": [
+                "Wyrm SPECIAL's finisher strikes 3 times with a growing radius for 45% damage each"
+            ],
+            "changePerLevel": [
+                "+5% damage"
+            ]
+        },
+        {
+            "name": "Bladestorm",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/a9/Bladestorm.webp/revision/latest?cb=20250324164843",
+            "type": "standard",
+            "unlockedAtRank": 1,
+            "description": [
+                "SPECIAL spins 2 more time(s) for 100% damage each"
+            ],
+            "changePerLevel": [
+                "+1 additional spin"
+            ]
+        },
+        {
+            "name": "Double Shock",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/b8/Double_shock.webp/revision/latest?cb=20250324164916",
+            "type": "standard",
+            "unlockedAtRank": 1,
+            "description": [
+                "POWER sends out two successive shockwaves, each one dealing -30% damage"
+            ],
+            "changePerLevel": [
+                "+5% damage"
+            ]
+        },
+        {
+            "name": "Furnace",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/bd/Furnace.webp/revision/latest?cb=20250324164945",
+            "type": "standard",
+            "unlockedAtRank": 1,
+            "description": [
+                "Your IGNITE effects last 2 more seconds and deal +32% damage"
+            ],
+            "changePerLevel": [
+                "+8% damage"
+            ]
+        },
+        {
+            "name": "Blazing Runes",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/c/c8/Blazing_runes.webp/revision/latest?cb=20250324165011",
+            "type": "standard",
+            "unlockedAtRank": 2,
+            "description": [
+                "ATTACK and SPECIAL gain +40% Crit Chance against IGNITED enemies"
+            ],
+            "changePerLevel": [
+                "+10% Crit Chance"
+            ]
+        },
+        {
+            "name": "Fire Wings",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/7/7e/Fire_wings.webp/revision/latest?cb=20250324165044",
+            "type": "standard",
+            "unlockedAtRank": 3,
+            "description": [
+                "Activating TRAIT deals 30 damage all around and applies IGNITE to all enemies hit"
+            ],
+            "changePerLevel": [
+                "+5 damage + Hero Level + DMG"
+            ]
+        },
+        {
+            "name": "Scorched Earth",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/44/Scorched_earth.webp/revision/latest?cb=20250324165112",
+            "type": "standard",
+            "unlockedAtRank": 3,
+            "description": [
+                "Wyrm POWER leaves a trail of fire, dealing 40 damage over time to enemies standing on it"
+            ],
+            "changePerLevel": [
+                "+10 damage + Hero Level + DMG"
+            ]
+        },
+        {
+            "name": "Retaliation",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/43/Retaliation.webp/revision/latest?cb=20250324165145",
+            "type": "standard",
+            "unlockedAtRank": 4,
+            "description": [
+                "After using DEFENSE, the next ATTACK within 2 seconds triggers a two-strike retaliation, with each one dealing 360% damage"
+            ],
+            "changePerLevel": [
+                "+90% damage"
+            ]
+        },
+        {
+            "name": "Sparkling Shield",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/3/30/Sparkling_shield.webp/revision/latest?cb=20250324165215",
+            "type": "standard",
+            "unlockedAtRank": 4,
+            "description": [
+                "Each attack blocked during DEFENSE inflicts 120% of blocked damage to what is in front of Beowulf"
+            ],
+            "changePerLevel": [
+                "+30% of blocked damage"
+            ]
+        },
+        {
+            "name": "Fiery Slash",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/92/Fiery_slash.webp/revision/latest?cb=20250324171125",
+            "type": "standard",
+            "unlockedAtRank": 5,
+            "description": [
+                "ATTACK triggered right after DASH deals 400% damage and applies IGNITE to enemies"
+            ],
+            "changePerLevel": [
+                "+100% damage"
+            ]
+        },
+        {
+            "name": "Secondary Tremor",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/0/09/Secondary_tremor.webp/revision/latest?cb=20250324171210",
+            "type": "standard",
+            "unlockedAtRank": 7,
+            "description": [
+                "SPECIAL sends out a Shockwave dealing 120% of POWER damage"
+            ],
+            "changePerLevel": [
+                "+30% POWER damage"
+            ]
+        },
+        {
+            "name": "Battle Cry",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/1/1f/Battle_cry.webp/revision/latest?cb=20250324171323",
+            "type": "standard",
+            "unlockedAtRank": 7,
+            "description": [
+                "Activating TRAIT clears POWER cooldown for all Heroes in the area and gives them a 12 SHIELD  for 6 seconds"
+            ],
+            "changePerLevel": [
+                "+3 SHIELD + Hero Level"
+            ]
+        },
+        {
+            "name": "Furious Blow",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/c/c1/Furious_blows.webp/revision/latest?cb=20250324171532",
+            "type": "standard",
+            "unlockedAtRank": 8,
+            "description": [
+                "After a SPECIAL, the next ATTACK triggers a series of 3 strikes dealing 100% damage each",
+                "If Wyrm empowered SPECIAL, the attacks apply an IGNITE status to enemies and inflict +50% damage"
+            ],
+            "changePerLevel": [
+                "+25% damage"
+            ]
+        },
+        {
+            "name": "Runes of War",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/90/Runes_of_war.webp/revision/latest?cb=20250324171601",
+            "type": "standard",
+            "unlockedAtRank": 8,
+            "description": [
+                "After hitting an enemy with DEFENSE, runes appear around Beowulf dealing 16 area damage per second for 5 seconds"
+            ],
+            "changePerLevel": [
+                "+4 area damage + Hero Level + DMG"
+            ]
+        },
+        {
+            "name": "Immolation",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/d/d7/Immolation.webp/revision/latest?cb=20250324171636",
+            "type": "final",
+            "unlockedAtRank": 1,
+            "description": [
+                "During ULTIMATE [Dragon Flight], Beowulf deals 40 damage per second to nearby enemies, and all abilities are empowered by Wyrm"
+            ],
+            "changePerLevel": [
+                "+10 damage per second + Hero Level + DMG"
+            ]
+        },
+        {
+            "name": "Sudden Growth",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/8f/Sudden_growth.webp/revision/latest?cb=20250324171706",
+            "type": "final",
+            "unlockedAtRank": 9,
+            "description": [
+                "During ULTIMATE [Dragon Flight], the Wyrm grows and breathes fire in a wider zone, dealing +20% damage"
+            ],
+            "changePerLevel": [
+                "+5% damage"
+            ]
+        },
+        {
+            "name": "Volcanic Rage",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/b4/Volcanic_rage.webp/revision/latest?cb=20250324171821",
+            "type": "final",
+            "unlockedAtRank": 1,
+            "description": [
+                "Each ULTIMATE ireball throws 4 fiery rock into the surrounding area,  dealing 50% damage each"
+            ],
+            "changePerLevel": [
+                "+1 fiery rock(s)"
+            ]
+        },
+        {
+            "name": "Fireball",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/1/1a/Fireball.webp/revision/latest?cb=20250324171929",
+            "type": "final",
+            "unlockedAtRank": 9,
+            "description": [
+                "In Combat, DASH makes Wyrm throw a Fireball towards the closest enemy, dealing 40 area damage"
+            ],
+            "changePerLevel": [
+                "+10 area damage + Hero Level + DMG"
+            ]
+        }
+    ]
 }

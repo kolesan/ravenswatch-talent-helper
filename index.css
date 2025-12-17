@@ -1,13 +1,63 @@
+@font-face {
+    font-family: "fontin-sans-regular";
+    src: url("/assets/fonts/fontin-sans-regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "ravenswatch";
+    src: url("/assets/fonts/ravenswatch.woff2") format("woff2");
+}
+
 body {
-    /* background-color: yellowgreen; */
+    background-color: #22201B;
+    color: #949692;
+    font-family: fontin-sans-regular;
+    font-size: 18px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 16px;
 }
 
-li {
+h1 {
+    margin-left: 2px;
+}
+
+.main-list > li {
     cursor: pointer;
+    border-radius: 4px;
+    padding: 2px;
+}
+.main-list > li:not(:last-child) {
+    margin-bottom: 10px;
+}
+.main-list > li:hover {
+    border: 2px solid #857243;
+}
+.main-list > li:not(:hover) {
+    border: 2px solid #85724300;
 }
 
-li:hover {
-    background-color: yellowgreen;
+.name {
+    font-family: ravenswatch;
+    color: #9B9981;
+    margin-bottom: 4px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+ul.main-list {
+    list-style: none;
+}
+
+.description-list-item::before {
+    content: '•';
+    margin-left: 1px;
+    margin-right: 3px;
+    padding-bottom: 1px;
+}
+.description-list-item {
+    margin-bottom: 2px;
+    pointer-events: none;
 }
