@@ -6,14 +6,10 @@ import { heroes } from "../../data/heroes";
 import { heroTalentsFileName } from "../utils/heroTalentsFileName";
 import { heroTalentTableFileName } from "../utils/heroTalentTableFileName";
 
-import { Talent } from "./types";
-import { getChangePerLevel } from "./utils/getChangePerLevel";
-import { getDescription } from "./utils/getDescription";
-import { getNameAndIconUrl } from "./utils/getNameAndIconUrl";
-import { getType } from "./utils/getType";
-import { getUnlockedAtRank } from "./utils/getUnlockedAtRank";
+import { parseBeowulfTable } from "./utils/parseBeowulfTable/parseBeowulfTable";
+import { parseCommonTable } from "./utils/parseCommonTable";
 
-heroes.asArray.slice(0, 2).forEach(hero => {
+heroes.asArray.slice(0, 3).forEach(hero => {
     const fileName = heroTalentTableFileName(hero);
     const fileText = readFileSync(fileName, 'utf-8');
     const fileDom = new JSDOM(fileText);
@@ -31,24 +27,10 @@ heroes.asArray.slice(0, 2).forEach(hero => {
     const rowsToParse = rows;
 
     const talents = rowsToParse.map(it => {
-        const cells = [...it.querySelectorAll("td")];
-        
-        const { name, iconUrl } = getNameAndIconUrl(cells[0]);
-        const type = getType(cells[1]);
-        const unlockedAtRank = getUnlockedAtRank(cells[2]);
-        const description = getDescription(cells[3]);
-        const changePerLevel = getChangePerLevel(cells[4]);
-
-        const talent: Talent = {
-            name,
-            iconUrl,
-            type,
-            unlockedAtRank,
-            description,
-            changePerLevel,
+        if (hero.name === "Beowulf") {
+            return parseBeowulfTable(it);
         }
-
-        return talent;
+        return parseCommonTable(it);
     });
 
     console.log(rowsToParse.map(it => it.innerHTML));
