@@ -1,5 +1,6 @@
 [
     {
+        "code": "distant_explosions",
         "name": "Distant Explosions",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/f/ff/Distant_Explosions_icon.jpg/revision/latest?cb=20251024142639",
         "type": "starting",
@@ -13,6 +14,7 @@
         ]
     },
     {
+        "code": "devourer",
         "name": "Devourer",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/f/f8/Devourer_icon.jpg/revision/latest?cb=20251024142741",
         "type": "starting",
@@ -26,6 +28,7 @@
         ]
     },
     {
+        "code": "shadow_strikes",
         "name": "Shadow Strikes",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/2/2a/Shadow_Strikes_icon.jpg/revision/latest?cb=20251024142804",
         "type": "starting",
@@ -39,6 +42,7 @@
         ]
     },
     {
+        "code": "shapeshifter",
         "name": "Shapeshifter",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/f/fc/Shapeshifter_icon.jpg/revision/latest?cb=20251024142824",
         "type": "starting",
@@ -52,6 +56,7 @@
         ]
     },
     {
+        "code": "slash_flurry",
         "name": "Slash Flurry",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/2/23/Slash_Flurry_icon.jpg/revision/latest?cb=20251031212039",
         "type": "standard",
@@ -64,6 +69,7 @@
         ]
     },
     {
+        "code": "cleave",
         "name": "Cleave",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/d/d8/Cleave_icon.jpg/revision/latest?cb=20251031212059",
         "type": "standard",
@@ -76,6 +82,7 @@
         ]
     },
     {
+        "code": "short_wick",
         "name": "Short Wick",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/5/5f/Short_Wick_icon.jpg/revision/latest?cb=20251031212617",
         "type": "standard",
@@ -89,6 +96,7 @@
         ]
     },
     {
+        "code": "pyromania",
         "name": "Pyromania",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/d/d3/Pyromania_icon.jpg/revision/latest?cb=20251031212638",
         "type": "standard",
@@ -101,6 +109,7 @@
         ]
     },
     {
+        "code": "aggressive_defense",
         "name": "Aggressive Defense",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/a0/Aggressive_Defence_icon.jpg/revision/latest?cb=20251031212145",
         "type": "standard",
@@ -113,6 +122,7 @@
         ]
     },
     {
+        "code": "murderous_intent",
         "name": "Murderous Intent",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/e8/Murderous_Intent_icon.jpg/revision/latest?cb=20251031212204",
         "type": "standard",
@@ -125,6 +135,7 @@
         ]
     },
     {
+        "code": "energy",
         "name": "Energy",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/f/f5/Energy_icon.jpg/revision/latest?cb=20251031212656",
         "type": "standard",
@@ -138,6 +149,7 @@
         ]
     },
     {
+        "code": "evisceration",
         "name": "Evisceration",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/83/Evisceration_icon.jpg/revision/latest?cb=20251031212715",
         "type": "standard",
@@ -150,6 +162,7 @@
         ]
     },
     {
+        "code": "armor_break",
         "name": "Armor Break",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/d/d9/Armor_Break_icon.jpg/revision/latest?cb=20251031212735",
         "type": "standard",
@@ -162,6 +175,7 @@
         ]
     },
     {
+        "code": "true_instincts",
         "name": "True Instincts",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/6/60/True_Instincts_icon.jpg/revision/latest?cb=20251120193639",
         "type": "standard",
@@ -176,6 +190,7 @@
         ]
     },
     {
+        "code": "wide_attacks",
         "name": "Wide Attacks",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/e5/Wide_Attacks_icon.jpg/revision/latest?cb=20251120193656",
         "type": "standard",
@@ -188,6 +203,7 @@
         ]
     },
     {
+        "code": "double_strike",
         "name": "Double Strike",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/bc/Double_Strike_icon.jpg/revision/latest?cb=20251120193713",
         "type": "standard",
@@ -200,6 +216,7 @@
         ]
     },
     {
+        "code": "pulverize",
         "name": "Pulverize",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/a6/Pulverise_icon.jpg/revision/latest?cb=20251120194052",
         "type": "standard",
@@ -213,6 +230,7 @@
         ]
     },
     {
+        "code": "explosive_rush",
         "name": "Explosive Rush",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/d/db/Explosive_Rush_icon.jpg/revision/latest?cb=20251120194124",
         "type": "standard",
@@ -225,6 +243,7 @@
         ]
     },
     {
+        "code": "adrenaline",
         "name": "Adrenaline",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/4c/Adrealine_icon.jpg/revision/latest?cb=20251120194140",
         "type": "standard",
@@ -240,6 +259,7 @@
         ]
     },
     {
+        "code": "fan_of_spikes",
         "name": "Fan of Spikes",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/ae/Fan_of_Spikes_icon.jpg/revision/latest?cb=20251120194157",
         "type": "standard",
@@ -252,6 +272,7 @@
         ]
     },
     {
+        "code": "savagery",
         "name": "Savagery",
         "iconUrl": null,
         "type": "standard",
@@ -266,6 +287,7 @@
         ]
     },
     {
+        "code": "on_the_hunt",
         "name": "On the Hunt",
         "iconUrl": null,
         "type": "standard",
@@ -279,6 +301,7 @@
         ]
     },
     {
+        "code": "fiery_maw",
         "name": "Fiery Maw",
         "iconUrl": null,
         "type": "final",
@@ -291,6 +314,7 @@
         ]
     },
     {
+        "code": "reload",
         "name": "Reload",
         "iconUrl": null,
         "type": "final",
@@ -303,6 +327,7 @@
         ]
     },
     {
+        "code": "bone_cracker",
         "name": "Bone Cracker",
         "iconUrl": null,
         "type": "final",
@@ -317,6 +342,7 @@
         ]
     },
     {
+        "code": "pack_leader",
         "name": "Pack Leader",
         "iconUrl": null,
         "type": "final",

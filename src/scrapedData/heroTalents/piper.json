@@ -1,5 +1,6 @@
 [
     {
+        "code": "sound_barrier",
         "name": "Sound Barrier",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/5/52/Sound_Barrier_icon.jpg/revision/latest?cb=20251024143854",
         "type": "starting",
@@ -13,6 +14,7 @@
         ]
     },
     {
+        "code": "horde",
         "name": "Horde",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/82/Horde_icon.jpg/revision/latest?cb=20251024143920",
         "type": "starting",
@@ -26,6 +28,7 @@
         ]
     },
     {
+        "code": "freezing_trap",
         "name": "Freezing Trap",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/c/c4/Freezing_Trap_icon.jpg/revision/latest?cb=20251024143940",
         "type": "starting",
@@ -38,6 +41,7 @@
         ]
     },
     {
+        "code": "virtuoso",
         "name": "Virtuoso",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/b6/Virtuoso_icon.jpg/revision/latest?cb=20251024144001",
         "type": "starting",
@@ -51,6 +55,7 @@
         ]
     },
     {
+        "code": "grand_finale",
         "name": "Grand Finale",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/bf/Grand_Finale_icon.jpg/revision/latest?cb=20251103112932",
         "type": "standard",
@@ -63,6 +68,7 @@
         ]
     },
     {
+        "code": "giant_rats",
         "name": "Giant Rats",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/e5/Giant_Rats_icon.jpg/revision/latest?cb=20251103112952",
         "type": "standard",
@@ -75,6 +81,7 @@
         ]
     },
     {
+        "code": "sniper",
         "name": "Sniper",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/ee/Sniper_icon.jpg/revision/latest?cb=20251103112210",
         "type": "standard",
@@ -87,6 +94,7 @@
         ]
     },
     {
+        "code": "explosive_rats",
         "name": "Explosive Rats",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/2/2b/Explosive_Rats_icon.jpg/revision/latest?cb=20251103113010",
         "type": "standard",
@@ -99,6 +107,7 @@
         ]
     },
     {
+        "code": "explosive_blast",
         "name": "Explosive Blast",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/1/11/Explosive_Blast_icon.jpg/revision/latest?cb=20251103112231",
         "type": "standard",
@@ -111,6 +120,7 @@
         ]
     },
     {
+        "code": "sforzando",
         "name": "Sforzando",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/5/56/Sforzando_icon.jpg/revision/latest?cb=20251103113029",
         "type": "standard",
@@ -123,6 +133,7 @@
         ]
     },
     {
+        "code": "extra_measure",
         "name": "Extra Measure",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/0/09/Extra_Measure_icon.jpg/revision/latest?cb=20251103112248",
         "type": "standard",
@@ -135,6 +146,7 @@
         ]
     },
     {
+        "code": "quintuplets",
         "name": "Quintuplets",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/d/dc/Quintiplet_icon.jpg/revision/latest?cb=20251103112308",
         "type": "standard",
@@ -147,6 +159,7 @@
         ]
     },
     {
+        "code": "perfect_harmony",
         "name": "Perfect Harmony",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/2/27/Perfect_Harmony_icon.jpg/revision/latest?cb=20251103113047",
         "type": "standard",
@@ -159,6 +172,7 @@
         ]
     },
     {
+        "code": "low_notes",
         "name": "Low Notes",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/6/63/Low_Notes_icon.jpg/revision/latest?cb=20251124094354",
         "type": "standard",
@@ -171,6 +185,7 @@
         ]
     },
     {
+        "code": "acoustic_pulses",
         "name": "Acoustic Pulses",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/f/f8/Acoustic_Pulses_icon.jpg/revision/latest?cb=20251124094307",
         "type": "standard",
@@ -183,6 +198,7 @@
         ]
     },
     {
+        "code": "spinning_solo",
         "name": "Spinning Solo",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/c/c8/Spinning_Solo_icon.jpg/revision/latest?cb=20251124094330",
         "type": "standard",
@@ -195,6 +211,7 @@
         ]
     },
     {
+        "code": "stimulant_vibes",
         "name": "Stimulant Vibes",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/8b/Stimulant_Vibes_icon.jpg/revision/latest?cb=20251124095207",
         "type": "standard",
@@ -207,6 +224,7 @@
         ]
     },
     {
+        "code": "music_of_spheres",
         "name": "Music of Spheres",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/2/25/Music_of_the_Spheres_icon.jpg/revision/latest?cb=20251124095225",
         "type": "standard",
@@ -219,6 +237,7 @@
         ]
     },
     {
+        "code": "invasive_blast",
         "name": "Invasive Blast",
         "iconUrl": null,
         "type": "standard",
@@ -231,6 +250,7 @@
         ]
     },
     {
+        "code": "chorus",
         "name": "Chorus",
         "iconUrl": null,
         "type": "standard",
@@ -245,6 +265,7 @@
         ]
     },
     {
+        "code": "ghost_notes",
         "name": "Ghost Notes",
         "iconUrl": null,
         "type": "standard",
@@ -258,6 +279,7 @@
         ]
     },
     {
+        "code": "leeching_charm",
         "name": "Leeching Charm",
         "iconUrl": null,
         "type": "standard",
@@ -270,6 +292,7 @@
         ]
     },
     {
+        "code": "jig",
         "name": "Jig",
         "iconUrl": null,
         "type": "final",
@@ -282,6 +305,7 @@
         ]
     },
     {
+        "code": "rain_of_notes",
         "name": "Rain of Notes",
         "iconUrl": null,
         "type": "final",
@@ -294,6 +318,7 @@
         ]
     },
     {
+        "code": "vermin_massacre",
         "name": "Vermin Massacre",
         "iconUrl": null,
         "type": "final",
@@ -306,6 +331,7 @@
         ]
     },
     {
+        "code": "rat_king",
         "name": "Rat King",
         "iconUrl": null,
         "type": "final",

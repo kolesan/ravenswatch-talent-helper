@@ -1,4 +1,5 @@
 export type Talent = {
+    code: string;
     name: string;
     iconUrl: string | null;
     type: TalentType;

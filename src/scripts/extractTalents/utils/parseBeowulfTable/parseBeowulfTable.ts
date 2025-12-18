@@ -1,5 +1,6 @@
 import { Talent } from "../../types";
 import { getChangePerLevel } from "../getChangePerLevel";
+import { getCode } from "../getCode";
 import { getDescription } from "../getDescription";
 import { getType } from "../getType";
 import { getUnlockedAtRank } from "../getUnlockedAtRank";
@@ -12,12 +13,14 @@ export function parseBeowulfTable(row: HTMLTableRowElement) {
     
     const iconUrl = getIconUrl(cells[0]);
     const name = getName(cells[1]);
+    const code = getCode(name);
     const type = getType(cells[2]);
     const unlockedAtRank = getUnlockedAtRank(cells[3]);
     const description = getDescription(cells[4]);
     const changePerLevel = getChangePerLevel(cells[5]);
 
     const talent: Talent = {
+        code,
         name,
         iconUrl,
         type,
