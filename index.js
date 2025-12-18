@@ -7,6 +7,10 @@ const preferredTalents = document.querySelector(".preferred-talents");
 const availableTalents = document.querySelector(".available-talents");
 
 beowulfTalents.forEach(it => {
+    const image = document.createElement("img");
+    image.src = `src/scrapedData/icons/talents/beowulf/${it.code}.webp`;
+    image.height = "80";
+
     const name = document.createElement("div");
     name.className = "name";
     name.textContent = it.name;
@@ -23,10 +27,14 @@ beowulfTalents.forEach(it => {
     } else {
         description.textContent = it.description[0];
     }
+    
+    const container = document.createElement("div");
+    container.appendChild(name);
+    container.appendChild(description);
 
     const elem = document.createElement("li");
-    elem.appendChild(name);
-    elem.appendChild(description);
+    elem.appendChild(image);
+    elem.appendChild(container);
 
     availableTalents.appendChild(elem);
 });
@@ -772,6 +780,7 @@ function getPiperTalents() {
 function getBeowulfTalents() {
     return [
         {
+            "code": "shield_charge",
             "name": "Shield Charge",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/0/07/Shield_charge_2.webp/revision/latest?cb=20250322172928",
             "type": "starting",
@@ -784,6 +793,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "explosive_fire",
             "name": "Explosive Fire",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/e4/Explosive_fire.webp/revision/latest?cb=20250324163301",
             "type": "starting",
@@ -796,6 +806,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "rampart",
             "name": "Rampart",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/b5/Rampart.webp/revision/latest?cb=20250324163331",
             "type": "starting",
@@ -809,6 +820,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "draconic_binds",
             "name": "Draconic Binds",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/a6/Draconic_binds.webp/revision/latest?cb=20250324164517",
             "type": "starting",
@@ -822,6 +834,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "eruption",
             "name": "Eruption",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/6/6f/Eruption.webp/revision/latest?cb=20250324164551",
             "type": "standard",
@@ -834,6 +847,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "breath_of_fire",
             "name": "Breath of Fire",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/ad/Breath_of_fire.webp/revision/latest?cb=20250324164634",
             "type": "standard",
@@ -846,6 +860,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "blademaster",
             "name": "Blademaster",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/95/Blademaster.webp/revision/latest?cb=20250324164704",
             "type": "standard",
@@ -859,6 +874,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "heavy_strikes",
             "name": "Heavy Strikes",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/3/3d/Heavy_strikes.webp/revision/latest?cb=20250324164731",
             "type": "standard",
@@ -871,6 +887,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "fiery_seismo",
             "name": "Fiery Seismo",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/3/30/Fiery_sismo.webp/revision/latest?cb=20250324164806",
             "type": "standard",
@@ -883,6 +900,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "bladestorm",
             "name": "Bladestorm",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/a9/Bladestorm.webp/revision/latest?cb=20250324164843",
             "type": "standard",
@@ -895,6 +913,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "double_shock",
             "name": "Double Shock",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/b8/Double_shock.webp/revision/latest?cb=20250324164916",
             "type": "standard",
@@ -907,6 +926,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "furnace",
             "name": "Furnace",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/bd/Furnace.webp/revision/latest?cb=20250324164945",
             "type": "standard",
@@ -919,6 +939,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "blazing_runes",
             "name": "Blazing Runes",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/c/c8/Blazing_runes.webp/revision/latest?cb=20250324165011",
             "type": "standard",
@@ -931,6 +952,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "fire_wings",
             "name": "Fire Wings",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/7/7e/Fire_wings.webp/revision/latest?cb=20250324165044",
             "type": "standard",
@@ -943,6 +965,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "scorched_earth",
             "name": "Scorched Earth",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/44/Scorched_earth.webp/revision/latest?cb=20250324165112",
             "type": "standard",
@@ -955,6 +978,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "retaliation",
             "name": "Retaliation",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/43/Retaliation.webp/revision/latest?cb=20250324165145",
             "type": "standard",
@@ -967,6 +991,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "sparkling_shield",
             "name": "Sparkling Shield",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/3/30/Sparkling_shield.webp/revision/latest?cb=20250324165215",
             "type": "standard",
@@ -979,6 +1004,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "fiery_slash",
             "name": "Fiery Slash",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/92/Fiery_slash.webp/revision/latest?cb=20250324171125",
             "type": "standard",
@@ -991,6 +1017,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "secondary_tremor",
             "name": "Secondary Tremor",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/0/09/Secondary_tremor.webp/revision/latest?cb=20250324171210",
             "type": "standard",
@@ -1003,6 +1030,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "battle_cry",
             "name": "Battle Cry",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/1/1f/Battle_cry.webp/revision/latest?cb=20250324171323",
             "type": "standard",
@@ -1015,6 +1043,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "furious_blow",
             "name": "Furious Blow",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/c/c1/Furious_blows.webp/revision/latest?cb=20250324171532",
             "type": "standard",
@@ -1028,6 +1057,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "runes_of_war",
             "name": "Runes of War",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/90/Runes_of_war.webp/revision/latest?cb=20250324171601",
             "type": "standard",
@@ -1040,6 +1070,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "immolation",
             "name": "Immolation",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/d/d7/Immolation.webp/revision/latest?cb=20250324171636",
             "type": "final",
@@ -1052,6 +1083,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "sudden_growth",
             "name": "Sudden Growth",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/8f/Sudden_growth.webp/revision/latest?cb=20250324171706",
             "type": "final",
@@ -1064,6 +1096,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "volcanic_rage",
             "name": "Volcanic Rage",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/b4/Volcanic_rage.webp/revision/latest?cb=20250324171821",
             "type": "final",
@@ -1076,6 +1109,7 @@ function getBeowulfTalents() {
             ]
         },
         {
+            "code": "fireball",
             "name": "Fireball",
             "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/1/1a/Fireball.webp/revision/latest?cb=20250324171929",
             "type": "final",

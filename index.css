@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: #22201B;
+    background-color: #1A1915;
     color: #949692;
     font-family: fontin-sans-regular;
     font-size: 18px;
@@ -26,6 +26,10 @@ h1 {
     cursor: pointer;
     border-radius: 4px;
     padding: 2px;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 .main-list > li:not(:last-child) {
     margin-bottom: 10px;
@@ -35,6 +39,9 @@ h1 {
 }
 .main-list > li:not(:hover) {
     border: 2px solid #85724300;
+}
+.main-list > li > div {
+    pointer-events: none;
 }
 
 .name {
