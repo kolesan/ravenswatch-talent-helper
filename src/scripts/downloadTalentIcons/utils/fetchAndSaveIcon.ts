@@ -19,8 +19,8 @@ export function fetchAndSaveIcon(hero: Hero, talent: Talent) {
             const dirName = heroTalentIconDirName(hero);
             const fileName = heroTalentIconFileName(dirName, talent);
 
-            console.log(`Writing '${hero.name}'s '${talent.name}' talent icon file`);
-            
+            console.log(`Writing ${hero.name}'s '${talent.name}' talent icon file`);
+
             return mkdir(dirName, { recursive: true })
                 .then(() => writeFile(fileName, Buffer.from(arrayBuffer)))
                 .then(() => console.log(`Success writing '${hero.name}'s '${talent.name}' talent icon file`))

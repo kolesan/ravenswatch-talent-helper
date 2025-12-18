@@ -1,23 +1,27 @@
-import fs from "fs/promises";
+import { readFileSync } from "fs";
 
 import { heroes } from "../../data/heroes";
-import { heroTalentsFileName } from "../utils/heroTalentsFileName";
-import { readFileSync } from "fs";
-import { runPromiseChain } from "../utils/runPromiseChain";
 import { Talent } from "../extractTalents/types";
+import { heroTalentsFileName } from "../utils/heroTalentsFileName";
+import { runPromiseChain } from "../utils/runPromiseChain";
+
 import { fetchAndSaveIcon } from "./utils/fetchAndSaveIcon";
 
-const hero = heroes.all.beowulf;
+const hero = heroes.all.scarlet;
 
 const fileName = heroTalentsFileName(hero);
 const fileText = readFileSync(fileName, 'utf-8');
 
 const talents = JSON.parse(fileText) as Talent[];
 
+console.log(hero.name);
+
 let i = 0;
 function getNextPromise() {
+    const talent = talents[i++];
+    console.log(`${i + 1}/${talents.length} talent '${talent.name}'`);
     return {
-        promise: fetchAndSaveIcon(hero, talents[i++]),
+        promise: fetchAndSaveIcon(hero, talent),
         getPromiseAfterThat: i < talents.length
             ? getNextPromise
             : undefined,
