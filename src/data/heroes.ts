@@ -88,5 +88,6 @@ const all = {
 };
 
 export const heroes = {
+    all,
     asArray: Object.values(all),
 }
