@@ -9,13 +9,17 @@
 }
 
 body {
-    background-color: #1A1915;
-    color: #949692;
-    font-family: fontin-sans-regular;
-    font-size: 18px;
+    margin-bottom: 24px;
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 16px;
+
+    background-color: #1A1915;
+
+    color: #949692;
+    font-family: fontin-sans-regular;
+    font-size: 18px;
 }
 
 h1 {
