@@ -7,7 +7,7 @@ import { runPromiseChain } from "../utils/runPromiseChain";
 
 import { fetchAndSaveIcon } from "./utils/fetchAndSaveIcon";
 
-const hero = heroes.all.scarlet;
+const hero = heroes.all.piper;
 
 const fileName = heroTalentsFileName(hero);
 const fileText = readFileSync(fileName, 'utf-8');
@@ -18,8 +18,9 @@ console.log(hero.name);
 
 let i = 0;
 function getNextPromise() {
-    const talent = talents[i++];
+    const talent = talents[i];
     console.log(`${i + 1}/${talents.length} talent '${talent.name}'`);
+    i++;
     return {
         promise: fetchAndSaveIcon(hero, talent),
         getPromiseAfterThat: i < talents.length
