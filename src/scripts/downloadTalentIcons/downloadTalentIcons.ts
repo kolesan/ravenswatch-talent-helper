@@ -7,7 +7,7 @@ import { runPromiseChain } from "../utils/runPromiseChain";
 
 import { fetchAndSaveIcon } from "./utils/fetchAndSaveIcon";
 
-const hero = heroes.all.piper;
+const hero = heroes.all.geppetto;
 
 const fileName = heroTalentsFileName(hero);
 const fileText = readFileSync(fileName, 'utf-8');
