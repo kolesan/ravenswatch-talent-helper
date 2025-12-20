@@ -1,12 +1,12 @@
-const beowulfTalents = getBeowulfTalents().filter(it => it.type === "standard");
+const geppettoTalents = getGeppettoTalents().filter(it => it.type === "standard");
 
 const usedTalents = document.querySelector(".used-talents");
 const preferredTalents = document.querySelector(".preferred-talents");
 const availableTalents = document.querySelector(".available-talents");
 
-beowulfTalents.forEach(it => {
+geppettoTalents.forEach(it => {
     const image = document.createElement("img");
-    image.src = `src/scrapedData/icons/talents/beowulf/${it.code}.webp`;
+    image.src = `src/scrapedData/icons/talents/geppetto/${it.code}.webp`;
     image.height = "80";
 
     const name = document.createElement("div");
@@ -25,7 +25,7 @@ beowulfTalents.forEach(it => {
     } else {
         description.textContent = it.description[0];
     }
-    
+
     const container = document.createElement("div");
     container.appendChild(name);
     container.appendChild(description);
@@ -117,348 +117,352 @@ availableTalents.onclick = (event) => {
 
 
 
-function getBeowulfTalents() {
+function getGeppettoTalents() {
     return [
         {
-            "code": "shield_charge",
-            "name": "Shield Charge",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/0/07/Shield_charge_2.webp/revision/latest?cb=20250322172928",
+            "code": "rocket_science",
+            "name": "Rocket Science",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/c/c4/Rocket_Science_icon.jpg/revision/latest?cb=20251029104341",
             "type": "starting",
             "unlockedAtRank": 1,
             "description": [
-                "DEFENSE makes Beowulf dash forward and deal +100% damage along the path"
+                "DASH can be held for up to 1 second(s), dealing 32 damage along its path and applying IGNITE to all enemies hit",
+                "Crossed DUMMIES catch fire and increase their attack rate by 25% for 5 seconds"
             ],
             "changePerLevel": [
-                "+25% damage"
+                "+8 damage + Hero Level + DMG",
+                "Epic & Legendary: +5% attack rate"
             ]
         },
         {
-            "code": "explosive_fire",
-            "name": "Explosive Fire",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/e4/Explosive_fire.webp/revision/latest?cb=20250324163301",
+            "code": "dummyball",
+            "name": "Dummyball",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/f/f3/Dummyball_icon.jpg/revision/latest?cb=20251029104402",
             "type": "starting",
             "unlockedAtRank": 1,
             "description": [
-                "IGNITED enemies explode when they die, dealing 20 damage and applying IGNITE to all nearby enemies"
+                "SPECIAL creates a DUMMY when it explodes and deals 155% damage",
+                "Has no effect if the max number of DUMMIES are already active"
             ],
             "changePerLevel": [
-                "+5 damage + Hero Level + DMG"
+                "+15% damage"
             ]
         },
         {
-            "code": "rampart",
-            "name": "Rampart",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/b5/Rampart.webp/revision/latest?cb=20250324163331",
+            "code": "twin_dummies",
+            "name": "Twin Dummies",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/40/Twin_Dummies_icon.jpg/revision/latest?cb=20251029104424",
             "type": "starting",
             "unlockedAtRank": 2,
             "description": [
-                "Quest (x20): Blocking at least one attack during DEFENSE grants +1 ARMOR",
-                "Complete: Wyrm DEFENSE heals 50% more and increases the area of effect by +3m"
+                "TRAIT has 55% chance to build two DUMMIES at once"
             ],
             "changePerLevel": [
-                "+10% more healing"
+                "+15% chance"
             ]
         },
         {
-            "code": "draconic_binds",
-            "name": "Draconic Binds",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/a6/Draconic_binds.webp/revision/latest?cb=20250324164517",
+            "code": "unstable_cores",
+            "name": "Unstable Cores",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/86/Unstable_Cores_icon.jpg/revision/latest?cb=20251029104446",
             "type": "starting",
             "unlockedAtRank": 5,
             "description": [
-                "Quest (x20): Hitting 2 enemies with a single Wyrm ability grants +0.5 DMG",
-                "Complete: TRAIT cooldown -25%. Wyrm abilities deal +10% damage"
+                "5 seconds after their creation, DUMMIES become UNSTABLE",
+                "If an unstable DUMMY is hit with POWER - or if it is destroyed or dismantled - this will cause it to explode, dealing 80 area damage"
             ],
             "changePerLevel": [
-                "+5% Wyrm ability damage"
+                "+10 area damage + Hero Level + DMG"
             ]
         },
         {
-            "code": "eruption",
-            "name": "Eruption",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/6/6f/Eruption.webp/revision/latest?cb=20250324164551",
+            "code": "nailing_strike",
+            "name": "Nailing Strike",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/6/63/Nailing_Strike_icon.jpg/revision/latest?cb=20251111091715",
             "type": "standard",
             "unlockedAtRank": 1,
             "description": [
-                "POWER's shockwaves explode at the end and deal 60% additional damage all around"
-            ],
-            "changePerLevel": [
-                "+15% additional damage"
-            ]
-        },
-        {
-            "code": "breath_of_fire",
-            "name": "Breath of Fire",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/ad/Breath_of_fire.webp/revision/latest?cb=20250324164634",
-            "type": "standard",
-            "unlockedAtRank": 1,
-            "description": [
-                "Wyrm breathes in a cone of fire during ATTACK finisher, dealing 200% damage and applying IGNITE to enemies hit"
-            ],
-            "changePerLevel": [
-                "+50% damage"
-            ]
-        },
-        {
-            "code": "blademaster",
-            "name": "Blademaster",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/95/Blademaster.webp/revision/latest?cb=20250324164704",
-            "type": "standard",
-            "unlockedAtRank": 1,
-            "description": [
-                "After each TRAIT activation, the next 3 ATTACKS gain +100% Crit Chance",
-                "Permanently gain +10% ATTACK SPEED"
-            ],
-            "changePerLevel": [
-                "+2% ATTACK SPEED"
-            ]
-        },
-        {
-            "code": "heavy_strikes",
-            "name": "Heavy Strikes",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/3/3d/Heavy_strikes.webp/revision/latest?cb=20250324164731",
-            "type": "standard",
-            "unlockedAtRank": 1,
-            "description": [
-                "ATTACK is slower but cleaves in a wide area and deals +50% damage"
-            ],
-            "changePerLevel": [
-                "+10% damage"
-            ]
-        },
-        {
-            "code": "fiery_seismo",
-            "name": "Fiery Seismo",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/3/30/Fiery_sismo.webp/revision/latest?cb=20250324164806",
-            "type": "standard",
-            "unlockedAtRank": 1,
-            "description": [
-                "Wyrm SPECIAL's finisher strikes 3 times with a growing radius for 45% damage each"
-            ],
-            "changePerLevel": [
-                "+5% damage"
-            ]
-        },
-        {
-            "code": "bladestorm",
-            "name": "Bladestorm",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/a9/Bladestorm.webp/revision/latest?cb=20250324164843",
-            "type": "standard",
-            "unlockedAtRank": 1,
-            "description": [
-                "SPECIAL spins 2 more time(s) for 100% damage each"
-            ],
-            "changePerLevel": [
-                "+1 additional spin"
-            ]
-        },
-        {
-            "code": "double_shock",
-            "name": "Double Shock",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/b8/Double_shock.webp/revision/latest?cb=20250324164916",
-            "type": "standard",
-            "unlockedAtRank": 1,
-            "description": [
-                "POWER sends out two successive shockwaves, each one dealing -30% damage"
-            ],
-            "changePerLevel": [
-                "+5% damage"
-            ]
-        },
-        {
-            "code": "furnace",
-            "name": "Furnace",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/bd/Furnace.webp/revision/latest?cb=20250324164945",
-            "type": "standard",
-            "unlockedAtRank": 1,
-            "description": [
-                "Your IGNITE effects last 2 more seconds and deal +32% damage"
-            ],
-            "changePerLevel": [
-                "+8% damage"
-            ]
-        },
-        {
-            "code": "blazing_runes",
-            "name": "Blazing Runes",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/c/c8/Blazing_runes.webp/revision/latest?cb=20250324165011",
-            "type": "standard",
-            "unlockedAtRank": 2,
-            "description": [
-                "ATTACK and SPECIAL gain +40% Crit Chance against IGNITED enemies"
-            ],
-            "changePerLevel": [
-                "+10% Crit Chance"
-            ]
-        },
-        {
-            "code": "fire_wings",
-            "name": "Fire Wings",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/7/7e/Fire_wings.webp/revision/latest?cb=20250324165044",
-            "type": "standard",
-            "unlockedAtRank": 3,
-            "description": [
-                "Activating TRAIT deals 30 damage all around and applies IGNITE to all enemies hit"
-            ],
-            "changePerLevel": [
-                "+5 damage + Hero Level + DMG"
-            ]
-        },
-        {
-            "code": "scorched_earth",
-            "name": "Scorched Earth",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/44/Scorched_earth.webp/revision/latest?cb=20250324165112",
-            "type": "standard",
-            "unlockedAtRank": 3,
-            "description": [
-                "Wyrm POWER leaves a trail of fire, dealing 40 damage over time to enemies standing on it"
-            ],
-            "changePerLevel": [
-                "+10 damage + Hero Level + DMG"
-            ]
-        },
-        {
-            "code": "retaliation",
-            "name": "Retaliation",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/43/Retaliation.webp/revision/latest?cb=20250324165145",
-            "type": "standard",
-            "unlockedAtRank": 4,
-            "description": [
-                "After using DEFENSE, the next ATTACK within 2 seconds triggers a two-strike retaliation, with each one dealing 360% damage"
-            ],
-            "changePerLevel": [
-                "+90% damage"
-            ]
-        },
-        {
-            "code": "sparkling_shield",
-            "name": "Sparkling Shield",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/3/30/Sparkling_shield.webp/revision/latest?cb=20250324165215",
-            "type": "standard",
-            "unlockedAtRank": 4,
-            "description": [
-                "Each attack blocked during DEFENSE inflicts 120% of blocked damage to what is in front of Beowulf"
-            ],
-            "changePerLevel": [
-                "+30% of blocked damage"
-            ]
-        },
-        {
-            "code": "fiery_slash",
-            "name": "Fiery Slash",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/92/Fiery_slash.webp/revision/latest?cb=20250324171125",
-            "type": "standard",
-            "unlockedAtRank": 5,
-            "description": [
-                "ATTACK triggered right after DASH deals 400% damage and applies IGNITE to enemies"
+                "Adds an additional strike to ATTACK combo, dealing 400% damage"
             ],
             "changePerLevel": [
                 "+100% damage"
             ]
         },
         {
-            "code": "secondary_tremor",
-            "name": "Secondary Tremor",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/0/09/Secondary_tremor.webp/revision/latest?cb=20250324171210",
+            "code": "oiled_mechanisms",
+            "name": "Oiled Mechanisms",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/a5/Oiled_Mechanisms_icon.jpg/revision/latest?cb=20251111091733",
             "type": "standard",
-            "unlockedAtRank": 7,
-            "description": [
-                "SPECIAL sends out a Shockwave dealing 120% of POWER damage"
-            ],
-            "changePerLevel": [
-                "+30% POWER damage"
-            ]
-        },
-        {
-            "code": "battle_cry",
-            "name": "Battle Cry",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/1/1f/Battle_cry.webp/revision/latest?cb=20250324171323",
-            "type": "standard",
-            "unlockedAtRank": 7,
-            "description": [
-                "Activating TRAIT clears POWER cooldown for all Heroes in the area and gives them a 12 SHIELD  for 6 seconds"
-            ],
-            "changePerLevel": [
-                "+3 SHIELD + Hero Level"
-            ]
-        },
-        {
-            "code": "furious_blow",
-            "name": "Furious Blow",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/c/c1/Furious_blows.webp/revision/latest?cb=20250324171532",
-            "type": "standard",
-            "unlockedAtRank": 8,
-            "description": [
-                "After a SPECIAL, the next ATTACK triggers a series of 3 strikes dealing 100% damage each",
-                "If Wyrm empowered SPECIAL, the attacks apply an IGNITE status to enemies and inflict +50% damage"
-            ],
-            "changePerLevel": [
-                "+25% damage"
-            ]
-        },
-        {
-            "code": "runes_of_war",
-            "name": "Runes of War",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/90/Runes_of_war.webp/revision/latest?cb=20250324171601",
-            "type": "standard",
-            "unlockedAtRank": 8,
-            "description": [
-                "After hitting an enemy with DEFENSE, runes appear around Beowulf dealing 16 area damage per second for 5 seconds"
-            ],
-            "changePerLevel": [
-                "+4 area damage + Hero Level + DMG"
-            ]
-        },
-        {
-            "code": "immolation",
-            "name": "Immolation",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/d/d7/Immolation.webp/revision/latest?cb=20250324171636",
-            "type": "final",
             "unlockedAtRank": 1,
             "description": [
-                "During ULTIMATE [Dragon Flight], Beowulf deals 40 damage per second to nearby enemies, and all abilities are empowered by Wyrm"
+                "DUMMIES hit by Geppetto's ATTACK immediately attack in their current position, dealing 50% damage"
             ],
             "changePerLevel": [
-                "+10 damage per second + Hero Level + DMG"
+                "+10% damage"
             ]
         },
         {
-            "code": "sudden_growth",
-            "name": "Sudden Growth",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/8f/Sudden_growth.webp/revision/latest?cb=20250324171706",
-            "type": "final",
-            "unlockedAtRank": 9,
+            "code": "heart_ties",
+            "name": "Heart Ties",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/5/56/Heart_Ties_icon.jpg/revision/latest?cb=20251111092234",
+            "type": "standard",
+            "unlockedAtRank": 1,
             "description": [
-                "During ULTIMATE [Dragon Flight], the Wyrm grows and breathes fire in a wider zone, dealing +20% damage"
+                "DUMMIES gain 40% of Geppetto's VITALITY",
+                "Geppetto gains +5 ARMOR per active DUMMY"
+            ],
+            "changePerLevel": [
+                "+10% of Geppetto's VITALITY"
+            ]
+        },
+        {
+            "code": "forked_lightning",
+            "name": "Forked Lightning",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/6/6f/Forked_Lightning_icon.jpg/revision/latest?cb=20251111091751",
+            "type": "standard",
+            "unlockedAtRank": 1,
+            "description": [
+                "DEFENSE send bolts of lightning out towards DUMMIES, each one dealing 40 damage"
+            ],
+            "changePerLevel": [
+                "+10 damage + Hero Level + DMG"
+            ]
+        },
+        {
+            "code": "large_family",
+            "name": "Large Family",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/d/d5/Large_Family_icon.jpg/revision/latest?cb=20251111092253",
+            "type": "standard",
+            "unlockedAtRank": 1,
+            "description": [
+                "Increase maximum active DUMMIES by 1",
+                "TRAIT has a 10% reduced cooldown"
+            ],
+            "changePerLevel": [
+                "+5% reduced cooldown"
+            ]
+        },
+        {
+            "code": "mourning_rage",
+            "name": "Mourning Rage",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/4b/Mourning_Rage_icon.jpg/revision/latest?cb=20251111092314",
+            "type": "standard",
+            "unlockedAtRank": 1,
+            "description": [
+                "Whenever a DUMMY is destroyed, Geppetto and other DUMMIES gain STRENGTH for 4 seconds"
+            ],
+            "changePerLevel": [
+                "+2 seconds"
+            ]
+        },
+        {
+            "code": "explosive_builds",
+            "name": "Explosive Builds",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/89/Explosive_Builds_icon.jpg/revision/latest?cb=20251111092333",
+            "type": "standard",
+            "unlockedAtRank": 1,
+            "description": [
+                "When built by TRAIT, DUMMIES emit a blast, dealing 40 area damage"
+            ],
+            "changePerLevel": [
+                "+10 area damage + Hero Level + DMG"
+            ]
+        },
+        {
+            "code": "pogo-hoppers",
+            "name": "Pogo-Hoppers",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/bc/Pogo_Hoppers_icon.jpg/revision/latest?cb=20251111091812",
+            "type": "standard",
+            "unlockedAtRank": 1,
+            "description": [
+                "DUMMIES move 100% farther when attacking"
+            ],
+            "changePerLevel": [
+                "+33% farther"
+            ]
+        },
+        {
+            "code": "flux_capacitor",
+            "name": "Flux Capacitor",
+            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/5/5b/Flux_Capactior_icon.jpg/revision/latest?cb=20251111092516",
+            "type": "standard",
+            "unlockedAtRank": 2,
+            "description": [
+                "While Geppetto has SHIELD, POWER affects all DUMMIES within range and deals +20% damage"
             ],
             "changePerLevel": [
                 "+5% damage"
             ]
         },
         {
-            "code": "volcanic_rage",
-            "name": "Volcanic Rage",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/b4/Volcanic_rage.webp/revision/latest?cb=20250324171821",
-            "type": "final",
-            "unlockedAtRank": 1,
+            "code": "fireworks",
+            "name": "Fireworks",
+            "iconUrl": null,
+            "type": "standard",
+            "unlockedAtRank": 3,
             "description": [
-                "Each ULTIMATE ireball throws 4 fiery rock into the surrounding area,  dealing 50% damage each"
+                "Each time a DUMMY regains 30% of its Maximum Health, it shoots a homing missile that deals 15 damage to a nearby enemy"
             ],
             "changePerLevel": [
-                "+1 fiery rock(s)"
+                "-5% of its Maximum Health threshold"
             ]
         },
         {
-            "code": "fireball",
-            "name": "Fireball",
-            "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/1/1a/Fireball.webp/revision/latest?cb=20250324171929",
+            "code": "clockwork_medicine",
+            "name": "Clockwork Medicine",
+            "iconUrl": null,
+            "type": "standard",
+            "unlockedAtRank": 3,
+            "description": [
+                "DUMMIES healed by SPECIAL also gain +8 REGENERATION"
+            ],
+            "changePerLevel": [
+                "+2 REGENERATION"
+            ]
+        },
+        {
+            "code": "family_meeting",
+            "name": "Family Meeting",
+            "iconUrl": null,
+            "type": "standard",
+            "unlockedAtRank": 4,
+            "description": [
+                "When three or more DUMMIES are active, Geppetto and DUMMIES gain +20% ATTACK SPEED"
+            ],
+            "changePerLevel": [
+                "+5% ATTACK SPEED"
+            ]
+        },
+        {
+            "code": "laser_lenses",
+            "name": "Laser Lenses",
+            "iconUrl": null,
+            "type": "standard",
+            "unlockedAtRank": 4,
+            "description": [
+                "When the DEFENSE effect is applied, DUMMIES' next attack shoots lasers from their eyes, dealing 200% ranged damage"
+            ],
+            "changePerLevel": [
+                "+50% ranged damage"
+            ]
+        },
+        {
+            "code": "vacuum_capsule",
+            "name": "Vacuum Capsule",
+            "iconUrl": null,
+            "type": "standard",
+            "unlockedAtRank": 5,
+            "description": [
+                "DUMMIES hit by SPECIAL are jerked toward the center of the explosion, dealing 40% of POWER damage along the way"
+            ],
+            "changePerLevel": [
+                "+10% of POWER damage"
+            ]
+        },
+        {
+            "code": "sharp_noses",
+            "name": "Sharp Noses",
+            "iconUrl": null,
+            "type": "standard",
+            "unlockedAtRank": 7,
+            "description": [
+                "DUMMIES have a 50% chance of attacking with their nose, dealing 160% damage on all enemies they hit"
+            ],
+            "changePerLevel": [
+                "+40% damage"
+            ]
+        },
+        {
+            "code": "magnetic_hammer",
+            "name": "Magnetic Hammer",
+            "iconUrl": null,
+            "type": "standard",
+            "unlockedAtRank": 7,
+            "description": [
+                "Holding POWER allows Geppetto to pull in a DUMMY in front of him",
+                "Upon release, the DUMMY that has been pulled in deals +40% damage across a 100% wider area"
+            ],
+            "changePerLevel": [
+                "+10% damage"
+            ]
+        },
+        {
+            "code": "flash_of_genius",
+            "name": "Flash of Genius",
+            "iconUrl": null,
+            "type": "standard",
+            "unlockedAtRank": 8,
+            "description": [
+                "Instantly create 1 random Magical Object(s)",
+                "Each upgrade to this talent will create an additional item"
+            ],
+            "changePerLevel": [
+                "+1 random Magical Object(s)"
+            ]
+        },
+        {
+            "code": "lightning_rod_dummies",
+            "name": "Lightning Rod Dummies",
+            "iconUrl": null,
+            "type": "standard",
+            "unlockedAtRank": 8,
+            "description": [
+                "After 2-2.5 seconds of DEFENSE is applied, DUMMIES are struck by lightning and deal 36 damage around"
+            ],
+            "changePerLevel": [
+                "+9 damage + Hero Level + DMG"
+            ]
+        },
+        {
+            "code": "bomb_reserve",
+            "name": "Bomb Reserve",
+            "iconUrl": null,
+            "type": "final",
+            "unlockedAtRank": 1,
+            "description": [
+                "When in combat, PUPPET sends a bomb around itself every 1 second(s), dealing 40 area damage"
+            ],
+            "changePerLevel": [
+                "+50 area damage + Hero Level + DMG"
+            ]
+        },
+        {
+            "code": "master_puppet",
+            "name": "Master Puppet",
+            "iconUrl": null,
             "type": "final",
             "unlockedAtRank": 9,
             "description": [
-                "In Combat, DASH makes Wyrm throw a Fireball towards the closest enemy, dealing 40 area damage"
+                "When the Meca-Puppet is built, it consumes any DUMMY built around to gain 20% max health and deal 10% more damage per DUMMY consumed"
             ],
             "changePerLevel": [
-                "+10 area damage + Hero Level + DMG"
+                "+5% max health and +2% more damage"
+            ]
+        },
+        {
+            "code": "high_voltage",
+            "name": "High Voltage",
+            "iconUrl": null,
+            "type": "final",
+            "unlockedAtRank": 1,
+            "description": [
+                "After a DUMMY is displaced by POWER, it activates the Overclock effect of the ULTIMATE for 1 second(s)"
+            ],
+            "changePerLevel": [
+                "+0.5 second(s)"
+            ]
+        },
+        {
+            "code": "hyperclock",
+            "name": "Hyperclock",
+            "iconUrl": null,
+            "type": "final",
+            "unlockedAtRank": 9,
+            "description": [
+                "DUMMIES under the Overclock effect overheat, applying IGNITE to enemies hit, and lastly, explode to deal 80 area damage"
+            ],
+            "changePerLevel": [
+                "+20 area damage + Hero Level + DMG"
             ]
         }
     ]
