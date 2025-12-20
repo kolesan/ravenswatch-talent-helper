@@ -11,15 +11,22 @@
 body {
     margin-bottom: 24px;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 16px;
-
-    background-color: #1A1915;
+    background-color: #181614;
 
     color: #949692;
     font-family: fontin-sans-regular;
     font-size: 18px;
+}
+
+.rank-slider-container-label {
+    display: flex;
+    gap: 4px;
+}
+
+.talent-lists {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 0.01fr 0.5fr;
+    column-gap: 16px;
 }
 
 h1 {
@@ -71,4 +78,8 @@ ul.main-list {
 .description-list-item {
     margin-bottom: 2px;
     pointer-events: none;
+}
+
+.unlocked-at-rank {
+    color: #954C4A;
 }

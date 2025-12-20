@@ -1,12 +1,27 @@
+// Rank Slider
+let selectedHeroRank = 1;
+const rankSlider = document.querySelector("#rank-slider");
+const rankSliderOutput = document.querySelector("#rank-slider-output");
+rankSlider.oninput = event => {
+    const { value } = event.target;
+    rankSliderOutput.value = value;
+    selectedHeroRank = value;
+}
+
+// Talents
 const geppettoTalents = getGeppettoTalents().filter(it => it.type === "standard");
 
 const usedTalents = document.querySelector(".used-talents");
 const preferredTalents = document.querySelector(".preferred-talents");
 const availableTalents = document.querySelector(".available-talents");
+const lockedTalents = document.querySelector(".locked-talents");
 
 geppettoTalents.forEach(it => {
+    const isLocked = selectedHeroRank < it.unlockedAtRank;
     const image = document.createElement("img");
-    image.src = `src/scrapedData/icons/talents/geppetto/${it.code}.webp`;
+    image.src = isLocked
+        ? `src/scrapedData/icons/talents/locked_talent.webp`
+        : `src/scrapedData/icons/talents/geppetto/${it.code}.webp`;
     image.height = "80";
 
     const name = document.createElement("div");
@@ -15,13 +30,15 @@ geppettoTalents.forEach(it => {
 
     const description = document.createElement("div");
     description.className = "description"
-    if (it.description.length > 1) {
+    if (isLocked) {
+        description.innerHTML = `Unlocked at Rank <span class="unlocked-at-rank">${it.unlockedAtRank}</span>`;
+    } else if (it.description.length > 1) {
         it.description.forEach(dscItem => {
             const dscListItem = document.createElement("div");
             dscListItem.className = "description-list-item";
             dscListItem.textContent = dscItem;
             description.appendChild(dscListItem);
-        })
+        });
     } else {
         description.textContent = it.description[0];
     }
@@ -34,14 +51,17 @@ geppettoTalents.forEach(it => {
     elem.appendChild(image);
     elem.appendChild(container);
 
-    availableTalents.appendChild(elem);
+    if (isLocked) {
+        lockedTalents.appendChild(elem);
+    } else {
+        availableTalents.appendChild(elem);
+    }
 });
-const currentListHeader = availableTalents.parentNode.querySelector("h1");
-currentListHeader.textContent = currentListHeader.textContent.split(" ")[0] + " " + availableTalents.childElementCount;
+const availableTalentsListHeader = availableTalents.parentNode.querySelector("h1");
+availableTalentsListHeader.textContent = availableTalentsListHeader.textContent.split(" ")[0] + " " + availableTalents.childElementCount;
+const lockedTalentsListHeader = lockedTalents.parentNode.querySelector("h1");
+lockedTalentsListHeader.textContent = lockedTalentsListHeader.textContent.split(" ")[0] + " " + lockedTalents.childElementCount;
 
-function saveToLocalStorage() {
-    localStorage.setItem("usedTalents", JSON.stringify(usedTalents.ch, null, "  "))
-}
 
 usedTalents.onclick = (event) => {
     const target = event.target;

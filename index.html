@@ -4,17 +4,35 @@
         <link rel="stylesheet" href="./index.css" />
     </head>
     <body class="body">
-        <div>
-            <h1>Used</h1>
-            <ul class="used-talents main-list"></ul>
-        </div>
-        <div>
-            <h1>Preferred</h1>
-            <ul class="preferred-talents main-list"></ul>
-        </div>
-        <div>
-            <h1>Available</h1>
-            <ul class="available-talents main-list"></ul>
+        <label class="rank-slider-container-label">
+            Select the current Hero rank
+            <input 
+                id="rank-slider" 
+                type="range" 
+                min="1" 
+                max="9" 
+                value="1" 
+            />
+            <output id="rank-slider-output">1</output>
+        </label>
+        <div class="talent-lists">
+            <div>
+                <h1>Used</h1>
+                <ul class="used-talents main-list"></ul>
+            </div>
+            <div>
+                <h1>Preferred</h1>
+                <ul class="preferred-talents main-list"></ul>
+            </div>
+            <div>
+                <h1>Available</h1>
+                <ul class="available-talents main-list"></ul>
+            </div>
+            <hr/>
+            <div>
+                <h1>Locked</h1>
+                <ul class="locked-talents main-list"></ul>
+            </div>
         </div>
     </body>
     <script src="./index.js" charset="UTF-8"></script>
