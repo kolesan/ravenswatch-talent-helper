@@ -13,12 +13,14 @@ function printTalentCodes(hero: Hero) {
 
             const talents = module.default as Talent[];
 
-            // const noIconTalents = talents
-            //     .filter(it => !it.iconUrl);
+            talents
+                .filter(it => !it.iconUrl)
+                .map(it => it.code)
+                .forEach(it => console.log(it));
 
-            console.log(
-                JSON.stringify(talents.map(it => it.code), null, "    ") 
-            );
+            // console.log(
+            //     JSON.stringify(talents.map(it => it.code), null, "    ") 
+            // );
 
             console.log();
             console.log("Total:", talents.length);
