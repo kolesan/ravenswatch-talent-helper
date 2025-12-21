@@ -1,19 +1,5 @@
 [
     {
-        "code": "bat_master",
-        "name": "Bat Master",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/99/Bat_Master_icon.jpg/revision/latest?cb=20251030154004",
-        "type": "starting",
-        "unlockedAtRank": 1,
-        "description": [
-            "When not in combat, DEFENSE grants STEALTH and can be held without consuming BLOOD",
-            "DEFENSE deals +40% damage"
-        ],
-        "changePerLevel": [
-            "+10% damage"
-        ]
-    },
-    {
         "code": "life_essence",
         "name": "Life Essence",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/e6/Life_Essence_icon.jpg/revision/latest?cb=20251030154028",
@@ -25,6 +11,20 @@
         ],
         "changePerLevel": [
             "+5 Health + Hero Level"
+        ]
+    },
+    {
+        "code": "bat_master",
+        "name": "Bat Master",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/99/Bat_Master_icon.jpg/revision/latest?cb=20251030154004",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "When not in combat, DEFENSE grants STEALTH and can be held without consuming BLOOD",
+            "DEFENSE deals +40% damage"
+        ],
+        "changePerLevel": [
+            "+10% damage"
         ]
     },
     {
@@ -95,6 +95,33 @@
         ]
     },
     {
+        "code": "go_for_the_throat",
+        "name": "Go For The Throat",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/bc/Go_for_the_Throat_icon.jpg/revision/latest?cb=20251111124035",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "Distance covered before SPECIAL's bite increases its Crit Chance, up to +40%"
+        ],
+        "changePerLevel": [
+            "+10% Crit Chance"
+        ]
+    },
+    {
+        "code": "victimization",
+        "name": "Victimization",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/9c/Victimization_icon.jpg/revision/latest?cb=20251111124008",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "SPECIAL applies MARKED to bitten enemies for 4.0 seconds",
+            "MARKED targets take +25% damage and spread this status to another nearby enemy when they die"
+        ],
+        "changePerLevel": [
+            "+2.0 seconds"
+        ]
+    },
+    {
         "code": "sadism",
         "name": "Sadism",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/b1/Sadism_icon.jpg/revision/latest?cb=20251111123344",
@@ -131,33 +158,6 @@
         ],
         "changePerLevel": [
             "+10% damage"
-        ]
-    },
-    {
-        "code": "go_for_the_throat",
-        "name": "Go For The Throat",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/bc/Go_for_the_Throat_icon.jpg/revision/latest?cb=20251111124035",
-        "type": "standard",
-        "unlockedAtRank": 1,
-        "description": [
-            "Distance covered before SPECIAL's bite increases its Crit Chance, up to +40%"
-        ],
-        "changePerLevel": [
-            "+10% Crit Chance"
-        ]
-    },
-    {
-        "code": "victimization",
-        "name": "Victimization",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/9c/Victimization_icon.jpg/revision/latest?cb=20251111124008",
-        "type": "standard",
-        "unlockedAtRank": 1,
-        "description": [
-            "SPECIAL applies MARKED to bitten enemies for 4.0 seconds",
-            "MARKED targets take +25% damage and spread this status to another nearby enemy when they die"
-        ],
-        "changePerLevel": [
-            "+2.0 seconds"
         ]
     },
     {
@@ -201,19 +201,6 @@
         ]
     },
     {
-        "code": "flesh_rip",
-        "name": "Flesh Rip",
-        "iconUrl": null,
-        "type": "standard",
-        "unlockedAtRank": 4,
-        "description": [
-            "POWER has +40% Crit Chance on enemies affected by BLEED"
-        ],
-        "changePerLevel": [
-            "+10% Crit Chance"
-        ]
-    },
-    {
         "code": "onslaught",
         "name": "Onslaught",
         "iconUrl": null,
@@ -224,6 +211,19 @@
         ],
         "changePerLevel": [
             "+200% ATTACK damage"
+        ]
+    },
+    {
+        "code": "flesh_rip",
+        "name": "Flesh Rip",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 4,
+        "description": [
+            "POWER has +40% Crit Chance on enemies affected by BLEED"
+        ],
+        "changePerLevel": [
+            "+10% Crit Chance"
         ]
     },
     {
@@ -310,19 +310,6 @@
         ]
     },
     {
-        "code": "heartbreak",
-        "name": "Heartbreak",
-        "iconUrl": null,
-        "type": "final",
-        "unlockedAtRank": 9,
-        "description": [
-            "Add a fourth move to ATTACK combo, impaling enemies in front, dealing 40% ULTIMATE damage"
-        ],
-        "changePerLevel": [
-            "+10% ULTIMATE damage"
-        ]
-    },
-    {
         "code": "mistress_of_pain",
         "name": "Mistress of Pain",
         "iconUrl": null,
@@ -333,6 +320,19 @@
         ],
         "changePerLevel": [
             "+2 ATTACKS transformed"
+        ]
+    },
+    {
+        "code": "heartbreak",
+        "name": "Heartbreak",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Add a fourth move to ATTACK combo, impaling enemies in front, dealing 40% ULTIMATE damage"
+        ],
+        "changePerLevel": [
+            "+10% ULTIMATE damage"
         ]
     },
     {

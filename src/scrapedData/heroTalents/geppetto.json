@@ -1,5 +1,19 @@
 [
     {
+        "code": "dummyball",
+        "name": "Dummyball",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/f/f3/Dummyball_icon.jpg/revision/latest?cb=20251029104402",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "SPECIAL creates a DUMMY when it explodes and deals 155% damage",
+            "Has no effect if the max number of DUMMIES are already active"
+        ],
+        "changePerLevel": [
+            "+15% damage"
+        ]
+    },
+    {
         "code": "rocket_science",
         "name": "Rocket Science",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/c/c4/Rocket_Science_icon.jpg/revision/latest?cb=20251029104341",
@@ -12,20 +26,6 @@
         "changePerLevel": [
             "+8 damage + Hero Level + DMG",
             "Epic & Legendary: +5% attack rate"
-        ]
-    },
-    {
-        "code": "dummyball",
-        "name": "Dummyball",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/f/f3/Dummyball_icon.jpg/revision/latest?cb=20251029104402",
-        "type": "starting",
-        "unlockedAtRank": 1,
-        "description": [
-            "SPECIAL creates a DUMMY when it explodes and deals 155% damage",
-            "Has no effect if the max number of DUMMIES are already active"
-        ],
-        "changePerLevel": [
-            "+15% damage"
         ]
     },
     {
@@ -96,19 +96,6 @@
         ]
     },
     {
-        "code": "forked_lightning",
-        "name": "Forked Lightning",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/6/6f/Forked_Lightning_icon.jpg/revision/latest?cb=20251111091751",
-        "type": "standard",
-        "unlockedAtRank": 1,
-        "description": [
-            "DEFENSE send bolts of lightning out towards DUMMIES, each one dealing 40 damage"
-        ],
-        "changePerLevel": [
-            "+10 damage + Hero Level + DMG"
-        ]
-    },
-    {
         "code": "large_family",
         "name": "Large Family",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/d/d5/Large_Family_icon.jpg/revision/latest?cb=20251111092253",
@@ -120,6 +107,19 @@
         ],
         "changePerLevel": [
             "+5% reduced cooldown"
+        ]
+    },
+    {
+        "code": "forked_lightning",
+        "name": "Forked Lightning",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/6/6f/Forked_Lightning_icon.jpg/revision/latest?cb=20251111091751",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "DEFENSE send bolts of lightning out towards DUMMIES, each one dealing 40 damage"
+        ],
+        "changePerLevel": [
+            "+10 damage + Hero Level + DMG"
         ]
     },
     {
@@ -175,19 +175,6 @@
         ]
     },
     {
-        "code": "fireworks",
-        "name": "Fireworks",
-        "iconUrl": null,
-        "type": "standard",
-        "unlockedAtRank": 3,
-        "description": [
-            "Each time a DUMMY regains 30% of its Maximum Health, it shoots a homing missile that deals 15 damage to a nearby enemy"
-        ],
-        "changePerLevel": [
-            "-5% of its Maximum Health threshold"
-        ]
-    },
-    {
         "code": "clockwork_medicine",
         "name": "Clockwork Medicine",
         "iconUrl": null,
@@ -201,16 +188,16 @@
         ]
     },
     {
-        "code": "family_meeting",
-        "name": "Family Meeting",
+        "code": "fireworks",
+        "name": "Fireworks",
         "iconUrl": null,
         "type": "standard",
-        "unlockedAtRank": 4,
+        "unlockedAtRank": 3,
         "description": [
-            "When three or more DUMMIES are active, Geppetto and DUMMIES gain +20% ATTACK SPEED"
+            "Each time a DUMMY regains 30% of its Maximum Health, it shoots a homing missile that deals 15 damage to a nearby enemy"
         ],
         "changePerLevel": [
-            "+5% ATTACK SPEED"
+            "-5% of its Maximum Health threshold"
         ]
     },
     {
@@ -227,6 +214,19 @@
         ]
     },
     {
+        "code": "family_meeting",
+        "name": "Family Meeting",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 4,
+        "description": [
+            "When three or more DUMMIES are active, Geppetto and DUMMIES gain +20% ATTACK SPEED"
+        ],
+        "changePerLevel": [
+            "+5% ATTACK SPEED"
+        ]
+    },
+    {
         "code": "vacuum_capsule",
         "name": "Vacuum Capsule",
         "iconUrl": null,
@@ -237,19 +237,6 @@
         ],
         "changePerLevel": [
             "+10% of POWER damage"
-        ]
-    },
-    {
-        "code": "sharp_noses",
-        "name": "Sharp Noses",
-        "iconUrl": null,
-        "type": "standard",
-        "unlockedAtRank": 7,
-        "description": [
-            "DUMMIES have a 50% chance of attacking with their nose, dealing 160% damage on all enemies they hit"
-        ],
-        "changePerLevel": [
-            "+40% damage"
         ]
     },
     {
@@ -264,6 +251,19 @@
         ],
         "changePerLevel": [
             "+10% damage"
+        ]
+    },
+    {
+        "code": "sharp_noses",
+        "name": "Sharp Noses",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 7,
+        "description": [
+            "DUMMIES have a 50% chance of attacking with their nose, dealing 160% damage on all enemies they hit"
+        ],
+        "changePerLevel": [
+            "+40% damage"
         ]
     },
     {
@@ -307,19 +307,6 @@
         ]
     },
     {
-        "code": "master_puppet",
-        "name": "Master Puppet",
-        "iconUrl": null,
-        "type": "final",
-        "unlockedAtRank": 9,
-        "description": [
-            "When the Meca-Puppet is built, it consumes any DUMMY built around to gain 20% max health and deal 10% more damage per DUMMY consumed"
-        ],
-        "changePerLevel": [
-            "+5% max health and +2% more damage"
-        ]
-    },
-    {
         "code": "high_voltage",
         "name": "High Voltage",
         "iconUrl": null,
@@ -330,6 +317,19 @@
         ],
         "changePerLevel": [
             "+0.5 second(s)"
+        ]
+    },
+    {
+        "code": "master_puppet",
+        "name": "Master Puppet",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "When the Meca-Puppet is built, it consumes any DUMMY built around to gain 20% max health and deal 10% more damage per DUMMY consumed"
+        ],
+        "changePerLevel": [
+            "+5% max health and +2% more damage"
         ]
     },
     {

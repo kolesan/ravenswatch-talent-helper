@@ -1,5 +1,19 @@
 [
     {
+        "code": "kiss_the_bride",
+        "name": "Kiss The Bride",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/b1/Kiss_the_Bride_icon.jpg/revision/latest?cb=20251030155601",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "Quest (x20): Hitting at least one enemy with SPECIAL grants +0.5 Crit Chance",
+            "Reward: Any enemy hit by SPECIAL has a 40% chance to grant Romeo 2 Dream Shard(s)"
+        ],
+        "changePerLevel": [
+            "+10% chance"
+        ]
+    },
+    {
         "code": "panache",
         "name": "Panache",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/6/68/Panache_icon.jpg/revision/latest?cb=20251030154908",
@@ -12,20 +26,6 @@
         ],
         "changePerLevel": [
             "+1% ATTACK SPEED"
-        ]
-    },
-    {
-        "code": "kiss_the_bride",
-        "name": "Kiss The Bride",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/b1/Kiss_the_Bride_icon.jpg/revision/latest?cb=20251030155601",
-        "type": "starting",
-        "unlockedAtRank": 1,
-        "description": [
-            "Quest (x20): Hitting at least one enemy with SPECIAL grants +0.5 Crit Chance",
-            "Reward: Any enemy hit by SPECIAL has a 40% chance to grant Romeo 2 Dream Shard(s)"
-        ],
-        "changePerLevel": [
-            "+10% chance"
         ]
     },
     {
@@ -84,19 +84,6 @@
         ]
     },
     {
-        "code": "relentless_assaults",
-        "name": "Relentless Assaults",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/c/c1/Relentless_Assaults_icon.jpg/revision/latest?cb=20251120094425",
-        "type": "standard",
-        "unlockedAtRank": 1,
-        "description": [
-            "ATTACK used right after POWER triggers DEFENSE's Riposte launching a flurry of attacks, dealing up to 64 damage"
-        ],
-        "changePerLevel": [
-            "+16 damage + Hero Level + DMG"
-        ]
-    },
-    {
         "code": "surge_of_bravery",
         "name": "Surge of Bravery",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/6/64/Surge_of_bravery_icon.jpg/revision/latest?cb=20251120095254",
@@ -107,6 +94,19 @@
         ],
         "changePerLevel": [
             "+2 ATTACKS"
+        ]
+    },
+    {
+        "code": "relentless_assaults",
+        "name": "Relentless Assaults",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/c/c1/Relentless_Assaults_icon.jpg/revision/latest?cb=20251120094425",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "ATTACK used right after POWER triggers DEFENSE's Riposte launching a flurry of attacks, dealing up to 64 damage"
+        ],
+        "changePerLevel": [
+            "+16 damage + Hero Level + DMG"
         ]
     },
     {
@@ -311,19 +311,6 @@
         ]
     },
     {
-        "code": "explosive_performance",
-        "name": "Explosive Performance",
-        "iconUrl": null,
-        "type": "final",
-        "unlockedAtRank": 9,
-        "description": [
-            "During ULTIMATE's dance, launch 24 firework rockets all around, exploding on impact and dealing 17 damage each"
-        ],
-        "changePerLevel": [
-            "+6 firework rockets"
-        ]
-    },
-    {
         "code": "funeral_bouquet",
         "name": "Funeral Bouquet",
         "iconUrl": null,
@@ -335,6 +322,19 @@
         "changePerLevel": [
             "Rare: +0 damage",
             "Epic & Legendary: +1 damage"
+        ]
+    },
+    {
+        "code": "explosive_performance",
+        "name": "Explosive Performance",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "During ULTIMATE's dance, launch 24 firework rockets all around, exploding on impact and dealing 17 damage each"
+        ],
+        "changePerLevel": [
+            "+6 firework rockets"
         ]
     },
     {

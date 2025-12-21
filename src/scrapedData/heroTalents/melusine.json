@@ -1,5 +1,18 @@
 [
     {
+        "code": "spring_water",
+        "name": "Spring Water",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/7/7e/Spring_Water_icon.jpg/revision/latest?cb=20251028125305",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "Each wave from SPECIAL that hits an enemy restores 2 Health to all Heroes within the wave"
+        ],
+        "changePerLevel": [
+            "+0.5 Health + Hero Level"
+        ]
+    },
+    {
         "code": "deep_beat",
         "name": "Deep Beat",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/3/39/Deep_Beat_icon.jpg/revision/latest?cb=20251028125408",
@@ -11,19 +24,6 @@
         ],
         "changePerLevel": [
             "+20% of ATTACK's damage"
-        ]
-    },
-    {
-        "code": "spring_water",
-        "name": "Spring Water",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/7/7e/Spring_Water_icon.jpg/revision/latest?cb=20251028125305",
-        "type": "starting",
-        "unlockedAtRank": 1,
-        "description": [
-            "Each wave from SPECIAL that hits an enemy restores 2 Health to all Heroes within the wave"
-        ],
-        "changePerLevel": [
-            "+0.5 Health + Hero Level"
         ]
     },
     {
@@ -68,6 +68,19 @@
         ]
     },
     {
+        "code": "aftershock",
+        "name": "Aftershock",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/1/1e/Aftershock_icon.jpg/revision/latest?cb=20251107214507",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "POWER leaves a water core at the casting location that triggers POWER again after 1.5 seconds for 40% of its damage"
+        ],
+        "changePerLevel": [
+            "+10% damage"
+        ]
+    },
+    {
         "code": "protective_flow",
         "name": "Protective Flow",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/0/0d/Protective_Flow_icon.jpg/revision/latest?cb=20251107213602",
@@ -95,29 +108,16 @@
         ]
     },
     {
-        "code": "bewitching_song",
-        "name": "Bewitching Song",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/88/Bewitching_Song_icon.jpg/revision/latest?cb=20251107214451",
+        "code": "freezing_splash",
+        "name": "Freezing Splash",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/a1/Freezing_Splash_icon.jpg/revision/latest?cb=20251107213804",
         "type": "standard",
         "unlockedAtRank": 1,
         "description": [
-            "When entering SING STANCE, apply WEAK to all nearby enemies for 3 seconds"
+            "POWER applies CHILLED to hit enemies and gains +15% range"
         ],
         "changePerLevel": [
-            "+1 second"
-        ]
-    },
-    {
-        "code": "aftershock",
-        "name": "Aftershock",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/1/1e/Aftershock_icon.jpg/revision/latest?cb=20251107214507",
-        "type": "standard",
-        "unlockedAtRank": 1,
-        "description": [
-            "POWER leaves a water core at the casting location that triggers POWER again after 1.5 seconds for 40% of its damage"
-        ],
-        "changePerLevel": [
-            "+10% damage"
+            "+5% range"
         ]
     },
     {
@@ -134,16 +134,16 @@
         ]
     },
     {
-        "code": "freezing_splash",
-        "name": "Freezing Splash",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/a1/Freezing_Splash_icon.jpg/revision/latest?cb=20251107213804",
+        "code": "bewitching_song",
+        "name": "Bewitching Song",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/88/Bewitching_Song_icon.jpg/revision/latest?cb=20251107214451",
         "type": "standard",
         "unlockedAtRank": 1,
         "description": [
-            "POWER applies CHILLED to hit enemies and gains +15% range"
+            "When entering SING STANCE, apply WEAK to all nearby enemies for 3 seconds"
         ],
         "changePerLevel": [
-            "+5% range"
+            "+1 second"
         ]
     },
     {
@@ -239,6 +239,19 @@
         ]
     },
     {
+        "code": "final_burst",
+        "name": "Final Burst",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 7,
+        "description": [
+            "After 3 successful attacks, WISP explodes when it disappears, dealing 40 area damage"
+        ],
+        "changePerLevel": [
+            "+10 area damage + Hero Level + DMG"
+        ]
+    },
+    {
         "code": "waterlogging",
         "name": "Waterlogging",
         "iconUrl": null,
@@ -250,19 +263,6 @@
         ],
         "changePerLevel": [
             "+5% damage increase"
-        ]
-    },
-    {
-        "code": "final_burst",
-        "name": "Final Burst",
-        "iconUrl": null,
-        "type": "standard",
-        "unlockedAtRank": 7,
-        "description": [
-            "After 3 successful attacks, WISP explodes when it disappears, dealing 40 area damage"
-        ],
-        "changePerLevel": [
-            "+10 area damage + Hero Level + DMG"
         ]
     },
     {
@@ -305,19 +305,6 @@
         ]
     },
     {
-        "code": "healing_blast",
-        "name": "Healing Blast",
-        "iconUrl": null,
-        "type": "final",
-        "unlockedAtRank": 9,
-        "description": [
-            "ULTIMATE explosion restores 60 health to all Heroes around and grants them +5 REGENERATION"
-        ],
-        "changePerLevel": [
-            "+15 health + Hero Level"
-        ]
-    },
-    {
         "code": "crescendo",
         "name": "Crescendo",
         "iconUrl": null,
@@ -328,6 +315,19 @@
         ],
         "changePerLevel": [
             "+1 additional WISP"
+        ]
+    },
+    {
+        "code": "healing_blast",
+        "name": "Healing Blast",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "ULTIMATE explosion restores 60 health to all Heroes around and grants them +5 REGENERATION"
+        ],
+        "changePerLevel": [
+            "+15 health + Hero Level"
         ]
     },
     {

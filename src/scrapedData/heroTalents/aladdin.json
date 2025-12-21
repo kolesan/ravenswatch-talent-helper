@@ -1,19 +1,5 @@
 [
     {
-        "code": "aerial_catch",
-        "name": "Aerial Catch",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/85/Aerial_Catch_icon.jpg/revision/latest?cb=20251028121552",
-        "type": "starting",
-        "unlockedAtRank": 1,
-        "description": [
-            "Quest (x15): After they hit an enemy, retrieving SPECIAL's blades during DEFENSE grants +1 ARMOR",
-            "Complete: Doing it again grants 12 SHIELD to all nearby Heroes for 6 seconds"
-        ],
-        "changePerLevel": [
-            "+3 SHIELD + Hero Level"
-        ]
-    },
-    {
         "code": "jinniya's_gift",
         "name": "Jinniya's Gift",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/7/7f/Jinniya%27s_Gift_icon.jpg/revision/latest?cb=20251028121615",
@@ -25,6 +11,20 @@
         ],
         "changePerLevel": [
             "+10% chance"
+        ]
+    },
+    {
+        "code": "aerial_catch",
+        "name": "Aerial Catch",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/85/Aerial_Catch_icon.jpg/revision/latest?cb=20251028121552",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "Quest (x15): After they hit an enemy, retrieving SPECIAL's blades during DEFENSE grants +1 ARMOR",
+            "Complete: Doing it again grants 12 SHIELD to all nearby Heroes for 6 seconds"
+        ],
+        "changePerLevel": [
+            "+3 SHIELD + Hero Level"
         ]
     },
     {
@@ -53,6 +53,19 @@
         ],
         "changePerLevel": [
             "+2 seconds"
+        ]
+    },
+    {
+        "code": "jinn's_fury",
+        "name": "Jinn's Fury",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/9c/Jinn_Fury_icon.jpg/revision/latest?cb=20251107090211",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "POWER strikes 3 times, each one dealing 40% damage"
+        ],
+        "changePerLevel": [
+            "+5% damage"
         ]
     },
     {
@@ -96,16 +109,17 @@
         ]
     },
     {
-        "code": "jinn's_fury",
-        "name": "Jinn's Fury",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/9c/Jinn_Fury_icon.jpg/revision/latest?cb=20251107090211",
+        "code": "dancing_blades",
+        "name": "Dancing Blades",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/83/Dancing_Blades_icon.jpg/revision/latest?cb=20251107090250",
         "type": "standard",
         "unlockedAtRank": 1,
         "description": [
-            "POWER strikes 3 times, each one dealing 40% damage"
+            "Spin duration of SPECIAL's blades is increased by 75%",
+            "Blades can be recalled sooner by triggering SPECIAL again"
         ],
         "changePerLevel": [
-            "+5% damage"
+            "+25% increased spin duration"
         ]
     },
     {
@@ -134,20 +148,6 @@
         "changePerLevel": [
             "Rare: -0.50 seconds",
             "Epic and Legendary: -0.25 seconds"
-        ]
-    },
-    {
-        "code": "dancing_blades",
-        "name": "Dancing Blades",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/83/Dancing_Blades_icon.jpg/revision/latest?cb=20251107090250",
-        "type": "standard",
-        "unlockedAtRank": 1,
-        "description": [
-            "Spin duration of SPECIAL's blades is increased by 75%",
-            "Blades can be recalled sooner by triggering SPECIAL again"
-        ],
-        "changePerLevel": [
-            "+25% increased spin duration"
         ]
     },
     {
@@ -243,19 +243,6 @@
         ]
     },
     {
-        "code": "dream_scimitars",
-        "name": "Dream Scimitars",
-        "iconUrl": null,
-        "type": "standard",
-        "unlockedAtRank": 7,
-        "description": [
-            "While ENCHANTMENT is active on blades, ATTACK has a 40% chance of earning Aladdin a Dream Shard upon enemy hit"
-        ],
-        "changePerLevel": [
-            "+10% chance"
-        ]
-    },
-    {
         "code": "sand_vortex",
         "name": "Sand Vortex",
         "iconUrl": null,
@@ -270,16 +257,16 @@
         ]
     },
     {
-        "code": "master_thief",
-        "name": "Master Thief",
+        "code": "dream_scimitars",
+        "name": "Dream Scimitars",
         "iconUrl": null,
         "type": "standard",
-        "unlockedAtRank": 8,
+        "unlockedAtRank": 7,
         "description": [
-            "Whenever you choose a Common, Rare, or Epic Magical Object, you have a 40%/20%/10% chance to get another copy of it"
+            "While ENCHANTMENT is active on blades, ATTACK has a 40% chance of earning Aladdin a Dream Shard upon enemy hit"
         ],
         "changePerLevel": [
-            "+10%/5%/2% chance"
+            "+10% chance"
         ]
     },
     {
@@ -294,6 +281,19 @@
         ],
         "changePerLevel": [
             "+5 maximum ENCHANTMENT points"
+        ]
+    },
+    {
+        "code": "master_thief",
+        "name": "Master Thief",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 8,
+        "description": [
+            "Whenever you choose a Common, Rare, or Epic Magical Object, you have a 40%/20%/10% chance to get another copy of it"
+        ],
+        "changePerLevel": [
+            "+10%/5%/2% chance"
         ]
     },
     {
@@ -315,20 +315,6 @@
         ]
     },
     {
-        "code": "infinite_wishes",
-        "name": "Infinite Wishes",
-        "iconUrl": null,
-        "type": "final",
-        "unlockedAtRank": 9,
-        "description": [
-            "Gain +3 TRAIT charges",
-            "Dream Shards cost for ULTIMATE is reduced by 20%"
-        ],
-        "changePerLevel": [
-            "+10% Dream Shards cost"
-        ]
-    },
-    {
         "code": "dream_stride",
         "name": "Dream Stride",
         "iconUrl": null,
@@ -340,6 +326,20 @@
         ],
         "changePerLevel": [
             "+2 Dream Shards"
+        ]
+    },
+    {
+        "code": "infinite_wishes",
+        "name": "Infinite Wishes",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Gain +3 TRAIT charges",
+            "Dream Shards cost for ULTIMATE is reduced by 20%"
+        ],
+        "changePerLevel": [
+            "+10% Dream Shards cost"
         ]
     },
     {

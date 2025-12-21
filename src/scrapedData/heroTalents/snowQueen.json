@@ -311,19 +311,6 @@
         ]
     },
     {
-        "code": "ice_beam",
-        "name": "Ice Beam",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/40/Ice_Beam.png/revision/latest?cb=20250610153216",
-        "type": "final",
-        "unlockedAtRank": 9,
-        "description": [
-            "ULTIMATE now channels an ice beam, dealing 160% damage and inflicting CHILLED to the first enemy hit"
-        ],
-        "changePerLevel": [
-            "+40% damage"
-        ]
-    },
-    {
         "code": "rending_storm",
         "name": "Rending Storm",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/0/0e/Rending_Storm.png/revision/latest?cb=20250610153232",
@@ -334,6 +321,19 @@
         ],
         "changePerLevel": [
             "+5 damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "ice_beam",
+        "name": "Ice Beam",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/40/Ice_Beam.png/revision/latest?cb=20250610153216",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "ULTIMATE now channels an ice beam, dealing 160% damage and inflicting CHILLED to the first enemy hit"
+        ],
+        "changePerLevel": [
+            "+40% damage"
         ]
     },
     {

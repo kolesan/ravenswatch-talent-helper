@@ -114,6 +114,19 @@
         ]
     },
     {
+        "code": "ringing_beads",
+        "name": "Ringing Beads",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/7/71/Ringing_Beads_icon.jpg/revision/latest?cb=20251111105104",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "While SPECIAL is active, ATTACK makes beads ring, dealing 30% ATTACK damage all around"
+        ],
+        "changePerLevel": [
+            "+5% of ATTACK damage"
+        ]
+    },
+    {
         "code": "resonance",
         "name": "Resonance",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/e8/Resonance_icon.jpg/revision/latest?cb=20251111105027",
@@ -125,19 +138,6 @@
         ],
         "changePerLevel": [
             "+5% damage"
-        ]
-    },
-    {
-        "code": "airbender",
-        "name": "Airbender",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/ea/Airbender_icon.jpg/revision/latest?cb=20251111103540",
-        "type": "standard",
-        "unlockedAtRank": 1,
-        "description": [
-            "POWER can strike up to to 1 more time(s)"
-        ],
-        "changePerLevel": [
-            "+1 more time(s)"
         ]
     },
     {
@@ -154,16 +154,16 @@
         ]
     },
     {
-        "code": "ringing_beads",
-        "name": "Ringing Beads",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/7/71/Ringing_Beads_icon.jpg/revision/latest?cb=20251111105104",
+        "code": "airbender",
+        "name": "Airbender",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/ea/Airbender_icon.jpg/revision/latest?cb=20251111103540",
         "type": "standard",
         "unlockedAtRank": 1,
         "description": [
-            "While SPECIAL is active, ATTACK makes beads ring, dealing 30% ATTACK damage all around"
+            "POWER can strike up to to 1 more time(s)"
         ],
         "changePerLevel": [
-            "+5% of ATTACK damage"
+            "+1 more time(s)"
         ]
     },
     {
@@ -180,19 +180,6 @@
         ]
     },
     {
-        "code": "mind_fortress",
-        "name": "Mind Fortress",
-        "iconUrl": null,
-        "type": "standard",
-        "unlockedAtRank": 3,
-        "description": [
-            "SHIELD and STRENGTH effects triggered upon TRAIT activation last 60% longer"
-        ],
-        "changePerLevel": [
-            "lasts +15% longer"
-        ]
-    },
-    {
         "code": "one-inch_punch",
         "name": "One-Inch Punch",
         "iconUrl": null,
@@ -203,6 +190,19 @@
         ],
         "changePerLevel": [
             "+150% damage"
+        ]
+    },
+    {
+        "code": "mind_fortress",
+        "name": "Mind Fortress",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 3,
+        "description": [
+            "SHIELD and STRENGTH effects triggered upon TRAIT activation last 60% longer"
+        ],
+        "changePerLevel": [
+            "lasts +15% longer"
         ]
     },
     {
@@ -315,19 +315,6 @@
         ]
     },
     {
-        "code": "mantra_of_replication",
-        "name": "Mantra of Replication",
-        "iconUrl": null,
-        "type": "final",
-        "unlockedAtRank": 9,
-        "description": [
-            "Whenever SPECIAL is cast, summon 3 Monkey Clones that fight for 8 seconds"
-        ],
-        "changePerLevel": [
-            "+2 seconds"
-        ]
-    },
-    {
         "code": "perfect_copy",
         "name": "Perfect Copy",
         "iconUrl": null,
@@ -339,6 +326,19 @@
         ],
         "changePerLevel": [
             "+1 more second(s)"
+        ]
+    },
+    {
+        "code": "mantra_of_replication",
+        "name": "Mantra of Replication",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Whenever SPECIAL is cast, summon 3 Monkey Clones that fight for 8 seconds"
+        ],
+        "changePerLevel": [
+            "+2 seconds"
         ]
     },
     {

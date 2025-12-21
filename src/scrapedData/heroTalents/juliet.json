@@ -1,18 +1,5 @@
 [
     {
-        "code": "volcanic_shots",
-        "name": "Volcanic Shots",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/6/60/Volcanic_Shot_icon.jpg/revision/latest?cb=20251030160802",
-        "type": "starting",
-        "unlockedAtRank": 1,
-        "description": [
-            "ATTACK triggered right after DASH shoots 3 times in a row, consuming only one AMMO"
-        ],
-        "changePerLevel": [
-            "+1 more time(s)"
-        ]
-    },
-    {
         "code": "kiss_the_groom",
         "name": "Kiss The Groom",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/4c/Kiss_the_Groom_icon.jpg/revision/latest?cb=20251030160644",
@@ -24,6 +11,19 @@
         ],
         "changePerLevel": [
             "+10% chance"
+        ]
+    },
+    {
+        "code": "volcanic_shots",
+        "name": "Volcanic Shots",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/6/60/Volcanic_Shot_icon.jpg/revision/latest?cb=20251030160802",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "ATTACK triggered right after DASH shoots 3 times in a row, consuming only one AMMO"
+        ],
+        "changePerLevel": [
+            "+1 more time(s)"
         ]
     },
     {
@@ -67,6 +67,19 @@
         ]
     },
     {
+        "code": "shadow_round",
+        "name": "Shadow Round",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/2/23/Shadow_Round_icon.jpg/revision/latest?cb=20251120142845",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "PERFECT SHOT applies VULNERABLE for 2 seconds to hit enemies"
+        ],
+        "changePerLevel": [
+            "+0.5 second(s)"
+        ]
+    },
+    {
         "code": "hot_shots",
         "name": "Hot Shots",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/1/1a/Hot_Shots_icon.jpg/revision/latest?cb=20251120141643",
@@ -80,16 +93,17 @@
         ]
     },
     {
-        "code": "shadow_round",
-        "name": "Shadow Round",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/2/23/Shadow_Round_icon.jpg/revision/latest?cb=20251120142845",
+        "code": "large_chambers",
+        "name": "Large Chambers",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/2/26/Large_Chambers_icon.jpg/revision/latest?cb=20251120142904",
         "type": "standard",
         "unlockedAtRank": 1,
         "description": [
-            "PERFECT SHOT applies VULNERABLE for 2 seconds to hit enemies"
+            "Maximum amount of AMMO is increased by 2",
+            "ATTACK and POWER damage are increased by 3% for each missing AMMO"
         ],
         "changePerLevel": [
-            "+0.5 second(s)"
+            "+0.5% damage increase"
         ]
     },
     {
@@ -132,20 +146,6 @@
         ]
     },
     {
-        "code": "large_chambers",
-        "name": "Large Chambers",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/2/26/Large_Chambers_icon.jpg/revision/latest?cb=20251120142904",
-        "type": "standard",
-        "unlockedAtRank": 1,
-        "description": [
-            "Maximum amount of AMMO is increased by 2",
-            "ATTACK and POWER damage are increased by 3% for each missing AMMO"
-        ],
-        "changePerLevel": [
-            "+0.5% damage increase"
-        ]
-    },
-    {
         "code": "overflowing_passion",
         "name": "Overflowing Passion",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/4c/Overflowing_Passion_icon.jpg/revision/latest?cb=20251120143603",
@@ -173,6 +173,19 @@
         ]
     },
     {
+        "code": "love_sparks",
+        "name": "Love Sparks",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 3,
+        "description": [
+            "SPECIAL fires 4 homing projectiles towards nearby enemies, each one dealing 18 damage"
+        ],
+        "changePerLevel": [
+            "+1 homing projectile(s)"
+        ]
+    },
+    {
         "code": "swirling_rose*",
         "name": "Swirling Rose*",
         "iconUrl": null,
@@ -184,19 +197,6 @@
         "changePerLevel": [
             "Rare & Legendary: +15% of ATTACK's damage",
             "Epic: +25% of ATTACK's damage"
-        ]
-    },
-    {
-        "code": "love_sparks",
-        "name": "Love Sparks",
-        "iconUrl": null,
-        "type": "standard",
-        "unlockedAtRank": 3,
-        "description": [
-            "SPECIAL fires 4 homing projectiles towards nearby enemies, each one dealing 18 damage"
-        ],
-        "changePerLevel": [
-            "+1 homing projectile(s)"
         ]
     },
     {
@@ -305,6 +305,19 @@
         ]
     },
     {
+        "code": "plague_flask",
+        "name": "Plague Flask",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "ULTIMATE's explosion applies MARKED to hit enemies for 4 second(s)"
+        ],
+        "changePerLevel": [
+            "+1 second(s)"
+        ]
+    },
+    {
         "code": "flashy_ending",
         "name": "Flashy Ending",
         "iconUrl": null,
@@ -318,19 +331,6 @@
         "changePerLevel": [
             "Rare & Legendary: +67min to +67max area damage + Hero Level + DMG",
             "Epic: +68min to +68max + Hero Level + DMG"
-        ]
-    },
-    {
-        "code": "plague_flask",
-        "name": "Plague Flask",
-        "iconUrl": null,
-        "type": "final",
-        "unlockedAtRank": 1,
-        "description": [
-            "ULTIMATE's explosion applies MARKED to hit enemies for 4 second(s)"
-        ],
-        "changePerLevel": [
-            "+1 second(s)"
         ]
     },
     {
