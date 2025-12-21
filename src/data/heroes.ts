@@ -17,7 +17,7 @@ type HeroName =
     | "Romeo"
     | "Juliet"; 
 
-type HeroCode = 
+export type HeroCode = 
       "scarlet"
     | "piper"
     | "beowulf"

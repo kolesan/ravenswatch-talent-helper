@@ -19,7 +19,7 @@ export const beowulfOrder = [
     "fiery_slash",
     "secondary_tremor",
     "battle_cry",
-    "furious_blow",
+    "furious_blows",
     "runes_of_war",
     "immolation",
     "volcanic_rage",

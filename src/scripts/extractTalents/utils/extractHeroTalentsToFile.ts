@@ -7,6 +7,7 @@ import { heroTalentsFileName } from "../../utils/heroTalentsFileName";
 import { heroTalentTableFileName } from "../../utils/heroTalentTableFileName";
 
 import { applyIngameOrder } from "./applyIngameOrder/applyIngameOrder";
+import { applyManualFixes } from "./applyIngameOrder/applyManualFixes/applyManualFixes";
 import { chooseParseer } from "./chooseParseer";
 import { fixApostrophes } from "./fixApostrophes";
 
@@ -30,10 +31,11 @@ export function extractHeroTalentsToFile(hero: Hero) {
     const talents = rowsToParse
         .map(chooseParseer(hero))
         .map(fixApostrophes)
+        .map(applyManualFixes(hero))
         .reduce(applyIngameOrder(hero), []);
 
-    console.log(rowsToParse.map(it => it.innerHTML));
-    console.log(talents);
+    // console.log(rowsToParse.map(it => it.innerHTML));
+    // console.log(talents);
 
     writeFile(heroTalentsFileName(hero), JSON.stringify(talents, null, "    "))
         .then(() => console.log(

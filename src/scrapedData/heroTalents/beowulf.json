@@ -263,8 +263,8 @@
         ]
     },
     {
-        "code": "furious_blow",
-        "name": "Furious Blow",
+        "code": "furious_blows",
+        "name": "Furious Blows",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/c/c1/Furious_blows.webp/revision/latest?cb=20250324171532",
         "type": "standard",
         "unlockedAtRank": 8,
