@@ -1,6 +1,6 @@
-import { Hero, heroes } from "../data/heroes";
+import { Hero, heroes } from "../../data/heroes";
 
-import { Talent } from "./extractTalents/types";
+import { Talent } from "../extractTalents/types";
 
 heroes.asArray.forEach(printTalentCodes);
 
