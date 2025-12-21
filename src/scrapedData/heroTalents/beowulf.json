@@ -1,18 +1,5 @@
 [
     {
-        "code": "shield_charge",
-        "name": "Shield Charge",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/0/07/Shield_charge_2.webp/revision/latest?cb=20250322172928",
-        "type": "starting",
-        "unlockedAtRank": 1,
-        "description": [
-            "DEFENSE makes Beowulf dash forward and deal +100% damage along the path"
-        ],
-        "changePerLevel": [
-            "+25% damage"
-        ]
-    },
-    {
         "code": "explosive_fire",
         "name": "Explosive Fire",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/e4/Explosive_fire.webp/revision/latest?cb=20250324163301",
@@ -23,6 +10,19 @@
         ],
         "changePerLevel": [
             "+5 damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "shield_charge",
+        "name": "Shield Charge",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/0/07/Shield_charge_2.webp/revision/latest?cb=20250322172928",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "DEFENSE makes Beowulf dash forward and deal +100% damage along the path"
+        ],
+        "changePerLevel": [
+            "+25% damage"
         ]
     },
     {
@@ -80,6 +80,19 @@
         ]
     },
     {
+        "code": "fiery_seismo",
+        "name": "Fiery Seismo",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/3/30/Fiery_sismo.webp/revision/latest?cb=20250324164806",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "Wyrm SPECIAL's finisher strikes 3 times with a growing radius for 45% damage each"
+        ],
+        "changePerLevel": [
+            "+5% damage"
+        ]
+    },
+    {
         "code": "blademaster",
         "name": "Blademaster",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/95/Blademaster.webp/revision/latest?cb=20250324164704",
@@ -104,19 +117,6 @@
         ],
         "changePerLevel": [
             "+10% damage"
-        ]
-    },
-    {
-        "code": "fiery_seismo",
-        "name": "Fiery Seismo",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/3/30/Fiery_sismo.webp/revision/latest?cb=20250324164806",
-        "type": "standard",
-        "unlockedAtRank": 1,
-        "description": [
-            "Wyrm SPECIAL's finisher strikes 3 times with a growing radius for 45% damage each"
-        ],
-        "changePerLevel": [
-            "+5% damage"
         ]
     },
     {
@@ -172,19 +172,6 @@
         ]
     },
     {
-        "code": "fire_wings",
-        "name": "Fire Wings",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/7/7e/Fire_wings.webp/revision/latest?cb=20250324165044",
-        "type": "standard",
-        "unlockedAtRank": 3,
-        "description": [
-            "Activating TRAIT deals 30 damage all around and applies IGNITE to all enemies hit"
-        ],
-        "changePerLevel": [
-            "+5 damage + Hero Level + DMG"
-        ]
-    },
-    {
         "code": "scorched_earth",
         "name": "Scorched Earth",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/44/Scorched_earth.webp/revision/latest?cb=20250324165112",
@@ -195,6 +182,19 @@
         ],
         "changePerLevel": [
             "+10 damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "fire_wings",
+        "name": "Fire Wings",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/7/7e/Fire_wings.webp/revision/latest?cb=20250324165044",
+        "type": "standard",
+        "unlockedAtRank": 3,
+        "description": [
+            "Activating TRAIT deals 30 damage all around and applies IGNITE to all enemies hit"
+        ],
+        "changePerLevel": [
+            "+5 damage + Hero Level + DMG"
         ]
     },
     {
@@ -303,19 +303,6 @@
         ]
     },
     {
-        "code": "sudden_growth",
-        "name": "Sudden Growth",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/8f/Sudden_growth.webp/revision/latest?cb=20250324171706",
-        "type": "final",
-        "unlockedAtRank": 9,
-        "description": [
-            "During ULTIMATE [Dragon Flight], the Wyrm grows and breathes fire in a wider zone, dealing +20% damage"
-        ],
-        "changePerLevel": [
-            "+5% damage"
-        ]
-    },
-    {
         "code": "volcanic_rage",
         "name": "Volcanic Rage",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/b4/Volcanic_rage.webp/revision/latest?cb=20250324171821",
@@ -326,6 +313,19 @@
         ],
         "changePerLevel": [
             "+1 fiery rock(s)"
+        ]
+    },
+    {
+        "code": "sudden_growth",
+        "name": "Sudden Growth",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/8f/Sudden_growth.webp/revision/latest?cb=20250324171706",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "During ULTIMATE [Dragon Flight], the Wyrm grows and breathes fire in a wider zone, dealing +20% damage"
+        ],
+        "changePerLevel": [
+            "+5% damage"
         ]
     },
     {

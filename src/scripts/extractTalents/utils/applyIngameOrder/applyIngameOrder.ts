@@ -1,10 +1,14 @@
 import { Hero } from "../../../../data/heroes";
 import { Talent } from "../../types";
+import { beowulfOrder } from "./consts/beowulfOrder";
+import { piperOrder } from "./consts/piperOrder";
 
-import { scarletOrder } from "./utils/scarletOrder";
+import { scarletOrder } from "./consts/scarletOrder";
 
 const orderMap: Partial<Record<Hero["code"], string[]>> = {
     scarlet: scarletOrder,
+    piper: piperOrder,
+    beowulf: beowulfOrder,
 }
 
 export function applyIngameOrder(hero: Hero) {
