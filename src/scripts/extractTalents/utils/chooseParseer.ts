@@ -1,10 +1,16 @@
-import { Hero } from "../../../data/heroes";
-import { parseBeowulfTable } from "./parseBeowulfTable/parseBeowulfTable";
+import { Hero, HeroCode } from "../../../data/heroes";
+
+import { parseSeparateIconColumnTable } from "./parseBeowulfTable/parseSeparateIconColumnTable";
 import { parseCommonTable } from "./parseCommonTable";
 
+const heroesWithSeparateIconColumnTables: HeroCode[] = [
+    "beowulf",
+    "snowQueen",
+]
+
 export function chooseParseer(hero: Hero) {
-    if (hero.name === "Beowulf") {
-        return parseBeowulfTable;
+    if (heroesWithSeparateIconColumnTables.includes(hero.code)) {
+        return parseSeparateIconColumnTable;
     }
     return parseCommonTable;
 }

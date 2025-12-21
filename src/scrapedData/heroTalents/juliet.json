@@ -1,0 +1,350 @@
+[
+    {
+        "code": "volcanic_shots",
+        "name": "Volcanic Shots",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/6/60/Volcanic_Shot_icon.jpg/revision/latest?cb=20251030160802",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "ATTACK triggered right after DASH shoots 3 times in a row, consuming only one AMMO"
+        ],
+        "changePerLevel": [
+            "+1 more time(s)"
+        ]
+    },
+    {
+        "code": "kiss_the_groom",
+        "name": "Kiss The Groom",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/4c/Kiss_the_Groom_icon.jpg/revision/latest?cb=20251030160644",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "Quest (x20): Hitting at least one enemy with SPECIAL grants +0.5 Crit Chance",
+            "Reward: Any enemy hit by SPECIAL has a 40% chance to grant Juliet 2 Dream Shard(s)"
+        ],
+        "changePerLevel": [
+            "+10% chance"
+        ]
+    },
+    {
+        "code": "guns_and_roses*",
+        "name": "Guns and Roses*",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/0/09/Guns_and_Roses_icon.jpg/revision/latest?cb=20251030160704",
+        "type": "starting",
+        "unlockedAtRank": 2,
+        "description": [
+            "Quest (x10): Hitting an enemy by exploding Romeo's Rose with PERFECT SHOT grants +1.0 DMG",
+            "Reward: Rose explosions triggered with a PERFECT SHOT gain +50% range and +20% damage"
+        ],
+        "changePerLevel": [
+            "+5% damage"
+        ]
+    },
+    {
+        "code": "wedding_gifts*",
+        "name": "Wedding Gifts*",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/1/16/Wedding_Gifts_icon.jpg/revision/latest?cb=20251030160722",
+        "type": "starting",
+        "unlockedAtRank": 5,
+        "description": [
+            "Whenever they gain a Magical Object, Romeo and Juliet have a +20%/+10%/+5% chance to gift the other the same common, rare, or epic Magical Object"
+        ],
+        "changePerLevel": [
+            "+5%/+2%/+1% chance"
+        ]
+    },
+    {
+        "code": "longshot",
+        "name": "Longshot",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/0/08/Longshot_icon.jpg/revision/latest?cb=20251120142828",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "POWER gains +50% range and deals +20% damage to enemies hit beyond half the maximum range"
+        ],
+        "changePerLevel": [
+            "+5% damage"
+        ]
+    },
+    {
+        "code": "hot_shots",
+        "name": "Hot Shots",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/1/1a/Hot_Shots_icon.jpg/revision/latest?cb=20251120141643",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "ATTACKS triggered within 2 seconds after a POWER applies IGNITE to hit enemies and deal +20% damage"
+        ],
+        "changePerLevel": [
+            "+5% damage"
+        ]
+    },
+    {
+        "code": "shadow_round",
+        "name": "Shadow Round",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/2/23/Shadow_Round_icon.jpg/revision/latest?cb=20251120142845",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "PERFECT SHOT applies VULNERABLE for 2 seconds to hit enemies"
+        ],
+        "changePerLevel": [
+            "+0.5 second(s)"
+        ]
+    },
+    {
+        "code": "defensive_reload",
+        "name": "Defensive Reload",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/2/28/Defensive_Reload_icon.jpg/revision/latest?cb=20251120141703",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "Reload 3 AMMO after DEFENSE"
+        ],
+        "changePerLevel": [
+            "+1 AMMO"
+        ]
+    },
+    {
+        "code": "bullet_ballet",
+        "name": "Bullet Ballet",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/88/Bullet_Ballet_icon.jpg/revision/latest?cb=20251120141621",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "Shots fired from DEFENSE can ricochet to nearby enemies, dealing 60% ATTACK damage"
+        ],
+        "changePerLevel": [
+            "+15% ATTACK damage"
+        ]
+    },
+    {
+        "code": "valiant_hearts",
+        "name": "Valiant Hearts",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/3/3d/Valiant_Hearts_icon.jpg/revision/latest?cb=20251120143545",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "TRAIT grants both Romeo and Juliet +20% MOVE SPEED and STRENGTH for 5 seconds"
+        ],
+        "changePerLevel": [
+            "+1.25 second(s)"
+        ]
+    },
+    {
+        "code": "large_chambers",
+        "name": "Large Chambers",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/2/26/Large_Chambers_icon.jpg/revision/latest?cb=20251120142904",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "Maximum amount of AMMO is increased by 2",
+            "ATTACK and POWER damage are increased by 3% for each missing AMMO"
+        ],
+        "changePerLevel": [
+            "+0.5% damage increase"
+        ]
+    },
+    {
+        "code": "overflowing_passion",
+        "name": "Overflowing Passion",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/4c/Overflowing_Passion_icon.jpg/revision/latest?cb=20251120143603",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "SPECIAL restores 6 Health to all Heroes around whenever it hits at least one enemy"
+        ],
+        "changePerLevel": [
+            "+1.5 Health + Hero Level"
+        ]
+    },
+    {
+        "code": "double_tap",
+        "name": "Double Tap",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/95/Double_Tap_icon.jpg/revision/latest?cb=20251120143623",
+        "type": "standard",
+        "unlockedAtRank": 2,
+        "description": [
+            "Hold POWER to trigger 2 shots in a row",
+            "The second shot deals 60% damage"
+        ],
+        "changePerLevel": [
+            "+15% damage"
+        ]
+    },
+    {
+        "code": "swirling_rose*",
+        "name": "Swirling Rose*",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 3,
+        "description": [
+            "ATTACKS hitting Romeo's Roses make them spin, dealing 60% damage of Juliet's ATTACK damage all around"
+        ],
+        "changePerLevel": [
+            "Rare & Legendary: +15% of ATTACK's damage",
+            "Epic: +25% of ATTACK's damage"
+        ]
+    },
+    {
+        "code": "love_sparks",
+        "name": "Love Sparks",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 3,
+        "description": [
+            "SPECIAL fires 4 homing projectiles towards nearby enemies, each one dealing 18 damage"
+        ],
+        "changePerLevel": [
+            "+1 homing projectile(s)"
+        ]
+    },
+    {
+        "code": "knockout",
+        "name": "Knockout",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 4,
+        "description": [
+            "When Juliet is very close to enemy, ATTACK turns into a strike using the butt of her pistol, dealing 400% damage at close range without consuming AMMO (4 seconds cooldown)"
+        ],
+        "changePerLevel": [
+            "+100% damage"
+        ]
+    },
+    {
+        "code": "comforting_presence*",
+        "name": "Comforting Presence*",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 4,
+        "description": [
+            "Crossing through a Hero using DASH grants 20 SHIELD to all Heroes around for 6 seconds"
+        ],
+        "changePerLevel": [
+            "+5 SHIELD + Hero Level"
+        ]
+    },
+    {
+        "code": "explosive_backstep",
+        "name": "Explosive Backstep",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 5,
+        "description": [
+            "While holding POWER, using ATTACK makes Juliet step back and shoot at the ground, dealing 100% of POWER's damage in a zone"
+        ],
+        "changePerLevel": [
+            "+25% of POWER's damage"
+        ]
+    },
+    {
+        "code": "blind_shots",
+        "name": "Blind Shots",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 7,
+        "description": [
+            "DEFENSE fires 3 more shot(s) than the number of AMMO remaining"
+        ],
+        "changePerLevel": [
+            "+1 more shot(s)"
+        ]
+    },
+    {
+        "code": "heartbeat",
+        "name": "Heartbeat",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 7,
+        "description": [
+            "Using TRAIT or receiving Romeo's TRAIT triggers a sonic wave dealing 100 damage all around Juliet"
+        ],
+        "changePerLevel": [
+            "+25 damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "shrapnel",
+        "name": "Shrapnel",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 8,
+        "description": [
+            "Using POWER also triggers a shrapnel burst dealing 40% damage in a cone"
+        ],
+        "changePerLevel": [
+            "+10% damage"
+        ]
+    },
+    {
+        "code": "lucky_shot",
+        "name": "Lucky Shot",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 8,
+        "description": [
+            "ATTACKS have 6% chance to turn into a POWER shot"
+        ],
+        "changePerLevel": [
+            "+2% chance"
+        ]
+    },
+    {
+        "code": "passion_dance",
+        "name": "Passion Dance",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "Restore between 4 and 8 Health per second to all Heroes nearby during ULTIMATE's dance  (depending on the movement speed)",
+            "[SOLO] 6 Health per second"
+        ],
+        "changePerLevel": [
+            "+1 minimum & +2 maximum Health + Hero Level"
+        ]
+    },
+    {
+        "code": "flashy_ending",
+        "name": "Flashy Ending",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Dancing gauge can be filled up according to the synchronization of Romeo and Juliet's movements during ULTIMATE",
+            "Trigger an explosion at the end of Wild Waltz, dealing 270 to 540 area damage (based on dancing gauge level)",
+            "[SOLO] Deal 405 area damage"
+        ],
+        "changePerLevel": [
+            "Rare & Legendary: +67min to +67max area damage + Hero Level + DMG",
+            "Epic: +68min to +68max + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "plague_flask",
+        "name": "Plague Flask",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "ULTIMATE's explosion applies MARKED to hit enemies for 4 second(s)"
+        ],
+        "changePerLevel": [
+            "+1 second(s)"
+        ]
+    },
+    {
+        "code": "unstable_concoction",
+        "name": "Unstable Concoction",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Using DASH makes Juliet drop a flask of poison onto the ground, dealing 30 damage in a zone",
+            "Unstable Concoction does NOT create a lingering pool of poison"
+        ],
+        "changePerLevel": [
+            "+10 damage + Hero Level + DMG"
+        ]
+    }
+]

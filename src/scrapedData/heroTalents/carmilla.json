@@ -1,0 +1,351 @@
+[
+    {
+        "code": "bat_master",
+        "name": "Bat Master",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/99/Bat_Master_icon.jpg/revision/latest?cb=20251030154004",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "When not in combat, DEFENSE grants STEALTH and can be held without consuming BLOOD",
+            "DEFENSE deals +40% damage"
+        ],
+        "changePerLevel": [
+            "+10% damage"
+        ]
+    },
+    {
+        "code": "life_essence",
+        "name": "Life Essence",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/e6/Life_Essence_icon.jpg/revision/latest?cb=20251030154028",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "Quest (x30): Killing an enemy with SPECIAL's bite earns +1 VITALITY",
+            "Complete: Repeating this action restores 20 Health to Carmilla"
+        ],
+        "changePerLevel": [
+            "+5 Health + Hero Level"
+        ]
+    },
+    {
+        "code": "blood_rage",
+        "name": "Blood Rage",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/a5/Blood_Rage_icon.jpg/revision/latest?cb=20251030154046",
+        "type": "starting",
+        "unlockedAtRank": 2,
+        "description": [
+            "Quest (x20): Hitting an enemy with POWER held for at least 1 second earns +0.5 DMG",
+            "Complete: Repeating this action increases POWER explosion damage by +90%"
+        ],
+        "changePerLevel": [
+            "+20% POWER explosion damage"
+        ]
+    },
+    {
+        "code": "life_tap",
+        "name": "Life Tap",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/87/Life_Tap_icon.jpg/revision/latest?cb=20251030154118",
+        "type": "starting",
+        "unlockedAtRank": 5,
+        "description": [
+            "In Winged Form, activating TRAIT again consumes HEALTH equivalent to 20% of max health to recover up to 30 BLOOD points",
+            "This effect cannot be activated when health is below the required threshold and has a 5-second cooldown"
+        ],
+        "changePerLevel": [
+            "+10 BLOOD points"
+        ]
+    },
+    {
+        "code": "razor_claws",
+        "name": "Razor Claws",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/1/14/Razor_Claws_icon.jpg/revision/latest?cb=20251111123249",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "ATTACK deals +40% damage as BLEED"
+        ],
+        "changePerLevel": [
+            "+10% damage as BLEED"
+        ]
+    },
+    {
+        "code": "puncture",
+        "name": "Puncture",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/9c/Puncture_icon.jpg/revision/latest?cb=20251111123307",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "Each enemy passed through by DASH earns 8 BLOOD point(s)"
+        ],
+        "changePerLevel": [
+            "+2 BLOOD points"
+        ]
+    },
+    {
+        "code": "dispersion",
+        "name": "Dispersion",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/e8/Dispersion_icon.jpg/revision/latest?cb=20251111123327",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "After DEFENSE, bats disperse around Carmilla dealing 60 area damage as BLEED"
+        ],
+        "changePerLevel": [
+            "+15 damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "sadism",
+        "name": "Sadism",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/b1/Sadism_icon.jpg/revision/latest?cb=20251111123344",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "Critical Hits deal +40% damage on enemies affected by BLEED"
+        ],
+        "changePerLevel": [
+            "+20% damage"
+        ]
+    },
+    {
+        "code": "boiling_blood",
+        "name": "Boiling Blood",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/f/f4/Boiling_Blood_icon.jpg/revision/latest?cb=20251111123929",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "After consuming HEALTH for at least 1 second(s) to fuel an ability, gain +3 REGENERATION"
+        ],
+        "changePerLevel": [
+            "+1 REGENERATION"
+        ]
+    },
+    {
+        "code": "furious_tempest",
+        "name": "Furious Tempest",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/d/db/Furious_Tempest_icon.jpg/revision/latest?cb=20251111123949",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "Consuming BLOOD to fuel POWER gradually increases its damage up to +40% after 3.0 seconds of holding"
+        ],
+        "changePerLevel": [
+            "+10% damage"
+        ]
+    },
+    {
+        "code": "go_for_the_throat",
+        "name": "Go For The Throat",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/bc/Go_for_the_Throat_icon.jpg/revision/latest?cb=20251111124035",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "Distance covered before SPECIAL's bite increases its Crit Chance, up to +40%"
+        ],
+        "changePerLevel": [
+            "+10% Crit Chance"
+        ]
+    },
+    {
+        "code": "victimization",
+        "name": "Victimization",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/9c/Victimization_icon.jpg/revision/latest?cb=20251111124008",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "SPECIAL applies MARKED to bitten enemies for 4.0 seconds",
+            "MARKED targets take +25% damage and spread this status to another nearby enemy when they die"
+        ],
+        "changePerLevel": [
+            "+2.0 seconds"
+        ]
+    },
+    {
+        "code": "gust",
+        "name": "Gust",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/2/24/Gust_icon.jpg/revision/latest?cb=20251111124513",
+        "type": "standard",
+        "unlockedAtRank": 2,
+        "description": [
+            "TRAIT pushes back nearby enemies and deals 80 area damage"
+        ],
+        "changePerLevel": [
+            "+20 damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "aggressive_flock",
+        "name": "Aggressive Flock",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 3,
+        "description": [
+            "During DEFENSE, Carmilla casts a bat every 0.50 second(s) that seeks out nearby enemies and pierces through them dealing, 26 damage"
+        ],
+        "changePerLevel": [
+            "Rare: -0.15 second(s)",
+            "Epic & Legendary: -0.05 second(s)"
+        ]
+    },
+    {
+        "code": "blood_reserve",
+        "name": "Blood Reserve",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 3,
+        "description": [
+            "Increase maximum BLOOD reserve by 20%"
+        ],
+        "changePerLevel": [
+            "+5% maximum BLOOD reserve"
+        ]
+    },
+    {
+        "code": "flesh_rip",
+        "name": "Flesh Rip",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 4,
+        "description": [
+            "POWER has +40% Crit Chance on enemies affected by BLEED"
+        ],
+        "changePerLevel": [
+            "+10% Crit Chance"
+        ]
+    },
+    {
+        "code": "onslaught",
+        "name": "Onslaught",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 4,
+        "description": [
+            "After a SPECIAL, the next ATTACK makes Carmilla rush forward, dealing 800% ATTACK damage to enemies passed through"
+        ],
+        "changePerLevel": [
+            "+200% ATTACK damage"
+        ]
+    },
+    {
+        "code": "seductive_provocation",
+        "name": "Seductive Provocation",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 5,
+        "description": [
+            "In combat, standing still makes Carmilla seduce up to 2 non-boss enemies in front of her, applying WEAKENED and VULNERABLE for 6 second(s)",
+            "Has a 6-second cooldown"
+        ],
+        "changePerLevel": [
+            "+1 non-boss enemy"
+        ]
+    },
+    {
+        "code": "cruel_strike",
+        "name": "Cruel Strike",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 7,
+        "description": [
+            "After DASH or DEFENSE, the next ATTACK starts with a combo finishing move, dealing +100% damage"
+        ],
+        "changePerLevel": [
+            "+25% damage"
+        ]
+    },
+    {
+        "code": "angel_and_demon",
+        "name": "Angel and Demon",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 7,
+        "description": [
+            "When activating TRAIT:",
+            "DAY: restore 20 health to all nearby heroes",
+            "NIGHT: Grants STRENGTH to all nearby heroes for 4.0 seconds"
+        ],
+        "changePerLevel": [
+            "+5 Health + Hero Level",
+            "+1.0 second(s) of STRENGTH"
+        ]
+    },
+    {
+        "code": "wild_heart",
+        "name": "Wild Heart",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 8,
+        "description": [
+            "POWER's orb move speed is increased by 100%",
+            "POWER explosion gains +20% range"
+        ],
+        "changePerLevel": [
+            "+5% range"
+        ]
+    },
+    {
+        "code": "injection",
+        "name": "Injection",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 8,
+        "description": [
+            "SPECIAL implants a blood seed into the bitten enemy that shortly after triggers an explosion of POWER, dealing 80% area damage"
+        ],
+        "changePerLevel": [
+            "+20% area damage"
+        ]
+    },
+    {
+        "code": "torture_of_the_pale",
+        "name": "Torture of the Pale",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "At the end of their course, ULTIMATE blood spikes return toward Carmilla dealing 40% damage"
+        ],
+        "changePerLevel": [
+            "+10% damage"
+        ]
+    },
+    {
+        "code": "heartbreak",
+        "name": "Heartbreak",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Add a fourth move to ATTACK combo, impaling enemies in front, dealing 40% ULTIMATE damage"
+        ],
+        "changePerLevel": [
+            "+10% ULTIMATE damage"
+        ]
+    },
+    {
+        "code": "mistress_of_pain",
+        "name": "Mistress of Pain",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "Increase the maximum number of ATTACKS transformed by ULTIMATE by 6"
+        ],
+        "changePerLevel": [
+            "+2 ATTACKS transformed"
+        ]
+    },
+    {
+        "code": "mass_punishment",
+        "name": "Mass Punishment",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Add a fourth ATTACK to ULTIMATE combo, dealing +240% area damage"
+        ],
+        "changePerLevel": [
+            "+60% area damage"
+        ]
+    }
+]

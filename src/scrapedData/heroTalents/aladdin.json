@@ -1,0 +1,358 @@
+[
+    {
+        "code": "aerial_catch",
+        "name": "Aerial Catch",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/85/Aerial_Catch_icon.jpg/revision/latest?cb=20251028121552",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "Quest (x15): After they hit an enemy, retrieving SPECIAL's blades during DEFENSE grants +1 ARMOR",
+            "Complete: Doing it again grants 12 SHIELD to all nearby Heroes for 6 seconds"
+        ],
+        "changePerLevel": [
+            "+3 SHIELD + Hero Level"
+        ]
+    },
+    {
+        "code": "jinniya's_gift",
+        "name": "Jinniya's Gift",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/7/7f/Jinniya%27s_Gift_icon.jpg/revision/latest?cb=20251028121615",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "Gain +1 TRAIT Charge",
+            "Future Talents have +15% chance to be Rare or above"
+        ],
+        "changePerLevel": [
+            "+10% chance"
+        ]
+    },
+    {
+        "code": "jinn's_might",
+        "name": "Jinn's Might",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/e3/Jinn%27s_Might_icon.jpg/revision/latest?cb=20251028121636",
+        "type": "starting",
+        "unlockedAtRank": 2,
+        "description": [
+            "Quest (x20): Hitting an enemy with POWER at maximum charge grants +0.5 DMG",
+            "Complete: Increase POWER's bonus damage from charge by 40%"
+        ],
+        "changePerLevel": [
+            "+10% bonus damage"
+        ]
+    },
+    {
+        "code": "wish_of_omnipotence",
+        "name": "Wish of Omnipotence",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/46/Wish_Of_Omnipotence_icon.jpg/revision/latest?cb=20251028121849",
+        "type": "starting",
+        "unlockedAtRank": 5,
+        "description": [
+            "Casting wishes grants OMNIPOTENCE to all nearby Heroes for 8 seconds",
+            "During OMNIPOTENCE, Heroes' POWER, SPECIAL, and DEFENSE have 0.5 second cooldown"
+        ],
+        "changePerLevel": [
+            "+2 seconds"
+        ]
+    },
+    {
+        "code": "slide_attack",
+        "name": "Slide Attack",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/f/f3/Slide_Attack_icon.jpg/revision/latest?cb=20251107085645",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "Using ATTACK while the blades are flying makes you slide and deal 400% of ATTACK's damage along the path"
+        ],
+        "changePerLevel": [
+            "+100% of ATTACK's damage"
+        ]
+    },
+    {
+        "code": "shard_blades",
+        "name": "Shard Blades",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/49/Shard_Blades_icon.jpg/revision/latest?cb=20251107085704",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "While ENCHANTMENT is active on blades, ATTACKS have their range increased by 20% and deal +20% damage"
+        ],
+        "changePerLevel": [
+            "+5% range"
+        ]
+    },
+    {
+        "code": "air_dash",
+        "name": "Air Dash",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/a2/Air_Dash_icon.jpg/revision/latest?cb=20251107085722",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "DASH can be triggered during DEFENSE's air time",
+            "Doing so increases ATTACK speed by 15% for 4 second(s)"
+        ],
+        "changePerLevel": [
+            "+1 second(s)"
+        ]
+    },
+    {
+        "code": "jinn's_fury",
+        "name": "Jinn's Fury",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/9c/Jinn_Fury_icon.jpg/revision/latest?cb=20251107090211",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "POWER strikes 3 times, each one dealing 40% damage"
+        ],
+        "changePerLevel": [
+            "+5% damage"
+        ]
+    },
+    {
+        "code": "healing_blades",
+        "name": "Healing Blades",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/47/Healing_Blades_icon.jpg/revision/latest?cb=20251107090228",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "When retrieved, SPECIAL's blades heal all Heroes nearby for each enemy hit, up to 7 Health"
+        ],
+        "changePerLevel": [
+            "Rare & Legendary: +2 Health + Hero Level",
+            "Epic: +1 Health + Hero Level"
+        ]
+    },
+    {
+        "code": "major_enchantment",
+        "name": "Major Enchantment",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/d/d2/Major_Enchantment_icon.jpg/revision/latest?cb=20251107085745",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "While NOT using ATTACK, passively generate 1 ENCHANTMENT every 3 seconds"
+        ],
+        "changePerLevel": [
+            "Rare: -0.50 seconds",
+            "Epic and Legendary: -0.25 seconds"
+        ]
+    },
+    {
+        "code": "dancing_blades",
+        "name": "Dancing Blades",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/83/Dancing_Blades_icon.jpg/revision/latest?cb=20251107090250",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "Spin duration of SPECIAL's blades is increased by 75%",
+            "Blades can be recalled sooner by triggering SPECIAL again"
+        ],
+        "changePerLevel": [
+            "+25% increased spin duration"
+        ]
+    },
+    {
+        "code": "cyclonic_appearance",
+        "name": "Cyclonic Appearance",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/ec/Cyclonic_Appearance_icon.jpg/revision/latest?cb=20251107090309",
+        "type": "standard",
+        "unlockedAtRank": 2,
+        "description": [
+            "When triggering POWER, Jinn hits all nearby enemies and deals 50% of POWER's damage"
+        ],
+        "changePerLevel": [
+            "+10% of POWER's damage"
+        ]
+    },
+    {
+        "code": "dive",
+        "name": "Dive",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/9b/Dive_icon.jpg/revision/latest?cb=20251107090512",
+        "type": "standard",
+        "unlockedAtRank": 2,
+        "description": [
+            "Using ATTACK during DEFENSE's jump makes Aladdin dive to the ground, dealing 400% of ATTACK's damage all around"
+        ],
+        "changePerLevel": [
+            "+100% of ATTACK's damage"
+        ]
+    },
+    {
+        "code": "spinning_strikes",
+        "name": "Spinning Strikes",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/c/c9/Spinning_Strikes_icon.jpg/revision/latest?cb=20251124095619",
+        "type": "standard",
+        "unlockedAtRank": 3,
+        "description": [
+            "After retrieving SPECIAL's blades, next ATTACK within 2 second(s) spins 2 times (twice more with ENCHANTMENT) and deals +80% damage"
+        ],
+        "changePerLevel": [
+            "+20% damage"
+        ]
+    },
+    {
+        "code": "acrobatics",
+        "name": "Acrobatics",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/a0/Acrobatics_icon.jpg/revision/latest?cb=20251124095636",
+        "type": "standard",
+        "unlockedAtRank": 3,
+        "description": [
+            "Each enemy passed during DEFENSE grants 3 ENCHANTMENT points"
+        ],
+        "changePerLevel": [
+            "+1 ENCHANTMENT point"
+        ]
+    },
+    {
+        "code": "swordjinn",
+        "name": "Swordjinn",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/bf/Swordjinn_icon.jpg/revision/latest?cb=20251124095653",
+        "type": "standard",
+        "unlockedAtRank": 4,
+        "description": [
+            "POWER Jinn can catch SPECIAL's blades to deal +80% damage in a wider range"
+        ],
+        "changePerLevel": [
+            "Rare: +40% damage",
+            "Epic and Legendary: +20% damage"
+        ]
+    },
+    {
+        "code": "leaping_strike",
+        "name": "Leaping Strike",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/81/Leaping_Strike_icon.jpg/revision/latest?cb=20251124095710",
+        "type": "standard",
+        "unlockedAtRank": 4,
+        "description": [
+            "ATTACK used right after DASH deals 200% damage and strikes twice with ENCHANTMENT"
+        ],
+        "changePerLevel": [
+            "+50% damage"
+        ]
+    },
+    {
+        "code": "tornado_jump",
+        "name": "Tornado Jump",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/43/Tornado_Jump_icon.jpg/revision/latest?cb=20251124095730",
+        "type": "standard",
+        "unlockedAtRank": 5,
+        "description": [
+            "DEFENSE casts a tornado that moves toward Aladdin and deals 40 damage per second for 4 seconds"
+        ],
+        "changePerLevel": [
+            "+10 damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "dream_scimitars",
+        "name": "Dream Scimitars",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 7,
+        "description": [
+            "While ENCHANTMENT is active on blades, ATTACK has a 40% chance of earning Aladdin a Dream Shard upon enemy hit"
+        ],
+        "changePerLevel": [
+            "+10% chance"
+        ]
+    },
+    {
+        "code": "sand_vortex",
+        "name": "Sand Vortex",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 7,
+        "description": [
+            "SPECIAL's blades, when stationary, pull in enemies around them",
+            "SPECIAL deals +40% damage"
+        ],
+        "changePerLevel": [
+            "+10% damage"
+        ]
+    },
+    {
+        "code": "master_thief",
+        "name": "Master Thief",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 8,
+        "description": [
+            "Whenever you choose a Common, Rare, or Epic Magical Object, you have a 40%/20%/10% chance to get another copy of it"
+        ],
+        "changePerLevel": [
+            "+10%/5%/2% chance"
+        ]
+    },
+    {
+        "code": "enchanted_jinn",
+        "name": "Enchanted Jinn",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 8,
+        "description": [
+            "POWER can consume up to 5 ENCHANTMENT points to increase its Crit Chance by 10% per point",
+            "The maximum number of ENCHANTMENT points is increased by 5"
+        ],
+        "changePerLevel": [
+            "+5 maximum ENCHANTMENT points"
+        ]
+    },
+    {
+        "code": "wondrous_wishes",
+        "name": "Wondrous Wishes",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "All wishes are improved:",
+            "POWER: deals +50% damage",
+            "SPECIAL: 40% chance to generate 2 Consumable(s)",
+            "DEFENSE: +100% SHIELD gained"
+        ],
+        "changePerLevel": [
+            "POWER: +25% damage",
+            "SPECIAL: +20% chance",
+            "DEFENSE: +25% SHIELD gained"
+        ]
+    },
+    {
+        "code": "infinite_wishes",
+        "name": "Infinite Wishes",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Gain +3 TRAIT charges",
+            "Dream Shards cost for ULTIMATE is reduced by 20%"
+        ],
+        "changePerLevel": [
+            "+10% Dream Shards cost"
+        ]
+    },
+    {
+        "code": "dream_stride",
+        "name": "Dream Stride",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "Each time ULTIMATE hits an enemy, Aladdin gains 8 Dream Shards",
+            "ULTIMATE has no cooldown if no enemies are hit"
+        ],
+        "changePerLevel": [
+            "+2 Dream Shards"
+        ]
+    },
+    {
+        "code": "quick_ride",
+        "name": "Quick Ride",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "DASH uses Magic Carpet to deal 40 damage to enemies passed and can be held for up to 1.0 second(s)"
+        ],
+        "changePerLevel": [
+            "+10 damage + Hero Level + DMG"
+        ]
+    }
+]

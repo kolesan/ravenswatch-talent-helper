@@ -1,0 +1,346 @@
+[
+    {
+        "code": "deep_beat",
+        "name": "Deep Beat",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/3/39/Deep_Beat_icon.jpg/revision/latest?cb=20251028125408",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "For every 4 ATTACKS that hit an enemy, generate a blast all around that deals 100% of ATTACK's damage",
+            "Counter resets when exiting SING STANCE"
+        ],
+        "changePerLevel": [
+            "+20% of ATTACK's damage"
+        ]
+    },
+    {
+        "code": "spring_water",
+        "name": "Spring Water",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/7/7e/Spring_Water_icon.jpg/revision/latest?cb=20251028125305",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "Each wave from SPECIAL that hits an enemy restores 2 Health to all Heroes within the wave"
+        ],
+        "changePerLevel": [
+            "+0.5 Health + Hero Level"
+        ]
+    },
+    {
+        "code": "underwater_predation",
+        "name": "Underwater Predation",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/e0/Underwater_Predation_icon.jpg/revision/latest?cb=20251028125327",
+        "type": "starting",
+        "unlockedAtRank": 2,
+        "description": [
+            "Hold DEFENSE to move quickly underwater",
+            "All enemies passed become VULNERABLE for 4 seconds"
+        ],
+        "changePerLevel": [
+            "+1 second"
+        ]
+    },
+    {
+        "code": "sea_dance",
+        "name": "Sea Dance",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/9d/Sea_Dance_icon.jpg/revision/latest?cb=20251028125348",
+        "type": "starting",
+        "unlockedAtRank": 5,
+        "description": [
+            "In SING STANCE, CONTEXTUAL ACTION allows for quick teleportation to the WISP (5 seconds cooldown)",
+            "Performing this action in combat restores 8 Health to all nearby heroes"
+        ],
+        "changePerLevel": [
+            "+2 Health + Hero Level"
+        ]
+    },
+    {
+        "code": "power_dive",
+        "name": "Power Dive",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/d/d9/Power_Dive_icon.jpg/revision/latest?cb=20251107213541",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "DEFENSE triggers POWER's effect with a +20% damage increase when Melusine dives underwater"
+        ],
+        "changePerLevel": [
+            "+5% damage"
+        ]
+    },
+    {
+        "code": "protective_flow",
+        "name": "Protective Flow",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/0/0d/Protective_Flow_icon.jpg/revision/latest?cb=20251107213602",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "Heroes passed by ATTACK gain 8 SHIELD for 6 seconds"
+        ],
+        "changePerLevel": [
+            "+2 SHIELD + Hero Level"
+        ]
+    },
+    {
+        "code": "water_bubble",
+        "name": "Water Bubble",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/89/Water_Bubble_icon.jpg/revision/latest?cb=20251107213745",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "After DEFENSE is triggered, Melusine is surrounded by a bubble for 4 seconds, absorbing one instance of damage",
+            "The bubble then explodes and deals 60 area damage"
+        ],
+        "changePerLevel": [
+            "+15 area damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "bewitching_song",
+        "name": "Bewitching Song",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/88/Bewitching_Song_icon.jpg/revision/latest?cb=20251107214451",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "When entering SING STANCE, apply WEAK to all nearby enemies for 3 seconds"
+        ],
+        "changePerLevel": [
+            "+1 second"
+        ]
+    },
+    {
+        "code": "aftershock",
+        "name": "Aftershock",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/1/1e/Aftershock_icon.jpg/revision/latest?cb=20251107214507",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "POWER leaves a water core at the casting location that triggers POWER again after 1.5 seconds for 40% of its damage"
+        ],
+        "changePerLevel": [
+            "+10% damage"
+        ]
+    },
+    {
+        "code": "backwash",
+        "name": "Backwash",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/2/25/Backwash_icon.jpg/revision/latest?cb=20251107214746",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "When SPECIAL ends, add 3 additional waves coming backwards that deal 50% damage each"
+        ],
+        "changePerLevel": [
+            "+15% damage"
+        ]
+    },
+    {
+        "code": "freezing_splash",
+        "name": "Freezing Splash",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/a1/Freezing_Splash_icon.jpg/revision/latest?cb=20251107213804",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "POWER applies CHILLED to hit enemies and gains +15% range"
+        ],
+        "changePerLevel": [
+            "+5% range"
+        ]
+    },
+    {
+        "code": "tidal_wave",
+        "name": "Tidal Wave",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/e8/Tidal_Wave_icon.jpg/revision/latest?cb=20251107214806",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "SPECIAL's waves are 20% wider and longer"
+        ],
+        "changePerLevel": [
+            "+5% wider and longer"
+        ]
+    },
+    {
+        "code": "submerging_attack",
+        "name": "Submerging Attack",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/9/99/Submerging_Attack_icon.jpg/revision/latest?cb=20251107214942",
+        "type": "standard",
+        "unlockedAtRank": 2,
+        "description": [
+            "ATTACK damage increases by 8% for each enemy hit (up to 6 hits, +48%)",
+            "Resets if Melusine takes damage or exits SING STANCE"
+        ],
+        "changePerLevel": [
+            "+1% damage increase (up to +6%)"
+        ]
+    },
+    {
+        "code": "geyser",
+        "name": "Geyser",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 3,
+        "description": [
+            "POWER deals +50% damage at its center"
+        ],
+        "changePerLevel": [
+            "+10% damage"
+        ]
+    },
+    {
+        "code": "water_communion",
+        "name": "Water Communion",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 3,
+        "description": [
+            "DEFENSE clears SPECIAL's cooldown and increases next SPECIAL's damage within 3 seconds by +40%"
+        ],
+        "changePerLevel": [
+            "+10% damage"
+        ]
+    },
+    {
+        "code": "soothing_presence",
+        "name": "Soothing Presence",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 4,
+        "description": [
+            "When in combat, passively heal 4 Health for all Heroes in the area every 5 seconds"
+        ],
+        "changePerLevel": [
+            "+1 Health + Hero Level"
+        ]
+    },
+    {
+        "code": "razor_tail",
+        "name": "Razor Tail",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 4,
+        "description": [
+            "DEFENSE makes Melusine strike with her tail, dealing 400% of ATTACK damage"
+        ],
+        "changePerLevel": [
+            "+100% of ATTACK damage"
+        ]
+    },
+    {
+        "code": "wisp_surge",
+        "name": "Wisp Surge",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 5,
+        "description": [
+            "After casting SPECIAL, gain +40% ATTACK SPEED for 3 seconds"
+        ],
+        "changePerLevel": [
+            "+10% ATTACK SPEED"
+        ]
+    },
+    {
+        "code": "waterlogging",
+        "name": "Waterlogging",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 7,
+        "description": [
+            "WISP gains 2 growth charges for each wave of SPECIAL that hits it (up to a maximum of  12 charges)",
+            "Each charge increase the damage of the ATTACK by 20%, with each ATTACK consuming one charge"
+        ],
+        "changePerLevel": [
+            "+5% damage increase"
+        ]
+    },
+    {
+        "code": "final_burst",
+        "name": "Final Burst",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 7,
+        "description": [
+            "After 3 successful attacks, WISP explodes when it disappears, dealing 40 area damage"
+        ],
+        "changePerLevel": [
+            "+10 area damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "shimmering_scales",
+        "name": "Shimmering Scales",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 8,
+        "description": [
+            "In SING STANCE, Melusine gains temporary +4 ARMOR every second, up to a maximum of 40"
+        ],
+        "changePerLevel": [
+            "+2 ARMOR (up to a maximum of +20)"
+        ]
+    },
+    {
+        "code": "enduring_wisp",
+        "name": "Enduring Wisp",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 8,
+        "description": [
+            "When Melusine leaves SING STANCE, WISP remains active and automatically attacks surrounding enemies up to 4 times before then disappearing"
+        ],
+        "changePerLevel": [
+            "+1 more time(s)"
+        ]
+    },
+    {
+        "code": "vortex_bomb",
+        "name": "Vortex Bomb",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "ULTIMATE's water sphere attracts nearby enemies and deals 40 damage per second to enemies hit"
+        ],
+        "changePerLevel": [
+            "+10 damage per second + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "healing_blast",
+        "name": "Healing Blast",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "ULTIMATE explosion restores 60 health to all Heroes around and grants them +5 REGENERATION"
+        ],
+        "changePerLevel": [
+            "+15 health + Hero Level"
+        ]
+    },
+    {
+        "code": "crescendo",
+        "name": "Crescendo",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "While ULTIMATE is channeled, Melusine gradually summons up to 3 additional WISPS"
+        ],
+        "changePerLevel": [
+            "+1 additional WISP"
+        ]
+    },
+    {
+        "code": "overtone_singing",
+        "name": "Overtone Singing",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "When entering SING STANCE, Melusine casts an additional ULTIMATE autonomous WISP that deals 40% damage"
+        ],
+        "changePerLevel": [
+            "+10% damage"
+        ]
+    }
+]

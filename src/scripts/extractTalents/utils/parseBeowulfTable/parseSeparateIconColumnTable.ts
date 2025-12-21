@@ -8,7 +8,7 @@ import { getUnlockedAtRank } from "../getUnlockedAtRank";
 import { getIconUrl } from "./utils/getIconUrl";
 import { getName } from "./utils/getName";
 
-export function parseBeowulfTable(row: HTMLTableRowElement) {
+export function parseSeparateIconColumnTable(row: HTMLTableRowElement) {
     const cells = [...row.querySelectorAll("td")];
     
     const iconUrl = getIconUrl(cells[0]);

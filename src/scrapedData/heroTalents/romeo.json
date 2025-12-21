@@ -1,0 +1,354 @@
+[
+    {
+        "code": "panache",
+        "name": "Panache",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/6/68/Panache_icon.jpg/revision/latest?cb=20251030154908",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "Hitting an enemy with any additional ATTACK move, such as DASH attack or DEFENSE's Riposte grants one Panache token (up to 3)",
+            "Each Panache token grants +5 DMG and +4% ATTACK SPEED",
+            "When Romeo is hit, all Panache tokens are lost"
+        ],
+        "changePerLevel": [
+            "+1% ATTACK SPEED"
+        ]
+    },
+    {
+        "code": "kiss_the_bride",
+        "name": "Kiss The Bride",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/b1/Kiss_the_Bride_icon.jpg/revision/latest?cb=20251030155601",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "Quest (x20): Hitting at least one enemy with SPECIAL grants +0.5 Crit Chance",
+            "Reward: Any enemy hit by SPECIAL has a 40% chance to grant Romeo 2 Dream Shard(s)"
+        ],
+        "changePerLevel": [
+            "+10% chance"
+        ]
+    },
+    {
+        "code": "secret_weapon",
+        "name": "Secret Weapon",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/7/7f/Secret_Weapon_icon.jpg/revision/latest?cb=20251030155620",
+        "type": "starting",
+        "unlockedAtRank": 2,
+        "description": [
+            "Quest (x20): Blocking at least one attack during DEFENSE grants +0.5 DMG",
+            "Reward: ATTACK Riposte after DEFENSE deals +32% more damage per successful block (up to 3 times)"
+        ],
+        "changePerLevel": [
+            "+8% more damage"
+        ]
+    },
+    {
+        "code": "ice_rose",
+        "name": "Ice Rose",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/40/Ice_Rose_icon.jpg/revision/latest?cb=20251030155639",
+        "type": "starting",
+        "unlockedAtRank": 5,
+        "description": [
+            "POWER now throws ice Roses, applying CHILLED to hit enemies",
+            "POWER deals +40% damage"
+        ],
+        "changePerLevel": [
+            "+10% damage"
+        ]
+    },
+    {
+        "code": "healing_rose",
+        "name": "Healing Rose",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/ef/Healing_Rose_icon.jpg/revision/latest?cb=20251120094346",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "Every 2 times the POWER Rose hits an enemy, it restores 2 Health to all Heroes around"
+        ],
+        "changePerLevel": [
+            "+0.5 Health + Hero Level"
+        ]
+    },
+    {
+        "code": "kick",
+        "name": "Kick",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/1/1a/Kick_icon.jpg/revision/latest?cb=20251120094404",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "Adds a kick to ATTACK combo, dealing 400% damage and pushing light enemies back",
+            "Kick can grant a Panache Token"
+        ],
+        "changePerLevel": [
+            "+100% damage"
+        ]
+    },
+    {
+        "code": "relentless_assaults",
+        "name": "Relentless Assaults",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/c/c1/Relentless_Assaults_icon.jpg/revision/latest?cb=20251120094425",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "ATTACK used right after POWER triggers DEFENSE's Riposte launching a flurry of attacks, dealing up to 64 damage"
+        ],
+        "changePerLevel": [
+            "+16 damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "surge_of_bravery",
+        "name": "Surge of Bravery",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/6/64/Surge_of_bravery_icon.jpg/revision/latest?cb=20251120095254",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "After SPECIAL's kiss, the next 6 ATTACKS gain +30% range and deal +30% damage"
+        ],
+        "changePerLevel": [
+            "+2 ATTACKS"
+        ]
+    },
+    {
+        "code": "thorny_rose",
+        "name": "Thorny Rose",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/c/c8/Thorny_Rose_icon.jpg/revision/latest?cb=20251120095312",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "When POWER Rose blooms, 5 paths of thorns spread around, dealing 13 damage per second to enemies crossing through"
+        ],
+        "changePerLevel": [
+            "Rare & Legendary: +3 damage + Hero Level + DMG",
+            "Epic: +4 damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "floral_dodge",
+        "name": "Floral Dodge",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/1/15/Floral_Dodge_icon.jpg/revision/latest?cb=20251120094448",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "DEFENSE now creates a POWER Rose dealing 40% damage"
+        ],
+        "changePerLevel": [
+            "+10% damage"
+        ]
+    },
+    {
+        "code": "burning_kiss",
+        "name": "Burning Kiss",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/40/Burning_Kiss_icon.jpg/revision/latest?cb=20251120104929",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "SPECIAL's area of effect gains +25% range, +40% more damage and applies IGNITE to hit enemies"
+        ],
+        "changePerLevel": [
+            "+10% more damage"
+        ]
+    },
+    {
+        "code": "thorns_aura",
+        "name": "Thorns Aura",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/b2/Thorns_Aura_icon.jpg/revision/latest?cb=20251120104948",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "After using TRAIT or receiving Juliet's TRAIT, an aura of thorns appears around Romeo dealing x area damage per second for 6 second(s)"
+        ],
+        "changePerLevel": [
+            "+5 area damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "love_thread*",
+        "name": "Love Thread*",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/0/0a/Love_Thread_icon.jpg/revision/latest?cb=20251120105005",
+        "type": "standard",
+        "unlockedAtRank": 2,
+        "description": [
+            "Using TRAIT casts a beam towards Juliet for 6 second(s), dealing 33 damage per second to crossed enemies"
+        ],
+        "changePerLevel": [
+            "+6 damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "flash_of_steel",
+        "name": "Flash of Steel",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 3,
+        "description": [
+            "Holding DASH during a dash attack makes Romeo rush back towards his starting location, dealing 120% damage along his path"
+        ],
+        "changePerLevel": [
+            "+30% damage"
+        ]
+    },
+    {
+        "code": "selfless_defender",
+        "name": "Selfless Defender",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 3,
+        "description": [
+            "Blocking at least one attack during DEFENSE grants 12 SHIELD to all Heroes around for 8 second(s)"
+        ],
+        "changePerLevel": [
+            "+3 SHIELD + Hero Level"
+        ]
+    },
+    {
+        "code": "deadly_brambles",
+        "name": "Deadly Brambles",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 4,
+        "description": [
+            "4th strike of ATTACK combo implants brambles on enemies, dealing 40 damage over 5 seconds",
+            "Brambles explode when Romeo implants an already affected enemy again or on enemy death, dealing 200% area damage"
+        ],
+        "changePerLevel": [
+            "+10 damage + Hero Level + DMG",
+            "+50% area damage"
+        ]
+    },
+    {
+        "code": "fencing_reflex",
+        "name": "Fencing Reflex",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 4,
+        "description": [
+            "Basic ATTACKS can turn into a block when Romeo gets hit (every 5 seconds max)",
+            "After it blocks, Romeo gains +40% Crit Chance for 4 second(s)"
+        ],
+        "changePerLevel": [
+            "+10% Crit Chance"
+        ]
+    },
+    {
+        "code": "swarm_of_petals",
+        "name": "Swarm of Petals",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 5,
+        "description": [
+            "Using POWER also launches a swarm of petals in a cone, pushing back light enemies and dealing 40% damage"
+        ],
+        "changePerLevel": [
+            "+10% damage"
+        ]
+    },
+    {
+        "code": "wind_spiral",
+        "name": "Wind Spiral",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 7,
+        "description": [
+            "DEFENSE creates a wind spiral around Romeo dealing up to 60 area damage"
+        ],
+        "changePerLevel": [
+            "+15 damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "broad_stroke",
+        "name": "Broad Stroke",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 7,
+        "description": [
+            "ATTACK used right after DASH triggers a broad stroke, dealing 400% damage all around",
+            "Broad Stroke can grant a Panache Token"
+        ],
+        "changePerLevel": [
+            "+100% damage"
+        ]
+    },
+    {
+        "code": "love_shield",
+        "name": "Love Shield",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 8,
+        "description": [
+            "After SPECIAL's kiss, Romeo and Juliet are surrounded by a Love Shield, making them INVINCIBLE for 4 seconds",
+            "Love Shield has a cooldown of 14 seconds"
+        ],
+        "changePerLevel": [
+            "-2 seconds"
+        ]
+    },
+    {
+        "code": "bursting_bloom",
+        "name": "Bursting Bloom",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 8,
+        "description": [
+            "When POWER Rose blooms, trigger a burst of petals dealing 40% area damage"
+        ],
+        "changePerLevel": [
+            "+10% area damage"
+        ]
+    },
+    {
+        "code": "burning_dance",
+        "name": "Burning Dance",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "ULTIMATE applies IGNITE to hit enemies and deals 40% damage"
+        ],
+        "changePerLevel": [
+            "+10% damage"
+        ]
+    },
+    {
+        "code": "explosive_performance",
+        "name": "Explosive Performance",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "During ULTIMATE's dance, launch 24 firework rockets all around, exploding on impact and dealing 17 damage each"
+        ],
+        "changePerLevel": [
+            "+6 firework rockets"
+        ]
+    },
+    {
+        "code": "funeral_bouquet",
+        "name": "Funeral Bouquet",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "ATTACKS throw ULTIMATE's Black Roses, dealing 3 damage each"
+        ],
+        "changePerLevel": [
+            "Rare: +0 damage",
+            "Epic & Legendary: +1 damage"
+        ]
+    },
+    {
+        "code": "tempestuous_roses",
+        "name": "Tempestuous Roses",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Romeo throws 56 Black Roses in a wide cone dealing 13 damage each and is now surrounded by a tempest, dealing 32 area damage per second"
+        ],
+        "changePerLevel": [
+            "+8 Black Roses",
+            "+8 area damage + Hero Level + DMG"
+        ]
+    }
+]

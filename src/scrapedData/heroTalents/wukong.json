@@ -1,0 +1,358 @@
+[
+    {
+        "code": "stone_monkey",
+        "name": "Stone Monkey",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/8/88/Stone_Monkey_icon.jpg/revision/latest?cb=20251029105525",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "Quest  (x40): Each successful DEFENSE grants +0.5 ARMOR",
+            "Complete: Each block triggers an attack dealing 100% of the blocked damage as area damage"
+        ],
+        "changePerLevel": [
+            "+25% of the blocked damage"
+        ]
+    },
+    {
+        "code": "thirst_for_immortality",
+        "name": "Thirst for Immortality",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/5/50/Thirst_for_Immortality_icon.jpg/revision/latest?cb=20251029105444",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "Quest (x7): Obtaining a Magical Object with Rare quality or higher grants +2 DMG",
+            "Complete: Grants +100 VITALITY but now only Hero or Magical Object heals are effective"
+        ],
+        "changePerLevel": [
+            "+25 VITALITY"
+        ]
+    },
+    {
+        "code": "supreme_polarity",
+        "name": "Supreme Polarity",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/c/c8/Superme_Polarity_icon.jpg/revision/latest?cb=20251029105502",
+        "type": "starting",
+        "unlockedAtRank": 2,
+        "description": [
+            "Switching STANCE increases the power of the new STANCE for 7 second(s)",
+            "YIN: +4% LIFE ON HIT",
+            "YANG: deals 20% more damage"
+        ],
+        "changePerLevel": [
+            "+1% LIFE ON HIT",
+            "+5% more damage"
+        ]
+    },
+    {
+        "code": "way_of_awakening",
+        "name": "Way of Awakening",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/e7/Way_of_Awakening_icon.jpg/revision/latest?cb=20251029105543",
+        "type": "starting",
+        "unlockedAtRank": 5,
+        "description": [
+            "After 8 successful DEFENSE actions, the next TRAIT activates AWAKENED STANCE for 12 second(s)",
+            "AWAKENED STANCE grants both YIN and YANG effects without taking any additional damage"
+        ],
+        "changePerLevel": [
+            "+3 second(s)"
+        ]
+    },
+    {
+        "code": "mantra_of_balance",
+        "name": "Mantra of Balance",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/c/cf/Mantra_of_Balance_icon.jpg/revision/latest?cb=20251111105007",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "When SPECIAL is triggered, it applies a negative status effect to nearby enemies within range:",
+            "YIN: VULNERABLE for 4 second(s)",
+            "YANG: WEAKENED for 6 second(s)"
+        ],
+        "changePerLevel": [
+            "+1 second of VULNERABLE",
+            "+2 second(s) of WEAKENED"
+        ]
+    },
+    {
+        "code": "celestial_pillar",
+        "name": "Celestial Pillar",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/5/5a/Celestial_Pillar_icon.jpg/revision/latest?cb=20251111103444",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "Adds a crushing blow to the ATTACK combo, dealing 80 damage around the point of impact"
+        ],
+        "changePerLevel": [
+            "+20 damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "stick_twirl",
+        "name": "Stick Twirl",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/4/4b/Stick_Twirl_icon.jpg/revision/latest?cb=20251111103504",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "ATTACK triggered after a DASH launches a rapid series of 5 strikes, each dealing 60% area damage"
+        ],
+        "changePerLevel": [
+            "+15% area damage"
+        ]
+    },
+    {
+        "code": "sprint",
+        "name": "Sprint",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/2/21/Sprint_icon.jpg/revision/latest?cb=20251111103521",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "Gain +10% Move Speed",
+            "DASH can be held for up to 3 second(s) to sprint at high speed"
+        ],
+        "changePerLevel": [
+            "+2% Move Speed"
+        ]
+    },
+    {
+        "code": "resonance",
+        "name": "Resonance",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/e8/Resonance_icon.jpg/revision/latest?cb=20251111105027",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "When the SPECIAL effect expires, all the activation effects of the current STANCE are restarted",
+            "SPECIAL deals +20% damage"
+        ],
+        "changePerLevel": [
+            "+5% damage"
+        ]
+    },
+    {
+        "code": "airbender",
+        "name": "Airbender",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/e/ea/Airbender_icon.jpg/revision/latest?cb=20251111103540",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "POWER can strike up to to 1 more time(s)"
+        ],
+        "changePerLevel": [
+            "+1 more time(s)"
+        ]
+    },
+    {
+        "code": "ōm",
+        "name": "Ōm",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/f/fb/Om_icon.jpg/revision/latest?cb=20251111105045",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "While SPECIAL is active, beads gradually increase their action radius, up to +24%, and hit all enemies present in the area"
+        ],
+        "changePerLevel": [
+            "+6% radius"
+        ]
+    },
+    {
+        "code": "ringing_beads",
+        "name": "Ringing Beads",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/7/71/Ringing_Beads_icon.jpg/revision/latest?cb=20251111105104",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "While SPECIAL is active, ATTACK makes beads ring, dealing 30% ATTACK damage all around"
+        ],
+        "changePerLevel": [
+            "+5% of ATTACK damage"
+        ]
+    },
+    {
+        "code": "thundercloud",
+        "name": "Thundercloud",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/d/d3/Thundercloud_icon.jpg/revision/latest?cb=20251111105451",
+        "type": "standard",
+        "unlockedAtRank": 2,
+        "description": [
+            "Enemies hit by POWER are soon afterwards struck by lightning dealing 20% damage all around the point of impact"
+        ],
+        "changePerLevel": [
+            "+5% damage"
+        ]
+    },
+    {
+        "code": "mind_fortress",
+        "name": "Mind Fortress",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 3,
+        "description": [
+            "SHIELD and STRENGTH effects triggered upon TRAIT activation last 60% longer"
+        ],
+        "changePerLevel": [
+            "lasts +15% longer"
+        ]
+    },
+    {
+        "code": "one-inch_punch",
+        "name": "One-Inch Punch",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 3,
+        "description": [
+            "ATTACK triggered a successful DEFENSE launches a powerful punch, dealing 600% damage"
+        ],
+        "changePerLevel": [
+            "+150% damage"
+        ]
+    },
+    {
+        "code": "fiery_dragon",
+        "name": "Fiery Dragon",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 4,
+        "description": [
+            "Adds an explosion of fire to the activation of YANG STANCE, dealing 55 area damage and inflicting enemies with IGNITE"
+        ],
+        "changePerLevel": [
+            "Rare: +13 area damage + Hero Level + DMG",
+            "Epic & Legendary: +14 area damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "frost_tiger",
+        "name": "Frost Tiger",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 4,
+        "description": [
+            "Adds an explosion of frost to the activation of YIN STANCE, dealing 44 area damage and inflicting enemies with CHILLED"
+        ],
+        "changePerLevel": [
+            "+11 area damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "divine_palm",
+        "name": "Divine Palm",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 5,
+        "description": [
+            "Blocking with DEFENSE less than 0.2 second(s) after its activation triggers perfect block:",
+            "YIN: restores 4 Health to all nearby heroes",
+            "YANG: deals 80 area damage"
+        ],
+        "changePerLevel": [
+            "+1 Health",
+            "+20 area damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "focused_strikes",
+        "name": "Focused Strikes",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 7,
+        "description": [
+            "POWER can be held down to deliver the next strike to the same target and deals +12% damage"
+        ],
+        "changePerLevel": [
+            "+4% damage"
+        ]
+    },
+    {
+        "code": "sacred_seal",
+        "name": "Sacred Seal",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 7,
+        "description": [
+            "When SPECIAL ends, orbs sink into the ground to draw a sacred pattern that explodes after a short time, dealing 100 area damage"
+        ],
+        "changePerLevel": [
+            "+25 area damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "ch'i_outburst",
+        "name": "Ch'i Outburst",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 8,
+        "description": [
+            "After POWER hits at least one enemy, the next ATTACK can be held down to store power, then released to deliver an energy beam dealing up to 220% POWER damage to all enemies it passes through"
+        ],
+        "changePerLevel": [
+            "+55% POWER damage"
+        ]
+    },
+    {
+        "code": "fiery_golden_eyes",
+        "name": "Fiery Golden Eyes",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 8,
+        "description": [
+            "At the start of each DAY or NIGHT, reveal 2 point(s) of interest on the map",
+            "Personal Dream Shards gains are increased by 20%"
+        ],
+        "changePerLevel": [
+            "+5% Personal Dream Shard(s)"
+        ]
+    },
+    {
+        "code": "army_of_monkeys",
+        "name": "Army of Monkeys",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "ULTIMATE summons 3 additional clones"
+        ],
+        "changePerLevel": [
+            "+1 additional clone(s)"
+        ]
+    },
+    {
+        "code": "mantra_of_replication",
+        "name": "Mantra of Replication",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Whenever SPECIAL is cast, summon 3 Monkey Clones that fight for 8 seconds"
+        ],
+        "changePerLevel": [
+            "+2 seconds"
+        ]
+    },
+    {
+        "code": "perfect_copy",
+        "name": "Perfect Copy",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "During the ULTIMATE transformation, Sun Wukong can use a random ULTIMATE ability of the Hero copied",
+            "Transfiguration lasts 4 more seconds"
+        ],
+        "changePerLevel": [
+            "+1 more second(s)"
+        ]
+    },
+    {
+        "code": "divine_beverage",
+        "name": "Divine Beverage",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "ULTIMATE transformation grants all heroes around OMNIPOTENCE for 8 seconds",
+            "During OMNIPOTENCE, Heroes' POWER, SPECIAL and DEFENSE have a 0.5 second cooldown"
+        ],
+        "changePerLevel": [
+            "+2 seconds"
+        ]
+    }
+]
