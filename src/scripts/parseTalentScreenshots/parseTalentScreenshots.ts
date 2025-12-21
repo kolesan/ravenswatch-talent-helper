@@ -7,6 +7,10 @@ const baseScreenshotsDir = "src\\data\\screenshots";
 const files = listDirFilesSyncRecursive(baseScreenshotsDir);
 
 files.forEach(file => {
+    if (file.includes("empty_corner")) {
+        return;
+    }
+
     console.log(`Extracting talent icon from '${file}'`);
     const sharpFile = sharp(file);
 
@@ -26,15 +30,17 @@ files.forEach(file => {
             left: 1,
         }]);
     
-    const final = file.includes("locked_talent") || file.includes("empty_corner")
+    const final = file.includes("locked_talent")
         ? extracted
         : composited;
 
     final.toFile(outputFilePath(file))
         .then(() => console.log("Success"))
-        .catch((err) => console.log("Error:", err));
+        .catch((err) => console.log("Error:", file, err));
 })
 
 function outputFilePath(filePath: string) {
-    return filePath.replace(baseScreenshotsDir, "src\\scrapedData\\icons\\talents");
+    return filePath
+        .replace(baseScreenshotsDir, "src\\scrapedData\\icons\\talents")
+        .replace(".png", ".webp");
 }
