@@ -6,9 +6,9 @@ import { Hero } from "../../../data/heroes";
 import { heroTalentsFileName } from "../../utils/heroTalentsFileName";
 import { heroTalentTableFileName } from "../../utils/heroTalentTableFileName";
 
+import { applyIngameOrder } from "./applyIngameOrder/applyIngameOrder";
+import { chooseParseer } from "./chooseParseer";
 import { fixApostrophes } from "./fixApostrophes";
-import { parseBeowulfTable } from "./parseBeowulfTable/parseBeowulfTable";
-import { parseCommonTable } from "./parseCommonTable";
 
 export function extractHeroTalentsToFile(hero: Hero) {
     const fileName = heroTalentTableFileName(hero);
@@ -27,12 +27,10 @@ export function extractHeroTalentsToFile(hero: Hero) {
 
     const rowsToParse = rows;
 
-    const talents = rowsToParse.map(it => {
-        if (hero.name === "Beowulf") {
-            return parseBeowulfTable(it);
-        }
-        return parseCommonTable(it);
-    }).map(fixApostrophes);
+    const talents = rowsToParse
+        .map(chooseParseer(hero))
+        .map(fixApostrophes)
+        .reduce(applyIngameOrder(hero), []);
 
     console.log(rowsToParse.map(it => it.innerHTML));
     console.log(talents);

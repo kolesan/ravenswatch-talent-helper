@@ -1,19 +1,5 @@
 [
     {
-        "code": "distant_explosions",
-        "name": "Distant Explosions",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/f/ff/Distant_Explosions_icon.jpg/revision/latest?cb=20251024142639",
-        "type": "starting",
-        "unlockedAtRank": 1,
-        "description": [
-            "SPECIAL now targets a farther location and deals +40% damage",
-            "The longer it's held, the further it aims"
-        ],
-        "changePerLevel": [
-            "+10% damage"
-        ]
-    },
-    {
         "code": "devourer",
         "name": "Devourer",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/f/f8/Devourer_icon.jpg/revision/latest?cb=20251024142741",
@@ -25,6 +11,20 @@
         ],
         "changePerLevel": [
             "+20% chance for no cooldown"
+        ]
+    },
+    {
+        "code": "distant_explosions",
+        "name": "Distant Explosions",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/f/ff/Distant_Explosions_icon.jpg/revision/latest?cb=20251024142639",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "SPECIAL now targets a farther location and deals +40% damage",
+            "The longer it's held, the further it aims"
+        ],
+        "changePerLevel": [
+            "+10% damage"
         ]
     },
     {
@@ -96,19 +96,6 @@
         ]
     },
     {
-        "code": "pyromania",
-        "name": "Pyromania",
-        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/d/d3/Pyromania_icon.jpg/revision/latest?cb=20251031212638",
-        "type": "standard",
-        "unlockedAtRank": 1,
-        "description": [
-            "SPECIAL applies IGNITE to hit enemies and gains +40% Crit Chance"
-        ],
-        "changePerLevel": [
-            "+10% Crit Chance"
-        ]
-    },
-    {
         "code": "aggressive_defense",
         "name": "Aggressive Defense",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/a/a0/Aggressive_Defence_icon.jpg/revision/latest?cb=20251031212145",
@@ -132,6 +119,19 @@
         ],
         "changePerLevel": [
             "+5% longer"
+        ]
+    },
+    {
+        "code": "pyromania",
+        "name": "Pyromania",
+        "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/d/d3/Pyromania_icon.jpg/revision/latest?cb=20251031212638",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            "SPECIAL applies IGNITE to hit enemies and gains +40% Crit Chance"
+        ],
+        "changePerLevel": [
+            "+10% Crit Chance"
         ]
     },
     {
@@ -272,6 +272,20 @@
         ]
     },
     {
+        "code": "on_the_hunt",
+        "name": "On the Hunt",
+        "iconUrl": null,
+        "type": "standard",
+        "unlockedAtRank": 8,
+        "description": [
+            "DEFENSE applies MARKED to the nearest enemy for 4 seconds",
+            "MARKED targets take +25% damage and spread this status to another nearby enemy when they die"
+        ],
+        "changePerLevel": [
+            "+2 seconds"
+        ]
+    },
+    {
         "code": "savagery",
         "name": "Savagery",
         "iconUrl": null,
@@ -284,20 +298,6 @@
         "changePerLevel": [
             "+5 Maximum stacks of Savagery",
             "+0.2 DMG"
-        ]
-    },
-    {
-        "code": "on_the_hunt",
-        "name": "On the Hunt",
-        "iconUrl": null,
-        "type": "standard",
-        "unlockedAtRank": 8,
-        "description": [
-            "DEFENSE applies MARKED to the nearest enemy for 4 seconds",
-            "MARKED targets take +25% damage and spread this status to another nearby enemy when they die"
-        ],
-        "changePerLevel": [
-            "+2 seconds"
         ]
     },
     {
@@ -314,19 +314,6 @@
         ]
     },
     {
-        "code": "reload",
-        "name": "Reload",
-        "iconUrl": null,
-        "type": "final",
-        "unlockedAtRank": 9,
-        "description": [
-            "Every 16 times POWER, SPECIAL or DEFENSE is used, clear ULTIMATE cooldown"
-        ],
-        "changePerLevel": [
-            "-2 times"
-        ]
-    },
-    {
         "code": "bone_cracker",
         "name": "Bone Cracker",
         "iconUrl": null,
@@ -339,6 +326,19 @@
         "changePerLevel": [
             "25 damage per second + Hero Level + DMG",
             "12 to 37 damage area damage + Hero Level + DMG"
+        ]
+    },
+    {
+        "code": "reload",
+        "name": "Reload",
+        "iconUrl": null,
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Every 16 times POWER, SPECIAL or DEFENSE is used, clear ULTIMATE cooldown"
+        ],
+        "changePerLevel": [
+            "-2 times"
         ]
     },
     {

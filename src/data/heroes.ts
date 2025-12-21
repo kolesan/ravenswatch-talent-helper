@@ -1,6 +1,6 @@
 export type Hero = {
     name: HeroName;
-    code: string;
+    code: HeroCode;
     wikiUrl: string;
 }
 
@@ -16,6 +16,19 @@ type HeroName =
     | "Carmilla"
     | "Romeo"
     | "Juliet"; 
+
+type HeroCode = 
+      "scarlet"
+    | "piper"
+    | "beowulf"
+    | "snowQueen"
+    | "aladdin"
+    | "melusine"
+    | "geppetto"
+    | "wukong"
+    | "carmilla"
+    | "romeo"
+    | "juliet"; 
 
 const scarlet: Hero = {
     name: "Scarlet",
