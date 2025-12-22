@@ -5,7 +5,7 @@ import { Talent } from "../extractTalents/types";
 heroes.asArray.forEach(printTalentCodes);
 
 function printTalentCodes(hero: Hero) {
-    import(`../scrapedData/heroTalents/${hero.code}.json`)
+    import(`../../scrapedData/heroTalents/${hero.code}.json`)
         .then(module => {
             console.log("=============================");
             console.log(hero.name);
