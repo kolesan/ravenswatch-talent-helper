@@ -1,5 +1,5 @@
 // Rank Slider
-let selectedHeroRank = 6;
+let selectedHeroRank = 7;
 const rankSlider = document.querySelector("#rank-slider");
 const rankSliderOutput = document.querySelector("#rank-slider-output");
 rankSlider.oninput = event => {
