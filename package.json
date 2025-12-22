@@ -19,7 +19,7 @@
     "extractTalentsWatch": "tsx watch src/scripts/extractTalents/extractTalents.ts",
     "downloadTalentIcons": "tsx src/scripts/downloadTalentIcons/downloadTalentIcons.ts",
     "parseTalentScreenshots": "tsx src/scripts/parseTalentScreenshots/parseTalentScreenshots.ts",
-    "random": "tsx src/scripts/random/printTalentCodes.ts",
+    "random": "tsx src/scripts/random/renameHeroTalentScreenshots.ts",
     "randomWatch": "tsx watch src/scripts/random/printTalentCodes.ts"
   },
   "homepage": "https://github.com/kolesan/ravenswatch-talent-helper#readme",

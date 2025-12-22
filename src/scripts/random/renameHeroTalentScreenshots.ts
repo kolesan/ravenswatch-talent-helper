@@ -3,7 +3,7 @@ import { renameSync } from "fs";
 import { heroes } from "../../data/heroes";
 import { listDirFilesSyncRecursive } from "../parseTalentScreenshots/utils/listDirFilesSyncRecursive";
 
-const hero = heroes.all.aladdin;
+const hero = heroes.all.melusine;
 
 const heroCode = hero.code;
 const importName = `${heroCode}Order`;
@@ -11,21 +11,20 @@ const importName = `${heroCode}Order`;
 const screenshots = listDirFilesSyncRecursive(`src\\data\\screenshots\\${heroCode}`);
 
 const manualOrderOverride = [
-    "sand_vortex",
-    
-    "dream_scimitars",
-    "enchanted_jinn",
-    "master_thief",
-
-    "wondrous_wishes",
-    "dream_stride",
-    "infinite_wishes",
-    "quick_ride",
+    "geyser",
+    "water_communion",
+    "soothing_presence",
+    "razor_tail",
+    "wisp_surge",
+    "final_burst",
+    "waterlogging",
+    "shimmering_scales",
+    "enduring_wisp",
+    "vortex_bomb",
+    "crescendo",
+    "healing_blast",
+    "overtone_singing",
 ];
-
-const rgxp = new RegExp(`${heroCode}\\\\.+\.png`);
-console.log(rgxp);
-console.log(screenshots[0].replace(rgxp, `${heroCode}\\${manualOrderOverride[0]}.png`));
 
 if (manualOrderOverride.length) {
     screenshots.forEach((screenshot, i) => {
