@@ -7,7 +7,7 @@ import { runPromiseChain } from "../utils/runPromiseChain";
 
 import { fetchAndSaveIcon } from "./utils/fetchAndSaveIcon";
 
-const hero = heroes.all.aladdin;
+const hero = heroes.all.melusine;
 
 const fileName = heroTalentsFileName(hero);
 const fileText = readFileSync(fileName, 'utf-8');
