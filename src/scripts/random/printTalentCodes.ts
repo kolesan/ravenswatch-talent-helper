@@ -2,7 +2,9 @@ import { Hero, heroes } from "../../data/heroes";
 
 import { Talent } from "../extractTalents/types";
 
-heroes.asArray.forEach(printTalentCodes);
+[
+    heroes.all.melusine,
+].forEach(printTalentCodes);
 
 function printTalentCodes(hero: Hero) {
     import(`../../scrapedData/heroTalents/${hero.code}.json`)
