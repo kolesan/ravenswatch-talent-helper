@@ -36,7 +36,9 @@
   "devDependencies": {
     "@types/jsdom": "^27.0.0",
     "@types/node": "^25.0.2",
+    "htm": "^3.1.1",
     "jsdom": "^27.3.0",
+    "preact": "^10.28.0",
     "sharp": "^0.34.5",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
