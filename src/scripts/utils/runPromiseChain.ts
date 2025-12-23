@@ -15,8 +15,8 @@ export function runPromiseChain<T>({
     currentPromise, 
     getNextPromise,
     options
-}: Params<T>) {
-    currentPromise
+}: Params<T>): Promise<void> {
+    return currentPromise
         .then(applyDelayIfAny(options?.delayMs, !!getNextPromise))
         .then(() => {
             if (!getNextPromise) {
