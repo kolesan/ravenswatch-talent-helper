@@ -9,7 +9,7 @@ import { MainList } from "./MainList";
 
 export function App() {
     const [hero, setHero] = useState<Hero>(heroes.all.geppetto);
-    const [rank, setRank] = useState(8);
+    const [rank, setRank] = useState(9);
 
     console.log("App rendered", { hero: hero.code, rank });
 
