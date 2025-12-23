@@ -14,7 +14,7 @@ export const romeoOrder = [
 
     "burning_kiss",
     "thorns_aura",
-    "love_thread*",
+    "love_thread",
 
     "flash_of_steel",
     "selfless_defender",

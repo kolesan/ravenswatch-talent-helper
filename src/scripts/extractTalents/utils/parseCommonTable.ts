@@ -10,12 +10,22 @@ import { getUnlockedAtRank } from "./getUnlockedAtRank";
 export function parseCommonTable(row: HTMLTableRowElement) {
     const cells = [...row.querySelectorAll("td")];
     
-    const { name, iconUrl } = getNameAndIconUrl(cells[0]);
+    const { 
+        name, 
+        iconUrl, 
+        isUnavailableDuringSoloPlay 
+    } = getNameAndIconUrl(cells[0]);
     const code = getCode(name);
     const type = getType(cells[1]);
     const unlockedAtRank = getUnlockedAtRank(cells[2]);
     const description = getDescription(cells[3]);
     const changePerLevel = getChangePerLevel(cells[4]);
+
+    console.log({
+        name,
+        iconUrl,
+        isUnavailableDuringSoloPlay
+    });
 
     const talent: Talent = {
         code,
@@ -25,6 +35,9 @@ export function parseCommonTable(row: HTMLTableRowElement) {
         unlockedAtRank,
         description,
         changePerLevel,
+        ...(isUnavailableDuringSoloPlay
+            ? { isUnavailableDuringSoloPlay: true }
+            : {})
     }
 
     return talent;

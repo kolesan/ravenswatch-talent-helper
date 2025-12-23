@@ -1,8 +1,8 @@
 export const julietOrder = [
     "kiss_the_groom",
     "volcanic_shots",
-    "guns_and_roses*",
-    "wedding_gifts*",
+    "guns_and_roses",
+    "wedding_gifts",
 
     "longshot",
     "shadow_round",
@@ -17,10 +17,10 @@ export const julietOrder = [
     "double_tap",
 
     "love_sparks",
-    "swirling_rose*",
+    "swirling_rose",
     "knockout",
 
-    "comforting_presence*",
+    "comforting_presence",
     "explosive_backstep",
     "blind_shots",
 

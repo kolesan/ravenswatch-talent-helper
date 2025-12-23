@@ -27,8 +27,8 @@
         ]
     },
     {
-        "code": "guns_and_roses*",
-        "name": "Guns and Roses*",
+        "code": "guns_and_roses",
+        "name": "Guns and Roses",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/0/09/Guns_and_Roses_icon.jpg/revision/latest?cb=20251030160704",
         "type": "starting",
         "unlockedAtRank": 2,
@@ -38,11 +38,12 @@
         ],
         "changePerLevel": [
             "+5% damage"
-        ]
+        ],
+        "isUnavailableDuringSoloPlay": true
     },
     {
-        "code": "wedding_gifts*",
-        "name": "Wedding Gifts*",
+        "code": "wedding_gifts",
+        "name": "Wedding Gifts",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/1/16/Wedding_Gifts_icon.jpg/revision/latest?cb=20251030160722",
         "type": "starting",
         "unlockedAtRank": 5,
@@ -51,7 +52,8 @@
         ],
         "changePerLevel": [
             "+5%/+2%/+1% chance"
-        ]
+        ],
+        "isUnavailableDuringSoloPlay": true
     },
     {
         "code": "longshot",
@@ -186,8 +188,8 @@
         ]
     },
     {
-        "code": "swirling_rose*",
-        "name": "Swirling Rose*",
+        "code": "swirling_rose",
+        "name": "Swirling Rose",
         "iconUrl": null,
         "type": "standard",
         "unlockedAtRank": 3,
@@ -197,7 +199,8 @@
         "changePerLevel": [
             "Rare & Legendary: +15% of ATTACK's damage",
             "Epic: +25% of ATTACK's damage"
-        ]
+        ],
+        "isUnavailableDuringSoloPlay": true
     },
     {
         "code": "knockout",
@@ -213,8 +216,8 @@
         ]
     },
     {
-        "code": "comforting_presence*",
-        "name": "Comforting Presence*",
+        "code": "comforting_presence",
+        "name": "Comforting Presence",
         "iconUrl": null,
         "type": "standard",
         "unlockedAtRank": 4,
@@ -223,7 +226,8 @@
         ],
         "changePerLevel": [
             "+5 SHIELD + Hero Level"
-        ]
+        ],
+        "isUnavailableDuringSoloPlay": true
     },
     {
         "code": "explosive_backstep",

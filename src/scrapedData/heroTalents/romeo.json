@@ -163,8 +163,8 @@
         ]
     },
     {
-        "code": "love_thread*",
-        "name": "Love Thread*",
+        "code": "love_thread",
+        "name": "Love Thread",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/0/0a/Love_Thread_icon.jpg/revision/latest?cb=20251120105005",
         "type": "standard",
         "unlockedAtRank": 2,
@@ -173,7 +173,8 @@
         ],
         "changePerLevel": [
             "+6 damage + Hero Level + DMG"
-        ]
+        ],
+        "isUnavailableDuringSoloPlay": true
     },
     {
         "code": "flash_of_steel",
