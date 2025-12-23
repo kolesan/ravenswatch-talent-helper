@@ -13,6 +13,7 @@
   ],
   "scripts": {
     "dev": "vite",
+    "build": "vite build",
     "scrape": "tsx src/scripts/scrapeWiki/scrapeWiki.ts",
     "extractTalentTables": "tsx src/scripts/extractTalentTables/extractTalentTables.ts",
     "extractTalents": "tsx src/scripts/extractTalents/extractTalents.ts",
