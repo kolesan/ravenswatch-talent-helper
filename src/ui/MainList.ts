@@ -3,6 +3,8 @@ import { html } from "htm/preact";
 import { HeroCode } from "../data/heroes";
 import { Talent } from "../scripts/extractTalents/types";
 
+import { TalentDescription } from "./components/TalentDescription/TalentDescription";
+
 interface Props {
     classes?: string;
     isLocked: boolean;
@@ -44,14 +46,10 @@ export function MainList({
                             <img src=${imageSrc} height=80 />
                             <div>
                                 <div class=name>${talent.name}</div>
-                                <div class=description>
-                                    ${isLocked
-                                        ? html`Unlocked at Rank <span class="unlocked-at-rank">${talent.unlockedAtRank}</span>`
-                                        : talent.description.length > 1
-                                            ? html`<${DescriptionList} descriptionItems=${talent.description} />`
-                                            : talent.description[0]
-                                    }
-                                </div>
+                                <${TalentDescription} 
+                                    isLocked=${isLocked} 
+                                    talent=${talent} 
+                                />
                             </div>
                         </li>    
                     `;
@@ -59,18 +57,4 @@ export function MainList({
             </ul>
         </div>
     `;
-}
-
-type DescriptionListProps = {
-    descriptionItems: string[];
-}
-
-function DescriptionList({ 
-    descriptionItems 
-}: DescriptionListProps) {
-    return descriptionItems.map((descriptionItem, i) => html`
-        <div key=${i} class=description-list-item>
-            ${descriptionItem}
-        </div>
-    `);
 }

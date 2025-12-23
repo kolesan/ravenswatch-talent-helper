@@ -68,18 +68,3 @@ ul {
 ul.main-list {
     list-style: none;
 }
-
-.description-list-item::before {
-    content: '•';
-    margin-left: 1px;
-    margin-right: 3px;
-    padding-bottom: 1px;
-}
-.description-list-item {
-    margin-bottom: 2px;
-    pointer-events: none;
-}
-
-.unlocked-at-rank {
-    color: #954C4A;
-}

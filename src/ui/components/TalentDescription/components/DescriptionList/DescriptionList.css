@@ -1,0 +1,10 @@
+.description-list-item {
+    margin-bottom: 2px;
+    pointer-events: none;
+}
+.description-list-item::before {
+    content: '•';
+    margin-left: 1px;
+    margin-right: 3px;
+    padding-bottom: 1px;
+}
