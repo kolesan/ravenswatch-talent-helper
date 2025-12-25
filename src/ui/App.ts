@@ -15,6 +15,8 @@ import { isNotLocked } from "./utils/isNotLocked";
 // TODO: Think about saving state in one place not in every change callback
 // separately, to protect against forgetting to add saving to some new action cb
 // TODO: Save state to storage separately per hero
+// * dl hero icons from main website
+// * think about using hero art as bg somewhere in the app
 
 const initialState = appStateStorage.get() || defaultAppState;
 
