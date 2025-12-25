@@ -2,29 +2,33 @@ import { html } from "htm/preact";
 import { useState } from "preact/hooks";
 
 import { HeroCode } from "../data/heroes";
-import { Hero, heroes } from "../finalData/finalData";
+import { heroes } from "../finalData/finalData";
 import { Talent } from "../scripts/extractTalents/types";
 
+import { appStateStorage } from "./core/AppStateStorage";
 import { MainList } from "./MainList";
+import { calculateFullTalentsState } from "./utils/calculateFullTalentsState";
+import { defaultAppState } from "./utils/defaultAppState";
+
+// TODO: Rewrite state using useReducer
+// TODO: Think about saving state in one place not in every change callback
+// separately, to protect against forgetting to add saving to some new action cb
+
+const initialState = appStateStorage.get() || defaultAppState;
 
 export function App() {
-    const [hero, setHero] = useState<Hero>(heroes.all.wukong);
-    const [rank, setRank] = useState(3);
+    const [hero, setHero] = useState(initialState.hero);
+    const [rank, setRank] = useState(initialState.rank);
+    const [usedTalents, setUsedTalents] = useState(initialState.talents.used);
+    const [preferredTalents, setPreferredTalents] = useState(initialState.talents.preferred);
 
-    console.log("App rendered", { hero: hero.code, rank });
-
-    const [usedTalents, setUsedTalents] = useState<Talent[]>([]);
-    const [preferredTalents, setPreferredTalents] = useState<Talent[]>([]);
-    const [availableTalents, setAvailableTalents] = useState<Talent[]>(() => 
-        hero.talents.filter(it => it.unlockedAtRank <= rank)
-    );
-    const [lockedTalents, setLockedTalents] = useState<Talent[]>(() => 
-        hero.talents.filter(it => it.unlockedAtRank > rank)
-    );
-
-    console.log("App rendered", {
-        availableTalents,
-        lockedTalents,
+    const localTalents = calculateFullTalentsState({
+        hero,
+        rank,
+        talents: {
+            used: usedTalents,
+            preferred: preferredTalents,
+        }
     });
 
     return html`
@@ -34,12 +38,20 @@ export function App() {
                 value=${hero.code} 
                 onChange=${(e: preact.TargetedEvent<HTMLSelectElement>) => {
                     const newCode = e.currentTarget.value as HeroCode;
-                    const newHero = heroes.utils.findByCode(newCode);
-                    setHero(newHero!);
+                    const newHero = heroes.utils.findByCode(newCode)!;
+
+                    setHero(newHero);
                     setUsedTalents([]);
                     setPreferredTalents([]);
-                    setAvailableTalents(newHero!.talents.filter(it => it.unlockedAtRank <= rank));
-                    setLockedTalents(newHero!.talents.filter(it => it.unlockedAtRank > rank));
+
+                    appStateStorage.set({
+                        hero: newHero,
+                        rank,
+                        talents: {
+                            used: [],
+                            preferred: [],
+                        }
+                    })
                 }}
             >
                 ${heroes.asArray.map(hero => html`
@@ -61,11 +73,19 @@ export function App() {
                 value=${rank}
                 oninput=${(e: preact.TargetedEvent<HTMLInputElement>) => {
                     const newRank = +e.currentTarget.value;
+
                     setRank(newRank);
                     setUsedTalents([]);
                     setPreferredTalents([]);
-                    setAvailableTalents(hero.talents.filter(it => it.unlockedAtRank <= newRank));
-                    setLockedTalents(hero.talents.filter(it => it.unlockedAtRank > newRank));
+
+                    appStateStorage.set({
+                        hero,
+                        rank: newRank,
+                        talents: {
+                            used: [],
+                            preferred: [],
+                        }
+                    })
                 }}
             />
             <output>${rank}</output>
@@ -76,12 +96,34 @@ export function App() {
                 heroCode=${hero.code} 
                 talents=${usedTalents} 
                 onTalentClick=${(talent: Talent) => {
-                    setAvailableTalents([...availableTalents, talent]);
-                    setUsedTalents(usedTalents.filter(it => it !== talent));
+                    const newUsedTalents = usedTalents.filter(it => it !== talent);
+
+                    setUsedTalents(newUsedTalents);
+
+                    appStateStorage.set({
+                        hero,
+                        rank,
+                        talents: {
+                            used: newUsedTalents,
+                            preferred: preferredTalents,
+                        }
+                    });
                 }}
                 onTalentAltClick=${(talent: Talent) => {
-                    setPreferredTalents([...preferredTalents, talent]);
-                    setUsedTalents(usedTalents.filter(it => it !== talent));
+                    const newPreferredTalents = [...preferredTalents, talent];
+                    const newUsedTalents = usedTalents.filter(it => it !== talent);
+
+                    setPreferredTalents(newPreferredTalents);
+                    setUsedTalents(newUsedTalents);
+
+                    appStateStorage.set({
+                        hero,
+                        rank,
+                        talents: {
+                            used: newUsedTalents,
+                            preferred: newPreferredTalents,
+                        }
+                    });
                 }}
             />
             <${MainList} 
@@ -89,25 +131,67 @@ export function App() {
                 heroCode=${hero.code} 
                 talents=${preferredTalents} 
                 onTalentClick=${(talent: Talent) => {
-                    setUsedTalents([...usedTalents, talent]);
-                    setPreferredTalents(preferredTalents.filter(it => it !== talent));
+                    const newUsedTalents = [...usedTalents, talent];
+                    const newPreferredTalents = preferredTalents.filter(it => it !== talent);
+
+                    setUsedTalents(newUsedTalents);
+                    setPreferredTalents(newPreferredTalents);
+
+                    appStateStorage.set({
+                        hero,
+                        rank,
+                        talents: {
+                            used: newUsedTalents,
+                            preferred: newPreferredTalents,
+                        }
+                    });
                 }}
                 onTalentAltClick=${(talent: Talent) => {
-                    setAvailableTalents([...availableTalents, talent]);
-                    setPreferredTalents(preferredTalents.filter(it => it !== talent));
+                    const newPreferredTalents = preferredTalents.filter(it => it !== talent);
+
+                    setPreferredTalents(newPreferredTalents);
+
+                    appStateStorage.set({
+                        hero,
+                        rank,
+                        talents: {
+                            used: usedTalents,
+                            preferred: newPreferredTalents,
+                        }
+                    });
                 }}
             />
             <${MainList} 
                 label=Available 
                 heroCode=${hero.code} 
-                talents=${availableTalents} 
+                talents=${localTalents.available} 
                 onTalentClick=${(talent: Talent) => {
-                    setUsedTalents([...usedTalents, talent]);
-                    setAvailableTalents(availableTalents.filter(it => it !== talent));
+                    const newUsedTalents = [...usedTalents, talent];
+
+                    setUsedTalents(newUsedTalents);
+
+                    appStateStorage.set({
+                        hero,
+                        rank,
+                        talents: {
+                            used: newUsedTalents,
+                            preferred: preferredTalents,
+                        }
+                    });
                 }}
                 onTalentAltClick=${(talent: Talent) => {
-                    setPreferredTalents([...preferredTalents, talent]);
-                    setAvailableTalents(availableTalents.filter(it => it !== talent));
+                    const newPreferredTalents = [...preferredTalents, talent];
+
+                    setPreferredTalents(newPreferredTalents);
+
+                    appStateStorage.set({
+                        hero,
+                        rank,
+                        talents: {
+                            used: usedTalents,
+                            preferred: newPreferredTalents,
+                        }
+                    });
                 }}
             />
             <hr/>
@@ -115,7 +199,7 @@ export function App() {
                 label=Locked 
                 isLocked 
                 heroCode=${hero.code} 
-                talents=${lockedTalents}
+                talents=${localTalents.locked}
             />
         </div>
     `;
