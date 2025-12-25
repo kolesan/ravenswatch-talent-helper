@@ -9,10 +9,12 @@ import { appStateStorage } from "./core/AppStateStorage";
 import { MainList } from "./MainList";
 import { calculateFullTalentsState } from "./utils/calculateFullTalentsState";
 import { defaultAppState } from "./utils/defaultAppState";
+import { isNotLocked } from "./utils/isNotLocked";
 
 // TODO: Rewrite state using useReducer
 // TODO: Think about saving state in one place not in every change callback
 // separately, to protect against forgetting to add saving to some new action cb
+// TODO: Save state to storage separately per hero
 
 const initialState = appStateStorage.get() || defaultAppState;
 
@@ -73,17 +75,19 @@ export function App() {
                 value=${rank}
                 oninput=${(e: preact.TargetedEvent<HTMLInputElement>) => {
                     const newRank = +e.currentTarget.value;
+                    const newUsedTalents = usedTalents.filter(isNotLocked(newRank));
+                    const newPreferredTalents = preferredTalents.filter(isNotLocked(newRank));
 
                     setRank(newRank);
-                    setUsedTalents([]);
-                    setPreferredTalents([]);
+                    setUsedTalents(newUsedTalents);
+                    setPreferredTalents(preferredTalents.filter(isNotLocked(newRank)));
 
                     appStateStorage.set({
                         hero,
                         rank: newRank,
                         talents: {
-                            used: [],
-                            preferred: [],
+                            used: newUsedTalents,
+                            preferred: newPreferredTalents,
                         }
                     })
                 }}
