@@ -8,8 +8,8 @@ import { Talent } from "../scripts/extractTalents/types";
 import { MainList } from "./MainList";
 
 export function App() {
-    const [hero, setHero] = useState<Hero>(heroes.all.geppetto);
-    const [rank, setRank] = useState(9);
+    const [hero, setHero] = useState<Hero>(heroes.all.wukong);
+    const [rank, setRank] = useState(3);
 
     console.log("App rendered", { hero: hero.code, rank });
 
