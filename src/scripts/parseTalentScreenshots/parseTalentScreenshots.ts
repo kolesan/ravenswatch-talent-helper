@@ -41,6 +41,6 @@ files.forEach(file => {
 
 function outputFilePath(filePath: string) {
     return filePath
-        .replace(baseScreenshotsDir, "src\\scrapedData\\icons\\talents")
+        .replace(baseScreenshotsDir, "public\\icons\\talents")
         .replace(".png", ".webp");
 }
