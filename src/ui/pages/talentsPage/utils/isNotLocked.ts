@@ -1,4 +1,5 @@
-import { Talent } from "../../scripts/extractTalents/types";
+
+import { Talent } from "../../../../scripts/extractTalents/types";
 
 import { isLocked } from "./isLocked";
 

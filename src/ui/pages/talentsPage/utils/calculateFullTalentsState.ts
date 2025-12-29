@@ -1,4 +1,4 @@
-import { Talent } from "../../scripts/extractTalents/types";
+import { Talent } from "../../../../scripts/extractTalents/types";
 import { AppState, FullTalentsState } from "../types";
 
 import { isLocked } from "./isLocked";

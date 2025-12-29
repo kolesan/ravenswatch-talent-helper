@@ -9,6 +9,7 @@
 }
 
 body {
+    margin: 0;
     margin-bottom: 24px;
 
     background-color: #181614;

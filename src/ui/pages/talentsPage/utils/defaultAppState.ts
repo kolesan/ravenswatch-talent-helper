@@ -1,4 +1,4 @@
-import { heroes } from "../../finalData/finalData";
+import { heroes } from "../../../../finalData/finalData";
 import { AppState } from "../types";
 
 export const defaultAppState: AppState = {

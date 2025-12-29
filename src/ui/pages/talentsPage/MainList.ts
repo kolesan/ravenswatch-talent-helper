@@ -1,9 +1,9 @@
 import { html } from "htm/preact";
 
-import { HeroCode } from "../data/heroes";
-import { Talent } from "../scripts/extractTalents/types";
+import { HeroCode } from "../../../data/heroes";
+import { Talent } from "../../../scripts/extractTalents/types";
 
-import { TalentDescription } from "./components/TalentDescription/TalentDescription";
+import { TalentDescription } from "../../components/TalentDescription/TalentDescription";
 
 interface Props {
     classes?: string;

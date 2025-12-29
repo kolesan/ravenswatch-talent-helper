@@ -1,5 +1,5 @@
-import { Hero } from "../finalData/finalData";
-import { Talent } from "../scripts/extractTalents/types";
+import { Hero } from "../../../finalData/finalData";
+import { Talent } from "../../../scripts/extractTalents/types";
 
 export type AppState = {
     hero: Hero;
