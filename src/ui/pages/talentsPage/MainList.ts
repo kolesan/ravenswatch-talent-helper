@@ -11,6 +11,7 @@ interface Props {
     label: string;
     heroCode: HeroCode;
     talents: Talent[];
+    maxItems?: number;
     onTalentClick?: (talent: Talent) => void;
     onTalentAltClick?: (talent: Talent) => void;
 }
@@ -21,14 +22,15 @@ export function MainList({
     label,
     heroCode,
     talents,
+    maxItems,
     onTalentClick,
     onTalentAltClick,
 }: Props) {
     return html`
         <div classes=${classes}>
-            <h1>${label} ${talents.length}</h1>
+            <h1>${label} ${talents.length}${maxItems ? ` / ${maxItems}` : null}</h1>
             <ul class="main-list">
-                ${talents.map(talent => {
+                ${talents.slice(0, maxItems).map(talent => {
                     const imageSrc = isLocked
                         ? `icons/talents/locked_talent.webp`
                         : `icons/talents/${heroCode}/${talent.code}.webp`;

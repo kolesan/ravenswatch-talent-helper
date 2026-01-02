@@ -19,6 +19,7 @@ import { isNotLocked } from "./utils/isNotLocked";
 // * think about using hero art as bg somewhere in the app
 
 const initialState = appStateStorage.get() || defaultAppState;
+const maxUsedTalents = 7;
 
 export function TalentsPage() {
     const [hero, setHero] = useState(initialState.hero);
@@ -35,6 +36,11 @@ export function TalentsPage() {
         }
     });
 
+    // TODO rework (using useReducer for all state should help with this)
+    const setUsed: (t: Talent[]) => void = (talents) => {
+        setUsedTalents(talents.slice(0, maxUsedTalents));
+    }
+
     return html`
         <label class=container-label>
             Select hero
@@ -45,7 +51,7 @@ export function TalentsPage() {
                     const newHero = heroes.utils.findByCode(newCode)!;
 
                     setHero(newHero);
-                    setUsedTalents([]);
+                    setUsed([]);
                     setPreferredTalents([]);
 
                     appStateStorage.set({
@@ -81,7 +87,7 @@ export function TalentsPage() {
                     const newPreferredTalents = preferredTalents.filter(isNotLocked(newRank));
 
                     setRank(newRank);
-                    setUsedTalents(newUsedTalents);
+                    setUsed(newUsedTalents);
                     setPreferredTalents(preferredTalents.filter(isNotLocked(newRank)));
 
                     appStateStorage.set({
@@ -101,10 +107,11 @@ export function TalentsPage() {
                 label=Used 
                 heroCode=${hero.code} 
                 talents=${usedTalents} 
+                maxItems=${maxUsedTalents}
                 onTalentClick=${(talent: Talent) => {
                     const newUsedTalents = usedTalents.filter(it => it !== talent);
 
-                    setUsedTalents(newUsedTalents);
+                    setUsed(newUsedTalents);
 
                     appStateStorage.set({
                         hero,
@@ -120,7 +127,7 @@ export function TalentsPage() {
                     const newUsedTalents = usedTalents.filter(it => it !== talent);
 
                     setPreferredTalents(newPreferredTalents);
-                    setUsedTalents(newUsedTalents);
+                    setUsed(newUsedTalents);
 
                     appStateStorage.set({
                         hero,
@@ -137,10 +144,15 @@ export function TalentsPage() {
                 heroCode=${hero.code} 
                 talents=${preferredTalents} 
                 onTalentClick=${(talent: Talent) => {
+                    // TODO this if should not be needed
+                    if (usedTalents.length === maxUsedTalents) {
+                        return;
+                    }
+
                     const newUsedTalents = [...usedTalents, talent];
                     const newPreferredTalents = preferredTalents.filter(it => it !== talent);
 
-                    setUsedTalents(newUsedTalents);
+                    setUsed(newUsedTalents);
                     setPreferredTalents(newPreferredTalents);
 
                     appStateStorage.set({
@@ -172,9 +184,14 @@ export function TalentsPage() {
                 heroCode=${hero.code} 
                 talents=${localTalents.available} 
                 onTalentClick=${(talent: Talent) => {
+                    // TODO this if should not be needed
+                    if (usedTalents.length === maxUsedTalents) {
+                        return;
+                    }
+                    
                     const newUsedTalents = [...usedTalents, talent];
 
-                    setUsedTalents(newUsedTalents);
+                    setUsed(newUsedTalents);
 
                     appStateStorage.set({
                         hero,
