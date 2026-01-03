@@ -30,7 +30,7 @@ export function TalentsPage() {
 
     return html`
         <label class=container-label>
-            Select hero
+            Select Hero
             <select 
                 value=${state.hero.code} 
                 onChange=${(e: preact.TargetedEvent<HTMLSelectElement>) => {
@@ -58,7 +58,7 @@ export function TalentsPage() {
             </select>
         </label>
         <label class=container-label>
-            Select Hero rank
+            Select Rank
             <input
                 type=range
                 min=${rankConsts.min}

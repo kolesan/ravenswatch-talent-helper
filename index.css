@@ -10,7 +10,7 @@
 
 body {
     margin: 0;
-    margin-bottom: 24px;
+    padding-bottom: 28px;
 
     background-color: #181614;
 
@@ -20,11 +20,15 @@ body {
 }
 
 .container-label {
+    margin-top: 16px;
     display: flex;
     gap: 4px;
+    padding: 0 16px;
 }
 
 .talent-lists {
+    padding: 0 16px;
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 0.01fr 0.5fr;
     column-gap: 16px;
