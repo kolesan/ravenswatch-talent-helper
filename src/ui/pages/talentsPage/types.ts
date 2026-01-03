@@ -7,18 +7,27 @@ export type AppState = {
     talents: TalentsState;
 }
 
-type TalentsState = {
+export type TalentsState = {
     used: Talent[];
     preferred: Talent[];
 }
 
-export type FullAppState = AppState & {
-    talents: FullTalentsState;
-}
-
-type FullTalentsState = TalentsState & LocalTalentsState;
-
 export type LocalTalentsState = {
     available: Talent[];
     locked: Talent[];
+}
+
+export type SerializedAppState = {
+    currentHeroCode: string;
+    heroes: Record<string, SerializedHeroState>;
+}
+
+export type SerializedHeroState = {
+    rank: number;
+    talents: SerializedTalentsState;
+}
+
+export type SerializedTalentsState = {
+    used: string[];
+    preferred: string[];
 }

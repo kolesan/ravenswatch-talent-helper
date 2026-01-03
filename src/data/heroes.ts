@@ -17,18 +17,21 @@ type HeroName =
     | "Romeo"
     | "Juliet"; 
 
-export type HeroCode = 
-      "scarlet"
-    | "piper"
-    | "beowulf"
-    | "snowQueen"
-    | "aladdin"
-    | "melusine"
-    | "geppetto"
-    | "wukong"
-    | "carmilla"
-    | "romeo"
-    | "juliet"; 
+export const heroCodes = [
+    "scarlet",
+    "piper",
+    "beowulf",
+    "snowQueen",
+    "aladdin",
+    "melusine",
+    "geppetto",
+    "wukong",
+    "carmilla",
+    "romeo",
+    "juliet",
+] as const;
+
+export type HeroCode = typeof heroCodes[number];
 
 const scarlet: Hero = {
     name: "Scarlet",

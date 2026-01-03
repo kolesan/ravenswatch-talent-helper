@@ -1,17 +1,18 @@
 import { useReducer } from "preact/hooks";
 
-import { Hero } from "../../../../finalData/finalData";
 import { Talent } from "../../../../scripts/extractTalents/types";
-import { minmax } from "../../../utils/minmax";
 import { maxUsedTalents } from "../consts/maxUsedTalents";
-import { rankConsts } from "../consts/rankConsts";
 import { AppState } from "../types";
 import { isNotLocked } from "../utils/isNotLocked";
+import { minmaxRank } from "../utils/minmaxRank";
+import { appStateStorage } from "../../../utils/appStateStorage/appStateStorage";
+import { HeroCode } from "../../../../data/heroes";
 
-const minmaxRank = minmax(rankConsts.min, rankConsts.max);
+// TODO consider reworking how talents are moved to preferred (favorites)
+// to used, and back to available
 
 type Action =
-    | { type: "set_hero", hero: Hero }
+    | { type: "set_hero", heroCode: HeroCode }
     | { type: "set_rank", rank: number }
     | { type: "talent_from_available_to_preferred", talent: Talent }
     | { type: "talent_from_available_to_used", talent: Talent }
@@ -25,14 +26,7 @@ export function useTalentsPageState(initialState: AppState) {
     return useReducer<AppState, Action>((state, action) => {
         switch (action.type) {
             case "set_hero": {
-                return {
-                    ...state,
-                    hero: action.hero,
-                    talents: {
-                        used: [],
-                        preferred: [],
-                    }
-                };
+                return appStateStorage.getHero(action.heroCode);
             }
             case "set_rank": {
                 const rank = minmaxRank(action.rank);

@@ -1,23 +1,25 @@
 import { html } from "htm/preact";
 
-import { HeroCode } from "../../../data/heroes";
 import { heroes } from "../../../finalData/finalData";
 import { Talent } from "../../../scripts/extractTalents/types";
-import { appStateStorage } from "../../core/AppStateStorage";
+import { appStateStorage } from "../../utils/appStateStorage/appStateStorage";
+import { isHeroCode } from "../../utils/isHeroCode";
 
 import { maxUsedTalents } from "./consts/maxUsedTalents";
 import { rankConsts } from "./consts/rankConsts";
 import { useSaveStateToStorage } from "./hooks/useSaveStateToStorage";
 import { useTalentsPageState } from "./hooks/useTalentsPageState";
 import { MainList } from "./MainList";
-import { getDerivedTalentsState } from "./utils/getDerivedTalentsState";
 import { defaultAppState } from "./utils/defaultAppState";
+import { getDerivedTalentsState } from "./utils/getDerivedTalentsState";
 
 // TODO: think about rewriting useTalentsPage to return function for actions, 
 // not useReducer directly
-// TODO: Save state to storage separately per hero
+// TODO: think about how to set up TS properly in state deserialization to make sure
+// that TS doesnt give us any false confidence in what can be deserialized
+// TODO: Add favicon (e.g. the feather but with RH (RunHelper) letters)
 
-const initialState = appStateStorage.get() || defaultAppState;
+const initialState = appStateStorage.getCurrentHero() || defaultAppState;
 
 export function TalentsPage() {
     const [state, dispatch] = useTalentsPageState(initialState);
@@ -32,13 +34,16 @@ export function TalentsPage() {
             <select 
                 value=${state.hero.code} 
                 onChange=${(e: preact.TargetedEvent<HTMLSelectElement>) => {
-                    const newCode = e.currentTarget.value as HeroCode;
-                    // TODO: think about this "!""
-                    const newHero = heroes.utils.findByCode(newCode)!;
+                    const newHeroCode = e.currentTarget.value;
+
+                    if (!isHeroCode(newHeroCode)) {
+                        console.error("No such hero code, check your Select component");
+                        return;
+                    }
 
                     dispatch({ 
                         type: "set_hero", 
-                        hero: newHero 
+                        heroCode: newHeroCode,
                     });
                 }}
             >
