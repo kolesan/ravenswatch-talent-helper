@@ -75,7 +75,8 @@ export function TalentsPage() {
             />
             <output>${state.rank}</output>
         </label>
-        <div class=talent-lists>
+        <!-- TODO rework this js style application later -->
+        <div class=${`talent-lists ${derivedTalentsState.locked.length ? "" : "three-columns"}`}>
             <${MainList} 
                 label=Used 
                 heroCode=${state.hero.code} 
@@ -128,13 +129,17 @@ export function TalentsPage() {
                     });
                 }}
             />
-            <hr/>
-            <${MainList} 
-                label=Locked 
-                isLocked 
-                heroCode=${state.hero.code} 
-                talents=${derivedTalentsState.locked}
-            />
+            ${!!derivedTalentsState.locked.length &&
+                html`
+                    <hr/>
+                    <${MainList}
+                        label=Locked 
+                        isLocked 
+                        heroCode=${state.hero.code} 
+                        talents=${derivedTalentsState.locked}
+                    />
+                `
+            }
         </div>
     `;
 }

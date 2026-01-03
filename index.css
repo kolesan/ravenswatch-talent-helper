@@ -29,6 +29,9 @@ body {
     grid-template-columns: 1fr 1fr 1fr 0.01fr 0.5fr;
     column-gap: 16px;
 }
+.three-columns {
+    grid-template-columns: 1fr 1fr 1fr;
+}
 
 h1 {
     margin-left: 2px;
