@@ -12,7 +12,13 @@ type TalentsState = {
     preferred: Talent[];
 }
 
-export type FullTalentsState = TalentsState & {
+export type FullAppState = AppState & {
+    talents: FullTalentsState;
+}
+
+type FullTalentsState = TalentsState & LocalTalentsState;
+
+export type LocalTalentsState = {
     available: Talent[];
     locked: Talent[];
 }

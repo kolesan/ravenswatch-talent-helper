@@ -10,7 +10,7 @@ import { rankConsts } from "./consts/rankConsts";
 import { useSaveStateToStorage } from "./hooks/useSaveStateToStorage";
 import { useTalentsPageState } from "./hooks/useTalentsPageState";
 import { MainList } from "./MainList";
-import { calculateFullTalentsState } from "./utils/calculateFullTalentsState";
+import { getDerivedTalentsState } from "./utils/getDerivedTalentsState";
 import { defaultAppState } from "./utils/defaultAppState";
 
 // TODO: think about rewriting useTalentsPage to return function for actions, 
@@ -24,16 +24,7 @@ export function TalentsPage() {
 
     useSaveStateToStorage(state);
 
-    // TODO probably need to move this to the state reducer
-    // also consider that we do not need to save this to the storage
-    const localTalents = calculateFullTalentsState({
-        hero: state.hero,
-        rank: state.rank,
-        talents: {
-            used: state.talents.used,
-            preferred: state.talents.preferred,
-        }
-    });
+    const derivedTalentsState = getDerivedTalentsState(state);
 
     return html`
         <label class=container-label>
@@ -118,7 +109,7 @@ export function TalentsPage() {
             <${MainList} 
                 label=Available 
                 heroCode=${state.hero.code} 
-                talents=${localTalents.available} 
+                talents=${derivedTalentsState.available} 
                 onTalentClick=${(talent: Talent) => {
                     dispatch({
                         type: "talent_from_available_to_used",
@@ -137,7 +128,7 @@ export function TalentsPage() {
                 label=Locked 
                 isLocked 
                 heroCode=${state.hero.code} 
-                talents=${localTalents.locked}
+                talents=${derivedTalentsState.locked}
             />
         </div>
     `;
