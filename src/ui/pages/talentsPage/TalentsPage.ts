@@ -1,11 +1,10 @@
 import { html } from "htm/preact";
 
-import { HeroCode } from "../../../data/heroes";
-import { heroes } from "../../../finalData/finalData";
+import { Hero, heroes } from "../../../finalData/finalData";
 import { Talent } from "../../../scripts/extractTalents/types";
 import { appStateStorage } from "../../utils/appStateStorage/appStateStorage";
 
-import { HeroSelect } from "./components/HeroSelect";
+import { HeroSelect } from "./components/HeroSelect/HeroSelect";
 import { MainList } from "./components/MainList";
 import { maxUsedTalents } from "./consts/maxUsedTalents";
 import { rankConsts } from "./consts/rankConsts";
@@ -13,6 +12,8 @@ import { useSaveStateToStorage } from "./hooks/useSaveStateToStorage";
 import { useTalentsPageState } from "./hooks/useTalentsPageState";
 import { defaultAppState } from "./utils/defaultAppState";
 import { getDerivedTalentsState } from "./utils/getDerivedTalentsState";
+
+import cls from "./TalentsPage.module.css";
 
 // TODO: think about rewriting useTalentsPage to return function for actions, 
 // not useReducer directly
@@ -30,34 +31,36 @@ export function TalentsPage() {
     const derivedTalentsState = getDerivedTalentsState(state);
 
     return html`
-        <${HeroSelect}
-            items=${heroes.asArray}
-            value=${state.hero.code}
-            onChange=${(code: HeroCode) => {
-                dispatch({
-                    type: "set_hero",
-                    heroCode: code,
-                });
-            }}
-        />
-        <label class=container-label>
-            Select Rank
-            <input
-                type=range
-                min=${rankConsts.min}
-                max=${rankConsts.max}
-                value=${state.rank}
-                oninput=${(e: preact.TargetedEvent<HTMLInputElement>) => {
-                    const newRank = +e.currentTarget.value;
-
+        <div class=${cls.controls}>
+            <${HeroSelect}
+                items=${heroes.asArray}
+                value=${state.hero}
+                onChange=${(hero: Hero) => {
                     dispatch({
-                        type: "set_rank",
-                        rank: newRank,
-                    })
+                        type: "set_hero",
+                        heroCode: hero.code,
+                    });
                 }}
             />
-            <output>${state.rank}</output>
-        </label>
+            <label class=container-label>
+                Rank
+                <input
+                    type=range
+                    min=${rankConsts.min}
+                    max=${rankConsts.max}
+                    value=${state.rank}
+                    oninput=${(e: preact.TargetedEvent<HTMLInputElement>) => {
+                        const newRank = +e.currentTarget.value;
+
+                        dispatch({
+                            type: "set_rank",
+                            rank: newRank,
+                        })
+                    }}
+                />
+                <output>${state.rank}</output>
+            </label>
+        </div>
         <!-- TODO rework this js style application later -->
         <div class=${`talent-lists ${derivedTalentsState.locked.length ? "" : "three-columns"}`}>
             <${MainList} 

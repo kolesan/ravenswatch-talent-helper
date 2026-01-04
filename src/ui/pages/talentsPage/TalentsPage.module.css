@@ -1,0 +1,7 @@
+.controls {
+    padding: 0 8px;
+
+    display: flex;
+    justify-content: center;
+    gap: 16px
+}

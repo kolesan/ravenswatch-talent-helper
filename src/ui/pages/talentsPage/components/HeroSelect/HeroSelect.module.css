@@ -1,0 +1,173 @@
+.root {
+    position: relative;
+}
+
+.input {
+    padding: 2px;
+    padding-right: 12px;
+
+    display: flex;
+
+    font-family: ravenswatch;
+    text-transform: uppercase;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    border: 1px solid transparent;
+}
+.input:hover, .inputActive {
+    background-size: cover;
+    background-color: #88650e;
+    background-blend-mode: multiply;
+
+    border: 1px solid #52493381;
+
+    color: #afbca1; 
+    text-shadow: 
+        -1px -1px 2px black, 
+        -1px 1px 2px black, 
+        1px -1px 2px black, 
+        1px 1px 2px black;
+}
+.inputImageContainer {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    background-repeat: round;
+}
+.inputImage {
+    height: 80px;
+    width: 80px;
+}
+.inputText {
+    /* margin-left: -14px; */
+    /* margin-bottom: -4px; */
+}
+.inputArrow {
+    transform: rotate(90deg);
+    margin-left: 4px;
+    /* margin-bottom: -4px; */
+}
+
+.items {
+    position: absolute;
+    top: 100%;
+
+    width: max-content;
+
+    margin-top: 4px;
+
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #52493381;
+}
+.item {
+    padding: 6px 4px;
+    padding-right: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    cursor: pointer;
+
+    background-size: cover;
+    background-color: #514c3d;
+    background-blend-mode: multiply;
+}
+.item:hover {
+    color: #afbca1; 
+    background-blend-mode: unset;
+}
+.itemImage {
+    height: 68px;
+    width: 68px;
+}
+.itemTextContainer {
+    position: relative;
+
+    font-family: ravenswatch;
+    text-transform: uppercase;
+    
+    text-shadow: 
+        -1px -1px 2px black, 
+        -1px 1px 2px black, 
+        1px -1px 2px black, 
+        1px 1px 2px black;
+}
+.itemText {
+    font-size: 17px;
+}
+.item:hover .itemText {
+    visibility: hidden;
+}
+.itemTextBigger {
+    visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    width: max-content;
+
+    font-size: 18px;
+}
+.item:hover .itemTextBigger {
+    visibility: unset;
+}
+
+/* TODO Double check all stuff like this is either used or deleted */
+/* .backdrop {
+    position: absolute;
+    top: 0;
+    left: -100vw;
+
+    width: 200vw;
+    height: 200vh;
+
+    background-color: #9acd321a;
+} */
+
+/* 
+    TODO consider an absolute positioned element (img probably)
+    stretched to look as if it's the background
+    with the hero code in js taken from a variable
+    instead of this
+
+    think about other approaches to solving this
+    e.g. try the "style" attribute in js again
+*/
+:global(.scarletBgArt).inputActive, :global(.scarletBgArt):hover {
+    background-image: url("art/scarlet.jpg");
+}
+:global(.piperBgArt).inputActive, :global(.piperBgArt):hover {
+    background-image: url("art/piper.jpg");
+}
+:global(.beowulfBgArt).inputActive, :global(.beowulfBgArt):hover {
+    background-image: url("art/beowulf.jpg");
+}
+:global(.snowQueenBgArt).inputActive, :global(.snowQueenBgArt):hover {
+    background-image: url("art/snowQueen.jpg");
+}
+:global(.aladdinBgArt).inputActive, :global(.aladdinBgArt):hover {
+    background-image: url("art/aladdin.jpg");
+}
+:global(.melusineBgArt).inputActive, :global(.melusineBgArt):hover {
+    background-image: url("art/melusine.jpg");
+}
+:global(.geppettoBgArt).inputActive, :global(.geppettoBgArt):hover {
+    background-image: url("art/geppetto.jpg");
+}
+:global(.wukongBgArt).inputActive, :global(.wukongBgArt):hover {
+    background-image: url("art/wukong.jpg");
+}
+:global(.carmillaBgArt).inputActive, :global(.carmillaBgArt):hover {
+    background-image: url("art/carmilla.jpg");
+}
+:global(.romeoBgArt).inputActive, :global(.romeoBgArt):hover {
+    background-image: url("art/romeo.jpg");
+}
+:global(.julietBgArt).inputActive, :global(.julietBgArt):hover {
+    background-image: url("art/juliet.jpg");
+}
