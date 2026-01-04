@@ -32,8 +32,8 @@ export function MainList({
             <ul class="main-list">
                 ${talents.slice(0, maxItems).map(talent => {
                     const imageSrc = isLocked
-                        ? `icons/talents/locked_talent.webp`
-                        : `icons/talents/${heroCode}/${talent.code}.webp`;
+                        ? `/icons/talents/locked_talent.webp`
+                        : `/icons/talents/${heroCode}/${talent.code}.webp`;
 
                     return html`
                         <li

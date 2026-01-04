@@ -8,7 +8,7 @@ export function Toolbar() {
             <div class=logo_container>
                 <img 
                     class=logo_img 
-                    src="logos/ravenswatch-logo.webp" 
+                    src="/logos/ravenswatch-logo.webp" 
                     width=332 
                     height=100 
                 />

@@ -29,7 +29,7 @@ export function HeroSelect({
                 <div class=${cls.inputImageContainer}>
                     <img
                         class=${cls.inputImage}
-                        src=${`icons/heroes/${value.code}.png`}
+                        src=${`/icons/heroes/${value.code}.png`}
                         height=256
                         widht=256
                     />
@@ -54,7 +54,7 @@ export function HeroSelect({
                         >
                             <img
                                 class=${cls.itemImage}
-                                src=${`icons/heroes/${it.code}.png`}
+                                src=${`/icons/heroes/${it.code}.png`}
                                 height=256
                                 widht=256
                             />
