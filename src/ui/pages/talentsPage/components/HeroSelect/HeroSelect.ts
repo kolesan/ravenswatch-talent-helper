@@ -24,7 +24,8 @@ export function HeroSelect({
             onClick=${open.toggle}
         >
             <div 
-                class=${`${cls.input} scarletBgArt ${open.is ? `${cls.inputActive}` : ""}`}
+                class=${`${cls.input} ${open.is ? `${cls.inputActive}` : ""}`}
+                style=${`background-image: url('art/${value.code}.jpg');`}
             >
                 <div class=${cls.inputImageContainer}>
                     <img
