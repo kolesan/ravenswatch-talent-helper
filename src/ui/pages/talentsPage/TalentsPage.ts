@@ -1,10 +1,11 @@
 import { html } from "htm/preact";
 
+import { HeroCode } from "../../../data/heroes";
 import { heroes } from "../../../finalData/finalData";
 import { Talent } from "../../../scripts/extractTalents/types";
 import { appStateStorage } from "../../utils/appStateStorage/appStateStorage";
-import { isHeroCode } from "../../utils/isHeroCode";
 
+import { HeroSelect } from "./components/HeroSelect";
 import { MainList } from "./components/MainList";
 import { maxUsedTalents } from "./consts/maxUsedTalents";
 import { rankConsts } from "./consts/rankConsts";
@@ -29,34 +30,16 @@ export function TalentsPage() {
     const derivedTalentsState = getDerivedTalentsState(state);
 
     return html`
-        <label class=container-label>
-            Select Hero
-            <select 
-                value=${state.hero.code} 
-                onChange=${(e: preact.TargetedEvent<HTMLSelectElement>) => {
-                    const newHeroCode = e.currentTarget.value;
-
-                    if (!isHeroCode(newHeroCode)) {
-                        console.error("No such hero code, check your Select component");
-                        return;
-                    }
-
-                    dispatch({ 
-                        type: "set_hero", 
-                        heroCode: newHeroCode,
-                    });
-                }}
-            >
-                ${heroes.asArray.map(hero => html`
-                    <option 
-                        key=${hero.code}
-                        value=${hero.code}
-                    >
-                        ${hero.name}
-                    </option>
-                `)}
-            </select>
-        </label>
+        <${HeroSelect}
+            items=${heroes.asArray}
+            value=${state.hero.code}
+            onChange=${(code: HeroCode) => {
+                dispatch({
+                    type: "set_hero",
+                    heroCode: code,
+                });
+            }}
+        />
         <label class=container-label>
             Select Rank
             <input
