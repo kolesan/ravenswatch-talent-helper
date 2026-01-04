@@ -24,7 +24,7 @@ export function HeroSelect({
             onClick=${open.toggle}
         >
             <div 
-                class=${`${cls.input} ${value.code}BgArt ${open.is ? `${cls.inputActive}` : ""}`}
+                class=${`${cls.input} scarletBgArt ${open.is ? `${cls.inputActive}` : ""}`}
             >
                 <div class=${cls.inputImageContainer}>
                     <img
