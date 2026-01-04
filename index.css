@@ -20,11 +20,17 @@ body {
 }
 
 .container-label {
-    margin-top: 16px;
     display: flex;
+    align-items: center;
     gap: 4px;
-    padding: 0 16px;
+    
+    font-family: ravenswatch;
+    text-transform: uppercase;
 }
+.container-label input {
+    cursor: pointer;
+}
+
 
 .talent-lists {
     padding: 0 16px;
