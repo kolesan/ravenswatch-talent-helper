@@ -24,8 +24,7 @@ export function HeroSelect({
             onClick=${open.toggle}
         >
             <div 
-                class=${`${cls.input} ${open.is ? `${cls.inputActive}` : ""}`}
-                style=${`background-image: url('art/${value.code}.jpg');`}
+                class=${`${cls.input} ${value.code}BgArt ${open.is ? `${cls.inputActive}` : ""}`}
             >
                 <div class=${cls.inputImageContainer}>
                     <img
@@ -47,7 +46,7 @@ export function HeroSelect({
                     ${items.filter(it => it.code !== value.code).map(it => html`
                         <div
                             class=${cls.item}
-                            style=${`background-image: url('art/${it.code}.jpg');`}
+                            style=${`background-image: url("/art/${it.code}.jpg");`}
                             key=${it.code}
                             onClick=${() => {
                                 onChange(it);

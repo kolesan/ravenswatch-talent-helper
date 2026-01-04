@@ -139,35 +139,35 @@
     e.g. try the "style" attribute in js again
 */
 :global(.scarletBgArt).inputActive, :global(.scarletBgArt):hover {
-    background-image: url("art/scarlet.jpg");
+    background-image: url("/art/scarlet.jpg");
 }
 :global(.piperBgArt).inputActive, :global(.piperBgArt):hover {
-    background-image: url("art/piper.jpg");
+    background-image: url("/art/piper.jpg");
 }
 :global(.beowulfBgArt).inputActive, :global(.beowulfBgArt):hover {
-    background-image: url("art/beowulf.jpg");
+    background-image: url("/art/beowulf.jpg");
 }
 :global(.snowQueenBgArt).inputActive, :global(.snowQueenBgArt):hover {
-    background-image: url("art/snowQueen.jpg");
+    background-image: url("/art/snowQueen.jpg");
 }
 :global(.aladdinBgArt).inputActive, :global(.aladdinBgArt):hover {
-    background-image: url("art/aladdin.jpg");
+    background-image: url("/art/aladdin.jpg");
 }
 :global(.melusineBgArt).inputActive, :global(.melusineBgArt):hover {
-    background-image: url("art/melusine.jpg");
+    background-image: url("/art/melusine.jpg");
 }
 :global(.geppettoBgArt).inputActive, :global(.geppettoBgArt):hover {
-    background-image: url("art/geppetto.jpg");
+    background-image: url("/art/geppetto.jpg");
 }
 :global(.wukongBgArt).inputActive, :global(.wukongBgArt):hover {
-    background-image: url("art/wukong.jpg");
+    background-image: url("/art/wukong.jpg");
 }
 :global(.carmillaBgArt).inputActive, :global(.carmillaBgArt):hover {
-    background-image: url("art/carmilla.jpg");
+    background-image: url("/art/carmilla.jpg");
 }
 :global(.romeoBgArt).inputActive, :global(.romeoBgArt):hover {
-    background-image: url("art/romeo.jpg");
+    background-image: url("/art/romeo.jpg");
 }
 :global(.julietBgArt).inputActive, :global(.julietBgArt):hover {
-    background-image: url("art/juliet.jpg");
+    background-image: url("/art/juliet.jpg");
 }
