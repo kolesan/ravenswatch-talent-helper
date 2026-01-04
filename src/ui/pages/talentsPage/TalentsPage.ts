@@ -5,11 +5,11 @@ import { Talent } from "../../../scripts/extractTalents/types";
 import { appStateStorage } from "../../utils/appStateStorage/appStateStorage";
 import { isHeroCode } from "../../utils/isHeroCode";
 
+import { MainList } from "./components/MainList";
 import { maxUsedTalents } from "./consts/maxUsedTalents";
 import { rankConsts } from "./consts/rankConsts";
 import { useSaveStateToStorage } from "./hooks/useSaveStateToStorage";
 import { useTalentsPageState } from "./hooks/useTalentsPageState";
-import { MainList } from "./MainList";
 import { defaultAppState } from "./utils/defaultAppState";
 import { getDerivedTalentsState } from "./utils/getDerivedTalentsState";
 
