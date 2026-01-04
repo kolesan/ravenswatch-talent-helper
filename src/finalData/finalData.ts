@@ -67,7 +67,7 @@ export const heroes = {
     all,
     asArray: Object.values(all),
     utils: {
-        findByCode(code: HeroCode) {
+        findByCode(code: string): Hero | undefined {
             return heroes.asArray.find(it => it.code === code);
         }
     }
