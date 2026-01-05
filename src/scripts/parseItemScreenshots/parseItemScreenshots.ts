@@ -83,7 +83,8 @@ files.forEach(async file => {
             "Success", 
             { pw: info.width, ph: info.height }, 
             info.width !== 159 ? "W_ERR" : "", 
-            info.height !== 155 ? "H_ERR" : ""
+            info.height !== 155 ? "H_ERR" : "",
+            file.substring(file.lastIndexOf("\\") + 1, file.lastIndexOf(".")),
         ))
         .catch((err) => console.log("Error:", file, err));
 })

@@ -1,9 +1,8 @@
-import { snowQueenOrder } from "../extractTalents/utils/applyIngameOrder/consts/snowQueenOrder";
-import { listDirFilesSyncRecursive } from "../utils/listDirFilesSyncRecursive";
+import { cursed } from "../../scrapedData/items/cursed";
+import { upperCaseFirstLetter } from "../utils/upperCaseFirstLetter";
 
-const snowQueenScreenshots = listDirFilesSyncRecursive(
-    "src\\data\\screenshots\\talents\\snowQueen"
+const names = cursed.map(it => 
+    it.code.split("_").map(upperCaseFirstLetter).join(" "),
 );
 
-console.log(snowQueenScreenshots);
-console.log(snowQueenOrder);
+console.log(names);
