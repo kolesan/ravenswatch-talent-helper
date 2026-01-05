@@ -2,9 +2,9 @@ import sharp from "sharp";
 
 import { listDirFilesSyncRecursive } from "./utils/listDirFilesSyncRecursive";
 
-const baseScreenshotsDir = "src\\data\\screenshots";
+const baseTalentScreenshotsDir = "src\\data\\screenshots\\talents";
 
-const files = listDirFilesSyncRecursive(baseScreenshotsDir);
+const files = listDirFilesSyncRecursive(baseTalentScreenshotsDir);
 
 files.forEach(file => {
     if (file.includes("empty_corner")) {
@@ -25,7 +25,7 @@ files.forEach(file => {
     const composited = extracted
         .clone()
         .composite([{
-            input: `${baseScreenshotsDir}\\empty_corner.webp`,
+            input: `${baseTalentScreenshotsDir}\\empty_corner.webp`,
             top: 8,
             left: 1,
         }]);
@@ -41,6 +41,6 @@ files.forEach(file => {
 
 function outputFilePath(filePath: string) {
     return filePath
-        .replace(baseScreenshotsDir, "public\\icons\\talents")
+        .replace(baseTalentScreenshotsDir, "public\\icons\\talents")
         .replace(".png", ".webp");
 }

@@ -8,7 +8,9 @@ const hero = heroes.all.melusine;
 const heroCode = hero.code;
 const importName = `${heroCode}Order`;
 
-const screenshots = listDirFilesSyncRecursive(`src\\data\\screenshots\\${heroCode}`);
+const screenshots = listDirFilesSyncRecursive(
+    `src\\data\\screenshots\\talents\\${heroCode}`
+);
 
 const manualOrderOverride = [
     "geyser",
