@@ -1,5 +1,5 @@
 import { snowQueenOrder } from "../extractTalents/utils/applyIngameOrder/consts/snowQueenOrder";
-import { listDirFilesSyncRecursive } from "../parseTalentScreenshots/utils/listDirFilesSyncRecursive";
+import { listDirFilesSyncRecursive } from "../utils/listDirFilesSyncRecursive";
 
 const snowQueenScreenshots = listDirFilesSyncRecursive(
     "src\\data\\screenshots\\talents\\snowQueen"
