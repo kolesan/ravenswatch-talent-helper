@@ -6,24 +6,15 @@ const baseItemScreenshotsDir = "src\\data\\screenshots\\items";
 
 const files = listDirFilesSyncRecursive(baseItemScreenshotsDir);
 
-files.slice(0, 1).forEach(async file => {
+files.forEach(async file => {
     if (file.includes("empty_corner")) {
         return;
     }
 
     console.log(`Extracting item icon from '${file}'`);
-    // const sharpFile = sharp(file);
-
-    // const extracted = sharpFile
-    //     .rotate(-47)
-    // .extract({
-    //     top: 843,
-    //     left: 1108,
-    //     width: 159,
-    //     height: 154,
-    // });
 
     const base = sharp(file);
+
     const rotatedAndExtracted = await base
         .rotate(47)
         .extract({
@@ -33,6 +24,7 @@ files.slice(0, 1).forEach(async file => {
             height: 142,
         })
         .toBuffer();
+
     const rotatedBackAndCleaned = await sharp(rotatedAndExtracted)
         .rotate(-47, { background: "#161716" })
         .composite([{
@@ -76,5 +68,5 @@ files.slice(0, 1).forEach(async file => {
 function outputFilePath(filePath: string) {
     return filePath
         .replace(baseItemScreenshotsDir, "public\\icons\\items")
-        .replace(".png", ".rtt.extr.rtt.cmpstd.trmd.webp");
+        .replace(".png", ".webp");
 }
