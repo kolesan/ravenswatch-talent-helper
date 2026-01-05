@@ -1,7 +1,7 @@
 import { renameSync } from "fs";
 
 import { heroes } from "../../data/heroes";
-import { listDirFilesSyncRecursive } from "../parseTalentScreenshots/utils/listDirFilesSyncRecursive";
+import { listDirFilesSyncRecursive } from "../utils/listDirFilesSyncRecursive";
 
 const hero = heroes.all.melusine;
 
