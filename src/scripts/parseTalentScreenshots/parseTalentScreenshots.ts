@@ -1,6 +1,6 @@
 import sharp from "sharp";
 
-import { listDirFilesSyncRecursive } from "./utils/listDirFilesSyncRecursive";
+import { listDirFilesSyncRecursive } from "../utils/listDirFilesSyncRecursive";
 
 const baseTalentScreenshotsDir = "src\\data\\screenshots\\talents";
 
