@@ -35,7 +35,7 @@ files.forEach(file => {
         : composited;
 
     final.toFile(outputFilePath(file))
-        .then(() => console.log("Success"))
+        .then(info => console.log("Success", { w: info.width, h: info.height }))
         .catch((err) => console.log("Error:", file, err));
 })
 
