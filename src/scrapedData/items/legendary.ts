@@ -1,4 +1,6 @@
-export const legendary = [
+import { Item } from "../../ui/pages/LegendaryItemsPage/types";
+
+export const legendary: Item[] = [
     {
         code: "philosopher's_stone",
         name: "Philosopher's Stone",
@@ -92,4 +94,4 @@ export const legendary = [
             "POWER, SPECIAL and DEFENSE have a 10% reduced cooldown for each 20% of Health missing"
         ],
     },
-] as const;
+];

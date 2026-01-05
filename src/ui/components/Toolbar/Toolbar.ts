@@ -1,21 +1,46 @@
+import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import "./Toolbar.css";
+import cls from "./Toolbar.module.css";
 
 export function Toolbar() {
     return html`
-        <div class="toolbar">
-            <div class=logo_container>
+        <div class=${cls.root}>
+            <div class=${cls.logoContainer}>
                 <img 
-                    class=logo_img 
+                    class=${cls.logoImg}
                     src="/logos/ravenswatch-logo.webp" 
                     width=332 
                     height=100 
                 />
-                <div class="logo_text">
+                <div class=${cls.logoText}>
                     RUN HELPER
                 </div>
+            </div>
+            <div class=${cls.navigation}>
+                ${pages.map(it => html`
+                    <a 
+                        class=${clsx({
+                            [cls.navigationItem]: true,
+                            [cls.navigationItemActive]: it.path === location.pathname,
+                        })}
+                        href=${it.path}
+                    >
+                        ${it.label}
+                    </a>
+                `)}
             </div>
         </div>
     `;
 }
+
+const pages = [{
+    path: "/",
+    label: "Talents",
+}, {
+    path: "/legendary",
+    label: "Legendary Items",
+}, {
+    path: "/cursed",
+    label: "Cursed Items",
+}];
