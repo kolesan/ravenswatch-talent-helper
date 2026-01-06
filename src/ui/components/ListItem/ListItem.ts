@@ -1,15 +1,16 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
+import { ComponentChildren } from "preact";
 
 import cls from "./ListItem.module.css";
 
 interface Props {
     className?: string;
     name: string;
-    iconElement: Element;
-    descriptionElement: Element;
-    onItemClick?: () => void;
-    onItemAltClick?: () => void;
+    iconElement: ComponentChildren;
+    descriptionElement: ComponentChildren;
+    onClick?: () => void;
+    onAltClick?: () => void;
 }
 
 export function ListItem({
@@ -17,16 +18,16 @@ export function ListItem({
     name,
     iconElement,
     descriptionElement,
-    onItemClick,
-    onItemAltClick,
+    onClick,
+    onAltClick,
 }: Props) {
     return html`
         <li class=${clsx(cls.root, className)}
             onClick=${(e: any) => {
                 if (e.altKey) {
-                    onItemAltClick?.();
+                    onAltClick?.();
                 } else {
-                    onItemClick?.();
+                    onClick?.();
                 }
             }}
         >

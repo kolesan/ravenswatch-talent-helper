@@ -2,7 +2,7 @@ import { html } from "htm/preact";
 
 import { legendaryItemsPageStateStorage } from "../../utils/legendaryItemsPageStateStorage/legendaryItemsPageStateStorage";
 
-import { MainList } from "./components/MainList/MainList";
+import { ObjectList } from "./components/ObjectList/ObjectList";
 import { useLegendaryItemsPageState } from "./hooks/useLegendaryItemsPageState";
 import { useSaveLegendaryItemsPageStateToStorage } from "./hooks/useSaveLegendaryItemsPageStateToStorage";
 import cls from "./LegendaryItemsPage.module.css";
@@ -21,51 +21,51 @@ export function LegendaryItemsPage() {
 
     return html`
         <div class=${cls.root}>
-            <${MainList} 
+            <${ObjectList} 
                 label=Used 
-                items=${state.used}
-                onItemClick=${(item: Item) => {
+                objects=${state.used}
+                onObjectClick=${(object: Item) => {
                     dispatch({
                         type: "item_from_used_to_available",
-                        item,
+                        item: object,
                     });
                 }}
-                onItemAltClick=${(item: Item) => {
+                onObjectAltClick=${(object: Item) => {
                     dispatch({
                         type: "item_from_used_to_preferred",
-                        item,
+                        item: object,
                     });
                 }}
             />
-            <${MainList} 
+            <${ObjectList} 
                 label=Preferred 
-                items=${state.preferred} 
-                onItemClick=${(item: Item) => {
+                objects=${state.preferred} 
+                onObjectClick=${(object: Item) => {
                     dispatch({
                         type: "item_from_preferred_to_used",
-                        item,
+                        item: object,
                     });
                 }}
-                onItemAltClick=${(item: Item) => {
+                onObjectAltClick=${(object: Item) => {
                     dispatch({
                         type: "item_from_preferred_to_available",
-                        item,
+                        item: object,
                     });
                 }}
             />
-            <${MainList} 
+            <${ObjectList} 
                 label=Available 
-                items=${derivedState.available} 
-                onItemClick=${(item: Item) => {
+                objects=${derivedState.available} 
+                onObjectClick=${(object: Item) => {
                     dispatch({
                         type: "item_from_available_to_used",
-                        item,
+                        item: object,
                     });
                 }}
-                onItemAltClick=${(item: Item) => {
+                onObjectAltClick=${(object: Item) => {
                     dispatch({
                         type: "item_from_available_to_preferred",
-                        item,
+                        item: object,
                     });
                 }}
             />

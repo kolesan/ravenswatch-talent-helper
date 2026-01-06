@@ -1,7 +1,4 @@
 .listItem {
-    display: flex;
-    align-items: center;
-
     border: 2px solid transparent;
     border-radius: 4px;
 
