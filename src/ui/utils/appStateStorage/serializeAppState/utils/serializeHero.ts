@@ -1,4 +1,4 @@
-import { AppState, SerializedHeroState } from "../../../../pages/TalentsPage/types";
+import { AppState, SerializedHeroState } from "../../../../pages/ASDTalentsPage/types";
 
 export function serializeHero(
     state: AppState,
