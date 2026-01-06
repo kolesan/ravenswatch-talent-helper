@@ -1,61 +1,61 @@
 import { useReducer } from "preact/hooks";
 
-import { Item, CursedItemsPageState } from "../types";
+import { CursedItemsPageState, Item } from "../types";
 
 type Action =
-    | { type: "item_from_available_to_preferred", item: Item }
-    | { type: "item_from_available_to_used", item: Item }
-    | { type: "item_from_preferred_to_used", item: Item }
-    | { type: "item_from_preferred_to_available", item: Item }
-    | { type: "item_from_used_to_available", item: Item }
-    | { type: "item_from_used_to_preferred", item: Item };
+    | { type: "object_from_available_to_preferred", object: Item }
+    | { type: "object_from_available_to_used", object: Item }
+    | { type: "object_from_preferred_to_used", object: Item }
+    | { type: "object_from_preferred_to_available", object: Item }
+    | { type: "object_from_used_to_available", object: Item }
+    | { type: "object_from_used_to_preferred", object: Item };
 
 export function useCursedItemsPageState(initialState: CursedItemsPageState) {
     return useReducer<CursedItemsPageState, Action>((state, action) => {
         switch (action.type) {
-            case "item_from_available_to_preferred": {
-                const preferred = [...state.preferred, action.item];
+            case "object_from_available_to_preferred": {
+                const preferred = [...state.preferred, action.object];
                 return {
                     ...state,
                     preferred,
                 };
             }
-            case "item_from_available_to_used": {
-                const used = [...state.used, action.item];
+            case "object_from_available_to_used": {
+                const used = [...state.used, action.object];
                 return {
                     ...state,
                     used
                 };
             }
-            case "item_from_preferred_to_used": {
-                const used = [...state.used, action.item];
+            case "object_from_preferred_to_used": {
+                const used = [...state.used, action.object];
                 const preferred = state.preferred
-                    .filter(it => it !== action.item);
+                    .filter(it => it !== action.object);
                 return {
                     used,
                     preferred, 
                 };
             }
-            case "item_from_preferred_to_available": {
+            case "object_from_preferred_to_available": {
                 const preferred = state.preferred
-                    .filter(it => it !== action.item);
+                    .filter(it => it !== action.object);
                 return {
                     ...state,
                     preferred
                 };
             }
-            case "item_from_used_to_preferred": {
+            case "object_from_used_to_preferred": {
                 const used = state.used
-                    .filter(it => it !== action.item);
-                const preferred = [...state.preferred, action.item];
+                    .filter(it => it !== action.object);
+                const preferred = [...state.preferred, action.object];
                 return {
                     used,
                     preferred,
                 };
             }
-            case "item_from_used_to_available": {
+            case "object_from_used_to_available": {
                 const used = state.used
-                    .filter(it => it !== action.item);
+                    .filter(it => it !== action.object);
                 return {
                     ...state,
                     used,

@@ -1,9 +1,9 @@
 import { html } from "htm/preact";
 
-import { MagicalObject, MagicalObjectType } from "../../../../types";
-import { DescriptionList } from "../../../components/DescriptionList/DescriptionList";
-import { ListItem } from "../../../components/ListItem/ListItem";
-import { ObjectIcon } from "../../../components/ObjectIcon/ObjectIcon";
+import { MagicalObject, MagicalObjectType } from "../../types";
+import { DescriptionList } from "./DescriptionList/DescriptionList";
+import { ListItem } from "./ListItem/ListItem";
+import { ObjectIcon } from "./ObjectIcon/ObjectIcon";
 
 interface Props {
     className?: string;

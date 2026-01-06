@@ -2,7 +2,7 @@ import { html } from "htm/preact";
 
 import { MagicalObject } from "../../../types";
 
-import { ObjectList } from "./components/ObjectList";
+import { ObjectList } from "../../components/ObjectList";
 import { useLegendaryObjectsPageState } from "./hooks/useLegendaryObjectsPageState";
 import { useSaveLegendaryObjectsPageStateToStorage } from "./hooks/useSaveLegendaryItemsPageStateToStorage";
 import cls from "./LegendaryObjectsPage.module.css";

@@ -1,12 +1,12 @@
 import { html } from "htm/preact";
 
+import { MagicalObject } from "../../../types";
+import { ObjectList } from "../../components/ObjectList";
 import { cursedItemsPageStateStorage } from "../../utils/cursedItemsPageStateStorage/cursedItemsPageStateStorage";
 
-import { MainList } from "./components/MainList";
 import cls from "./CursedItemsPage.module.css";
 import { useCursedItemsPageState } from "./hooks/useCursedItemsPageState";
 import { useSaveCursedItemsPageStateToStorage } from "./hooks/useSaveCursedItemsPageStateToStorage";
-import { Item } from "./types";
 import { defaultCursedItemsPageState } from "./utils/defaultCursedItemsState";
 import { getDerivedCursedItemsPageState } from "./utils/getDerivedCursedItemsPageState";
 
@@ -21,51 +21,54 @@ export function CursedItemsPage() {
 
     return html`
         <div class=${cls.root}>
-            <${MainList} 
+            <${ObjectList} 
                 label=Used 
-                items=${state.used}
-                onItemClick=${(item: Item) => {
+                objects=${state.used}
+                objectType=cursed
+                onObjectClick=${(object: MagicalObject) => {
                     dispatch({
-                        type: "item_from_used_to_available",
-                        item,
+                        type: "object_from_used_to_available",
+                        object: object,
                     });
                 }}
-                onItemAltClick=${(item: Item) => {
+                onObjectAltClick=${(object: MagicalObject) => {
                     dispatch({
-                        type: "item_from_used_to_preferred",
-                        item,
+                        type: "object_from_used_to_preferred",
+                        object: object,
                     });
                 }}
             />
-            <${MainList} 
+            <${ObjectList} 
                 label=Preferred 
-                items=${state.preferred} 
-                onItemClick=${(item: Item) => {
+                objects=${state.preferred} 
+                objectType=cursed
+                onObjectClick=${(object: MagicalObject) => {
                     dispatch({
-                        type: "item_from_preferred_to_used",
-                        item,
+                        type: "object_from_preferred_to_used",
+                        object: object,
                     });
                 }}
-                onItemAltClick=${(item: Item) => {
+                onObjectAltClick=${(object: MagicalObject) => {
                     dispatch({
-                        type: "item_from_preferred_to_available",
-                        item,
+                        type: "object_from_preferred_to_available",
+                        object: object,
                     });
                 }}
             />
-            <${MainList} 
+            <${ObjectList} 
                 label=Available 
-                items=${derivedState.available} 
-                onItemClick=${(item: Item) => {
+                objects=${derivedState.available} 
+                objectType=cursed
+                onObjectClick=${(object: MagicalObject) => {
                     dispatch({
-                        type: "item_from_available_to_used",
-                        item,
+                        type: "object_from_available_to_used",
+                        object: object,
                     });
                 }}
-                onItemAltClick=${(item: Item) => {
+                onObjectAltClick=${(object: MagicalObject) => {
                     dispatch({
-                        type: "item_from_available_to_preferred",
-                        item,
+                        type: "object_from_available_to_preferred",
+                        object: object,
                     });
                 }}
             />

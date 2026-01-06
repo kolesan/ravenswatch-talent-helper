@@ -1,7 +1,7 @@
 import { html } from "htm/preact";
 
-import { MagicalObject, MagicalObjectType } from "../../../../types";
-import { List } from "../../../components/List/List";
+import { MagicalObject, MagicalObjectType } from "../../types";
+import { List } from "./List/List";
 
 import { ObjectListItem } from "./ObjectListItem";
 
