@@ -2,7 +2,7 @@ import { html } from "htm/preact";
 
 import { legendaryItemsPageStateStorage } from "../../utils/legendaryItemsPageStateStorage/legendaryItemsPageStateStorage";
 
-import { MainList } from "./components/MainList";
+import { MainList } from "./components/MainList/MainList";
 import { useLegendaryItemsPageState } from "./hooks/useLegendaryItemsPageState";
 import { useSaveLegendaryItemsPageStateToStorage } from "./hooks/useSaveLegendaryItemsPageStateToStorage";
 import cls from "./LegendaryItemsPage.module.css";

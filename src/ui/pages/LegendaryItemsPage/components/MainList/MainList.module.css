@@ -1,0 +1,25 @@
+.imgContainer {
+    position: relative;
+
+    width: 90px;
+    height: 90px;
+}
+
+.item {
+    position: absolute;
+    top: 12.5%;
+    left: 12.5%;
+
+    width: 75%;
+    height: auto;
+}
+
+.frame {
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+
+.textContainer {
+    width: 50%;
+}
