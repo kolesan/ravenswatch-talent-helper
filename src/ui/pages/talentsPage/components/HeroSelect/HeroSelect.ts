@@ -1,7 +1,7 @@
 import { html } from "htm/preact";
 
 import { Hero } from "../../../../../finalData/finalData";
-import { useBooleanState } from "../../../../../hooks/useBooleanState";
+import { useBooleanState } from "../../../../hooks/useBooleanState";
 
 import cls from "./HeroSelect.module.css";
 
