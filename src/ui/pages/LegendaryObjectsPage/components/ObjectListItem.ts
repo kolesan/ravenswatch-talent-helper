@@ -1,13 +1,14 @@
 import { html } from "htm/preact";
 
-import { MagicalObject } from "../../../../types";
+import { MagicalObject, MagicalObjectType } from "../../../../types";
 import { DescriptionList } from "../../../components/DescriptionList/DescriptionList";
-import { ItemIcon } from "../../../components/ItemIcon/ItemIcon";
 import { ListItem } from "../../../components/ListItem/ListItem";
+import { ObjectIcon } from "../../../components/ObjectIcon/ObjectIcon";
 
 interface Props {
     className?: string;
     object: MagicalObject;
+    objectType: MagicalObjectType;
     onClick?: () => void;
     onAltClick?: () => void;
 }
@@ -15,6 +16,7 @@ interface Props {
 export function ObjectListItem({
     className,
     object,
+    objectType,
     onClick,
     onAltClick,
 }: Props) {
@@ -23,8 +25,8 @@ export function ObjectListItem({
             className=${className}
             name=${object.name}
             iconElement=${html`
-                <${ItemIcon}
-                    type=legendary
+                <${ObjectIcon}
+                    type=${objectType}
                     code=${object.code}
                 />
             `}

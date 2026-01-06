@@ -3,3 +3,5 @@ export type MagicalObject = {
     name: string;
     description: string[];
 };
+
+export type MagicalObjectType = "legendary" | "cursed";

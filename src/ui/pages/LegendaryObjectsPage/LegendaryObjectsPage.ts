@@ -24,6 +24,7 @@ export function LegendaryObjectsPage() {
             <${ObjectList} 
                 label=Used 
                 objects=${state.used}
+                objectType=legendary
                 onObjectClick=${(object: MagicalObject) => {
                     dispatch({
                         type: "object_from_used_to_available",
@@ -40,6 +41,7 @@ export function LegendaryObjectsPage() {
             <${ObjectList} 
                 label=Preferred 
                 objects=${state.preferred} 
+                objectType=legendary
                 onObjectClick=${(object: MagicalObject) => {
                     dispatch({
                         type: "object_from_preferred_to_used",
@@ -56,6 +58,7 @@ export function LegendaryObjectsPage() {
             <${ObjectList} 
                 label=Available 
                 objects=${derivedState.available} 
+                objectType=legendary
                 onObjectClick=${(object: MagicalObject) => {
                     dispatch({
                         type: "object_from_available_to_used",
