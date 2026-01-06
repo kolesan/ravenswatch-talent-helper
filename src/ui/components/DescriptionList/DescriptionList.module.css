@@ -1,8 +1,8 @@
-.description-list-item {
+.descriptionListItem {
     margin-bottom: 2px;
     pointer-events: none;
 }
-.description-list-item::before {
+.descriptionListItem::before {
     content: '•';
     margin-left: 1px;
     margin-right: 3px;

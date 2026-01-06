@@ -1,6 +1,6 @@
 import { html } from "htm/preact";
 
-import "./DescriptionList.css";
+import cls from "./DescriptionList.module.css";
 
 interface Props {
     description: string[];
@@ -10,7 +10,7 @@ export function DescriptionList({
     description 
 }: Props) {
     return description.map((it, i) => html`
-        <div key=${i} class=description-list-item>
+        <div key=${i} class=${cls.descriptionListItem}>
             ${it}
         </div>
     `);
