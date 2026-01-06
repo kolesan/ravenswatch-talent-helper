@@ -33,7 +33,7 @@ export function MainList({
                                 }
                             }}
                         >
-                            <img src=${imageSrc} height=100 />
+                            <img src=${imageSrc} height=80 />
                             <div>
                                 <div class=name>${item.name}</div>
                                 <${TalentDescription} 
