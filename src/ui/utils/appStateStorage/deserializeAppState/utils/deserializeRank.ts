@@ -1,5 +1,5 @@
-import { defaultAppState } from "../../../../pages/talentsPage/utils/defaultAppState";
-import { minmaxRank } from "../../../../pages/talentsPage/utils/minmaxRank";
+import { defaultAppState } from "../../../../pages/TalentsPage/utils/defaultAppState";
+import { minmaxRank } from "../../../../pages/TalentsPage/utils/minmaxRank";
 
 export function deserializeRank(
     storedRank: unknown,

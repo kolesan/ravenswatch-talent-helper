@@ -1,4 +1,4 @@
-import { AppState, SerializedAppState } from "../../../pages/talentsPage/types";
+import { AppState, SerializedAppState } from "../../../pages/TalentsPage/types";
 
 import { serializeHero } from "./utils/serializeHero";
 

@@ -1,5 +1,5 @@
 import { HeroCode } from "../../../../data/heroes";
-import { AppState, SerializedAppState } from "../../../pages/talentsPage/types";
+import { AppState, SerializedAppState } from "../../../pages/TalentsPage/types";
 
 import { deserializeHero } from "./utils/deserializeHero";
 import { deserializeRank } from "./utils/deserializeRank";

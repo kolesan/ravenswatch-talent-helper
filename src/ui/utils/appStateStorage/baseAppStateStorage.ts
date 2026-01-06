@@ -1,5 +1,5 @@
 import { LocalStorage } from "../../core/LocalStorage";
-import { SerializedAppState } from "../../pages/talentsPage/types";
+import { SerializedAppState } from "../../pages/TalentsPage/types";
 
 const key = "ravenswatch-run-helper_state"
 

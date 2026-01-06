@@ -1,6 +1,6 @@
 import { Talent } from "../../../../../scripts/extractTalents/types";
-import { SerializedTalentsState, TalentsState } from "../../../../pages/talentsPage/types";
-import { defaultAppState } from "../../../../pages/talentsPage/utils/defaultAppState";
+import { SerializedTalentsState, TalentsState } from "../../../../pages/TalentsPage/types";
+import { defaultAppState } from "../../../../pages/TalentsPage/utils/defaultAppState";
 import { isTruthy } from "../../../isTruthy";
 
 export function deserializeTalents(
