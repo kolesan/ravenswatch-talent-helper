@@ -1,0 +1,18 @@
+.root {
+    display: flex;
+}
+
+.iconContainer {
+    min-width: fit-content;
+    max-width: 25%;
+}
+
+.textContainer {
+}
+
+.name {
+    margin-bottom: 4px;
+
+    font-family: ravenswatch;
+    color: #9B9981;
+}
