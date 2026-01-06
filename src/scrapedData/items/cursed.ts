@@ -1,4 +1,6 @@
-export const cursed = [
+import { Item } from "../../ui/pages/CursedItemsPage/types";
+
+export const cursed: Item[] = [
     {
         code: "hungry_grass",
         name: "Hungry grass",
@@ -93,4 +95,4 @@ export const cursed = [
             "POWER and SPECIAL extra charges are removed to get +100% damage per extra charge to those abilities",
         ],
     },
-] as const;
+];
