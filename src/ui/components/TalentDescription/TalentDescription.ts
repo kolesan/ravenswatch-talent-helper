@@ -4,7 +4,7 @@ import "./TalentDescription.css";
 
 import { Talent } from "../../../scripts/extractTalents/types";
 
-import { DescriptionList } from "./components/DescriptionList/DescriptionList";
+import { DescriptionList } from "../DescriptionList/DescriptionList";
 import { UnlockedAtRank } from "./components/UnlockedAtRank/UnlockedAtRank";
 
 interface Props {
