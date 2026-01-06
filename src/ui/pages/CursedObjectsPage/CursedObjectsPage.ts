@@ -2,22 +2,22 @@ import { html } from "htm/preact";
 
 import { MagicalObject } from "../../../types";
 import { ObjectList } from "../../components/ObjectList";
-import { cursedItemsPageStateStorage } from "../../utils/cursedItemsPageStateStorage/cursedItemsPageStateStorage";
 
-import cls from "./CursedItemsPage.module.css";
-import { useCursedItemsPageState } from "./hooks/useCursedItemsPageState";
-import { useSaveCursedItemsPageStateToStorage } from "./hooks/useSaveCursedItemsPageStateToStorage";
-import { defaultCursedItemsPageState } from "./utils/defaultCursedItemsState";
-import { getDerivedCursedItemsPageState } from "./utils/getDerivedCursedItemsPageState";
+import cls from "./CursedObjectsPage.module.css";
+import { useCursedObjectsPageState } from "./hooks/useCursedObjectsPageState";
+import { useSaveCursedObjectsPageStateToStorage } from "./hooks/useSaveCursedObjectsPageStateToStorage";
+import { cursedObjectsPageStateStorage } from "./utils/cursedObjectsPageStateStorage/cursedObjectsPageStateStorage";
+import { defaultCursedObjectsPageState } from "./utils/defaultCursedObjectPageState";
+import { getDerivedCursedObjectsPageState } from "./utils/getDerivedCursedObjectsPageState";
 
-const initialState = cursedItemsPageStateStorage.get() || defaultCursedItemsPageState;
+const initialState = cursedObjectsPageStateStorage.get() || defaultCursedObjectsPageState;
 
-export function CursedItemsPage() {
-    const [state, dispatch] = useCursedItemsPageState(initialState);
+export function CursedObjectsPage() {
+    const [state, dispatch] = useCursedObjectsPageState(initialState);
 
-    useSaveCursedItemsPageStateToStorage(state);
+    useSaveCursedObjectsPageStateToStorage(state);
 
-    const derivedState = getDerivedCursedItemsPageState(state);
+    const derivedState = getDerivedCursedObjectsPageState(state);
 
     return html`
         <div class=${cls.root}>

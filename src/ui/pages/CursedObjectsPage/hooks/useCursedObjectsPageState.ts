@@ -1,17 +1,18 @@
 import { useReducer } from "preact/hooks";
 
-import { CursedItemsPageState, Item } from "../types";
+import { MagicalObject } from "../../../../types";
+import { CursedObjectsPageState } from "../types";
 
 type Action =
-    | { type: "object_from_available_to_preferred", object: Item }
-    | { type: "object_from_available_to_used", object: Item }
-    | { type: "object_from_preferred_to_used", object: Item }
-    | { type: "object_from_preferred_to_available", object: Item }
-    | { type: "object_from_used_to_available", object: Item }
-    | { type: "object_from_used_to_preferred", object: Item };
+    | { type: "object_from_available_to_preferred", object: MagicalObject }
+    | { type: "object_from_available_to_used", object: MagicalObject }
+    | { type: "object_from_preferred_to_used", object: MagicalObject }
+    | { type: "object_from_preferred_to_available", object: MagicalObject }
+    | { type: "object_from_used_to_available", object: MagicalObject }
+    | { type: "object_from_used_to_preferred", object: MagicalObject };
 
-export function useCursedItemsPageState(initialState: CursedItemsPageState) {
-    return useReducer<CursedItemsPageState, Action>((state, action) => {
+export function useCursedObjectsPageState(initialState: CursedObjectsPageState) {
+    return useReducer<CursedObjectsPageState, Action>((state, action) => {
         switch (action.type) {
             case "object_from_available_to_preferred": {
                 const preferred = [...state.preferred, action.object];

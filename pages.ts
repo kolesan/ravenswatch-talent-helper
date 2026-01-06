@@ -5,6 +5,6 @@ export const pages = [{
     path: "/legendary-objects",
     label: "Legendary Objects",
 }, {
-    path: "/cursed",
-    label: "Cursed Items",
+    path: "/cursed-objects",
+    label: "Cursed Objects",
 }];

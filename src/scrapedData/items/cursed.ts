@@ -1,6 +1,6 @@
-import { Item } from "../../ui/pages/CursedItemsPage/types";
+import { MagicalObject } from "../../types";
 
-export const cursed: Item[] = [
+export const cursed: MagicalObject[] = [
     {
         code: "hungry_grass",
         name: "Hungry grass",

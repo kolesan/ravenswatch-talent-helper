@@ -7,7 +7,7 @@ export default defineConfig({
             input: {
                 talents: resolve(__dirname, 'talents.html'),
                 legendary: resolve(__dirname, 'legendary-objects.html'),
-                cursed: resolve(__dirname, 'cursed.html'),
+                cursed: resolve(__dirname, 'cursed-objects.html'),
             },
         }
     }

@@ -1,9 +1,9 @@
 import { html } from "htm/preact";
 import { render } from "preact";
 
-import { AppCursedItems } from "./src/ui/AppCursedItems";
+import { AppCursedObjects } from "./src/ui/AppCursedObjects";
 
 render(
-    html`<${AppCursedItems} />`, 
+    html`<${AppCursedObjects} />`, 
     document.body
 );
