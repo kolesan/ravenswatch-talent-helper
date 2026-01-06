@@ -1,6 +1,8 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
+import { pages } from "../../../../pages";
+
 import cls from "./Toolbar.module.css";
 
 export function Toolbar() {
@@ -33,14 +35,3 @@ export function Toolbar() {
         </div>
     `;
 }
-
-const pages = [{
-    path: "/",
-    label: "Talents",
-}, {
-    path: "/legendary",
-    label: "Legendary Items",
-}, {
-    path: "/cursed",
-    label: "Cursed Items",
-}];
