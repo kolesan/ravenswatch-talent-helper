@@ -2,8 +2,8 @@ export const pages = [{
     path: "/talents",
     label: "Talents",
 }, {
-    path: "/legendary",
-    label: "Legendary Items",
+    path: "/legendary-objects",
+    label: "Legendary Objects",
 }, {
     path: "/cursed",
     label: "Cursed Items",

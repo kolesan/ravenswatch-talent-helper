@@ -6,7 +6,7 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 talents: resolve(__dirname, 'talents.html'),
-                legendary: resolve(__dirname, 'legendary.html'),
+                legendary: resolve(__dirname, 'legendary-objects.html'),
                 cursed: resolve(__dirname, 'cursed.html'),
             },
         }

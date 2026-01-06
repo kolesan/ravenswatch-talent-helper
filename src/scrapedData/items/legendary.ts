@@ -1,6 +1,6 @@
-import { Item } from "../../ui/pages/LegendaryItemsPage/types";
+import { MagicalObject } from "../../types";
 
-export const legendary: Item[] = [
+export const legendary: MagicalObject[] = [
     {
         code: "philosopher's_stone",
         name: "Philosopher's Stone",

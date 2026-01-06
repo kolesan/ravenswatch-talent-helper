@@ -1,13 +1,13 @@
 import { html } from "htm/preact";
 
-import { DescriptionList } from "../../../../components/DescriptionList/DescriptionList";
-import { ItemIcon } from "../../../../components/ItemIcon/ItemIcon";
-import { ListItem } from "../../../../components/ListItem/ListItem";
-import { Item } from "../../types";
+import { MagicalObject } from "../../../../types";
+import { DescriptionList } from "../../../components/DescriptionList/DescriptionList";
+import { ItemIcon } from "../../../components/ItemIcon/ItemIcon";
+import { ListItem } from "../../../components/ListItem/ListItem";
 
 interface Props {
     className?: string;
-    object: Item;
+    object: MagicalObject;
     onClick?: () => void;
     onAltClick?: () => void;
 }
