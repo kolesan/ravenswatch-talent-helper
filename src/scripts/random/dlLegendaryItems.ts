@@ -4,6 +4,11 @@ import { legendary } from "../../scrapedData/items/legendary";
 
 const base = "https://buildmaker.ravenswatch.com";
 
+// used selector 
+// <div class="BuildMaker_items__hAfWX">
+// [...temp1.children]
+//     .map(it => it.children[0].children[0].children[0].children[0].attributes.getNamedItem("src").value)
+
 const legendaryItemUrls = [
     "/_next/image?url=%2Fapi%2Fproxy-image%2Fobjects%2Fimages%2FIcon_Object_PhilosopherStone.png&w=3840&q=75",
     "/_next/image?url=%2Fapi%2Fproxy-image%2Fobjects%2Fimages%2FIcon_Object_NibelungenRing.png&w=3840&q=75",
@@ -36,4 +41,4 @@ legendaryItemUrls.forEach((it, i) => {
                     .catch(err => console.log(`Error: ${filePath}`));
             });
     }, 1500*i)
-})
+});

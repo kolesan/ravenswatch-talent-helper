@@ -2,6 +2,10 @@ import { mkdir, writeFile } from "fs/promises";
 
 const base = "https://buildmaker.ravenswatch.com";
 
+// used selector 
+// <div class="BuildMaker_items__hAfWX">
+// temp1.children[0].children[0].children[1].children[0].children[0].attributes.getNamedItem("src").value
+
 const legendaryItemUrls = [
     "/_next/image?url=%2Fitems%2Fframes%2FLegendary.png&w=3840&q=75"
 ];
