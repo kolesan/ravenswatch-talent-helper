@@ -1,8 +1,9 @@
+import { clsx } from "clsx";
 import { html } from "htm/preact";
 
 import cls from "./ListItem.module.css";
 
-interface Props<T> {
+interface Props {
     className?: string;
     name: string;
     iconElement: Element;
@@ -11,16 +12,16 @@ interface Props<T> {
     onItemAltClick?: () => void;
 }
 
-export function ListItem<T>({
+export function ListItem({
     className,
     name,
     iconElement,
     descriptionElement,
     onItemClick,
     onItemAltClick,
-}: Props<T>) {
+}: Props) {
     return html`
-        <li class=${`${cls.root} ${className}`}
+        <li class=${clsx(cls.root, className)}
             onClick=${(e: any) => {
                 if (e.altKey) {
                     onItemAltClick?.();
@@ -32,7 +33,7 @@ export function ListItem<T>({
             <div class=${cls.iconContainer}>
                 ${iconElement}
             </div>
-            <div class=${cls.textContainer}>
+            <div>
                 <div class=${cls.name}>${name}</div>
                 ${descriptionElement}
             </div>

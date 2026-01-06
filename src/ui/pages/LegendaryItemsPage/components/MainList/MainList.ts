@@ -1,11 +1,11 @@
 import { html } from "htm/preact";
 
 import { DescriptionList } from "../../../../components/DescriptionList/DescriptionList";
+import { ItemIcon } from "../../../../components/ItemIcon/ItemIcon";
 import { ListItem } from "../../../../components/ListItem/ListItem";
 import { Item } from "../../types";
 
 import cls from "./MainList.module.css";
-import { ItemIcon } from "../../../../components/ItemIcon/ItemIcon";
 
 interface Props {
     label: string;
@@ -23,28 +23,27 @@ export function MainList({
     return html`
         <div>
             <h1>${label} ${items.length}</h1>
-            <ul class="main-list">
-                ${items.map(item => {
-
-                    return html`
-                        <${ListItem} 
-                            name=${item.name}
-                            iconElement=${html`
-                                <${ItemIcon}
-                                    type=legendary
-                                    code=${item.code}
-                                />
-                            `}
-                            descriptionElement=${html`
-                                <${DescriptionList}
-                                    description=${item.description}
-                                />
-                            `}
-                            onItemClick=${() => onItemClick?.(item)}
-                            onItemAltClick=${() => onItemAltClick?.(item)}
-                        />
-                    `;
-                })}
+            <ul>
+                ${items.map(item => html`
+                    <${ListItem} 
+                        className=${cls.listItem}
+                        key=${item.code}
+                        name=${item.name}
+                        iconElement=${html`
+                            <${ItemIcon}
+                                type=legendary
+                                code=${item.code}
+                            />
+                        `}
+                        descriptionElement=${html`
+                            <${DescriptionList}
+                                description=${item.description}
+                            />
+                        `}
+                        onItemClick=${() => onItemClick?.(item)}
+                        onItemAltClick=${() => onItemAltClick?.(item)}
+                    />
+                `)}
             </ul>
         </div>
     `;

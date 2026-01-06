@@ -1,0 +1,15 @@
+.listItem {
+    display: flex;
+    align-items: center;
+
+    border: 2px solid transparent;
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+.listItem:hover {
+    border: 2px solid #857243;
+}
+.listItem:not(:last-child) {
+    margin-bottom: 2px;
+}
