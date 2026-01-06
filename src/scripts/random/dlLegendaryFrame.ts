@@ -3,7 +3,7 @@ import { mkdir, writeFile } from "fs/promises";
 const base = "https://buildmaker.ravenswatch.com";
 
 const legendaryItemUrls = [
-    "/_next/image?url=%2Fitems%2Fframes%2FCursed.png&w=3840&q=75"
+    "/_next/image?url=%2Fitems%2Fframes%2FLegendary.png&w=3840&q=75"
 ];
 
 legendaryItemUrls.forEach((it, i) => {
@@ -11,7 +11,7 @@ legendaryItemUrls.forEach((it, i) => {
         fetch(`${base}${it}`)
             .then(res => res.arrayBuffer())
             .then(arrayBuffer => {
-                const dirName = "public/icons/items/new/cursed";
+                const dirName = "public/icons/items/new/legendary";
                 const fileName = "frame";
 
                 const filePath = `${dirName}/${fileName}.png`;
