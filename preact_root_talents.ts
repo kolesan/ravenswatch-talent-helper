@@ -1,9 +1,9 @@
 import { html } from "htm/preact";
 import { render } from "preact";
 
-import { App } from "./src/ui/App";
+import { AppTalents } from "./src/ui/AppTalents";
 
 render(
-    html`<${App} />`, 
+    html`<${AppTalents} />`, 
     document.body
 );
