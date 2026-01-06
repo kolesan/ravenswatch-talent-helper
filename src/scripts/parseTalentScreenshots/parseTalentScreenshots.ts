@@ -34,7 +34,11 @@ files.forEach(file => {
         ? extracted
         : composited;
 
-    final.toFile(outputFilePath(file))
+    final.webp({
+            lossless: true,
+            quality: 100,
+        })
+        .toFile(outputFilePath(file))
         .then(info => console.log("Success", { w: info.width, h: info.height }))
         .catch((err) => console.log("Error:", file, err));
 })
