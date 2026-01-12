@@ -1,9 +1,22 @@
-ul {
-    margin: 0;
-    padding: 0;
+.root {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: hidden;
 }
-ul.mainList {
-    list-style: none;
+
+.label {
+    margin-left: 4px;
+    margin-bottom: 12px;
+
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.mainList {
+    overflow-y: auto;
 }
 
 .listItem {

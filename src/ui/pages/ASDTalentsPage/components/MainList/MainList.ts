@@ -9,7 +9,6 @@ import { MultiplayerOnlyTag } from "../MultiplayerOnlyTag/MultiplayerOnlyTag";
 import cls from "./MainList.module.css";
 
 interface Props {
-    classes?: string;
     label: string;
     heroCode: HeroCode;
     talents: TalentWithLockedFlag[];
@@ -19,7 +18,6 @@ interface Props {
 }
 
 export function MainList({
-    classes,
     label,
     heroCode,
     talents,
@@ -29,8 +27,10 @@ export function MainList({
 }: Props) {
     const unlockedCount = talents.filter(it => !it.locked).length;
     return html`
-        <div classes=${classes}>
-            <h1>${label} ${unlockedCount}${maxItems ? ` / ${maxItems}` : null}</h1>
+        <div class=${cls.root}>
+            <div class=${cls.label}>
+                ${label} ${unlockedCount}${maxItems ? ` / ${maxItems}` : null}
+            </div>
             <ul class=${cls.mainList}>
                 ${talents.slice(0, maxItems).map(talent => {
                     const imageSrc = talent.locked

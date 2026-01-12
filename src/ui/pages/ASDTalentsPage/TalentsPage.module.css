@@ -1,4 +1,6 @@
 .controls {
+    margin-bottom: 16px;
+    
     padding: 0 8px;
 
     display: flex;
