@@ -1,3 +1,39 @@
+ul {
+    margin: 0;
+    padding: 0;
+}
+ul.mainList {
+    list-style: none;
+}
+
+.listItem {
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 2px;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    border: 2px solid transparent;
+}
+.listItem:not(:last-child) {
+    margin-bottom: 10px;
+}
+.listItem:hover {
+    border: 2px solid #857243;
+}
+.listItem:hover.locked {
+    border: 2px solid transparent;
+}
+
+.locked {
+    opacity: 0.8;
+    filter: brightness(0.9) contrast(0.9);
+
+    cursor: unset;
+}
+
 .header {
     margin-bottom: 4px;
 

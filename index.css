@@ -44,40 +44,10 @@ body {
     padding: 0 16px;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 0.01fr 0.5fr;
-    column-gap: 16px;
-}
-.three-columns {
     grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 16px;
 }
 
 h1 {
     margin-left: 2px;
-}
-
-.main-list > li {
-    cursor: pointer;
-    border-radius: 4px;
-    padding: 2px;
-
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-.main-list > li:not(:last-child) {
-    margin-bottom: 10px;
-}
-.main-list > li:hover {
-    border: 2px solid #857243;
-}
-.main-list > li:not(:hover) {
-    border: 2px solid transparent;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-}
-ul.main-list {
-    list-style: none;
 }

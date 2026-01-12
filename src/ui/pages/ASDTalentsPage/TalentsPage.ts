@@ -10,10 +10,11 @@ import { maxUsedTalents } from "./consts/maxUsedTalents";
 import { rankConsts } from "./consts/rankConsts";
 import { useSaveStateToStorage } from "./hooks/useSaveStateToStorage";
 import { useTalentsPageState } from "./hooks/useTalentsPageState";
+import cls from "./TalentsPage.module.css";
+import { TalentWithLockedFlag } from "./types";
 import { defaultAppState } from "./utils/defaultAppState";
 import { getDerivedTalentsState } from "./utils/getDerivedTalentsState";
-
-import cls from "./TalentsPage.module.css";
+import { markLocked } from "./utils/markLocked";
 
 // TODO: think about rewriting useTalentsPage to return function for actions, 
 // not useReducer directly
@@ -61,8 +62,7 @@ export function TalentsPage() {
                 <output>${state.rank}</output>
             </label>
         </div>
-        <!-- TODO rework this js style application later -->
-        <div class=${`talent-lists ${derivedTalentsState.locked.length ? "" : "three-columns"}`}>
+        <div class=talent-lists>
             <${MainList} 
                 label=Used 
                 heroCode=${state.hero.code} 
@@ -101,31 +101,31 @@ export function TalentsPage() {
             <${MainList} 
                 label=Available 
                 heroCode=${state.hero.code} 
-                talents=${derivedTalentsState.available} 
-                onTalentClick=${(talent: Talent) => {
+                talents=${[
+                    ...derivedTalentsState.available, 
+                    ...derivedTalentsState.locked.map(markLocked),
+                ]}
+                onTalentClick=${(talent: TalentWithLockedFlag) => {
+                    if (talent.locked) {
+                        return;
+                    }
+
                     dispatch({
                         type: "talent_from_available_to_used",
                         talent,
                     });
                 }}
-                onTalentAltClick=${(talent: Talent) => {
+                onTalentAltClick=${(talent: TalentWithLockedFlag) => {
+                    if (talent.locked) {
+                        return;
+                    }
+                    
                     dispatch({
                         type: "talent_from_available_to_preferred",
                         talent,
                     });
                 }}
             />
-            ${!!derivedTalentsState.locked.length &&
-                html`
-                    <hr/>
-                    <${MainList}
-                        label=Locked 
-                        isLocked 
-                        heroCode=${state.hero.code} 
-                        talents=${derivedTalentsState.locked}
-                    />
-                `
-            }
         </div>
     `;
 }

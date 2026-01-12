@@ -31,3 +31,7 @@ export type SerializedTalentsState = {
     used: string[];
     preferred: string[];
 }
+
+export type TalentWithLockedFlag = Talent & {
+    locked?: boolean;
+}
