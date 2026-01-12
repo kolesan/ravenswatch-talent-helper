@@ -1,6 +1,5 @@
 .descriptionListItem {
     margin-bottom: 2px;
-    pointer-events: none;
 }
 .descriptionListItem::before {
     content: '•';

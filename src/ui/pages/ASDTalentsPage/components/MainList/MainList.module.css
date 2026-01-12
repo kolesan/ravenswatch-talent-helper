@@ -1,0 +1,16 @@
+.header {
+    margin-bottom: 4px;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.name {
+    font-family: ravenswatch;
+    color: #9B9981;
+}
+
+.tags {
+    
+}

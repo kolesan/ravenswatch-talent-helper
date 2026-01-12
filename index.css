@@ -73,15 +73,6 @@ h1 {
 .main-list > li:not(:hover) {
     border: 2px solid transparent;
 }
-.main-list > li > div {
-    pointer-events: none;
-}
-
-.name {
-    font-family: ravenswatch;
-    color: #9B9981;
-    margin-bottom: 4px;
-}
 
 ul {
     margin: 0;

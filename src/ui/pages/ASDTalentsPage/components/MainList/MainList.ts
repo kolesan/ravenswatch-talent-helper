@@ -1,9 +1,12 @@
 import { html } from "htm/preact";
 
-import { HeroCode } from "../../../../data/heroes";
-import { Talent } from "../../../../scripts/extractTalents/types";
+import { HeroCode } from "../../../../../data/heroes";
+import { Talent } from "../../../../../scripts/extractTalents/types";
 
-import { TalentDescription } from "../../../components/TalentDescription/TalentDescription";
+import { TalentDescription } from "../../../../components/TalentDescription/TalentDescription";
+import { MultiplayerOnlyTag } from "../MultiplayerOnlyTag/MultiplayerOnlyTag";
+
+import cls from "./MainList.module.css";
 
 interface Props {
     classes?: string;
@@ -47,7 +50,16 @@ export function MainList({
                         >
                             <img src=${imageSrc} height=80 />
                             <div>
-                                <div class=name>${talent.name}</div>
+                                <div class=${cls.header}>
+                                    <div class=${cls.name}>
+                                        ${talent.name}
+                                    </div>
+                                    <div class=${cls.tags}>
+                                        ${talent.multiplayerOnly && !isLocked && html`
+                                            <${MultiplayerOnlyTag} />
+                                        `}
+                                    </div>
+                                </div>
                                 <${TalentDescription} 
                                     isLocked=${isLocked} 
                                     talent=${talent} 

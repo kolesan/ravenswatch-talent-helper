@@ -5,7 +5,7 @@ import { Talent } from "../../../scripts/extractTalents/types";
 import { appStateStorage } from "../../utils/appStateStorage/appStateStorage";
 
 import { HeroSelect } from "./components/HeroSelect/HeroSelect";
-import { MainList } from "./components/MainList";
+import { MainList } from "./components/MainList/MainList";
 import { maxUsedTalents } from "./consts/maxUsedTalents";
 import { rankConsts } from "./consts/rankConsts";
 import { useSaveStateToStorage } from "./hooks/useSaveStateToStorage";
