@@ -13,7 +13,7 @@ export function parseCommonTable(row: HTMLTableRowElement) {
     const { 
         name, 
         iconUrl, 
-        isUnavailableDuringSoloPlay 
+        multiplayerOnly 
     } = getNameAndIconUrl(cells[0]);
     const code = getCode(name);
     const type = getType(cells[1]);
@@ -24,7 +24,7 @@ export function parseCommonTable(row: HTMLTableRowElement) {
     console.log({
         name,
         iconUrl,
-        isUnavailableDuringSoloPlay
+        multiplayerOnly
     });
 
     const talent: Talent = {
@@ -35,8 +35,8 @@ export function parseCommonTable(row: HTMLTableRowElement) {
         unlockedAtRank,
         description,
         changePerLevel,
-        ...(isUnavailableDuringSoloPlay
-            ? { isUnavailableDuringSoloPlay: true }
+        ...(multiplayerOnly
+            ? { multiplayerOnly: true }
             : {})
     }
 

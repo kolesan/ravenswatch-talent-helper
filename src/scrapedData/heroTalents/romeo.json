@@ -174,7 +174,7 @@
         "changePerLevel": [
             "+6 damage + Hero Level + DMG"
         ],
-        "isUnavailableDuringSoloPlay": true
+        "multiplayerOnly": true
     },
     {
         "code": "flash_of_steel",

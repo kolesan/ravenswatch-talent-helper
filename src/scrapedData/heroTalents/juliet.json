@@ -39,7 +39,7 @@
         "changePerLevel": [
             "+5% damage"
         ],
-        "isUnavailableDuringSoloPlay": true
+        "multiplayerOnly": true
     },
     {
         "code": "wedding_gifts",
@@ -53,7 +53,7 @@
         "changePerLevel": [
             "+5%/+2%/+1% chance"
         ],
-        "isUnavailableDuringSoloPlay": true
+        "multiplayerOnly": true
     },
     {
         "code": "longshot",
@@ -200,7 +200,7 @@
             "Rare & Legendary: +15% of ATTACK's damage",
             "Epic: +25% of ATTACK's damage"
         ],
-        "isUnavailableDuringSoloPlay": true
+        "multiplayerOnly": true
     },
     {
         "code": "knockout",
@@ -227,7 +227,7 @@
         "changePerLevel": [
             "+5 SHIELD + Hero Level"
         ],
-        "isUnavailableDuringSoloPlay": true
+        "multiplayerOnly": true
     },
     {
         "code": "explosive_backstep",

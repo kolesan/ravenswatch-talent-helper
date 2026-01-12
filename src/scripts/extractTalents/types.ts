@@ -6,7 +6,7 @@ export type Talent = {
     unlockedAtRank: number;
     description: string[];
     changePerLevel: string[];
-    isUnavailableDuringSoloPlay?: boolean;
+    multiplayerOnly?: boolean;
 }
 
 export type TalentType = 
