@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
+import { analyzer } from 'vite-bundle-analyzer'
 
 export default defineConfig({
     build: {
@@ -11,5 +12,8 @@ export default defineConfig({
                 cursed: resolve(__dirname, 'cursed-objects.html'),
             },
         }
-    }
+    },
+    plugins: [
+        analyzer()
+    ],
 });
