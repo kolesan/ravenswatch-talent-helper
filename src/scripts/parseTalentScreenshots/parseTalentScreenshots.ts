@@ -7,7 +7,10 @@ const baseTalentScreenshotsDir = "src\\data\\screenshots\\talents";
 const files = listDirFilesSyncRecursive(baseTalentScreenshotsDir);
 
 files.forEach(file => {
-    if (file.includes("empty_corner")) {
+    if (
+        file.includes("empty_corner") ||
+        file.includes("locked_talent")
+    ) {
         return;
     }
 
@@ -29,12 +32,8 @@ files.forEach(file => {
             top: 8,
             left: 1,
         }]);
-    
-    const final = file.includes("locked_talent")
-        ? extracted
-        : composited;
 
-    final.webp({
+    composited.webp({
             lossless: true,
             quality: 100,
         })
