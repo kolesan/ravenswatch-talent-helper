@@ -34,7 +34,7 @@ export function MainList({
             <ul class=${cls.mainList}>
                 ${talents.slice(0, maxItems).map(talent => {
                     const imageSrc = talent.locked
-                        ? `/icons/talents/locked_talent_cut.webp`
+                        ? `/icons/talents/locked_talent.webp`
                         : `/icons/talents/${heroCode}/${talent.code}.webp`;
 
                     return html`
