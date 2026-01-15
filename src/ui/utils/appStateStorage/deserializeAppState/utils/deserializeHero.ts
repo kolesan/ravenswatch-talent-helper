@@ -1,5 +1,5 @@
 import { Hero, heroes } from "../../../../../finalData/finalData";
-import { defaultAppState } from "../../../../pages/ASDTalentsPage/utils/defaultAppState";
+import { defaultAppState } from "../../../../pages/TalentsPage/utils/defaultAppState";
 import { isHeroCode } from "../../../isHeroCode";
 
 export function deserializeHero(

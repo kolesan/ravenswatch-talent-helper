@@ -4,7 +4,7 @@ import { Redirect, Route, Switch } from "wouter-preact";
 import { pages } from "../../pages";
 
 import { Toolbar } from "./components/Toolbar/Toolbar";
-import { TalentsPage } from "./pages/ASDTalentsPage/TalentsPage";
+import { TalentsPage } from "./pages/TalentsPage/TalentsPage";
 import { CursedObjectsPage } from "./pages/CursedObjectsPage/CursedObjectsPage";
 import { HelpPage } from "./pages/HelpPage/HelpPage";
 import { LegendaryObjectsPage } from "./pages/LegendaryObjectsPage/LegendaryObjectsPage";

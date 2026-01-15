@@ -1,5 +1,5 @@
 import { HeroCode } from "../../../data/heroes";
-import { AppState } from "../../pages/ASDTalentsPage/types";
+import { AppState } from "../../pages/TalentsPage/types";
 
 import { baseAppStateStorage } from "./baseAppStateStorage";
 import { deserializeAppState } from "./deserializeAppState/deserializeAppState";
