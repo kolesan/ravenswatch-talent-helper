@@ -7,3 +7,24 @@
     justify-content: center;
     gap: 16px
 }
+
+.talentLists {
+    flex-grow: 1;
+    min-height: 0;
+
+    padding: 0 16px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 16px;
+}
+
+@media (max-width: 1080px) {
+    .talentLists {
+        flex-grow: unset;
+        min-height: unset;
+        grid-template-columns: unset;
+        grid-template-rows: auto;
+        row-gap: 22px;
+    }
+}

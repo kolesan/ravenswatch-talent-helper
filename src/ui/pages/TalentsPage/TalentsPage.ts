@@ -65,7 +65,7 @@ export function TalentsPage() {
                 <output>${state.rank}</output>
             </label>
         </div>
-        <div class=talent-lists>
+        <div class=${cls.talentLists}>
             <${MainList} 
                 label=Used 
                 heroCode=${state.hero.code} 

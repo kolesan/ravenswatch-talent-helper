@@ -8,6 +8,12 @@
     font-family: ravenswatch;
 }
 
+@media (max-width: 1080px) {
+    .navigationRoot {
+        gap: 10px;
+    }
+}
+
 .navigationItem {
     cursor: pointer;
     

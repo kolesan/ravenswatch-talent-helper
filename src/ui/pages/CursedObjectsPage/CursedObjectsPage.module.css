@@ -5,3 +5,11 @@
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 16px;
 }
+
+@media (max-width: 1080px) {
+    .root {
+        grid-template-columns: unset;
+        grid-template-rows: auto;
+        row-gap: 22px;
+    }
+}

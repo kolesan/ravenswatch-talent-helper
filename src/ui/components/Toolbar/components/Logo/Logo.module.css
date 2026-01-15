@@ -2,10 +2,35 @@
     margin-left: -4px;
 
     display: flex;
+    align-items: center;
+}
+
+.logoSmall {
+    height: 46px;
+    width: auto;
+
+    margin-left: 4px;
+    margin-top: -1px;
+}
+
+.logoBig {
+    display: flex;
     flex-direction: column;
     align-items: center;
 
     text-decoration: none;
+}
+
+@media (max-width: 1080px) {
+    .logoBig {
+        display: none;
+    }
+}
+
+@media (min-width: 1080px) {
+    .logoSmall {
+        display: none;
+    }
 }
 
 .logoImg {

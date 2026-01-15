@@ -14,6 +14,12 @@
     background-color: #424944;
 }
 
+@media (max-width: 1080px) {
+    .toolbarRoot {
+        gap: 8px;
+    }
+}
+
 .help {
     margin-left: auto;
     margin-right: 8px;

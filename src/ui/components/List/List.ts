@@ -24,6 +24,11 @@ export function List<T extends WithCode>({
         <div>
             <h1>${label} ${items.length}</h1>
             <ul>
+                ${!items.length && html`
+                    <div class=${cls.empty}>
+                        This list is empty
+                    </div>
+                `}
                 ${items.map(item => html`
                     <div class=${cls.listItem} key=${item.code}>
                         ${renderItem(item)}

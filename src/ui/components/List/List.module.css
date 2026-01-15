@@ -1,3 +1,21 @@
+.empty {
+    height: 94px;
+
+    padding: 16px;
+
+    border: 1px dashed #949692;
+    border-radius: 2px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    vertical-align: middle;
+
+    opacity: 0.8;
+}
+
 .listItem {
     border: 2px solid transparent;
     border-radius: 4px;

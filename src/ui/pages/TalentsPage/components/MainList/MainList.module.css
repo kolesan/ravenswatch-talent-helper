@@ -15,6 +15,24 @@
     font-weight: 600;
 }
 
+.empty {
+    height: 88px;
+
+    padding: 16px;
+
+    border: 1px dashed #949692;
+    border-radius: 2px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    vertical-align: middle;
+
+    opacity: 0.8;
+}
+
 .mainList {
     overflow-y: auto;
 }
