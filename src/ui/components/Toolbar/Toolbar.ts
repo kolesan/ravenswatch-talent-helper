@@ -4,22 +4,14 @@ import { Link } from "wouter-preact";
 
 import { pages } from "../../../../pages";
 
+import { Logo } from "./components/Logo/Logo";
+
 import cls from "./Toolbar.module.css";
 
 export function Toolbar() {
     return html`
         <div class=${cls.root}>
-            <div class=${cls.logoContainer}>
-                <img 
-                    class=${cls.logoImg}
-                    src="/logos/ravenswatch-logo.webp" 
-                    width=332 
-                    height=100 
-                />
-                <div class=${cls.logoText}>
-                    RUN HELPER
-                </div>
-            </div>
+            <${Logo} />
             <div class=${cls.navigation}>
                 ${pages.utils.asArray().map(it => html`
                     <${Link} 
