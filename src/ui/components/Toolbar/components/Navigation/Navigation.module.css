@@ -24,12 +24,7 @@
     color: #a85a5a;
 }
 
-@media (max-width: 1080px) {
-    .navigationRoot {
-        gap: 10px;
-    }
-}
-@media (max-width: 420px) {
+@media (max-width: 430px) {
     .navigationItem {
         width: min-content;
     }

@@ -21,13 +21,13 @@
     text-decoration: none;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 880px) {
     .logoBig {
         display: none;
     }
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 880px) {
     .logoSmall {
         display: none;
     }
