@@ -8,17 +8,12 @@
     font-family: ravenswatch;
 }
 
-@media (max-width: 1080px) {
-    .navigationRoot {
-        gap: 10px;
-    }
-}
-
 .navigationItem {
     cursor: pointer;
     
     color: inherit;
     text-decoration: none;
+    text-align: center;
 }
 
 .navigationItem:hover {
@@ -27,4 +22,15 @@
 
 .navigationItemActive {
     color: #a85a5a;
+}
+
+@media (max-width: 1080px) {
+    .navigationRoot {
+        gap: 10px;
+    }
+}
+@media (max-width: 420px) {
+    .navigationItem {
+        width: min-content;
+    }
 }
