@@ -3,6 +3,9 @@
 
     width: 90px;
     height: 90px;
+
+    opacity: 0.9;
+    filter: brightness(0.9) contrast(0.9);
 }
 
 .object {
