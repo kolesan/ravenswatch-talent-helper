@@ -59,13 +59,13 @@ ul {
 
 
 /* TODO consider css variables, investigate good practices for this */
-@media (max-width: 380px) {
+@media (max-width: 1080px) {
     body {
         height: unset;
     }
+}
+@media (max-width: 380px) {
     .container-label input {
-        cursor: pointer;
-
         max-width: 80px;
     }
 }
