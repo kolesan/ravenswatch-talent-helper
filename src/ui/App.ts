@@ -6,6 +6,7 @@ import { pages } from "../../pages";
 import { Toolbar } from "./components/Toolbar/Toolbar";
 import { TalentsPage } from "./pages/ASDTalentsPage/TalentsPage";
 import { CursedObjectsPage } from "./pages/CursedObjectsPage/CursedObjectsPage";
+import { HelpPage } from "./pages/HelpPage/HelpPage";
 import { LegendaryObjectsPage } from "./pages/LegendaryObjectsPage/LegendaryObjectsPage";
 
 export function App() {
@@ -13,11 +14,24 @@ export function App() {
         <${Toolbar} />
 
         <${Switch}>
-            <${Route} path=${pages.all.talents.path} component=${TalentsPage} />
-            <${Route} path=${pages.all.legendaryObjects.path} component=${LegendaryObjectsPage} />
-            <${Route} path=${pages.all.cursedObjects.path} component=${CursedObjectsPage} />
+            <${Route} 
+                path=${pages.talents.path} 
+                component=${TalentsPage} 
+            />
+            <${Route} 
+                path=${pages.legendaryObjects.path} 
+                component=${LegendaryObjectsPage} 
+            />
+            <${Route} 
+                path=${pages.cursedObjects.path} 
+                component=${CursedObjectsPage} 
+            />
+            <${Route} 
+                path=${pages.help.path} 
+                component=${HelpPage} 
+            />
 
-            <${Redirect} path="*" to="/talents" />
+            <${Redirect} to="/talents" />
         </${Switch}>
     `;
 }

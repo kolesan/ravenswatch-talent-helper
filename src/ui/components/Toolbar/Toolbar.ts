@@ -1,5 +1,6 @@
 import { html } from "htm/preact";
 
+import { Help } from "./components/Help/Help";
 import { Logo } from "./components/Logo/Logo";
 import { Navigation } from "./components/Navigation/Navigation";
 
@@ -10,6 +11,7 @@ export function Toolbar() {
         <div class=${cls.toolbarRoot}>
             <${Logo} />
             <${Navigation} />
+            <${Help} className=${cls.help} />
         </div>
     `;
 }

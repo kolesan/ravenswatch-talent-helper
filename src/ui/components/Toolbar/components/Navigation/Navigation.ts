@@ -10,12 +10,18 @@ type Props = {
     className?: string;
 }
 
+const items = [
+    pages.talents,
+    pages.legendaryObjects,
+    pages.cursedObjects,
+]
+
 export function Navigation({
     className,
 }: Props) {
     return html`
         <div class=${clsx(cls.navigationRoot, className)}>
-            ${pages.utils.asArray().map(it => html`
+            ${items.map(it => html`
                 <${Link} 
                     className=${(active: boolean) => clsx({
                         [cls.navigationItem]: true,

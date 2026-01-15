@@ -1,0 +1,26 @@
+.helpRoot {
+    width: 29px;
+    height: 29px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #a7a7a7;
+    border-radius: 50%;
+
+    font-size: 20px;
+    font-family: ravenswatch;
+    text-transform: uppercase;
+    color: #424944;
+
+    text-decoration: none;
+}
+
+.helpRoot:hover {
+    background-color: #aa8787;
+}
+
+.helpRootActive {
+    background-color: #ab9494;
+}

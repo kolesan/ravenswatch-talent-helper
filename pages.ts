@@ -15,16 +15,14 @@ const cursedObjects: Page = {
     path: "/objects/cursed",
     label: "Cursed Objects",
 }
-
-const all = {
-    talents,
-    legendaryObjects,
-    cursedObjects,
+const help: Page = {
+    path: "/help",
+    label: "Help",
 }
 
 export const pages = {
-    all,
-    utils: {
-        asArray: () => Object.values(pages.all),
-    }
+    talents,
+    legendaryObjects,
+    cursedObjects,
+    help,
 };
