@@ -1,10 +1,30 @@
-export const pages = [{
+type Page = {
+    path: string;
+    label: string;
+}
+
+const talents: Page = {
     path: "/talents",
     label: "Talents",
-}, {
-    path: "/legendary-objects",
+}
+const legendaryObjects: Page = {
+    path: "/objects/legendary",
     label: "Legendary Objects",
-}, {
-    path: "/cursed-objects",
+}
+const cursedObjects: Page = {
+    path: "/objects/cursed",
     label: "Cursed Objects",
-}];
+}
+
+const all = {
+    talents,
+    legendaryObjects,
+    cursedObjects,
+}
+
+export const pages = {
+    all,
+    utils: {
+        asArray: () => Object.values(pages.all),
+    }
+};

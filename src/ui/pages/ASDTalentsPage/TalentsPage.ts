@@ -2,6 +2,7 @@ import { html } from "htm/preact";
 
 import { Hero, heroes } from "../../../finalData/finalData";
 import { Talent } from "../../../scripts/extractTalents/types";
+import { usePageTitle } from "../../hooks/usePageTitle";
 import { appStateStorage } from "../../utils/appStateStorage/appStateStorage";
 
 import { HeroSelect } from "./components/HeroSelect/HeroSelect";
@@ -25,6 +26,8 @@ import { markLocked } from "./utils/markLocked";
 const initialState = appStateStorage.getCurrentHero() || defaultAppState;
 
 export function TalentsPage() {
+    usePageTitle("Talents");
+
     const [state, dispatch] = useTalentsPageState(initialState);
 
     useSaveStateToStorage(state);

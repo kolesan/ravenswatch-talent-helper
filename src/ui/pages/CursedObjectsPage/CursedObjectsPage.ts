@@ -2,6 +2,7 @@ import { html } from "htm/preact";
 
 import { MagicalObject } from "../../../types";
 import { ObjectList } from "../../components/ObjectList";
+import { usePageTitle } from "../../hooks/usePageTitle";
 
 import cls from "./CursedObjectsPage.module.css";
 import { useCursedObjectsPageState } from "./hooks/useCursedObjectsPageState";
@@ -13,6 +14,8 @@ import { getDerivedCursedObjectsPageState } from "./utils/getDerivedCursedObject
 const initialState = cursedObjectsPageStateStorage.get() || defaultCursedObjectsPageState;
 
 export function CursedObjectsPage() {
+    usePageTitle("Cursed Objects");
+
     const [state, dispatch] = useCursedObjectsPageState(initialState);
 
     useSaveCursedObjectsPageStateToStorage(state);

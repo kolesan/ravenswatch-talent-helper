@@ -1,5 +1,6 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
+import { Link } from "wouter-preact";
 
 import { pages } from "../../../../pages";
 
@@ -20,16 +21,16 @@ export function Toolbar() {
                 </div>
             </div>
             <div class=${cls.navigation}>
-                ${pages.map(it => html`
-                    <a 
-                        class=${clsx({
+                ${pages.utils.asArray().map(it => html`
+                    <${Link} 
+                        className=${(active: boolean) => clsx({
                             [cls.navigationItem]: true,
-                            [cls.navigationItemActive]: it.path === location.pathname,
+                            [cls.navigationItemActive]: active,
                         })}
                         href=${it.path}
                     >
                         ${it.label}
-                    </a>
+                    </${Link}>
                 `)}
             </div>
         </div>

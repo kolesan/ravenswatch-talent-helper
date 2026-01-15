@@ -1,8 +1,9 @@
 import { html } from "htm/preact";
 
 import { MagicalObject } from "../../../types";
-
 import { ObjectList } from "../../components/ObjectList";
+import { usePageTitle } from "../../hooks/usePageTitle";
+
 import { useLegendaryObjectsPageState } from "./hooks/useLegendaryObjectsPageState";
 import { useSaveLegendaryObjectsPageStateToStorage } from "./hooks/useSaveLegendaryItemsPageStateToStorage";
 import cls from "./LegendaryObjectsPage.module.css";
@@ -13,6 +14,8 @@ import { legendaryObjectsPageStateStorage } from "./utils/legendaryObjectsPageSt
 const initialState = legendaryObjectsPageStateStorage.get() || defaultLegendaryObjectsPageState;
 
 export function LegendaryObjectsPage() {
+    usePageTitle("Legendary Objects");
+
     const [state, dispatch] = useLegendaryObjectsPageState(initialState);
 
     useSaveLegendaryObjectsPageStateToStorage(state);
