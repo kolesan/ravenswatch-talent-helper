@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { html } from "htm/preact";
 
 import { Hero } from "../../../../../finalData/finalData";
@@ -6,12 +7,16 @@ import { useBooleanState } from "../../../../hooks/useBooleanState";
 import cls from "./HeroSelect.module.css";
 
 interface Props {
+    className?: string;
+    compact?: boolean;
     items: Hero[]
     value: Hero;
     onChange: (code: Hero) => void;
 }
 
 export function HeroSelect({
+    className,
+    compact,
     items,
     value,
     onChange,
@@ -20,7 +25,7 @@ export function HeroSelect({
 
     return html`
         <div 
-            class=${cls.root}
+            class=${clsx(cls.root, className)}
             onClick=${open.toggle}
         >
             <div 
@@ -28,7 +33,10 @@ export function HeroSelect({
             >
                 <div class=${cls.inputImageContainer}>
                     <img
-                        class=${cls.inputImage}
+                        class=${clsx({
+                            [cls.inputImage]: true,
+                            [cls.inputImageSmall]: compact,
+                        })}
                         src=${`/icons/heroes/${value.code}.png`}
                         height=256
                         widht=256

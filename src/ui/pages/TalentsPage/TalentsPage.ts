@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { html } from "htm/preact";
 
 import { Hero, heroes } from "../../../finalData/finalData";
@@ -10,18 +11,19 @@ import { MainList } from "./components/MainList/MainList";
 import { maxUsedTalents } from "./consts/maxUsedTalents";
 import { rankConsts } from "./consts/rankConsts";
 import { useSaveStateToStorage } from "./hooks/useSaveStateToStorage";
+import { useStuckStyling } from "./hooks/useStuckStyling";
 import { useTalentsPageState } from "./hooks/useTalentsPageState";
-import cls from "./TalentsPage.module.css";
 import { TalentWithLockedFlag } from "./types";
 import { defaultAppState } from "./utils/defaultAppState";
 import { getDerivedTalentsState } from "./utils/getDerivedTalentsState";
 import { markLocked } from "./utils/markLocked";
 
+import cls from "./TalentsPage.module.css";
+
 // TODO: think about rewriting useTalentsPage to return function for actions, 
 // not useReducer directly
 // TODO: think about how to set up TS properly in state deserialization to make sure
 // that TS doesnt give us any false confidence in what can be deserialized
-// TODO: Add favicon (e.g. the feather but with RH (RunHelper) letters)
 
 const initialState = appStateStorage.getCurrentHero() || defaultAppState;
 
@@ -32,11 +34,20 @@ export function TalentsPage() {
 
     useSaveStateToStorage(state);
 
+    const { stuckStylingRef, isStuck: controlsStuck } = useStuckStyling();
+
     const derivedTalentsState = getDerivedTalentsState(state);
 
     return html`
-        <div class=${cls.controls}>
+        <div 
+            class=${clsx({
+                [cls.controls]: true,
+                [cls.controlsStuck]: controlsStuck
+            })}
+            ref=${stuckStylingRef}
+        >
             <${HeroSelect}
+                compact=${controlsStuck}
                 items=${heroes.asArray}
                 value=${state.hero}
                 onChange=${(hero: Hero) => {

@@ -42,6 +42,10 @@
     height: 80px;
     width: 80px;
 }
+.inputImageSmall {
+    height: 55px;
+    width: 55px;
+}
 .inputText {
     /* margin-left: -14px; */
     /* margin-bottom: -4px; */
@@ -58,15 +62,20 @@
     z-index: 1;
 
     width: max-content;
+    /* temporary limitation */
+    /* TODO: investigate how to allow scrolling all page with just the menu 
+    when menu is opened */
+    max-height: 75vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     margin-top: 4px;
 
     border-radius: 4px;
-    overflow: hidden;
     border: 1px solid #52493381;
 }
 .item {
-    padding: 6px 4px;
+    padding: 4px 4px;
     padding-right: 15px;
 
     display: flex;
@@ -84,8 +93,8 @@
     background-blend-mode: unset;
 }
 .itemImage {
-    height: 68px;
-    width: 68px;
+    height: 64px;
+    width: 64px;
 }
 .itemTextContainer {
     position: relative;
@@ -139,6 +148,7 @@
     think about other approaches to solving this
     e.g. try the "style" attribute in js again
 */
+/* TODO consider using filter instead of blend mode and background color */
 :global(.scarletBgArt).inputActive, :global(.scarletBgArt):hover {
     background-image: url("/art/scarlet.jpg");
 }
