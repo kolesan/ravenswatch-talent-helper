@@ -55,7 +55,6 @@
 .items {
     position: absolute;
     top: 100%;
-    /* investigate why without this "the list is empty appears above the items" */
     z-index: 1;
 
     width: max-content;

@@ -31,12 +31,12 @@ export function MainList({
             <div class=${cls.label}>
                 ${label} ${unlockedCount}${maxItems ? ` / ${maxItems}` : null}
             </div>
+            ${!talents.length && html`
+                <div class=${cls.empty}>
+                    This list is empty
+                </div>
+            `}
             <ul class=${cls.mainList}>
-                ${!talents.length && html`
-                    <div class=${cls.empty}>
-                        This list is empty
-                    </div>
-                `}
                 ${talents.slice(0, maxItems).map(talent => {
                     const imageSrc = talent.locked
                         ? `/icons/talents/locked_talent.webp`
