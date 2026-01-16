@@ -1,6 +1,8 @@
 .helpPageRoot {
     flex: 1;
 
+    padding: 16px;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,10 +13,20 @@
     width: 100%;
     max-width: 400px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     text-align: center;
-    vertical-align: middle;
+}
+
+.textContainer h3 {
+    margin-top: 24px;
+    margin-bottom: 10px;
+}
+
+.url {
+    color: #EDE2B9D6;
+}
+
+.rights {
+    margin-top: 70px;
+
+    font-size: 14px;
 }
