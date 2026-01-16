@@ -1,3 +1,20 @@
+.listRoot {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    margin-left: 4px;
+    margin-bottom: 12px;
+
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.list {
+    overflow-y: auto;
+}
+
 .empty {
     height: 94px;
 

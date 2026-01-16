@@ -25,6 +25,7 @@ export function LegendaryObjectsPage() {
     return html`
         <div class=${cls.root}>
             <${ObjectList} 
+                className=${cls.list}
                 label=Used 
                 objects=${state.used}
                 objectType=legendary
@@ -42,6 +43,7 @@ export function LegendaryObjectsPage() {
                 }}
             />
             <${ObjectList} 
+                className=${cls.list}
                 label=Preferred 
                 objects=${state.preferred} 
                 objectType=legendary
@@ -59,6 +61,7 @@ export function LegendaryObjectsPage() {
                 }}
             />
             <${ObjectList} 
+                className=${cls.list}
                 label=Available 
                 objects=${derivedState.available} 
                 objectType=legendary

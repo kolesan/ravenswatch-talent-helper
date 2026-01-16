@@ -25,6 +25,7 @@ export function CursedObjectsPage() {
     return html`
         <div class=${cls.root}>
             <${ObjectList} 
+                className=${cls.list}
                 label=Used 
                 objects=${state.used}
                 objectType=cursed
@@ -42,6 +43,7 @@ export function CursedObjectsPage() {
                 }}
             />
             <${ObjectList} 
+                className=${cls.list}
                 label=Preferred 
                 objects=${state.preferred} 
                 objectType=cursed
@@ -59,6 +61,7 @@ export function CursedObjectsPage() {
                 }}
             />
             <${ObjectList} 
+                className=${cls.list}
                 label=Available 
                 objects=${derivedState.available} 
                 objectType=cursed

@@ -15,6 +15,7 @@ type Props = {
 }
 
 export function ObjectList({
+    className,
     label,
     objects,
     objectType,
@@ -23,6 +24,7 @@ export function ObjectList({
 }: Props) {
     return html`
         <${List} 
+            className=${className}
             label=${label} 
             items=${objects} 
             renderItem=${(object: MagicalObject) => html`
