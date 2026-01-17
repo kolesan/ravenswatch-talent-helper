@@ -3,25 +3,31 @@ import { useEffect, useRef } from "preact/hooks";
 import { useDebouncedState } from "../../../hooks/useDebouncedState";
 
 type Params = {
+    enabled?: boolean;
     stuckAtPx?: number;
     doLog?: boolean;
 }
 
 const defaultParams: Params = {
+    enabled: true,
     stuckAtPx: 0,
     doLog: false,
 }
 
 export function useIsStickyElemStuck(params?: Params) {
     const { 
-        stuckAtPx,
-        doLog
+        enabled = defaultParams.enabled,
+        stuckAtPx = defaultParams.stuckAtPx,
+        doLog = defaultParams.doLog
     } = params || defaultParams;
 
     const ref = useRef<Element>(null);
     const [isStuck, setIsStuck] = useDebouncedState(false, 150);
 
     useEffect(() => {
+        if (!enabled) {
+            return;
+        }
         new IntersectionObserver(
             ([e]) => {
                 // if less than 100% of an element is 
@@ -51,7 +57,7 @@ export function useIsStickyElemStuck(params?: Params) {
                 threshold: 1,
             }
         ).observe(ref.current);
-    }, [ref.current]);
+    }, [enabled, ref.current]);
 
     return {
         stickyElemRef: ref,

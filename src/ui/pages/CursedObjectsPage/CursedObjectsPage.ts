@@ -13,6 +13,8 @@ import { getDerivedCursedObjectsPageState } from "./utils/getDerivedCursedObject
 
 const initialState = cursedObjectsPageStateStorage.get() || defaultCursedObjectsPageState;
 
+const listLabelStuckAtPx = 56;
+
 export function CursedObjectsPage() {
     usePageTitle("Cursed Objects");
 
@@ -26,7 +28,12 @@ export function CursedObjectsPage() {
         <div class=${cls.root}>
             <${ObjectList} 
                 className=${cls.list}
+                classes=${{ 
+                    label: cls.listLabel,
+                    content: cls.listContent,
+                }}
                 label=Used 
+                labelStuckAtPx=${listLabelStuckAtPx}
                 objects=${state.used}
                 objectType=cursed
                 onObjectClick=${(object: MagicalObject) => {
@@ -44,7 +51,12 @@ export function CursedObjectsPage() {
             />
             <${ObjectList} 
                 className=${cls.list}
+                classes=${{ 
+                    label: cls.listLabel,
+                    content: cls.listContent,
+                }}
                 label=Preferred 
+                labelStuckAtPx=${listLabelStuckAtPx}
                 objects=${state.preferred} 
                 objectType=cursed
                 onObjectClick=${(object: MagicalObject) => {
@@ -62,7 +74,12 @@ export function CursedObjectsPage() {
             />
             <${ObjectList} 
                 className=${cls.list}
+                classes=${{ 
+                    label: cls.listLabel,
+                    content: cls.listContent,
+                }}
                 label=Available 
+                labelStuckAtPx=${listLabelStuckAtPx}
                 objects=${derivedState.available} 
                 objectType=cursed
                 onObjectClick=${(object: MagicalObject) => {

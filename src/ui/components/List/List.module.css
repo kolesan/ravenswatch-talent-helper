@@ -1,17 +1,45 @@
 .listRoot {
+    position: relative;
+
     display: flex;
     flex-direction: column;
+    gap: 12px;
 }
 
+.labelContainer {
+    position: absolute;
+    top: 0;
+    
+    height: 100%;
+    width: 100%;
+
+    /* 
+        for the label to stop being sticky
+        sooner than it's container ends
+     */
+    padding-bottom: 78px;
+
+    pointer-events: none;
+}
 .label {
-    margin-left: 4px;
-    margin-bottom: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 
     font-size: 32px;
     font-weight: 600;
+
+    background-color: #181614;
+}
+.labelHeight {
+    min-height: 44px;
+}
+.labelStuck {
+    box-shadow: 4px 10px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
-.list {
+.content {
+    min-height: 0;
     overflow-y: auto;
 }
 
@@ -31,6 +59,10 @@
     vertical-align: middle;
 
     opacity: 0.8;
+}
+
+.list {
+    overflow-y: auto;
 }
 
 .listItem {

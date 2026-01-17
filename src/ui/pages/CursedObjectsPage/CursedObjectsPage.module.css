@@ -2,7 +2,7 @@
     flex-grow: 1;
     min-height: 0;
 
-    padding: 24px 16px 0;
+    padding: 12px 0 0;
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -11,10 +11,24 @@
 
 .list {
     height: 100%;
-
-    overflow-y: hidden;
+}
+.listLabel {
+    /* toolbar height */
+    top: 56px;
+    padding: 4px 20px;
+}
+.listContent {
+    padding: 0 16px;
 }
 
+@media (min-width: 1080px) {
+    .list {
+        overflow-y: hidden;
+    }
+    .listLabel {
+        position: unset;
+    }
+}
 @media (max-width: 1080px) {
     .root {
         flex-grow: unset;

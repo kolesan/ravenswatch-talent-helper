@@ -7,7 +7,12 @@ import { ObjectListItem } from "./ObjectListItem";
 
 type Props = {
     className?: string;
+    classes?: {
+        label?: string;
+        content?: string;
+    };
     label: string;
+    labelStuckAtPx?: number;
     objects: MagicalObject[];
     objectType: MagicalObjectType;
     onObjectClick?: (item: MagicalObject) => void;
@@ -16,7 +21,9 @@ type Props = {
 
 export function ObjectList({
     className,
+    classes,
     label,
+    labelStuckAtPx,
     objects,
     objectType,
     onObjectClick,
@@ -25,7 +32,9 @@ export function ObjectList({
     return html`
         <${List} 
             className=${className}
+            classes=${classes}
             label=${label} 
+            labelStuckAtPx=${labelStuckAtPx}
             items=${objects} 
             renderItem=${(object: MagicalObject) => html`
                 <${ObjectListItem}

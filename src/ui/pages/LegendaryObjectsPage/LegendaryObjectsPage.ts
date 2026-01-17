@@ -13,6 +13,8 @@ import { legendaryObjectsPageStateStorage } from "./utils/legendaryObjectsPageSt
 
 const initialState = legendaryObjectsPageStateStorage.get() || defaultLegendaryObjectsPageState;
 
+const listLabelStuckAtPx = 56;
+
 export function LegendaryObjectsPage() {
     usePageTitle("Legendary Objects");
 
@@ -26,7 +28,12 @@ export function LegendaryObjectsPage() {
         <div class=${cls.root}>
             <${ObjectList} 
                 className=${cls.list}
+                classes=${{ 
+                    label: cls.listLabel,
+                    content: cls.listContent,
+                }}
                 label=Used 
+                labelStuckAtPx=${listLabelStuckAtPx}
                 objects=${state.used}
                 objectType=legendary
                 onObjectClick=${(object: MagicalObject) => {
@@ -44,7 +51,12 @@ export function LegendaryObjectsPage() {
             />
             <${ObjectList} 
                 className=${cls.list}
+                classes=${{ 
+                    label: cls.listLabel,
+                    content: cls.listContent,
+                }}
                 label=Preferred 
+                labelStuckAtPx=${listLabelStuckAtPx}
                 objects=${state.preferred} 
                 objectType=legendary
                 onObjectClick=${(object: MagicalObject) => {
@@ -62,7 +74,12 @@ export function LegendaryObjectsPage() {
             />
             <${ObjectList} 
                 className=${cls.list}
+                classes=${{ 
+                    label: cls.listLabel,
+                    content: cls.listContent,
+                }}
                 label=Available 
+                labelStuckAtPx=${listLabelStuckAtPx}
                 objects=${derivedState.available} 
                 objectType=legendary
                 onObjectClick=${(object: MagicalObject) => {
