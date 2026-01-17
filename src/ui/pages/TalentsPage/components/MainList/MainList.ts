@@ -39,10 +39,7 @@ export function MainList({
         stickyElemRef, 
         isStuck: labelStuck 
     } = useIsStickyElemStuck({
-        // this is intentionally 1 pixel less than expected
-        // because on mobile for some reason there was 1 pixel
-        // line between controls and list header
-        stuckAtPx: 145
+        stuckAtPx: 146,
     });
 
     return html`

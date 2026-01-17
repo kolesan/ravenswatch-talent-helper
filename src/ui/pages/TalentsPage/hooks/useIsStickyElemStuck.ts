@@ -31,7 +31,7 @@ export function useIsStickyElemStuck(params?: Params) {
                 // move any further
                 setIsStuck(e.intersectionRatio < 1);
                 log({ 
-                    ratio: e.intersectionRatio.toPrecision(2), 
+                    ratio: e.intersectionRatio, 
                     isIntersecting: e.isIntersecting,
                 });
             }, 
@@ -58,7 +58,7 @@ export function useIsStickyElemStuck(params?: Params) {
         isStuck,
     };
 
-    
+
     // local utils
     function log(...params) {
         if (doLog) {
