@@ -20,11 +20,6 @@ import { markLocked } from "./utils/markLocked";
 
 import cls from "./TalentsPage.module.css";
 
-// TODO: think about rewriting useTalentsPage to return function for actions, 
-// not useReducer directly
-// TODO: think about how to set up TS properly in state deserialization to make sure
-// that TS doesnt give us any false confidence in what can be deserialized
-
 const initialState = appStateStorage.getCurrentHero() || defaultAppState;
 
 export function TalentsPage() {
