@@ -11,7 +11,7 @@ import { MainList } from "./components/MainList/MainList";
 import { maxUsedTalents } from "./consts/maxUsedTalents";
 import { rankConsts } from "./consts/rankConsts";
 import { useSaveStateToStorage } from "./hooks/useSaveStateToStorage";
-import { useStuckStyling } from "./hooks/useStuckStyling";
+import { useIsStickyElemStuck } from "./hooks/useIsStickyElemStuck";
 import { useTalentsPageState } from "./hooks/useTalentsPageState";
 import { TalentWithLockedFlag } from "./types";
 import { defaultAppState } from "./utils/defaultAppState";
@@ -29,7 +29,12 @@ export function TalentsPage() {
 
     useSaveStateToStorage(state);
 
-    const { stuckStylingRef, isStuck: controlsStuck } = useStuckStyling();
+    const { 
+        stickyElemRef, 
+        isStuck: controlsStuck 
+    } = useIsStickyElemStuck({
+        stuckAtPx: 56,
+    });
 
     const derivedTalentsState = getDerivedTalentsState(state);
 
@@ -39,7 +44,7 @@ export function TalentsPage() {
                 [cls.controls]: true,
                 [cls.controlsStuck]: controlsStuck
             })}
-            ref=${stuckStylingRef}
+            ref=${stickyElemRef}
         >
             <${HeroSelect}
                 compact=${controlsStuck}
@@ -72,7 +77,11 @@ export function TalentsPage() {
             </label>
         </div>
         <div class=${cls.talentLists}>
-            <${MainList} 
+            <${MainList}
+                classes=${{ 
+                    label: cls.listLabel,
+                    content: cls.listContent,
+                }}
                 label=Used 
                 heroCode=${state.hero.code} 
                 talents=${state.talents.used} 
@@ -91,6 +100,10 @@ export function TalentsPage() {
                 }}
             />
             <${MainList} 
+                classes=${{ 
+                    label: cls.listLabel,
+                    content: cls.listContent,
+                }}
                 label=Preferred 
                 heroCode=${state.hero.code} 
                 talents=${state.talents.preferred} 
@@ -108,6 +121,10 @@ export function TalentsPage() {
                 }}
             />
             <${MainList} 
+                classes=${{ 
+                    label: cls.listLabel,
+                    content: cls.listContent,
+                }}
                 label=Available 
                 heroCode=${state.hero.code} 
                 talents=${[

@@ -1,37 +1,37 @@
 .controls {
     position: sticky;
-    top: -1px;
-    z-index: 1;
+    /* height of the toolbar */
+    top: 56px;
+    z-index: 2;
 
-    background-color: inherit;
-
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     
-    padding: 0 8px;
+    padding: 2px 8px;
 
     display: flex;
     justify-content: center;
     gap: 16px;
 
-    /* needed for the sticky styling trick to work */
-    padding-top: 56px;
-    margin-top: -56px;
+    background-color: inherit;
 }
 .controlsStuck {
-    padding-top: 59px;
-    padding-bottom: 2px;
-    box-shadow: 1px 20px 20px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 10px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
 .talentLists {
     flex-grow: 1;
     min-height: 0;
 
-    padding: 0 16px;
-
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 16px;
+}
+
+.listLabel {
+    padding: 4px 16px;
+}
+.listContent {
+    padding: 0 16px;
 }
 
 @media (max-width: 1080px) {
