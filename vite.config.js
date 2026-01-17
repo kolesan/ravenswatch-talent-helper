@@ -5,4 +5,8 @@ export default defineConfig({
     plugins: [
         analyzer()
     ],
+    server: {
+        host: true,
+        port: 5173,
+    },
 });
