@@ -47,7 +47,6 @@ export function TalentsPage() {
             ref=${stickyElemRef}
         >
             <${HeroSelect}
-                compact=${controlsStuck}
                 items=${heroes.asArray}
                 value=${state.hero}
                 onChange=${(hero: Hero) => {
