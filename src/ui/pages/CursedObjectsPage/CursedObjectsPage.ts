@@ -1,4 +1,5 @@
 import { html } from "htm/preact";
+import { useMemo } from "preact/hooks";
 
 import { MagicalObject } from "../../../types";
 import { ObjectList } from "../../components/ObjectList";
@@ -12,12 +13,16 @@ import { getDerivedCursedObjectsPageState } from "./utils/getDerivedCursedObject
 
 import cls from "./CursedObjectsPage.module.css";
 
-const initialState = cursedObjectsPageStateStorage.get() || defaultCursedObjectsPageState;
+const getInitialState = () => 
+    cursedObjectsPageStateStorage.get() 
+    || defaultCursedObjectsPageState;
 
 const listLabelStuckAtPx = 56;
 
 export function CursedObjectsPage() {
     usePageTitle("Cursed Objects");
+        
+    const initialState = useMemo(getInitialState, []);
 
     const [state, dispatch] = useCursedObjectsPageState(initialState);
 

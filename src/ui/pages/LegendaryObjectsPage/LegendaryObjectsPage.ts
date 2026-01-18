@@ -1,4 +1,5 @@
 import { html } from "htm/preact";
+import { useMemo } from "preact/hooks";
 
 import { MagicalObject } from "../../../types";
 import { ObjectList } from "../../components/ObjectList";
@@ -12,12 +13,16 @@ import { legendaryObjectsPageStateStorage } from "./utils/legendaryObjectsPageSt
 
 import cls from "./LegendaryObjectsPage.module.css";
 
-const initialState = legendaryObjectsPageStateStorage.get() || defaultLegendaryObjectsPageState;
+const getInitialState = () => 
+    legendaryObjectsPageStateStorage.get() 
+    || defaultLegendaryObjectsPageState;
 
 const listLabelStuckAtPx = 56;
 
 export function LegendaryObjectsPage() {
     usePageTitle("Legendary Objects");
+    
+    const initialState = useMemo(getInitialState, []);
 
     const [state, dispatch] = useLegendaryObjectsPageState(initialState);
 

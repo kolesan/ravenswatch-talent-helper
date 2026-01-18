@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { html } from "htm/preact";
+import { useMemo } from "preact/hooks";
 
 import { Hero, heroes } from "../../../finalData/finalData";
 import { Talent } from "../../../scripts/extractTalents/types";
@@ -10,8 +11,8 @@ import { HeroSelect } from "./components/HeroSelect/HeroSelect";
 import { MainList } from "./components/MainList/MainList";
 import { maxUsedTalents } from "./consts/maxUsedTalents";
 import { rankConsts } from "./consts/rankConsts";
-import { useSaveStateToStorage } from "./hooks/useSaveStateToStorage";
 import { useIsStickyElemStuck } from "./hooks/useIsStickyElemStuck";
+import { useSaveStateToStorage } from "./hooks/useSaveStateToStorage";
 import { useTalentsPageState } from "./hooks/useTalentsPageState";
 import { TalentWithLockedFlag } from "./types";
 import { defaultAppState } from "./utils/defaultAppState";
@@ -20,10 +21,14 @@ import { markLocked } from "./utils/markLocked";
 
 import cls from "./TalentsPage.module.css";
 
-const initialState = appStateStorage.getCurrentHero() || defaultAppState;
+const getInitialState = () => 
+    appStateStorage.getCurrentHero() 
+    || defaultAppState;
 
 export function TalentsPage() {
     usePageTitle("Talents");
+
+    const initialState = useMemo(getInitialState, []);
 
     const [state, dispatch] = useTalentsPageState(initialState);
 
