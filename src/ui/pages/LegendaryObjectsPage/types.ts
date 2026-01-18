@@ -1,4 +1,4 @@
-import { MagicalObject } from "../../../types";
+import { MagicalObject, SerializedMagicalObject } from "../../../types";
 
 export type LegendaryObjectsPageState = {
     used: MagicalObject[];
@@ -6,8 +6,8 @@ export type LegendaryObjectsPageState = {
 };
 
 export type SerializedLegendaryObjectsPageState = {
-    used: string[];
-    preferred: string[];
+    used: SerializedMagicalObject[];
+    preferred: SerializedMagicalObject[];
 };
 
 export type DerivedLegendaryObjectsPageState = {

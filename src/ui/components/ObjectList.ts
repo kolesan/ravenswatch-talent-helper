@@ -1,8 +1,8 @@
 import { html } from "htm/preact";
 
 import { MagicalObject, MagicalObjectType } from "../../types";
-import { List } from "./List/List";
 
+import { List } from "./List/List";
 import { ObjectListItem } from "./ObjectListItem";
 
 type Props = {
@@ -17,6 +17,7 @@ type Props = {
     objectType: MagicalObjectType;
     onObjectClick?: (item: MagicalObject) => void;
     onObjectAltClick?: (item: MagicalObject) => void;
+    onObjectHold?: (item: MagicalObject) => void;
 }
 
 export function ObjectList({
@@ -28,6 +29,7 @@ export function ObjectList({
     objectType,
     onObjectClick,
     onObjectAltClick,
+    onObjectHold,
 }: Props) {
     return html`
         <${List} 
@@ -36,12 +38,14 @@ export function ObjectList({
             label=${label} 
             labelStuckAtPx=${labelStuckAtPx}
             items=${objects} 
-            renderItem=${(object: MagicalObject) => html`
+            renderItem=${(object: MagicalObject, index: number) => html`
                 <${ObjectListItem}
+                    index=${index}
                     object=${object}
                     objectType=${objectType}
                     onClick=${() => onObjectClick?.(object)}
                     onAltClick=${() => onObjectAltClick?.(object)}
+                    onHold=${() => onObjectHold?.(object)}
                 />
             `}
         />

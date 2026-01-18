@@ -93,6 +93,14 @@ export function TalentsPage() {
                         talent,
                     });
                 }}
+                onTalentAltClick=${(talent: TalentWithLockedFlag) => {
+                    dispatch({
+                        type: talent.preferred
+                            ? "talent_from_used_to_preferred"
+                            : "talent_from_used_to_available",
+                        talent,
+                    });
+                }}
                 onTalentHold=${(talent: TalentWithLockedFlag) => {
                     dispatch({
                         type: talent.preferred

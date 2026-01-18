@@ -1,5 +1,5 @@
 import { cursed } from "../../../../../../scrapedData/items/cursed";
-import { MagicalObject } from "../../../../../../types";
+import { MagicalObject, SerializedMagicalObject } from "../../../../../../types";
 import { isTruthy } from "../../../../../utils/isTruthy";
 import { CursedObjectsPageState, SerializedCursedObjectsPageState } from "../../../types";
 import { defaultCursedObjectsPageState } from "../../defaultCursedObjectPageState";
@@ -37,7 +37,13 @@ export function deserializeCursedObjectsPageState(
 }
 
 function deserializeObject(allObjects: MagicalObject[]) {
-    return function(storedObjectCode: unknown): MagicalObject | undefined {
-        return allObjects.find(it => it.code === storedObjectCode);
+    return function(storedObject: SerializedMagicalObject): MagicalObject | undefined {
+        const object = allObjects
+            .find(it => it.code === storedObject.code);
+
+        return object && {
+            ...object,
+            preferred: storedObject.preferred,
+        }
     }
 }

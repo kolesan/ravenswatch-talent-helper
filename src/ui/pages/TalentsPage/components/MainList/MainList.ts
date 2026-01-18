@@ -69,7 +69,7 @@ export function MainList({
                     </div>
                 `}
                 <ul class=${cls.mainList}>
-                    ${talents.slice(0, maxItems).map(talent => {
+                    ${talents.slice(0, maxItems).map((talent, i) => {
                         const imageSrc = talent.locked
                             ? `/icons/talents/locked_talent.webp`
                             : `/icons/talents/${heroCode}/${talent.code}.webp`;
@@ -109,13 +109,17 @@ export function MainList({
                                         <div class=${cls.name}>
                                             ${talent.name}
                                             ${talent.preferred && html`
-                                                <${PreferredIcon} />
+                                                <${PreferredIcon} 
+                                                    lowerTooltip=${i === 0}
+                                                />
                                             `}
                                         </div>
                                         ${!talent.locked && html`
                                             <div class=${cls.tags}>
                                                 ${talent.multiplayerOnly && html`
-                                                    <${MultiplayerOnlyTag} />
+                                                    <${MultiplayerOnlyTag} 
+                                                        lowerTooltip=${i === 0}
+                                                    />
                                                 `}
                                             </div>
                                         `}

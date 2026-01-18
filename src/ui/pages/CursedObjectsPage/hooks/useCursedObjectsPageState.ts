@@ -15,7 +15,11 @@ export function useCursedObjectsPageState(initialState: CursedObjectsPageState) 
     return useReducer<CursedObjectsPageState, Action>((state, action) => {
         switch (action.type) {
             case "object_from_available_to_preferred": {
-                const preferred = [...state.preferred, action.object];
+                const object = {
+                    ...action.object,
+                    preferred: true,
+                }
+                const preferred = [...state.preferred, object];
                 return {
                     ...state,
                     preferred,
@@ -31,7 +35,7 @@ export function useCursedObjectsPageState(initialState: CursedObjectsPageState) 
             case "object_from_preferred_to_used": {
                 const used = [...state.used, action.object];
                 const preferred = state.preferred
-                    .filter(it => it !== action.object);
+                    .filter(it => it.code !== action.object.code);
                 return {
                     used,
                     preferred, 
@@ -39,7 +43,7 @@ export function useCursedObjectsPageState(initialState: CursedObjectsPageState) 
             }
             case "object_from_preferred_to_available": {
                 const preferred = state.preferred
-                    .filter(it => it !== action.object);
+                    .filter(it => it.code !== action.object.code);
                 return {
                     ...state,
                     preferred
@@ -47,7 +51,7 @@ export function useCursedObjectsPageState(initialState: CursedObjectsPageState) 
             }
             case "object_from_used_to_preferred": {
                 const used = state.used
-                    .filter(it => it !== action.object);
+                    .filter(it => it.code !== action.object.code);
                 const preferred = [...state.preferred, action.object];
                 return {
                     used,
@@ -56,7 +60,7 @@ export function useCursedObjectsPageState(initialState: CursedObjectsPageState) 
             }
             case "object_from_used_to_available": {
                 const used = state.used
-                    .filter(it => it !== action.object);
+                    .filter(it => it.code !== action.object.code);
                 return {
                     ...state,
                     used,

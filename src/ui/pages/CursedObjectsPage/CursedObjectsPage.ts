@@ -4,12 +4,13 @@ import { MagicalObject } from "../../../types";
 import { ObjectList } from "../../components/ObjectList";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
-import cls from "./CursedObjectsPage.module.css";
 import { useCursedObjectsPageState } from "./hooks/useCursedObjectsPageState";
 import { useSaveCursedObjectsPageStateToStorage } from "./hooks/useSaveCursedObjectsPageStateToStorage";
 import { cursedObjectsPageStateStorage } from "./utils/cursedObjectsPageStateStorage/cursedObjectsPageStateStorage";
 import { defaultCursedObjectsPageState } from "./utils/defaultCursedObjectPageState";
 import { getDerivedCursedObjectsPageState } from "./utils/getDerivedCursedObjectsPageState";
+
+import cls from "./CursedObjectsPage.module.css";
 
 const initialState = cursedObjectsPageStateStorage.get() || defaultCursedObjectsPageState;
 
@@ -38,14 +39,26 @@ export function CursedObjectsPage() {
                 objectType=cursed
                 onObjectClick=${(object: MagicalObject) => {
                     dispatch({
-                        type: "object_from_used_to_available",
-                        object: object,
+                        type: object.preferred
+                            ? "object_from_used_to_preferred"
+                            : "object_from_used_to_available",
+                        object,
                     });
                 }}
                 onObjectAltClick=${(object: MagicalObject) => {
                     dispatch({
-                        type: "object_from_used_to_preferred",
-                        object: object,
+                        type: object.preferred
+                            ? "object_from_used_to_preferred"
+                            : "object_from_used_to_available",
+                        object,
+                    });
+                }}
+                onObjectHold=${(object: MagicalObject) => {
+                    dispatch({
+                        type: object.preferred
+                            ? "object_from_used_to_preferred"
+                            : "object_from_used_to_available",
+                        object,
                     });
                 }}
             />
@@ -71,6 +84,12 @@ export function CursedObjectsPage() {
                         object: object,
                     });
                 }}
+                onObjectHold=${(object: MagicalObject) => {
+                    dispatch({
+                        type: "object_from_preferred_to_available",
+                        object,
+                    });
+                }}
             />
             <${ObjectList} 
                 className=${cls.list}
@@ -92,6 +111,12 @@ export function CursedObjectsPage() {
                     dispatch({
                         type: "object_from_available_to_preferred",
                         object: object,
+                    });
+                }}
+                onObjectHold=${(object: MagicalObject) => {
+                    dispatch({
+                        type: "object_from_available_to_preferred",
+                        object,
                     });
                 }}
             />

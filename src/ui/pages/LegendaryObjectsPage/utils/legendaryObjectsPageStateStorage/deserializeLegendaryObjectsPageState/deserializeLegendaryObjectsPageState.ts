@@ -1,5 +1,5 @@
 import { legendary } from "../../../../../../scrapedData/items/legendary";
-import { MagicalObject } from "../../../../../../types";
+import { MagicalObject, SerializedMagicalObject } from "../../../../../../types";
 import { isTruthy } from "../../../../../utils/isTruthy";
 import { LegendaryObjectsPageState, SerializedLegendaryObjectsPageState } from "../../../types";
 import { defaultLegendaryObjectsPageState } from "../../defaultLegendaryItemsState";
@@ -37,7 +37,13 @@ export function deserializeLegendaryObjectsPageState(
 }
 
 function deserializeObject(allObjects: MagicalObject[]) {
-    return function(storedObjectCode: unknown): MagicalObject | undefined {
-        return allObjects.find(it => it.code === storedObjectCode);
+    return function(storedObject: SerializedMagicalObject): MagicalObject | undefined {
+        const object = allObjects
+            .find(it => it.code === storedObject.code);
+
+        return object && {
+            ...object,
+            preferred: storedObject.preferred,
+        }
     }
 }

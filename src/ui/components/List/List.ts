@@ -18,7 +18,7 @@ type Props<T> = {
     // in the parent
     labelStuckAtPx?: number;
     items: T[];
-    renderItem: (item: T) => ComponentChildren;
+    renderItem: (item: T, index: number) => ComponentChildren;
     onItemClick?: (item: T) => void;
     onItemAltClick?: (item: T) => void;
 }
@@ -64,9 +64,9 @@ export function List<T extends WithCode>({
                     </div>
                 `}
                 <ul class=${cls.list}>
-                    ${items.map(item => html`
+                    ${items.map((item, i) => html`
                         <div class=${cls.listItem} key=${item.code}>
-                            ${renderItem(item)}
+                            ${renderItem(item, i)}
                         </div>
                     `)}
                 </ul>

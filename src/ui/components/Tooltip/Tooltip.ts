@@ -6,18 +6,21 @@ import cls from "./Tooltip.module.css";
 
 type Props = {
     title?: string;
+    lower?: boolean;
     children: ComponentChildren;
 }
 
 export function Tooltip({
     title,
+    lower,
     children
 }: Props) {
     return html`
         <div 
             class=${clsx({ 
                 [cls.tooltip]: true,
-                [cls.tooltipHidden]: !title
+                [cls.tooltipHidden]: !title,
+                [cls.tooltipLower]: lower,
             })}
             data-tooltip=${title}
         >

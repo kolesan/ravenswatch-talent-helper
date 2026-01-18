@@ -6,10 +6,11 @@ import { usePageTitle } from "../../hooks/usePageTitle";
 
 import { useLegendaryObjectsPageState } from "./hooks/useLegendaryObjectsPageState";
 import { useSaveLegendaryObjectsPageStateToStorage } from "./hooks/useSaveLegendaryItemsPageStateToStorage";
-import cls from "./LegendaryObjectsPage.module.css";
 import { defaultLegendaryObjectsPageState } from "./utils/defaultLegendaryItemsState";
 import { getDerivedLegendaryObjectsPageState } from "./utils/getDerivedLegendaryObjectsPageState";
 import { legendaryObjectsPageStateStorage } from "./utils/legendaryObjectsPageStateStorage/legendaryObjectsPageStateStorage";
+
+import cls from "./LegendaryObjectsPage.module.css";
 
 const initialState = legendaryObjectsPageStateStorage.get() || defaultLegendaryObjectsPageState;
 
@@ -38,14 +39,26 @@ export function LegendaryObjectsPage() {
                 objectType=legendary
                 onObjectClick=${(object: MagicalObject) => {
                     dispatch({
-                        type: "object_from_used_to_available",
-                        object: object,
+                        type: object.preferred
+                            ? "object_from_used_to_preferred"
+                            : "object_from_used_to_available",
+                        object,
                     });
                 }}
                 onObjectAltClick=${(object: MagicalObject) => {
                     dispatch({
-                        type: "object_from_used_to_preferred",
-                        object: object,
+                        type: object.preferred
+                            ? "object_from_used_to_preferred"
+                            : "object_from_used_to_available",
+                        object,
+                    });
+                }}
+                onObjectHold=${(object: MagicalObject) => {
+                    dispatch({
+                        type: object.preferred
+                            ? "object_from_used_to_preferred"
+                            : "object_from_used_to_available",
+                        object,
                     });
                 }}
             />
@@ -71,6 +84,12 @@ export function LegendaryObjectsPage() {
                         object: object,
                     });
                 }}
+                onObjectHold=${(object: MagicalObject) => {
+                    dispatch({
+                        type: "object_from_preferred_to_available",
+                        object,
+                    });
+                }}
             />
             <${ObjectList} 
                 className=${cls.list}
@@ -92,6 +111,12 @@ export function LegendaryObjectsPage() {
                     dispatch({
                         type: "object_from_available_to_preferred",
                         object: object,
+                    });
+                }}
+                onObjectHold=${(object: MagicalObject) => {
+                    dispatch({
+                        type: "object_from_available_to_preferred",
+                        object,
                     });
                 }}
             />

@@ -9,9 +9,13 @@ interface Props {
 export function DescriptionList({
     description 
 }: Props) {
-    return description.map((it, i) => html`
-        <div key=${i} class=${cls.descriptionListItem}>
-            ${it}
+    return html`
+        <div>
+            ${description.map((it, i) => html`
+                <div key=${i} class=${cls.descriptionListItem}>
+                    ${it}
+                </div>
+            `)}
         </div>
-    `);
+    `;
 }

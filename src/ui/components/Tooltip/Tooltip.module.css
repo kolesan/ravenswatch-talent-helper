@@ -13,13 +13,13 @@
 .tooltip::after {
     content: attr(data-tooltip);
     position: absolute;
-    bottom: 100%;
+    bottom: 48%;
     left: 50%;
     transform: translateX(-50%);
 
     margin-bottom: 8px;
 
-    padding: 6px 8px;
+    padding: 2px 8px;
 
     background: #222;
     border-radius: 4px;
@@ -32,7 +32,11 @@
     opacity: 0;
     transition: opacity 0.20s ease;
 }
+.tooltipLower::after {
+    bottom: 17%;
+    left: -93%;
+}
 
 .tooltip:hover::after {
-    opacity: 1;
+    opacity: 0.9;
 }

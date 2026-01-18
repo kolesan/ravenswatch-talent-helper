@@ -4,9 +4,18 @@ import { Tooltip } from "../../../../../../components/Tooltip/Tooltip";
 
 import cls from "./PreferredIcon.module.css";
 
-export function PreferredIcon() {
+type Props = {
+    lowerTooltip?: boolean;
+}
+
+export function PreferredIcon({
+    lowerTooltip,
+}: Props) {
     return html`
-        <${Tooltip} title=Preferred>
+        <${Tooltip} 
+            title=Preferred
+            lower=${lowerTooltip}
+        >
             <img
                 class=${cls.icon}
                 src="/icons/feather.webp"

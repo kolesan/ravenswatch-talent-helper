@@ -99,13 +99,9 @@ export function useTalentsPageState(initialState: AppState) {
                 };
             }
             case "talent_from_used_to_preferred": {
-                const talent = {
-                    ...action.talent,
-                    preferred: true,
-                }
                 const used = state.talents.used
-                    .filter(it => it.code !== talent.code);
-                const preferred = [...state.talents.preferred, talent];
+                    .filter(it => it.code !== action.talent.code);
+                const preferred = [...state.talents.preferred, action.talent];
                 return {
                     ...state,
                     talents: {
