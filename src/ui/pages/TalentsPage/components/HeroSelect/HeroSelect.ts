@@ -70,6 +70,7 @@ export function HeroSelect({
                 <div class=${cls.items}>
                     ${items.filter(it => it.code !== value.code).map(it => html`
                         <${HeroSelectItem} 
+                            key=${it.code}
                             hero=${it}
                             onChange=${onChange}
                         />

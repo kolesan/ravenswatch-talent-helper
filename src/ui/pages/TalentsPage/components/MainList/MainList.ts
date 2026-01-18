@@ -71,6 +71,7 @@ export function MainList({
                         return html`
                             <li 
                                 class=${clsx(cls.listItem, { [cls.locked] : talent.locked })}
+                                key=${talent.code}
                                 onClick=${(e: any) => {
                                     if (e.altKey) {
                                         onTalentAltClick?.(talent);
