@@ -3,6 +3,7 @@ import { html } from "htm/preact";
 
 import { Hero } from "../../../../../finalData/finalData";
 import { useBooleanState } from "../../../../hooks/useBooleanState";
+import { useOnClickOutside } from "../../hooks/useOnClickOutside";
 
 import { HeroSelectItem } from "./components/HeroSelectItem/HeroSelectItem";
 
@@ -25,9 +26,12 @@ export function HeroSelect({
 }: Props) {
     const open = useBooleanState(false);
 
+    const { ref } = useOnClickOutside(open.off);
+
     return html`
         <div 
             class=${clsx(cls.root, className)}
+            ref=${ref}
             onClick=${open.toggle}
         >
             <div 
@@ -80,7 +84,3 @@ export function HeroSelect({
         </div>
     `;
 }
-
-            // ${open.is && html`
-            //     <div class=${cls.backdrop} />
-            // `}
