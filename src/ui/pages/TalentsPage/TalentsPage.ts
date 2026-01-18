@@ -87,13 +87,9 @@ export function TalentsPage() {
                 maxItems=${maxUsedTalents}
                 onTalentClick=${(talent: Talent) => {
                     dispatch({
-                        type: "talent_from_used_to_available",
-                        talent,
-                    });
-                }}
-                onTalentAltClick=${(talent: Talent) => {
-                    dispatch({
-                        type: "talent_from_used_to_preferred",
+                        type: talent.preferred
+                            ? "talent_from_used_to_preferred"
+                            : "talent_from_used_to_available",
                         talent,
                     });
                 }}
