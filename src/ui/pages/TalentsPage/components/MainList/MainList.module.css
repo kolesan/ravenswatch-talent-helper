@@ -66,6 +66,7 @@
 
 .mainList {
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .listItem {

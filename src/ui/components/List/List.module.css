@@ -63,6 +63,7 @@
 
 .list {
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .listItem {
