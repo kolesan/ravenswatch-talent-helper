@@ -62,10 +62,9 @@
     z-index: 1;
 
     width: max-content;
-    /* temporary limitation */
-    /* TODO: investigate how to allow scrolling all page with just the menu 
-    when menu is opened */
-    max-height: 75vh;
+    height: calc(100vh - 280px);
+    max-height: fit-content;
+
     overflow-y: auto;
     overflow-x: hidden;
 
