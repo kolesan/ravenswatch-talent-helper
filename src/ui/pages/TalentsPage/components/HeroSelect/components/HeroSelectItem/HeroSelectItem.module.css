@@ -20,6 +20,7 @@
     position: relative;
     height: 64px;
     width: 64px;
+    min-width: 64px;
 
     overflow: hidden;
 }
@@ -29,10 +30,15 @@
     width: 64px;
 }
 .itemTextContainer {
+    flex-grow: 1;
+
+    margin-top: 3px;
+
     position: relative;
 
     font-family: ravenswatch;
     text-transform: uppercase;
+    text-align: center;
     
     text-shadow: 
         -1px -1px 2px black, 
@@ -43,20 +49,8 @@
 .itemText {
     font-size: 17px;
 }
-.item:hover .itemText {
-    visibility: hidden;
-}
-.itemTextBigger {
-    visibility: hidden;
-
-    position: absolute;
-    top: 0;
-    width: max-content;
-
+.heroSelectItemRoot:hover .itemText {
     font-size: 18px;
-}
-.item:hover .itemTextBigger {
-    visibility: unset;
 }
 
 .scarlet {
@@ -99,7 +93,7 @@
 }
 .romeo {
     left: 3px;
-    bottom: 0px
+    bottom: -1px
 }
 .juliet {
     left: 2px;

@@ -31,24 +31,39 @@ export function HeroSelect({
             onClick=${open.toggle}
         >
             <div 
-                class=${`${cls.input} ${value.code}BgArt ${open.is ? `${cls.inputActive}` : ""}`}
+                class=${clsx({
+                    [cls.input]: true,
+                    [`${value.code}BgArt`]: true, 
+                    [cls.inputActive]: open.is
+                })}
             >
-                <div class=${cls.inputImageContainer}>
+                <div 
+                    class=${clsx({
+                        [cls.inputImageContainer]: true,
+                        [cls[`${value.code}InputImgContainer`]]: true,
+                    })}
+                >
                     <img
                         class=${clsx({
                             [cls.inputImage]: true,
                             [cls.inputImageSmall]: compact,
+                            [cls[`${value.code}InputImg`]]: true,
                         })}
                         src=${`/icons/heroes/${value.code}.png`}
                         height=256
                         widht=256
                     />
-                    <div class=${cls.inputText}>
-                        ${value.name}
-                    </div>
-                    <div class=${cls.inputArrow}>
-                        >
-                    </div>
+                </div>
+                <div 
+                    class=${clsx({
+                        [cls.inputText]: true, 
+                        [cls[`${value.code}InputText`]]: true,
+                    })}
+                >
+                    ${value.name}
+                </div>
+                <div class=${cls.inputArrow}>
+                    >
                 </div>
             </div>
             ${open.is && html`

@@ -1,15 +1,23 @@
 .root {
+    width: 180px;
+
     position: relative;
 }
 
 .input {
+    width: 100%;
+
     padding: 2px;
-    padding-right: 12px;
+    padding-right: 4px;
 
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
 
     font-family: ravenswatch;
     text-transform: uppercase;
+    text-align: center;
 
     border-radius: 4px;
 
@@ -32,28 +40,63 @@
         1px 1px 2px black;
 }
 .inputImageContainer {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-
-    background-repeat: round;
+    position: relative;
+    min-height: 80px;
+    min-width: 80px;
 }
 .inputImage {
-    height: 80px;
-    width: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
 }
 .inputImageSmall {
     height: 55px;
     width: 55px;
 }
 .inputText {
-    /* margin-left: -14px; */
-    /* margin-bottom: -4px; */
+    max-width: 72px;
+    margin-bottom: -2px;
 }
 .inputArrow {
     transform: rotate(90deg);
-    margin-left: 4px;
-    /* margin-bottom: -4px; */
+    padding-top: 4px;
+    min-width: 18px;
+}
+
+/* .scarlet {
+} */
+.piperInputImg {
+    top: 4px;
+}
+.piperInputText {
+    margin-bottom: -4px;
+}
+/* .beowulf {
+} */
+.snowQueenInputText {
+    margin-bottom: -5px;
+}
+.snowQueenInputImgContainer {
+    margin-left: -4px;
+}
+/* .snowQueenInputImg {
+}
+.aladdin {
+}
+.melusine {
+}
+.geppetto {
+}
+.wukong {
+}
+.carmilla {
+}
+.romeo {
+} */
+.julietInputImg {
+    top: 2px;
 }
 
 .items {
@@ -61,7 +104,7 @@
     top: 100%;
     z-index: 1;
 
-    width: max-content;
+    width: 100%;
     height: calc(100vh - 280px);
     max-height: fit-content;
     min-height: 80px;

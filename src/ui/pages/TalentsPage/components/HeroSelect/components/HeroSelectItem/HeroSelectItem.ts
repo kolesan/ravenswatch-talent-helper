@@ -37,9 +37,6 @@ export function HeroSelectItem({
                 <div class=${cls.itemText}>
                     ${hero.name}
                 </div>
-                <div class=${cls.itemTextBigger}>
-                    ${hero.name}
-                </div>
             </div>
         </div>
     `;
