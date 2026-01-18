@@ -3,12 +3,12 @@ import { html } from "htm/preact";
 
 import { HeroCode } from "../../../../../data/heroes";
 import { TalentDescription } from "../../../../components/TalentDescription/TalentDescription";
+import { holder } from "../../../../utils/onHold";
 import { useIsStickyElemStuck } from "../../hooks/useIsStickyElemStuck";
 import { TalentWithLockedFlag } from "../../types";
 import { MultiplayerOnlyTag } from "../MultiplayerOnlyTag/MultiplayerOnlyTag";
 
 import { PreferredIcon } from "./components/PreferredIcon/PreferredIcon";
-import { holder } from "./utils/onHold";
 
 import cls from "./MainList.module.css";
 
