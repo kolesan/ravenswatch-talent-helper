@@ -103,7 +103,12 @@ export function MainList({
                                 onPointerCancel=${hld.onPointerUp}
                                 onPointerMove=${hld.onPointerMove}
                             >
-                                <img src=${imageSrc} height=80 />
+                                <img 
+                                    class=${cls.icon}
+                                    src=${imageSrc} 
+                                    width=159 
+                                    height=154 
+                                />
                                 <div>
                                     <div class=${cls.header}>
                                         <div class=${cls.name}>
