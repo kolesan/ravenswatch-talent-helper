@@ -25,12 +25,14 @@ export function HeroSelectItem({
                 onChange(hero);
             }}
         >
-            <img
-                class=${cls.itemImage}
-                src=${`/icons/heroes/${hero.code}.png`}
-                height=256
-                widht=256
-            />
+            <div class=${cls.itemImageContainer}>
+                <img
+                    class=${clsx(cls.itemImage, cls[hero.code])}
+                    src=${`/icons/heroes/${hero.code}.png`}
+                    height=256
+                    widht=256
+                />
+            </div>
             <div class=${cls.itemTextContainer}>
                 <div class=${cls.itemText}>
                     ${hero.name}

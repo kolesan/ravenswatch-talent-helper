@@ -16,7 +16,15 @@
     color: #afbca1; 
     background-blend-mode: unset;
 }
+.itemImageContainer {
+    position: relative;
+    height: 64px;
+    width: 64px;
+
+    overflow: hidden;
+}
 .itemImage {
+    position: absolute;
     height: 64px;
     width: 64px;
 }
@@ -49,4 +57,51 @@
 }
 .item:hover .itemTextBigger {
     visibility: unset;
+}
+
+.scarlet {
+    left: 0px;
+    bottom: 2px;
+}
+.piper {
+    left: -5px;
+    bottom: 0px;
+}
+.beowulf {
+    left: 0px;
+    bottom: 0px;
+}
+.snowQueen {
+    left: -2px;
+    bottom: 0px;
+}
+.aladdin {
+    left: 4px;
+    bottom: 0px;
+}
+.melusine {
+    left: 0px;
+    bottom: 0px;
+}
+.geppetto {
+    left: 3px;
+    bottom: 0px;
+}
+.wukong {
+    left: 5px;
+    bottom: 0px;
+    width: 61px;
+    height: auto;
+}
+.carmilla {
+    left: 5px;
+    bottom: 0px
+}
+.romeo {
+    left: 3px;
+    bottom: 0px
+}
+.juliet {
+    left: 2px;
+    bottom: 0px
 }
