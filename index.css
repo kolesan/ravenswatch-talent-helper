@@ -51,6 +51,8 @@ ul {
     
     font-family: ravenswatch;
     text-transform: uppercase;
+    
+    -webkit-tap-highlight-color: transparent;
 }
 .container-label input {
     cursor: pointer;

@@ -2,6 +2,8 @@
     width: 180px;
 
     position: relative;
+
+    -webkit-tap-highlight-color: transparent;
 }
 
 .input {
@@ -25,7 +27,7 @@
 
     border: 1px solid transparent;
 }
-.input:hover, .inputActive {
+.inputActive {
     background-size: cover;
     background-color: #88650e;
     background-blend-mode: multiply;
@@ -38,6 +40,22 @@
         -1px 1px 2px black, 
         1px -1px 2px black, 
         1px 1px 2px black;
+}
+@media (hover: hover) and (pointer: fine) {
+    .input:hover {
+        background-size: cover;
+        background-color: #88650e;
+        background-blend-mode: multiply;
+
+        border: 1px solid #52493381;
+
+        color: #afbca1; 
+        text-shadow: 
+            -1px -1px 2px black, 
+            -1px 1px 2px black, 
+            1px -1px 2px black, 
+            1px 1px 2px black;
+    }
 }
 .inputImageContainer {
     position: relative;
@@ -118,18 +136,6 @@
     border: 1px solid #52493381;
 }
 
-/* TODO Double check all stuff like this is either used or deleted */
-/* .backdrop {
-    position: absolute;
-    top: 0;
-    left: -100vw;
-
-    width: 200vw;
-    height: 200vh;
-
-    background-color: #9acd321a;
-} */
-
 /* 
     TODO consider an absolute positioned element (img probably)
     stretched to look as if it's the background
@@ -140,36 +146,72 @@
     e.g. try the "style" attribute in js again
 */
 /* TODO consider using filter instead of blend mode and background color */
-:global(.scarletBgArt).inputActive, :global(.scarletBgArt):hover {
+:global(.scarletBgArt).inputActive {
     background-image: url("/art/scarlet.jpg");
 }
-:global(.piperBgArt).inputActive, :global(.piperBgArt):hover {
+:global(.piperBgArt).inputActive {
     background-image: url("/art/piper.jpg");
 }
-:global(.beowulfBgArt).inputActive, :global(.beowulfBgArt):hover {
+:global(.beowulfBgArt).inputActive {
     background-image: url("/art/beowulf.jpg");
 }
-:global(.snowQueenBgArt).inputActive, :global(.snowQueenBgArt):hover {
+:global(.snowQueenBgArt).inputActive {
     background-image: url("/art/snowQueen.jpg");
 }
-:global(.aladdinBgArt).inputActive, :global(.aladdinBgArt):hover {
+:global(.aladdinBgArt).inputActive {
     background-image: url("/art/aladdin.jpg");
 }
-:global(.melusineBgArt).inputActive, :global(.melusineBgArt):hover {
+:global(.melusineBgArt).inputActive {
     background-image: url("/art/melusine.jpg");
 }
-:global(.geppettoBgArt).inputActive, :global(.geppettoBgArt):hover {
+:global(.geppettoBgArt).inputActive {
     background-image: url("/art/geppetto.jpg");
 }
-:global(.wukongBgArt).inputActive, :global(.wukongBgArt):hover {
+:global(.wukongBgArt).inputActive {
     background-image: url("/art/wukong.jpg");
 }
-:global(.carmillaBgArt).inputActive, :global(.carmillaBgArt):hover {
+:global(.carmillaBgArt).inputActive {
     background-image: url("/art/carmilla.jpg");
 }
-:global(.romeoBgArt).inputActive, :global(.romeoBgArt):hover {
+:global(.romeoBgArt).inputActive {
     background-image: url("/art/romeo.jpg");
 }
-:global(.julietBgArt).inputActive, :global(.julietBgArt):hover {
+:global(.julietBgArt).inputActive {
     background-image: url("/art/juliet.jpg");
+}
+
+@media (hover: hover) and (pointer: fine) {
+    :global(.scarletBgArt):hover {
+        background-image: url("/art/scarlet.jpg");
+    }
+    :global(.piperBgArt):hover {
+        background-image: url("/art/piper.jpg");
+    }
+    :global(.beowulfBgArt):hover {
+        background-image: url("/art/beowulf.jpg");
+    }
+    :global(.snowQueenBgArt):hover {
+        background-image: url("/art/snowQueen.jpg");
+    }
+    :global(.aladdinBgArt):hover {
+        background-image: url("/art/aladdin.jpg");
+    }
+    :global(.melusineBgArt):hover {
+        background-image: url("/art/melusine.jpg");
+    }
+    :global(.geppettoBgArt):hover {
+        background-image: url("/art/geppetto.jpg");
+    }
+    :global(.wukongBgArt):hover {
+        background-image: url("/art/wukong.jpg");
+    }
+    :global(.carmillaBgArt):hover {
+        background-image: url("/art/carmilla.jpg");
+    }
+    :global(.romeoBgArt):hover {
+        background-image: url("/art/romeo.jpg");
+    }
+    :global(.julietBgArt):hover {
+        background-image: url("/art/juliet.jpg");
+    }
 }
