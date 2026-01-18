@@ -64,6 +64,7 @@
     width: max-content;
     height: calc(100vh - 280px);
     max-height: fit-content;
+    min-height: 80px;
 
     overflow-y: auto;
     overflow-x: hidden;
