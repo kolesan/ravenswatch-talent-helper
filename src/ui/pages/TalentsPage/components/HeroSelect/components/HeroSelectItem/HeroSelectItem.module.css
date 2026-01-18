@@ -1,0 +1,52 @@
+.heroSelectItemRoot {
+    padding: 4px 4px;
+    padding-right: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    cursor: pointer;
+
+    background-size: cover;
+    background-color: #514c3d;
+    background-blend-mode: multiply;
+}
+.heroSelectItemRoot:hover {
+    color: #afbca1; 
+    background-blend-mode: unset;
+}
+.itemImage {
+    height: 64px;
+    width: 64px;
+}
+.itemTextContainer {
+    position: relative;
+
+    font-family: ravenswatch;
+    text-transform: uppercase;
+    
+    text-shadow: 
+        -1px -1px 2px black, 
+        -1px 1px 2px black, 
+        1px -1px 2px black, 
+        1px 1px 2px black;
+}
+.itemText {
+    font-size: 17px;
+}
+.item:hover .itemText {
+    visibility: hidden;
+}
+.itemTextBigger {
+    visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    width: max-content;
+
+    font-size: 18px;
+}
+.item:hover .itemTextBigger {
+    visibility: unset;
+}

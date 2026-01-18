@@ -4,6 +4,8 @@ import { html } from "htm/preact";
 import { Hero } from "../../../../../finalData/finalData";
 import { useBooleanState } from "../../../../hooks/useBooleanState";
 
+import { HeroSelectItem } from "./components/HeroSelectItem/HeroSelectItem";
+
 import cls from "./HeroSelect.module.css";
 
 interface Props {
@@ -52,29 +54,10 @@ export function HeroSelect({
             ${open.is && html`
                 <div class=${cls.items}>
                     ${items.filter(it => it.code !== value.code).map(it => html`
-                        <div
-                            class=${cls.item}
-                            style=${`background-image: url("/art/${it.code}.jpg");`}
-                            key=${it.code}
-                            onClick=${() => {
-                                onChange(it);
-                            }}
-                        >
-                            <img
-                                class=${cls.itemImage}
-                                src=${`/icons/heroes/${it.code}.png`}
-                                height=256
-                                widht=256
-                            />
-                            <div class=${cls.itemTextContainer}>
-                                <div class=${cls.itemText}>
-                                    ${it.name}
-                                </div>
-                                <div class=${cls.itemTextBigger}>
-                                    ${it.name}
-                                </div>
-                            </div>
-                        </div>
+                        <${HeroSelectItem} 
+                            hero=${it}
+                            onChange=${onChange}
+                        />
                     `)}
                 </div>
             `}
