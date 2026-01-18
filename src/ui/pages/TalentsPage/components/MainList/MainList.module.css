@@ -79,6 +79,8 @@
     gap: 4px;
 
     border: 2px solid transparent;
+    
+    user-select: none;
 }
 .listItem:not(:last-child) {
     margin-bottom: 10px;

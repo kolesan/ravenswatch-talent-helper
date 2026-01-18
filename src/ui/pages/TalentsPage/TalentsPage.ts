@@ -93,6 +93,14 @@ export function TalentsPage() {
                         talent,
                     });
                 }}
+                onTalentHold=${(talent: TalentWithLockedFlag) => {
+                    dispatch({
+                        type: talent.preferred
+                            ? "talent_from_used_to_preferred"
+                            : "talent_from_used_to_available",
+                        talent,
+                    });
+                }}
             />
             <${MainList} 
                 classes=${{ 
@@ -109,6 +117,12 @@ export function TalentsPage() {
                     });
                 }}
                 onTalentAltClick=${(talent: Talent) => {
+                    dispatch({
+                        type: "talent_from_preferred_to_available",
+                        talent,
+                    });
+                }}
+                onTalentHold=${(talent: TalentWithLockedFlag) => {
                     dispatch({
                         type: "talent_from_preferred_to_available",
                         talent,
@@ -137,6 +151,16 @@ export function TalentsPage() {
                     });
                 }}
                 onTalentAltClick=${(talent: TalentWithLockedFlag) => {
+                    if (talent.locked) {
+                        return;
+                    }
+                    
+                    dispatch({
+                        type: "talent_from_available_to_preferred",
+                        talent,
+                    });
+                }}
+                onTalentHold=${(talent: TalentWithLockedFlag) => {
                     if (talent.locked) {
                         return;
                     }

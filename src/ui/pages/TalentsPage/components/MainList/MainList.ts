@@ -8,6 +8,7 @@ import { TalentWithLockedFlag } from "../../types";
 import { MultiplayerOnlyTag } from "../MultiplayerOnlyTag/MultiplayerOnlyTag";
 
 import { PreferredIcon } from "./components/PreferredIcon/PreferredIcon";
+import { holder } from "./utils/onHold";
 
 import cls from "./MainList.module.css";
 
@@ -23,6 +24,7 @@ interface Props {
     maxItems?: number;
     onTalentClick?: (talent: TalentWithLockedFlag) => void;
     onTalentAltClick?: (talent: TalentWithLockedFlag) => void;
+    onTalentHold?: (talent: TalentWithLockedFlag) => void;
 }
 
 export function MainList({
@@ -34,6 +36,7 @@ export function MainList({
     maxItems,
     onTalentClick,
     onTalentAltClick,
+    onTalentHold,
 }: Props) {
     const unlockedCount = talents.filter(it => !it.locked).length;
 
@@ -71,17 +74,34 @@ export function MainList({
                             ? `/icons/talents/locked_talent.webp`
                             : `/icons/talents/${heroCode}/${talent.code}.webp`;
 
+                        const hld = holder({
+                            onHold: () => {
+                                onTalentHold?.(talent);
+                            }
+                        });
+
                         return html`
                             <li 
-                                class=${clsx(cls.listItem, { [cls.locked] : talent.locked })}
+                                class=${clsx({
+                                    [cls.listItem]: true, 
+                                    [cls.locked]: talent.locked 
+                                })}
                                 key=${talent.code}
                                 onClick=${(e: any) => {
+                                    if (hld.getHolding()) {
+                                        return;
+                                    }
+
                                     if (e.altKey) {
                                         onTalentAltClick?.(talent);
                                     } else {
                                         onTalentClick?.(talent);
                                     }
                                 }}
+                                onPointerDown=${hld.onPointerDown}
+                                onPointerUp=${hld.onPointerUp}
+                                onPointerCancel=${hld.onPointerUp}
+                                onPointerMove=${hld.onPointerMove}
                             >
                                 <img src=${imageSrc} height=80 />
                                 <div>
