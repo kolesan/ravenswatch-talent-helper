@@ -27,7 +27,7 @@
 
     border: 1px solid transparent;
 }
-.inputActive {
+.inputActive, .input:active {
     background-size: cover;
     background-color: #88650e;
     background-blend-mode: multiply;
@@ -146,37 +146,37 @@
     e.g. try the "style" attribute in js again
 */
 /* TODO consider using filter instead of blend mode and background color */
-:global(.scarletBgArt).inputActive {
+:global(.scarletBgArt).inputActive, :global(.scarletBgArt).input:active {
     background-image: url("/art/scarlet.jpg");
 }
-:global(.piperBgArt).inputActive {
+:global(.piperBgArt).inputActive, :global(.piperBgArt).input:active {
     background-image: url("/art/piper.jpg");
 }
-:global(.beowulfBgArt).inputActive {
+:global(.beowulfBgArt).inputActive, :global(.beowulfBgArt).input:active {
     background-image: url("/art/beowulf.jpg");
 }
-:global(.snowQueenBgArt).inputActive {
+:global(.snowQueenBgArt).inputActive, :global(.snowQueenBgArt).input:active {
     background-image: url("/art/snowQueen.jpg");
 }
-:global(.aladdinBgArt).inputActive {
+:global(.aladdinBgArt).inputActive, :global(.aladdinBgArt).input:active {
     background-image: url("/art/aladdin.jpg");
 }
-:global(.melusineBgArt).inputActive {
+:global(.melusineBgArt).inputActive, :global(.melusineBgArt).input:active {
     background-image: url("/art/melusine.jpg");
 }
-:global(.geppettoBgArt).inputActive {
+:global(.geppettoBgArt).inputActive, :global(.geppettoBgArt).input:active {
     background-image: url("/art/geppetto.jpg");
 }
-:global(.wukongBgArt).inputActive {
+:global(.wukongBgArt).inputActive, :global(.wukongBgArt).input:active {
     background-image: url("/art/wukong.jpg");
 }
-:global(.carmillaBgArt).inputActive {
+:global(.carmillaBgArt).inputActive, :global(.carmillaBgArt).input:active {
     background-image: url("/art/carmilla.jpg");
 }
-:global(.romeoBgArt).inputActive {
+:global(.romeoBgArt).inputActive, :global(.romeoBgArt).input:active {
     background-image: url("/art/romeo.jpg");
 }
-:global(.julietBgArt).inputActive {
+:global(.julietBgArt).inputActive, :global(.julietBgArt).input:active {
     background-image: url("/art/juliet.jpg");
 }
 
