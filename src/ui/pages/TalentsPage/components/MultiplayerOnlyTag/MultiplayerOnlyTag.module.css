@@ -8,32 +8,3 @@
     color: #ebddcad9;
     font-size: 12px;
 }
-
-
-.tooltip {
-    position: relative;
-    cursor: help;
-}
-
-.tooltip::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 8px;
-
-    background: #222;
-    color: #ebddcad9;
-    padding: 6px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    white-space: nowrap;
-
-    opacity: 0;
-    transition: opacity 0.20s ease;
-}
-
-.tooltip:hover::after {
-    opacity: 1;
-}

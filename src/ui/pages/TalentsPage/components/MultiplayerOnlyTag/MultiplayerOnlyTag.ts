@@ -1,6 +1,8 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
+import { Tooltip } from "../../../../components/Tooltip/Tooltip";
+
 import cls from "./MultiplayerOnlyTag.module.css";
 
 type Props = {
@@ -11,11 +13,10 @@ export function MultiplayerOnlyTag({
     className,
 }: Props) {
     return html`
-        <div 
-            class=${clsx(cls.root, cls.tooltip, className)} 
-            data-tooltip="Multiplayer only"
-        >
-            MPO
-        </div>
+        <${Tooltip} title="Multiplayer only">
+            <div class=${clsx(cls.root, className)}>
+                MPO
+            </div>
+        </${Tooltip}>
     `;
 }
