@@ -7,6 +7,7 @@ export type Talent = {
     description: string[];
     changePerLevel: string[];
     multiplayerOnly?: boolean;
+    preferred?: boolean;
 }
 
 export type TalentType = 

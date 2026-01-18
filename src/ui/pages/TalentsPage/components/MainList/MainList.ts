@@ -7,6 +7,8 @@ import { useIsStickyElemStuck } from "../../hooks/useIsStickyElemStuck";
 import { TalentWithLockedFlag } from "../../types";
 import { MultiplayerOnlyTag } from "../MultiplayerOnlyTag/MultiplayerOnlyTag";
 
+import { PreferredIcon } from "./components/PreferredIcon/PreferredIcon";
+
 import cls from "./MainList.module.css";
 
 interface Props {
@@ -53,7 +55,8 @@ export function MainList({
                     }, classes?.label)} 
                     ref=${stickyElemRef}
                 >
-                    ${label} ${unlockedCount}${maxItems ? ` / ${maxItems}` : null}
+                    ${label}${" "}
+                    ${unlockedCount}${maxItems ? ` / ${maxItems}` : null} 
                 </div>
             </div>
             <div class=${clsx(cls.content, classes?.content)}>
@@ -85,6 +88,9 @@ export function MainList({
                                     <div class=${cls.header}>
                                         <div class=${cls.name}>
                                             ${talent.name}
+                                            ${talent.preferred && html`
+                                                <${PreferredIcon} />
+                                            `}
                                         </div>
                                         ${!talent.locked && html`
                                             <div class=${cls.tags}>

@@ -43,7 +43,11 @@ export function useTalentsPageState(initialState: AppState) {
                 };
             }
             case "talent_from_available_to_preferred": {
-                const preferred = [...state.talents.preferred, action.talent];
+                const talent = {
+                    ...action.talent,
+                    preferred: true,
+                }
+                const preferred = [...state.talents.preferred, talent];
                 return {
                     ...state,
                     talents: {
@@ -73,7 +77,7 @@ export function useTalentsPageState(initialState: AppState) {
 
                 const used = [...state.talents.used, action.talent];
                 const preferred = state.talents.preferred
-                    .filter(it => it !== action.talent);
+                    .filter(it => it.code !== action.talent.code);
 
                 return {
                     ...state,
@@ -85,7 +89,7 @@ export function useTalentsPageState(initialState: AppState) {
             }
             case "talent_from_preferred_to_available": {
                 const preferred = state.talents.preferred
-                    .filter(it => it !== action.talent);
+                    .filter(it => it.code !== action.talent.code);
                 return {
                     ...state,
                     talents: {
@@ -95,9 +99,13 @@ export function useTalentsPageState(initialState: AppState) {
                 };
             }
             case "talent_from_used_to_preferred": {
+                const talent = {
+                    ...action.talent,
+                    preferred: true,
+                }
                 const used = state.talents.used
-                    .filter(it => it !== action.talent);
-                const preferred = [...state.talents.preferred, action.talent];
+                    .filter(it => it.code !== talent.code);
+                const preferred = [...state.talents.preferred, talent];
                 return {
                     ...state,
                     talents: {
@@ -108,7 +116,7 @@ export function useTalentsPageState(initialState: AppState) {
             }
             case "talent_from_used_to_available": {
                 const used = state.talents.used
-                    .filter(it => it !== action.talent);
+                    .filter(it => it.code !== action.talent.code);
                 return {
                     ...state,
                     talents: {

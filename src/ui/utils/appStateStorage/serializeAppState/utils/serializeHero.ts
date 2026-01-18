@@ -1,3 +1,4 @@
+import { Talent } from "../../../../../scripts/extractTalents/types";
 import { AppState, SerializedHeroState } from "../../../../pages/TalentsPage/types";
 
 export function serializeHero(
@@ -6,8 +7,15 @@ export function serializeHero(
     return {
         rank: state.rank,
         talents: {
-            used: state.talents.used.map(it => it.code),
-            preferred: state.talents.preferred.map(it => it.code),
+            used: state.talents.used.map(serializeTalent),
+            preferred: state.talents.preferred.map(serializeTalent),
         }
     };
+}
+
+function serializeTalent(talent: Talent) {
+    return {
+        code: talent.code,
+        preferred: talent.preferred,
+    }
 }

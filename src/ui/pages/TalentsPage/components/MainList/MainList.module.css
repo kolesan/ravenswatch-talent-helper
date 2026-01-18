@@ -102,12 +102,16 @@
 
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 24px;
 }
 
 .name {
     font-family: ravenswatch;
     color: #9B9981;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .tags {

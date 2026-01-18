@@ -1,5 +1,5 @@
 import { Talent } from "../../../../../scripts/extractTalents/types";
-import { SerializedTalentsState, TalentsState } from "../../../../pages/TalentsPage/types";
+import { SerializedTalent, SerializedTalentsState, TalentsState } from "../../../../pages/TalentsPage/types";
 import { defaultAppState } from "../../../../pages/TalentsPage/utils/defaultAppState";
 import { isTruthy } from "../../../isTruthy";
 
@@ -38,7 +38,13 @@ export function deserializeTalents(
 }
 
 function deserializeTalent(allHeroTalents: Talent[]) {
-    return function(storedTalentCode: unknown): Talent | undefined {
-        return allHeroTalents.find(it => it.code === storedTalentCode);
+    return function(storedTalent: SerializedTalent): Talent | undefined {
+        const talent = allHeroTalents
+            .find(it => it.code === storedTalent.code);
+
+        return talent && {
+            ...talent,
+            preferred: storedTalent.preferred,
+        }
     }
 }

@@ -28,8 +28,13 @@ export type SerializedHeroState = {
 }
 
 export type SerializedTalentsState = {
-    used: string[];
-    preferred: string[];
+    used: SerializedTalent[];
+    preferred: SerializedTalent[];
+}
+
+export type SerializedTalent = {
+    code: string;
+    preferred?: boolean;
 }
 
 export type TalentWithLockedFlag = Talent & {

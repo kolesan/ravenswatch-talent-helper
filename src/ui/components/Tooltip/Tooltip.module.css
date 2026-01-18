@@ -1,6 +1,8 @@
 .tooltip {
     position: relative;
     cursor: help;
+
+    display: flex;
 }
 
 .tooltipHidden {
@@ -14,12 +16,16 @@
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
+
     margin-bottom: 8px;
 
-    background: #222;
-    color: #ebddcad9;
     padding: 6px 8px;
+
+    background: #222;
     border-radius: 4px;
+
+    font-family: fontin-sans-regular;
+    color: #ebddcad9;
     font-size: 12px;
     white-space: nowrap;
 
