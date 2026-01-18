@@ -33,7 +33,7 @@ export function HeroSelectItem({
                     widht=256
                 />
             </div>
-            <div class=${cls.itemTextContainer}>
+            <div class=${clsx(cls.itemTextContainer, cls[`${hero.code}Text`])}>
                 <div class=${cls.itemText}>
                     ${hero.name}
                 </div>

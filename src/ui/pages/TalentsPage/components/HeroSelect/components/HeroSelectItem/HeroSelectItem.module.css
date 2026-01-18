@@ -87,6 +87,9 @@
     width: 61px;
     height: auto;
 }
+.wukongText {
+    padding: 0 2px;
+}
 .carmilla {
     left: 5px;
     bottom: 0px
