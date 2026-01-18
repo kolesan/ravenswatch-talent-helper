@@ -30,7 +30,7 @@ export function HeroSelectItem({
                     class=${clsx(cls.itemImage, cls[hero.code])}
                     src=${`/icons/heroes/${hero.code}.png`}
                     height=256
-                    widht=256
+                    width=256
                 />
             </div>
             <div class=${clsx(cls.itemTextContainer, cls[`${hero.code}Text`])}>

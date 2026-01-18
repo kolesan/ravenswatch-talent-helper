@@ -55,7 +55,7 @@ export function HeroSelect({
                         })}
                         src=${`/icons/heroes/${value.code}.png`}
                         height=256
-                        widht=256
+                        width=256
                     />
                 </div>
                 <div 
