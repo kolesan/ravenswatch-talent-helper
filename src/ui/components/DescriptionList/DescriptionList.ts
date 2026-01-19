@@ -9,7 +9,7 @@ import cls from "./DescriptionList.module.css";
 
 interface Props {
     description: string[];
-    improvements: string[][];
+    improvements?: string[][];
 }
 
 export function DescriptionList({
@@ -43,6 +43,6 @@ export function DescriptionList({
     `;
 }
 
-function improvementText(improvements: string[][], index: number) {
-    return improvements.map(it => it[index]).join(" / ");
+function improvementText(improvements: string[][] | undefined, index: number) {
+    return improvements?.map(it => it[index]).join(" / ");
 }
