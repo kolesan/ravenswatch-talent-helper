@@ -25,7 +25,7 @@ export function useIsStickyElemStuck(params?: Params) {
     const [isStuck, setIsStuck] = useDebouncedState(false, 150);
 
     useEffect(() => {
-        if (!enabled) {
+        if (!enabled || !ref.current) {
             return;
         }
         new IntersectionObserver(
