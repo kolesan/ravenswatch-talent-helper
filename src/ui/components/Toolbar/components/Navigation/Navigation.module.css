@@ -16,7 +16,13 @@
     text-align: center;
 }
 
-.navigationItem:hover {
+@media (hover: hover) and (pointer: fine) {
+    .navigationItem:hover {
+        color: #964e4e;
+    }
+}
+
+.navigationItem:active {
     color: #964e4e;
 }
 
