@@ -90,7 +90,7 @@ export const legendary: MagicalObject[] = [
         code: "water_of_life",
         name: "Water of Life",
         description: [
-            "+25 VITALITY",
+            "VITALITY +25",
             "Prevents lethal damage and restores all health instead (once per chapter)"
         ],
     },
