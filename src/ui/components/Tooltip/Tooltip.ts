@@ -5,26 +5,31 @@ import { ComponentChildren } from "preact";
 import cls from "./Tooltip.module.css";
 
 type Props = {
-    title?: string;
+    className?: string;
+    element?: string;
+    title?: string | boolean;
     lower?: boolean;
     children: ComponentChildren;
 }
 
 export function Tooltip({
+    className,
+    element = "div",
     title,
     lower,
     children
 }: Props) {
     return html`
-        <div 
+        <${element} 
             class=${clsx({ 
                 [cls.tooltip]: true,
                 [cls.tooltipHidden]: !title,
                 [cls.tooltipLower]: lower,
+                [className]: !!className,
             })}
-            data-tooltip=${title}
+            data-tooltip=${title || undefined}
         >
             ${children}
-        </div>
+        </${element} >
     `;
 }

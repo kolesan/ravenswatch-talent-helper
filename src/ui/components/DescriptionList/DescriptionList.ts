@@ -1,7 +1,11 @@
+import clsx from "clsx";
 import { html } from "htm/preact";
 
-import cls from "./DescriptionList.module.css";
+import { Tooltip } from "../Tooltip/Tooltip";
+
 import { descriptionItemContent } from "./utils/descriptionItemContent";
+
+import cls from "./DescriptionList.module.css";
 
 interface Props {
     description: string[];
@@ -22,13 +26,23 @@ export function DescriptionList({
                     ${descriptionItemContent(descriptionItem)
                         .map(it => it.className 
                             ? html`
-                                <span class=${cls[it.className]}>
+                                <${Tooltip} 
+                                    className=${clsx(cls[it.className], cls.tooltip)} 
+                                    element=span
+                                    title=${it.isImprovement && 
+                                        improvementText(improvements, it.improvementIndex)
+                                    }
+                                >
                                     ${it.cleanContent}
-                                </span>
+                                </${Tooltip}>
                             ` : it.cleanContent
                         )}
                 </div>
             `)}
         </div>
     `;
+}
+
+function improvementText(improvements: string[][], index: number) {
+    return improvements.map(it => it[index]).join(" / ");
 }
