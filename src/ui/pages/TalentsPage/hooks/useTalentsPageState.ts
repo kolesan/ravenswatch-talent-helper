@@ -1,12 +1,13 @@
-import { useReducer } from "preact/hooks";
+import { useMemo, useReducer } from "preact/hooks";
 
+import { HeroCode } from "../../../../data/heroes";
 import { Talent } from "../../../../scripts/extractTalents/types";
+import { appStateStorage } from "../../../utils/appStateStorage/appStateStorage";
 import { maxUsedTalents } from "../consts/maxUsedTalents";
 import { AppState } from "../types";
+import { getInitialState } from "../utils/getInitialState";
 import { isNotLocked } from "../utils/isNotLocked";
 import { minmaxRank } from "../utils/minmaxRank";
-import { appStateStorage } from "../../../utils/appStateStorage/appStateStorage";
-import { HeroCode } from "../../../../data/heroes";
 
 // TODO consider reworking how talents are moved to preferred (favorites)
 // to used, and back to available
@@ -22,7 +23,11 @@ type Action =
     | { type: "talent_from_used_to_preferred", talent: Talent };
 
 // TODO consider moving state calculations to separate appropriately named functions
-export function useTalentsPageState(initialState: AppState) {
+export function useTalentsPageState(initialHeroCode: HeroCode | undefined) {
+    const initialState = useMemo(() => {
+        return getInitialState(initialHeroCode);
+    }, [initialHeroCode]);
+
     return useReducer<AppState, Action>((state, action) => {
         switch (action.type) {
             case "set_hero": {

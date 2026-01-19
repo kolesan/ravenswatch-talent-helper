@@ -1,36 +1,39 @@
 import clsx from "clsx";
 import { html } from "htm/preact";
-import { useMemo } from "preact/hooks";
+import { useEffect } from "preact/hooks";
+import { useParams } from "wouter-preact";
 
 import { Hero, heroes } from "../../../finalData/finalData";
 import { Talent } from "../../../scripts/extractTalents/types";
+import { hst } from "../../core/hst";
 import { usePageTitle } from "../../hooks/usePageTitle";
-import { appStateStorage } from "../../utils/appStateStorage/appStateStorage";
 
 import { HeroSelect } from "./components/HeroSelect/HeroSelect";
 import { MainList } from "./components/MainList/MainList";
 import { maxUsedTalents } from "./consts/maxUsedTalents";
 import { rankConsts } from "./consts/rankConsts";
+import { useEmptyHeroRedirect } from "./hooks/useEmptyHeroRedirect";
 import { useIsStickyElemStuck } from "./hooks/useIsStickyElemStuck";
 import { useSaveStateToStorage } from "./hooks/useSaveStateToStorage";
 import { useTalentsPageState } from "./hooks/useTalentsPageState";
 import { TalentWithLockedFlag } from "./types";
-import { defaultAppState } from "./utils/defaultAppState";
 import { getDerivedTalentsState } from "./utils/getDerivedTalentsState";
 import { markLocked } from "./utils/markLocked";
 
 import cls from "./TalentsPage.module.css";
 
-const getInitialState = () => 
-    appStateStorage.getCurrentHero() 
-    || defaultAppState;
+type RouteParams = {
+    hero: string;
+}
 
 export function TalentsPage() {
-    usePageTitle("Talents");
+    const params = useParams<RouteParams>();
 
-    const initialState = useMemo(getInitialState, []);
+    const heroFromUrl = params.hero && heroes.utils.findByCode(params.hero);
 
-    const [state, dispatch] = useTalentsPageState(initialState);
+    usePageTitle(heroFromUrl ? `Talents: ${heroFromUrl.name}` : `Talents`);
+
+    const [state, dispatch] = useTalentsPageState(heroFromUrl?.code);
 
     useSaveStateToStorage(state);
 
@@ -40,6 +43,23 @@ export function TalentsPage() {
     } = useIsStickyElemStuck({
         stuckAtPx: 56,
     });
+
+    useEffect(() => {
+        if (heroFromUrl && heroFromUrl.code !== state.hero.code) {
+            dispatch({
+                type: "set_hero",
+                heroCode: heroFromUrl.code,
+            });
+        }
+    }, [heroFromUrl]);
+    useEmptyHeroRedirect({
+        heroCodeFromUrl: heroFromUrl?.code,
+        heroCodeFromState: state.hero.code,
+    });
+
+    if (!heroFromUrl) {
+        return null;
+    }
 
     const derivedTalentsState = getDerivedTalentsState(state);
 
@@ -55,10 +75,7 @@ export function TalentsPage() {
                 items=${heroes.asArray}
                 value=${state.hero}
                 onChange=${(hero: Hero) => {
-                    dispatch({
-                        type: "set_hero",
-                        heroCode: hero.code,
-                    });
+                    hst.push(hero.code);
                 }}
             />
             <label class=container-label>

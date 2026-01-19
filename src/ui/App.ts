@@ -1,5 +1,5 @@
 import { html } from "htm/preact";
-import { Redirect, Route, Switch } from "wouter-preact";
+import { Route, Switch } from "wouter-preact";
 
 import { pages } from "../../pages";
 
@@ -15,8 +15,8 @@ export function App() {
 
         <${Switch}>
             <${Route} 
-                path=${pages.talents.path} 
-                component=${TalentsPage} 
+                path=${`${pages.talents.path}/:hero?`} 
+                component=${TalentsPage}
             />
             <${Route} 
                 path=${pages.legendaryObjects.path} 
@@ -31,7 +31,13 @@ export function App() {
                 component=${HelpPage} 
             />
 
-            <${Redirect} to="/talents" />
+            <!-- 
+                Redirect was screwing the "back" button navigation 
+                so had to replace with this. TalentsPage currently handles
+                empty url by loading a hero from state and changin url
+                manually
+            -->
+            <${Route} component=${TalentsPage} />
         </${Switch}>
     `;
 }
