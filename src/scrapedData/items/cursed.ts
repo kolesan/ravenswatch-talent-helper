@@ -97,4 +97,12 @@ export const cursed: MagicalObject[] = [
             "DASH makes the Hero INTANGIBLE but any damage taken is increased by +15%",
         ],
     },
+    {
+        code: "devil's_pocket",
+        name: "Devil's Pocket",
+        description: [
+            "50% of collected dream fragments are absorbed by the Devil’s Pocket until it is full (400 required)",
+            "Once full, increases crit chance by 50%",
+        ],
+    },
 ];

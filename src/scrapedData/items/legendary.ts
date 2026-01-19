@@ -94,4 +94,11 @@ export const legendary: MagicalObject[] = [
             "Prevents lethal damage and restores all health instead (once per chapter)"
         ],
     },
+    {
+        code: "solar_crown",
+        name: "Solar Crown",
+        description: [
+            "Improves the rarity of all Talents already learned and all future Talents once selected"
+        ],
+    },
 ];
