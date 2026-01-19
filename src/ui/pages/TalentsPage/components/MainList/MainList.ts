@@ -3,6 +3,7 @@ import { html } from "htm/preact";
 
 import { HeroCode } from "../../../../../data/heroes";
 import { TalentDescription } from "../../../../components/TalentDescription/TalentDescription";
+import { TalentDescriptionMerlin } from "../../../../components/TalentDescription/TalentDescriptionMerlin";
 import { holder } from "../../../../utils/onHold";
 import { useIsStickyElemStuck } from "../../hooks/useIsStickyElemStuck";
 import { TalentWithLockedFlag } from "../../types";
@@ -135,10 +136,17 @@ export function MainList({
                                             </div>
                                         `}
                                     </div>
-                                    <${TalentDescription} 
-                                        isLocked=${talent.locked} 
-                                        talent=${talent} 
-                                    />
+                                    ${heroCode === "merlin" ? html`
+                                        <${TalentDescriptionMerlin} 
+                                            isLocked=${talent.locked} 
+                                            talent=${talent} 
+                                        />
+                                    `: html`
+                                        <${TalentDescription} 
+                                            isLocked=${talent.locked} 
+                                            talent=${talent} 
+                                        />
+                                    `}
                                 </div>
                             </li>    
                         `;
