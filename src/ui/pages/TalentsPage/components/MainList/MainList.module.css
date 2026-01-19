@@ -105,6 +105,9 @@
     display: flex;
     align-items: center;
     gap: 24px;
+
+/* dobavit Snackbar chto itemka iz lista uletela v takoito ili takoito spisok */
+
 }
 
 .name {
