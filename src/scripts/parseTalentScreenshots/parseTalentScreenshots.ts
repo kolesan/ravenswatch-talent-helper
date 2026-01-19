@@ -7,9 +7,12 @@ const baseTalentScreenshotsDir = "src\\data\\screenshots\\talents";
 const files = listDirFilesSyncRecursive(baseTalentScreenshotsDir);
 
 files.forEach(file => {
+    const isMerlin = file.includes("merlin");
+
     if (
         file.includes("empty_corner") ||
-        file.includes("locked_talent")
+        file.includes("locked_talent") ||
+        !isMerlin
     ) {
         return;
     }
@@ -19,7 +22,7 @@ files.forEach(file => {
 
     const extracted = sharpFile
         .extract({
-            top: 843,
+            top: isMerlin ? 857 : 843,
             left: 1108,
             width: 159,
             height: 154,

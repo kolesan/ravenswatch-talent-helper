@@ -15,7 +15,8 @@ type HeroName =
     | "Sun Wukong"
     | "Carmilla"
     | "Romeo"
-    | "Juliet"; 
+    | "Juliet"
+    | "Merlin"; 
 
 export const heroCodes = [
     "scarlet",
@@ -29,6 +30,7 @@ export const heroCodes = [
     "carmilla",
     "romeo",
     "juliet",
+    "merlin",
 ] as const;
 
 export type HeroCode = typeof heroCodes[number];
@@ -87,7 +89,12 @@ const juliet: Hero = {
     name: "Juliet",
     code: "juliet",
     wikiUrl: "https://ravenswatch.fandom.com/wiki/Juliet",
-}
+};
+const merlin: Hero = {
+    name: "Merlin",
+    code: "merlin",
+    wikiUrl: "https://ravenswatch.fandom.com/wiki/Merlin",
+};
 
 const all = {
     scarlet,
@@ -101,6 +108,7 @@ const all = {
     carmilla,
     romeo,
     juliet,
+    merlin,
 };
 
 export const heroes = {

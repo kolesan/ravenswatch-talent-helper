@@ -1,0 +1,343 @@
+[
+    {
+        "code": "runic_might",
+        "name": "Runic Might",
+        "iconUrl": "",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "{Quest (x20):} In combat, casting a Spell that consumes {3} runes of {{POTENCY} earns {+0.5} {DMG}",
+            "{Complete:} Repeating this action makes the Spell cast gain {{{20%} {Crit Chance}</p>"
+        ],
+        "changePerLevel": [
+            "+5% crit chance"
+        ]
+    },
+    {
+        "code": "astrology",
+        "name": "Astrology",
+        "iconUrl": "",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "Gain {+3 Star(s) of Fate}",
+            "Future Talents have a {{{+15%} chance of being Rare or above"
+        ],
+        "changePerLevel": [
+            "+10% chance of being Rare or above"
+        ]
+    },
+    {
+        "code": "eternal_dream",
+        "name": "Eternal Dream",
+        "iconUrl": "",
+        "type": "starting",
+        "unlockedAtRank": 2,
+        "description": [
+            "Each time Merlin casts his nine different Spells, he gains {{{30} {Dream Shards}",
+            "Does not work within a Safe Zone or during Chapter Boss fights"
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "trinity",
+        "name": "Trinity",
+        "iconUrl": "",
+        "type": "starting",
+        "unlockedAtRank": 5,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "wild_magic",
+        "name": "Wild Magic",
+        "iconUrl": "",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "sacred_strike",
+        "name": "Sacred Strike",
+        "iconUrl": "",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "sacred_ground",
+        "name": "Sacred Ground",
+        "iconUrl": "",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "grace_of_heaven",
+        "name": "Grace of Heaven",
+        "iconUrl": "",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "fire_barrage",
+        "name": "Fire Barrage",
+        "iconUrl": "",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "arcane_shield",
+        "name": "Arcane Shield",
+        "iconUrl": "",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "brambles_whirlwind",
+        "name": "Brambles Whirlwind",
+        "iconUrl": "",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "natural_harmony",
+        "name": "Natural Harmony",
+        "iconUrl": "",
+        "type": "standard",
+        "unlockedAtRank": 1,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "arcanic_rune",
+        "name": "Arcanic Rune",
+        "iconUrl": "",
+        "type": "standard",
+        "unlockedAtRank": 2,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "lightning_storms",
+        "name": "Lightning Storms",
+        "iconUrl": "",
+        "type": "standard",
+        "unlockedAtRank": 3,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "shooting_stars",
+        "name": "Shooting Stars",
+        "iconUrl": "",
+        "type": "standard",
+        "unlockedAtRank": 3,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "freezing_stones",
+        "name": "Freezing Stones",
+        "iconUrl": "",
+        "type": "standard",
+        "unlockedAtRank": 4,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "holy_fire",
+        "name": "Holy Fire",
+        "iconUrl": "",
+        "type": "standard",
+        "unlockedAtRank": 4,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "elemental_affinity",
+        "name": "Elemental Affinity",
+        "iconUrl": "",
+        "type": "standard",
+        "unlockedAtRank": 5,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "frost_arcane",
+        "name": "Frost Arcane",
+        "iconUrl": "",
+        "type": "standard",
+        "unlockedAtRank": 7,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "retaliation",
+        "name": "Retaliation",
+        "iconUrl": "",
+        "type": "standard",
+        "unlockedAtRank": 7,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "life_seed",
+        "name": "Life Seed",
+        "iconUrl": "",
+        "type": "standard",
+        "unlockedAtRank": 8,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "celestial_wrath",
+        "name": "Celestial Wrath",
+        "iconUrl": "",
+        "type": "standard",
+        "unlockedAtRank": 8,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "energy_stone",
+        "name": "Energy Stone",
+        "iconUrl": "",
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "dark_swiftness",
+        "name": "Dark Swiftness",
+        "iconUrl": "",
+        "type": "final",
+        "unlockedAtRank": 6,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "corrupted_arts",
+        "name": "Corrupted Arts",
+        "iconUrl": "",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    },
+    {
+        "code": "megalithic_site",
+        "name": "Megalithic Site",
+        "iconUrl": "",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            ""
+        ],
+        "changePerLevel": [
+            ""
+        ]
+    }
+]

@@ -10,6 +10,7 @@ import romeoTalents from "../scrapedData/heroTalents/romeo.json";
 import scarletTalents from "../scrapedData/heroTalents/scarlet.json";
 import snowQueenTalents from "../scrapedData/heroTalents/snowQueen.json";
 import wukongTalents from "../scrapedData/heroTalents/wukong.json";
+import merlinTalents from "../scrapedData/heroTalents/merlin.json";
 import { Talent } from "../scripts/extractTalents/types";
 
 export type Hero = RawHero & {
@@ -61,7 +62,11 @@ const all = {
         ...rawHeroes.all.juliet,
         talents: julietTalents.filter(it => it.type === "standard") as Talent[],
     },
-}
+    merlin: {
+        ...rawHeroes.all.merlin,
+        talents: merlinTalents.filter(it => it.type === "standard") as Talent[],
+    }
+};
 
 export const heroes = {
     all,
@@ -71,4 +76,4 @@ export const heroes = {
             return heroes.asArray.find(it => it.code === code);
         }
     }
-}
+};

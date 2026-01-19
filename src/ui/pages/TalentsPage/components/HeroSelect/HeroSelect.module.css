@@ -179,6 +179,9 @@
 :global(.julietBgArt).inputActive, :global(.julietBgArt).input:active {
     background-image: url("/art/juliet.jpg");
 }
+:global(.merlinBgArt).inputActive, :global(.merlinBgArt).input:active {
+    background-image: url("/art/merlin.jpg");
+}
 
 @media (hover: hover) and (pointer: fine) {
     :global(.scarletBgArt):hover {
@@ -213,5 +216,8 @@
     }
     :global(.julietBgArt):hover {
         background-image: url("/art/juliet.jpg");
+    }
+    :global(.merlinBgArt):hover {
+        background-image: url("/art/merlin.jpg");
     }
 }
