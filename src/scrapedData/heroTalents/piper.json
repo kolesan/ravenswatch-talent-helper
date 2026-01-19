@@ -309,7 +309,7 @@
         "name": "Vermin Massacre",
         "iconUrl": null,
         "type": "final",
-        "unlockedAtRank": 1,
+        "unlockedAtRank": 6,
         "description": [
             "When ULTIMATE is channeled to completion, the swarm of rats explodes, dealing 200 area damage"
         ],

@@ -318,7 +318,7 @@
         "name": "Bone Cracker",
         "iconUrl": null,
         "type": "final",
-        "unlockedAtRank": 1,
+        "unlockedAtRank": 6,
         "description": [
             "Human: Ash cloud deals 20 damage per second to enemies inside",
             "Werewolf: Devouring an enemy causes it to explode, dealing 40 to 120 area damage (depending on its size)"

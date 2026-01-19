@@ -319,7 +319,7 @@
         "name": "Dream Stride",
         "iconUrl": null,
         "type": "final",
-        "unlockedAtRank": 1,
+        "unlockedAtRank": 6,
         "description": [
             "Each time ULTIMATE hits an enemy, Aladdin gains 8 Dream Shards",
             "ULTIMATE has no cooldown if no enemies are hit"

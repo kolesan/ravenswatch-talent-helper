@@ -313,7 +313,7 @@
         "name": "Plague Flask",
         "iconUrl": null,
         "type": "final",
-        "unlockedAtRank": 1,
+        "unlockedAtRank": 6,
         "description": [
             "ULTIMATE's explosion applies MARKED to hit enemies for 4 second(s)"
         ],

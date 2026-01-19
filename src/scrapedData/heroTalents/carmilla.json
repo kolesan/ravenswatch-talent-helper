@@ -314,7 +314,7 @@
         "name": "Mistress of Pain",
         "iconUrl": null,
         "type": "final",
-        "unlockedAtRank": 1,
+        "unlockedAtRank": 6,
         "description": [
             "Increase the maximum number of ATTACKS transformed by ULTIMATE by 6"
         ],

@@ -311,7 +311,7 @@
         "name": "High Voltage",
         "iconUrl": null,
         "type": "final",
-        "unlockedAtRank": 1,
+        "unlockedAtRank": 6,
         "description": [
             "After a DUMMY is displaced by POWER, it activates the Overclock effect of the ULTIMATE for 1 second(s)"
         ],

@@ -307,7 +307,7 @@
         "name": "Volcanic Rage",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/b/b4/Volcanic_rage.webp/revision/latest?cb=20250324171821",
         "type": "final",
-        "unlockedAtRank": 1,
+        "unlockedAtRank": 6,
         "description": [
             "Each ULTIMATE ireball throws 4 fiery rock into the surrounding area,  dealing 50% damage each"
         ],
