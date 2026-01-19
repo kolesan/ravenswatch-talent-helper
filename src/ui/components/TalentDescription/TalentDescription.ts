@@ -20,9 +20,7 @@ export function TalentDescription({
         <div>
             ${isLocked
                 ? html`<${UnlockedAtRank} rank=${talent.unlockedAtRank} />`
-                : talent.description.length > 1
-                    ? html`<${DescriptionList} description=${talent.description} />`
-                    : talent.description[0]
+                : html`<${DescriptionList} description=${talent.description} />`
             }
         </div>
     `;
