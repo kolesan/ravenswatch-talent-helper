@@ -233,8 +233,7 @@
         "type": "standard",
         "unlockedAtRank": 5,
         "description": [
-            "In combat, standing still makes Carmilla seduce up to 2 non-boss enemies in front of her, applying WEAKENED and VULNERABLE for 6 second(s)",
-            "Has a 6-second cooldown"
+            "Using DASH without specifying a move direction makes Carmilla seduce up to 2 non-boss enemies in front of her, applying WEAKENED and VULNERABLE to them for 6 seconds"
         ],
         "changePerLevel": [
             "+1 non-boss enemy"
