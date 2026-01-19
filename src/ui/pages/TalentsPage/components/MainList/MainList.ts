@@ -9,6 +9,7 @@ import { TalentWithLockedFlag } from "../../types";
 import { MultiplayerOnlyTag } from "../MultiplayerOnlyTag/MultiplayerOnlyTag";
 
 import { PreferredIcon } from "./components/PreferredIcon/PreferredIcon";
+import { TalentIcon } from "./components/TalentIcon/TalentIcon";
 
 import cls from "./MainList.module.css";
 
@@ -103,11 +104,17 @@ export function MainList({
                                 onPointerCancel=${hld.onPointerUp}
                                 onPointerMove=${hld.onPointerMove}
                             >
-                                <img 
-                                    src=${imageSrc} 
-                                    width=80 
-                                    height=77 
-                                />
+                                ${heroCode === "merlin" ? html`
+                                    <${TalentIcon} 
+                                        talent=${talent}
+                                        heroCode=${heroCode}
+                                    />` : html`
+                                    <img 
+                                        src=${imageSrc} 
+                                        width=80 
+                                        height=77 
+                                    />
+                                `}
                                 <div>
                                     <div class=${cls.header}>
                                         <div class=${cls.name}>
