@@ -1,6 +1,6 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
-import { Link } from "wouter-preact";
+import { Link, useLocation } from "wouter-preact";
 
 import { pages } from "../../../../../../pages";
 
@@ -19,13 +19,14 @@ const items = [
 export function Navigation({
     className,
 }: Props) {
+    const [location] = useLocation();
     return html`
         <div class=${clsx(cls.navigationRoot, className)}>
             ${items.map(it => html`
                 <${Link} 
-                    className=${(active: boolean) => clsx({
+                    className=${clsx({
                         [cls.navigationItem]: true,
-                        [cls.navigationItemActive]: active,
+                        [cls.navigationItemActive]: location.includes(it.path),
                     })}
                     href=${it.path}
                 >
