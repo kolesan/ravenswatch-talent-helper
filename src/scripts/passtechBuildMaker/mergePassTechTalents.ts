@@ -1,0 +1,126 @@
+
+import { writeFile } from "fs/promises";
+
+import { HeroCode } from "../../data/heroes";
+import { Hero, heroes } from "../../finalData/finalData";
+import { Talent, TalentType } from "../extractTalents/types";
+
+import { ParsedPasstechTalent, PasstechTalent } from "./types";
+
+for (let i = 0; i < heroes.asArray.length; i++) {
+    const hero = heroes.asArray[i];
+
+    const parsedPasstechTalents = await parsePasstechTalents(hero.code);
+
+    const mergedTalents = mergePasstechAndMyTalents(
+        parsedPasstechTalents, 
+        hero.talents
+    );
+
+    await writeTalentsToFile(hero, mergedTalents);
+}
+
+function writeTalentsToFile(hero: Hero, mergedTalents: Talent[]) {
+    const talentsJson = JSON.stringify(mergedTalents, null, "    ");
+
+    const content = `export const ${hero.code} = ${talentsJson};`;
+
+    return writeFile(`./src/scrapedData/mergedTalents/${hero.code}.ts`, content)
+        .then(() => console.log(
+            `Success writing '${hero.name}' talents to file`
+        ))
+        .catch(err => console.log(
+            `Error writing '${hero.name}' talents to file: `, 
+            err
+        ));
+}
+
+async function parsePasstechTalents(
+    heroCode: HeroCode
+): Promise<ParsedPasstechTalent[]> {
+    const passtechTalentsFile = await import(`./passtechData/${heroCode}`);
+    const talents = passtechTalentsFile[heroCode]();
+    return talents.map(parseTalent);
+}
+
+function mergePasstechAndMyTalents(
+    passtechTalents: ParsedPasstechTalent[], 
+    myTalents: Talent[]
+) {
+    return myTalents.map(mine => {
+        // console.log(mine.code, passtechTalents.map(it => it.code));
+        const passtech = passtechTalents.find(it => it.code === mine.code);
+        return merge(mine, passtech);
+    });
+}
+
+
+function merge(mine: Talent, passtech: ParsedPasstechTalent): Talent {
+    const { changePerLevel, ...mineRest } = mine;
+    return {
+        ...mineRest,
+        iconUrl: passtech.iconUrl,
+        description: passtech.description,
+        improvements: passtech.improvements,
+    }
+}
+
+function parseTalent(talent: PasstechTalent): ParsedPasstechTalent {
+    const {
+        description,
+        improvements,
+    } = parseDescriptions(talent.descriptions);
+    return {
+        code: nameToCode(talent.name),
+        name: talent.name,
+        iconUrl: talent.icon,
+        type: parseType(talent.tier),
+        description,
+        improvements,
+    };
+}
+
+function nameToCode(name: string) {
+    return name.trim().replaceAll(" ", "_").toLowerCase();
+}
+
+function parseType(tier: number) {
+    const map: Record<number, TalentType> = {
+        0: "starting",
+        1: "standard",
+        2: "ultimate",
+        3: "final",
+    }
+    return map[tier];
+}
+
+function parseDescriptions(descriptions: string[]) {
+    const parsedDescriptions = descriptions.map(parseDescription);
+    const improvements = parsedDescriptions.map(parseImprovements);
+    return {
+        description: parseDescription(descriptions[0]),
+        improvements,
+    }
+}
+function parseDescription(description: string) {
+    return description
+        .split("• ")
+        .filter(Boolean)
+        .map(it => it.replaceAll("<span class=\"key_words\">", "{sk}"))
+        .map(it => it.replaceAll("<span class=\"improvement\">", "{si}"))
+        .map(it => it.replaceAll("<span class=\"other\">", "{so}"))
+        .map(it => it.replaceAll("</span>", "{/s}"))
+        .map(it => it.replaceAll(/ \(currently: .*?\)/g, ""))
+        .map(it => it.replaceAll("\n", ""));
+}
+function parseImprovements(description: string[]) {
+    return parseImprovement(description.join(" "));
+}
+function parseImprovement(description: string) {
+    const parsed = description
+        .matchAll(/\{si\}.*?{\/s\}/g).toArray()
+        .map(it => it[0])
+        .filter(it => !it.includes("+0%"))
+        .map(it => it.replace(/\{si\}/g, "").replace(/\{\/s\}/g, ""));
+    return parsed;
+}

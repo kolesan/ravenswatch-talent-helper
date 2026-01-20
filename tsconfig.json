@@ -3,6 +3,8 @@
         "esModuleInterop": true,
         "lib": [
             "ESNext"
-        ]
+        ],
+        "module": "ESNext",
+        "target": "ES2020",
     }
 }
