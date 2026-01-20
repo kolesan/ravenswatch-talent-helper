@@ -1,7 +1,7 @@
 export const julietOrder = [
     "kiss_the_groom",
     "volcanic_shots",
-    "guns_and_roses",
+    "guns_&_roses",
     "wedding_gifts",
 
     "longshot",

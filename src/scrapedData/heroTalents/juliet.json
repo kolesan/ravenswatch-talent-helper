@@ -27,8 +27,8 @@
         ]
     },
     {
-        "code": "guns_and_roses",
-        "name": "Guns and Roses",
+        "code": "guns_&_roses",
+        "name": "Guns & Roses",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/0/09/Guns_and_Roses_icon.jpg/revision/latest?cb=20251030160704",
         "type": "starting",
         "unlockedAtRank": 2,
