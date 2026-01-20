@@ -19,7 +19,7 @@ export function HeroSelectItem({
     return html`
         <div
             class=${clsx(cls.heroSelectItemRoot, className)}
-            style=${`background-image: url("/art/${hero.code}.jpg");`}
+            style=${`background-image: url("/art/newResampled/${hero.code}.webp");`}
             key=${hero.code}
             onClick=${() => {
                 onChange(hero);

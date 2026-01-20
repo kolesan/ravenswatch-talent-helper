@@ -9,6 +9,7 @@
     cursor: pointer;
 
     background-size: cover;
+    background-position: center;
     background-color: #514c3d;
     background-blend-mode: multiply;
 }
