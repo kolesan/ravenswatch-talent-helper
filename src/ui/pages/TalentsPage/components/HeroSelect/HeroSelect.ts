@@ -5,7 +5,7 @@ import { Hero } from "../../../../../finalData/finalData";
 import { useBooleanState } from "../../../../hooks/useBooleanState";
 import { useOnClickOutside } from "../../hooks/useOnClickOutside";
 
-import { HeroArtDownloadForcer } from "./components/HeroArtDownloadForcer/HeroArtDownloadForcer";
+import { HeroImagesDownloadEnforcer } from "./components/HeroImagesDownloadEnforcer";
 import { HeroSelectItem } from "./components/HeroSelectItem/HeroSelectItem";
 
 import cls from "./HeroSelect.module.css";
@@ -82,7 +82,7 @@ export function HeroSelect({
                     `)}
                 </div>
             `}
-            <${HeroArtDownloadForcer} />
+            <${HeroImagesDownloadEnforcer} />
         </div>
     `;
 }
