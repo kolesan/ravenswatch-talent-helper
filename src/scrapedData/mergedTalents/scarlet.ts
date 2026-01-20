@@ -24,6 +24,12 @@ export const scarlet: Talent[] = [
             [
                 "100%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -48,6 +54,12 @@ export const scarlet: Talent[] = [
             [
                 "+70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -73,6 +85,12 @@ export const scarlet: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -98,6 +116,20 @@ export const scarlet: Talent[] = [
             [
                 "18"
             ]
+        ],
+        "degradations": [
+            [
+                "20%"
+            ],
+            [
+                "20%"
+            ],
+            [
+                "20%"
+            ],
+            [
+                "20%"
+            ]
         ]
     },
     {
@@ -122,6 +154,12 @@ export const scarlet: Talent[] = [
             [
                 "+50%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -146,6 +184,12 @@ export const scarlet: Talent[] = [
             [
                 "+210%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -171,6 +215,12 @@ export const scarlet: Talent[] = [
             [
                 "35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -195,6 +245,12 @@ export const scarlet: Talent[] = [
             [
                 "105"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -219,6 +275,12 @@ export const scarlet: Talent[] = [
             [
                 "35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -243,6 +305,12 @@ export const scarlet: Talent[] = [
             [
                 "+70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -268,6 +336,12 @@ export const scarlet: Talent[] = [
             [
                 "+7%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -292,6 +366,12 @@ export const scarlet: Talent[] = [
             [
                 "14%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -316,6 +396,12 @@ export const scarlet: Talent[] = [
             [
                 "6"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -345,6 +431,12 @@ export const scarlet: Talent[] = [
                 "+16%",
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -369,6 +461,12 @@ export const scarlet: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -393,6 +491,12 @@ export const scarlet: Talent[] = [
             [
                 "700%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -418,6 +522,12 @@ export const scarlet: Talent[] = [
             [
                 "+70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -442,6 +552,12 @@ export const scarlet: Talent[] = [
             [
                 "70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -472,6 +588,12 @@ export const scarlet: Talent[] = [
                 "3.5",
                 "7%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -496,6 +618,12 @@ export const scarlet: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -521,6 +649,12 @@ export const scarlet: Talent[] = [
             [
                 "10"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -546,6 +680,12 @@ export const scarlet: Talent[] = [
             [
                 "+1.6"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -570,6 +710,12 @@ export const scarlet: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -603,6 +749,12 @@ export const scarlet: Talent[] = [
                 "87",
                 "262"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -627,6 +779,12 @@ export const scarlet: Talent[] = [
             [
                 "10"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -660,6 +818,12 @@ export const scarlet: Talent[] = [
                 "16",
                 "32"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     }
 ];

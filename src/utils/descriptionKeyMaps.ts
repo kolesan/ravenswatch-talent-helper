@@ -1,5 +1,6 @@
 const keyWord = "{sk}";
 const improvement = "{si}";
+const degradation = "{sd}";
 const other = "{so}";
 const endTag = "{/s}";
 
@@ -8,6 +9,7 @@ const breakPlaceholder = "#$%^";
 const myTags = {
     keyWord,
     improvement,
+    degradation,
     other,
     endTag,
 };
@@ -15,6 +17,7 @@ const myTags = {
 const passtechToMyTag = {
     "<span class=\"key_words\">": keyWord,
     "<span class=\"improvement\">": improvement,
+    "<span class=\"degradation\">": degradation,
     "<span class=\"other\">": other,
     "</span>": endTag,
 };
@@ -22,6 +25,7 @@ const passtechToMyTag = {
 const myTagToHtml = {
     [keyWord]: `${breakPlaceholder}${keyWord}`,
     [improvement]: `${breakPlaceholder}${improvement}`,
+    [degradation]: `${breakPlaceholder}${degradation}`,
     [other]: `${breakPlaceholder}${other}`,
     [endTag]: `${endTag}${breakPlaceholder}`,
 };

@@ -24,6 +24,12 @@ export const geppetto: Talent[] = [
             [
                 "200%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -53,6 +59,12 @@ export const geppetto: Talent[] = [
                 "56",
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -77,6 +89,12 @@ export const geppetto: Talent[] = [
             [
                 "100%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -102,6 +120,12 @@ export const geppetto: Talent[] = [
             [
                 "110"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -126,6 +150,12 @@ export const geppetto: Talent[] = [
             [
                 "700%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -150,6 +180,12 @@ export const geppetto: Talent[] = [
             [
                 "80%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -175,6 +211,12 @@ export const geppetto: Talent[] = [
             [
                 "70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -200,6 +242,12 @@ export const geppetto: Talent[] = [
             [
                 "25%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -224,6 +272,12 @@ export const geppetto: Talent[] = [
             [
                 "70"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -248,6 +302,12 @@ export const geppetto: Talent[] = [
             [
                 "10"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -272,6 +332,12 @@ export const geppetto: Talent[] = [
             [
                 "70"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -296,6 +362,12 @@ export const geppetto: Talent[] = [
             [
                 "200%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -320,6 +392,12 @@ export const geppetto: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -344,6 +422,12 @@ export const geppetto: Talent[] = [
             [
                 "+14"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -368,6 +452,12 @@ export const geppetto: Talent[] = [
             [
                 "15%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -392,6 +482,12 @@ export const geppetto: Talent[] = [
             [
                 "350%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -416,6 +512,12 @@ export const geppetto: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -440,6 +542,12 @@ export const geppetto: Talent[] = [
             [
                 "70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -465,6 +573,12 @@ export const geppetto: Talent[] = [
             [
                 "+70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -489,6 +603,12 @@ export const geppetto: Talent[] = [
             [
                 "280%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -514,6 +634,12 @@ export const geppetto: Talent[] = [
             [
                 "4"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -538,6 +664,12 @@ export const geppetto: Talent[] = [
             [
                 "63"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -562,6 +694,12 @@ export const geppetto: Talent[] = [
             [
                 "70"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -586,6 +724,12 @@ export const geppetto: Talent[] = [
             [
                 "2.5"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -614,6 +758,12 @@ export const geppetto: Talent[] = [
                 "35%",
                 "16%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -638,6 +788,12 @@ export const geppetto: Talent[] = [
             [
                 "140"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     }
 ];

@@ -23,6 +23,12 @@ export const melusine: Talent[] = [
             [
                 "3.5"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -48,6 +54,12 @@ export const melusine: Talent[] = [
             [
                 "160%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -72,6 +84,12 @@ export const melusine: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -97,6 +115,12 @@ export const melusine: Talent[] = [
             [
                 "14"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -121,6 +145,12 @@ export const melusine: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -145,6 +175,12 @@ export const melusine: Talent[] = [
             [
                 "70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -169,6 +205,12 @@ export const melusine: Talent[] = [
             [
                 "14"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -194,6 +236,12 @@ export const melusine: Talent[] = [
             [
                 "105"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -218,6 +266,12 @@ export const melusine: Talent[] = [
             [
                 "+30%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -242,6 +296,12 @@ export const melusine: Talent[] = [
             [
                 "95%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -266,6 +326,12 @@ export const melusine: Talent[] = [
             [
                 "6"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -290,6 +356,12 @@ export const melusine: Talent[] = [
             [
                 "35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -319,6 +391,12 @@ export const melusine: Talent[] = [
                 "11%",
                 "+66%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -343,6 +421,12 @@ export const melusine: Talent[] = [
             [
                 "+80%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -367,6 +451,12 @@ export const melusine: Talent[] = [
             [
                 "+70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -391,6 +481,12 @@ export const melusine: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -415,6 +511,12 @@ export const melusine: Talent[] = [
             [
                 "700%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -439,6 +541,12 @@ export const melusine: Talent[] = [
             [
                 "+70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -463,6 +571,12 @@ export const melusine: Talent[] = [
             [
                 "70"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -488,6 +602,12 @@ export const melusine: Talent[] = [
             [
                 "35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -516,6 +636,12 @@ export const melusine: Talent[] = [
                 "+10",
                 "100"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -540,6 +666,12 @@ export const melusine: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -564,6 +696,12 @@ export const melusine: Talent[] = [
             [
                 "70"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -588,6 +726,12 @@ export const melusine: Talent[] = [
             [
                 "6"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -612,6 +756,12 @@ export const melusine: Talent[] = [
             [
                 "105"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -636,6 +786,12 @@ export const melusine: Talent[] = [
             [
                 "70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     }
 ];

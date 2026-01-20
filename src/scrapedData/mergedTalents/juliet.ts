@@ -24,6 +24,12 @@ export const juliet: Talent[] = [
             [
                 "70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -48,6 +54,12 @@ export const juliet: Talent[] = [
             [
                 "6"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -74,6 +86,12 @@ export const juliet: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -107,6 +125,12 @@ export const juliet: Talent[] = [
                 "17%",
                 "8%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -131,6 +155,12 @@ export const juliet: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -155,6 +185,12 @@ export const juliet: Talent[] = [
             [
                 "3.5"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -179,6 +215,12 @@ export const juliet: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -204,6 +246,12 @@ export const juliet: Talent[] = [
             [
                 "4.5%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -228,6 +276,12 @@ export const juliet: Talent[] = [
             [
                 "6"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -252,6 +306,12 @@ export const juliet: Talent[] = [
             [
                 "105%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -276,6 +336,12 @@ export const juliet: Talent[] = [
             [
                 "8.8"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -300,6 +366,12 @@ export const juliet: Talent[] = [
             [
                 "10.5"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -325,6 +397,12 @@ export const juliet: Talent[] = [
             [
                 "105%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -349,6 +427,12 @@ export const juliet: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -374,6 +458,12 @@ export const juliet: Talent[] = [
             [
                 "115%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -398,6 +488,12 @@ export const juliet: Talent[] = [
             [
                 "700%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -423,6 +519,12 @@ export const juliet: Talent[] = [
             [
                 "35"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -447,6 +549,12 @@ export const juliet: Talent[] = [
             [
                 "175%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -471,6 +579,12 @@ export const juliet: Talent[] = [
             [
                 "6"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -495,6 +609,12 @@ export const juliet: Talent[] = [
             [
                 "175"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -519,6 +639,12 @@ export const juliet: Talent[] = [
             [
                 "70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -543,6 +669,12 @@ export const juliet: Talent[] = [
             [
                 "12%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -571,6 +703,12 @@ export const juliet: Talent[] = [
                 "7",
                 "14"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -595,6 +733,12 @@ export const juliet: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -624,6 +768,12 @@ export const juliet: Talent[] = [
                 "472",
                 "742"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -648,6 +798,12 @@ export const juliet: Talent[] = [
             [
                 "60"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     }
 ];

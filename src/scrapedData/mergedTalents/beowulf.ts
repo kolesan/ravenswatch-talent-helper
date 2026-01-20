@@ -23,6 +23,12 @@ export const beowulf: Talent[] = [
             [
                 "35"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -47,6 +53,12 @@ export const beowulf: Talent[] = [
             [
                 "+175%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -72,6 +84,12 @@ export const beowulf: Talent[] = [
             [
                 "80%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -97,6 +115,12 @@ export const beowulf: Talent[] = [
             [
                 "+25%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -121,6 +145,12 @@ export const beowulf: Talent[] = [
             [
                 "105%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -145,6 +175,12 @@ export const beowulf: Talent[] = [
             [
                 "350%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -169,6 +205,12 @@ export const beowulf: Talent[] = [
             [
                 "60%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -194,6 +236,12 @@ export const beowulf: Talent[] = [
             [
                 "+16%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -218,6 +266,12 @@ export const beowulf: Talent[] = [
             [
                 "+80%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -242,6 +296,12 @@ export const beowulf: Talent[] = [
             [
                 "5"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -258,6 +318,20 @@ export const beowulf: Talent[] = [
             [],
             [],
             []
+        ],
+        "degradations": [
+            [
+                "-30%"
+            ],
+            [
+                "-25%"
+            ],
+            [
+                "-20%"
+            ],
+            [
+                "-15%"
+            ]
         ]
     },
     {
@@ -282,6 +356,12 @@ export const beowulf: Talent[] = [
             [
                 "+56%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -306,6 +386,12 @@ export const beowulf: Talent[] = [
             [
                 "+70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -330,6 +416,12 @@ export const beowulf: Talent[] = [
             [
                 "70"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -354,6 +446,12 @@ export const beowulf: Talent[] = [
             [
                 "45"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -378,6 +476,12 @@ export const beowulf: Talent[] = [
             [
                 "630%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -402,6 +506,12 @@ export const beowulf: Talent[] = [
             [
                 "210%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -426,6 +536,12 @@ export const beowulf: Talent[] = [
             [
                 "700%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -450,6 +566,12 @@ export const beowulf: Talent[] = [
             [
                 "210%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -474,6 +596,12 @@ export const beowulf: Talent[] = [
             [
                 "21"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -499,6 +627,12 @@ export const beowulf: Talent[] = [
             [
                 "175%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -523,6 +657,12 @@ export const beowulf: Talent[] = [
             [
                 "28"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -547,6 +687,12 @@ export const beowulf: Talent[] = [
             [
                 "70"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -571,6 +717,12 @@ export const beowulf: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -595,6 +747,12 @@ export const beowulf: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -619,6 +777,12 @@ export const beowulf: Talent[] = [
             [
                 "70"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     }
 ];

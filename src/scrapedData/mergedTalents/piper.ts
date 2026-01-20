@@ -24,6 +24,12 @@ export const piper: Talent[] = [
             [
                 "12"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -49,6 +55,12 @@ export const piper: Talent[] = [
             [
                 "21"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -73,6 +85,12 @@ export const piper: Talent[] = [
             [
                 "+25%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -98,6 +116,12 @@ export const piper: Talent[] = [
             [
                 "+25%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -122,6 +146,12 @@ export const piper: Talent[] = [
             [
                 "105"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -146,6 +176,12 @@ export const piper: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -170,6 +206,12 @@ export const piper: Talent[] = [
             [
                 "10"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -194,6 +236,12 @@ export const piper: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -218,6 +266,12 @@ export const piper: Talent[] = [
             [
                 "70"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -242,6 +296,12 @@ export const piper: Talent[] = [
             [
                 "35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -258,6 +318,20 @@ export const piper: Talent[] = [
             [],
             [],
             []
+        ],
+        "degradations": [
+            [
+                "-20%"
+            ],
+            [
+                "-15%"
+            ],
+            [
+                "-10%"
+            ],
+            [
+                "-5%"
+            ]
         ]
     },
     {
@@ -282,6 +356,12 @@ export const piper: Talent[] = [
             [
                 "+5"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -306,6 +386,12 @@ export const piper: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -329,6 +415,20 @@ export const piper: Talent[] = [
             ],
             [
                 "+105%"
+            ]
+        ],
+        "degradations": [
+            [
+                "40%"
+            ],
+            [
+                "40%"
+            ],
+            [
+                "40%"
+            ],
+            [
+                "40%"
             ]
         ]
     },
@@ -354,6 +454,12 @@ export const piper: Talent[] = [
             [
                 "14"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -378,6 +484,12 @@ export const piper: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -402,6 +514,12 @@ export const piper: Talent[] = [
             [
                 "+70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -426,6 +544,12 @@ export const piper: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -450,6 +574,12 @@ export const piper: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -474,6 +604,12 @@ export const piper: Talent[] = [
             [
                 "0.55"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -498,6 +634,12 @@ export const piper: Talent[] = [
             [
                 "6"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -522,6 +664,12 @@ export const piper: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -546,6 +694,12 @@ export const piper: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -570,6 +724,12 @@ export const piper: Talent[] = [
             [
                 "350"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -594,6 +754,12 @@ export const piper: Talent[] = [
             [
                 "21"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -618,6 +784,12 @@ export const piper: Talent[] = [
             [
                 "25%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     }
 ];

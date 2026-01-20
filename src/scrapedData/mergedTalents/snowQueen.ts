@@ -24,6 +24,12 @@ export const snowQueen: Talent[] = [
             [
                 "100"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -49,6 +55,12 @@ export const snowQueen: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -74,6 +86,12 @@ export const snowQueen: Talent[] = [
             [
                 "5"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -98,6 +116,20 @@ export const snowQueen: Talent[] = [
             ],
             [
                 "100%"
+            ]
+        ],
+        "degradations": [
+            [
+                "45%"
+            ],
+            [
+                "45%"
+            ],
+            [
+                "45%"
+            ],
+            [
+                "45%"
             ]
         ]
     },
@@ -124,6 +156,20 @@ export const snowQueen: Talent[] = [
             [
                 "35"
             ]
+        ],
+        "degradations": [
+            [
+                "12%"
+            ],
+            [
+                "10%"
+            ],
+            [
+                "8%"
+            ],
+            [
+                "7%"
+            ]
         ]
     },
     {
@@ -148,6 +194,12 @@ export const snowQueen: Talent[] = [
             [
                 "6"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -172,6 +224,12 @@ export const snowQueen: Talent[] = [
             [
                 "6"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -196,6 +254,12 @@ export const snowQueen: Talent[] = [
             [
                 "175%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -220,6 +284,12 @@ export const snowQueen: Talent[] = [
             [
                 "5"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -244,6 +314,12 @@ export const snowQueen: Talent[] = [
             [
                 "6"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -269,6 +345,12 @@ export const snowQueen: Talent[] = [
             [
                 "35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -293,6 +375,12 @@ export const snowQueen: Talent[] = [
             [
                 "+7%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -318,6 +406,12 @@ export const snowQueen: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -342,6 +436,12 @@ export const snowQueen: Talent[] = [
             [
                 "8"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -366,6 +466,12 @@ export const snowQueen: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -390,6 +496,12 @@ export const snowQueen: Talent[] = [
             [
                 "28"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -415,6 +527,12 @@ export const snowQueen: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -440,6 +558,12 @@ export const snowQueen: Talent[] = [
             [
                 "56"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -464,6 +588,12 @@ export const snowQueen: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -489,6 +619,12 @@ export const snowQueen: Talent[] = [
             [
                 "140%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -513,6 +649,12 @@ export const snowQueen: Talent[] = [
             [
                 "70"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -537,6 +679,12 @@ export const snowQueen: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -561,6 +709,12 @@ export const snowQueen: Talent[] = [
             [
                 "+14%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -585,6 +739,12 @@ export const snowQueen: Talent[] = [
             [
                 "35"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -609,6 +769,12 @@ export const snowQueen: Talent[] = [
             [
                 "280%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -633,6 +799,12 @@ export const snowQueen: Talent[] = [
             [
                 "126"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     }
 ];

@@ -24,6 +24,12 @@ export const carmilla: Talent[] = [
             [
                 "35"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -50,6 +56,20 @@ export const carmilla: Talent[] = [
             [
                 "+70%"
             ]
+        ],
+        "degradations": [
+            [
+                "BLOOD"
+            ],
+            [
+                "BLOOD"
+            ],
+            [
+                "BLOOD"
+            ],
+            [
+                "BLOOD"
+            ]
         ]
     },
     {
@@ -75,6 +95,12 @@ export const carmilla: Talent[] = [
             [
                 "+140%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -100,6 +126,20 @@ export const carmilla: Talent[] = [
             [
                 "60"
             ]
+        ],
+        "degradations": [
+            [
+                "BLOOD points"
+            ],
+            [
+                "BLOOD points"
+            ],
+            [
+                "BLOOD points"
+            ],
+            [
+                "BLOOD points"
+            ]
         ]
     },
     {
@@ -124,6 +164,12 @@ export const carmilla: Talent[] = [
             [
                 "+70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -147,6 +193,20 @@ export const carmilla: Talent[] = [
             ],
             [
                 "14"
+            ]
+        ],
+        "degradations": [
+            [
+                "BLOOD"
+            ],
+            [
+                "BLOOD"
+            ],
+            [
+                "BLOOD"
+            ],
+            [
+                "BLOOD"
             ]
         ]
     },
@@ -172,6 +232,12 @@ export const carmilla: Talent[] = [
             [
                 "105"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -196,6 +262,12 @@ export const carmilla: Talent[] = [
             [
                 "+70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -221,6 +293,12 @@ export const carmilla: Talent[] = [
             [
                 "10.0"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -245,6 +323,12 @@ export const carmilla: Talent[] = [
             [
                 "+100%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -269,6 +353,12 @@ export const carmilla: Talent[] = [
             [
                 "+6"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -292,6 +382,20 @@ export const carmilla: Talent[] = [
             ],
             [
                 "+70%"
+            ]
+        ],
+        "degradations": [
+            [
+                "BLOOD"
+            ],
+            [
+                "BLOOD"
+            ],
+            [
+                "BLOOD"
+            ],
+            [
+                "BLOOD"
             ]
         ]
     },
@@ -317,6 +421,12 @@ export const carmilla: Talent[] = [
             [
                 "140"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -341,6 +451,12 @@ export const carmilla: Talent[] = [
             [
                 "0.25"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -364,6 +480,20 @@ export const carmilla: Talent[] = [
             ],
             [
                 "35%"
+            ]
+        ],
+        "degradations": [
+            [
+                "BLOOD"
+            ],
+            [
+                "BLOOD"
+            ],
+            [
+                "BLOOD"
+            ],
+            [
+                "BLOOD"
             ]
         ]
     },
@@ -389,6 +519,12 @@ export const carmilla: Talent[] = [
             [
                 "1400%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -413,6 +549,12 @@ export const carmilla: Talent[] = [
             [
                 "+70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -437,6 +579,12 @@ export const carmilla: Talent[] = [
             [
                 "5"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -461,6 +609,12 @@ export const carmilla: Talent[] = [
             [
                 "+175%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -491,6 +645,12 @@ export const carmilla: Talent[] = [
                 "35",
                 "7.0"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -516,6 +676,12 @@ export const carmilla: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -540,6 +706,12 @@ export const carmilla: Talent[] = [
             [
                 "140%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -564,6 +736,12 @@ export const carmilla: Talent[] = [
             [
                 "70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -588,6 +766,12 @@ export const carmilla: Talent[] = [
             [
                 "12"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -612,6 +796,12 @@ export const carmilla: Talent[] = [
             [
                 "70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -636,6 +826,12 @@ export const carmilla: Talent[] = [
             [
                 "420%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     }
 ];

@@ -24,6 +24,12 @@ export const wukong: Talent[] = [
             [
                 "175%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -48,6 +54,20 @@ export const wukong: Talent[] = [
             ],
             [
                 "+175"
+            ]
+        ],
+        "degradations": [
+            [
+                "only Hero or Magical Object heals"
+            ],
+            [
+                "only Hero or Magical Object heals"
+            ],
+            [
+                "only Hero or Magical Object heals"
+            ],
+            [
+                "only Hero or Magical Object heals"
             ]
         ]
     },
@@ -79,6 +99,20 @@ export const wukong: Talent[] = [
                 "+7%",
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [
+                "YANG:"
+            ],
+            [
+                "YANG:"
+            ],
+            [
+                "YANG:"
+            ],
+            [
+                "YANG:"
+            ]
         ]
     },
     {
@@ -103,6 +137,20 @@ export const wukong: Talent[] = [
             ],
             [
                 "21"
+            ]
+        ],
+        "degradations": [
+            [
+                "YANG"
+            ],
+            [
+                "YANG"
+            ],
+            [
+                "YANG"
+            ],
+            [
+                "YANG"
             ]
         ]
     },
@@ -134,6 +182,20 @@ export const wukong: Talent[] = [
                 "7",
                 "12"
             ]
+        ],
+        "degradations": [
+            [
+                "YANG:"
+            ],
+            [
+                "YANG:"
+            ],
+            [
+                "YANG:"
+            ],
+            [
+                "YANG:"
+            ]
         ]
     },
     {
@@ -158,6 +220,12 @@ export const wukong: Talent[] = [
             [
                 "140"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -182,6 +250,12 @@ export const wukong: Talent[] = [
             [
                 "105%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -207,6 +281,12 @@ export const wukong: Talent[] = [
             [
                 "+16%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -231,6 +311,12 @@ export const wukong: Talent[] = [
             [
                 "45%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -256,6 +342,12 @@ export const wukong: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -280,6 +372,12 @@ export const wukong: Talent[] = [
             [
                 "+42%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -304,6 +402,12 @@ export const wukong: Talent[] = [
             [
                 "4"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -328,6 +432,12 @@ export const wukong: Talent[] = [
             [
                 "35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -352,6 +462,12 @@ export const wukong: Talent[] = [
             [
                 "1050%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -376,6 +492,12 @@ export const wukong: Talent[] = [
             [
                 "100%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -399,6 +521,20 @@ export const wukong: Talent[] = [
             ],
             [
                 "96"
+            ]
+        ],
+        "degradations": [
+            [
+                "YANG STANCE"
+            ],
+            [
+                "YANG STANCE"
+            ],
+            [
+                "YANG STANCE"
+            ],
+            [
+                "YANG STANCE"
             ]
         ]
     },
@@ -424,6 +560,12 @@ export const wukong: Talent[] = [
             [
                 "77"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -454,6 +596,20 @@ export const wukong: Talent[] = [
                 "7",
                 "140"
             ]
+        ],
+        "degradations": [
+            [
+                "YANG:"
+            ],
+            [
+                "YANG:"
+            ],
+            [
+                "YANG:"
+            ],
+            [
+                "YANG:"
+            ]
         ]
     },
     {
@@ -478,6 +634,12 @@ export const wukong: Talent[] = [
             [
                 "+24%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -502,6 +664,12 @@ export const wukong: Talent[] = [
             [
                 "175"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -526,6 +694,12 @@ export const wukong: Talent[] = [
             [
                 "385%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -551,6 +725,12 @@ export const wukong: Talent[] = [
             [
                 "35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -575,6 +755,12 @@ export const wukong: Talent[] = [
             [
                 "6"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -600,6 +786,12 @@ export const wukong: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -624,6 +816,12 @@ export const wukong: Talent[] = [
             [
                 "14"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -649,6 +847,12 @@ export const wukong: Talent[] = [
             [
                 "14"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     }
 ];

@@ -24,6 +24,12 @@ export const merlin: Talent[] = [
             [
                 "35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -49,6 +55,12 @@ export const merlin: Talent[] = [
             [
                 "+45%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -74,6 +86,12 @@ export const merlin: Talent[] = [
             [
                 "60"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -99,6 +117,12 @@ export const merlin: Talent[] = [
             [
                 "70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -123,6 +147,12 @@ export const merlin: Talent[] = [
             [
                 "350%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -147,6 +177,12 @@ export const merlin: Talent[] = [
             [
                 "560%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -172,6 +208,12 @@ export const merlin: Talent[] = [
             [
                 "+70"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -196,6 +238,12 @@ export const merlin: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -220,6 +268,12 @@ export const merlin: Talent[] = [
             [
                 "28"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -244,6 +298,12 @@ export const merlin: Talent[] = [
             [
                 "2"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -268,6 +328,12 @@ export const merlin: Talent[] = [
             [
                 "+56%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -292,6 +358,12 @@ export const merlin: Talent[] = [
             [
                 "14"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -317,6 +389,12 @@ export const merlin: Talent[] = [
             [
                 "+35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -341,6 +419,12 @@ export const merlin: Talent[] = [
             [
                 "21"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -365,6 +449,12 @@ export const merlin: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -389,6 +479,12 @@ export const merlin: Talent[] = [
             [
                 "+70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -413,6 +509,12 @@ export const merlin: Talent[] = [
             [
                 "49"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -437,6 +539,12 @@ export const merlin: Talent[] = [
             [
                 "+28%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -461,6 +569,12 @@ export const merlin: Talent[] = [
             [
                 "35"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -486,6 +600,12 @@ export const merlin: Talent[] = [
             [
                 "105"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -510,6 +630,12 @@ export const merlin: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -535,6 +661,12 @@ export const merlin: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -559,6 +691,12 @@ export const merlin: Talent[] = [
             [
                 "52"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -583,6 +721,12 @@ export const merlin: Talent[] = [
             [
                 "105"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -607,6 +751,12 @@ export const merlin: Talent[] = [
             [
                 "+21%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -631,6 +781,12 @@ export const merlin: Talent[] = [
             [
                 "140 %"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     }
 ];

@@ -24,6 +24,12 @@ export const romeo: Talent[] = [
             [
                 "70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -49,6 +55,12 @@ export const romeo: Talent[] = [
             [
                 "+7%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -74,6 +86,12 @@ export const romeo: Talent[] = [
             [
                 "+56%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -99,6 +117,12 @@ export const romeo: Talent[] = [
             [
                 "+70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -123,6 +147,12 @@ export const romeo: Talent[] = [
             [
                 "3.5"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -147,6 +177,12 @@ export const romeo: Talent[] = [
             [
                 "700%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -171,6 +207,12 @@ export const romeo: Talent[] = [
             [
                 "12"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -195,6 +237,12 @@ export const romeo: Talent[] = [
             [
                 "112"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -219,6 +267,12 @@ export const romeo: Talent[] = [
             [
                 "23"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -243,6 +297,12 @@ export const romeo: Talent[] = [
             [
                 "70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -267,6 +327,12 @@ export const romeo: Talent[] = [
             [
                 "+70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -291,6 +357,12 @@ export const romeo: Talent[] = [
             [
                 "35"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -316,6 +388,12 @@ export const romeo: Talent[] = [
             [
                 "58"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -340,6 +418,12 @@ export const romeo: Talent[] = [
             [
                 "210%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -364,6 +448,12 @@ export const romeo: Talent[] = [
             [
                 "21"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -393,6 +483,12 @@ export const romeo: Talent[] = [
                 "70",
                 "350%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -418,6 +514,12 @@ export const romeo: Talent[] = [
             [
                 "+70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -442,6 +544,12 @@ export const romeo: Talent[] = [
             [
                 "70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -466,6 +574,12 @@ export const romeo: Talent[] = [
             [
                 "105"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -490,6 +604,12 @@ export const romeo: Talent[] = [
             [
                 "700%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -514,6 +634,12 @@ export const romeo: Talent[] = [
             [
                 "8"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -538,6 +664,12 @@ export const romeo: Talent[] = [
             [
                 "70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -562,6 +694,12 @@ export const romeo: Talent[] = [
             [
                 "+70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -586,6 +724,12 @@ export const romeo: Talent[] = [
             [
                 "5.2"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -610,6 +754,12 @@ export const romeo: Talent[] = [
             [
                 "42"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -638,6 +788,12 @@ export const romeo: Talent[] = [
                 "80",
                 "56"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     }
 ];

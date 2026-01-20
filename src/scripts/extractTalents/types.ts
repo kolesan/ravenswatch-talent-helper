@@ -6,6 +6,7 @@ export type Talent = {
     unlockedAtRank: number;
     description: string[];
     improvements?: string[][];
+    degradations?: string[][];
     changePerLevel?: string[];
     multiplayerOnly?: boolean;
     preferred?: boolean;

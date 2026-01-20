@@ -24,6 +24,12 @@ export const aladdin: Talent[] = [
             [
                 "+45%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -49,6 +55,12 @@ export const aladdin: Talent[] = [
             [
                 "21"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -74,6 +86,12 @@ export const aladdin: Talent[] = [
             [
                 "70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -99,6 +117,12 @@ export const aladdin: Talent[] = [
             [
                 "14"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -123,6 +147,12 @@ export const aladdin: Talent[] = [
             [
                 "55%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -147,6 +177,12 @@ export const aladdin: Talent[] = [
             [
                 "700%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -171,6 +207,12 @@ export const aladdin: Talent[] = [
             [
                 "35%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -196,6 +238,12 @@ export const aladdin: Talent[] = [
             [
                 "7"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -221,6 +269,12 @@ export const aladdin: Talent[] = [
             [
                 "150%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -245,6 +299,12 @@ export const aladdin: Talent[] = [
             [
                 "12"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -269,6 +329,12 @@ export const aladdin: Talent[] = [
             [
                 "2"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -293,6 +359,12 @@ export const aladdin: Talent[] = [
             [
                 "80%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -317,6 +389,12 @@ export const aladdin: Talent[] = [
             [
                 "700%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -341,6 +419,12 @@ export const aladdin: Talent[] = [
             [
                 "+140%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -365,6 +449,12 @@ export const aladdin: Talent[] = [
             [
                 "6"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -389,6 +479,12 @@ export const aladdin: Talent[] = [
             [
                 "+160%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -413,6 +509,12 @@ export const aladdin: Talent[] = [
             [
                 "350%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -437,6 +539,12 @@ export const aladdin: Talent[] = [
             [
                 "70"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -462,6 +570,12 @@ export const aladdin: Talent[] = [
             [
                 "+70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -486,6 +600,12 @@ export const aladdin: Talent[] = [
             [
                 "70%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -511,6 +631,12 @@ export const aladdin: Talent[] = [
             [
                 "20"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -543,6 +669,12 @@ export const aladdin: Talent[] = [
                 "35%",
                 "16%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -578,6 +710,12 @@ export const aladdin: Talent[] = [
                 "100%",
                 "+175%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -603,6 +741,12 @@ export const aladdin: Talent[] = [
             [
                 "14"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -628,6 +772,12 @@ export const aladdin: Talent[] = [
             [
                 "50%"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     },
     {
@@ -652,6 +802,12 @@ export const aladdin: Talent[] = [
             [
                 "70"
             ]
+        ],
+        "degradations": [
+            [],
+            [],
+            [],
+            []
         ]
     }
 ];

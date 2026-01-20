@@ -73,6 +73,7 @@ function merge(mine: Talent, passtech: ParsedPasstechTalent): Talent {
         iconUrl: passtech.iconUrl,
         description: passtech.description,
         improvements: passtech.improvements,
+        degradations: passtech.degradations,
     }
 }
 
@@ -80,6 +81,7 @@ function parseTalent(talent: PasstechTalent): ParsedPasstechTalent {
     const {
         description,
         improvements,
+        degradations,
     } = parseDescriptions(talent.descriptions);
     return {
         code: nameToCode(talent.name),
@@ -88,6 +90,7 @@ function parseTalent(talent: PasstechTalent): ParsedPasstechTalent {
         type: parseType(talent.tier),
         description,
         improvements,
+        degradations,
     };
 }
 
@@ -107,10 +110,12 @@ function parseType(tier: number) {
 
 function parseDescriptions(descriptions: string[]) {
     const parsedDescriptions = descriptions.map(parseDescription);
-    const improvements = parsedDescriptions.map(parseImprovements);
+    const improvements = parsedDescriptions.map(parseDescriptionTags(improvementTag()));
+    const degradations = parsedDescriptions.map(parseDescriptionTags(degradationTag()));
     return {
         description: parseDescription(descriptions[0]),
         improvements,
+        degradations,
     }
 }
 function parseDescription(description: string) {
@@ -123,14 +128,31 @@ function parseDescription(description: string) {
     return initialCleanup
         .map(descriptionKeyMaps.passtechToMyTag.apply);
 }
-function parseImprovements(description: string[]) {
-    return parseImprovement(description.join(" "));
+
+
+function improvementTag() { 
+    return descriptionKeyMaps.myTags.tags.improvement
+        .replaceAll(/[\{\}]/g, "");
+};
+function degradationTag() { 
+    return descriptionKeyMaps.myTags.tags.degradation
+        .replaceAll(/[\{\}]/g, "");
+};
+
+
+function parseDescriptionTags(tag: string) {
+    const parseFn = parseDescriptionTag(tag);
+    return function(description: string[]) {
+        return parseFn(description.join(" "));
+    }
 }
-function parseImprovement(description: string) {
-    const parsed = description
-        .matchAll(/\{si\}.*?{\/s\}/g).toArray()
-        .map(it => it[0])
-        .filter(it => !it.includes("+0%"))
-        .map(it => it.replace(/\{si\}/g, "").replace(/\{\/s\}/g, ""));
-    return parsed;
+function parseDescriptionTag(tag: string) {
+    return function(description: string) {
+        const parsed = description
+            .matchAll(new RegExp(`{${tag}}.*?{/s}`, "g")).toArray()
+            .map(it => it[0])
+            .filter(it => !it.includes("+0%"))
+            .map(it => it.replace(new RegExp(`{${tag}}`), "").replace(/\{\/s\}/g, ""));
+        return parsed;
+    }
 }
