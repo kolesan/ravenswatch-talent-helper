@@ -224,8 +224,8 @@
         ]
     },
     {
-        "code": "music_of_spheres",
-        "name": "Music of Spheres",
+        "code": "music_of_the_spheres",
+        "name": "Music of the Spheres",
         "iconUrl": "https://static.wikia.nocookie.net/ravenswatch/images/2/25/Music_of_the_Spheres_icon.jpg/revision/latest?cb=20251124095225",
         "type": "standard",
         "unlockedAtRank": 5,

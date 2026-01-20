@@ -21,7 +21,7 @@ export const piperOrder = [
     "stimulant_vibes",
 
     "spinning_solo",
-    "music_of_spheres",
+    "music_of_the_spheres",
     "invasive_blast",
 
     "chorus",
