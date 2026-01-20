@@ -2,7 +2,6 @@ import clsx from "clsx";
 import { html } from "htm/preact";
 
 import { HeroCode } from "../../../../../data/heroes";
-import { TalentDescription } from "../../../../components/TalentDescription/TalentDescription";
 import { TalentDescriptionMerlin } from "../../../../components/TalentDescription/TalentDescriptionMerlin";
 import { holder } from "../../../../utils/onHold";
 import { useIsStickyElemStuck } from "../../hooks/useIsStickyElemStuck";
@@ -105,17 +104,10 @@ export function MainList({
                                 onPointerCancel=${hld.onPointerUp}
                                 onPointerMove=${hld.onPointerMove}
                             >
-                                ${heroCode === "merlin" ? html`
-                                    <${TalentIcon} 
-                                        talent=${talent}
-                                        heroCode=${heroCode}
-                                    />` : html`
-                                    <img 
-                                        src=${imageSrc} 
-                                        width=80 
-                                        height=77 
-                                    />
-                                `}
+                                <${TalentIcon} 
+                                    talent=${talent}
+                                    heroCode=${heroCode}
+                                />
                                 <div>
                                     <div class=${cls.header}>
                                         <div class=${cls.name}>
@@ -136,17 +128,10 @@ export function MainList({
                                             </div>
                                         `}
                                     </div>
-                                    ${heroCode === "merlin" ? html`
-                                        <${TalentDescriptionMerlin} 
-                                            isLocked=${talent.locked} 
-                                            talent=${talent} 
-                                        />
-                                    `: html`
-                                        <${TalentDescription} 
-                                            isLocked=${talent.locked} 
-                                            talent=${talent} 
-                                        />
-                                    `}
+                                    <${TalentDescriptionMerlin} 
+                                        isLocked=${talent.locked} 
+                                        talent=${talent} 
+                                    />
                                 </div>
                             </li>    
                         `;

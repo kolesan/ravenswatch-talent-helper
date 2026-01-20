@@ -26,6 +26,7 @@ export function TalentDescriptionMerlin({
                 <${DescriptionList} 
                     description=${talent.description}
                     improvements=${talent.improvements}
+                    degradations=${talent.degradations}
                 />
             `}
         </div>

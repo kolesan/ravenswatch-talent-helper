@@ -1,79 +1,61 @@
-import { Hero as RawHero, HeroCode, heroes as rawHeroes } from "../data/heroes";
-import aladdinTalents from "../scrapedData/heroTalents/aladdin.json";
-import beowulfTalents from "../scrapedData/heroTalents/beowulf.json";
-import carmillaTalents from "../scrapedData/heroTalents/carmilla.json";
-import geppettoTalents from "../scrapedData/heroTalents/geppetto.json";
-import julietTalents from "../scrapedData/heroTalents/juliet.json";
-import melusineTalents from "../scrapedData/heroTalents/melusine.json";
-import piperTalents from "../scrapedData/heroTalents/piper.json";
-import romeoTalents from "../scrapedData/heroTalents/romeo.json";
-import scarletTalents from "../scrapedData/heroTalents/scarlet.json";
-import snowQueenTalents from "../scrapedData/heroTalents/snowQueen.json";
-import wukongTalents from "../scrapedData/heroTalents/wukong.json";
-import merlinTalents from "../scrapedData/heroTalents/merlin.json";
+import { Hero as HeroRaw, HeroCode, heroes as heroesRaw } from "../data/heroes";
+import { aladdin } from "../scrapedData/mergedTalents/aladdin";
+import { beowulf } from "../scrapedData/mergedTalents/beowulf";
+import { carmilla } from "../scrapedData/mergedTalents/carmilla";
+import { geppetto } from "../scrapedData/mergedTalents/geppetto";
+import { juliet } from "../scrapedData/mergedTalents/juliet";
+import { melusine } from "../scrapedData/mergedTalents/melusine";
+import { piper } from "../scrapedData/mergedTalents/piper";
+import { romeo } from "../scrapedData/mergedTalents/romeo";
+import { scarlet } from "../scrapedData/mergedTalents/scarlet";
+import { snowQueen } from "../scrapedData/mergedTalents/snowQueen";
+import { wukong } from "../scrapedData/mergedTalents/wukong";
+import { merlin } from "../scrapedData/mergedTalents/merlin";
 import { Talent } from "../scripts/extractTalents/types";
 
-export type Hero = RawHero & {
+export type Hero = HeroRaw & {
     talents: Talent[];
 }
 
-const all = {
-    scarlet: {
-        ...rawHeroes.all.scarlet,
-        talents: scarletTalents.filter(it => it.type === "standard") as Talent[],
-    },
-    piper: {
-        ...rawHeroes.all.piper,
-        talents: piperTalents.filter(it => it.type === "standard") as Talent[],
-    },
-    beowulf: {
-        ...rawHeroes.all.beowulf,
-        talents: beowulfTalents.filter(it => it.type === "standard") as Talent[],
-    },
-    snowQueen: {
-        ...rawHeroes.all.snowQueen,
-        talents: snowQueenTalents.filter(it => it.type === "standard") as Talent[],
-    },
-    aladdin: {
-        ...rawHeroes.all.aladdin,
-        talents: aladdinTalents.filter(it => it.type === "standard") as Talent[],
-    },
-    melusine: {
-        ...rawHeroes.all.melusine,
-        talents: melusineTalents.filter(it => it.type === "standard") as Talent[],
-    },
-    geppetto: {
-        ...rawHeroes.all.geppetto,
-        talents: geppettoTalents.filter(it => it.type === "standard") as Talent[],
-    },
-    wukong: {
-        ...rawHeroes.all.wukong,
-        talents: wukongTalents.filter(it => it.type === "standard") as Talent[],
-    },
-    carmilla: {
-        ...rawHeroes.all.carmilla,
-        talents: carmillaTalents.filter(it => it.type === "standard") as Talent[],
-    },
-    romeo: {
-        ...rawHeroes.all.romeo,
-        talents: romeoTalents.filter(it => it.type === "standard") as Talent[],
-    },
-    juliet: {
-        ...rawHeroes.all.juliet,
-        talents: julietTalents.filter(it => it.type === "standard") as Talent[],
-    },
-    merlin: {
-        ...rawHeroes.all.merlin,
-        talents: merlinTalents.filter(it => it.type === "standard") as Talent[],
-    }
+const allRaw = {
+    scarlet,
+    piper,
+    beowulf,
+    snowQueen,
+    aladdin,
+    melusine,
+    geppetto,
+    wukong,
+    carmilla,
+    romeo,
+    juliet,
+    merlin,
 };
 
+let heroesFinalArray: Hero[] = [];
+let heroesFinal: Partial<Record<HeroCode, Hero>> = {};
+for (let i = 0; i < heroesRaw.asArray.length; i++) {
+    const heroRaw = heroesRaw.asArray[i];
+
+    const mergedTalents = allRaw[heroRaw.code];
+    const onlyStandardTalents = mergedTalents
+        .filter(it => it.type === "standard");
+
+    const heroFinal = {
+        ...heroRaw,
+        talents: onlyStandardTalents,
+    };
+
+    heroesFinalArray.push(heroFinal);
+    heroesFinal[heroRaw.code] = heroFinal;
+}
+
 export const heroes = {
-    all,
-    asArray: Object.values(all),
+    all: heroesFinal as Record<HeroCode, Hero>,
+    asArray: heroesFinalArray,
     utils: {
         findByCode(code: string): Hero | undefined {
-            return heroes.asArray.find(it => it.code === code);
+            return heroesFinalArray.find(it => it.code === code);
         }
     }
 };
