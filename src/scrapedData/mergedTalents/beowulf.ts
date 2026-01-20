@@ -251,7 +251,7 @@ export const beowulf: Talent[] = [
         "type": "standard",
         "unlockedAtRank": 1,
         "description": [
-            "{sk}POWER{/s} sends out two successive shockwaves, each one dealing <span class=\"degradation\">-30%{/s} damage"
+            "{sk}POWER{/s} sends out two successive shockwaves, each one dealing {sd}-30%{/s} damage"
         ],
         "improvements": [
             [],

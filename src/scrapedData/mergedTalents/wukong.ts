@@ -34,7 +34,7 @@ export const wukong: Talent[] = [
         "unlockedAtRank": 1,
         "description": [
             "{sk}Quest (x7):{/s} Obtaining a Magical Object with a Rare quality or better grants {sk}+2 DMG{/s}",
-            "{sk}Complete:{/s} Grants {si}+100{/s} {sk}VITALITY{/s} but now <span class=\"degradation\">only Hero or Magical Object heals{/s} are effective"
+            "{sk}Complete:{/s} Grants {si}+100{/s} {sk}VITALITY{/s} but now {sd}only Hero or Magical Object heals{/s} are effective"
         ],
         "improvements": [
             [
@@ -60,7 +60,7 @@ export const wukong: Talent[] = [
         "description": [
             "Switching {sk}STANCE{/s} increases the power of the new {sk}STANCE{/s} for {sk}7{/s} seconds:",
             "{so}YIN:{/s} {si}+4%{/s} {sk}LIFE ON HIT{/s}",
-            "<span class=\"degradation\">YANG:{/s} deals {si}+20%{/s} damage"
+            "{sd}YANG:{/s} deals {si}+20%{/s} damage"
         ],
         "improvements": [
             [
@@ -89,7 +89,7 @@ export const wukong: Talent[] = [
         "unlockedAtRank": 5,
         "description": [
             "After {sk}8{/s} successful {sk}DEFENSE{/s} actions, the next {sk}TRAIT{/s} activates {sk}AWAKENED STANCE{/s} for {si}12{/s} seconds",
-            "{sk}AWAKENED STANCE{/s} grants both {so}YIN{/s} and <span class=\"degradation\">YANG{/s} effects, without taking any additional damage"
+            "{sk}AWAKENED STANCE{/s} grants both {so}YIN{/s} and {sd}YANG{/s} effects, without taking any additional damage"
         ],
         "improvements": [
             [
@@ -115,7 +115,7 @@ export const wukong: Talent[] = [
         "description": [
             "When {sk}SPECIAL{/s} is triggered, it applies a negative status effect to enemies within range:",
             "{so}YIN:{/s} {sk}VULNERABLE{/s} for {si}4{/s} second(s)",
-            "<span class=\"degradation\">YANG:{/s} {sk}WEAKENED{/s} for {si}6{/s} second(s)"
+            "{sd}YANG:{/s} {sk}WEAKENED{/s} for {si}6{/s} second(s)"
         ],
         "improvements": [
             [
@@ -385,7 +385,7 @@ export const wukong: Talent[] = [
         "type": "standard",
         "unlockedAtRank": 4,
         "description": [
-            "Adds an explosion of fire to the activation effects of <span class=\"degradation\">YANG STANCE{/s}, dealing {si}55{/s} area damage and inflicting enemies with {sk}IGNITE{/s}"
+            "Adds an explosion of fire to the activation effects of {sd}YANG STANCE{/s}, dealing {si}55{/s} area damage and inflicting enemies with {sk}IGNITE{/s}"
         ],
         "improvements": [
             [
@@ -435,7 +435,7 @@ export const wukong: Talent[] = [
         "description": [
             "Blocking with {sk}DEFENSE{/s} less than {sk}0.2{/s} second(s) after its activation triggers a perfect block:",
             "{so}YIN:{/s} restores {si}4{/s} health to all nearby heroes",
-            "<span class=\"degradation\">YANG:{/s} deals {si}80{/s} area damage"
+            "{sd}YANG:{/s} deals {si}80{/s} area damage"
         ],
         "improvements": [
             [

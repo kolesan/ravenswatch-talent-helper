@@ -33,7 +33,7 @@ export const carmilla: Talent[] = [
         "type": "starting",
         "unlockedAtRank": 1,
         "description": [
-            "When not in combat, {sk}DEFENSE{/s} grants {sk}STEALTH{/s} and can be held without consuming <span class=\"degradation\">BLOOD{/s}",
+            "When not in combat, {sk}DEFENSE{/s} grants {sk}STEALTH{/s} and can be held without consuming {sd}BLOOD{/s}",
             "{sk}DEFENSE{/s} deals {si}+40%{/s} damage",
             "{sk}STEALTH{/s} make Carmilla undetectable by enemies "
         ],
@@ -84,7 +84,7 @@ export const carmilla: Talent[] = [
         "type": "starting",
         "unlockedAtRank": 5,
         "description": [
-            "In {sk}Winged Form{/s}, activating {sk}TRAIT{/s} again consumes health equivalent to {sk}20%{/s} of max health to recover up to {si}30{/s} <span class=\"degradation\">BLOOD points{/s}",
+            "In {sk}Winged Form{/s}, activating {sk}TRAIT{/s} again consumes health equivalent to {sk}20%{/s} of max health to recover up to {si}30{/s} {sd}BLOOD points{/s}",
             "This ability cannot be used when below health cost and has a {sk}5{/s}-second cooldown"
         ],
         "improvements": [
@@ -133,7 +133,7 @@ export const carmilla: Talent[] = [
         "type": "standard",
         "unlockedAtRank": 1,
         "description": [
-            "Each enemy passed through by {sk}DASH{/s} earns {si}8{/s} <span class=\"degradation\">BLOOD{/s}"
+            "Each enemy passed through by {sk}DASH{/s} earns {si}8{/s} {sd}BLOOD{/s}"
         ],
         "improvements": [
             [
@@ -278,7 +278,7 @@ export const carmilla: Talent[] = [
         "type": "standard",
         "unlockedAtRank": 1,
         "description": [
-            "Consuming <span class=\"degradation\">BLOOD{/s} to fuel {sk}POWER{/s} gradually increases its damage, up to {si}+40%{/s} after {sk}3.0{/s} seconds of holding"
+            "Consuming {sd}BLOOD{/s} to fuel {sk}POWER{/s} gradually increases its damage, up to {si}+40%{/s} after {sk}3.0{/s} seconds of holding"
         ],
         "improvements": [
             [
@@ -350,7 +350,7 @@ export const carmilla: Talent[] = [
         "type": "standard",
         "unlockedAtRank": 3,
         "description": [
-            "Increase maximum <span class=\"degradation\">BLOOD{/s} reserve by {si}20%{/s}"
+            "Increase maximum {sd}BLOOD{/s} reserve by {si}20%{/s}"
         ],
         "improvements": [
             [

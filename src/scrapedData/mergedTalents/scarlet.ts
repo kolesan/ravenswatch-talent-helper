@@ -83,7 +83,7 @@ export const scarlet: Talent[] = [
         "unlockedAtRank": 5,
         "description": [
             "{sk}TRAIT{/s} becomes active (with a {si}30{/s} seconds cooldown) and {sk}heals{/s} {sk}20%{/s} of Maximum Health when used",
-            "Maximum Health is reduced by <span class=\"degradation\">20%{/s}"
+            "Maximum Health is reduced by {sd}20%{/s}"
         ],
         "improvements": [
             [

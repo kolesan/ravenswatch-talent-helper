@@ -2,6 +2,7 @@
 import { writeFile } from "fs/promises";
 
 import { Hero, HeroCode, heroes } from "../../data/heroes";
+import { descriptionKeyMaps } from "../../utils/descriptionKeyMaps";
 import { Talent, TalentType } from "../extractTalents/types";
 
 import { ParsedPasstechTalent, PasstechTalent } from "./types";
@@ -113,15 +114,14 @@ function parseDescriptions(descriptions: string[]) {
     }
 }
 function parseDescription(description: string) {
-    return description
+    const initialCleanup = description
         .split("• ")
         .filter(Boolean)
-        .map(it => it.replaceAll("<span class=\"key_words\">", "{sk}"))
-        .map(it => it.replaceAll("<span class=\"improvement\">", "{si}"))
-        .map(it => it.replaceAll("<span class=\"other\">", "{so}"))
-        .map(it => it.replaceAll("</span>", "{/s}"))
         .map(it => it.replaceAll(/ \(currently: .*?\)/g, ""))
-        .map(it => it.replaceAll("\n", ""));
+        .map(it => it.replaceAll("\n", ""))
+
+    return initialCleanup
+        .map(descriptionKeyMaps.passtechToMyTag.apply);
 }
 function parseImprovements(description: string[]) {
     return parseImprovement(description.join(" "));

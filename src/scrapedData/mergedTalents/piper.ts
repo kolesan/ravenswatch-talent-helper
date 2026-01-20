@@ -251,7 +251,7 @@ export const piper: Talent[] = [
         "type": "standard",
         "unlockedAtRank": 1,
         "description": [
-            "{sk}POWER{/s} plays {sk}5{/s} notes each wave (instead of 3) but each note deals <span class=\"degradation\">-20%{/s} damage"
+            "{sk}POWER{/s} plays {sk}5{/s} notes each wave (instead of 3) but each note deals {sd}-20%{/s} damage"
         ],
         "improvements": [
             [],
@@ -315,7 +315,7 @@ export const piper: Talent[] = [
         "type": "standard",
         "unlockedAtRank": 3,
         "description": [
-            "{sk}ATTACK{/s} sends bigger notes that deal {si}+60%{/s} damage in an area of effect but at a <span class=\"degradation\">40%{/s} reduced frequency"
+            "{sk}ATTACK{/s} sends bigger notes that deal {si}+60%{/s} damage in an area of effect but at a {sd}40%{/s} reduced frequency"
         ],
         "improvements": [
             [

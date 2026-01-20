@@ -83,7 +83,7 @@ export const snowQueen: Talent[] = [
         "type": "starting",
         "unlockedAtRank": 5,
         "description": [
-            "{sk}ATTACK{/s} sends forth two lances side by side but their maximum range is reduced by <span class=\"degradation\">45%{/s}",
+            "{sk}ATTACK{/s} sends forth two lances side by side but their maximum range is reduced by {sd}45%{/s}",
             "Each lance deals {si}70%{/s} damage"
         ],
         "improvements": [
@@ -109,7 +109,7 @@ export const snowQueen: Talent[] = [
         "unlockedAtRank": 1,
         "description": [
             "{sk}POWER{/s} sends a snowball that deals {si}20{/s} damage per second to enemies in its path and inflicts them with {sk}CHILLED{/s}",
-            "Each enemy hit reduces the size and damage of the snowball by <span class=\"degradation\">12%{/s}"
+            "Each enemy hit reduces the size and damage of the snowball by {sd}12%{/s}"
         ],
         "improvements": [
             [
