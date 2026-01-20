@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { html } from "htm/preact";
 
 import { HeroCode } from "../../../../../data/heroes";
-import { TalentDescriptionMerlin } from "../../../../components/TalentDescription/TalentDescriptionMerlin";
+import { TalentDescription } from "../../../../components/TalentDescription/TalentDescription";
 import { holder } from "../../../../utils/onHold";
 import { useIsStickyElemStuck } from "../../hooks/useIsStickyElemStuck";
 import { TalentWithLockedFlag } from "../../types";
@@ -128,7 +128,7 @@ export function MainList({
                                             </div>
                                         `}
                                     </div>
-                                    <${TalentDescriptionMerlin} 
+                                    <${TalentDescription} 
                                         isLocked=${talent.locked} 
                                         talent=${talent} 
                                     />

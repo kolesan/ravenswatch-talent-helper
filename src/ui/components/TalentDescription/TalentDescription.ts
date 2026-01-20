@@ -1,10 +1,8 @@
 import { html } from "htm/preact";
 
-import "./TalentDescription.css";
-
 import { Talent } from "../../../scripts/extractTalents/types";
-
 import { DescriptionList } from "../DescriptionList/DescriptionList";
+
 import { UnlockedAtRank } from "./components/UnlockedAtRank/UnlockedAtRank";
 
 interface Props {
@@ -18,10 +16,17 @@ export function TalentDescription({
 }: Props) {
     return html`
         <div>
-            ${isLocked
-                ? html`<${UnlockedAtRank} rank=${talent.unlockedAtRank} />`
-                : html`<${DescriptionList} description=${talent.description} />`
-            }
+            ${isLocked ? html`
+                <${UnlockedAtRank} 
+                    rank=${talent.unlockedAtRank} 
+                />
+            ` : html`
+                <${DescriptionList} 
+                    description=${talent.description}
+                    improvements=${talent.improvements}
+                    degradations=${talent.degradations}
+                />
+            `}
         </div>
     `;
 }

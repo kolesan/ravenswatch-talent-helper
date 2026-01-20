@@ -27,5 +27,6 @@
 
 .name {
     font-family: ravenswatch;
+    letter-spacing: 0.02rem;
     color: #9B9981;
 }

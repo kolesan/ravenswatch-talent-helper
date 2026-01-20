@@ -1,4 +1,4 @@
-import { cursed } from "../../../../../../scrapedData/items/cursed";
+import { cursed } from "../../../../../../scrapedData/mergedItems/cursed";
 import { MagicalObject, SerializedMagicalObject } from "../../../../../../types";
 import { isTruthy } from "../../../../../utils/isTruthy";
 import { CursedObjectsPageState, SerializedCursedObjectsPageState } from "../../../types";

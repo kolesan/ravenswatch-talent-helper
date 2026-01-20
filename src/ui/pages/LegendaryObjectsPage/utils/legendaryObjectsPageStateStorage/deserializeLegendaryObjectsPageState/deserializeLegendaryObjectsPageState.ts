@@ -1,4 +1,4 @@
-import { legendary } from "../../../../../../scrapedData/items/legendary";
+import { legendary } from "../../../../../../scrapedData/mergedItems/legendary";
 import { MagicalObject, SerializedMagicalObject } from "../../../../../../types";
 import { isTruthy } from "../../../../../utils/isTruthy";
 import { LegendaryObjectsPageState, SerializedLegendaryObjectsPageState } from "../../../types";
