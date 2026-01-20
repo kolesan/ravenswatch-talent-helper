@@ -95,8 +95,8 @@ export const legendary: MagicalObject[] = [
         ],
     },
     {
-        code: "solar_crown",
-        name: "Solar Crown",
+        code: "sun_crown",
+        name: "Sun Crown",
         description: [
             "Improves the rarity of all Talents already learned and all future Talents once selected"
         ],
