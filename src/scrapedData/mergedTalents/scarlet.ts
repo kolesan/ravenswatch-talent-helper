@@ -1,4 +1,6 @@
-export const scarlet = [
+import { Talent } from "../../scripts/extractTalents/types";
+
+export const scarlet: Talent[] = [
     {
         "code": "devourer",
         "name": "Devourer",

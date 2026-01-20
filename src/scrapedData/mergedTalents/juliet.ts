@@ -1,4 +1,6 @@
-export const juliet = [
+import { Talent } from "../../scripts/extractTalents/types";
+
+export const juliet: Talent[] = [
     {
         "code": "kiss_the_groom",
         "name": "Kiss The Groom",

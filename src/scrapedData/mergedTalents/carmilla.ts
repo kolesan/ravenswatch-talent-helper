@@ -1,4 +1,6 @@
-export const carmilla = [
+import { Talent } from "../../scripts/extractTalents/types";
+
+export const carmilla: Talent[] = [
     {
         "code": "life_essence",
         "name": "Life Essence",

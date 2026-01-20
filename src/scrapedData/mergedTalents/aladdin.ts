@@ -1,4 +1,6 @@
-export const aladdin = [
+import { Talent } from "../../scripts/extractTalents/types";
+
+export const aladdin: Talent[] = [
     {
         "code": "jinniya's_gift",
         "name": "Jinniya's Gift",

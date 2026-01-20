@@ -23,7 +23,9 @@ for (let i = 0; i < heroes.asArray.length; i++) {
 function writeTalentsToFile(hero: Hero, mergedTalents: Talent[]) {
     const talentsJson = JSON.stringify(mergedTalents, null, "    ");
 
-    const content = `export const ${hero.code} = ${talentsJson};`;
+    const content = `import { Talent } from "../../scripts/extractTalents/types";
+
+export const ${hero.code}: Talent[] = ${talentsJson};`;
 
     return writeFile(`./src/scrapedData/mergedTalents/${hero.code}.ts`, content)
         .then(() => console.log(

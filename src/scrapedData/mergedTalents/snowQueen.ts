@@ -1,4 +1,6 @@
-export const snowQueen = [
+import { Talent } from "../../scripts/extractTalents/types";
+
+export const snowQueen: Talent[] = [
     {
         "code": "ice_clone",
         "name": "Ice Clone",

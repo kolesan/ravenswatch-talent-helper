@@ -1,4 +1,6 @@
-export const melusine = [
+import { Talent } from "../../scripts/extractTalents/types";
+
+export const melusine: Talent[] = [
     {
         "code": "spring_water",
         "name": "Spring Water",

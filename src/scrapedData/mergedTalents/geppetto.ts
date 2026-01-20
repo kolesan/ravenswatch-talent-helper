@@ -1,4 +1,6 @@
-export const geppetto = [
+import { Talent } from "../../scripts/extractTalents/types";
+
+export const geppetto: Talent[] = [
     {
         "code": "dummyball",
         "name": "Dummyball",

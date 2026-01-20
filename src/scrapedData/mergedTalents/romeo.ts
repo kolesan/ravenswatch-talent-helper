@@ -1,4 +1,6 @@
-export const romeo = [
+import { Talent } from "../../scripts/extractTalents/types";
+
+export const romeo: Talent[] = [
     {
         "code": "kiss_the_bride",
         "name": "Kiss The Bride",

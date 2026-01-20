@@ -1,4 +1,6 @@
-export const beowulf = [
+import { Talent } from "../../scripts/extractTalents/types";
+
+export const beowulf: Talent[] = [
     {
         "code": "explosive_fire",
         "name": "Explosive Fire",

@@ -1,4 +1,6 @@
-export const merlin = [
+import { Talent } from "../../scripts/extractTalents/types";
+
+export const merlin: Talent[] = [
     {
         "code": "runic_might",
         "name": "Runic Might",

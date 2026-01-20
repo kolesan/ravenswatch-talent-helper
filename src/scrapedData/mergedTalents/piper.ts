@@ -1,4 +1,6 @@
-export const piper = [
+import { Talent } from "../../scripts/extractTalents/types";
+
+export const piper: Talent[] = [
     {
         "code": "horde",
         "name": "Horde",

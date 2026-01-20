@@ -1,4 +1,6 @@
-export const wukong = [
+import { Talent } from "../../scripts/extractTalents/types";
+
+export const wukong: Talent[] = [
     {
         "code": "stone_monkey",
         "name": "Stone Monkey",
