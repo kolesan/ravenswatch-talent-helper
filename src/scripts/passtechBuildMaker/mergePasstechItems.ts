@@ -6,7 +6,6 @@ import { MagicalObject } from "../../types";
 import { descriptionKeyMaps } from "../../utils/descriptionKeyMaps";
 
 import { ParsedPasstechItem, PasstechItem } from "./types";
-import { fixApostrophes } from "../extractTalents/utils/fixApostrophes";
 
 
 const {
