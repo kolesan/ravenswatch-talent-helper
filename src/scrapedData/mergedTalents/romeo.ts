@@ -1,5 +1,105 @@
 export const romeo = [
     {
+        "code": "kiss_the_bride",
+        "name": "Kiss The Bride",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/romeo/Skill_Special_Quest_Dream_Shard.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "{sk}Quest (x20):{/s} Hitting at least one enemy with {sk}SPECIAL{/s} grants {sk}+0.5{/s} {sk}Crit Chance{/s}",
+            "{sk}Complete:{/s} Any enemy hit by {sk}SPECIAL{/s} has a {si}40%{/s} chance to grant Romeo {sk}2{/s} {sk}Dream Shard(s){/s}"
+        ],
+        "improvements": [
+            [
+                "40%"
+            ],
+            [
+                "50%"
+            ],
+            [
+                "60%"
+            ],
+            [
+                "70%"
+            ]
+        ]
+    },
+    {
+        "code": "panache",
+        "name": "Panache",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/romeo/Skill_Attack_Panache.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "Hitting an enemy with any additional {sk}ATTACK{/s} move, such as {sk}DASH{/s} attack or {sk}DEFENSE{/s}'s {sk}Ripost{/s}, grants one {sk}Panache token{/s} (up to {sk}3{/s}) ",
+            "Each {sk}Panache token{/s} grants {sk}+5 DMG{/s} and {si}+4%{/s} {sk}ATTACK SPEED{/s}, all {sk}Panache tokens{/s} are lost when Romeo is hit"
+        ],
+        "improvements": [
+            [
+                "+4%"
+            ],
+            [
+                "+5%"
+            ],
+            [
+                "+6%"
+            ],
+            [
+                "+7%"
+            ]
+        ]
+    },
+    {
+        "code": "secret_weapon",
+        "name": "Secret Weapon",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/romeo/Skill_Defense_Quest.png",
+        "type": "starting",
+        "unlockedAtRank": 2,
+        "description": [
+            "{sk}Quest(x20):{/s} Blocking at least once during {sk}DEFENSE{/s} grants {sk}+0.5 DMG{/s}",
+            "{sk}Complete:{/s} {sk}Ripost ATTACK{/s} after {sk}DEFENSE{/s} deals {si}+32%{/s} damage per successful block (up to {sk}3{/s} times)"
+        ],
+        "improvements": [
+            [
+                "+32%"
+            ],
+            [
+                "+40%"
+            ],
+            [
+                "+48%"
+            ],
+            [
+                "+56%"
+            ]
+        ]
+    },
+    {
+        "code": "ice_rose",
+        "name": "Ice Rose",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/romeo/Skill_Power_Chilled.png",
+        "type": "starting",
+        "unlockedAtRank": 5,
+        "description": [
+            "{sk}POWER{/s} now throws ice Roses, applying {sk}CHILLED{/s} to hit enemies",
+            "{sk}POWER{/s} deals {si}+40%{/s} damage"
+        ],
+        "improvements": [
+            [
+                "+40%"
+            ],
+            [
+                "+50%"
+            ],
+            [
+                "+60%"
+            ],
+            [
+                "+70%"
+            ]
+        ]
+    },
+    {
         "code": "healing_rose",
         "name": "Healing Rose",
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/romeo/Skill_Power_Heal.png",
@@ -435,6 +535,106 @@ export const romeo = [
             ],
             [
                 "70%"
+            ]
+        ]
+    },
+    {
+        "code": "burning_dance",
+        "name": "Burning Dance",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/romeo/Skill_Ultimate_1_Ignite.png",
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "{sk}ULTIMATE{/s} applies {sk}IGNITE{/s} to hit enemies and deals {si}+40%{/s} damage"
+        ],
+        "improvements": [
+            [
+                "+40%"
+            ],
+            [
+                "+50%"
+            ],
+            [
+                "+60%"
+            ],
+            [
+                "+70%"
+            ]
+        ]
+    },
+    {
+        "code": "funeral_bouquet",
+        "name": "Funeral Bouquet",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/romeo/Skill_Ultimate_2_Attack_Rose.png",
+        "type": "final",
+        "unlockedAtRank": 6,
+        "description": [
+            "{sk}ATTACKS{/s} throw {sk}ULTIMATE{/s}'s Black Roses, dealing {si}3{/s} damage each"
+        ],
+        "improvements": [
+            [
+                "3"
+            ],
+            [
+                "3.8"
+            ],
+            [
+                "4.5"
+            ],
+            [
+                "5.2"
+            ]
+        ]
+    },
+    {
+        "code": "explosive_performance",
+        "name": "Explosive Performance",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/romeo/Skill_Ultimate_1_Projectile.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "During {sk}ULTIMATE{/s}'s dance, launch {si}24{/s} firework rockets all around, exploding on impact and dealing {sk}17{/s} damage each"
+        ],
+        "improvements": [
+            [
+                "24"
+            ],
+            [
+                "30"
+            ],
+            [
+                "36"
+            ],
+            [
+                "42"
+            ]
+        ]
+    },
+    {
+        "code": "tempestuous_roses",
+        "name": "Tempestuous Roses",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/romeo/Skill_Ultimate_2_Wide_And_AOE.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Romeo throws {si}56{/s} Black Roses in a wide cone dealing {sk}13{/s} damage each and is now surrounded by a tempest dealing {si}32{/s} area damage per second"
+        ],
+        "improvements": [
+            [
+                "56",
+                "32"
+            ],
+            [
+                "64",
+                "40"
+            ],
+            [
+                "72",
+                "48"
+            ],
+            [
+                "80",
+                "56"
             ]
         ]
     }

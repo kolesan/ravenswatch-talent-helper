@@ -1,5 +1,110 @@
 export const wukong = [
     {
+        "code": "stone_monkey",
+        "name": "Stone Monkey",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/sun_wukong/Skill_Defense_Quest.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "{sk}Quest (x40):{/s} Each successful {sk}DEFENSE{/s} grants {sk}+0.5 ARMOR{/s}",
+            "{sk}Complete{/s}: Each block triggers an attack dealing {si}100%{/s} of the blocked damage as area damage"
+        ],
+        "improvements": [
+            [
+                "100%"
+            ],
+            [
+                "125%"
+            ],
+            [
+                "150%"
+            ],
+            [
+                "175%"
+            ]
+        ]
+    },
+    {
+        "code": "thirst_for_immortality",
+        "name": "Thirst for Immortality",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/sun_wukong/Skill_Passive_Objects_Quest.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "{sk}Quest (x7):{/s} Obtaining a Magical Object with a Rare quality or better grants {sk}+2 DMG{/s}",
+            "{sk}Complete:{/s} Grants {si}+100{/s} {sk}VITALITY{/s} but now <span class=\"degradation\">only Hero or Magical Object heals{/s} are effective"
+        ],
+        "improvements": [
+            [
+                "+100"
+            ],
+            [
+                "+125"
+            ],
+            [
+                "+150"
+            ],
+            [
+                "+175"
+            ]
+        ]
+    },
+    {
+        "code": "supreme_polarity",
+        "name": "Supreme Polarity",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/sun_wukong/Skill_Trait_Better_Stances.png",
+        "type": "starting",
+        "unlockedAtRank": 2,
+        "description": [
+            "Switching {sk}STANCE{/s} increases the power of the new {sk}STANCE{/s} for {sk}7{/s} seconds:",
+            "{so}YIN:{/s} {si}+4%{/s} {sk}LIFE ON HIT{/s}",
+            "<span class=\"degradation\">YANG:{/s} deals {si}+20%{/s} damage"
+        ],
+        "improvements": [
+            [
+                "+4%",
+                "+20%"
+            ],
+            [
+                "+5%",
+                "+25%"
+            ],
+            [
+                "+6%",
+                "+30%"
+            ],
+            [
+                "+7%",
+                "+35%"
+            ]
+        ]
+    },
+    {
+        "code": "way_of_awakening",
+        "name": "Way of Awakening",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/sun_wukong/Skill_Trait_Awakened.png",
+        "type": "starting",
+        "unlockedAtRank": 5,
+        "description": [
+            "After {sk}8{/s} successful {sk}DEFENSE{/s} actions, the next {sk}TRAIT{/s} activates {sk}AWAKENED STANCE{/s} for {si}12{/s} seconds",
+            "{sk}AWAKENED STANCE{/s} grants both {so}YIN{/s} and <span class=\"degradation\">YANG{/s} effects, without taking any additional damage"
+        ],
+        "improvements": [
+            [
+                "12"
+            ],
+            [
+                "15"
+            ],
+            [
+                "18"
+            ],
+            [
+                "21"
+            ]
+        ]
+    },
+    {
         "code": "mantra_of_balance",
         "name": "Mantra of Balance",
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/sun_wukong/Skill_Special_Debuff.png",
@@ -443,6 +548,104 @@ export const wukong = [
             ],
             [
                 "35%"
+            ]
+        ]
+    },
+    {
+        "code": "army_of_monkeys",
+        "name": "Army of Monkeys",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/sun_wukong/Skill_Ultimate_1_More_Monkeys.png",
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "{sk}ULTIMATE{/s} summons {si}3{/s} additional clones"
+        ],
+        "improvements": [
+            [
+                "3"
+            ],
+            [
+                "4"
+            ],
+            [
+                "5"
+            ],
+            [
+                "6"
+            ]
+        ]
+    },
+    {
+        "code": "perfect_copy",
+        "name": "Perfect Copy",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/sun_wukong/Skill_Ultimate_2_Perfect_Copy.png",
+        "type": "final",
+        "unlockedAtRank": 6,
+        "description": [
+            "During the {sk}ULTIMATE{/s} transformation, Sun Wukong can use a random {sk}ULTIMATE{/s} ability of the Hero copied",
+            "Transfiguration lasts {si}4{/s} more seconds"
+        ],
+        "improvements": [
+            [
+                "4"
+            ],
+            [
+                "5"
+            ],
+            [
+                "6"
+            ],
+            [
+                "7"
+            ]
+        ]
+    },
+    {
+        "code": "mantra_of_replication",
+        "name": "Mantra of Replication",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/sun_wukong/Skill_Ultimate_1_Special_Monkey.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Whenever {sk}SPECIAL{/s} is casted, summon {sk}3{/s} Monkey Clone that fight for {si}8{/s} seconds "
+        ],
+        "improvements": [
+            [
+                "8"
+            ],
+            [
+                "10"
+            ],
+            [
+                "12"
+            ],
+            [
+                "14"
+            ]
+        ]
+    },
+    {
+        "code": "divine_beverage",
+        "name": "Divine Beverage",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/sun_wukong/Skill_Ultimate_2_Omnipotence.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "{sk}ULTIMATE{/s} transformation grants all heroes around {sk}OMNIPOTENCE{/s} for {si}8{/s} seconds",
+            "During {sk}OMNIPOTENCE{/s}, Heroes' {sk}POWER{/s}, {sk}SPECIAL{/s} and {sk}DEFENSE{/s} have a {sk}0.5{/s} second cooldown"
+        ],
+        "improvements": [
+            [
+                "8"
+            ],
+            [
+                "10"
+            ],
+            [
+                "12"
+            ],
+            [
+                "14"
             ]
         ]
     }

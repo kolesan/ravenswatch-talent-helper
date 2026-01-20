@@ -1,5 +1,106 @@
 export const carmilla = [
     {
+        "code": "life_essence",
+        "name": "Life Essence",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/carmilla/Skill_Special_Quest.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "{sk}Quest (x30):{/s} Killing an enemy with {sk}SPECIAL{/s}'s bite earns {sk}VITALITY +1{/s}",
+            "{sk}Complete:{/s} Repeating this action restores {si}20{/s} health to Carmilla"
+        ],
+        "improvements": [
+            [
+                "20"
+            ],
+            [
+                "25"
+            ],
+            [
+                "30"
+            ],
+            [
+                "35"
+            ]
+        ]
+    },
+    {
+        "code": "bat_master",
+        "name": "Bat Master",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/carmilla/Skill_Defense_Master.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "When not in combat, {sk}DEFENSE{/s} grants {sk}STEALTH{/s} and can be held without consuming <span class=\"degradation\">BLOOD{/s}",
+            "{sk}DEFENSE{/s} deals {si}+40%{/s} damage",
+            "{sk}STEALTH{/s} make Carmilla undetectable by enemies "
+        ],
+        "improvements": [
+            [
+                "+40%"
+            ],
+            [
+                "+50%"
+            ],
+            [
+                "+60%"
+            ],
+            [
+                "+70%"
+            ]
+        ]
+    },
+    {
+        "code": "blood_rage",
+        "name": "Blood Rage",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/carmilla/Skill_Power_Quest.png",
+        "type": "starting",
+        "unlockedAtRank": 2,
+        "description": [
+            "{sk}Quest(x20):{/s} Hitting an enemy with the {sk}POWER{/s} held for at least {sk}1{/s} second to gain {sk}+0.5 DMG{/s}",
+            "{sk}Complete:{/s} Repeating this action increases {sk}POWER{/s} explosion damage by {si}+80%{/s}"
+        ],
+        "improvements": [
+            [
+                "+80%"
+            ],
+            [
+                "+100%"
+            ],
+            [
+                "+120%"
+            ],
+            [
+                "+140%"
+            ]
+        ]
+    },
+    {
+        "code": "life_tap",
+        "name": "Life Tap",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/carmilla/Skill_Trait_Life_Tap.png",
+        "type": "starting",
+        "unlockedAtRank": 5,
+        "description": [
+            "In {sk}Winged Form{/s}, activating {sk}TRAIT{/s} again consumes health equivalent to {sk}20%{/s} of max health to recover up to {si}30{/s} <span class=\"degradation\">BLOOD points{/s}",
+            "This ability cannot be used when below health cost and has a {sk}5{/s}-second cooldown"
+        ],
+        "improvements": [
+            [
+                "30"
+            ],
+            [
+                "40"
+            ],
+            [
+                "50"
+            ],
+            [
+                "60"
+            ]
+        ]
+    },
+    {
         "code": "razor_claws",
         "name": "Razor Claws",
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/carmilla/Skill_Attack_Bleed.png",
@@ -436,6 +537,102 @@ export const carmilla = [
             ],
             [
                 "140%"
+            ]
+        ]
+    },
+    {
+        "code": "torture_of_the_pale",
+        "name": "Torture of the Pale",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/carmilla/Skill_Ultimate_1_Return.png",
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "At the end of their course, {sk}ULTIMATE{/s} blood spikes return toward Carmilla, dealing {si}40%{/s} damage "
+        ],
+        "improvements": [
+            [
+                "40%"
+            ],
+            [
+                "50%"
+            ],
+            [
+                "60%"
+            ],
+            [
+                "70%"
+            ]
+        ]
+    },
+    {
+        "code": "mistress_of_pain",
+        "name": "Mistress of Pain",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/carmilla/Skill_Ultimate_2_Increase_Max_attack.png",
+        "type": "final",
+        "unlockedAtRank": 6,
+        "description": [
+            "Increase maximum number of {sk}ATTACKS{/s} transformed by {sk}ULTIMATE{/s} by {si}6{/s} "
+        ],
+        "improvements": [
+            [
+                "6"
+            ],
+            [
+                "8"
+            ],
+            [
+                "10"
+            ],
+            [
+                "12"
+            ]
+        ]
+    },
+    {
+        "code": "heartbreak",
+        "name": "Heartbreak",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/carmilla/Skill_Ultimate_1_Combo_Pike.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Add a fourth move to {sk}ATTACK{/s} combo, impaling enemies in front, dealing {si}40%{/s} {sk}ULTIMATE{/s} damage "
+        ],
+        "improvements": [
+            [
+                "40%"
+            ],
+            [
+                "50%"
+            ],
+            [
+                "60%"
+            ],
+            [
+                "70%"
+            ]
+        ]
+    },
+    {
+        "code": "mass_punishment",
+        "name": "Mass Punishment",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/carmilla/Skill_Ultimate_2_Add_Zone_Attack.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Add a fourth {sk}ATTACK{/s} to {sk}ULTIMATE{/s} combo, dealing {si}240%{/s} area damage "
+        ],
+        "improvements": [
+            [
+                "240%"
+            ],
+            [
+                "300%"
+            ],
+            [
+                "360%"
+            ],
+            [
+                "420%"
             ]
         ]
     }

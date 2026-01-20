@@ -1,5 +1,104 @@
 export const piper = [
     {
+        "code": "horde",
+        "name": "Horde",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/the_pied_piper/Skill_Trait_More_Controllable_Pets.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "Rats spawn in groups of {sk}3{/s} (instead of 2)",
+            "Increase maximum controllable rats by {si}6{/s}"
+        ],
+        "improvements": [
+            [
+                "6"
+            ],
+            [
+                "8"
+            ],
+            [
+                "10"
+            ],
+            [
+                "12"
+            ]
+        ]
+    },
+    {
+        "code": "sound_barrier",
+        "name": "Sound Barrier",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/the_pied_piper/Skill_Defense_Armor_Quest.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "{sk}Quest (x20):{/s} Gain {sk}+1 ARMOR{/s} whenever {sk}DEFENSE{/s} hits at least {sk}2{/s} enemies",
+            "{sk}Complete{/s}: Doing so again grants {si}12{/s} {sk}SHIELD{/s} to all nearby Heroes for {sk}6{/s} seconds"
+        ],
+        "improvements": [
+            [
+                "12"
+            ],
+            [
+                "15"
+            ],
+            [
+                "18"
+            ],
+            [
+                "21"
+            ]
+        ]
+    },
+    {
+        "code": "freezing_trap",
+        "name": "Freezing Trap",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/the_pied_piper/Skill_Special_Static_Zone.png",
+        "type": "starting",
+        "unlockedAtRank": 2,
+        "description": [
+            "Enemies within {sk}SPECIAL{/s}'s area of effect are {sk}CHILLED{/s} and take {si}+10%{/s} damage"
+        ],
+        "improvements": [
+            [
+                "+10%"
+            ],
+            [
+                "+15%"
+            ],
+            [
+                "+20%"
+            ],
+            [
+                "+25%"
+            ]
+        ]
+    },
+    {
+        "code": "virtuoso",
+        "name": "Virtuoso",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/the_pied_piper/Skill_Attack_Move_Speed.png",
+        "type": "starting",
+        "unlockedAtRank": 5,
+        "description": [
+            "Move Speed when using {sk}ATTACK{/s} or {sk}POWER{/s} is increased by {sk}30%{/s}",
+            "Gain {si}+10%{/s} {sk}ATTACK{/s} Speed"
+        ],
+        "improvements": [
+            [
+                "+10%"
+            ],
+            [
+                "+15%"
+            ],
+            [
+                "+20%"
+            ],
+            [
+                "+25%"
+            ]
+        ]
+    },
+    {
         "code": "grand_finale",
         "name": "Grand Finale",
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/the_pied_piper/Skill_Special_Explosive_Zone.png",
@@ -420,6 +519,102 @@ export const piper = [
             ],
             [
                 "7"
+            ]
+        ]
+    },
+    {
+        "code": "jig",
+        "name": "Jig",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/the_pied_piper/Skill_Ultimate_1_Dash.png",
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "{sk}DASH{/s} sends {si}4{/s} {sk}ULTIMATE{/s} notes to nearby enemies"
+        ],
+        "improvements": [
+            [
+                "4"
+            ],
+            [
+                "5"
+            ],
+            [
+                "6"
+            ],
+            [
+                "7"
+            ]
+        ]
+    },
+    {
+        "code": "vermin_massacre",
+        "name": "Vermin Massacre",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/the_pied_piper/Skill_Ultimate_2_Explosion.png",
+        "type": "final",
+        "unlockedAtRank": 6,
+        "description": [
+            "When {sk}ULTIMATE{/s} is channeled to completion, the swarm of rats explodes, dealing {si}200{/s} area damage"
+        ],
+        "improvements": [
+            [
+                "200"
+            ],
+            [
+                "250"
+            ],
+            [
+                "300"
+            ],
+            [
+                "350"
+            ]
+        ]
+    },
+    {
+        "code": "rain_of_notes",
+        "name": "Rain of Notes",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/the_pied_piper/Skill_Ultimate_1_Notes_Rain.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "During {sk}ULTIMATE{/s}, {si}12{/s} notes per second fall from the sky in the surroundings, each dealing {sk}10{/s} area damage"
+        ],
+        "improvements": [
+            [
+                "12"
+            ],
+            [
+                "15"
+            ],
+            [
+                "18"
+            ],
+            [
+                "21"
+            ]
+        ]
+    },
+    {
+        "code": "rat_king",
+        "name": "Rat King",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/the_pied_piper/Skill_Ultimate_2_Rat_King.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Each rat summoned has a {si}10%{/s} chance to be a Rat King, capable of attacking twice as much and dealing {sk}+100%{/s} damage "
+        ],
+        "improvements": [
+            [
+                "10%"
+            ],
+            [
+                "15%"
+            ],
+            [
+                "20%"
+            ],
+            [
+                "25%"
             ]
         ]
     }

@@ -1,5 +1,103 @@
 export const melusine = [
     {
+        "code": "spring_water",
+        "name": "Spring Water",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/melusine/Skill_Special_Heal.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "Each wave from {sk}SPECIAL{/s} that hits an enemy restores {si}2.0{/s} Health to all Heroes within the area of effect"
+        ],
+        "improvements": [
+            [
+                "2.0"
+            ],
+            [
+                "2.5"
+            ],
+            [
+                "3.0"
+            ],
+            [
+                "3.5"
+            ]
+        ]
+    },
+    {
+        "code": "deep_beat",
+        "name": "Deep Beat",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/melusine/Skill_Attack_Beat.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "For every {sk}4 ATTACKS{/s} that hit an enemy, generate a blast all around that deals {si}100%{/s} of {sk}ATTACK{/s}'s damage",
+            "Counter resets when exiting {sk}SING STANCE{/s}"
+        ],
+        "improvements": [
+            [
+                "100%"
+            ],
+            [
+                "120%"
+            ],
+            [
+                "140%"
+            ],
+            [
+                "160%"
+            ]
+        ]
+    },
+    {
+        "code": "underwater_predation",
+        "name": "Underwater Predation",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/melusine/Skill_Defense_Hold.png",
+        "type": "starting",
+        "unlockedAtRank": 2,
+        "description": [
+            "Hold {sk}DEFENSE{/s} to move quickly underwater. All enemies passed become {sk}VULNERABLE{/s} for {si}4{/s} seconds"
+        ],
+        "improvements": [
+            [
+                "4"
+            ],
+            [
+                "5"
+            ],
+            [
+                "6"
+            ],
+            [
+                "7"
+            ]
+        ]
+    },
+    {
+        "code": "sea_dance",
+        "name": "Sea Dance",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/melusine/Skill_Trait_Teleport.png",
+        "type": "starting",
+        "unlockedAtRank": 5,
+        "description": [
+            "In {sk}SING STANCE{/s}, the {sk}CONTEXTUAL ACTION{/s} allows for quick teleportation to the {sk}WISP{/s} ({sk}5{/s} seconds cooldown)",
+            "Performing this action in combat restores {si}8{/s} health to all nearby Heroes"
+        ],
+        "improvements": [
+            [
+                "8"
+            ],
+            [
+                "10"
+            ],
+            [
+                "12"
+            ],
+            [
+                "14"
+            ]
+        ]
+    },
+    {
         "code": "power_dive",
         "name": "Power Dive",
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/melusine/Skill_Defense_Power.png",
@@ -439,6 +537,102 @@ export const melusine = [
             ],
             [
                 "7"
+            ]
+        ]
+    },
+    {
+        "code": "vortex_bomb",
+        "name": "Vortex Bomb",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/melusine/Skill_Ultimate_1_Vortex.png",
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "{sk}ULTIMATE{/s}'s water sphere attracts nearby enemies and deals {si}40{/s} damage per second to enemies hit"
+        ],
+        "improvements": [
+            [
+                "40"
+            ],
+            [
+                "50"
+            ],
+            [
+                "60"
+            ],
+            [
+                "70"
+            ]
+        ]
+    },
+    {
+        "code": "crescendo",
+        "name": "Crescendo",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/melusine/Skill_Ultimate_2_Spawn_More.png",
+        "type": "final",
+        "unlockedAtRank": 6,
+        "description": [
+            "While {sk}ULTIMATE{/s} is channeled, Melusine gradually summons up to {si}3{/s} additional {sk}WISPS{/s}"
+        ],
+        "improvements": [
+            [
+                "3"
+            ],
+            [
+                "4"
+            ],
+            [
+                "5"
+            ],
+            [
+                "6"
+            ]
+        ]
+    },
+    {
+        "code": "healing_blast",
+        "name": "Healing Blast",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/melusine/Skill_Ultimate_1_Heal.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "{sk}ULTIMATE{/s} explosion restores {si}60{/s} health to all Heroes around and grants them {sk}REGENERATION{/s} {sk}+5{/s}"
+        ],
+        "improvements": [
+            [
+                "60"
+            ],
+            [
+                "75"
+            ],
+            [
+                "90"
+            ],
+            [
+                "105"
+            ]
+        ]
+    },
+    {
+        "code": "overtone_singing",
+        "name": "Overtone Singing",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/melusine/Skill_Ultimate_2_Sing_Stance_Wisp.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "When entering {sk}SING STANCE{/s}, Melusine casts an additional {sk}ULTIMATE{/s} autonomous {sk}WISP{/s} that deals {si}40%{/s} damage "
+        ],
+        "improvements": [
+            [
+                "40%"
+            ],
+            [
+                "50%"
+            ],
+            [
+                "60%"
+            ],
+            [
+                "70%"
             ]
         ]
     }

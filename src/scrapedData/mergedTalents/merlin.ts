@@ -1,5 +1,105 @@
 export const merlin = [
     {
+        "code": "runic_might",
+        "name": "Runic Might",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/merlin/Skill_Passive_Quest_Crit_Chance.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "{sk}Quest (x20):{/s} In combat, casting a Spell that consumes {sk}3{/s} runes of {so}POTENCY{/s} earns {sk}+0.5{/s} {sk}DMG{/s}",
+            "{sk}Complete:{/s} Repeating this action makes the Spell cast gain {si}20%{/s} {sk}Crit Chance{/s}"
+        ],
+        "improvements": [
+            [
+                "20%"
+            ],
+            [
+                "25%"
+            ],
+            [
+                "30%"
+            ],
+            [
+                "35%"
+            ]
+        ]
+    },
+    {
+        "code": "astrology",
+        "name": "Astrology",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/merlin/Skill_Passive_Gain_Reroll_High_Talent.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "Gain {sk}+3 Star(s) of Fate{/s}",
+            "Future Talents have a {si}+15%{/s} chance of being Rare or above"
+        ],
+        "improvements": [
+            [
+                "+15%"
+            ],
+            [
+                "+25%"
+            ],
+            [
+                "+35%"
+            ],
+            [
+                "+45%"
+            ]
+        ]
+    },
+    {
+        "code": "eternal_dream",
+        "name": "Eternal Dream",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/merlin/Skill_Passive_Repeatable_Quest_Gain_DS.png",
+        "type": "starting",
+        "unlockedAtRank": 2,
+        "description": [
+            "Each time Merlin casts his nine different Spells, he gains {si}30{/s} {sk}Dream Shards{/s}",
+            "Does not work within a Safe Zone or during Chapter Boss fights"
+        ],
+        "improvements": [
+            [
+                "30"
+            ],
+            [
+                "40"
+            ],
+            [
+                "50"
+            ],
+            [
+                "60"
+            ]
+        ]
+    },
+    {
+        "code": "trinity",
+        "name": "Trinity",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/merlin/Skill_Trait_Quest_Gain_Charge.png",
+        "type": "starting",
+        "unlockedAtRank": 5,
+        "description": [
+            "{sk}Quest (x3):{/s} Collect Excalibur, the Holy Grail or Father Time's Hourglass to gain {sk}+1{/s} {sk}Star(s) of Fate{/s}",
+            "{sk}Complete:{/s} Gain {sk}+1 TRAIT charge{/s} and all critical damage will increase by {si}40%{/s}"
+        ],
+        "improvements": [
+            [
+                "40%"
+            ],
+            [
+                "50%"
+            ],
+            [
+                "60%"
+            ],
+            [
+                "70%"
+            ]
+        ]
+    },
+    {
         "code": "wild_magic",
         "name": "Wild Magic",
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/merlin/Skill_Attack_Bleed_After_Power.png",
@@ -432,6 +532,102 @@ export const merlin = [
             ],
             [
                 "7"
+            ]
+        ]
+    },
+    {
+        "code": "energy_stone",
+        "name": "Energy Stone",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/merlin/Skill_Ultimate_1_AOE.png",
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "For every {sk}10%{/s} health lost, Standing Stone emits a blast of energy toward a nearby enemy, dealing {si}30{/s} damage"
+        ],
+        "improvements": [
+            [
+                "30"
+            ],
+            [
+                "37"
+            ],
+            [
+                "45"
+            ],
+            [
+                "52"
+            ]
+        ]
+    },
+    {
+        "code": "dark_swiftness",
+        "name": "Dark Swiftness",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/merlin/Skill_Ultimate_2_Dash.png",
+        "type": "final",
+        "unlockedAtRank": 6,
+        "description": [
+            "{sk}DASH{/s} can be held for up to {sk}0.5{/s} second(s) to deal {si}60{/s} damage to enemies passed through"
+        ],
+        "improvements": [
+            [
+                "60"
+            ],
+            [
+                "75"
+            ],
+            [
+                "90"
+            ],
+            [
+                "105"
+            ]
+        ]
+    },
+    {
+        "code": "corrupted_arts",
+        "name": "Corrupted Arts",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/merlin/Skill_Ultimate_2_Dmg_Cursed_MO.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Forbidden Spells ({sk}ULTIMATE{/s}) deal {si}+12%{/s} damage per {sk}Cursed Magical Object{/s} owned"
+        ],
+        "improvements": [
+            [
+                "+12%"
+            ],
+            [
+                "+15%"
+            ],
+            [
+                "+18%"
+            ],
+            [
+                "+21%"
+            ]
+        ]
+    },
+    {
+        "code": "megalithic_site",
+        "name": "Megalithic Site",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/merlin/Skill_Ultimate_1_Multi_Stone.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Merlin extracts {sk}3{/s} standing stones from the ground around him, with each one dealing {si}80 %{/s} damage when destroyed"
+        ],
+        "improvements": [
+            [
+                "80 %"
+            ],
+            [
+                "100 %"
+            ],
+            [
+                "120 %"
+            ],
+            [
+                "140 %"
             ]
         ]
     }

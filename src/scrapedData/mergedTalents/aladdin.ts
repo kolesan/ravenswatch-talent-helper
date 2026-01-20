@@ -1,5 +1,105 @@
 export const aladdin = [
     {
+        "code": "jinniya's_gift",
+        "name": "Jinniya's Gift",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/aladdin/Skill_Trait_Extra_Wish.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "Gain {sk}+1 TRAIT charge{/s}",
+            "Future Talents have a {si}+15%{/s} chance of being Rare or above"
+        ],
+        "improvements": [
+            [
+                "+15%"
+            ],
+            [
+                "+25%"
+            ],
+            [
+                "+35%"
+            ],
+            [
+                "+45%"
+            ]
+        ]
+    },
+    {
+        "code": "aerial_catch",
+        "name": "Aerial Catch",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/aladdin/Skill_Trait_Special_Quest.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "{sk}Quest (x15):{/s} After they hit an enemy, retrieving {sk}SPECIAL{/s}'s blades during {sk}DEFENSE{/s} grants {sk}+1 ARMOR{/s}",
+            "{sk}Complete{/s}: Doing it again grants {si}12{/s} {sk}SHIELD{/s} to all nearby Heroes for {sk}6{/s} seconds"
+        ],
+        "improvements": [
+            [
+                "12"
+            ],
+            [
+                "15"
+            ],
+            [
+                "18"
+            ],
+            [
+                "21"
+            ]
+        ]
+    },
+    {
+        "code": "jinn's_might",
+        "name": "Jinn's Might",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/aladdin/Skill_Power_Quest.png",
+        "type": "starting",
+        "unlockedAtRank": 2,
+        "description": [
+            "{sk}Quest (x20):{/s} Hitting an enemy with {sk}POWER{/s} at maximum charge grants {sk}+0.5 DMG{/s}",
+            "{sk}Complete:{/s} Increases {sk}POWER{/s}'s bonus damage from charge by {si}40%{/s}"
+        ],
+        "improvements": [
+            [
+                "40%"
+            ],
+            [
+                "50%"
+            ],
+            [
+                "60%"
+            ],
+            [
+                "70%"
+            ]
+        ]
+    },
+    {
+        "code": "wish_of_omnipotence",
+        "name": "Wish of Omnipotence",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/aladdin/Skill_Trait_Fourth_Wish.png",
+        "type": "starting",
+        "unlockedAtRank": 5,
+        "description": [
+            "Casting wishes grant {sk}OMNIPOTENCE{/s} to all nearby Heroes for {si}8{/s} seconds",
+            "During {sk}OMNIPOTENCE{/s}, Heroes {sk}POWER{/s}, {sk}SPECIAL{/s} and {sk}DEFENSE{/s} have a {sk}0.5{/s} second(s) cooldown"
+        ],
+        "improvements": [
+            [
+                "8"
+            ],
+            [
+                "10"
+            ],
+            [
+                "12"
+            ],
+            [
+                "14"
+            ]
+        ]
+    },
+    {
         "code": "jinn's_fury",
         "name": "Jinn's Fury",
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/aladdin/Skill_Power_Multi_Hit.png",
@@ -440,6 +540,115 @@ export const aladdin = [
                 "70%",
                 "35%",
                 "16%"
+            ]
+        ]
+    },
+    {
+        "code": "wondrous_wishes",
+        "name": "Wondrous Wishes",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/aladdin/Skill_Ultimate_1_Better_Wish.png",
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "All wishes are improved:",
+            "{sk}POWER{/s}: deals {si}+50%{/s} damage",
+            "{sk}SPECIAL{/s}: {si}40%{/s} chance to generate {sk}2{/s} consumables",
+            "{sk}DEFENSE{/s}: {si}+100%{/s} {sk}SHIELD{/s} gained"
+        ],
+        "improvements": [
+            [
+                "+50%",
+                "40%",
+                "+100%"
+            ],
+            [
+                "+75%",
+                "60%",
+                "+125%"
+            ],
+            [
+                "+100%",
+                "80%",
+                "+150%"
+            ],
+            [
+                "+125%",
+                "100%",
+                "+175%"
+            ]
+        ]
+    },
+    {
+        "code": "dream_stride",
+        "name": "Dream Stride",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/aladdin/Skill_Ultimate_2_Carpet_DS.png",
+        "type": "final",
+        "unlockedAtRank": 6,
+        "description": [
+            "Each time {sk}ULTIMATE{/s} hits an enemy, Aladdin gains {si}8{/s} {sk}Dream Shards{/s}",
+            "{sk}ULTIMATE{/s} has no cooldown if no enemies are hit"
+        ],
+        "improvements": [
+            [
+                "8"
+            ],
+            [
+                "10"
+            ],
+            [
+                "12"
+            ],
+            [
+                "14"
+            ]
+        ]
+    },
+    {
+        "code": "infinite_wishes",
+        "name": "Infinite Wishes",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/aladdin/Skill_Ultimate_1_More_Wish.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Gain {sk}+3 TRAIT charges{/s}",
+            "{sk}Dream Shards{/s} cost for {sk}ULTIMATE{/s} is reduced by {si}20%{/s}"
+        ],
+        "improvements": [
+            [
+                "20%"
+            ],
+            [
+                "30%"
+            ],
+            [
+                "40%"
+            ],
+            [
+                "50%"
+            ]
+        ]
+    },
+    {
+        "code": "quick_ride",
+        "name": "Quick Ride",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/aladdin/Skill_Ultimate_2_Carpet_Dash.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "{sk}DASH{/s} uses Magic Carpet to deal {si}40{/s} damage to enemies passed and can be held for up to {sk}1.0{/s} second(s)"
+        ],
+        "improvements": [
+            [
+                "40"
+            ],
+            [
+                "50"
+            ],
+            [
+                "60"
+            ],
+            [
+                "70"
             ]
         ]
     }

@@ -1,5 +1,103 @@
 export const beowulf = [
     {
+        "code": "explosive_fire",
+        "name": "Explosive Fire",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/beowulf/Skill_Crimson_Fire.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "{sk}IGNITED{/s} enemies explode when they die, dealing {si}20{/s} damage and applying {sk}IGNITE{/s} to all nearby enemies"
+        ],
+        "improvements": [
+            [
+                "20"
+            ],
+            [
+                "25"
+            ],
+            [
+                "30"
+            ],
+            [
+                "35"
+            ]
+        ]
+    },
+    {
+        "code": "shield_charge",
+        "name": "Shield Charge",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/beowulf/Skill_Defense_Dash.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "{sk}DEFENSE{/s} makes Beowulf dash forward and deal {si}+100%{/s} damage along the path"
+        ],
+        "improvements": [
+            [
+                "+100%"
+            ],
+            [
+                "+125%"
+            ],
+            [
+                "+150%"
+            ],
+            [
+                "+175%"
+            ]
+        ]
+    },
+    {
+        "code": "rampart",
+        "name": "Rampart",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/beowulf/Skill_Defense_Quest.png",
+        "type": "starting",
+        "unlockedAtRank": 2,
+        "description": [
+            "{sk}Quest (x20):{/s} Blocking at least one attack during {sk}DEFENSE{/s} grants {sk}+1 ARMOR{/s}",
+            "{sk}Complete{/s}: {sk}Wyrm DEFENSE{/s} heals {si}50%{/s} more in a larger radius"
+        ],
+        "improvements": [
+            [
+                "50%"
+            ],
+            [
+                "60%"
+            ],
+            [
+                "70%"
+            ],
+            [
+                "80%"
+            ]
+        ]
+    },
+    {
+        "code": "draconic_binds",
+        "name": "Draconic Binds",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/beowulf/Skill_Trait_Quest.png",
+        "type": "starting",
+        "unlockedAtRank": 5,
+        "description": [
+            "{sk}Quest (x20):{/s} Hitting {sk}2{/s} enemies with a single {sk}Wyrm ability{/s} grants {sk}+0.5 DMG{/s}",
+            "{sk}Complete{/s}: {sk}TRAIT{/s} cooldown {sk}-25%{/s}, {sk}Wyrm abilities{/s} deal {si}+10%{/s} damage"
+        ],
+        "improvements": [
+            [
+                "+10%"
+            ],
+            [
+                "+15%"
+            ],
+            [
+                "+20%"
+            ],
+            [
+                "+25%"
+            ]
+        ]
+    },
+    {
         "code": "eruption",
         "name": "Eruption",
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/beowulf/Skill_Power_End_AOE.png",
@@ -422,6 +520,102 @@ export const beowulf = [
             ],
             [
                 "28"
+            ]
+        ]
+    },
+    {
+        "code": "immolation",
+        "name": "Immolation",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/beowulf/Skill_Ultimate_1_Immolation.png",
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "During {sk}ULTIMATE{/s}, Beowulf deals {si}40{/s} damage per second to nearby enemies, and all abilities function as if they were {sk}Wyrm Empowered{/s}"
+        ],
+        "improvements": [
+            [
+                "40"
+            ],
+            [
+                "50"
+            ],
+            [
+                "60"
+            ],
+            [
+                "70"
+            ]
+        ]
+    },
+    {
+        "code": "volcanic_rage",
+        "name": "Volcanic Rage",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/beowulf/Skill_Ultimate_2_Volcanic.png",
+        "type": "final",
+        "unlockedAtRank": 6,
+        "description": [
+            "Each {sk}ULTIMATE{/s} fireball throws {si}4{/s} fiery rocks into the surrounding area, dealing {sk}50%{/s} damage each"
+        ],
+        "improvements": [
+            [
+                "4"
+            ],
+            [
+                "5"
+            ],
+            [
+                "6"
+            ],
+            [
+                "7"
+            ]
+        ]
+    },
+    {
+        "code": "sudden_growth",
+        "name": "Sudden Growth",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/beowulf/Skill_Ultimate_1_Big_Wyrm.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "During {sk}ULTIMATE{/s}, the Wyrm grows and breathes fire in a wider zone, dealing {si}+20%{/s} damage "
+        ],
+        "improvements": [
+            [
+                "+20%"
+            ],
+            [
+                "+25%"
+            ],
+            [
+                "+30%"
+            ],
+            [
+                "+35%"
+            ]
+        ]
+    },
+    {
+        "code": "fireball",
+        "name": "Fireball",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/beowulf/Skill_Ultimate_2_Fireball_Dash.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "In Combat, {sk}DASH{/s} makes the Wyrm throw a Fireball towards a close enemy, dealing {si}40{/s} area damage "
+        ],
+        "improvements": [
+            [
+                "40"
+            ],
+            [
+                "50"
+            ],
+            [
+                "60"
+            ],
+            [
+                "70"
             ]
         ]
     }

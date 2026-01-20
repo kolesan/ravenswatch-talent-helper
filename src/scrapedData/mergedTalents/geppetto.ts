@@ -1,5 +1,108 @@
 export const geppetto = [
     {
+        "code": "dummyball",
+        "name": "Dummyball",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/geppetto/Skill_Special_Creates_Dummy.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "{sk}SPECIAL{/s} creates a {sk}DUMMY{/s} when it explodes and deals {si}155%{/s} damage",
+            "Has no effect if max number of {sk}DUMMIES{/s} are already active"
+        ],
+        "improvements": [
+            [
+                "155%"
+            ],
+            [
+                "170%"
+            ],
+            [
+                "185%"
+            ],
+            [
+                "200%"
+            ]
+        ]
+    },
+    {
+        "code": "rocket_science",
+        "name": "Rocket Science",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/geppetto/Skill_Dash_Deals_Damage.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "{sk}DASH{/s} can be held for up to {sk}1{/s} second(s), dealing {si}32{/s} damage along its path and applying {sk}IGNITE{/s} to all enemies hit.",
+            "Crossed {sk}DUMMIES{/s} catch fire and their attacks deal {si}+20%{/s} damage for {sk}5{/s} seconds"
+        ],
+        "improvements": [
+            [
+                "32",
+                "+20%"
+            ],
+            [
+                "40",
+                "+25%"
+            ],
+            [
+                "48",
+                "+30%"
+            ],
+            [
+                "56",
+                "+35%"
+            ]
+        ]
+    },
+    {
+        "code": "twin_dummies",
+        "name": "Twin Dummies",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/geppetto/Skill_Trait_Twins.png",
+        "type": "starting",
+        "unlockedAtRank": 2,
+        "description": [
+            "{sk}TRAIT{/s} has a {si}55%{/s} chance to build two {sk}DUMMIES{/s} at once"
+        ],
+        "improvements": [
+            [
+                "55%"
+            ],
+            [
+                "70%"
+            ],
+            [
+                "85%"
+            ],
+            [
+                "100%"
+            ]
+        ]
+    },
+    {
+        "code": "unstable_cores",
+        "name": "Unstable Cores",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/geppetto/Skill_Power_Unstable.png",
+        "type": "starting",
+        "unlockedAtRank": 5,
+        "description": [
+            "{sk}5{/s} seconds after their creation, {sk}DUMMIES{/s} become unstable",
+            "If an unstable {sk}DUMMY{/s} is hit with {sk}POWER{/s} - or if it is destroyed or dismantled - this will cause it to explode, dealing {si}80{/s} area damage"
+        ],
+        "improvements": [
+            [
+                "80"
+            ],
+            [
+                "90"
+            ],
+            [
+                "100"
+            ],
+            [
+                "110"
+            ]
+        ]
+    },
+    {
         "code": "nailing_strike",
         "name": "Nailing Strike",
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/geppetto/Skill_Attack_Finisher.png",
@@ -432,6 +535,106 @@ export const geppetto = [
             ],
             [
                 "63"
+            ]
+        ]
+    },
+    {
+        "code": "bomb_reserve",
+        "name": "Bomb Reserve",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/geppetto/Skill_Ultimate_1_Bomber.png",
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "When in combat, the Meca-Puppet sends a bomb around itself every {sk}1{/s} second(s), dealing {si}40{/s} area damage"
+        ],
+        "improvements": [
+            [
+                "40"
+            ],
+            [
+                "50"
+            ],
+            [
+                "60"
+            ],
+            [
+                "70"
+            ]
+        ]
+    },
+    {
+        "code": "high_voltage",
+        "name": "High Voltage",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/geppetto/Skill_Ultimate_2_Overclock_Hit.png",
+        "type": "final",
+        "unlockedAtRank": 6,
+        "description": [
+            "After a {sk}DUMMY{/s} is displaced by {sk}POWER{/s}, it activates the Overclock effect of the {sk}ULTIMATE{/s} for {si}1{/s} second(s)"
+        ],
+        "improvements": [
+            [
+                "1"
+            ],
+            [
+                "1.5"
+            ],
+            [
+                "2"
+            ],
+            [
+                "2.5"
+            ]
+        ]
+    },
+    {
+        "code": "master_puppet",
+        "name": "Master Puppet",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/geppetto/Skill_Ultimate_1_Big_Meca_Puppet.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "When the Meca-Puppet is built, it consumes any {sk}DUMMY{/s} built around to gain {si}20%{/s} max. health and deal {si}10%{/s} more damage per {sk}DUMMY{/s} consumed"
+        ],
+        "improvements": [
+            [
+                "20%",
+                "10%"
+            ],
+            [
+                "25%",
+                "12%"
+            ],
+            [
+                "30%",
+                "14%"
+            ],
+            [
+                "35%",
+                "16%"
+            ]
+        ]
+    },
+    {
+        "code": "hyperclock",
+        "name": "Hyperclock",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/geppetto/Skill_Ultimate_2_Overclock_Ignite.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "{sk}DUMMIES{/s} under the Overclock effect overheat, applying {sk}IGNITE{/s} to hit enemies, and lastly explode to deal {si}80{/s} area damage"
+        ],
+        "improvements": [
+            [
+                "80"
+            ],
+            [
+                "100"
+            ],
+            [
+                "120"
+            ],
+            [
+                "140"
             ]
         ]
     }

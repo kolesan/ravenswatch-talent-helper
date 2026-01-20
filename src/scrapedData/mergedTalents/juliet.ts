@@ -1,5 +1,113 @@
 export const juliet = [
     {
+        "code": "kiss_the_groom",
+        "name": "Kiss The Groom",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/juliet/Skill_Special_Quest_Dream_Shard.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "{sk}Quest (x20):{/s} Hitting at least one enemy with {sk}SPECIAL{/s} grants {sk}+0.5{/s} {sk}Crit Chance{/s}",
+            "{sk}Complete:{/s} Any enemy hit by {sk}SPECIAL{/s} has a {si}40%{/s} chance to grant Juliet {sk}2{/s} {sk}Dream Shard(s){/s}"
+        ],
+        "improvements": [
+            [
+                "40%"
+            ],
+            [
+                "50%"
+            ],
+            [
+                "60%"
+            ],
+            [
+                "70%"
+            ]
+        ]
+    },
+    {
+        "code": "volcanic_shots",
+        "name": "Volcanic Shots",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/juliet/Skill_Attack_Burst.png",
+        "type": "starting",
+        "unlockedAtRank": 1,
+        "description": [
+            "{sk}ATTACK{/s} triggered right after {sk}DASH{/s} shoots {si}3{/s} times in a row, consuming only one {so}AMMO{/s}"
+        ],
+        "improvements": [
+            [
+                "3"
+            ],
+            [
+                "4"
+            ],
+            [
+                "5"
+            ],
+            [
+                "6"
+            ]
+        ]
+    },
+    {
+        "code": "guns_&_roses",
+        "name": "Guns & Roses",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/juliet/Skill_Power_Quest_Explode.png",
+        "type": "starting",
+        "unlockedAtRank": 2,
+        "description": [
+            "{sk}Quest (x10):{/s} Hitting an enemy by exploding Romeo's Rose with a {sk}PERFECT SHOT{/s} grants {sk}+1.0 DMG{/s}",
+            "{sk}Complete:{/s} Rose explosions triggered with a {sk}PERFECT SHOT{/s} gain {sk}+50%{/s} range and deals {si}+20%{/s} damage"
+        ],
+        "multiplayerOnly": true,
+        "improvements": [
+            [
+                "+20%"
+            ],
+            [
+                "+25%"
+            ],
+            [
+                "+30%"
+            ],
+            [
+                "+35%"
+            ]
+        ]
+    },
+    {
+        "code": "wedding_gifts",
+        "name": "Wedding Gifts",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/juliet/Skill_Passive_Bonus_Object.png",
+        "type": "starting",
+        "unlockedAtRank": 5,
+        "description": [
+            "Whenever they obtain a {sk}Magical Object{/s}, Juliet and Romeo have a {si}20%{/s}/{si}10%{/s}/{si}5%{/s} chance to gift the other the same common, rare or epic {sk}Magical Object{/s}"
+        ],
+        "multiplayerOnly": true,
+        "improvements": [
+            [
+                "20%",
+                "10%",
+                "5%"
+            ],
+            [
+                "25%",
+                "12%",
+                "6%"
+            ],
+            [
+                "30%",
+                "15%",
+                "7%"
+            ],
+            [
+                "35%",
+                "17%",
+                "8%"
+            ]
+        ]
+    },
+    {
         "code": "longshot",
         "name": "Longshot",
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/juliet/Skill_Power_More_Range.png",
@@ -432,6 +540,111 @@ export const juliet = [
             ],
             [
                 "12%"
+            ]
+        ]
+    },
+    {
+        "code": "passion_dance",
+        "name": "Passion Dance",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/juliet/Skill_Ultimate_1_Heal.png",
+        "type": "final",
+        "unlockedAtRank": 1,
+        "description": [
+            "Restore between {si}4{/s} and {si}8{/s} Health per seconds to all Heroes nearby during {sk}ULTIMATE{/s}’s dance (depending on dance movement speed)"
+        ],
+        "improvements": [
+            [
+                "4",
+                "8"
+            ],
+            [
+                "5",
+                "10"
+            ],
+            [
+                "6",
+                "12"
+            ],
+            [
+                "7",
+                "14"
+            ]
+        ]
+    },
+    {
+        "code": "plague_flask",
+        "name": "Plague Flask",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/juliet/Skill_Ultimate_2_Marked.png",
+        "type": "final",
+        "unlockedAtRank": 6,
+        "description": [
+            "{sk}ULTIMATE{/s}’s explosion applies {sk}MARKED{/s} to hit enemies for {si}4{/s} second(s)"
+        ],
+        "improvements": [
+            [
+                "4"
+            ],
+            [
+                "5"
+            ],
+            [
+                "6"
+            ],
+            [
+                "7"
+            ]
+        ]
+    },
+    {
+        "code": "flashy_ending",
+        "name": "Flashy Ending",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/juliet/Skill_Ultimate_1_End_AOE.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Dancing gauge can be filled up according to the synchronization of Romeo and Juliet's movements during {sk}ULTIMATE{/s}",
+            "Trigger an explosion at the end of the dance dealing from {si}270{/s} to {si}540{/s} area damage (based on dancing gauge level)"
+        ],
+        "improvements": [
+            [
+                "270",
+                "540"
+            ],
+            [
+                "337",
+                "607"
+            ],
+            [
+                "405",
+                "675"
+            ],
+            [
+                "472",
+                "742"
+            ]
+        ]
+    },
+    {
+        "code": "unstable_concoction",
+        "name": "Unstable Concoction",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/juliet/Skill_Ultimate_2_Dash_AOE.png",
+        "type": "final",
+        "unlockedAtRank": 9,
+        "description": [
+            "Using {sk}DASH{/s} makes Juliet drop a flask of poison to the ground, dealing {si}30{/s} damage in a zone"
+        ],
+        "improvements": [
+            [
+                "30"
+            ],
+            [
+                "40"
+            ],
+            [
+                "50"
+            ],
+            [
+                "60"
             ]
         ]
     }
