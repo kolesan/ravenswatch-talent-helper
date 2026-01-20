@@ -3,8 +3,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { HeroCode, heroes } from "../../data/heroes";
 import { Talent } from "../extractTalents/types";
 
-// for (let i = 0; i < heroes.asArray.length; i++) {
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < heroes.asArray.length; i++) {
     const hero = heroes.asArray[i];
 
     const mergedTalents = await getMergedTalents(hero.code);
@@ -12,7 +11,7 @@ for (let i = 0; i < 3; i++) {
     console.log();
     console.log("Downloading icons for: ", hero.code);
 
-    await downloadIcons(hero.code, mergedTalents.filter(it => it.type !== "standard"));
+    await downloadIcons(hero.code, mergedTalents);
 }
 
 async function getMergedTalents(
