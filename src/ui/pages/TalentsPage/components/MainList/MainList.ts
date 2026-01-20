@@ -71,16 +71,11 @@ export function MainList({
                 `}
                 <ul class=${cls.mainList}>
                     ${talents.slice(0, maxItems).map((talent, i) => {
-                        const imageSrc = talent.locked
-                            ? `/icons/talents/locked_talent.webp`
-                            : `/icons/talents/${heroCode}/${talent.code}.webp`;
-
                         const hld = holder({
                             onHold: () => {
                                 onTalentHold?.(talent);
                             }
                         });
-
                         return html`
                             <li 
                                 class=${clsx({
