@@ -5,7 +5,7 @@ import { isLocked } from "./isLocked";
 import { isNotLocked } from "./isNotLocked";
 
 export function getDerivedTalentsState(
-    state: AppState
+    state: AppState,
 ): LocalTalentsState {
     const {
         hero,
@@ -14,6 +14,7 @@ export function getDerivedTalentsState(
     } = state;
 
     const unusedTalents = hero.talents
+        .filter(it => it.type === "standard")
         .filter(isNotIn(talents.used))
         .filter(isNotIn(talents.preferred));
 

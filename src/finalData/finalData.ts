@@ -38,12 +38,10 @@ for (let i = 0; i < heroesRaw.asArray.length; i++) {
     const heroRaw = heroesRaw.asArray[i];
 
     const mergedTalents = allRaw[heroRaw.code];
-    const onlyStandardTalents = mergedTalents
-        .filter(it => it.type === "standard");
 
     const heroFinal = {
         ...heroRaw,
-        talents: onlyStandardTalents,
+        talents: mergedTalents,
     };
 
     heroesFinalArray.push(heroFinal);

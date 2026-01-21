@@ -59,6 +59,14 @@ ul {
 
     max-width: 130px;
 }
+.wrapabale-label {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+.checkbox-label {
+    cursor: pointer;
+}
 
 *::-webkit-scrollbar {
     width: 6px;
@@ -81,7 +89,7 @@ ul {
         width: 4px;
     }
 }
-@media (max-width: 380px) {
+@media (max-width: 420px) {
     .container-label input {
         max-width: 80px;
     }

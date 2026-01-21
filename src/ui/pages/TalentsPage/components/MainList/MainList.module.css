@@ -91,6 +91,11 @@
 .listItem:hover.locked {
     border: 2px solid transparent;
 }
+.listItemDisableHover:hover {
+    border: 2px solid transparent;
+    cursor: unset;
+    user-select: unset;
+}
 
 .locked {
     opacity: 0.8;

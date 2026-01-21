@@ -23,6 +23,7 @@ interface Props {
     heroCode: HeroCode;
     talents: TalentWithLockedFlag[];
     maxItems?: number;
+    disableHover?: boolean;
     onTalentClick?: (talent: TalentWithLockedFlag) => void;
     onTalentAltClick?: (talent: TalentWithLockedFlag) => void;
     onTalentHold?: (talent: TalentWithLockedFlag) => void;
@@ -35,6 +36,7 @@ export function MainList({
     heroCode,
     talents,
     maxItems,
+    disableHover,
     onTalentClick,
     onTalentAltClick,
     onTalentHold,
@@ -80,7 +82,8 @@ export function MainList({
                             <li 
                                 class=${clsx({
                                     [cls.listItem]: true, 
-                                    [cls.locked]: talent.locked 
+                                    [cls.locked]: talent.locked,
+                                    [cls.listItemDisableHover]: disableHover,
                                 })}
                                 key=${talent.code}
                                 onClick=${(e: any) => {
