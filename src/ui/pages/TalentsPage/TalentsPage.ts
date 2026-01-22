@@ -18,6 +18,7 @@ import { useIsStickyElemStuck } from "./hooks/useIsStickyElemStuck";
 import { useSaveStateToStorage } from "./hooks/useSaveStateToStorage";
 import { useTalentsPageState } from "./hooks/useTalentsPageState";
 import { TalentWithLockedFlag } from "./types";
+import { allTalentsViewState } from "./utils/allTalentsViewState";
 import { getDerivedTalentsState } from "./utils/getDerivedTalentsState";
 import { markLocked } from "./utils/markLocked";
 
@@ -26,9 +27,6 @@ import cls from "./TalentsPage.module.css";
 type RouteParams = {
     hero: string;
 }
-
-// TODO temp solution
-let viewAllGlobal = false;
 
 export function TalentsPage() {
     const params = useParams<RouteParams>();
@@ -65,11 +63,11 @@ export function TalentsPage() {
     const [searchParams] = useSearchParams();
     const viewAllFromSearch = searchParams.has("view-all");
     useEffect(() => {
-        if (viewAllGlobal && !viewAllFromSearch) {
+        if (allTalentsViewState.enabled && !viewAllFromSearch) {
             const query = "?view-all=true";
             hst.replace(`${state.hero.code}${query}`);
-        } else if (viewAllFromSearch && !viewAllGlobal) {
-            viewAllGlobal = true;
+        } else if (viewAllFromSearch && !allTalentsViewState.enabled) {
+            allTalentsViewState.enabled = true;
         }
     }, [viewAllFromSearch]);
 
@@ -119,7 +117,7 @@ export function TalentsPage() {
                 class="container-label wrapabale-label checkbox-label"
                 onClick=${() => {
                     const newViewAll = !viewAll;
-                    viewAllGlobal = newViewAll;
+                    allTalentsViewState.enabled = newViewAll;
                     const query = newViewAll ? "?view-all=true" : "";
                     hst.push(`${state.hero.code}${query}`);
                 }}
