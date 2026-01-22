@@ -59,6 +59,8 @@
     vertical-align: middle;
 
     opacity: 0.8;
+
+    user-select: none;
 }
 
 .list {
