@@ -69,10 +69,6 @@
     height: 100%;
     width: auto;
 }
-.inputImageSmall {
-    height: 55px;
-    width: 55px;
-}
 .inputText {
     max-width: 72px;
     margin-bottom: -2px;

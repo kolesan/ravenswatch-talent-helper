@@ -8,6 +8,7 @@ import { Talent } from "../../../scripts/extractTalents/types";
 import { hst } from "../../core/hst";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
+import { AllTalentsViewToggle } from "./components/AllTalentsViewToggle/AllTalentsViewToggle";
 import { Encyclopedia } from "./components/Encyclopedia/Encyclopedia";
 import { HeroSelect } from "./components/HeroSelect/HeroSelect";
 import { MainList } from "./components/MainList/MainList";
@@ -61,11 +62,11 @@ export function TalentsPage() {
 
     // TODO Rework all of this
     const [searchParams] = useSearchParams();
-    const viewAllFromSearch = searchParams.has("view-all");
+    const viewAllFromSearch = searchParams.has(allTalentsViewState.queryParam);
     useEffect(() => {
         if (allTalentsViewState.enabled && !viewAllFromSearch) {
-            const query = "?view-all=true";
-            hst.replace(`${state.hero.code}${query}`);
+            const search = allTalentsViewState.searchParams(true);
+            hst.replace(`${state.hero.code}${search}`);
         } else if (viewAllFromSearch && !allTalentsViewState.enabled) {
             allTalentsViewState.enabled = true;
         }
@@ -76,7 +77,7 @@ export function TalentsPage() {
     }
 
     const derivedTalentsState = getDerivedTalentsState(state);
-    const viewAll = viewAllFromSearch;
+    const viewAllEnabled = viewAllFromSearch;
 
     return html`
         <div 
@@ -86,46 +87,47 @@ export function TalentsPage() {
             })}
             ref=${stickyElemRef}
         >
-            <${HeroSelect}
-                items=${heroes.asArray}
-                value=${state.hero}
-                onChange=${(hero: Hero) => {
-                    // TODO Extract view-all to const and reuse
-                    const query = viewAll ? "?view-all=true" : "";
-                    hst.push(`${hero.code}${query}`);
-                }}
-            />
-            <label class=container-label>
-                Rank
-                <input
-                    type=range
-                    min=${rankConsts.min}
-                    max=${rankConsts.max}
-                    value=${state.rank}
-                    oninput=${(e: preact.TargetedEvent<HTMLInputElement>) => {
-                        const newRank = +e.currentTarget.value;
-
-                        dispatch({
-                            type: "set_rank",
-                            rank: newRank,
-                        })
+            <div class=${cls.nonWrapableControls}>
+                <${HeroSelect}
+                    classes=${{
+                        portraitContainer: cls.heroSelectPortrait
+                    }}
+                    items=${heroes.asArray}
+                    value=${state.hero}
+                    onChange=${(hero: Hero) => {
+                        const search = allTalentsViewState.searchParams(viewAllEnabled);
+                        hst.push(`${hero.code}${search}`);
                     }}
                 />
-                <output>${state.rank}</output>
-            </label>
-            <label 
-                class="container-label wrapabale-label checkbox-label"
-                onClick=${() => {
-                    const newViewAll = !viewAll;
-                    allTalentsViewState.enabled = newViewAll;
-                    const query = newViewAll ? "?view-all=true" : "";
-                    hst.push(`${state.hero.code}${query}`);
+                <label class=container-label>
+                    Rank
+                    <input
+                        type=range
+                        min=${rankConsts.min}
+                        max=${rankConsts.max}
+                        value=${state.rank}
+                        oninput=${(e: preact.TargetedEvent<HTMLInputElement>) => {
+                            const newRank = +e.currentTarget.value;
+
+                            dispatch({
+                                type: "set_rank",
+                                rank: newRank,
+                            })
+                        }}
+                    />
+                    <output>${state.rank}</output>
+                </label>
+            </div>
+            <${AllTalentsViewToggle}
+                enabled=${viewAllEnabled}
+                onToggleEnabled=${enabled => {
+                    allTalentsViewState.enabled = enabled;
+                    const search = allTalentsViewState.searchParams(enabled);
+                    hst.push(`${state.hero.code}${search}`);
                 }}
-            >
-                All<div>${viewAll ? "☑️" : "⬛"}</div>
-            </label>
+            />
         </div>
-        ${viewAll && html`
+        ${viewAllEnabled && html`
             <${Encyclopedia} 
                 classes=${{ 
                     list: {
@@ -138,7 +140,7 @@ export function TalentsPage() {
                 talents=${state.hero.talents}
             />
         `}
-        ${!viewAll && html`
+        ${!viewAllEnabled && html`
             <div class=${cls.talentLists}>
                 <${MainList}
                     classes=${{ 

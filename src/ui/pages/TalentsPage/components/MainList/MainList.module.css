@@ -26,7 +26,7 @@
 .label {
     position: sticky;
     /* height of the toolbar + hero select container */
-    top: 146px;
+    top: 148px;
     z-index: 1;
 
     font-size: 32px;

@@ -47,7 +47,7 @@ export function MainList({
         stickyElemRef, 
         isStuck: labelStuck 
     } = useIsStickyElemStuck({
-        stuckAtPx: 146,
+        stuckAtPx: 148,
     });
 
     return html`

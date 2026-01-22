@@ -5,20 +5,27 @@
     z-index: 2;
 
     /* has to be forced for better sticky list headers performance */
-    min-height: 90px;
+    min-height: 92px;
 
     margin-bottom: 12px;
     
-    padding: 2px 8px;
+    padding: 2px 8px 4px;
 
     display: flex;
     justify-content: center;
-    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    row-gap: 4px;
 
     background-color: inherit;
 }
 .controlsStuck {
     box-shadow: 4px 10px 10px 0px rgba(0, 0, 0, 0.2);
+}
+.nonWrapableControls {
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 .talentLists {
@@ -44,5 +51,10 @@
         grid-template-columns: unset;
         grid-template-rows: auto;
         row-gap: 22px;
+    }
+    .heroSelectPortrait {
+        --side-length: 50px;
+        min-width: var(--side-length);
+        min-height: var(--side-length);
     }
 }

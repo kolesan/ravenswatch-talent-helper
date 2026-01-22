@@ -1,7 +1,9 @@
-type AllTalentsViewState = {
-    enabled: boolean;
-}
+const queryParam = "all-talents-view" as const;
 
-export const allTalentsViewState: AllTalentsViewState = {
+export const allTalentsViewState = {
     enabled: false,
+    queryParam,
+    searchParams(enabled: boolean) {
+        return enabled ? `?${queryParam}=true` : "";
+    } 
 }

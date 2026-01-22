@@ -1,0 +1,61 @@
+.talentViewToggleRoot {
+    width: 112px;
+    height: 52px;
+
+    padding: 2px 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background-color: #34302c;
+
+    border: 1px solid #56564f;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px 1px black;
+
+    font-family: ravenswatch;
+    font-size: 16px;
+    letter-spacing: 0.02rem;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .talentViewToggleRoot:hover {
+        color: #bbbfb8;
+        background-color: #48423d;
+    }
+    .enabled:hover {
+        background-color: #3a3733;
+    }
+}
+
+.enabled {
+    background-color: #2d2a26;
+    
+    box-shadow: inset 1px 1px 1px 1px black;
+
+    color: #bbbfb8;
+    --text-shadow-color: #383526;
+    text-shadow: 
+        -1px -1px 1px var(--text-shadow-color), 
+        -1px 1px 1px var(--text-shadow-color), 
+        1px -1px 1px var(--text-shadow-color), 
+        1px 1px 1px var(--text-shadow-color);
+}
+.enabled > .text {
+    margin-top: 1px;
+    margin-left: 1px;
+}
+
+
+@media (max-width: 1080px) {
+    .talentViewToggleRoot {
+        width: unset;
+        height: unset;
+    }
+}

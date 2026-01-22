@@ -12,7 +12,9 @@ import cls from "./HeroSelect.module.css";
 
 interface Props {
     className?: string;
-    compact?: boolean;
+    classes?: {
+        portraitContainer?: string;
+    };
     items: Hero[]
     value: Hero;
     onChange: (code: Hero) => void;
@@ -20,7 +22,7 @@ interface Props {
 
 export function HeroSelect({
     className,
-    compact,
+    classes,
     items,
     value,
     onChange,
@@ -46,12 +48,12 @@ export function HeroSelect({
                     class=${clsx({
                         [cls.inputImageContainer]: true,
                         [cls[`${value.code}InputImgContainer`]]: true,
+                        [classes?.portraitContainer]: !!classes?.portraitContainer,
                     })}
                 >
                     <img
                         class=${clsx({
                             [cls.inputImage]: true,
-                            [cls.inputImageSmall]: compact,
                             [cls[`${value.code}InputImg`]]: true,
                         })}
                         src=${`/icons/heroes/${value.code}.png`}
