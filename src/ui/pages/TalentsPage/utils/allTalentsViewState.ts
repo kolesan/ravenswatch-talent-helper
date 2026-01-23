@@ -1,4 +1,4 @@
-const queryParam = "all-talents-view" as const;
+const queryParam = "compendium-view" as const;
 
 export const allTalentsViewState = {
     enabled: false,

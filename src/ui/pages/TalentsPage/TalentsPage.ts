@@ -8,10 +8,11 @@ import { Talent } from "../../../scripts/extractTalents/types";
 import { hst } from "../../core/hst";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
-import { AllTalentsViewToggle } from "./components/AllTalentsViewToggle/AllTalentsViewToggle";
 import { Encyclopedia } from "./components/Encyclopedia/Encyclopedia";
 import { HeroSelect } from "./components/HeroSelect/HeroSelect";
 import { MainList } from "./components/MainList/MainList";
+import { TalentsViewSwitch } from "./components/TalentsViewSwitch/TalentsViewSwitch";
+import { TalentsView } from "./components/TalentsViewSwitch/types";
 import { maxUsedTalents } from "./consts/maxUsedTalents";
 import { rankConsts } from "./consts/rankConsts";
 import { useEmptyHeroRedirect } from "./hooks/useEmptyHeroRedirect";
@@ -118,12 +119,15 @@ export function TalentsPage() {
                     <output>${state.rank}</output>
                 </label>
             </div>
-            <${AllTalentsViewToggle}
-                enabled=${viewAllEnabled}
-                onToggleEnabled=${enabled => {
-                    allTalentsViewState.enabled = enabled;
-                    const search = allTalentsViewState.searchParams(enabled);
-                    hst.push(`${state.hero.code}${search}`);
+            <${TalentsViewSwitch}
+                view=${viewAllEnabled ? "compendium" : "builder"}
+                onSwitch=${(view: TalentsView) => {
+                    const viewAll = view === "compendium";
+                    if (viewAll !== viewAllEnabled) {
+                        allTalentsViewState.enabled = viewAll;
+                        const search = allTalentsViewState.searchParams(viewAll);
+                        hst.push(`${state.hero.code}${search}`);
+                    }
                 }}
             />
         </div>

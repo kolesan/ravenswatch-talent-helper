@@ -89,7 +89,7 @@ ul {
         width: 4px;
     }
 }
-@media (max-width: 420px) {
+@media (max-width: 400px) {
     .container-label input {
         max-width: 80px;
     }
