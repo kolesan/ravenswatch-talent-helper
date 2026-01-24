@@ -21,7 +21,7 @@
     "downloadTalentIcons": "tsx src/scripts/downloadTalentIcons/downloadTalentIcons.ts",
     "parseTalentScreenshots": "tsx src/scripts/parseTalentScreenshots/parseTalentScreenshots.ts",
     "parseItemScreenshots": "tsx src/scripts/parseItemScreenshots/parseItemScreenshots.ts",
-    "random": "tsx src/scripts/passtechBuildMaker/mergePasstechItems.ts",
+    "random": "tsx src/scripts/random/generateMerlinWikiTalentIcons.ts",
     "randomWatch": "tsx watch src/scripts/random/randomWatch.ts"
   },
   "homepage": "https://github.com/kolesan/ravenswatch-talent-helper#readme",
