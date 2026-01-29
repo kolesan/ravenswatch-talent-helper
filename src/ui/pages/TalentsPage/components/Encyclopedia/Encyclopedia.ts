@@ -42,6 +42,7 @@ export function Encyclopedia({
                     content: classes?.list?.content,
                 }}
                 disableHover
+                showRanks
                 label=Starting 
                 heroCode=${heroCode} 
                 talents=${starting}
@@ -52,6 +53,7 @@ export function Encyclopedia({
                     content: classes?.list?.content,
                 }}
                 disableHover
+                showRanks
                 label=Standard 
                 heroCode=${heroCode} 
                 talents=${standard} 
@@ -62,6 +64,7 @@ export function Encyclopedia({
                     content: classes?.list?.content,
                 }}
                 disableHover
+                showRanks
                 label=Final 
                 heroCode=${heroCode} 
                 talents=${final}

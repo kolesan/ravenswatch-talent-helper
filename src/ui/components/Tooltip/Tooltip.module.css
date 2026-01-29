@@ -36,6 +36,10 @@
     bottom: 17%;
     left: -93%;
 }
+.tooltipLeft::after {
+    bottom: 0%;
+    left: -500%;
+}
 
 .tooltip:hover::after {
     opacity: 0.9;

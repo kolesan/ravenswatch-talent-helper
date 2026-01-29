@@ -6,16 +6,18 @@ import { DescriptionList } from "../DescriptionList/DescriptionList";
 import { UnlockedAtRank } from "./components/UnlockedAtRank/UnlockedAtRank";
 
 interface Props {
+    className?: string;
     isLocked: boolean;
     talent: Talent;
 }
 
 export function TalentDescription({
+    className,
     isLocked,
     talent,
 }: Props) {
     return html`
-        <div>
+        <div class=${className}>
             ${isLocked ? html`
                 <${UnlockedAtRank} 
                     rank=${talent.unlockedAtRank} 

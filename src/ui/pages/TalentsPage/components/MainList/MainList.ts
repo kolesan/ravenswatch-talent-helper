@@ -3,6 +3,7 @@ import { html } from "htm/preact";
 
 import { HeroCode } from "../../../../../data/heroes";
 import { TalentDescription } from "../../../../components/TalentDescription/TalentDescription";
+import { Tooltip } from "../../../../components/Tooltip/Tooltip";
 import { holder } from "../../../../utils/onHold";
 import { useIsStickyElemStuck } from "../../hooks/useIsStickyElemStuck";
 import { TalentWithLockedFlag } from "../../types";
@@ -24,6 +25,7 @@ interface Props {
     talents: TalentWithLockedFlag[];
     maxItems?: number;
     disableHover?: boolean;
+    showRanks?: boolean;
     onTalentClick?: (talent: TalentWithLockedFlag) => void;
     onTalentAltClick?: (talent: TalentWithLockedFlag) => void;
     onTalentHold?: (talent: TalentWithLockedFlag) => void;
@@ -37,6 +39,7 @@ export function MainList({
     talents,
     maxItems,
     disableHover,
+    showRanks,
     onTalentClick,
     onTalentAltClick,
     onTalentHold,
@@ -106,7 +109,7 @@ export function MainList({
                                     talent=${talent}
                                     heroCode=${heroCode}
                                 />
-                                <div>
+                                <div class=${cls.talentDescription}>
                                     <div class=${cls.header}>
                                         <div class=${cls.name}>
                                             ${talent.name}
@@ -124,6 +127,15 @@ export function MainList({
                                                     />
                                                 `}
                                             </div>
+                                            ${showRanks && talent.unlockedAtRank > 1 && html`
+                                                <${Tooltip} 
+                                                    className=${cls.rank} 
+                                                    left
+                                                    title=${`Unlocked at Rank ${talent.unlockedAtRank}`}
+                                                >
+                                                    R${talent.unlockedAtRank}
+                                                </${Tooltip}>
+                                            `}
                                         `}
                                     </div>
                                     <${TalentDescription} 

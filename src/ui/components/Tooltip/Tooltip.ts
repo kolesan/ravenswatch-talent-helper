@@ -9,6 +9,7 @@ type Props = {
     element?: string;
     title?: string | boolean;
     lower?: boolean;
+    left?: boolean;
     children: ComponentChildren;
 }
 
@@ -17,6 +18,7 @@ export function Tooltip({
     element = "div",
     title,
     lower,
+    left,
     children
 }: Props) {
     return html`
@@ -25,6 +27,7 @@ export function Tooltip({
                 [cls.tooltip]: true,
                 [cls.tooltipHidden]: !title,
                 [cls.tooltipLower]: lower,
+                [cls.tooltipLeft]: left,
                 [className]: !!className,
             })}
             data-tooltip=${title || undefined}
