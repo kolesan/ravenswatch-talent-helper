@@ -22,13 +22,13 @@ export function TalentIcon({
 }: Props) {
     const { locked } = talent;
 
-    const talentSrc = `/icons/talents/new/${heroCode}/${talent.code}.png`;
-
     if (locked) {
         return html`
             <img class=${cls.locked} src=${lockedTalentSrc} width=159 height=154 />
         `;
     }
+
+    const talentSrc = `/icons/talents/new/${heroCode}/${talent.code}.png`;
 
     return html`
         <div class=${clsx(cls.unlockedRoot, className)}>
