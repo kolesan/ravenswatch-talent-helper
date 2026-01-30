@@ -31,14 +31,18 @@
 
     opacity: 0;
     transition: opacity 0.20s ease;
+
+    pointer-events: none;
 }
 .tooltipLower::after {
     bottom: 17%;
     left: -93%;
 }
 .tooltipLeft::after {
-    bottom: 0%;
-    left: -500%;
+    top: 20%;
+    left: 12%;
+    bottom: unset;
+    transform: translate(-100%, -100%);
 }
 
 .tooltip:hover::after {

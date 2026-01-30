@@ -28,7 +28,7 @@ export function Tooltip({
                 [cls.tooltipHidden]: !title,
                 [cls.tooltipLower]: lower,
                 [cls.tooltipLeft]: left,
-                [className]: !!className,
+                [className || ""]: !!className,
             })}
             data-tooltip=${title || undefined}
         >
