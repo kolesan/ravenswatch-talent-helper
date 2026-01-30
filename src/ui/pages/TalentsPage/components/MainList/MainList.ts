@@ -130,11 +130,13 @@ export function MainList({
                                             </div>
                                             ${showRanks && talent.unlockedAtRank > 1 && html`
                                                 <${Tooltip} 
-                                                    className=${cls.rank} 
+                                                    className=${cls.rankContainer} 
                                                     left
                                                     title=${`Unlocked at Rank ${talent.unlockedAtRank}`}
                                                 >
-                                                    R${talent.unlockedAtRank}
+                                                    <span class=${cls.rank}>
+                                                        R${talent.unlockedAtRank}
+                                                    </span>
                                                 </${Tooltip}>
                                             `}
                                         `}
