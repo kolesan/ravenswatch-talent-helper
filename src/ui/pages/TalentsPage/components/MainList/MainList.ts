@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { html } from "htm/preact";
+import { ComponentChildren } from "preact";
 
 import { HeroCode } from "../../../../../data/heroes";
 import { TalentDescription } from "../../../../components/TalentDescription/TalentDescription";
@@ -20,6 +21,9 @@ interface Props {
         label?: string;
         content?: string;
     };
+    slots?: {
+        labelRight?: ComponentChildren;
+    };
     label: string;
     heroCode: HeroCode;
     talents: TalentWithLockedFlag[];
@@ -34,6 +38,7 @@ interface Props {
 export function MainList({
     className,
     classes,
+    slots,
     label,
     heroCode,
     talents,
@@ -65,8 +70,15 @@ export function MainList({
                     }, classes?.label)} 
                     ref=${stickyElemRef}
                 >
-                    ${label}${" "}
-                    ${unlockedCount}${maxItems ? ` / ${maxItems}` : null} 
+                    <div class=${cls.labelLeft}>
+                        ${label}${" "}
+                        ${unlockedCount}${maxItems ? ` / ${maxItems}` : null} 
+                    </div>
+                    ${slots?.labelRight && html`
+                        <div class=${cls.labelRight}>
+                            ${slots?.labelRight}
+                        </div>
+                    `}
                 </div>
             </div>
             <div class=${clsx(cls.content, classes?.content)}>

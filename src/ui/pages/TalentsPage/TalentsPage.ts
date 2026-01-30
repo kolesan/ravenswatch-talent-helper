@@ -10,6 +10,7 @@ import { usePageTitle } from "../../hooks/usePageTitle";
 
 import { Encyclopedia } from "./components/Encyclopedia/Encyclopedia";
 import { HeroSelect } from "./components/HeroSelect/HeroSelect";
+import { ListLabelRight } from "./components/ListLabelRight/ListLabelRight";
 import { MainList } from "./components/MainList/MainList";
 import { TalentsViewSwitch } from "./components/TalentsViewSwitch/TalentsViewSwitch";
 import { TalentsView } from "./components/TalentsViewSwitch/types";
@@ -187,6 +188,14 @@ export function TalentsPage() {
                         label: cls.listLabel,
                         content: cls.listContent,
                     }}
+                    slots=${{
+                        labelRight: html`
+                            <${ListLabelRight} 
+                                className=${cls.listLabelRight}
+                                used=${state.talents.used.length}
+                            />
+                        `,
+                    }}
                     label=Preferred 
                     heroCode=${state.hero.code} 
                     talents=${state.talents.preferred} 
@@ -213,6 +222,15 @@ export function TalentsPage() {
                     classes=${{ 
                         label: cls.listLabel,
                         content: cls.listContent,
+                    }}
+                    slots=${{
+                        labelRight: html`
+                            <${ListLabelRight} 
+                                className=${cls.listLabelRight}
+                                used=${state.talents.used.length}
+                                preferred=${state.talents.preferred.length}
+                            />
+                        `,
                     }}
                     label=Available 
                     heroCode=${state.hero.code} 

@@ -29,10 +29,21 @@
     top: 154px;
     z-index: 1;
 
+    display: flex;
+    gap: 8px;
+
     font-size: 32px;
     font-weight: 600;
 
     background-color: #181614;
+
+    pointer-events: auto;
+}
+.labelLeft {
+
+}
+.labelRight {
+    margin-left: auto;
 }
 .labelHeight {
     min-height: 44px;

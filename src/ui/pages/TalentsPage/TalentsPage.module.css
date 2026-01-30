@@ -44,7 +44,11 @@
 .listContent {
     padding: 0 16px;
 }
-
+@media (min-width: 1080px) {
+    .listLabelRight {
+        display: none;
+    }
+}
 @media (max-width: 1080px) {
     .talentLists {
         flex-grow: unset;
