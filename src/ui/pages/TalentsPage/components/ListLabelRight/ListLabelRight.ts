@@ -18,20 +18,8 @@ export function ListLabelRight({
 }: Props) {
     return html`
         <div class=${clsx(cls.listLabelRightRoot, className)}>
-            <${Tooltip} 
-                title=${`Used talents ${used}`}
-                left
-            >
-                U${used}
-            </${Tooltip}>
-            ${preferred && html`
-                <${Tooltip} 
-                    title=${`Preferred talents ${preferred}`}
-                    left
-                >
-                    P${preferred}
-                </${Tooltip}>
-            `}
+            <div>Used: ${used}</div>
+            ${preferred && html`<div>Preferred: ${preferred}</div>`}
         </div>
     `;
 }
