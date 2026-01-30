@@ -33,7 +33,9 @@ type RouteParams = {
 export function TalentsPage() {
     const params = useParams<RouteParams>();
 
-    const heroFromUrl = params.hero && heroes.utils.findByCode(params.hero);
+    const heroFromUrl = params.hero 
+        ? heroes.utils.findByCode(params.hero) 
+        : undefined;
 
     usePageTitle(heroFromUrl ? `Talents: ${heroFromUrl.name}` : `Talents`);
 
