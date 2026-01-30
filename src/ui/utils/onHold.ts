@@ -13,7 +13,7 @@ export function holder({
 
     let startX = 0;
     let startY = 0;
-    let holdTimer = null;
+    let holdTimer: NodeJS.Timeout | null = null;
     let holding = false;
 
     function onPointerDown(e: PointerEvent) {
@@ -31,7 +31,7 @@ export function holder({
     }
 
     function onPointerUp() {
-        clearTimeout(holdTimer);
+        cancel();
     }
 
     function onPointerMove(e: PointerEvent) {
@@ -39,7 +39,15 @@ export function holder({
         const dy = e.clientY - startY;
 
         if (Math.hypot(dx, dy) > 5) {
+            cancel();
+        }
+    }
+
+    function cancel() {
+        if (holdTimer) {
             clearTimeout(holdTimer);
+            holdTimer = null;
+            holding = false;
         }
     }
 
