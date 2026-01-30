@@ -19,7 +19,9 @@ export function ListLabelRight({
     return html`
         <div class=${clsx(cls.listLabelRightRoot, className)}>
             <div>Used: ${used}</div>
-            ${preferred && html`<div>Preferred: ${preferred}</div>`}
+            ${preferred && html`
+                <div>Preferred: ${preferred}</div>
+            `}
         </div>
     `;
 }
