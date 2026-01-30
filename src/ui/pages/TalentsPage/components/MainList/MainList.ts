@@ -60,6 +60,7 @@ export function MainList({
                 <div 
                     class=${clsx({
                         [cls.label]: true,
+                        [cls.labelHeight]: true,
                         [cls.labelStuck]: labelStuck,
                     }, classes?.label)} 
                     ref=${stickyElemRef}
