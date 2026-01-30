@@ -25,7 +25,7 @@ export function ListLabelRight({
             }, className)}
         >
             <div>Used: ${used} / ${maxUsedTalents}</div>
-            ${preferred && html`
+            ${(preferred || preferred === 0) && html`
                 <div>Preferred: ${preferred}</div>
             `}
         </div>
