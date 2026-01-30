@@ -8,7 +8,7 @@ type Params = {
     doLog?: boolean;
 }
 
-const defaultParams: Params = {
+const defaultParams: Required<Params> = {
     enabled: true,
     stuckAtPx: 0,
     doLog: false,
@@ -66,7 +66,7 @@ export function useIsStickyElemStuck(params?: Params) {
 
 
     // local utils
-    function log(...params) {
+    function log(...params: any) {
         if (doLog) {
             console.log(...params);
         }
