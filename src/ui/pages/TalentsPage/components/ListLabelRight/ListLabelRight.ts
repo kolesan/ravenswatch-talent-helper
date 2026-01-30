@@ -1,6 +1,8 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
+import { maxUsedTalents } from "../../consts/maxUsedTalents";
+
 import cls from "./ListLabelRight.module.css";
 
 type Props = {
@@ -16,7 +18,7 @@ export function ListLabelRight({
 }: Props) {
     return html`
         <div class=${clsx(cls.listLabelRightRoot, className)}>
-            <div>Used: ${used}</div>
+            <div>Used: ${used} / ${maxUsedTalents}</div>
             ${preferred && html`
                 <div>Preferred: ${preferred}</div>
             `}
