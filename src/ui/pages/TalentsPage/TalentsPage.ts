@@ -6,6 +6,7 @@ import { useParams, useSearchParams } from "wouter-preact";
 import { Hero, heroes } from "../../../finalData/finalData";
 import { Talent } from "../../../scripts/extractTalents/types";
 import { hst } from "../../core/hst";
+import { useBooleanState } from "../../hooks/useBooleanState";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
 import { Encyclopedia } from "./components/Encyclopedia/Encyclopedia";
@@ -50,6 +51,8 @@ export function TalentsPage() {
     } = useIsStickyElemStuck({
         stuckAtPx: 56,
     });
+    const usedLabelScrollingAgain = useBooleanState(false);
+    const preferredLabelScrollingAgain = useBooleanState(false);
 
     useEffect(() => {
         if (heroFromUrl && heroFromUrl.code !== state.hero.code) {
@@ -158,6 +161,7 @@ export function TalentsPage() {
                     heroCode=${state.hero.code} 
                     talents=${state.talents.used} 
                     maxItems=${maxUsedTalents}
+                    onStickyLabelScrollingAgain=${usedLabelScrollingAgain.set}
                     onTalentClick=${(talent: Talent) => {
                         dispatch({
                             type: talent.preferred
@@ -192,6 +196,10 @@ export function TalentsPage() {
                         labelRight: html`
                             <${ListLabelRight} 
                                 className=${cls.listLabelRight}
+                                visible=${
+                                    usedLabelScrollingAgain.is 
+                                    && !preferredLabelScrollingAgain.is
+                                }
                                 used=${state.talents.used.length}
                             />
                         `,
@@ -199,6 +207,7 @@ export function TalentsPage() {
                     label=Preferred 
                     heroCode=${state.hero.code} 
                     talents=${state.talents.preferred} 
+                    onStickyLabelScrollingAgain=${preferredLabelScrollingAgain.set}
                     onTalentClick=${(talent: Talent) => {
                         dispatch({
                             type: "talent_from_preferred_to_used",
@@ -225,8 +234,9 @@ export function TalentsPage() {
                     }}
                     slots=${{
                         labelRight: html`
-                            <${ListLabelRight} 
+                            <${ListLabelRight}
                                 className=${cls.listLabelRight}
+                                visible=${preferredLabelScrollingAgain.is}
                                 used=${state.talents.used.length}
                                 preferred=${state.talents.preferred.length}
                             />

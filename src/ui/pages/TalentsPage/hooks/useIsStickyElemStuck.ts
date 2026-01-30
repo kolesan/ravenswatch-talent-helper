@@ -1,23 +1,29 @@
 import { useEffect, useRef } from "preact/hooks";
 
 import { useDebouncedState } from "../../../hooks/useDebouncedState";
+import { noop } from "../../../utils/noop";
 
 type Params = {
     enabled?: boolean;
     stuckAtPx?: number;
+    onStartingToScrollAgain?: (isScrollingUp: boolean) => void;
     doLog?: boolean;
 }
 
 const defaultParams: Required<Params> = {
     enabled: true,
     stuckAtPx: 0,
+    onStartingToScrollAgain: noop,
     doLog: false,
 }
+
+const scrollingAgainThreshold = 0.7;
 
 export function useIsStickyElemStuck(params?: Params) {
     const { 
         enabled = defaultParams.enabled,
         stuckAtPx = defaultParams.stuckAtPx,
+        onStartingToScrollAgain = defaultParams.onStartingToScrollAgain,
         doLog = defaultParams.doLog
     } = params || defaultParams;
 
@@ -36,6 +42,9 @@ export function useIsStickyElemStuck(params?: Params) {
                 // the roots top border but position sticky won't let it 
                 // move any further
                 setIsStuck(e.intersectionRatio < 1);
+
+                onStartingToScrollAgain?.(e.intersectionRatio < scrollingAgainThreshold);
+
                 log({ 
                     ratio: e.intersectionRatio, 
                     isIntersecting: e.isIntersecting,
@@ -54,7 +63,7 @@ export function useIsStickyElemStuck(params?: Params) {
                 // the ratio is 1
                 // if at least one pixel crosses out of the root, the ratio changes to < 1
                 // and the callback is fired
-                threshold: 1,
+                threshold: [1, scrollingAgainThreshold],
             }
         ).observe(ref.current);
     }, [enabled, ref.current]);

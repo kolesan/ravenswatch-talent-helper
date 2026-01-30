@@ -30,6 +30,7 @@ interface Props {
     maxItems?: number;
     disableHover?: boolean;
     showRanks?: boolean;
+    onStickyLabelScrollingAgain?: (isScrollingAgain: boolean) => void;
     onTalentClick?: (talent: TalentWithLockedFlag) => void;
     onTalentAltClick?: (talent: TalentWithLockedFlag) => void;
     onTalentHold?: (talent: TalentWithLockedFlag) => void;
@@ -45,6 +46,7 @@ export function MainList({
     maxItems,
     disableHover,
     showRanks,
+    onStickyLabelScrollingAgain,
     onTalentClick,
     onTalentAltClick,
     onTalentHold,
@@ -56,6 +58,7 @@ export function MainList({
         isStuck: labelStuck 
     } = useIsStickyElemStuck({
         stuckAtPx: 154,
+        onStartingToScrollAgain: onStickyLabelScrollingAgain,
     });
 
     return html`
