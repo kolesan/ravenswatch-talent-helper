@@ -162,6 +162,11 @@ export function TalentsPage() {
                     talents=${state.talents.used} 
                     maxItems=${maxUsedTalents}
                     onStickyLabelScrollingAgain=${usedLabelScrollingAgain.set}
+                    onClear=${() => {
+                        dispatch({
+                            type: "clear_used",
+                        });
+                    }}
                     onTalentClick=${(talent: Talent) => {
                         dispatch({
                             type: talent.preferred
@@ -208,6 +213,11 @@ export function TalentsPage() {
                     heroCode=${state.hero.code} 
                     talents=${state.talents.preferred} 
                     onStickyLabelScrollingAgain=${preferredLabelScrollingAgain.set}
+                    onClear=${() => {
+                        dispatch({
+                            type: "clear_preferred",
+                        });
+                    }}
                     onTalentClick=${(talent: Talent) => {
                         dispatch({
                             type: "talent_from_preferred_to_used",

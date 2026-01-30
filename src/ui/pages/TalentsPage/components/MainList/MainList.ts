@@ -30,6 +30,7 @@ interface Props {
     maxItems?: number;
     disableHover?: boolean;
     showRanks?: boolean;
+    onClear?: () => void;
     onStickyLabelScrollingAgain?: (isScrollingAgain: boolean) => void;
     onTalentClick?: (talent: TalentWithLockedFlag) => void;
     onTalentAltClick?: (talent: TalentWithLockedFlag) => void;
@@ -46,6 +47,7 @@ export function MainList({
     maxItems,
     disableHover,
     showRanks,
+    onClear,
     onStickyLabelScrollingAgain,
     onTalentClick,
     onTalentAltClick,
@@ -60,6 +62,8 @@ export function MainList({
         stuckAtPx: 154,
         onStartingToScrollAgain: onStickyLabelScrollingAgain,
     });
+
+    const empty = !talents.length;
 
     return html`
         <div class=${clsx(cls.root, className)}>
@@ -77,6 +81,18 @@ export function MainList({
                         ${label}${" "}
                         ${unlockedCount}${maxItems ? ` / ${maxItems}` : null} 
                     </div>
+                    <div class=${cls.labelMiddle}>
+                        ${onClear && html`
+                            <div 
+                                class=${clsx(cls.clearButton, {
+                                    [cls.clearButtonDisabled]: empty || labelStuck 
+                                })}
+                                onClick=${(!empty && !labelStuck) && onClear}
+                            >
+                                Clear list
+                            </div>
+                        `}
+                    </div>
                     ${slots?.labelRight && html`
                         <div class=${cls.labelRight}>
                             ${slots?.labelRight}
@@ -85,7 +101,7 @@ export function MainList({
                 </div>
             </div>
             <div class=${clsx(cls.content, classes?.content)}>
-                ${!talents.length && html`
+                ${empty && html`
                     <div class=${cls.empty}>
                         This list is empty
                     </div>

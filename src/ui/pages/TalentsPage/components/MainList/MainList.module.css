@@ -30,6 +30,8 @@
     z-index: 1;
 
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 8px;
 
     font-size: 32px;
@@ -42,11 +44,48 @@
 .labelLeft {
 
 }
+.labelMiddle {
+    margin-left: 10px;
+    margin-right: auto;
+}
+.clearButton {
+    padding: 2px 4px;
+
+    font-size: 15px;
+
+    border: 1px solid gray;
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    transition: color 300ms ease;
+
+    user-select: none;
+
+    -webkit-tap-highlight-color: #686b6533;
+}
+.clearButtonDisabled {
+    border: 1px solid #81808075;
+
+    color: #686767;
+
+    cursor: default;
+}
+@media (hover: hover) and (pointer: fine) {
+    .clearButton:hover:not(.clearButtonDisabled) {
+        color: #aeb3a9;
+    }
+}
+.clearButton:active:not(.clearButtonDisabled) {
+    color: #afb4a9;
+    background-color: #686b6533;
+}
 .labelRight {
-    margin-left: auto;
+
 }
 .labelHeight {
     min-height: 44px;
+    max-height: 44px;
 }
 .labelStuck {
     box-shadow: 4px 10px 10px 0px rgba(0, 0, 0, 0.2);

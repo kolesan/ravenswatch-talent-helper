@@ -15,6 +15,8 @@ import { minmaxRank } from "../utils/minmaxRank";
 type Action =
     | { type: "set_hero", heroCode: HeroCode }
     | { type: "set_rank", rank: number }
+    | { type: "clear_used" }
+    | { type: "clear_preferred" }
     | { type: "talent_from_available_to_preferred", talent: Talent }
     | { type: "talent_from_available_to_used", talent: Talent }
     | { type: "talent_from_preferred_to_used", talent: Talent }
@@ -44,6 +46,26 @@ export function useTalentsPageState(initialHeroCode: HeroCode | undefined) {
                     talents: {
                         used,
                         preferred
+                    }
+                };
+            }
+            case "clear_used": {
+                const preferredFromUsed = state.talents.used.filter(it => it.preferred);
+                return {
+                    ...state,
+                    talents: {
+                        ...state.talents,
+                        used: [],
+                        preferred: [...state.talents.preferred, ...preferredFromUsed],
+                    }
+                };
+            }
+            case "clear_preferred": {
+                return {
+                    ...state,
+                    talents: {
+                        ...state.talents,
+                        preferred: [],
                     }
                 };
             }
