@@ -1,0 +1,32 @@
+.clearListButtonRoot {
+    padding: 2px 4px;
+
+    font-size: 15px;
+
+    border: 1px solid gray;
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    transition: color 300ms ease;
+
+    user-select: none;
+
+    -webkit-tap-highlight-color: #686b6533;
+}
+.clearListButtonDisabled {
+    border: 1px solid #81808075;
+
+    color: #686767;
+
+    cursor: default;
+}
+@media (hover: hover) and (pointer: fine) {
+    .clearListButtonRoot:hover:not(.clearListButtonDisabled) {
+        color: #aeb3a9;
+    }
+}
+.clearListButtonRoot:active:not(.clearListButtonDisabled) {
+    color: #afb4a9;
+    background-color: #686b6533;
+}

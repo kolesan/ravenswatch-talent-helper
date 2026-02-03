@@ -10,6 +10,7 @@ import { useIsStickyElemStuck } from "../../hooks/useIsStickyElemStuck";
 import { TalentWithLockedFlag } from "../../types";
 import { MultiplayerOnlyTag } from "../MultiplayerOnlyTag/MultiplayerOnlyTag";
 
+import { ClearListButton } from "./components/ClearListButton/ClearListButton";
 import { PreferredIcon } from "./components/PreferredIcon/PreferredIcon";
 import { TalentIcon } from "./components/TalentIcon/TalentIcon";
 
@@ -83,14 +84,10 @@ export function MainList({
                     </div>
                     <div class=${cls.labelMiddle}>
                         ${onClear && html`
-                            <div 
-                                class=${clsx(cls.clearButton, {
-                                    [cls.clearButtonDisabled]: empty || labelStuck 
-                                })}
-                                onClick=${(!empty && !labelStuck) && onClear}
-                            >
-                                Clear list
-                            </div>
+                            <${ClearListButton}
+                                disabled=${empty || labelStuck}
+                                onClick=${onClear}
+                            />
                         `}
                     </div>
                     ${slots?.labelRight && html`
