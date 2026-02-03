@@ -11,8 +11,8 @@ export function ObjectIcon({
     type,
     code,
 }: Props) {
-    const objectSrc = `/icons/objects/new/${type}/${code}.png`;
-    const frameSrc = `/icons/objects/new/${type}/frame.png`;
+    const objectSrc = `/icons/objects/new/optimized/${type}/${code}.webp`;
+    const frameSrc = `/icons/objects/new/optimized/${type}/frame.webp`;
 
     return html`
         <div class=${cls.imgContainer}>
