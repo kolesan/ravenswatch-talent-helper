@@ -12,7 +12,7 @@ mkdirSync(newBaseDir, { recursive: true });
 const files = listDirFilesSyncRecursive(baseDir);
 
 files.forEach(file => {
-    console.log(`Optimizing hero portrait icon from '${file}'`);
+    console.log(`Optimizing talent icon from '${file}'`);
 
     const heroName = file.replace(`${baseDir}\\`,"").split("\\")[0];
     const newDir = `${newBaseDir}\\${heroName}`;
