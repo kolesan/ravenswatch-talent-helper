@@ -31,6 +31,7 @@ interface Props {
     maxItems?: number;
     disableHover?: boolean;
     showRanks?: boolean;
+    confirmBeforeClear?: boolean;
     onClear?: () => void;
     onStickyLabelScrollingAgain?: (isScrollingAgain: boolean) => void;
     onTalentClick?: (talent: TalentWithLockedFlag) => void;
@@ -48,6 +49,7 @@ export function MainList({
     maxItems,
     disableHover,
     showRanks,
+    confirmBeforeClear,
     onClear,
     onStickyLabelScrollingAgain,
     onTalentClick,
@@ -85,8 +87,10 @@ export function MainList({
                     <div class=${cls.labelMiddle}>
                         ${onClear && html`
                             <${ClearListButton}
+                                withConfirm=${confirmBeforeClear}
+                                listName=${label}
                                 disabled=${empty || labelStuck}
-                                onClick=${onClear}
+                                onClear=${onClear}
                             />
                         `}
                     </div>

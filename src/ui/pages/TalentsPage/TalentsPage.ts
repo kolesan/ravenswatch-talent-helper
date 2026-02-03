@@ -213,6 +213,7 @@ export function TalentsPage() {
                     heroCode=${state.hero.code} 
                     talents=${state.talents.preferred} 
                     onStickyLabelScrollingAgain=${preferredLabelScrollingAgain.set}
+                    confirmBeforeClear
                     onClear=${() => {
                         dispatch({
                             type: "clear_preferred",

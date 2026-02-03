@@ -1,0 +1,62 @@
+.confirmDialogRoot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 75vw;
+    max-width: 350px;
+
+    margin: 16px;
+    padding: 32px 24px 16px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    background-color: #181614;
+    border: 1px solid #949692;
+    border-radius: 4px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title {
+    font-size: 20px;
+}
+.closeButton {
+    margin-right: -16px;
+    margin-top: -52px;
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+.body {
+    font-size: 16px;
+    font-weight: 400;
+}
+.buttons {
+    margin-left: auto;
+    
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 24px;
+}
+.confirmButton {
+    padding: 4px 8px;
+
+    border: 1px solid #94969266;
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+.cancelButton {
+    padding: 4px 8px;
+
+    cursor: pointer;
+}
