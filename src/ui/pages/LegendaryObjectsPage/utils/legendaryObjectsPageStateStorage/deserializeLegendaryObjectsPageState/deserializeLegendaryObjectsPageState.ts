@@ -2,7 +2,7 @@ import { legendary } from "../../../../../../scrapedData/mergedItems/legendary";
 import { MagicalObject, SerializedMagicalObject } from "../../../../../../types";
 import { isTruthy } from "../../../../../utils/isTruthy";
 import { LegendaryObjectsPageState, SerializedLegendaryObjectsPageState } from "../../../types";
-import { defaultLegendaryObjectsPageState } from "../../defaultLegendaryItemsState";
+import { defaultLegendaryObjectsPageState } from "../../defaultLegendaryObjectsPageState";
 
 export function deserializeLegendaryObjectsPageState(
     currentStoredState: SerializedLegendaryObjectsPageState | null,

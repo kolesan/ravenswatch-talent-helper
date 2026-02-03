@@ -2,7 +2,7 @@ import { LegendaryObjectsPageState } from "../../types";
 
 import { baseLegendaryObjectsPageStateStorage } from "./baseLegendaryObjectsPageStateStorage";
 import { deserializeLegendaryObjectsPageState } from "./deserializeLegendaryObjectsPageState/deserializeLegendaryObjectsPageState";
-import { serializeLegendaryObjectsPageState } from "./serializeLegendaryObjectsPageState/serializeLegendaryItemsPageState";
+import { serializeLegendaryObjectsPageState } from "./serializeLegendaryObjectsPageState/serializeLegendaryObjectsPageState";
 
 export const legendaryObjectsPageStateStorage = {
     get(): LegendaryObjectsPageState {
