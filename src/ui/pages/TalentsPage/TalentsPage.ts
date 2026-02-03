@@ -8,6 +8,7 @@ import { Talent } from "../../../scripts/extractTalents/types";
 import { ListLabelRight } from "../../components/ListLabelRight/ListLabelRight";
 import { hst } from "../../core/hst";
 import { useBooleanState } from "../../hooks/useBooleanState";
+import { useIsStickyElemStuck } from "../../hooks/useIsStickyElemStuck";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
 import { Encyclopedia } from "./components/Encyclopedia/Encyclopedia";
@@ -18,7 +19,6 @@ import { TalentsView } from "./components/TalentsViewSwitch/types";
 import { maxUsedTalents } from "./consts/maxUsedTalents";
 import { rankConsts } from "./consts/rankConsts";
 import { useEmptyHeroRedirect } from "./hooks/useEmptyHeroRedirect";
-import { useIsStickyElemStuck } from "./hooks/useIsStickyElemStuck";
 import { useSaveStateToStorage } from "./hooks/useSaveStateToStorage";
 import { useTalentsPageState } from "./hooks/useTalentsPageState";
 import { TalentWithLockedFlag } from "./types";

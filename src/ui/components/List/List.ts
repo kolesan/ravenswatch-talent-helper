@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { html } from "htm/preact";
 import { ComponentChildren } from "preact";
 
-import { useIsStickyElemStuck } from "../../pages/TalentsPage/hooks/useIsStickyElemStuck";
+import { useIsStickyElemStuck } from "../../hooks/useIsStickyElemStuck";
 
 import cls from "./List.module.css";
 

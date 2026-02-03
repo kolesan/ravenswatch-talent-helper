@@ -5,8 +5,8 @@ import { ComponentChildren } from "preact";
 import { HeroCode } from "../../../../../data/heroes";
 import { TalentDescription } from "../../../../components/TalentDescription/TalentDescription";
 import { Tooltip } from "../../../../components/Tooltip/Tooltip";
+import { useIsStickyElemStuck } from "../../../../hooks/useIsStickyElemStuck";
 import { holder } from "../../../../utils/onHold";
-import { useIsStickyElemStuck } from "../../hooks/useIsStickyElemStuck";
 import { TalentWithLockedFlag } from "../../types";
 import { MultiplayerOnlyTag } from "../MultiplayerOnlyTag/MultiplayerOnlyTag";
 

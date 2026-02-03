@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "preact/hooks";
 
-import { useDebouncedState } from "../../../hooks/useDebouncedState";
-import { noop } from "../../../utils/noop";
+import { useDebouncedState } from "./useDebouncedState";
+import { noop } from "../utils/noop";
 
 type Params = {
     enabled?: boolean;
