@@ -28,7 +28,7 @@ export function HeroSelectItem({
             <div class=${cls.itemImageContainer}>
                 <img
                     class=${clsx(cls.itemImage, cls[hero.code])}
-                    src=${`/icons/heroes/${hero.code}.png`}
+                    src=${`/icons/heroes/optimized/${hero.code}.webp`}
                     height=256
                     width=256
                 />

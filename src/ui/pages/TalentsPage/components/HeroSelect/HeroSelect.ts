@@ -48,15 +48,14 @@ export function HeroSelect({
                     class=${clsx({
                         [cls.inputImageContainer]: true,
                         [cls[`${value.code}InputImgContainer`]]: true,
-                        [classes?.portraitContainer]: !!classes?.portraitContainer,
-                    })}
+                    }, classes?.portraitContainer)}
                 >
                     <img
                         class=${clsx({
                             [cls.inputImage]: true,
                             [cls[`${value.code}InputImg`]]: true,
                         })}
-                        src=${`/icons/heroes/${value.code}.png`}
+                        src=${`/icons/heroes/optimized/${value.code}.webp`}
                         height=256
                         width=256
                     />

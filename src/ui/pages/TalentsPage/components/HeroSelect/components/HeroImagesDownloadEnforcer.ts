@@ -2,7 +2,7 @@ import { html } from "htm/preact";
 
 import { heroCodes } from "../../../../../../data/heroes";
 
-const style = (name) => `background-image: url("/art/newResampled/${name}.webp");`
+const style = (name: string) => `background-image: url("/art/newResampled/${name}.webp");`
 
 export function HeroImagesDownloadEnforcer() {
     return html`
@@ -12,7 +12,7 @@ export function HeroImagesDownloadEnforcer() {
                 </div>
             `)}
             ${heroCodes.map(it => html`
-                <img src=${`/icons/heroes/${it}.png`} height=0 />
+                <img src=${`/icons/heroes/optimized/${it}.webp`} height=0 />
             `)}
         </div>
     `;
