@@ -47,7 +47,7 @@ export function ClearListButton({
             Clear list
         </div>
         <${ConfirmDialog}
-            message=${html`This will remove all talents in ${renderedListName} list`}
+            message=${html`This will remove all talents from ${renderedListName} list.`}
             open=${confirmOpen.is}
             onConfirm=${onClear}
             onClose=${confirmOpen.off}
