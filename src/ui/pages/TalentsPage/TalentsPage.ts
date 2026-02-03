@@ -206,6 +206,7 @@ export function TalentsPage() {
                                     && !preferredLabelScrollingAgain.is
                                 }
                                 used=${state.talents.used.length}
+                                maxUsed=${maxUsedTalents}
                             />
                         `,
                     }}
@@ -250,6 +251,7 @@ export function TalentsPage() {
                                 visible=${preferredLabelScrollingAgain.is}
                                 used=${state.talents.used.length}
                                 preferred=${state.talents.preferred.length}
+                                maxUsed=${maxUsedTalents}
                             />
                         `,
                     }}
