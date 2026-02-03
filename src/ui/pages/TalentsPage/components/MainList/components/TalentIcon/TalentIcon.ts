@@ -13,7 +13,7 @@ type Props = {
 }
 
 const lockedTalentSrc = `/icons/talents/locked_talent.webp`;
-const frameSrc = `/icons/talents/new/talent_frame_common.png`;
+const frameSrc = `/icons/talents/new/optimized/talent_frame_common.webp`;
 
 export function TalentIcon({
     className,
@@ -28,7 +28,7 @@ export function TalentIcon({
         `;
     }
 
-    const talentSrc = `/icons/talents/new/${heroCode}/${talent.code}.png`;
+    const talentSrc = `/icons/talents/new/optimized/${heroCode}/${talent.code}.webp`;
 
     return html`
         <div class=${clsx(cls.unlockedRoot, className)}>
