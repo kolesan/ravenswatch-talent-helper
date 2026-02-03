@@ -11,6 +11,7 @@ type Props = {
     className?: string;
     withConfirm?: boolean;
     listName?: string;
+    entityName?: string;
     disabled: boolean;
     onClear: () => void;
 }
@@ -19,11 +20,13 @@ export function ClearListButton({
     className,
     withConfirm,
     listName,
+    entityName,
     disabled,
     onClear,
 }: Props) {
     const confirmOpen = useBooleanState(false);
 
+    const renderedEntityName = entityName || "items";
     const renderedListName = listName
         ? html`the <span class=${cls.listName}>${listName}</span>` 
         : html`this`;
@@ -47,7 +50,10 @@ export function ClearListButton({
             Clear list
         </div>
         <${ConfirmDialog}
-            message=${html`This will remove all talents from ${renderedListName} list.`}
+            message=${html`
+                This will remove 
+                all ${renderedEntityName} from ${renderedListName} list.
+            `}
             open=${confirmOpen.is}
             onConfirm=${onClear}
             onClose=${confirmOpen.off}

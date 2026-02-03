@@ -89,6 +89,7 @@ export function MainList({
                             <${ClearListButton}
                                 withConfirm=${confirmBeforeClear}
                                 listName=${label}
+                                entityName=${"talents"}
                                 disabled=${empty || labelStuck}
                                 onClear=${onClear}
                             />
