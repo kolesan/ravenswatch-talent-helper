@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { maxUsedTalents } from "../../consts/maxUsedTalents";
+import { maxUsedTalents } from "../../pages/TalentsPage/consts/maxUsedTalents";
 
 import cls from "./ListLabelRight.module.css";
 

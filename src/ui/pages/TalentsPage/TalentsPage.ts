@@ -5,13 +5,13 @@ import { useParams, useSearchParams } from "wouter-preact";
 
 import { Hero, heroes } from "../../../finalData/finalData";
 import { Talent } from "../../../scripts/extractTalents/types";
+import { ListLabelRight } from "../../components/ListLabelRight/ListLabelRight";
 import { hst } from "../../core/hst";
 import { useBooleanState } from "../../hooks/useBooleanState";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
 import { Encyclopedia } from "./components/Encyclopedia/Encyclopedia";
 import { HeroSelect } from "./components/HeroSelect/HeroSelect";
-import { ListLabelRight } from "./components/ListLabelRight/ListLabelRight";
 import { MainList } from "./components/MainList/MainList";
 import { TalentsViewSwitch } from "./components/TalentsViewSwitch/TalentsViewSwitch";
 import { TalentsView } from "./components/TalentsViewSwitch/types";
