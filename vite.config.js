@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite'
 import { analyzer } from 'vite-bundle-analyzer'
+import { preact } from '@preact/preset-vite'
 
 export default defineConfig({
     plugins: [
-        analyzer()
+        analyzer(),
+        preact()
     ],
     server: {
         host: true,
