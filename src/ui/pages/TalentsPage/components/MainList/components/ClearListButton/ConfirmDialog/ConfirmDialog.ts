@@ -1,6 +1,10 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 import { ComponentChildren } from "preact";
+import { createPortal } from "preact/compat";
+
+import { useCloseOnEsc } from "./utils/useCloseOnEsc";
+import { useLockBodyScroll } from "./utils/useLockBodyScroll";
 
 import cls from "./ConfirmDialog.module.css";
 
@@ -19,11 +23,19 @@ export function ConfirmDialog({
     onConfirm,
     onClose,
 }: Props) {
+    useLockBodyScroll(open);
+    useCloseOnEsc(open, onClose);
+
     if (!open) {
         return null;
     }
 
-    return html`
+    return createPortal(html`
+        <div 
+            class=${cls.confirmDialogBackdrop}
+            onClick=${onClose}
+        >
+        </div>
         <div class=${clsx(cls.confirmDialogRoot, className)}>
             <div class=${cls.header}>
                 <div class=${cls.title}>
@@ -59,5 +71,5 @@ export function ConfirmDialog({
                 </div>
             </div>
         </div>
-    `;
+    `, document.body);
 }
