@@ -18,14 +18,14 @@ export function Logo({
         >
             <img 
                 class=${cls.logoSmall}
-                src="/logos/logo-small.webp" 
+                src="/logos/optimized/logo-small.webp" 
                 width=94 
                 height=94 
             />
             <div class=${cls.logoBig}>
                 <img 
                     class=${cls.logoImg}
-                    src="/logos/ravenswatch-logo.webp" 
+                    src="/logos/optimized/ravenswatch-logo.webp" 
                     width=314 
                     height=80 
                 />
