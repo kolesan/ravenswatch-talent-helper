@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { useBooleanState } from "../../../../../../hooks/useBooleanState";
+import { useBooleanState } from "../../hooks/useBooleanState";
 
 import { ConfirmDialog } from "./ConfirmDialog/ConfirmDialog";
 

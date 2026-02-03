@@ -3,6 +3,7 @@ import { html } from "htm/preact";
 import { ComponentChildren } from "preact";
 
 import { HeroCode } from "../../../../../data/heroes";
+import { ClearListButton } from "../../../../components/ClearListButton/ClearListButton";
 import { TalentDescription } from "../../../../components/TalentDescription/TalentDescription";
 import { Tooltip } from "../../../../components/Tooltip/Tooltip";
 import { useIsStickyElemStuck } from "../../../../hooks/useIsStickyElemStuck";
@@ -10,7 +11,6 @@ import { holder } from "../../../../utils/onHold";
 import { TalentWithLockedFlag } from "../../types";
 import { MultiplayerOnlyTag } from "../MultiplayerOnlyTag/MultiplayerOnlyTag";
 
-import { ClearListButton } from "./components/ClearListButton/ClearListButton";
 import { PreferredIcon } from "./components/PreferredIcon/PreferredIcon";
 import { TalentIcon } from "./components/TalentIcon/TalentIcon";
 
