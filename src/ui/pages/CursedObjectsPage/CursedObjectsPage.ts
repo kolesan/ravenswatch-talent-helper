@@ -2,7 +2,9 @@ import { html } from "htm/preact";
 import { useMemo } from "preact/hooks";
 
 import { MagicalObject } from "../../../types";
+import { ListLabelRight } from "../../components/ListLabelRight/ListLabelRight";
 import { ObjectList } from "../../components/ObjectList";
+import { useBooleanState } from "../../hooks/useBooleanState";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
 import { useCursedObjectsPageState } from "./hooks/useCursedObjectsPageState";
@@ -25,6 +27,8 @@ export function CursedObjectsPage() {
     const initialState = useMemo(getInitialState, []);
 
     const [state, dispatch] = useCursedObjectsPageState(initialState);
+    const usedLabelScrollingAgain = useBooleanState(false);
+    const preferredLabelScrollingAgain = useBooleanState(false);
 
     useSaveCursedObjectsPageStateToStorage(state);
 
@@ -42,6 +46,12 @@ export function CursedObjectsPage() {
                 labelStuckAtPx=${listLabelStuckAtPx}
                 objects=${state.used}
                 objectType=cursed
+                onStickyLabelScrollingAgain=${usedLabelScrollingAgain.set}
+                onClear=${() => {
+                    dispatch({
+                        type: "clear_used",
+                    });
+                }}
                 onObjectClick=${(object: MagicalObject) => {
                     dispatch({
                         type: object.preferred
@@ -75,8 +85,27 @@ export function CursedObjectsPage() {
                 }}
                 label=Preferred 
                 labelStuckAtPx=${listLabelStuckAtPx}
+                confirmBeforeClear
+                slots=${{
+                    labelRight: html`
+                        <${ListLabelRight} 
+                            className=${cls.listLabelRight}
+                            visible=${
+                                usedLabelScrollingAgain.is 
+                                && !preferredLabelScrollingAgain.is
+                            }
+                            used=${state.used.length}
+                        />
+                    `,
+                }}
                 objects=${state.preferred} 
                 objectType=cursed
+                onStickyLabelScrollingAgain=${preferredLabelScrollingAgain.set}
+                onClear=${() => {
+                    dispatch({
+                        type: "clear_preferred",
+                    });
+                }}
                 onObjectClick=${(object: MagicalObject) => {
                     dispatch({
                         type: "object_from_preferred_to_used",
@@ -104,6 +133,16 @@ export function CursedObjectsPage() {
                 }}
                 label=Available 
                 labelStuckAtPx=${listLabelStuckAtPx}
+                slots=${{
+                    labelRight: html`
+                        <${ListLabelRight}
+                            className=${cls.listLabelRight}
+                            visible=${preferredLabelScrollingAgain.is}
+                            used=${state.used.length}
+                            preferred=${state.preferred.length}
+                        />
+                    `,
+                }}
                 objects=${derivedState.available} 
                 objectType=cursed
                 onObjectClick=${(object: MagicalObject) => {

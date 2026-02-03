@@ -4,6 +4,8 @@ import { MagicalObject } from "../../../../types";
 import { CursedObjectsPageState } from "../types";
 
 type Action =
+    | { type: "clear_used" }
+    | { type: "clear_preferred" }
     | { type: "object_from_available_to_preferred", object: MagicalObject }
     | { type: "object_from_available_to_used", object: MagicalObject }
     | { type: "object_from_preferred_to_used", object: MagicalObject }
@@ -13,7 +15,20 @@ type Action =
 
 export function useCursedObjectsPageState(initialState: CursedObjectsPageState) {
     return useReducer<CursedObjectsPageState, Action>((state, action) => {
-        switch (action.type) {
+        switch (action.type) {          
+            case "clear_used": {
+                const preferredFromUsed = state.used.filter(it => it.preferred);
+                return {
+                    used: [],
+                    preferred: [...state.preferred, ...preferredFromUsed],
+                };
+            }
+            case "clear_preferred": {
+                return {
+                    ...state,
+                    preferred: [],
+                };
+            }
             case "object_from_available_to_preferred": {
                 const object = {
                     ...action.object,

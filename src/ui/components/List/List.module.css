@@ -25,11 +25,26 @@
     position: sticky;
     top: 0;
     z-index: 1;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
 
     font-size: 32px;
     font-weight: 600;
 
     background-color: #181614;
+
+    pointer-events: auto;
+}
+.labelLeft {
+}
+.labelMiddle {
+    margin-left: 10px;
+    margin-right: auto;
+}
+.labelRight {
 }
 .labelHeight {
     min-height: 44px;

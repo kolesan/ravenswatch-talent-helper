@@ -3,6 +3,7 @@ import { html } from "htm/preact";
 import { ComponentChildren } from "preact";
 
 import { useIsStickyElemStuck } from "../../hooks/useIsStickyElemStuck";
+import { ClearListButton } from "../ClearListButton/ClearListButton";
 
 import cls from "./List.module.css";
 
@@ -17,10 +18,15 @@ type Props<T> = {
     // might have issues with there being 3 lists tho and so 3 hook calls
     // in the parent
     labelStuckAtPx?: number;
+    slots?: {
+        labelRight?: ComponentChildren;
+    };
+    entityName?: string;
     items: T[];
     renderItem: (item: T, index: number) => ComponentChildren;
-    onItemClick?: (item: T) => void;
-    onItemAltClick?: (item: T) => void;
+    confirmBeforeClear?: boolean;
+    onClear?: () => void;
+    onStickyLabelScrollingAgain?: (isScrollingAgain: boolean) => void;
 }
 
 type WithCode = {
@@ -32,8 +38,13 @@ export function List<T extends WithCode>({
     classes,
     label,
     labelStuckAtPx,
+    slots,
+    entityName,
     items,
     renderItem,
+    confirmBeforeClear,
+    onClear,
+    onStickyLabelScrollingAgain,
 }: Props<T>) {
     const { 
         stickyElemRef, 
@@ -41,7 +52,10 @@ export function List<T extends WithCode>({
     } = useIsStickyElemStuck({
         enabled: !!labelStuckAtPx,
         stuckAtPx: labelStuckAtPx,
+        onStartingToScrollAgain: onStickyLabelScrollingAgain,
     });
+
+    const empty = !items.length;
 
     return html`
         <div class=${clsx(cls.listRoot, className)}>
@@ -54,11 +68,29 @@ export function List<T extends WithCode>({
                     }, classes?.label)} 
                     ref=${stickyElemRef}
                 >
-                    ${label} ${items.length}
+                    <div class=${cls.labelLeft}>
+                        ${label} ${items.length}
+                    </div>
+                    <div class=${cls.labelMiddle}>
+                        ${onClear && html`
+                            <${ClearListButton}
+                                withConfirm=${confirmBeforeClear}
+                                listName=${label}
+                                entityName=${entityName}
+                                disabled=${empty || labelStuck}
+                                onClear=${onClear}
+                            />
+                        `}
+                    </div>
+                    ${slots?.labelRight && html`
+                        <div class=${cls.labelRight}>
+                            ${slots?.labelRight}
+                        </div>
+                    `}
                 </div>
             </div>
             <div class=${clsx(cls.content, classes?.content)}>
-                ${!items.length && html`
+                ${empty  && html`
                     <div class=${cls.empty}>
                         This list is empty
                     </div>
