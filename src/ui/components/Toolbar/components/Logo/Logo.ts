@@ -11,6 +11,7 @@ type Props = {
 export function Logo({
     className,
 }: Props) {
+    //test
     return html`
         <${Link} 
             class=${clsx(cls.logoRoot, className)}
