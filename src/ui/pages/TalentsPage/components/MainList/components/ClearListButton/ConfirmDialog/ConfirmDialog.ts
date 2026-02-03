@@ -30,10 +30,12 @@ export function ConfirmDialog({
                     Are you sure?
                 </div>
                 <div 
-                    class=${cls.closeButton} 
+                    class=${clsx(cls.button, cls.closeButton)} 
                     onClick=${onClose}
                 >
-                    ✕
+                    <span class=${cls.closeButtonText}>
+                        ✕
+                    </span>
                 </div>
             </div>
             <div class=${cls.body}>
@@ -41,7 +43,7 @@ export function ConfirmDialog({
             </div>
             <div class=${cls.buttons}>
                 <div 
-                    class=${cls.confirmButton} 
+                    class=${clsx(cls.button, cls.confirmButton)}
                     onClick=${() => {
                         onConfirm();
                         onClose();
@@ -50,7 +52,7 @@ export function ConfirmDialog({
                     Yes
                 </div>
                 <div 
-                    class=${cls.cancelButton} 
+                    class=${clsx(cls.button, cls.cancelButton)}
                     onClick=${onClose}
                 >
                     Cancel

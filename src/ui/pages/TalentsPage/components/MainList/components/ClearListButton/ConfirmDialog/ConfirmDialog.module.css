@@ -8,7 +8,7 @@
     max-width: 350px;
 
     margin: 16px;
-    padding: 32px 24px 16px;
+    padding: 28px 24px 16px;
     
     display: flex;
     flex-direction: column;
@@ -26,13 +26,38 @@
 .title {
     font-size: 20px;
 }
-.closeButton {
-    margin-right: -16px;
-    margin-top: -52px;
-
-    font-size: 24px;
+.button {
+    padding: 4px 8px;
+    
+    display: flex;
+    align-items: center;
+    
+    border-radius: 4px;
 
     cursor: pointer;
+
+    transition: color 300ms ease;
+
+    user-select: none;
+
+    -webkit-tap-highlight-color: #686b6533;
+}
+.closeButton {
+    margin-right: -23px;
+    margin-top: -48px;
+    padding: 4px 6px;
+
+    font-size: 24px;
+}
+.closeButtonText { 
+    height: 24px;
+    width: 20px;
+
+    margin-top: -4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .body {
     font-size: 16px;
@@ -48,15 +73,17 @@
     font-size: 24px;
 }
 .confirmButton {
-    padding: 4px 8px;
-
     border: 1px solid #94969266;
-    border-radius: 4px;
-
-    cursor: pointer;
 }
 .cancelButton {
-    padding: 4px 8px;
+}
 
-    cursor: pointer;
+@media (hover: hover) and (pointer: fine) {
+    .button:hover {
+        color: #aeb3a9;
+    }
+}
+.button:active {
+    color: #afb4a9;
+    background-color: #686b6533;
 }
