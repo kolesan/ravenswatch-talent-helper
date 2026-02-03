@@ -3,7 +3,6 @@ import sharp from "sharp";
 import { listDirFilesSyncRecursive } from "./utils/listDirFilesSyncRecursive";
 import { mkdirSync } from "node:fs";
 
-// optimize hero portraits
 const baseDir = "public\\icons\\heroes";
 const newDir = `${baseDir}\\optimized`
 
