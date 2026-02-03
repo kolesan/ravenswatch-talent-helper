@@ -26,6 +26,11 @@ async function downloadIcons(heroCode: HeroCode, talents: Talent[]) {
     for (let i = 0; i < talents.length; i++) {
         const talent = talents[i];
 
+        if (!talent.iconUrl) {
+            console.log("No icon url for: ", talent.code);
+            return;
+        }
+
         console.log("Fetching icon: ", talent.code);
 
         const resp = await fetch(talent.iconUrl);
