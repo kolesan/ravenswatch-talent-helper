@@ -37,7 +37,7 @@
 
 @media (max-width: 1080px) {
     .options {
-        /* fix hard for mobile layout */
+        /* fix height for mobile layout */
         min-height: 33px;
         max-height: 33px;
 
