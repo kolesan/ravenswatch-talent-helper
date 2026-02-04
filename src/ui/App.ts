@@ -15,7 +15,7 @@ export function App() {
 
         <${Switch}>
             <${Route} 
-                path=${`${pages.talents.path}/:hero?`} 
+                path=${`${pages.talents.path}/:hero?/:view?`} 
                 component=${TalentsPage}
             />
             <${Route} 

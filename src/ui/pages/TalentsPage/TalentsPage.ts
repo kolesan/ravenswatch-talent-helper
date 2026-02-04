@@ -1,8 +1,9 @@
 import clsx from "clsx";
 import { html } from "htm/preact";
 import { useEffect } from "preact/hooks";
-import { useParams, useSearchParams } from "wouter-preact";
+import { useParams } from "wouter-preact";
 
+import { pages } from "../../../../pages";
 import { Hero, heroes } from "../../../finalData/finalData";
 import { Talent } from "../../../scripts/extractTalents/types";
 import { ListLabelRight } from "../../components/ListLabelRight/ListLabelRight";
@@ -15,21 +16,23 @@ import { Encyclopedia } from "./components/Encyclopedia/Encyclopedia";
 import { HeroSelect } from "./components/HeroSelect/HeroSelect";
 import { MainList } from "./components/MainList/MainList";
 import { TalentsViewSwitch } from "./components/TalentsViewSwitch/TalentsViewSwitch";
-import { TalentsView } from "./components/TalentsViewSwitch/types";
 import { maxUsedTalents } from "./consts/maxUsedTalents";
 import { rankConsts } from "./consts/rankConsts";
-import { useEmptyHeroRedirect } from "./hooks/useEmptyHeroRedirect";
+import { useHandleUrl } from "./hooks/useHandleUrl";
 import { useSaveStateToStorage } from "./hooks/useSaveStateToStorage";
 import { useTalentsPageState } from "./hooks/useTalentsPageState";
+import { isTalentsPageView, TalentsPageView } from "./talentsPageViews";
 import { TalentWithLockedFlag } from "./types";
-import { allTalentsViewState } from "./utils/allTalentsViewState";
+import { calculatePageTitle } from "./utils/calculatePageTitle";
 import { getDerivedTalentsState } from "./utils/getDerivedTalentsState";
 import { markLocked } from "./utils/markLocked";
+import { talentsViews } from "./utils/talentsViews";
 
 import cls from "./TalentsPage.module.css";
 
 type RouteParams = {
     hero: string;
+    view: string;
 }
 
 export function TalentsPage() {
@@ -39,7 +42,19 @@ export function TalentsPage() {
         ? heroes.utils.findByCode(params.hero) 
         : undefined;
 
-    usePageTitle(heroFromUrl ? `Talents: ${heroFromUrl.name}` : `Talents`);
+    const viewFromUrl = isTalentsPageView(params.view) 
+        ? params.view
+        : undefined;
+        
+    useEffect(() => {
+        console.log("TalentsPage mounted");
+        return () => {
+            console.log("TalentsPage unmounted");
+        };
+    }, []);
+    console.log("rendering talents page", params, location.pathname, heroFromUrl?.code);
+
+    usePageTitle(calculatePageTitle(heroFromUrl, viewFromUrl));
 
     const [state, dispatch] = useTalentsPageState(heroFromUrl?.code);
 
@@ -54,37 +69,39 @@ export function TalentsPage() {
     const usedLabelScrollingAgain = useBooleanState(false);
     const preferredLabelScrollingAgain = useBooleanState(false);
 
-    useEffect(() => {
-        if (heroFromUrl && heroFromUrl.code !== state.hero.code) {
+    useHandleUrl({
+        url: {
+            hero: heroFromUrl?.code,
+            view: viewFromUrl,
+        },
+        state: {
+            hero: state.hero.code,
+            view: talentsViews.current,
+        },
+        updateStateHero: hero => {
+            console.log("changing state hero to:", hero);
             dispatch({
                 type: "set_hero",
-                heroCode: heroFromUrl.code,
+                heroCode: hero,
             });
+        },
+        updateStateView: view => {
+            console.log("changing state view to:", view);
+            talentsViews.current = view;
+        },
+        updateUrl: ({ hero, view }) => {
+            console.log("changing url to:", `${pages.talents.path}/${hero}/${view}`);
+            hst.replace(`${pages.talents.path}/${hero}/${view}`);
         }
-    }, [heroFromUrl]);
-    useEmptyHeroRedirect({
-        heroCodeFromUrl: heroFromUrl?.code,
-        heroCodeFromState: state.hero.code,
     });
 
-    // TODO Rework all of this
-    const [searchParams] = useSearchParams();
-    const viewAllFromSearch = searchParams.has(allTalentsViewState.queryParam);
-    useEffect(() => {
-        if (allTalentsViewState.enabled && !viewAllFromSearch) {
-            const search = allTalentsViewState.searchParams(true);
-            hst.replace(`${state.hero.code}${search}`);
-        } else if (viewAllFromSearch && !allTalentsViewState.enabled) {
-            allTalentsViewState.enabled = true;
-        }
-    }, [viewAllFromSearch]);
-
-    if (!heroFromUrl) {
+    if (!heroFromUrl || !viewFromUrl) {
         return null;
     }
 
     const derivedTalentsState = getDerivedTalentsState(state);
-    const viewAllEnabled = viewAllFromSearch;
+
+    console.log("got to full render");
 
     return html`
         <div 
@@ -102,8 +119,9 @@ export function TalentsPage() {
                     items=${heroes.asArray}
                     value=${state.hero}
                     onChange=${(hero: Hero) => {
-                        const search = allTalentsViewState.searchParams(viewAllEnabled);
-                        hst.push(`${hero.code}${search}`);
+                        if (hero.code !== state.hero.code) {
+                            hst.push(`${pages.talents.path}/${hero.code}/${talentsViews.current}`);
+                        }
                     }}
                 />
                 <label class=container-label>
@@ -126,18 +144,15 @@ export function TalentsPage() {
                 </label>
             </div>
             <${TalentsViewSwitch}
-                view=${viewAllEnabled ? "compendium" : "builder"}
-                onSwitch=${(view: TalentsView) => {
-                    const viewAll = view === "compendium";
-                    if (viewAll !== viewAllEnabled) {
-                        allTalentsViewState.enabled = viewAll;
-                        const search = allTalentsViewState.searchParams(viewAll);
-                        hst.push(`${state.hero.code}${search}`);
+                view=${viewFromUrl}
+                onSwitch=${(view: TalentsPageView) => {
+                    if (view !== talentsViews.current) {
+                        hst.push(`${pages.talents.path}/${state.hero.code}/${view}`);
                     }
                 }}
             />
         </div>
-        ${viewAllEnabled && html`
+        ${viewFromUrl === "compendium" && html`
             <${Encyclopedia} 
                 classes=${{ 
                     list: {
@@ -150,7 +165,7 @@ export function TalentsPage() {
                 talents=${state.hero.talents}
             />
         `}
-        ${!viewAllEnabled && html`
+        ${viewFromUrl === "builder" && html`
             <div class=${cls.talentLists}>
                 <${MainList}
                     classes=${{ 

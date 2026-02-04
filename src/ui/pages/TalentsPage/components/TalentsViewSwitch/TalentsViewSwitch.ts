@@ -1,15 +1,14 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { talentsViewOptions } from "./talentsViewOptions";
-import { TalentsView } from "./types";
+import { talentsPageViews, TalentsPageView } from "../../talentsPageViews";
 
 import cls from "./TalentsViewSwitch.module.css";
 
 type Props = {
     className?: string;
-    view: TalentsView;
-    onSwitch: (view: TalentsView) => void;
+    view: TalentsPageView;
+    onSwitch: (view: TalentsPageView) => void;
 }
 
 export function TalentsViewSwitch({
@@ -30,7 +29,7 @@ export function TalentsViewSwitch({
                     [cls.options]: true
                 })}
             >
-                ${talentsViewOptions.map(it => html`
+                ${talentsPageViews.map(it => html`
                     <div 
                         class=${clsx({
                             [cls.option]: true,
@@ -50,8 +49,8 @@ export function TalentsViewSwitch({
     `;
 }
 
-function nextOption(current: TalentsView): TalentsView {
-    const currentIndex = talentsViewOptions.findIndex(it => it.value === current);
-    const nextIndex = (currentIndex + 1) % talentsViewOptions.length;
-    return talentsViewOptions[nextIndex].value;
+function nextOption(current: TalentsPageView): TalentsPageView {
+    const currentIndex = talentsPageViews.findIndex(it => it.value === current);
+    const nextIndex = (currentIndex + 1) % talentsPageViews.length;
+    return talentsPageViews[nextIndex].value;
 }
