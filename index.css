@@ -39,6 +39,16 @@ body {
     font-size: 18px;
 }
 
+.preload_font_fontin-sans-regular {
+    visibility: hidden;
+    font-family: fontin-sans-regular;
+}
+
+.preload_font_ravenswatch {
+    visibility: hidden;
+    font-family: ravenswatch;
+}
+
 ul {
     margin: 0;
     padding: 0;
