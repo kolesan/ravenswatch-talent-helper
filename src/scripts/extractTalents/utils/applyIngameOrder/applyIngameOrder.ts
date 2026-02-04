@@ -10,14 +10,14 @@ import { melusineOrder } from "./consts/melusineOrder";
 import { piperOrder } from "./consts/piperOrder";
 import { romeoOrder } from "./consts/romeoOrder";
 import { scarletOrder } from "./consts/scarletOrder";
-import { snowQueenOrder } from "./consts/snowQueenOrder";
+import { snowqueenOrder } from "./consts/snowQqueenOrder";
 import { wukongOrder } from "./consts/wukongOrder";
 
 const orderMap: Partial<Record<Hero["code"], string[]>> = {
     scarlet: scarletOrder,
     piper: piperOrder,
     beowulf: beowulfOrder,
-    snowQueen: snowQueenOrder,
+    snowqueen: snowqueenOrder,
     aladdin: aladdinOrder,
     melusine: melusineOrder,
     geppetto: geppettoOrder,

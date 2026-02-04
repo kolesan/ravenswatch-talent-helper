@@ -8,7 +8,7 @@ import { melusine } from "../scrapedData/mergedTalents/melusine";
 import { piper } from "../scrapedData/mergedTalents/piper";
 import { romeo } from "../scrapedData/mergedTalents/romeo";
 import { scarlet } from "../scrapedData/mergedTalents/scarlet";
-import { snowQueen } from "../scrapedData/mergedTalents/snowQueen";
+import { snowqueen } from "../scrapedData/mergedTalents/snowQqueen";
 import { wukong } from "../scrapedData/mergedTalents/wukong";
 import { merlin } from "../scrapedData/mergedTalents/merlin";
 import { Talent } from "../scripts/extractTalents/types";
@@ -21,7 +21,7 @@ const allRaw = {
     scarlet,
     piper,
     beowulf,
-    snowQueen,
+    snowqueen,
     aladdin,
     melusine,
     geppetto,

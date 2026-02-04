@@ -89,13 +89,13 @@
 }
 /* .beowulf {
 } */
-.snowQueenInputText {
+.snowqueenInputText {
     margin-bottom: -5px;
 }
-.snowQueenInputImgContainer {
+.snowqueenInputImgContainer {
     margin-left: -4px;
 }
-/* .snowQueenInputImg {
+/* .snowqueenInputImg {
 }
 .aladdin {
 }
@@ -151,8 +151,8 @@
 :global(.beowulfBgArt).inputActive, :global(.beowulfBgArt).input:active {
     background-image: url("/art/newResampled/beowulf.webp");
 }
-:global(.snowQueenBgArt).inputActive, :global(.snowQueenBgArt).input:active {
-    background-image: url("/art/newResampled/snowQueen.webp");
+:global(.snowqueenBgArt).inputActive, :global(.snowqueenBgArt).input:active {
+    background-image: url("/art/newResampled/snowqueen.webp");
 }
 :global(.aladdinBgArt).inputActive, :global(.aladdinBgArt).input:active {
     background-image: url("/art/newResampled/aladdin.webp");
@@ -189,8 +189,8 @@
     :global(.beowulfBgArt):hover {
         background-image: url("/art/newResampled/beowulf.webp");
     }
-    :global(.snowQueenBgArt):hover {
-        background-image: url("/art/newResampled/snowQueen.webp");
+    :global(.snowqueenBgArt):hover {
+        background-image: url("/art/newResampled/snowqueen.webp");
     }
     :global(.aladdinBgArt):hover {
         background-image: url("/art/newResampled/aladdin.webp");

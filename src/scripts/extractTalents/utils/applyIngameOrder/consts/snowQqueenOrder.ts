@@ -1,4 +1,4 @@
-export const snowQueenOrder = [
+export const snowqueenOrder = [
     "ice_clone",
     "rupture",
     "frost_queen",

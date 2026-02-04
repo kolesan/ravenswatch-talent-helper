@@ -1,4 +1,4 @@
-export function snowQueen() {
+export function snowqueen() {
     return [
         {
             "id": "dd2cbff2-9fe8-4860-8dbb-c30df0b030d3",

@@ -22,7 +22,7 @@ export const heroCodes = [
     "scarlet",
     "piper",
     "beowulf",
-    "snowQueen",
+    "snowqueen",
     "aladdin",
     "melusine",
     "geppetto",
@@ -50,9 +50,9 @@ const beowulf: Hero = {
     code: "beowulf",
     wikiUrl: "https://ravenswatch.fandom.com/wiki/Beowulf",
 };
-const snowQueen: Hero = {
+const snowqueen: Hero = {
     name: "The Snow Queen",
-    code: "snowQueen",
+    code: "snowqueen",
     wikiUrl: "https://ravenswatch.fandom.com/wiki/The_Snow_Queen",
 };
 const aladdin: Hero = {
@@ -100,7 +100,7 @@ const all = {
     scarlet,
     piper,
     beowulf,
-    snowQueen,
+    snowqueen,
     aladdin,
     melusine,
     geppetto,

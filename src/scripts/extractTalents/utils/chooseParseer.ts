@@ -5,7 +5,7 @@ import { parseCommonTable } from "./parseCommonTable";
 
 const heroesWithSeparateIconColumnTables: HeroCode[] = [
     "beowulf",
-    "snowQueen",
+    "snowqueen",
 ]
 
 export function chooseParseer(hero: Hero) {
