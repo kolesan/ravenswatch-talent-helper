@@ -1,6 +1,7 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
-import { Link } from "wouter-preact";
+
+import { Link } from "../../../RouterProvider/Link";
 
 import cls from "./Logo.module.css";
 

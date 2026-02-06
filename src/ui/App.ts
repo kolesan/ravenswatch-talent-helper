@@ -1,8 +1,6 @@
 import { html } from "htm/preact";
-import { Route, Switch } from "wouter-preact";
 
-import { pages } from "../../pages";
-
+import { RouterProvider, useRouter } from "./components/RouterProvider/RouterProvider";
 import { Toolbar } from "./components/Toolbar/Toolbar";
 import { CursedObjectsPage } from "./pages/CursedObjectsPage/CursedObjectsPage";
 import { HelpPage } from "./pages/HelpPage/HelpPage";
@@ -11,33 +9,24 @@ import { TalentsPage } from "./pages/TalentsPage/TalentsPage";
 
 export function App() {
     return html`
+        <${RouterProvider}>
+            <${Content} />
+        </${RouterProvider}>
+    `;
+}
+
+function Content() {
+    const location = useRouter();
+
+    console.log("App Content rendered", { location });
+
+    return html`
         <${Toolbar} />
-
-        <${Switch}>
-            <${Route} 
-                path=${`${pages.talents.path}/:hero?/:view?`} 
-                component=${TalentsPage}
-            />
-            <${Route} 
-                path=${pages.legendaryObjects.path} 
-                component=${LegendaryObjectsPage} 
-            />
-            <${Route} 
-                path=${pages.cursedObjects.path} 
-                component=${CursedObjectsPage} 
-            />
-            <${Route} 
-                path=${pages.help.path} 
-                component=${HelpPage} 
-            />
-
-            <!-- 
-                Redirect was screwing the "back" button navigation 
-                so had to replace with this. TalentsPage currently handles
-                empty url by loading a hero from state and changin url
-                manually
-            -->
-            <${Route} component=${TalentsPage} />
-        </${Switch}>
+        ${
+            location.includes("legendary") ? html`<${LegendaryObjectsPage} />`
+          : location.includes("cursed") ? html`<${CursedObjectsPage} />`
+          : location.includes("help") ? html`<${HelpPage} />`
+          : html`<${TalentsPage} />`
+        }
     `;
 }

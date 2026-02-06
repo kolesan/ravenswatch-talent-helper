@@ -1,6 +1,7 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
-import { Link } from "wouter-preact";
+
+import { Link } from "../../../RouterProvider/Link";
 
 import cls from "./Help.module.css";
 
@@ -16,8 +17,7 @@ export function Help({
             className=${(active: boolean) => clsx({
                 [cls.helpRoot]: true,
                 [cls.helpRootActive]: active,
-                [className]: true,
-            })}
+            }, className)}
             href="/help"
         >
             ?

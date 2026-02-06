@@ -1,12 +1,12 @@
 import clsx from "clsx";
 import { html } from "htm/preact";
 import { useEffect } from "preact/hooks";
-import { useParams } from "wouter-preact";
 
 import { pages } from "../../../../pages";
 import { Hero, heroes } from "../../../finalData/finalData";
 import { Talent } from "../../../scripts/extractTalents/types";
 import { ListLabelRight } from "../../components/ListLabelRight/ListLabelRight";
+import { useRouter } from "../../components/RouterProvider/RouterProvider";
 import { hst } from "../../core/hst";
 import { useBooleanState } from "../../hooks/useBooleanState";
 import { useIsStickyElemStuck } from "../../hooks/useIsStickyElemStuck";
@@ -36,7 +36,9 @@ type RouteParams = {
 }
 
 export function TalentsPage() {
-    const params = useParams<RouteParams>();
+    const location = useRouter();
+    const [_, __, hero, view] = location.split("/");
+    const params = { hero, view };
 
     const heroFromUrl = params.hero 
         ? heroes.utils.findByCode(params.hero) 
@@ -52,7 +54,7 @@ export function TalentsPage() {
             console.log("TalentsPage unmounted");
         };
     }, []);
-    console.log("rendering talents page", params, location.pathname, heroFromUrl?.code);
+    console.log("rendering talents page", params, location, heroFromUrl?.code);
 
     usePageTitle(calculatePageTitle(heroFromUrl, viewFromUrl));
 
