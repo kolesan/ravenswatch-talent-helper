@@ -1,7 +1,9 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
+import { pages } from "../../../../../../pages";
 import { Link } from "../../../RouterProvider/Link";
+import { useRouter } from "../../../RouterProvider/RouterProvider";
 
 import cls from "./Help.module.css";
 
@@ -12,13 +14,14 @@ type Props = {
 export function Help({
     className,
 }: Props) {
+    const location = useRouter();
     return html`
         <${Link} 
-            className=${(active: boolean) => clsx({
+            className=${clsx({
                 [cls.helpRoot]: true,
-                [cls.helpRootActive]: active,
+                [cls.helpRootActive]: location.includes(pages.help.path),
             }, className)}
-            href="/help"
+            href=${pages.help.path}
         >
             ?
         </${Link}>
