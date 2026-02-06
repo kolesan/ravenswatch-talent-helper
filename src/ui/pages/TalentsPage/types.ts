@@ -1,8 +1,9 @@
-import { Hero } from "../../../finalData/finalData";
+import { HeroCode } from "../../../data/heroes";
 import { Talent } from "../../../scripts/extractTalents/types";
 
-export type AppState = {
-    hero: Hero;
+import { TalentsPageView } from "./talentsPageViews";
+
+export type ReactiveTalentsPageState = {
     rank: number;
     talents: TalentsState;
 }
@@ -17,8 +18,15 @@ export type LocalTalentsState = {
     locked: Talent[];
 }
 
-export type SerializedAppState = {
+export type StorableTalentsPageState = {
+    heroCode: HeroCode;
+    view: TalentsPageView;
+    reactiveState: ReactiveTalentsPageState;
+}
+
+export type SerializedTalentsPageState = {
     currentHeroCode: string;
+    currentView: string;
     heroes: Record<string, SerializedHeroState>;
 }
 

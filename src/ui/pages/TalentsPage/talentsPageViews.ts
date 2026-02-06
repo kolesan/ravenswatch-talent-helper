@@ -11,3 +11,5 @@ export const talentsPageViews = [{
 export function isTalentsPageView(value: unknown): value is TalentsPageView {
     return !!talentsPageViews.find(it => it.value === value);
 }
+
+export const defaultTalentsPageView = talentsPageViews[0].value;

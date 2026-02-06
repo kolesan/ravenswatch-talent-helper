@@ -1,11 +1,12 @@
 import { HeroCode } from "../../../../data/heroes";
-import { appStateStorage } from "../../../utils/appStateStorage/appStateStorage";
+import { ReactiveTalentsPageState } from "../types";
 
-import { defaultAppState } from "./defaultAppState";
+import { defaultReactiveTalentsPageState } from "./defaultReactiveTalentsPageState";
+import { talentsPageStateStorage } from "./talentsPageStateStorage/talentsPageStateStorage";
 
-export function getInitialState(heroCode: HeroCode | undefined) {
+export function getInitialState(heroCode: HeroCode | undefined): ReactiveTalentsPageState {
     if (heroCode) {
-        return appStateStorage.getHero(heroCode);
+        return talentsPageStateStorage.getHero(heroCode).reactiveState;
     }
-    return appStateStorage.getCurrentHero() || defaultAppState;
+    return talentsPageStateStorage.getCurrentHero().reactiveState || defaultReactiveTalentsPageState;
 }

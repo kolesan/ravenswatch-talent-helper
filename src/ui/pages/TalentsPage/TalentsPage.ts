@@ -19,21 +19,17 @@ import { TalentsViewSwitch } from "./components/TalentsViewSwitch/TalentsViewSwi
 import { maxUsedTalents } from "./consts/maxUsedTalents";
 import { rankConsts } from "./consts/rankConsts";
 import { useHandleUrl } from "./hooks/useHandleUrl";
-import { useSaveStateToStorage } from "./hooks/useSaveStateToStorage";
+import { useSaveTalentsPageStateToStorage } from "./hooks/useSaveTalentsPageStateToStorage";
+import { useStoredState } from "./hooks/useStoredState";
 import { useTalentsPageState } from "./hooks/useTalentsPageState";
 import { isTalentsPageView, TalentsPageView } from "./talentsPageViews";
 import { TalentWithLockedFlag } from "./types";
 import { calculatePageTitle } from "./utils/calculatePageTitle";
 import { getDerivedTalentsState } from "./utils/getDerivedTalentsState";
 import { markLocked } from "./utils/markLocked";
-import { talentsViews } from "./utils/talentsViews";
+import { talentsPageStateStorage } from "./utils/talentsPageStateStorage/talentsPageStateStorage";
 
 import cls from "./TalentsPage.module.css";
-
-type RouteParams = {
-    hero: string;
-    view: string;
-}
 
 export function TalentsPage() {
     const location = useRouter();
@@ -58,13 +54,19 @@ export function TalentsPage() {
 
     usePageTitle(calculatePageTitle(heroFromUrl, viewFromUrl));
 
-    const [state, dispatch] = useTalentsPageState(heroFromUrl?.code);
+    const storedState = useStoredState(heroFromUrl?.code);
 
-    useSaveStateToStorage(state);
+    const [reactiveState, dispatch] = useTalentsPageState(storedState.reactiveState);
 
-    const { 
-        stickyElemRef, 
-        isStuck: controlsStuck 
+    useSaveTalentsPageStateToStorage({
+        heroCode: heroFromUrl?.code || storedState.heroCode,
+        view: viewFromUrl || storedState.view,
+        reactiveState,
+    });
+
+    const {
+        stickyElemRef,
+        isStuck: controlsStuck
     } = useIsStickyElemStuck({
         stuckAtPx: 56,
     });
@@ -73,27 +75,24 @@ export function TalentsPage() {
 
     useHandleUrl({
         url: {
-            hero: heroFromUrl?.code,
+            heroCode: heroFromUrl?.code,
             view: viewFromUrl,
         },
         state: {
-            hero: state.hero.code,
-            view: talentsViews.current,
+            heroCode: storedState.heroCode,
+            view: storedState.view,
         },
-        updateStateHero: hero => {
-            console.log("changing state hero to:", hero);
-            dispatch({
-                type: "set_hero",
-                heroCode: hero,
+        updateState: ({ heroCode, view }) => {
+            console.log("changing state to:", { heroCode, view });
+            talentsPageStateStorage.set({
+                heroCode, 
+                view,
+                reactiveState,
             });
         },
-        updateStateView: view => {
-            console.log("changing state view to:", view);
-            talentsViews.current = view;
-        },
-        updateUrl: ({ hero, view }) => {
-            console.log("changing url to:", `${pages.talents.path}/${hero}/${view}`);
-            hst.replace(`${pages.talents.path}/${hero}/${view}`);
+        updateUrl: ({ heroCode, view }) => {
+            console.log("changing url to:", `${pages.talents.path}/${heroCode}/${view}`);
+            hst.replace(`${pages.talents.path}/${heroCode}/${view}`);
         }
     });
 
@@ -101,7 +100,7 @@ export function TalentsPage() {
         return null;
     }
 
-    const derivedTalentsState = getDerivedTalentsState(state);
+    const derivedTalentsState = getDerivedTalentsState(heroFromUrl.talents, reactiveState);
 
     console.log("got to full render");
 
@@ -119,10 +118,10 @@ export function TalentsPage() {
                         portraitContainer: cls.heroSelectPortrait
                     }}
                     items=${heroes.asArray}
-                    value=${state.hero}
+                    value=${heroFromUrl}
                     onChange=${(hero: Hero) => {
-                        if (hero.code !== state.hero.code) {
-                            hst.push(`${pages.talents.path}/${hero.code}/${talentsViews.current}`);
+                        if (hero.code !== heroFromUrl.code) {
+                            hst.push(`${pages.talents.path}/${hero.code}/${viewFromUrl}`);
                         }
                     }}
                 />
@@ -132,7 +131,7 @@ export function TalentsPage() {
                         type=range
                         min=${rankConsts.min}
                         max=${rankConsts.max}
-                        value=${state.rank}
+                        value=${reactiveState.rank}
                         oninput=${(e: preact.TargetedEvent<HTMLInputElement>) => {
                             const newRank = +e.currentTarget.value;
 
@@ -142,14 +141,14 @@ export function TalentsPage() {
                             })
                         }}
                     />
-                    <output>${state.rank}</output>
+                    <output>${reactiveState.rank}</output>
                 </label>
             </div>
             <${TalentsViewSwitch}
                 view=${viewFromUrl}
                 onSwitch=${(view: TalentsPageView) => {
-                    if (view !== talentsViews.current) {
-                        hst.push(`${pages.talents.path}/${state.hero.code}/${view}`);
+                    if (view !== viewFromUrl) {
+                        hst.push(`${pages.talents.path}/${heroFromUrl.code}/${view}`);
                     }
                 }}
             />
@@ -162,9 +161,9 @@ export function TalentsPage() {
                         content: cls.listContent,
                     }
                 }}
-                heroCode=${state.hero.code}
-                heroRank=${state.rank}
-                talents=${state.hero.talents}
+                heroCode=${heroFromUrl.code}
+                heroRank=${reactiveState.rank}
+                talents=${heroFromUrl.talents}
             />
         `}
         ${viewFromUrl === "builder" && html`
@@ -175,8 +174,8 @@ export function TalentsPage() {
                         content: cls.listContent,
                     }}
                     label=Used 
-                    heroCode=${state.hero.code} 
-                    talents=${state.talents.used} 
+                    heroCode=${heroFromUrl.code} 
+                    talents=${reactiveState.talents.used} 
                     maxItems=${maxUsedTalents}
                     onStickyLabelScrollingAgain=${usedLabelScrollingAgain.set}
                     onClear=${() => {
@@ -222,14 +221,14 @@ export function TalentsPage() {
                                     usedLabelScrollingAgain.is 
                                     && !preferredLabelScrollingAgain.is
                                 }
-                                used=${state.talents.used.length}
+                                used=${reactiveState.talents.used.length}
                                 maxUsed=${maxUsedTalents}
                             />
                         `,
                     }}
                     label=Preferred 
-                    heroCode=${state.hero.code} 
-                    talents=${state.talents.preferred} 
+                    heroCode=${heroFromUrl.code} 
+                    talents=${reactiveState.talents.preferred} 
                     onStickyLabelScrollingAgain=${preferredLabelScrollingAgain.set}
                     confirmBeforeClear
                     onClear=${() => {
@@ -266,14 +265,14 @@ export function TalentsPage() {
                             <${ListLabelRight}
                                 className=${cls.listLabelRight}
                                 visible=${preferredLabelScrollingAgain.is}
-                                used=${state.talents.used.length}
-                                preferred=${state.talents.preferred.length}
+                                used=${reactiveState.talents.used.length}
+                                preferred=${reactiveState.talents.preferred.length}
                                 maxUsed=${maxUsedTalents}
                             />
                         `,
                     }}
                     label=Available 
-                    heroCode=${state.hero.code} 
+                    heroCode=${heroFromUrl.code} 
                     talents=${[
                         ...derivedTalentsState.available, 
                         ...derivedTalentsState.locked.map(markLocked),

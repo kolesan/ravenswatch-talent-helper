@@ -1,11 +1,8 @@
-import { useMemo, useReducer } from "preact/hooks";
+import { useReducer } from "preact/hooks";
 
-import { HeroCode } from "../../../../data/heroes";
 import { Talent } from "../../../../scripts/extractTalents/types";
-import { appStateStorage } from "../../../utils/appStateStorage/appStateStorage";
 import { maxUsedTalents } from "../consts/maxUsedTalents";
-import { AppState } from "../types";
-import { getInitialState } from "../utils/getInitialState";
+import { ReactiveTalentsPageState } from "../types";
 import { isNotLocked } from "../utils/isNotLocked";
 import { minmaxRank } from "../utils/minmaxRank";
 
@@ -13,7 +10,6 @@ import { minmaxRank } from "../utils/minmaxRank";
 // to used, and back to available
 
 type Action =
-    | { type: "set_hero", heroCode: HeroCode }
     | { type: "set_rank", rank: number }
     | { type: "clear_used" }
     | { type: "clear_preferred" }
@@ -25,16 +21,9 @@ type Action =
     | { type: "talent_from_used_to_preferred", talent: Talent };
 
 // TODO consider moving state calculations to separate appropriately named functions
-export function useTalentsPageState(initialHeroCode: HeroCode | undefined) {
-    const initialState = useMemo(() => {
-        return getInitialState(initialHeroCode);
-    }, [initialHeroCode]);
-
-    return useReducer<AppState, Action>((state, action) => {
+export function useTalentsPageState(initialState: ReactiveTalentsPageState) {
+    return useReducer<ReactiveTalentsPageState, Action>((state, action) => {
         switch (action.type) {
-            case "set_hero": {
-                return appStateStorage.getHero(action.heroCode);
-            }
             case "set_rank": {
                 const rank = minmaxRank(action.rank);
                 // TODO might need to move isNotLocked utils here if they arent used elsewhere

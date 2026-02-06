@@ -1,14 +1,14 @@
-import { Talent } from "../../../../../scripts/extractTalents/types";
-import { SerializedTalent, SerializedTalentsState, TalentsState } from "../../../../pages/TalentsPage/types";
-import { defaultAppState } from "../../../../pages/TalentsPage/utils/defaultAppState";
-import { isTruthy } from "../../../isTruthy";
+import { Talent } from "../../../../../../../scripts/extractTalents/types";
+import { SerializedTalent, SerializedTalentsState, TalentsState } from "../../../../types";
+import { defaultReactiveTalentsPageState } from "../../../defaultReactiveTalentsPageState";
+import { isTruthy } from "../../../../../../utils/isTruthy";
 
 export function deserializeTalents(
     allHeroTalents: Talent[],
     storedTalentsState: SerializedTalentsState | undefined,
 ): TalentsState {
     if (!storedTalentsState) {
-        return defaultAppState.talents;
+        return defaultReactiveTalentsPageState.talents;
     }
 
     // TODO extract an util for such common deserialization actions

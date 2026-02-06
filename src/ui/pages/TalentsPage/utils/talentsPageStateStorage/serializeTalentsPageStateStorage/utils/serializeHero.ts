@@ -1,8 +1,8 @@
-import { Talent } from "../../../../../scripts/extractTalents/types";
-import { AppState, SerializedHeroState } from "../../../../pages/TalentsPage/types";
+import { Talent } from "../../../../../../../scripts/extractTalents/types";
+import { ReactiveTalentsPageState, SerializedHeroState } from "../../../../types";
 
 export function serializeHero(
-    state: AppState,
+    state: ReactiveTalentsPageState,
 ): SerializedHeroState {
     return {
         rank: state.rank,
