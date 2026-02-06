@@ -14,7 +14,7 @@ export function Logo({
 }: Props) {
     return html`
         <${Link} 
-            class=${clsx(cls.logoRoot, className)}
+            className=${clsx(cls.logoRoot, className)}
             href="/"
         >
             <img 
