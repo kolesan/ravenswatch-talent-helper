@@ -1,0 +1,24 @@
+.builderRoot {
+    flex-grow: 1;
+    min-height: 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 16px;
+}
+
+@media (min-width: 1080px) {
+    .listLabelRight {
+        display: none;
+    }
+}
+
+@media (max-width: 1080px) {
+    .builderRoot {
+        flex-grow: unset;
+        min-height: unset;
+        grid-template-columns: unset;
+        grid-template-rows: auto;
+        row-gap: 22px;
+    }
+}

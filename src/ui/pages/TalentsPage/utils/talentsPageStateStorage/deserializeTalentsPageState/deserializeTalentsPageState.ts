@@ -28,9 +28,7 @@ export function deserializeTalentsPageState(
     return {
         heroCode: hero.code,
         view,
-        reactiveState: {
-            rank,
-            talents,
-        }
+        rank,
+        builderState: talents,
     }
 }

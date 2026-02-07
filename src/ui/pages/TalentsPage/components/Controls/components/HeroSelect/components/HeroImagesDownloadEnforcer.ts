@@ -1,6 +1,6 @@
 import { html } from "htm/preact";
 
-import { heroCodes } from "../../../../../../data/heroes";
+import { heroCodes } from "../../../../../../../../data/heroes";
 
 const style = (name: string) => `background-image: url("/art/newResampled/${name}.webp");`
 

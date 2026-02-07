@@ -1,12 +1,8 @@
 import { HeroCode } from "../../../data/heroes";
 import { Talent } from "../../../scripts/extractTalents/types";
 
+import { BuilderState } from "./components/Builder/types";
 import { TalentsPageView } from "./talentsPageViews";
-
-export type ReactiveTalentsPageState = {
-    rank: number;
-    talents: TalentsState;
-}
 
 export type TalentsState = {
     used: Talent[];
@@ -21,7 +17,8 @@ export type LocalTalentsState = {
 export type StorableTalentsPageState = {
     heroCode: HeroCode;
     view: TalentsPageView;
-    reactiveState: ReactiveTalentsPageState;
+    rank: number;
+    builderState: BuilderState;
 }
 
 export type SerializedTalentsPageState = {

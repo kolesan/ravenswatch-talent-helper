@@ -54,30 +54,6 @@ ul {
     padding: 0;
 }
 
-.container-label {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    
-    font-family: ravenswatch;
-    text-transform: uppercase;
-    
-    -webkit-tap-highlight-color: transparent;
-}
-.container-label input {
-    cursor: pointer;
-
-    max-width: 130px;
-}
-.wrapabale-label {
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-}
-.checkbox-label {
-    cursor: pointer;
-}
-
 *::-webkit-scrollbar {
     width: 6px;
 }
@@ -97,10 +73,5 @@ ul {
     }
     *::-webkit-scrollbar {
         width: 4px;
-    }
-}
-@media (max-width: 400px) {
-    .container-label input {
-        max-width: 80px;
     }
 }

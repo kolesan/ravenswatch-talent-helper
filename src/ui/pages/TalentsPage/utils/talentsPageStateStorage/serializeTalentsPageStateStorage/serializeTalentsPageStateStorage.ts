@@ -1,28 +1,26 @@
-import { HeroCode } from "../../../../../../data/heroes";
-import { TalentsPageView } from "../../../talentsPageViews";
-import { ReactiveTalentsPageState, SerializedTalentsPageState } from "../../../types";
+import { SerializedTalentsPageState, StorableTalentsPageState } from "../../../types";
 
 import { serializeHero } from "./utils/serializeHero";
 
 type Params = {
-    heroCode: HeroCode;
-    view: TalentsPageView;
-    reactiveState: ReactiveTalentsPageState;
+    stateToStore: StorableTalentsPageState;
     currentStoredState: SerializedTalentsPageState | null,
 }
 
 export function serializeTalentsPageStateStorage({
-    heroCode,
-    view,
-    reactiveState,
+    stateToStore,
     currentStoredState,
 }: Params): SerializedTalentsPageState {
+    const currentHeroCode = stateToStore.heroCode;
     return {
-        currentHeroCode: heroCode,
-        currentView: view,
+        currentHeroCode: stateToStore.heroCode,
+        currentView: stateToStore.view,
         heroes: {
             ...currentStoredState?.heroes,
-            [heroCode]: serializeHero(reactiveState),
+            [currentHeroCode]: serializeHero({
+                rank: stateToStore.rank,
+                talents: stateToStore.builderState
+            }),
         }
     }
 }

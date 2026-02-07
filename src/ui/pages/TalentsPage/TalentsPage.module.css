@@ -1,65 +1,6 @@
-.controls {
-    position: sticky;
-    /* height of the toolbar */
-    top: 56px;
-    z-index: 2;
-
-    /* has to be forced for better sticky list headers performance */
-    min-height: 92px;
-
-    margin-bottom: 12px;
-    
-    padding: 2px 8px 4px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    column-gap: 16px;
-    row-gap: 4px;
-
-    background-color: inherit;
-}
-.controlsStuck {
-    box-shadow: 4px 10px 10px 0px rgba(0, 0, 0, 0.2);
-}
-.nonWrapableControls {
-    display: flex;
-    flex-wrap: nowrap;
-    column-gap: 12px;
-}
-
-.talentLists {
-    flex-grow: 1;
-    min-height: 0;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 16px;
-}
-
 .listLabel {
     padding: 4px 20px;
 }
 .listContent {
     padding: 0 16px;
-}
-@media (min-width: 1080px) {
-    .listLabelRight {
-        display: none;
-    }
-}
-@media (max-width: 1080px) {
-    .talentLists {
-        flex-grow: unset;
-        min-height: unset;
-        grid-template-columns: unset;
-        grid-template-rows: auto;
-        row-gap: 22px;
-    }
-    .heroSelectPortrait {
-        --side-length: 50px;
-        min-width: var(--side-length);
-        min-height: var(--side-length);
-    }
 }

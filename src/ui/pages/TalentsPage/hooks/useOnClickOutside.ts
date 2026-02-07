@@ -5,7 +5,7 @@ export function useOnClickOutside(cb: () => void) {
 
     useEffect(() => {
         const listener = (e: PointerEvent) => {
-            const target = e.currentTarget;
+            const target = e.target;
             if (
                 target instanceof Node 
                 && !ref.current?.contains(target)

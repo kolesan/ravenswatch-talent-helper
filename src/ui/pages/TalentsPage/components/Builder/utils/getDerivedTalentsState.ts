@@ -1,22 +1,18 @@
-import { Talent } from "../../../../scripts/extractTalents/types";
-import { ReactiveTalentsPageState, LocalTalentsState } from "../types";
-
-import { isLocked } from "./isLocked";
-import { isNotLocked } from "./isNotLocked";
+import { Talent } from "../../../../../../scripts/extractTalents/types";
+import { LocalTalentsState } from "../../../types";
+import { isLocked } from "../../../utils/isLocked";
+import { isNotLocked } from "../../../utils/isNotLocked";
+import { BuilderState } from "../types";
 
 export function getDerivedTalentsState(
+    rank: number,
     allTalents: Talent[],
-    state: ReactiveTalentsPageState,
+    state: BuilderState,
 ): LocalTalentsState {
-    const {
-        rank,
-        talents,
-    } = state;
-
     const unusedTalents = allTalents
         .filter(it => it.type === "standard")
-        .filter(isNotIn(talents.used))
-        .filter(isNotIn(talents.preferred));
+        .filter(isNotIn(state.used))
+        .filter(isNotIn(state.preferred));
 
     const availableTalents = unusedTalents.filter(isNotLocked(rank));
     const lockedTalents = unusedTalents.filter(isLocked(rank));

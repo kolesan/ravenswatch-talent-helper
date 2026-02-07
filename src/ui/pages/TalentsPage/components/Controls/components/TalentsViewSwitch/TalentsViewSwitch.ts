@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { talentsPageViews, TalentsPageView } from "../../talentsPageViews";
+import { TalentsPageView, talentsPageViews } from "../../../../talentsPageViews";
 
 import cls from "./TalentsViewSwitch.module.css";
 
@@ -24,11 +24,7 @@ export function TalentsViewSwitch({
             }}
         >
             View
-            <div 
-                class=${clsx({
-                    [cls.options]: true
-                })}
-            >
+            <div class=${cls.options}>
                 ${talentsPageViews.map(it => html`
                     <div 
                         class=${clsx({

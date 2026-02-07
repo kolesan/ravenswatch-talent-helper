@@ -1,9 +1,9 @@
 import clsx from "clsx";
 import { html } from "htm/preact";
 
-import { Hero } from "../../../../../finalData/finalData";
-import { useBooleanState } from "../../../../hooks/useBooleanState";
-import { useOnClickOutside } from "../../hooks/useOnClickOutside";
+import { Hero } from "../../../../../../../finalData/finalData";
+import { useBooleanState } from "../../../../../../hooks/useBooleanState";
+import { useOnClickOutside } from "../../../../hooks/useOnClickOutside";
 
 import { HeroImagesDownloadEnforcer } from "./components/HeroImagesDownloadEnforcer";
 import { HeroSelectItem } from "./components/HeroSelectItem/HeroSelectItem";

@@ -1,7 +1,7 @@
 import { LocalStorage } from "../../../../core/LocalStorage";
 import { SerializedTalentsPageState } from "../../types";
 
-const key = "ravenswatch-run-helper_state"
+const key = "ravenswatch-run-helper_talents-page_state"
 
 export const baseTalentsPageStateStorage = {
     get(): SerializedTalentsPageState | null {

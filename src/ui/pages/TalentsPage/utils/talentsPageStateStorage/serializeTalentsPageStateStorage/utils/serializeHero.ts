@@ -1,14 +1,20 @@
 import { Talent } from "../../../../../../../scripts/extractTalents/types";
-import { ReactiveTalentsPageState, SerializedHeroState } from "../../../../types";
+import { BuilderState } from "../../../../components/Builder/types";
+import { SerializedHeroState } from "../../../../types";
 
-export function serializeHero(
-    state: ReactiveTalentsPageState,
-): SerializedHeroState {
+type Params = {
+    rank: number;
+    talents: BuilderState;
+}
+export function serializeHero({
+    rank,
+    talents,
+}: Params): SerializedHeroState {
     return {
-        rank: state.rank,
+        rank,
         talents: {
-            used: state.talents.used.map(serializeTalent),
-            preferred: state.talents.preferred.map(serializeTalent),
+            used: talents.used.map(serializeTalent),
+            preferred: talents.preferred.map(serializeTalent),
         }
     };
 }

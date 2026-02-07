@@ -3,16 +3,18 @@ import { useEffect } from "preact/hooks";
 import { StorableTalentsPageState } from "../types";
 import { talentsPageStateStorage } from "../utils/talentsPageStateStorage/talentsPageStateStorage";
 
-export function useSaveTalentsPageStateToStorage({
+export function useStoreTalentsPageState({
     heroCode,
     view,
-    reactiveState
+    rank,
+    builderState
 }: StorableTalentsPageState) {
     useEffect(() => {
         talentsPageStateStorage.set({ 
             heroCode,
-            view, 
-            reactiveState 
+            view,
+            rank,
+            builderState
         });
-    }, [heroCode, view, reactiveState])
+    }, [heroCode, view, rank, builderState])
 }

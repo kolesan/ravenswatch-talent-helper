@@ -1,7 +1,5 @@
 import { HeroCode } from "../../../../../data/heroes";
-import { Hero } from "../../../../../finalData/finalData";
-import { TalentsPageView } from "../../talentsPageViews";
-import { ReactiveTalentsPageState, StorableTalentsPageState } from "../../types";
+import { StorableTalentsPageState } from "../../types";
 
 import { baseTalentsPageStateStorage } from "./baseTalentsPageStateStorage";
 import { deserializeTalentsPageState } from "./deserializeTalentsPageState/deserializeTalentsPageState";
@@ -16,11 +14,11 @@ export const talentsPageStateStorage = {
     getHero(heroCode: HeroCode): StorableTalentsPageState {
         return deserializeTalentsPageState(baseTalentsPageStateStorage.get(), heroCode);
     },
-    set(storableState: StorableTalentsPageState) {
+    set(stateToStore: StorableTalentsPageState) {
         const currentStoredState = baseTalentsPageStateStorage.get();
 
         const newSerializedState = serializeTalentsPageStateStorage({
-            ...storableState, 
+            stateToStore,
             currentStoredState
         });
 
