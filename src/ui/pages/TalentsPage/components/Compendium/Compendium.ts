@@ -6,7 +6,7 @@ import { MainList } from "../MainList/MainList";
 
 import { markIfLocked } from "./utils/markIfLocked";
 
-import cls from "./Encyclopedia.module.css";
+import cls from "./Compendium.module.css";
 
 type Props = {
     className?: string;
@@ -21,7 +21,7 @@ type Props = {
     talents: Talent[];
 }
 
-export function Encyclopedia({
+export function Compendium({
     className,
     classes,
     heroCode,

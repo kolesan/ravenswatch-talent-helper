@@ -12,7 +12,7 @@ import { useBooleanState } from "../../hooks/useBooleanState";
 import { useIsStickyElemStuck } from "../../hooks/useIsStickyElemStuck";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
-import { Encyclopedia } from "./components/Encyclopedia/Encyclopedia";
+import { Compendium } from "./components/Compendium/Compendium";
 import { HeroSelect } from "./components/HeroSelect/HeroSelect";
 import { MainList } from "./components/MainList/MainList";
 import { TalentsViewSwitch } from "./components/TalentsViewSwitch/TalentsViewSwitch";
@@ -145,7 +145,7 @@ export function TalentsPage() {
             />
         </div>
         ${viewFromUrl === "compendium" && html`
-            <${Encyclopedia} 
+            <${Compendium} 
                 classes=${{ 
                     list: {
                         label: cls.listLabel,
