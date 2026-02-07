@@ -1,11 +1,15 @@
 import { useEffect, useRef } from "preact/hooks";
 
 export function useOnClickOutside(cb: () => void) {
-    const ref = useRef(null);
+    const ref = useRef<Element>(null);
 
     useEffect(() => {
         const listener = (e: PointerEvent) => {
-            if (!ref.current?.contains(e.target)) {
+            const target = e.currentTarget;
+            if (
+                target instanceof Node 
+                && !ref.current?.contains(target)
+            ) {
                 cb();
             }
         }
