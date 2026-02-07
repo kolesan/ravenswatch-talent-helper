@@ -27,7 +27,6 @@ import { TalentWithLockedFlag } from "./types";
 import { calculatePageTitle } from "./utils/calculatePageTitle";
 import { getDerivedTalentsState } from "./utils/getDerivedTalentsState";
 import { markLocked } from "./utils/markLocked";
-import { talentsPageStateStorage } from "./utils/talentsPageStateStorage/talentsPageStateStorage";
 
 import cls from "./TalentsPage.module.css";
 
@@ -81,14 +80,6 @@ export function TalentsPage() {
         state: {
             heroCode: storedState.heroCode,
             view: storedState.view,
-        },
-        updateState: ({ heroCode, view }) => {
-            console.log("changing state to:", { heroCode, view });
-            talentsPageStateStorage.set({
-                heroCode, 
-                view,
-                reactiveState,
-            });
         },
         updateUrl: ({ heroCode, view }) => {
             console.log("changing url to:", `${pages.talents.path}/${heroCode}/${view}`);
