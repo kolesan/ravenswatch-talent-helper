@@ -1,19 +1,9 @@
-import { useLayoutEffect } from "preact/hooks";
+import { popState, pushState, replaceState } from "../consts";
 
-import { popState, pushState, replaceState } from "./consts";
-
-type Params = {
-    onLocationChange: (location: string) => void;
-}
-
-export function useInitHistoryListeners({
-    onLocationChange
-}: Params) {
-    useLayoutEffect(() => {
-        window.addEventListener(popState, handlePopState(onLocationChange));
-        window.addEventListener(pushState as any, handlePushState(onLocationChange));
-        window.addEventListener(replaceState as any, handleReplaceState(onLocationChange));
-    }, []);
+export function initHistoryListeners(cb: (location: string) => void) {
+    window.addEventListener(popState, handlePopState(cb));
+    window.addEventListener(pushState as any, handlePushState(cb));
+    window.addEventListener(replaceState as any, handleReplaceState(cb));
 }
 
 function handlePopState(cb: (location: string) => void) {

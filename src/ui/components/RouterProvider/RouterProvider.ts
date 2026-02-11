@@ -2,7 +2,7 @@ import { html } from "htm/preact";
 import { ComponentChildren, createContext } from "preact";
 import { useContext, useState } from "preact/hooks";
 
-import { useInitRouter } from "./useInitRouter";
+import { useInitRouter } from "./hooks/useInitRouter/useInitRouter";
 
 type Props = {
     children: ComponentChildren;

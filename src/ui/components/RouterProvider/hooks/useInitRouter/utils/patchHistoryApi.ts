@@ -1,17 +1,10 @@
-import { useLayoutEffect } from "preact/hooks";
+import { pushState, replaceState } from "../consts";
 
-import { pushState, replaceState } from "./consts";
-
-export function usePatchHistoryApi() {
-    useLayoutEffect(() => {
-        patchHistoryApi(); 
-    }, []);
-}
-
-function patchHistoryApi() {
+export function patchHistoryApi() {
     history.pushState = patch(pushState);
     history.replaceState = patch(replaceState);
 }
+
 function patch(type: keyof typeof history) {
     // save original function
     const orig = history[type];
