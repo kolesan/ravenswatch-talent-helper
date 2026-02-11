@@ -1,38 +1,38 @@
-import { HeroCode } from "../../../data/heroes";
+import { Hero } from "../../../finalData/finalData";
 import { Talent } from "../../../scripts/extractTalents/types";
 
 import { BuilderState } from "./components/Builder/types";
 import { TalentsPageView } from "./talentsPageViews";
-
-export type TalentsState = {
-    used: Talent[];
-    preferred: Talent[];
-}
 
 export type LocalTalentsState = {
     available: Talent[];
     locked: Talent[];
 }
 
-export type StorableTalentsPageState = {
-    heroCode: HeroCode;
-    view: TalentsPageView;
+export type StorableHeroState = {
     rank: number;
     builderState: BuilderState;
 }
 
-export type SerializedTalentsPageState = {
-    currentHeroCode: string;
-    currentView: string;
-    heroes: Record<string, SerializedHeroState>;
+export type StorableTalentsPageUrlParamsState = {
+    hero: Hero;
+    view: TalentsPageView;
+}
+export type SerializedTalentsPageUrlParamsState = {
+    hero: string;
+    view: string;
 }
 
-export type SerializedHeroState = {
+export type SerializedHeroes = {
+    heroes: Record<string, SerializedHero>;
+}
+
+export type SerializedHero = {
     rank: number;
-    talents: SerializedTalentsState;
+    builderState: SerializedBuilderState;
 }
 
-export type SerializedTalentsState = {
+export type SerializedBuilderState = {
     used: SerializedTalent[];
     preferred: SerializedTalent[];
 }

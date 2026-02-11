@@ -1,11 +1,14 @@
+import { pages } from "../../../../../pages";
 import { heroes } from "../../../../finalData/finalData";
 import { useRouter } from "../../../components/RouterProvider/RouterProvider";
 import { isTalentsPageView } from "../talentsPageViews";
 
-export function useTalentsPagePathParams() {
+export function useTalentsPageUrlParams() {
     const location = useRouter();
 
-    const [_, __, hero, view] = location.split("/");
+    const { hero, view } = pages.talents.deconstructPath(location);
+
+    console.log("useTalentsPageUrlParams", { url: location }, { hero, view });
 
     return {
         hero: hero ? heroes.utils.findByCode(hero) : undefined,

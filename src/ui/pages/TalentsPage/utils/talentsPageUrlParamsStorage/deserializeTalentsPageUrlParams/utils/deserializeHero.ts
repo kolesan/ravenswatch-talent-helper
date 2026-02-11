@@ -1,6 +1,6 @@
 import { Hero, heroes } from "../../../../../../../finalData/finalData";
-import { defaultHero } from "../../../defaultHero";
 import { isHeroCode } from "../../../../../../utils/isHeroCode";
+import { defaultHero } from "../../../defaultHero";
 
 export function deserializeHero(
     heroCode: unknown

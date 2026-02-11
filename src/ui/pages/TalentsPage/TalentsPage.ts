@@ -1,122 +1,106 @@
 import { html } from "htm/preact";
-import { useState } from "preact/hooks";
+import { useEffect, useMemo } from "preact/hooks";
 
 import { pages } from "../../../../pages";
-import { Hero } from "../../../finalData/finalData";
+import { Spinner } from "../../components/Spinner/Spinner";
 import { hst } from "../../core/hst";
-import { useAfterMountEffect } from "../../hooks/useAfterMountEffect";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
-import { Builder } from "./components/Builder/Builder";
-import { useBuilder } from "./components/Builder/useBuilder";
-import { Compendium } from "./components/Compendium/Compendium";
-import { Controls } from "./components/Controls/Controls";
-import { useHandleUrl } from "./hooks/useHandleUrl";
-import { useStoredTalentsPageState } from "./hooks/useStoredTalentsPageState";
-import { useStoreTalentsPageState } from "./hooks/useStoreTalentsPageState";
-import { useTalentsPagePathParams } from "./hooks/useTalentsPagePathParams";
-import { TalentsPageView } from "./talentsPageViews";
+import { useTalentsPageUrlParams } from "./hooks/useTalentsPageUrlParams";
+import { TalentsPageContent } from "./TalentsPageContent";
 import { calculatePageTitle } from "./utils/calculatePageTitle";
+import { talentsPageUrlParamsStorage } from "./utils/talentsPageUrlParamsStorage/talentsPageUrlParamsStorage";
 
-import cls from "./TalentsPage.module.css";
-
+/**  
+ * Cases to handle:
+ * 1. We fresh load the talents page for the first time 
+ * (TalentsPage get's mounted probably thats it in a nutshell?) 
+ * by hitting refresh, navigating from other pages, etc.
+ * The only state at this point is the local storage state and the url
+ * 1.1 The url can be empty at this point or partially empty (no hero, no view)
+ * 1.2 Or the url can be full with hero and view
+ * 2. We catch a history event
+ * 2.1 Pop history - back, forward browser buttons
+ * 2.2 Push history - navigation with new history entry creation
+ * 2.2.1 New hero is selected
+ * 2.2.2 New view is selected
+ * 2.3 Replace history - url fixes so the url has same state as the storage
+ * 2.3.1 We catch a (partialy) empty url and want to fix it so it's full 
+ * and matches stored state. Do we want a rerender in such cases? 
+ * This should probably only be considered on initial mount. However there is a case
+ * where user is on the talent's page with proper url and he clicks on the logo
+ * or the talents nav item and as a result get's redirected to / or to /talents
+ * 
+ * 3. Corner cases to think about
+ * 3.1 bad hero code in url
+ * 3.2 bad view code in url
+ * 3.3 missing hero code
+ * 3.4 missing view code
+ */
 export function TalentsPage() {
-    const { hero, view } = useTalentsPagePathParams();
+    console.log("============== TalentsPage rendering ================");
 
-    usePageTitle(calculatePageTitle(hero, view));
+    const urlParams = useTalentsPageUrlParams();
 
-    const storedState = useStoredTalentsPageState(hero?.code);
+    usePageTitle(calculatePageTitle(urlParams.hero, urlParams.view));
 
-    const [rank, setRank] = useState(storedState.rank);
+    // On mount and on subsequent renders:
+    // If url params change we load stored params for later comparison
+    const storedUrlParams = useMemo(() => {
+        const storedParams = talentsPageUrlParamsStorage.get();
+        console.log("Loading stored params", {
+            hero: storedParams.hero.code, 
+            view: storedParams.view
+        });
+        return storedParams;
+    }, [urlParams.hero?.code, urlParams.view]);
 
-    const builder = useBuilder(storedState.builderState);
-
-    // TODO this effect feels wrong investigate a proper way to 
-    // react to url change
-    // potential solution is to just do these in the event handler
-    // where hero and rank change
-    useAfterMountEffect(() => {
-        setRank(storedState.rank);
-        builder.loadState(storedState.builderState);
-    }, [hero?.code]);
-    useAfterMountEffect(() => {
-        builder.applyRank(rank);
-    }, [rank])
-    
-
-    useHandleUrl({
-        url: {
-            heroCode: hero?.code,
-            view,
-        },
-        state: {
-            heroCode: storedState.heroCode,
-            view: storedState.view,
-        },
-        updateUrl: ({ heroCode, view }) => {
-            hst.replace(`${pages.talents.path}/${heroCode}/${view}`);
+    // On mount and on subsequent renders:
+    // If url changes and contains params that differ from stored ones
+    // store the new params
+    useEffect(() => {
+        console.log("Url params change detected. Checking if need to save params to storage");
+        if (
+            urlParams.hero?.code && urlParams.hero.code !== storedUrlParams.hero.code
+            || urlParams.view && urlParams.view !== storedUrlParams.view
+        ) {
+            const paramsToStore = { 
+                hero: urlParams.hero || storedUrlParams.hero, 
+                view: urlParams.view || storedUrlParams.view,
+            };
+            console.log("Saving new url params to storage:", paramsToStore);
+            talentsPageUrlParamsStorage.set(paramsToStore);
         }
-    });
+    }, [urlParams.hero?.code, urlParams.view]);
 
-    useStoreTalentsPageState({
-        heroCode: hero?.code || storedState.heroCode,
-        view: view || storedState.view,
-        rank,
-        builderState: builder.state,
-    });
+    // If hero or view are missing from url params
+    // we do a "redirect" (history replace) to a fully correct url
+    // with stored params used instead of missing ones
+    useEffect(() => {
+        console.log("Url params change detected. Checking if redirect is needed");
+        if (!urlParams.hero || !urlParams.view) {
+            const newPathParams = {
+                hero: (urlParams.hero || storedUrlParams.hero).code, 
+                view: urlParams.view || storedUrlParams.view,
+            };
+            const newPath = pages.talents.constructPath(newPathParams);
+            hst.replace(newPath);
+            console.log("Redirecting to:", { url: newPath}, newPathParams);
+        }
+    }, [urlParams.hero?.code, urlParams.view]);
 
-    if (!hero || !view) {
-        return null;
+    // Display a spinner if we do not have a hero or a view from the url
+    // after redirect to full url with hero and view from storage show content
+    if (!urlParams.hero || !urlParams.view) {
+        return html`<${Spinner} />`;
     }
 
+    // TODO: Consider loading rank and talents state here and not in TalentsPageContent
+    // so that all loading is handled in one place
     return html`
-        <${Controls}
-            hero=${hero}
-            rank=${rank}
-            view=${view}
-            onHeroChange=${(hero: Hero) => {
-                hst.push(`${pages.talents.path}/${hero.code}/${view}`);
-            }}
-            onRankChange=${(rank: number) => {
-                setRank(rank);
-            }}
-            onViewChange=${(view: TalentsPageView) => {
-                hst.push(`${pages.talents.path}/${hero.code}/${view}`);
-            }}
+        <${TalentsPageContent}
+            hero=${urlParams.hero}
+            view=${urlParams.view}
         />
-        ${view === "compendium" && html`
-            <${Compendium} 
-                classes=${{ 
-                    list: {
-                        label: cls.listLabel,
-                        content: cls.listContent,
-                    }
-                }}
-                heroCode=${hero.code}
-                heroRank=${rank}
-                talents=${hero.talents}
-            />
-        `}
-        ${view === "builder" && html`
-            <${Builder} 
-                classes=${{ 
-                    list: {
-                        label: cls.listLabel,
-                        content: cls.listContent,
-                    }
-                }}
-                heroCode=${hero.code}
-                heroTalents=${hero.talents}
-                heroRank=${rank}
-                state=${builder.state}
-                onClearUsed=${builder.clearUsed}
-                onClearPreferred=${builder.clearPreferred}
-                onRemoveFromUsed=${builder.removeFromUsed}
-                onPreferredToUsed=${builder.preferredToUsed}
-                onPreferredToAvailable=${builder.preferredToAvailable}
-                onAvailabelToUsed=${builder.availabelToUsed}
-                onAvailableToPreferred=${builder.availableToPreferred}
-            />
-        `}
     `;
 }

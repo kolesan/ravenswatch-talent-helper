@@ -1,24 +1,25 @@
 import { Talent } from "../../../../../../../scripts/extractTalents/types";
 import { isTruthy } from "../../../../../../utils/isTruthy";
-import { SerializedTalent, SerializedTalentsState, TalentsState } from "../../../../types";
+import { BuilderState } from "../../../../components/Builder/types";
+import { SerializedTalent, SerializedBuilderState } from "../../../../types";
 import { defaultBuilderState } from "../../../defaultBuilderState";
 
-export function deserializeTalents(
+export function deserializeBuilderState(
     allHeroTalents: Talent[],
-    storedTalentsState: SerializedTalentsState | undefined,
-): TalentsState {
-    if (!storedTalentsState) {
+    storedBuilderState: SerializedBuilderState | undefined,
+): BuilderState {
+    if (!storedBuilderState) {
         return defaultBuilderState;
     }
 
     // TODO extract an util for such common deserialization actions
-    const normalizedTalentState: Partial<SerializedTalentsState> = 
-        typeof storedTalentsState === "object"
-            ? storedTalentsState || {} // additional check for null
+    const normalizedBuilderState: Partial<SerializedBuilderState> = 
+        typeof storedBuilderState === "object"
+            ? storedBuilderState || {} // additional check for null
             : {};
 
-    const storedUsed = normalizedTalentState.used;
-    const storedPreferred = normalizedTalentState.preferred;
+    const storedUsed = normalizedBuilderState.used;
+    const storedPreferred = normalizedBuilderState.preferred;
 
     const normalizedUsed = Array.isArray(storedUsed)
         ? storedUsed
