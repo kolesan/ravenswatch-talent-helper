@@ -23,6 +23,8 @@ export function TalentsPageContent({
     hero,
     view,
 }: Props) {
+    console.log("============ TalentsPageContent rendering ============");
+
     // load rank and talents state of the hero
     const storedState = useMemo(() => {
         return heroStateStorage.get(hero);

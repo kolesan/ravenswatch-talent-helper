@@ -68,7 +68,10 @@ export function TalentsPage() {
                 hero: urlParams.hero || storedUrlParams.hero, 
                 view: urlParams.view || storedUrlParams.view,
             };
-            console.log("Saving new url params to storage:", paramsToStore);
+            console.log("Saving new url params to storage:", {
+                hero: paramsToStore.hero.code, 
+                view: paramsToStore.view
+            });
             talentsPageUrlParamsStorage.set(paramsToStore);
         }
     }, [urlParams.hero?.code, urlParams.view]);

@@ -28,6 +28,8 @@ export function Compendium({
     heroRank,
     talents,
 }: Props) {
+    console.log("========== Compendium rendering ==========");
+
     const mapped = talents.map(markIfLocked(heroRank));
 
     const starting = mapped.filter(it => it.type === "starting");

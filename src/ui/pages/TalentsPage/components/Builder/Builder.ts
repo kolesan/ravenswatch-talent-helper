@@ -46,6 +46,8 @@ export function Builder({
     onAvailabelToUsed,
     onAvailableToPreferred,
 }: Props) {
+    console.log("========== Builder rendering ==========");
+
     const usedLabelScrollingAgain = useBooleanState(false);
     const preferredLabelScrollingAgain = useBooleanState(false);
 
