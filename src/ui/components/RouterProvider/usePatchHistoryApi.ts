@@ -1,9 +1,9 @@
-import { useEffect } from "preact/hooks";
+import { useLayoutEffect } from "preact/hooks";
 
 import { pushState, replaceState } from "./consts";
 
 export function usePatchHistoryApi() {
-    useEffect(() => {
+    useLayoutEffect(() => {
         patchHistoryApi(); 
     }, []);
 }

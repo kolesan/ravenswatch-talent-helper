@@ -84,8 +84,8 @@ export function TalentsPage() {
                 view: urlParams.view || storedUrlParams.view,
             };
             const newPath = pages.talents.constructPath(newPathParams);
-            hst.replace(newPath);
             console.log("Redirecting to:", { url: newPath}, newPathParams);
+            hst.replace(newPath);
         }
     }, [urlParams.hero?.code, urlParams.view]);
 
