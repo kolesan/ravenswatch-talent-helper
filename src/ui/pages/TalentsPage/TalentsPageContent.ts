@@ -23,11 +23,16 @@ export function TalentsPageContent({
     hero,
     view,
 }: Props) {
-    console.log("============ TalentsPageContent rendering ============");
+    console.log("============ TalentsPageContent rendering ============", { 
+        hero: hero.code, 
+        view 
+    });
 
     // load rank and talents state of the hero
     const storedState = useMemo(() => {
-        return heroStateStorage.get(hero);
+        const storedHero = heroStateStorage.get(hero);
+        console.log(`Loading "${hero.code}" hero state`, storedHero);
+        return storedHero;
     }, [hero.code]);
 
     // create local state for rank and talents
@@ -37,14 +42,21 @@ export function TalentsPageContent({
 
     // ensure local rank and talent state is correct after hero change
     useEffect(() => {
+        console.log("Hero code change detected, setting rank and builder state", storedState);
         setRank(storedState.rank);
         builder.loadState(storedState.builderState);
     }, [hero.code]);
 
     // save any local state changes to storage
     useEffect(() => {
+        console.log("Hero state change detected, saving to storage", hero.code, {
+            rank,
+            builderState: builder.state,
+        });
         // TODO Investigate if this will save previously selected hero state 
         // to the new hero, when hero changes
+        // TODO check how many rerenders a change to builder state (move talent)
+        // causes
         heroStateStorage.set(hero.code, {
             rank,
             builderState: builder.state,

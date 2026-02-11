@@ -28,7 +28,7 @@ export function Compendium({
     heroRank,
     talents,
 }: Props) {
-    console.log("========== Compendium rendering ==========");
+    console.log("========== Compendium rendering ==========", { heroCode, heroRank });
 
     const mapped = talents.map(markIfLocked(heroRank));
 
