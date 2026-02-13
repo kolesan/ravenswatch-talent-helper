@@ -1,6 +1,6 @@
 import { html } from "htm/preact";
 import { createPortal } from "preact/compat";
-import { useEffect, useMemo, useState } from "preact/hooks";
+import { useEffect, useMemo } from "preact/hooks";
 
 import { Hero } from "../../../../../finalData/finalData";
 import { ListLabelRight } from "../../../../components/ListLabelRight/ListLabelRight";
@@ -12,7 +12,7 @@ import { RankSlider } from "../Controls/components/RankSlider/RankSlider";
 import { rankSliderPortalContainerId } from "../Controls/constants";
 import { MainList } from "../MainList/MainList";
 
-import { useBuilder } from "./useBuilder";
+import { useTalentsBuilder } from "./useTalentsBuilder";
 import { getDerivedTalentsState } from "./utils/getDerivedTalentsState";
 
 import cls from "./Builder.module.css";
@@ -26,6 +26,7 @@ type Props = {
     }
     hero: Hero;
 }
+
 export function Builder({
     classes,
     hero,
@@ -39,45 +40,39 @@ export function Builder({
         return storedHero;
     }, [hero.code]);
 
-    // create local state for rank and talents
-    // using stored state as initial state
-    const [rank, setRank] = useState(storedState.rank);
-    const builder = useBuilder(storedState.builderState);
+    // init local state
+    const talentsBuilder = useTalentsBuilder({
+        initialState: storedState,
+        onNewState: newState => {
+            heroStateStorage.set(hero.code, newState);
+        },
+    });
 
     // ensure local rank and talent state is correct after hero change
     useEffect(() => {
         console.log("= Builder = Hero code change detected, setting rank and builder state", 
             storedState
         );
-        setRank(storedState.rank);
-        builder.loadState(storedState.builderState);
+        talentsBuilder.loadStateWithoutNewStateCb(storedState);
     }, [hero.code]);
-
-    // save any local state changes to storage
-    useEffect(() => {
-        console.log("= Builder = Hero state change detected, saving to storage", {
-            hero: hero.code,
-            rank,
-            builderState: builder.state,
-        });
-        heroStateStorage.set(hero.code, {
-            rank: rank,
-            builderState: builder.state,
-        });
-    }, [rank, builder.state]);
 
     const usedLabelScrollingAgain = useBooleanState(false);
     const preferredLabelScrollingAgain = useBooleanState(false);
 
-    const derivedTalentsState = getDerivedTalentsState(rank, hero.talents, builder.state);
+    const rankSliderPortalContainer = document
+        .getElementById(rankSliderPortalContainerId);
 
-    const rankSliderPortalContainer = document.getElementById(rankSliderPortalContainerId);
+    const derivedTalentsState = getDerivedTalentsState(
+        talentsBuilder.rank, 
+        hero.talents, 
+        talentsBuilder.talents
+    );
 
     return html`
         ${rankSliderPortalContainer && createPortal(html`
             <${RankSlider}
-                value=${rank}
-                onChange=${setRank}
+                value=${talentsBuilder.rank}
+                onChange=${talentsBuilder.setRank}
             />
         `, rankSliderPortalContainer)}
         <div class=${cls.builderRoot}>
@@ -85,13 +80,13 @@ export function Builder({
                 classes=${classes?.list}
                 label=Used 
                 heroCode=${hero.code} 
-                talents=${builder.state.used} 
+                talents=${talentsBuilder.talents.used} 
                 maxItems=${maxUsedTalents}
                 onStickyLabelScrollingAgain=${usedLabelScrollingAgain.set}
-                onClear=${builder.clearUsed}
-                onTalentClick=${builder.removeFromUsed}
-                onTalentAltClick=${builder.removeFromUsed}
-                onTalentHold=${builder.removeFromUsed}
+                onClear=${talentsBuilder.clearUsed}
+                onTalentClick=${talentsBuilder.removeFromUsed}
+                onTalentAltClick=${talentsBuilder.removeFromUsed}
+                onTalentHold=${talentsBuilder.removeFromUsed}
             />
             <${MainList} 
                 classes=${classes?.list}
@@ -103,20 +98,20 @@ export function Builder({
                                 usedLabelScrollingAgain.is 
                                 && !preferredLabelScrollingAgain.is
                             }
-                            used=${builder.state.used.length}
+                            used=${talentsBuilder.talents.used.length}
                             maxUsed=${maxUsedTalents}
                         />
                     `,
                 }}
                 label=Preferred 
                 heroCode=${hero.code} 
-                talents=${builder.state.preferred} 
+                talents=${talentsBuilder.talents.preferred} 
                 onStickyLabelScrollingAgain=${preferredLabelScrollingAgain.set}
                 confirmBeforeClear
-                onClear=${builder.clearPreferred}
-                onTalentClick=${builder.preferredToUsed}
-                onTalentAltClick=${builder.preferredToAvailable}
-                onTalentHold=${builder.preferredToAvailable}
+                onClear=${talentsBuilder.clearPreferred}
+                onTalentClick=${talentsBuilder.preferredToUsed}
+                onTalentAltClick=${talentsBuilder.preferredToAvailable}
+                onTalentHold=${talentsBuilder.preferredToAvailable}
             />
             <${MainList} 
                 classes=${classes?.list}
@@ -125,8 +120,8 @@ export function Builder({
                         <${ListLabelRight}
                             className=${cls.listLabelRight}
                             visible=${preferredLabelScrollingAgain.is}
-                            used=${builder.state.used.length}
-                            preferred=${builder.state.preferred.length}
+                            used=${talentsBuilder.talents.used.length}
+                            preferred=${talentsBuilder.talents.preferred.length}
                             maxUsed=${maxUsedTalents}
                         />
                     `,
@@ -137,9 +132,9 @@ export function Builder({
                     ...derivedTalentsState.available, 
                     ...derivedTalentsState.locked.map(markLocked),
                 ]}
-                onTalentClick=${builder.availabelToUsed}
-                onTalentAltClick=${builder.availableToPreferred}
-                onTalentHold=${builder.availableToPreferred}
+                onTalentClick=${talentsBuilder.availableToUsed}
+                onTalentAltClick=${talentsBuilder.availableToPreferred}
+                onTalentHold=${talentsBuilder.availableToPreferred}
             />
         </div>
     `;

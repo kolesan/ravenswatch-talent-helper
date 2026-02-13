@@ -1,23 +1,30 @@
 import { Talent } from "../../../../../scripts/extractTalents/types";
+import { maxUsedTalents } from "../../consts/maxUsedTalents";
 import { TalentWithLockedFlag } from "../../types";
 
-import { useBuilderState } from "./hooks/useBuilderState";
+import { useBuilderState } from "./hooks/useBuilderState/useBuilderState";
 import { BuilderState } from "./types";
 
-export function useBuilder(initialState: BuilderState) {
-    const [state, dispatch] = useBuilderState(initialState);
+type Params = {
+    initialState: BuilderState;
+    onNewState: (state: BuilderState) => void;
+}
+
+export function useBuilder({
+    initialState,
+    onNewState,
+}: Params) {
+    const [state, dispatch] = useBuilderState({
+        initialState,
+        onNewState,
+    });
+
     return {
         state,
-        loadState(stateToLoad: BuilderState) {
+        loadStateWithoutNewStateCb(newState: BuilderState) {
             dispatch({
-                type: "load_state",
-                state: stateToLoad,
-            })
-        },
-        applyRank(rank: number) {
-            dispatch({
-                type: "apply_rank",
-                rank,
+                type: "load_state_without_new_state_cb",
+                state: newState,
             });
         },
         clearUsed() {
@@ -33,29 +40,37 @@ export function useBuilder(initialState: BuilderState) {
         removeFromUsed(talent: Talent) {
             dispatch({
                 type: talent.preferred
-                    ? "talent_from_used_to_preferred"
-                    : "talent_from_used_to_available",
+                    ? "used_to_preferred"
+                    : "used_to_available",
                 talent,
             });
         },
         preferredToUsed(talent: Talent) {
+            if (state.used.length >= maxUsedTalents) {
+                return;
+            }
+
             dispatch({
-                type: "talent_from_preferred_to_used",
+                type: "preferred_to_used",
                 talent,
             });
         },
         preferredToAvailable(talent: Talent) {
             dispatch({
-                type: "talent_from_preferred_to_available",
+                type: "preferred_to_available",
                 talent,
             });
         },
-        availabelToUsed(talent: TalentWithLockedFlag) {
-            if (talent.locked) {
+        availableToUsed(talent: TalentWithLockedFlag) {
+            if (
+                talent.locked 
+                || state.used.length >= maxUsedTalents
+            ) {
                 return;
             }
+
             dispatch({
-                type: "talent_from_available_to_used",
+                type: "available_to_used",
                 talent,
             });
         },
@@ -63,8 +78,9 @@ export function useBuilder(initialState: BuilderState) {
             if (talent.locked) {
                 return;
             }
+
             dispatch({
-                type: "talent_from_available_to_preferred",
+                type: "available_to_preferred",
                 talent,
             });
         },

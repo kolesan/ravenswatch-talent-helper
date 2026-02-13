@@ -13,6 +13,13 @@ export const heroStateStorage = {
         return deserializeHeroState(currentStoredState, hero);
     },
     set(heroCode: HeroCode, stateToStore: StorableHeroState) {
+        console.log("Saving to builder storage", { 
+            hero: heroCode,
+            rank: stateToStore.rank,
+            used: stateToStore.builderState.used.length,
+            preferred: stateToStore.builderState.preferred.length,
+        });
+
         const currentStoredState = baseHeroStateStorage.get();
 
         const newSerializedState = serializeHeroState({
