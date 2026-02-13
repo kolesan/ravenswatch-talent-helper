@@ -49,15 +49,6 @@ export function Compendium({
         );
         setRank(storedState.rank);
     }, [hero.code]);
-    
-    // save local rank state to storage on change
-    useEffect(() => {
-        console.log("= Compendium = rank state change detected, saving to storage", {
-            hero: hero.code,
-            rank,
-        });
-        compendiumStateStorage.set(hero.code, { rank });
-    }, [rank]);
 
     const rankSliderPortalContainer = document
         .getElementById(rankSliderPortalContainerId);
@@ -72,7 +63,10 @@ export function Compendium({
         ${rankSliderPortalContainer && createPortal(html`
             <${RankSlider}
                 value=${rank}
-                onChange=${setRank}
+                onChange=${(rank: number) => {
+                    setRank(rank);
+                    compendiumStateStorage.set(hero.code, { rank });
+                }}
             />
         `, rankSliderPortalContainer)}
         <div class=${clsx(cls.root, className)}>

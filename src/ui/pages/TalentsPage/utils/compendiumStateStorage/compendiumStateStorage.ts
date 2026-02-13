@@ -12,6 +12,11 @@ export const compendiumStateStorage = {
         return deserializeCompendiumState(currentStoredState, heroCode);
     },
     set(heroCode: HeroCode, stateToStore: StorableCompendiumHeroState) {
+        console.log("Saving to compendium storage", { 
+            hero: heroCode,
+            rank: stateToStore.rank,
+        });
+
         const currentStoredState = baseCompendiumStateStorage.get();
 
         const newSerializedState = serializeCompendiumState({
