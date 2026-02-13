@@ -1,8 +1,8 @@
 import { Hero } from "../../../../../../finalData/finalData";
 import { SerializedHeroes, StorableHeroState } from "../../../types";
+import { deserializeRank } from "../../storage/deserialization/deserializeRank";
 
 import { deserializeBuilderState } from "./utils/deserializeBuilderState";
-import { deserializeRank } from "./utils/deserializeRank";
 
 export function deserializeHeroState(
     currentStoredState: SerializedHeroes | null,

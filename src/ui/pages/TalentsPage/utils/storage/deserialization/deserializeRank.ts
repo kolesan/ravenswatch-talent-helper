@@ -1,5 +1,5 @@
-import { rankConsts } from "../../../../consts/rankConsts";
-import { minmaxRank } from "../../../minmaxRank";
+import { rankConsts } from "../../../consts/rankConsts";
+import { minmaxRank } from "../../minmaxRank";
 
 export function deserializeRank(
     storedRank: unknown,

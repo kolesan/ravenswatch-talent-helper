@@ -9,11 +9,6 @@ export type LocalTalentsState = {
     locked: Talent[];
 }
 
-export type StorableHeroState = {
-    rank: number;
-    builderState: BuilderState;
-}
-
 export type StorableTalentsPageUrlParamsState = {
     hero: Hero;
     view: TalentsPageView;
@@ -21,6 +16,11 @@ export type StorableTalentsPageUrlParamsState = {
 export type SerializedTalentsPageUrlParamsState = {
     hero: string;
     view: string;
+}
+
+export type StorableHeroState = {
+    rank: number;
+    builderState: BuilderState;
 }
 
 export type SerializedHeroes = {

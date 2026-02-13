@@ -1,6 +1,7 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
+import { HeroCode } from "../../../../../data/heroes";
 import { Talent } from "../../../../../scripts/extractTalents/types";
 import { MainList } from "../MainList/MainList";
 
@@ -16,7 +17,7 @@ type Props = {
             content?: string;
         }
     }
-    heroCode: string;
+    heroCode: HeroCode;
     heroRank: number;
     talents: Talent[];
 }
@@ -28,13 +29,16 @@ export function Compendium({
     heroRank,
     talents,
 }: Props) {
-    console.log("========== Compendium rendering ==========", { heroCode, heroRank });
+    console.log("========== Compendium rendering ==========", { 
+        hero: heroCode, 
+        rank: heroRank
+    });
 
-    const mapped = talents.map(markIfLocked(heroRank));
+    const withLockedMarked = talents.map(markIfLocked(heroRank));
 
-    const starting = mapped.filter(it => it.type === "starting");
-    const standard = mapped.filter(it => it.type === "standard");
-    const final = mapped.filter(it => it.type === "final");
+    const starting = withLockedMarked.filter(it => it.type === "starting");
+    const standard = withLockedMarked.filter(it => it.type === "standard");
+    const final = withLockedMarked.filter(it => it.type === "final");
 
     return html`
         <div class=${clsx(cls.root, className)}>
