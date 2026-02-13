@@ -9,7 +9,7 @@ type Params = {
     heroCode: HeroCode;
 }
 
-export function serializeHeroState({
+export function serializeTalentsBuilderState({
     currentStoredState,
     stateToStore,
     heroCode,

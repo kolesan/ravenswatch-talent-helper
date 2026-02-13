@@ -3,7 +3,7 @@ import { SerializedHeroes } from "../../types";
 
 const key = "ravenswatch-run-helper_talents-page_builder-state"
 
-export const baseHeroStateStorage = {
+export const baseTalentsBuilderStateStorage = {
     get(): SerializedHeroes | null {
         return LocalStorage.get(key);
     },

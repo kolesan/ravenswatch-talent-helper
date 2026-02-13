@@ -6,7 +6,7 @@ import { Hero } from "../../../../../finalData/finalData";
 import { ListLabelRight } from "../../../../components/ListLabelRight/ListLabelRight";
 import { useBooleanState } from "../../../../hooks/useBooleanState";
 import { maxUsedTalents } from "../../consts/maxUsedTalents";
-import { heroStateStorage } from "../../utils/heroStateStorage/heroStateStorage";
+import { talentsBuilderStateStorage } from "../../utils/talentsBuilderStateStorage/talentsBuilderStateStorage";
 import { RankSlider } from "../Controls/components/RankSlider/RankSlider";
 import { rankSliderPortalContainerId } from "../Controls/constants";
 import { MainList } from "../MainList/MainList";
@@ -33,7 +33,7 @@ export function Builder({
 
     // load builder state of the hero
     const storedState = useMemo(() => {
-        const storedHero = heroStateStorage.get(hero);
+        const storedHero = talentsBuilderStateStorage.get(hero);
         console.log(`= Builder = Loading "${hero.code}" hero state`, storedHero);
         return storedHero;
     }, [hero.code]);
@@ -43,7 +43,7 @@ export function Builder({
         initialState: storedState,
         allHeroTalents: hero.talents,
         onNewState: newState => {
-            heroStateStorage.set(hero.code, newState);
+            talentsBuilderStateStorage.set(hero.code, newState);
         },
     });
 

@@ -4,14 +4,19 @@ import { deserializeRank } from "../../storage/deserialization/deserializeRank";
 
 import { deserializeBuilderState } from "./utils/deserializeBuilderState";
 
-export function deserializeHeroState(
+export function deserializeTalentsBuilderState(
     currentStoredState: SerializedHeroes | null,
     hero: Hero,
 ): StorableHeroState {
     const storedHeroState = currentStoredState?.heroes?.[hero.code];
 
-    const rank = deserializeRank(storedHeroState?.rank);
-    const builderState = deserializeBuilderState(hero.talents, storedHeroState?.builderState);
+    const rank = deserializeRank(
+        storedHeroState?.rank
+    );
+    const builderState = deserializeBuilderState(
+        hero.talents, 
+        storedHeroState?.builderState
+    );
 
     return {
         rank,

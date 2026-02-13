@@ -1,7 +1,7 @@
 import { Talent } from "../../../../../../../scripts/extractTalents/types";
 import { isTruthy } from "../../../../../../utils/isTruthy";
 import { BuilderState } from "../../../../components/Builder/types";
-import { SerializedTalent, SerializedBuilderState } from "../../../../types";
+import { SerializedBuilderState, SerializedTalent } from "../../../../types";
 import { defaultBuilderState } from "../../../defaultBuilderState";
 
 export function deserializeBuilderState(
