@@ -7,13 +7,11 @@ import { ListLabelRight } from "../../../../components/ListLabelRight/ListLabelR
 import { useBooleanState } from "../../../../hooks/useBooleanState";
 import { maxUsedTalents } from "../../consts/maxUsedTalents";
 import { heroStateStorage } from "../../utils/heroStateStorage/heroStateStorage";
-import { markLocked } from "../../utils/markLocked";
 import { RankSlider } from "../Controls/components/RankSlider/RankSlider";
 import { rankSliderPortalContainerId } from "../Controls/constants";
 import { MainList } from "../MainList/MainList";
 
 import { useTalentsBuilder } from "./useTalentsBuilder";
-import { getDerivedTalentsState } from "./utils/getDerivedTalentsState";
 
 import cls from "./Builder.module.css";
 
@@ -43,6 +41,7 @@ export function Builder({
     // init local state
     const talentsBuilder = useTalentsBuilder({
         initialState: storedState,
+        allHeroTalents: hero.talents,
         onNewState: newState => {
             heroStateStorage.set(hero.code, newState);
         },
@@ -61,12 +60,6 @@ export function Builder({
 
     const rankSliderPortalContainer = document
         .getElementById(rankSliderPortalContainerId);
-
-    const derivedTalentsState = getDerivedTalentsState(
-        talentsBuilder.rank, 
-        hero.talents, 
-        talentsBuilder.talents
-    );
 
     return html`
         ${rankSliderPortalContainer && createPortal(html`
@@ -128,10 +121,7 @@ export function Builder({
                 }}
                 label=Available 
                 heroCode=${hero.code} 
-                talents=${[
-                    ...derivedTalentsState.available, 
-                    ...derivedTalentsState.locked.map(markLocked),
-                ]}
+                talents=${talentsBuilder.talents.available}
                 onTalentClick=${talentsBuilder.availableToUsed}
                 onTalentAltClick=${talentsBuilder.availableToPreferred}
                 onTalentHold=${talentsBuilder.availableToPreferred}

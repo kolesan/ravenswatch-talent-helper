@@ -6,9 +6,11 @@ import { TalentWithLockedFlag } from "../../types";
 import { BuilderState } from "./types";
 import { useBuilder } from "./useBuilder";
 import { applyRank } from "./utils/applyRank";
+import { calculateAvailableTalents } from "./utils/calculateAvailableTalents";
 
 type Params = {
     initialState: TalentsBuilderState;
+    allHeroTalents: Talent[];
     onNewState: (state: TalentsBuilderState) => void;
 }
 
@@ -19,6 +21,7 @@ type TalentsBuilderState = {
 
 export function useTalentsBuilder({
     initialState,
+    allHeroTalents,
     onNewState,
 }: Params) {
     const [rank, setRank] = useState(initialState.rank);
@@ -33,9 +36,18 @@ export function useTalentsBuilder({
         },
     });
 
+    const available = calculateAvailableTalents(
+        rank, 
+        allHeroTalents, 
+        builder.state
+    );
+
     return {
         rank,
-        talents: builder.state,
+        talents: {
+            ...builder.state,
+            available,
+        },
         loadStateWithoutNewStateCb(newState: TalentsBuilderState) {
             builder.loadStateWithoutNewStateCb(newState.builderState);
             setRank(newState.rank);

@@ -1,26 +1,27 @@
 import { Talent } from "../../../../../../scripts/extractTalents/types";
-import { LocalTalentsState } from "../../../types";
+import { TalentWithLockedFlag } from "../../../types";
 import { isLocked } from "../../../utils/isLocked";
 import { isNotLocked } from "../../../utils/isNotLocked";
+import { markLocked } from "../../../utils/markLocked";
 import { BuilderState } from "../types";
 
-export function getDerivedTalentsState(
+export function calculateAvailableTalents(
     rank: number,
     allTalents: Talent[],
     state: BuilderState,
-): LocalTalentsState {
-    const unusedTalents = allTalents
+): TalentWithLockedFlag[] {
+    const unused = allTalents
         .filter(it => it.type === "standard")
         .filter(isNotIn(state.used))
         .filter(isNotIn(state.preferred));
 
-    const availableTalents = unusedTalents.filter(isNotLocked(rank));
-    const lockedTalents = unusedTalents.filter(isLocked(rank));
+    const unlockedUnused = unused.filter(isNotLocked(rank));
+    const lockedUnused = unused.filter(isLocked(rank));
 
-    return {
-        available: availableTalents,
-        locked: lockedTalents,
-    }
+    return [
+        ...unlockedUnused, 
+        ...lockedUnused.map(markLocked),
+    ]
 }
 
 function isNotIn(talents: Talent[]) {
