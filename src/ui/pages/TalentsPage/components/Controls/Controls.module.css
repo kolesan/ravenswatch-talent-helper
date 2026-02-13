@@ -28,6 +28,10 @@
     flex-wrap: nowrap;
     column-gap: 12px;
 }
+.sliderContainer {
+    display: flex;
+    align-items: center;
+}
 
 @media (max-width: 1080px) {
     .heroSelectPortrait {

@@ -1,8 +1,12 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
+import { createPortal } from "preact/compat";
+import { useEffect, useMemo, useState } from "preact/hooks";
 
-import { HeroCode } from "../../../../../data/heroes";
-import { Talent } from "../../../../../scripts/extractTalents/types";
+import { Hero } from "../../../../../finalData/finalData";
+import { compendiumStateStorage } from "../../utils/compendiumStateStorage/compendiumStateStorage";
+import { RankSlider } from "../Controls/components/RankSlider/RankSlider";
+import { rankSliderPortalContainerId } from "../Controls/constants";
 import { MainList } from "../MainList/MainList";
 
 import { markIfLocked } from "./utils/markIfLocked";
@@ -17,30 +21,59 @@ type Props = {
             content?: string;
         }
     }
-    heroCode: HeroCode;
-    heroRank: number;
-    talents: Talent[];
+    hero: Hero;
 }
 
 export function Compendium({
     className,
     classes,
-    heroCode,
-    heroRank,
-    talents,
+    hero,
 }: Props) {
-    console.log("========== Compendium rendering ==========", { 
-        hero: heroCode, 
-        rank: heroRank
+    console.log("=== Compendium rendering ===", { 
+        hero: hero.code
     });
 
-    const withLockedMarked = talents.map(markIfLocked(heroRank));
+    // load compendium state of the hero
+    const storedState = useMemo(() => {
+        const storedHero = compendiumStateStorage.get(hero.code);
+        console.log(`= Compendium = Loading compendium "${hero.code}" hero state`, storedHero);
+        return storedHero;
+    }, [hero.code]);
+
+    const [rank, setRank] = useState(storedState.rank);
+
+    // ensure local rank and talent state is correct after hero change
+    useEffect(() => {
+        console.log("= Compendium = Hero code change detected, setting rank state", 
+            storedState
+        );
+        setRank(storedState.rank);
+    }, [hero.code]);
+    
+    // save local rank state to storage on change
+    useEffect(() => {
+        console.log("= Compendium = rank state change detected, saving to storage", {
+            hero: hero.code,
+            rank,
+        });
+        compendiumStateStorage.set(hero.code, { rank });
+    }, [rank]);
+
+    const withLockedMarked = hero.talents.map(markIfLocked(rank));
 
     const starting = withLockedMarked.filter(it => it.type === "starting");
     const standard = withLockedMarked.filter(it => it.type === "standard");
     const final = withLockedMarked.filter(it => it.type === "final");
 
+    const rankSliderPortalContainer = document.getElementById(rankSliderPortalContainerId);
+
     return html`
+        ${rankSliderPortalContainer && createPortal(html`
+            <${RankSlider}
+                value=${rank}
+                onChange=${setRank}
+            />
+        `, rankSliderPortalContainer)}
         <div class=${clsx(cls.root, className)}>
             <${MainList}
                 classes=${{ 
@@ -50,7 +83,7 @@ export function Compendium({
                 disableHover
                 showRanks
                 label=Starting 
-                heroCode=${heroCode} 
+                heroCode=${hero.code} 
                 talents=${starting}
             />
             <${MainList} 
@@ -61,7 +94,7 @@ export function Compendium({
                 disableHover
                 showRanks
                 label=Standard 
-                heroCode=${heroCode} 
+                heroCode=${hero.code} 
                 talents=${standard} 
             />
             <${MainList} 
@@ -72,7 +105,7 @@ export function Compendium({
                 disableHover
                 showRanks
                 label=Final 
-                heroCode=${heroCode} 
+                heroCode=${hero.code} 
                 talents=${final}
             />
         </div>

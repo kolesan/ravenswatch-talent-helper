@@ -6,26 +6,22 @@ import { useIsStickyElemStuck } from "../../../../hooks/useIsStickyElemStuck";
 import { TalentsPageView } from "../../talentsPageViews";
 
 import { HeroSelect } from "./components/HeroSelect/HeroSelect";
-import { RankSlider } from "./components/RankSlider/RankSlider";
 import { TalentsViewSwitch } from "./components/TalentsViewSwitch/TalentsViewSwitch";
+import { rankSliderPortalContainerId } from "./constants";
 
 import cls from "./Controls.module.css";
 
 type Props = {
     hero: Hero;
-    rank: number;
     view: TalentsPageView;
     onHeroChange: (hero: Hero) => void;
-    onRankChange: (rank: number) => void;
     onViewChange: (view: TalentsPageView) => void;
 }
 
 export function Controls({
     hero,
-    rank,
     view,
     onHeroChange,
-    onRankChange,
     onViewChange,
 }: Props) {
     const {
@@ -56,14 +52,11 @@ export function Controls({
                         }
                     }}
                 />
-                <${RankSlider}
-                    value=${rank}
-                    onChange=${(newRank: number) => {
-                        if (newRank !== rank) {
-                            onRankChange(newRank);
-                        }
-                    }}
-                />
+                <div 
+                    class=${cls.sliderContainer} 
+                    id=${rankSliderPortalContainerId}
+                >               
+                </div>
             </div>
             <${TalentsViewSwitch}
                 view=${view}
