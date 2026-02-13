@@ -9,7 +9,7 @@ import { RankSlider } from "../Controls/components/RankSlider/RankSlider";
 import { rankSliderPortalContainerId } from "../Controls/constants";
 import { MainList } from "../MainList/MainList";
 
-import { markIfLocked } from "./utils/markIfLocked";
+import { getDerivedTalentsState } from "./utils/getDerivedTalentsState";
 
 import cls from "./Compendium.module.css";
 
@@ -59,13 +59,14 @@ export function Compendium({
         compendiumStateStorage.set(hero.code, { rank });
     }, [rank]);
 
-    const withLockedMarked = hero.talents.map(markIfLocked(rank));
+    const rankSliderPortalContainer = document
+        .getElementById(rankSliderPortalContainerId);
 
-    const starting = withLockedMarked.filter(it => it.type === "starting");
-    const standard = withLockedMarked.filter(it => it.type === "standard");
-    const final = withLockedMarked.filter(it => it.type === "final");
-
-    const rankSliderPortalContainer = document.getElementById(rankSliderPortalContainerId);
+    const {
+        starting,
+        standard,
+        final,
+    } = getDerivedTalentsState(rank, hero.talents);
 
     return html`
         ${rankSliderPortalContainer && createPortal(html`
