@@ -31,6 +31,7 @@ export function TalentsPageContent({
 
     // ================== LOCAL SHARED STATE ===========================
     const [localHero, setLocalHero] = useState(hero);
+    const [localView, setLocalView] = useState(view);
     // ===============================================================
 
     // ================== COMPENDIUM STATE ===========================
@@ -78,42 +79,49 @@ export function TalentsPageContent({
         handleHeroChangeCompendium(newHero);
         handleHeroChangeBuilder(newHero);
     }
+    
+    const handleViewChangeLocalState = (newView: TalentsPageView) => {
+        setLocalView(newView);
+    }
 
 
-    // in case hero change comes from the parent and we can see that local state
-    // does not match we need to update local state
-    // current known such cases:
+    // In case hero and/or view change comes from the parent 
+    // and we can see that local state
+    // does not match, we need to update local state.
+    // Current known such cases:
     // * back and forward browser buttons
     // * some other direct change to url
     useEffect(() => {
-        console.log("= TPC = Checking if hero change from parent is happening", {
-            from: localHero.code, 
-            to: hero.code
-        });
+        const hl = { from: localHero.code, to: hero.code };
+        console.log("= TPC = Checking if hero change from parent is happening", hl);
         if (localHero.code !== hero.code) {
-            console.log("= TPC = Hero change from parent detected ", {
-                from: localHero.code, 
-                to: hero.code
-            });
+            console.log("= TPC = Hero change from parent detected ", hl);
             handleHeroChangeLocalState(hero);
         }
-    }, [hero.code]);
+        const vl = { from: localView, to: view };
+        console.log("= TPC = Checking if view change from parent is happening", vl);
+        if (localView !== view) {
+            console.log("= TPC = View change from parent detected ", vl);
+            handleViewChangeLocalState(view);
+        }
+    }, [hero.code, view]);
 
     return html`
         <${Controls}
             hero=${localHero}
-            view=${view}
+            view=${localView}
             onHeroChange=${(newHero: Hero) => {
                 handleHeroChangeLocalState(newHero);
                 // adapt url to new hero
-                hst.push(`${pages.talents.path}/${newHero.code}/${view}`);
+                hst.push(`${pages.talents.path}/${newHero.code}/${localView}`);
             }}
             onViewChange=${(newView: TalentsPageView) => {
+                handleViewChangeLocalState(newView);
                 // adapt url to new view
                 hst.push(`${pages.talents.path}/${localHero.code}/${newView}`);
             }}
         />
-        ${view === "compendium" && html`
+        ${localView === "compendium" && html`
             <${Compendium} 
                 classes=${{
                     list: {
@@ -129,7 +137,7 @@ export function TalentsPageContent({
                 }}
             />
         `}
-        ${view === "builder" && html`
+        ${localView === "builder" && html`
             <${Builder} 
                 classes=${{
                     list: {
