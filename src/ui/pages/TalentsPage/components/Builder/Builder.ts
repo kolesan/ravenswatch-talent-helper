@@ -1,12 +1,9 @@
 import { html } from "htm/preact";
-import { createPortal } from "preact/compat";
 
 import { Hero } from "../../../../../finalData/finalData";
 import { ListLabelRight } from "../../../../components/ListLabelRight/ListLabelRight";
 import { useBooleanState } from "../../../../hooks/useBooleanState";
 import { maxUsedTalents } from "../../consts/maxUsedTalents";
-import { RankSlider } from "../Controls/components/RankSlider/RankSlider";
-import { rankSliderPortalContainerId } from "../Controls/constants";
 import { MainList } from "../MainList/MainList";
 
 import { TalentsBuilder } from "./types";
@@ -34,16 +31,7 @@ export function Builder({
     const usedLabelScrollingAgain = useBooleanState(false);
     const preferredLabelScrollingAgain = useBooleanState(false);
 
-    const rankSliderPortalContainer = document
-        .getElementById(rankSliderPortalContainerId);
-
     return html`
-        ${rankSliderPortalContainer && createPortal(html`
-            <${RankSlider}
-                value=${talentsBuilder.rank}
-                onChange=${talentsBuilder.applyRank}
-            />
-        `, rankSliderPortalContainer)}
         <div class=${cls.builderRoot}>
             <${MainList}
                 classes=${classes?.list}

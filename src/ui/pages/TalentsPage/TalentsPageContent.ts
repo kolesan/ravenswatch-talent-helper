@@ -79,7 +79,7 @@ export function TalentsPageContent({
         handleHeroChangeCompendium(newHero);
         handleHeroChangeBuilder(newHero);
     }
-    
+
     const handleViewChangeLocalState = (newView: TalentsPageView) => {
         setLocalView(newView);
     }
@@ -109,34 +109,30 @@ export function TalentsPageContent({
     return html`
         <${Controls}
             hero=${localHero}
-            view=${localView}
             onHeroChange=${(newHero: Hero) => {
                 handleHeroChangeLocalState(newHero);
                 // adapt url to new hero
                 hst.push(`${pages.talents.path}/${newHero.code}/${localView}`);
             }}
+            rank=${localView === "builder" 
+                ? talentsBuilder.rank 
+                : compendiumRank
+            }
+            onRankChange=${(newRank: number) => {
+                if (localView === "builder") {
+                    talentsBuilder.applyRank(newRank);
+                } else {
+                    setCompendiumRank(newRank);
+                    compendiumStateStorage.set(localHero.code, { rank: newRank });
+                }
+            }}
+            view=${localView}
             onViewChange=${(newView: TalentsPageView) => {
                 handleViewChangeLocalState(newView);
                 // adapt url to new view
                 hst.push(`${pages.talents.path}/${localHero.code}/${newView}`);
             }}
         />
-        ${localView === "compendium" && html`
-            <${Compendium} 
-                classes=${{
-                    list: {
-                        label: cls.listLabel,
-                        content: cls.listContent,
-                    }
-                }}
-                hero=${localHero}
-                rank=${compendiumRank}
-                onRankChange=${(rank: number) => {
-                    setCompendiumRank(rank);
-                    compendiumStateStorage.set(localHero.code, { rank });
-                }}
-            />
-        `}
         ${localView === "builder" && html`
             <${Builder} 
                 classes=${{
@@ -147,6 +143,18 @@ export function TalentsPageContent({
                 }}
                 hero=${localHero}
                 talentsBuilder=${talentsBuilder}
+            />
+        `}
+        ${localView === "compendium" && html`
+            <${Compendium} 
+                classes=${{
+                    list: {
+                        label: cls.listLabel,
+                        content: cls.listContent,
+                    }
+                }}
+                hero=${localHero}
+                heroRank=${compendiumRank}
             />
         `}
     `;

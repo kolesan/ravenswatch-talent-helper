@@ -1,10 +1,7 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
-import { createPortal } from "preact/compat";
 
 import { Hero } from "../../../../../finalData/finalData";
-import { RankSlider } from "../Controls/components/RankSlider/RankSlider";
-import { rankSliderPortalContainerId } from "../Controls/constants";
 import { MainList } from "../MainList/MainList";
 
 import { groupTalentsByType } from "./utils/groupTalentsByType";
@@ -20,7 +17,7 @@ type Props = {
         }
     }
     hero: Hero;
-    rank: number;
+    heroRank: number;
     onRankChange: (rank: number) => void;
 }
 
@@ -28,29 +25,19 @@ export function Compendium({
     className,
     classes,
     hero,
-    rank,
-    onRankChange,
+    heroRank,
 }: Props) {
     console.log("=== Compendium rendering ===", { 
         hero: hero.code
     });
 
-    const rankSliderPortalContainer = document
-        .getElementById(rankSliderPortalContainerId);
-
     const {
         starting,
         standard,
         final,
-    } = groupTalentsByType(rank, hero.talents);
+    } = groupTalentsByType(heroRank, hero.talents);
 
     return html`
-        ${rankSliderPortalContainer && createPortal(html`
-            <${RankSlider}
-                value=${rank}
-                onChange=${onRankChange}
-            />
-        `, rankSliderPortalContainer)}
         <div class=${clsx(cls.root, className)}>
             <${MainList}
                 classes=${{ 
