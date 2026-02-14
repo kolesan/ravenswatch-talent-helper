@@ -103,19 +103,19 @@ export function TalentsPageContent({
     return html`
         <${Controls}
             hero=${localHero}
-            onHeroChange=${(newHero: Hero) => {
-                handleHeroChangeLocalState(newHero);
-                onHeroChange(newHero);
-            }}
             view=${localView}
-            onViewChange=${(newView: TalentsPageView) => {
-                handleViewChangeLocalState(newView);
-                onViewChange(newView);
-            }}
             rank=${localView === "builder" 
                 ? talentsBuilder.rank 
                 : talentsCompendium.rank
             }
+            onHeroChange=${(newHero: Hero) => {
+                handleHeroChangeLocalState(newHero);
+                onHeroChange(newHero);
+            }}
+            onViewChange=${(newView: TalentsPageView) => {
+                handleViewChangeLocalState(newView);
+                onViewChange(newView);
+            }}
             onRankChange=${(newRank: number) => {
                 if (localView === "builder") {
                     talentsBuilder.applyRank(newRank);

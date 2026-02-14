@@ -13,19 +13,19 @@ import cls from "./Controls.module.css";
 
 type Props = {
     hero: Hero;
-    onHeroChange: (hero: Hero) => void;
     view: TalentsPageView;
-    onViewChange: (view: TalentsPageView) => void;
     rank: number;
+    onHeroChange: (hero: Hero) => void;
+    onViewChange: (view: TalentsPageView) => void;
     onRankChange: (rank: number) => void;
 }
 
 export function Controls({
     hero,
-    onHeroChange,
     view,
-    onViewChange,
     rank,
+    onHeroChange,
+    onViewChange,
     onRankChange,
 }: Props) {
     const {
