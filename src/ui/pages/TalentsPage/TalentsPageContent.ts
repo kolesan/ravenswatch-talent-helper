@@ -30,90 +30,70 @@ export function TalentsPageContent({
         view
     });
 
-    // ================== LOCAL SHARED STATE ===========================
     const [localHero, setLocalHero] = useState(hero);
     const [localView, setLocalView] = useState(view);
-    // ===============================================================
 
-    // ================== COMPENDIUM STATE ===========================
-    const talentsCompendium = useTalentsCompendium({
-        getInitialState: () => {
-            return compendiumStateStorage.get(localHero.code);
-        },
-        onAction: (newState, actionType) => {
-            if (actionType === "load_state") {
-                // In all such cases currently we load the state from storage first,
-                // so there's no point in saving it
-                return;
-            }
-            compendiumStateStorage.set(localHero.code, newState);
-        },
-        allHeroTalents: localHero.talents,
-    });
-    // ===============================================================
-
-    // ================== BUILDER STATE ===========================
     const talentsBuilder = useTalentsBuilder({
         getInitialState: () => {
             return talentsBuilderStateStorage.get(localHero)
         },
         onAction: (newState, actionType) => {
-            if (actionType === "load_state") {
-                // In all such cases currently we load the state from storage first,
-                // so there's no point in saving it
+            if (actionType === "load_state") { // Always loaded from storage
                 return;
             }
             talentsBuilderStateStorage.set(localHero.code, newState);
         },
         allHeroTalents: localHero.talents,
     });
-    // ===============================================================
+
+    const talentsCompendium = useTalentsCompendium({
+        getInitialState: () => {
+            return compendiumStateStorage.get(localHero.code);
+        },
+        onAction: (newState, actionType) => {
+            if (actionType === "load_state") { // Always loaded from storage
+                return;
+            }
+            compendiumStateStorage.set(localHero.code, newState);
+        },
+        allHeroTalents: localHero.talents,
+    });
 
 
-    const handleHeroChangeCompendium = (newHero: Hero) => {
-        // ================== COMPENDIUM STATE ===========================
-        // load new hero compendium state
-        const storedCompendiumState = compendiumStateStorage.get(newHero.code);
-        // set local compendium state to values from storage
-        talentsCompendium.loadState(storedCompendiumState);
-        // ===============================================================
-    }
     const handleHeroChangeBuilder = (newHero: Hero) => {
-        // ================== Builder STATE ===========================
-        // load new hero Builder state
-        const storedBuilderState = talentsBuilderStateStorage.get(newHero);
-        // set local Builder state to values from storage
-        talentsBuilder.loadState(storedBuilderState);
-        // ===============================================================
+        const stored = talentsBuilderStateStorage.get(newHero);
+        talentsBuilder.loadState(stored);
+    }
+    const handleHeroChangeCompendium = (newHero: Hero) => {
+        const stored = compendiumStateStorage.get(newHero.code);
+        talentsCompendium.loadState(stored);
     }
     const handleHeroChangeLocalState = (newHero: Hero) => {
         setLocalHero(newHero);
-        handleHeroChangeCompendium(newHero);
         handleHeroChangeBuilder(newHero);
+        handleHeroChangeCompendium(newHero);
     }
 
     const handleViewChangeLocalState = (newView: TalentsPageView) => {
         setLocalView(newView);
     }
 
-
-    // In case hero and/or view change comes from the parent 
-    // and we can see that local state
-    // does not match, we need to update local state.
-    // Current known such cases:
-    // * back and forward browser buttons
-    // * some other direct change to url
+    // Current known cases where this effect is necessary:
+    // * direct url change (e.g. back and forward browser buttons)
     useEffect(() => {
-        const hl = { from: localHero.code, to: hero.code };
-        console.log("= TPC = Checking if hero change from parent is happening", hl);
+        console.log("= TPC = Checking if hero change from parent is happening", { 
+            from: localHero.code, 
+            to: hero.code 
+        }, localHero.code !== hero.code);
+        console.log("= TPC = Checking if view change from parent is happening", { 
+            from: localView, 
+            to: view 
+        }, localView !== view);
+
         if (localHero.code !== hero.code) {
-            console.log("= TPC = Hero change from parent detected ", hl);
             handleHeroChangeLocalState(hero);
         }
-        const vl = { from: localView, to: view };
-        console.log("= TPC = Checking if view change from parent is happening", vl);
         if (localView !== view) {
-            console.log("= TPC = View change from parent detected ", vl);
             handleViewChangeLocalState(view);
         }
     }, [hero.code, view]);
@@ -123,13 +103,11 @@ export function TalentsPageContent({
             hero=${localHero}
             onHeroChange=${(newHero: Hero) => {
                 handleHeroChangeLocalState(newHero);
-                // adapt url to new hero
                 hst.push(`${pages.talents.path}/${newHero.code}/${localView}`);
             }}
             view=${localView}
             onViewChange=${(newView: TalentsPageView) => {
                 handleViewChangeLocalState(newView);
-                // adapt url to new view
                 hst.push(`${pages.talents.path}/${localHero.code}/${newView}`);
             }}
             rank=${localView === "builder" 
