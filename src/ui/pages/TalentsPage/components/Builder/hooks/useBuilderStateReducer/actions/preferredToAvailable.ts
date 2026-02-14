@@ -1,5 +1,5 @@
 import { Talent } from "../../../../../../../../scripts/extractTalents/types";
-import { BuilderState } from "../../../types";
+import { BuilderState } from "../types";
 
 export function preferredToAvailable(state: BuilderState, talent: Talent): BuilderState {
     const preferred = state.preferred

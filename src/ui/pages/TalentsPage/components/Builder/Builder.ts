@@ -41,7 +41,7 @@ export function Builder({
         ${rankSliderPortalContainer && createPortal(html`
             <${RankSlider}
                 value=${talentsBuilder.rank}
-                onChange=${talentsBuilder.setRank}
+                onChange=${talentsBuilder.applyRank}
             />
         `, rankSliderPortalContainer)}
         <div class=${cls.builderRoot}>

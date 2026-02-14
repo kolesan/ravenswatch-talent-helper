@@ -1,4 +1,4 @@
-import { BuilderState } from "../../../types";
+import { BuilderState } from "../types";
 
 export function clearPreferred(state: BuilderState): BuilderState {
     return {

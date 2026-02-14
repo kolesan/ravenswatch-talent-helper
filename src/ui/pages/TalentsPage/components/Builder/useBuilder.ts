@@ -4,28 +4,28 @@ import { Talent } from "../../../../../scripts/extractTalents/types";
 import { maxUsedTalents } from "../../consts/maxUsedTalents";
 import { TalentWithLockedFlag } from "../../types";
 
+import { BuilderState, BuilderStateReducerActionType } from "./hooks/useBuilderStateReducer/types";
 import { useBuilderStateReducer } from "./hooks/useBuilderStateReducer/useBuilderStateReducer";
-import { BuilderState } from "./types";
 
 type Params = {
     getInitialState: () => BuilderState;
-    onNewState: (state: BuilderState) => void;
+    onAction: (state: BuilderState, actionType: BuilderStateReducerActionType) => void;
 }
 
 export function useBuilder({
     getInitialState,
-    onNewState,
+    onAction,
 }: Params) {
     const [state, dispatch] = useBuilderStateReducer({
         getInitialState,
-        onNewState,
+        onAction,
     });
 
     return useMemo(() => ({
         state,
-        loadStateWithoutNewStateCb(newState: BuilderState) {
+        loadState(newState: BuilderState) {
             dispatch({
-                type: "load_state_without_new_state_cb",
+                type: "load_state",
                 state: newState,
             });
         },

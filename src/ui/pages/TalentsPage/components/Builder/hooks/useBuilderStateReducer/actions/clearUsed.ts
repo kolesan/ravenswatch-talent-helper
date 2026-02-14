@@ -1,4 +1,4 @@
-import { BuilderState } from "../../../types";
+import { BuilderState } from "../types";
 
 export function clearUsed(state: BuilderState): BuilderState {
     const preferredFromUsed = state.used.filter(it => it.preferred);

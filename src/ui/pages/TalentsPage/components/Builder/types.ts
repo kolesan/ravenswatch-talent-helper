@@ -1,10 +1,9 @@
-import { Talent } from "../../../../../scripts/extractTalents/types";
-
+import { BuilderStateReducerActionType } from "./hooks/useBuilderStateReducer/types";
 import { useTalentsBuilder } from "./useTalentsBuilder";
 
-export type BuilderState = {
-    used: Talent[];
-    preferred: Talent[];
-}
-
 export type TalentsBuilder = ReturnType<typeof useTalentsBuilder>;
+
+export type TalentsBuilderActionType = 
+    // Exclude<BuilderStateReducerActionType, "load_state">
+    BuilderStateReducerActionType
+    | "apply_rank";

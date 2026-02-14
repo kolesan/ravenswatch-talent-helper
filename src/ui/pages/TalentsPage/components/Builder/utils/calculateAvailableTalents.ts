@@ -3,7 +3,7 @@ import { TalentWithLockedFlag } from "../../../types";
 import { isLocked } from "../../../utils/isLocked";
 import { isNotLocked } from "../../../utils/isNotLocked";
 import { markLocked } from "../../../utils/markLocked";
-import { BuilderState } from "../types";
+import { BuilderState } from "../hooks/useBuilderStateReducer/types";
 
 type Params = {
     rank: number,

@@ -44,7 +44,12 @@ export function TalentsPageContent({
         getInitialState: () => {
             return talentsBuilderStateStorage.get(localHero)
         },
-        onNewState: newState => {
+        onAction: (newState, actionType) => {
+            if (actionType === "load_state") {
+                // In all such cases currently we load the state from storage first,
+                // so there's no point in saving it
+                return;
+            }
             talentsBuilderStateStorage.set(localHero.code, newState);
         },
         allHeroTalents: localHero.talents,
@@ -65,7 +70,7 @@ export function TalentsPageContent({
         // load new hero Builder state
         const storedBuilderState = talentsBuilderStateStorage.get(newHero);
         // set local Builder state to values from storage
-        talentsBuilder.loadStateWithoutNewStateCb(storedBuilderState);
+        talentsBuilder.loadState(storedBuilderState);
         // ===============================================================
     }
     const handleHeroChangeLocalState = (newHero: Hero) => {
@@ -73,6 +78,7 @@ export function TalentsPageContent({
         handleHeroChangeCompendium(newHero);
         handleHeroChangeBuilder(newHero);
     }
+
 
     // in case hero change comes from the parent and we can see that local state
     // does not match we need to update local state

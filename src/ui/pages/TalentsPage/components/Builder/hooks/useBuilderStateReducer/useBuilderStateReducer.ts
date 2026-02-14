@@ -1,8 +1,5 @@
 import { useMemo, useReducer } from "preact/hooks";
 
-import { Talent } from "../../../../../../../scripts/extractTalents/types";
-import { BuilderState } from "../../types";
-
 import { availableToPreferred } from "./actions/availableToPreferred";
 import { availableToUsed } from "./actions/availableToUsed";
 import { clearPreferred } from "./actions/clearPreferred";
@@ -11,41 +8,31 @@ import { preferredToAvailable } from "./actions/preferredToAvailable";
 import { preferredToUsed } from "./actions/preferredToUsed";
 import { usedToAvailable } from "./actions/usedToAvailable";
 import { usedToPreferred } from "./actions/usedToPreferred";
-
-type Action =
-    | { type: "load_state_without_new_state_cb", state: BuilderState }
-    | { type: "clear_used" }
-    | { type: "clear_preferred" }
-    | { type: "used_to_preferred", talent: Talent }
-    | { type: "used_to_available", talent: Talent }
-    | { type: "preferred_to_used", talent: Talent }
-    | { type: "preferred_to_available", talent: Talent }
-    | { type: "available_to_preferred", talent: Talent }
-    | { type: "available_to_used", talent: Talent };
+import { BuilderState, BuilderStateReducerAction, BuilderStateReducerActionType } from "./types";
 
 type Params = {
     getInitialState: () => BuilderState;
-    onNewState: (newState: BuilderState) => void;
+    onAction: (newState: BuilderState, actionType: BuilderStateReducerActionType) => void;
 }
 
 export function useBuilderStateReducer({
     getInitialState,
-    onNewState,
+    onAction,
 }: Params) {
     const initialState = useMemo(() => {
         return getInitialState();
     }, []);
 
-    // handleNewState
-    function hns(newState: BuilderState): BuilderState {
-        onNewState(newState);
-        return newState;
-    }
+    return useReducer<BuilderState, BuilderStateReducerAction>((state, action) => {
+        // handleNewState
+        function hns(newState: BuilderState): BuilderState {
+            onAction(newState, action.type);
+            return newState;
+        }
 
-    return useReducer<BuilderState, Action>((state, action) => {
         switch (action.type) {
-            case "load_state_without_new_state_cb": {
-                return action.state;
+            case "load_state": {
+                return hns(action.state);
             }
             case "clear_used": {
                 return hns(clearUsed(state));
@@ -71,6 +58,8 @@ export function useBuilderStateReducer({
             case "used_to_available": {
                 return hns(usedToAvailable(state, action.talent));
             }
+            // Should never happen thanks to TS failing 
+            // on dispatch() call with unknown action type
             default: {
                 return state;
             }

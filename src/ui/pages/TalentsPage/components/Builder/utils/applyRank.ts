@@ -1,5 +1,5 @@
 import { isNotLocked } from "../../../utils/isNotLocked";
-import { BuilderState } from "../types";
+import { BuilderState } from "../hooks/useBuilderStateReducer/types";
 
 export function applyRank(state: BuilderState, rank: number): BuilderState {
     const used = state.used.filter(isNotLocked(rank));

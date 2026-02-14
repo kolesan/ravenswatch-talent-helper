@@ -3,14 +3,15 @@ import { useMemo, useState } from "preact/hooks";
 import { Talent } from "../../../../../scripts/extractTalents/types";
 import { TalentWithLockedFlag } from "../../types";
 
-import { BuilderState } from "./types";
+import { BuilderState } from "./hooks/useBuilderStateReducer/types";
+import { TalentsBuilderActionType } from "./types";
 import { useBuilder } from "./useBuilder";
 import { applyRank } from "./utils/applyRank";
 import { calculateAvailableTalents } from "./utils/calculateAvailableTalents";
 
 type Params = {
     getInitialState: () => TalentsBuilderState;
-    onNewState: (state: TalentsBuilderState) => void;
+    onAction: (state: TalentsBuilderState, actionType: TalentsBuilderActionType) => void;
     allHeroTalents: Talent[];
 }
 
@@ -21,7 +22,7 @@ type TalentsBuilderState = {
 
 export function useTalentsBuilder({
     getInitialState,
-    onNewState,
+    onAction,
     allHeroTalents,
 }: Params) {
     const initialState = useMemo(() => {
@@ -34,11 +35,14 @@ export function useTalentsBuilder({
         getInitialState: () => {
             return initialState.builderState;
         },
-        onNewState: newBuilderState => {
-            onNewState({
+        onAction: (newBuilderState, actionType) => {
+            if (actionType === "load_state") {
+                return;
+            }
+            onAction({
                 rank,
                 builderState: newBuilderState
-            })
+            }, actionType);
         },
     });
 
@@ -57,20 +61,22 @@ export function useTalentsBuilder({
             preferred: builder.state.preferred,
             available,
         },
-        loadStateWithoutNewStateCb(newState: TalentsBuilderState) {
-            builder.loadStateWithoutNewStateCb(newState.builderState);
+        loadState(newState: TalentsBuilderState) {
+            builder.loadState(newState.builderState);
             setRank(newState.rank);
+
+            onAction(newState, "load_state");
         },
-        setRank(rank: number) {
+        applyRank(rank: number) {
             const newBuilderState = applyRank(builder.state, rank);
 
-            builder.loadStateWithoutNewStateCb(newBuilderState);
+            builder.loadState(newBuilderState);
             setRank(rank);
 
-            onNewState({
+            onAction({
                 rank,
                 builderState: newBuilderState,
-            });
+            }, "apply_rank");
         },
         clearUsed() {
             builder.clearUsed();
