@@ -7,6 +7,9 @@ import { StorableCompendiumHeroState } from "./types";
 
 export const compendiumStateStorage = {
     get(heroCode: HeroCode): StorableCompendiumHeroState {
+        console.log("Loading from compendium storage", { 
+            hero: heroCode,
+        });
         const currentStoredState = baseCompendiumStateStorage.get();
 
         return deserializeCompendiumState(currentStoredState, heroCode);

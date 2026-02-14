@@ -1,10 +1,8 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 import { createPortal } from "preact/compat";
-import { useEffect, useMemo, useState } from "preact/hooks";
 
 import { Hero } from "../../../../../finalData/finalData";
-import { compendiumStateStorage } from "../../utils/compendiumStateStorage/compendiumStateStorage";
 import { RankSlider } from "../Controls/components/RankSlider/RankSlider";
 import { rankSliderPortalContainerId } from "../Controls/constants";
 import { MainList } from "../MainList/MainList";
@@ -22,33 +20,20 @@ type Props = {
         }
     }
     hero: Hero;
+    rank: number;
+    onRankChange: (rank: number) => void;
 }
 
 export function Compendium({
     className,
     classes,
     hero,
+    rank,
+    onRankChange,
 }: Props) {
     console.log("=== Compendium rendering ===", { 
         hero: hero.code
     });
-
-    // load compendium state of the hero
-    const storedState = useMemo(() => {
-        const storedHero = compendiumStateStorage.get(hero.code);
-        console.log(`= Compendium = Loading compendium "${hero.code}" hero state`, storedHero);
-        return storedHero;
-    }, [hero.code]);
-
-    const [rank, setRank] = useState(storedState.rank);
-
-    // ensure local rank and talent state is correct after hero change
-    useEffect(() => {
-        console.log("= Compendium = Hero code change detected, setting rank state", 
-            storedState
-        );
-        setRank(storedState.rank);
-    }, [hero.code]);
 
     const rankSliderPortalContainer = document
         .getElementById(rankSliderPortalContainerId);
@@ -63,10 +48,7 @@ export function Compendium({
         ${rankSliderPortalContainer && createPortal(html`
             <${RankSlider}
                 value=${rank}
-                onChange=${(rank: number) => {
-                    setRank(rank);
-                    compendiumStateStorage.set(hero.code, { rank });
-                }}
+                onChange=${onRankChange}
             />
         `, rankSliderPortalContainer)}
         <div class=${clsx(cls.root, className)}>
