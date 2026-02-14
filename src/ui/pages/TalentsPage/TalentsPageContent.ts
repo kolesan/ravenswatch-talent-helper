@@ -1,9 +1,7 @@
 import { html } from "htm/preact";
 import { useEffect, useState } from "preact/hooks";
 
-import { pages } from "../../../../pages";
 import { Hero } from "../../../finalData/finalData";
-import { hst } from "../../core/hst";
 
 import { Builder } from "./components/Builder/Builder";
 import { useTalentsBuilder } from "./components/Builder/useTalentsBuilder";
@@ -19,11 +17,15 @@ import cls from "./TalentsPageContent.module.css";
 type Props = {
     hero: Hero;
     view: TalentsPageView;
+    onHeroChange: (hero: Hero) => void;
+    onViewChange: (view: TalentsPageView) => void;
 }
 
 export function TalentsPageContent({
     hero,
     view,
+    onHeroChange,
+    onViewChange,
 }: Props) {
     console.log("= TPC RENDERING =", {
         hero: hero.code,
@@ -103,12 +105,12 @@ export function TalentsPageContent({
             hero=${localHero}
             onHeroChange=${(newHero: Hero) => {
                 handleHeroChangeLocalState(newHero);
-                hst.push(`${pages.talents.path}/${newHero.code}/${localView}`);
+                onHeroChange(newHero);
             }}
             view=${localView}
             onViewChange=${(newView: TalentsPageView) => {
                 handleViewChangeLocalState(newView);
-                hst.push(`${pages.talents.path}/${localHero.code}/${newView}`);
+                onViewChange(newView);
             }}
             rank=${localView === "builder" 
                 ? talentsBuilder.rank 

@@ -2,12 +2,14 @@ import { html } from "htm/preact";
 import { useEffect, useMemo } from "preact/hooks";
 
 import { pages } from "../../../../pages";
+import { Hero } from "../../../finalData/finalData";
 import { Spinner } from "../../components/Spinner/Spinner";
 import { hst } from "../../core/hst";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
 import { useTalentsPageUrlParams } from "./hooks/useTalentsPageUrlParams";
 import { TalentsPageContent } from "./TalentsPageContent";
+import { TalentsPageView } from "./talentsPageViews";
 import { calculatePageTitle } from "./utils/calculatePageTitle";
 import { talentsPageUrlParamsStorage } from "./utils/talentsPageUrlParamsStorage/talentsPageUrlParamsStorage";
 
@@ -42,7 +44,10 @@ export function TalentsPage() {
 
     const urlParams = useTalentsPageUrlParams();
 
-    usePageTitle(calculatePageTitle(urlParams.hero, urlParams.view));
+    const urlHero = urlParams.hero;
+    const urlView = urlParams.view;
+
+    usePageTitle(calculatePageTitle(urlHero, urlView));
 
     // On mount and on subsequent renders:
     // If url params change we load stored params for later comparison
@@ -53,7 +58,10 @@ export function TalentsPage() {
             view: storedParams.view
         });
         return storedParams;
-    }, [urlParams.hero?.code, urlParams.view]);
+    }, [urlHero?.code, urlView]);
+
+    const storedUrlHero = storedUrlParams.hero;
+    const storedUrlView = storedUrlParams.view;
 
     // On mount and on subsequent renders:
     // If url changes and contains params that differ from stored ones
@@ -61,12 +69,12 @@ export function TalentsPage() {
     useEffect(() => {
         console.log("Url params change detected. Checking if need to save params to storage");
         if (
-            urlParams.hero?.code && urlParams.hero.code !== storedUrlParams.hero.code
-            || urlParams.view && urlParams.view !== storedUrlParams.view
+            urlHero?.code && urlHero.code !== storedUrlHero.code
+            || urlView && urlView !== storedUrlView
         ) {
             const paramsToStore = { 
-                hero: urlParams.hero || storedUrlParams.hero, 
-                view: urlParams.view || storedUrlParams.view,
+                hero: urlHero || storedUrlHero, 
+                view: urlView || storedUrlView,
             };
             console.log("Saving new url params to storage:", {
                 hero: paramsToStore.hero.code, 
@@ -74,27 +82,27 @@ export function TalentsPage() {
             });
             talentsPageUrlParamsStorage.set(paramsToStore);
         }
-    }, [urlParams.hero?.code, urlParams.view]);
+    }, [urlHero?.code, urlView]);
 
     // If hero or view are missing from url params
     // we do a "redirect" (history replace) to a fully correct url
     // with stored params used instead of missing ones
     useEffect(() => {
         console.log("Url params change detected. Checking if redirect is needed");
-        if (!urlParams.hero || !urlParams.view) {
+        if (!urlHero || !urlView) {
             const newPathParams = {
-                hero: (urlParams.hero || storedUrlParams.hero).code, 
-                view: urlParams.view || storedUrlParams.view,
+                hero: (urlHero || storedUrlHero).code, 
+                view: urlView || storedUrlView,
             };
             const newPath = pages.talents.constructPath(newPathParams);
             console.log("Redirecting to:", { url: newPath}, newPathParams);
             hst.replace(newPath);
         }
-    }, [urlParams.hero?.code, urlParams.view]);
+    }, [urlHero?.code, urlView]);
 
     // Display a spinner if we do not have a hero or a view from the url
     // after redirect to full url with hero and view from storage show content
-    if (!urlParams.hero || !urlParams.view) {
+    if (!urlHero || !urlView) {
         return html`<${Spinner} />`;
     }
 
@@ -102,8 +110,20 @@ export function TalentsPage() {
     // so that all loading is handled in one place
     return html`
         <${TalentsPageContent}
-            hero=${urlParams.hero}
-            view=${urlParams.view}
+            hero=${urlHero}
+            view=${urlView}
+            onHeroChange=${(newHero: Hero) => {
+                hst.push(pages.talents.constructPath({ 
+                    hero: newHero.code, 
+                    view: urlView 
+                }));
+            }}
+            onViewChange=${(newView: TalentsPageView) => {
+                hst.push(pages.talents.constructPath({ 
+                    hero: urlHero.code, 
+                    view: newView 
+                }));
+            }}
         />
     `;
 }
