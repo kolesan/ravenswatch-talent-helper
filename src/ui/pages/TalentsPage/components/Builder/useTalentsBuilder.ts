@@ -19,12 +19,13 @@ export function useTalentsBuilder({
     onAction,
     allHeroTalents,
 }: Params) {
+    // init
     const initialState = useMemo(() => {
         return getInitialState();
     }, []);
 
+    // state
     const [rank, setRank] = useState(initialState.rank);
-
     const builder = useBuilder({
         getInitialState: () => {
             return initialState.builderState;
@@ -40,6 +41,7 @@ export function useTalentsBuilder({
         },
     });
 
+    // derived state
     const available = useMemo(() => {
         return calculateAvailableTalents({
             rank, 
