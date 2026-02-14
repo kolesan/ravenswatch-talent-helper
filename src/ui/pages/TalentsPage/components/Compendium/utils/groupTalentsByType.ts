@@ -2,7 +2,7 @@ import { Talent } from "../../../../../../scripts/extractTalents/types";
 
 import { markIfLocked } from "./markIfLocked";
 
-export function getDerivedTalentsState(
+export function groupTalentsByType(
     rank: number,
     allTalents: Talent[],
 ) {    

@@ -9,7 +9,7 @@ import { RankSlider } from "../Controls/components/RankSlider/RankSlider";
 import { rankSliderPortalContainerId } from "../Controls/constants";
 import { MainList } from "../MainList/MainList";
 
-import { getDerivedTalentsState } from "./utils/getDerivedTalentsState";
+import { groupTalentsByType } from "./utils/groupTalentsByType";
 
 import cls from "./Compendium.module.css";
 
@@ -57,7 +57,7 @@ export function Compendium({
         starting,
         standard,
         final,
-    } = getDerivedTalentsState(rank, hero.talents);
+    } = groupTalentsByType(rank, hero.talents);
 
     return html`
         ${rankSliderPortalContainer && createPortal(html`
