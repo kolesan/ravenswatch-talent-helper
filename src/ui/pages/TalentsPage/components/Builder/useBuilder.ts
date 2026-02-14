@@ -1,25 +1,27 @@
+import { useMemo } from "preact/hooks";
+
 import { Talent } from "../../../../../scripts/extractTalents/types";
 import { maxUsedTalents } from "../../consts/maxUsedTalents";
 import { TalentWithLockedFlag } from "../../types";
 
-import { useBuilderState } from "./hooks/useBuilderState/useBuilderState";
+import { useBuilderStateReducer } from "./hooks/useBuilderStateReducer/useBuilderStateReducer";
 import { BuilderState } from "./types";
 
 type Params = {
-    initialState: BuilderState;
+    getInitialState: () => BuilderState;
     onNewState: (state: BuilderState) => void;
 }
 
 export function useBuilder({
-    initialState,
+    getInitialState,
     onNewState,
 }: Params) {
-    const [state, dispatch] = useBuilderState({
-        initialState,
+    const [state, dispatch] = useBuilderStateReducer({
+        getInitialState,
         onNewState,
     });
 
-    return {
+    return useMemo(() => ({
         state,
         loadStateWithoutNewStateCb(newState: BuilderState) {
             dispatch({
@@ -84,5 +86,5 @@ export function useBuilder({
                 talent,
             });
         },
-    }
+    }), [state]);
 }

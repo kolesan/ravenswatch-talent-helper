@@ -5,15 +5,21 @@ import { isNotLocked } from "../../../utils/isNotLocked";
 import { markLocked } from "../../../utils/markLocked";
 import { BuilderState } from "../types";
 
-export function calculateAvailableTalents(
+type Params = {
     rank: number,
+    builderState: BuilderState,
     allTalents: Talent[],
-    state: BuilderState,
-): TalentWithLockedFlag[] {
+}
+
+export function calculateAvailableTalents({
+    rank,
+    builderState,
+    allTalents,
+}: Params): TalentWithLockedFlag[] {
     const unused = allTalents
         .filter(it => it.type === "standard")
-        .filter(isNotIn(state.used))
-        .filter(isNotIn(state.preferred));
+        .filter(isNotIn(builderState.used))
+        .filter(isNotIn(builderState.preferred));
 
     const unlockedUnused = unused.filter(isNotLocked(rank));
     const lockedUnused = unused.filter(isLocked(rank));
@@ -21,7 +27,7 @@ export function calculateAvailableTalents(
     return [
         ...unlockedUnused, 
         ...lockedUnused.map(markLocked),
-    ]
+    ];
 }
 
 function isNotIn(talents: Talent[]) {

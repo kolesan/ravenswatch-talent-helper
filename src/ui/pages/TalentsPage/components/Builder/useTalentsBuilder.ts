@@ -1,4 +1,4 @@
-import { useState } from "preact/hooks";
+import { useMemo, useState } from "preact/hooks";
 
 import { Talent } from "../../../../../scripts/extractTalents/types";
 import { TalentWithLockedFlag } from "../../types";
@@ -9,9 +9,9 @@ import { applyRank } from "./utils/applyRank";
 import { calculateAvailableTalents } from "./utils/calculateAvailableTalents";
 
 type Params = {
-    initialState: TalentsBuilderState;
-    allHeroTalents: Talent[];
+    getInitialState: () => TalentsBuilderState;
     onNewState: (state: TalentsBuilderState) => void;
+    allHeroTalents: Talent[];
 }
 
 type TalentsBuilderState = {
@@ -20,14 +20,20 @@ type TalentsBuilderState = {
 }
 
 export function useTalentsBuilder({
-    initialState,
-    allHeroTalents,
+    getInitialState,
     onNewState,
+    allHeroTalents,
 }: Params) {
+    const initialState = useMemo(() => {
+        return getInitialState();
+    }, []);
+
     const [rank, setRank] = useState(initialState.rank);
 
     const builder = useBuilder({
-        initialState: initialState.builderState,
+        getInitialState: () => {
+            return initialState.builderState;
+        },
         onNewState: newBuilderState => {
             onNewState({
                 rank,
@@ -36,16 +42,19 @@ export function useTalentsBuilder({
         },
     });
 
-    const available = calculateAvailableTalents(
-        rank, 
-        allHeroTalents, 
-        builder.state
-    );
+    const available = useMemo(() => {
+        return calculateAvailableTalents({
+            rank, 
+            builderState: builder.state, 
+            allTalents: allHeroTalents,
+        });
+    }, [rank, builder, allHeroTalents]);
 
-    return {
+    return useMemo(() => ({
         rank,
         talents: {
-            ...builder.state,
+            used: builder.state.used,
+            preferred: builder.state.preferred,
             available,
         },
         loadStateWithoutNewStateCb(newState: TalentsBuilderState) {
@@ -84,5 +93,5 @@ export function useTalentsBuilder({
         availableToPreferred(talent: TalentWithLockedFlag) {
             builder.availableToPreferred(talent);
         },
-    }
+    }), [rank, builder, available]);
 }

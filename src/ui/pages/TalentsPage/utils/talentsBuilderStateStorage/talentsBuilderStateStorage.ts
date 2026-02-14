@@ -8,6 +8,9 @@ import { serializeTalentsBuilderState } from "./serializeTalentsBuilderState/ser
 
 export const talentsBuilderStateStorage = {
     get(hero: Hero): StorableHeroState {
+        console.log("Loading from builder storage", { 
+            hero: hero.code,
+        });
         const currentStoredState = baseTalentsBuilderStateStorage.get();
 
         return deserializeTalentsBuilderState(currentStoredState, hero);

@@ -1,17 +1,15 @@
 import { html } from "htm/preact";
 import { createPortal } from "preact/compat";
-import { useEffect, useMemo } from "preact/hooks";
 
 import { Hero } from "../../../../../finalData/finalData";
 import { ListLabelRight } from "../../../../components/ListLabelRight/ListLabelRight";
 import { useBooleanState } from "../../../../hooks/useBooleanState";
 import { maxUsedTalents } from "../../consts/maxUsedTalents";
-import { talentsBuilderStateStorage } from "../../utils/talentsBuilderStateStorage/talentsBuilderStateStorage";
 import { RankSlider } from "../Controls/components/RankSlider/RankSlider";
 import { rankSliderPortalContainerId } from "../Controls/constants";
 import { MainList } from "../MainList/MainList";
 
-import { useTalentsBuilder } from "./useTalentsBuilder";
+import { TalentsBuilder } from "./types";
 
 import cls from "./Builder.module.css";
 
@@ -23,37 +21,15 @@ type Props = {
         }
     }
     hero: Hero;
+    talentsBuilder: TalentsBuilder;
 }
 
 export function Builder({
     classes,
     hero,
+    talentsBuilder,
 }: Props) {
     console.log("=== Builder rendering ===", { hero: hero.code });
-
-    // load builder state of the hero
-    const storedState = useMemo(() => {
-        const storedHero = talentsBuilderStateStorage.get(hero);
-        console.log(`= Builder = Loading "${hero.code}" hero state`, storedHero);
-        return storedHero;
-    }, [hero.code]);
-
-    // init local state
-    const talentsBuilder = useTalentsBuilder({
-        initialState: storedState,
-        allHeroTalents: hero.talents,
-        onNewState: newState => {
-            talentsBuilderStateStorage.set(hero.code, newState);
-        },
-    });
-
-    // ensure local rank and talent state is correct after hero change
-    useEffect(() => {
-        console.log("= Builder = Hero code change detected, setting rank and builder state", 
-            storedState
-        );
-        talentsBuilder.loadStateWithoutNewStateCb(storedState);
-    }, [hero.code]);
 
     const usedLabelScrollingAgain = useBooleanState(false);
     const preferredLabelScrollingAgain = useBooleanState(false);

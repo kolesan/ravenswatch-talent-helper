@@ -1,4 +1,4 @@
-import { useReducer } from "preact/hooks";
+import { useMemo, useReducer } from "preact/hooks";
 
 import { Talent } from "../../../../../../../scripts/extractTalents/types";
 import { BuilderState } from "../../types";
@@ -24,14 +24,24 @@ type Action =
     | { type: "available_to_used", talent: Talent };
 
 type Params = {
-    initialState: BuilderState;
-    onNewState: (state: BuilderState) => void;
+    getInitialState: () => BuilderState;
+    onNewState: (newState: BuilderState) => void;
 }
 
-export function useBuilderState({
-    initialState,
+export function useBuilderStateReducer({
+    getInitialState,
     onNewState,
 }: Params) {
+    const initialState = useMemo(() => {
+        return getInitialState();
+    }, []);
+
+    // handleNewState
+    function hns(newState: BuilderState): BuilderState {
+        onNewState(newState);
+        return newState;
+    }
+
     return useReducer<BuilderState, Action>((state, action) => {
         switch (action.type) {
             case "load_state_without_new_state_cb": {
@@ -66,10 +76,4 @@ export function useBuilderState({
             }
         }
     }, initialState);
-
-    // handleNewState
-    function hns(newState: BuilderState): BuilderState {
-        onNewState(newState);
-        return newState;
-    }
 }
