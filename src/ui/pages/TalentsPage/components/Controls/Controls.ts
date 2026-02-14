@@ -14,19 +14,19 @@ import cls from "./Controls.module.css";
 type Props = {
     hero: Hero;
     onHeroChange: (hero: Hero) => void;
-    rank: number;
-    onRankChange: (rank: number) => void;
     view: TalentsPageView;
     onViewChange: (view: TalentsPageView) => void;
+    rank: number;
+    onRankChange: (rank: number) => void;
 }
 
 export function Controls({
     hero,
     onHeroChange,
-    rank,
-    onRankChange,
     view,
     onViewChange,
+    rank,
+    onRankChange,
 }: Props) {
     const {
         stickyElemRef,
