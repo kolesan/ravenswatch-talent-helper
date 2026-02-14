@@ -3,8 +3,7 @@ import { useMemo, useState } from "preact/hooks";
 import { Talent } from "../../../../../scripts/extractTalents/types";
 import { TalentWithLockedFlag } from "../../types";
 
-import { BuilderState } from "./hooks/useBuilderStateReducer/types";
-import { TalentsBuilderActionType } from "./types";
+import { TalentsBuilderActionType, TalentsBuilderState } from "./types";
 import { useBuilder } from "./useBuilder";
 import { applyRank } from "./utils/applyRank";
 import { calculateAvailableTalents } from "./utils/calculateAvailableTalents";
@@ -13,11 +12,6 @@ type Params = {
     getInitialState: () => TalentsBuilderState;
     onAction: (state: TalentsBuilderState, actionType: TalentsBuilderActionType) => void;
     allHeroTalents: Talent[];
-}
-
-type TalentsBuilderState = {
-    rank: number;
-    builderState: BuilderState;
 }
 
 export function useTalentsBuilder({
