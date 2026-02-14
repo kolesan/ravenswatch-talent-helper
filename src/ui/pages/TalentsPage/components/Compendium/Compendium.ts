@@ -4,7 +4,7 @@ import { html } from "htm/preact";
 import { Hero } from "../../../../../finalData/finalData";
 import { MainList } from "../MainList/MainList";
 
-import { groupTalentsByType } from "./utils/groupTalentsByType";
+import { TalentsCompendium } from "./types";
 
 import cls from "./Compendium.module.css";
 
@@ -17,15 +17,14 @@ type Props = {
         }
     }
     hero: Hero;
-    heroRank: number;
-    onRankChange: (rank: number) => void;
+    talentsCompendium: TalentsCompendium;
 }
 
 export function Compendium({
     className,
     classes,
     hero,
-    heroRank,
+    talentsCompendium,
 }: Props) {
     console.log("=== Compendium rendering ===", { 
         hero: hero.code
@@ -34,8 +33,8 @@ export function Compendium({
     const {
         starting,
         standard,
-        final,
-    } = groupTalentsByType(heroRank, hero.talents);
+        final
+    } = talentsCompendium.talents;
 
     return html`
         <div class=${clsx(cls.root, className)}>

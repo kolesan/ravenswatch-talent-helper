@@ -8,6 +8,7 @@ import { hst } from "../../core/hst";
 import { Builder } from "./components/Builder/Builder";
 import { useTalentsBuilder } from "./components/Builder/useTalentsBuilder";
 import { Compendium } from "./components/Compendium/Compendium";
+import { useTalentsCompendium } from "./components/Compendium/useTalentsCompendium";
 import { Controls } from "./components/Controls/Controls";
 import { TalentsPageView } from "./talentsPageViews";
 import { compendiumStateStorage } from "./utils/compendiumStateStorage/compendiumStateStorage";
@@ -35,8 +36,19 @@ export function TalentsPageContent({
     // ===============================================================
 
     // ================== COMPENDIUM STATE ===========================
-    const [compendiumRank, setCompendiumRank] = useState(() => {
-        return compendiumStateStorage.get(localHero.code).rank;
+    const talentsCompendium = useTalentsCompendium({
+        getInitialState: () => {
+            return compendiumStateStorage.get(localHero.code);
+        },
+        onAction: (newState, actionType) => {
+            if (actionType === "load_state") {
+                // In all such cases currently we load the state from storage first,
+                // so there's no point in saving it
+                return;
+            }
+            compendiumStateStorage.set(localHero.code, newState);
+        },
+        allHeroTalents: localHero.talents,
     });
     // ===============================================================
 
@@ -63,7 +75,7 @@ export function TalentsPageContent({
         // load new hero compendium state
         const storedCompendiumState = compendiumStateStorage.get(newHero.code);
         // set local compendium state to values from storage
-        setCompendiumRank(storedCompendiumState.rank);
+        talentsCompendium.loadState(storedCompendiumState);
         // ===============================================================
     }
     const handleHeroChangeBuilder = (newHero: Hero) => {
@@ -114,23 +126,22 @@ export function TalentsPageContent({
                 // adapt url to new hero
                 hst.push(`${pages.talents.path}/${newHero.code}/${localView}`);
             }}
-            rank=${localView === "builder" 
-                ? talentsBuilder.rank 
-                : compendiumRank
-            }
-            onRankChange=${(newRank: number) => {
-                if (localView === "builder") {
-                    talentsBuilder.applyRank(newRank);
-                } else {
-                    setCompendiumRank(newRank);
-                    compendiumStateStorage.set(localHero.code, { rank: newRank });
-                }
-            }}
             view=${localView}
             onViewChange=${(newView: TalentsPageView) => {
                 handleViewChangeLocalState(newView);
                 // adapt url to new view
                 hst.push(`${pages.talents.path}/${localHero.code}/${newView}`);
+            }}
+            rank=${localView === "builder" 
+                ? talentsBuilder.rank 
+                : talentsCompendium.rank
+            }
+            onRankChange=${(newRank: number) => {
+                if (localView === "builder") {
+                    talentsBuilder.applyRank(newRank);
+                } else {
+                    talentsCompendium.applyRank(newRank);
+                }
             }}
         />
         ${localView === "builder" && html`
@@ -154,7 +165,7 @@ export function TalentsPageContent({
                     }
                 }}
                 hero=${localHero}
-                heroRank=${compendiumRank}
+                talentsCompendium=${talentsCompendium}
             />
         `}
     `;
