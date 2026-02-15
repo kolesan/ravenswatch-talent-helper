@@ -4,12 +4,11 @@ import { useEffect, useState } from "preact/hooks";
 import { Hero } from "../../../finalData/finalData";
 
 import { Builder } from "./components/Builder/Builder";
-import { useTalentsBuilder } from "./hooks/useTalentsBuilder/useTalentsBuilder";
 import { Compendium } from "./components/Compendium/Compendium";
-import { useTalentsCompendium } from "./components/Compendium/useTalentsCompendium";
 import { Controls } from "./components/Controls/Controls";
+import { useTalentsBuilder } from "./hooks/useTalentsBuilder/useTalentsBuilder";
+import { useTalentsCompendium } from "./hooks/useTalentsCompendium/useTalentsCompendium";
 import { TalentsPageView } from "./talentsPageViews";
-import { compendiumStateStorage } from "./utils/compendiumStateStorage/compendiumStateStorage";
 
 import cls from "./TalentsPageContent.module.css";
 
@@ -35,22 +34,7 @@ export function TalentsPageContent({
 
     const talentsBuilder = useTalentsBuilder({ initialHero: hero });
 
-    const talentsCompendium = useTalentsCompendium({
-        getInitialState: () => {
-            return {
-                hero, 
-                ...compendiumStateStorage.get(hero.code),
-            };
-        },
-        onAction: (newState, actionType) => {
-            if (actionType === "load_state") { // Always loaded from storage
-                return;
-            }
-            compendiumStateStorage.set(newState.hero.code, {
-                rank: newState.rank,
-            });
-        },
-    });
+    const talentsCompendium = useTalentsCompendium({ initialHero: hero });
 
     const reloadBuilderOrCompendiumIfNeeded = (view: TalentsPageView, hero: Hero) => {
         if (view === "builder") {
@@ -59,10 +43,7 @@ export function TalentsPageContent({
             }
         } else {
             if (talentsCompendium.hero.code !== hero.code) {
-                talentsCompendium.loadState({
-                    hero,
-                    ...compendiumStateStorage.get(hero.code),
-                });
+                talentsCompendium.loadHero(hero);
             }
         }
     }
