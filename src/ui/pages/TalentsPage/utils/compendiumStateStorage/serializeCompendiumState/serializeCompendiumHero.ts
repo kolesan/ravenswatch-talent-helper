@@ -1,10 +1,10 @@
-import { SerializedCompendiumHeroState } from "../../types";
+import { SerializedCompendiumHeroState } from "../types";
 
 type Params = {
     rank: number;
 };
 
-export function serializeCompendiumHero({
+export function serializeCompendiumState({
     rank,
 }: Params): SerializedCompendiumHeroState {
     return {

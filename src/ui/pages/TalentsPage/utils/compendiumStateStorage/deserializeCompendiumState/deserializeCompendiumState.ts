@@ -1,14 +1,10 @@
-import { HeroCode } from "../../../../../../data/heroes";
 import { deserializeRank } from "../../storage/deserialization/deserializeRank";
-import { SerializedCompendiumState, StorableCompendiumHeroState } from "../types";
+import { SerializedCompendiumHeroState, StorableCompendiumHeroState } from "../types";
 
 export function deserializeCompendiumState(
-    currentStoredState: SerializedCompendiumState | null,
-    heroCode: HeroCode,
+    currentStoredState: SerializedCompendiumHeroState | null,
 ): StorableCompendiumHeroState {
-    const storedHeroState = currentStoredState?.heroes?.[heroCode];
-
-    const rank = deserializeRank(storedHeroState?.rank);
+    const rank = deserializeRank(currentStoredState?.rank);
 
     return {
         rank,

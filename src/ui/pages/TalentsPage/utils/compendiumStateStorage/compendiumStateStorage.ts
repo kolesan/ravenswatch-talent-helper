@@ -2,7 +2,7 @@ import { HeroCode } from "../../../../../data/heroes";
 
 import { baseCompendiumStateStorage } from "./baseCompendiumStateStorage";
 import { deserializeCompendiumState } from "./deserializeCompendiumState/deserializeCompendiumState";
-import { serializeCompendiumState } from "./serializeCompendiumState/serializeCompendiumState";
+import { serializeCompendiumState } from "./serializeCompendiumState/serializeCompendiumHero";
 import { StorableCompendiumHeroState } from "./types";
 
 export const compendiumStateStorage = {
@@ -10,9 +10,9 @@ export const compendiumStateStorage = {
         console.log("Loading from compendium storage", { 
             hero: heroCode,
         });
-        const currentStoredState = baseCompendiumStateStorage.get();
+        const storedState = baseCompendiumStateStorage.get(heroCode);
 
-        return deserializeCompendiumState(currentStoredState, heroCode);
+        return deserializeCompendiumState(storedState);
     },
     set(heroCode: HeroCode, stateToStore: StorableCompendiumHeroState) {
         console.log("Saving to compendium storage", { 
@@ -20,14 +20,8 @@ export const compendiumStateStorage = {
             rank: stateToStore.rank,
         });
 
-        const currentStoredState = baseCompendiumStateStorage.get();
+        const serializedState = serializeCompendiumState(stateToStore);
 
-        const newSerializedState = serializeCompendiumState({
-            currentStoredState,
-            stateToStore,
-            heroCode,
-        });
-
-        baseCompendiumStateStorage.set(newSerializedState);
+        baseCompendiumStateStorage.set(heroCode, serializedState);
     }
 }

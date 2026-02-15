@@ -1,13 +1,17 @@
+import { HeroCode } from "../../../../../data/heroes";
 import { LocalStorage } from "../../../../core/LocalStorage";
-import { SerializedHeroes } from "../../types";
 
-const key = "ravenswatch-run-helper_talents-page_builder-state"
+import { SerializedHeroState } from "./types";
+
+function key(heroCode: HeroCode) {
+    return `rrh_talents_builder_${heroCode}`;
+}
 
 export const baseTalentsBuilderStateStorage = {
-    get(): SerializedHeroes | null {
-        return LocalStorage.get(key);
+    get(heroCode: HeroCode): SerializedHeroState | null {
+        return LocalStorage.get(key(heroCode));
     },
-    set(state: SerializedHeroes) {
-        LocalStorage.set(key, state);
+    set(heroCode: HeroCode, heroState: SerializedHeroState) {
+        LocalStorage.set(key(heroCode), heroState);
     }
 }

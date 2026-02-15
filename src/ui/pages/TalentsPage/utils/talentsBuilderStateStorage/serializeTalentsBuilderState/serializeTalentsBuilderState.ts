@@ -1,23 +1,24 @@
-import { HeroCode } from "../../../../../../data/heroes";
-import { SerializedHeroes, StorableHeroState } from "../../../types";
+import { Talent } from "../../../../../../scripts/extractTalents/types";
+import { SerializedHeroState, SerializedTalentState, StorableHeroState } from "../types";
 
-import { serializeHero } from "./utils/serializeHero";
-
-type Params = {
-    currentStoredState: SerializedHeroes | null;
-    stateToStore: StorableHeroState;
-    heroCode: HeroCode;
-}
+type Params = Omit<StorableHeroState, "heroCode">;
 
 export function serializeTalentsBuilderState({
-    currentStoredState,
-    stateToStore,
-    heroCode,
-}: Params): SerializedHeroes {
+    rank,
+    builderState,
+}: Params): SerializedHeroState {
     return {
-        heroes: {
-            ...currentStoredState?.heroes,
-            [heroCode]: serializeHero(stateToStore),
+        rank,
+        builderState: {
+            used: builderState.used.map(serializeTalent),
+            preferred: builderState.preferred.map(serializeTalent),
         }
+    };
+}
+
+function serializeTalent(talent: Talent): SerializedTalentState {
+    return {
+        code: talent.code,
+        preferred: talent.preferred,
     }
 }

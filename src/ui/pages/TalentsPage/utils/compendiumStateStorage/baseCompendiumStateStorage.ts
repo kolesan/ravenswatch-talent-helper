@@ -1,14 +1,17 @@
+import { HeroCode } from "../../../../../data/heroes";
 import { LocalStorage } from "../../../../core/LocalStorage";
 
-import { SerializedCompendiumState } from "./types";
+import { SerializedCompendiumHeroState } from "./types";
 
-const key = "ravenswatch-run-helper_talents-page_compendium-state"
+function key(heroCode: HeroCode) {
+    return `rrh_talents_compendium_${heroCode}`;
+}
 
 export const baseCompendiumStateStorage = {
-    get(): SerializedCompendiumState | null {
-        return LocalStorage.get(key);
+    get(heroCode: HeroCode): SerializedCompendiumHeroState | null {
+        return LocalStorage.get(key(heroCode));
     },
-    set(state: SerializedCompendiumState) {
-        LocalStorage.set(key, state);
+    set(heroCode: HeroCode, state: SerializedCompendiumHeroState) {
+        LocalStorage.set(key(heroCode), state);
     }
 }

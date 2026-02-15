@@ -1,19 +1,19 @@
 import { HeroCode } from "../../../../../data/heroes";
 import { Hero } from "../../../../../finalData/finalData";
-import { StorableHeroState } from "../../types";
 
 import { baseTalentsBuilderStateStorage } from "./baseTalentsBuilderStateStorage";
 import { deserializeTalentsBuilderState } from "./deserializeTalentsBuilderState/deserializeTalentsBuilderState";
 import { serializeTalentsBuilderState } from "./serializeTalentsBuilderState/serializeTalentsBuilderState";
+import { StorableHeroState } from "./types";
 
 export const talentsBuilderStateStorage = {
     get(hero: Hero): StorableHeroState {
         console.log("Loading from builder storage", { 
             hero: hero.code,
         });
-        const currentStoredState = baseTalentsBuilderStateStorage.get();
+        const storedState = baseTalentsBuilderStateStorage.get(hero.code);
 
-        return deserializeTalentsBuilderState(currentStoredState, hero);
+        return deserializeTalentsBuilderState(storedState, hero);
     },
     set(heroCode: HeroCode, stateToStore: StorableHeroState) {
         console.log("Saving to builder storage", { 
@@ -23,14 +23,8 @@ export const talentsBuilderStateStorage = {
             preferred: stateToStore.builderState.preferred.length,
         });
 
-        const currentStoredState = baseTalentsBuilderStateStorage.get();
+        const serializedState = serializeTalentsBuilderState(stateToStore);
 
-        const newSerializedState = serializeTalentsBuilderState({
-            currentStoredState,
-            stateToStore,
-            heroCode,
-        });
-
-        baseTalentsBuilderStateStorage.set(newSerializedState);
+        baseTalentsBuilderStateStorage.set(heroCode, serializedState);
     }
 }

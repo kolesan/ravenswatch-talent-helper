@@ -1,8 +1,8 @@
 import { Talent } from "../../../../../../../scripts/extractTalents/types";
 import { isTruthy } from "../../../../../../utils/isTruthy";
 import { BuilderState } from "../../../../components/Builder/hooks/useBuilderStateReducer/types";
-import { SerializedBuilderState, SerializedTalent } from "../../../../types";
 import { defaultBuilderState } from "../../../defaultBuilderState";
+import { SerializedBuilderState, SerializedTalentState } from "../../types";
 
 export function deserializeBuilderState(
     allHeroTalents: Talent[],
@@ -39,7 +39,7 @@ export function deserializeBuilderState(
 }
 
 function deserializeTalent(allHeroTalents: Talent[]) {
-    return function(storedTalent: SerializedTalent): Talent | undefined {
+    return function(storedTalent: SerializedTalentState): Talent | undefined {
         const talent = allHeroTalents
             .find(it => it.code === storedTalent.code);
 
