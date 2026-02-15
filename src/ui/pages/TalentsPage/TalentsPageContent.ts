@@ -32,84 +32,84 @@ export function TalentsPageContent({
         view
     });
 
-    const [localHero, setLocalHero] = useState(hero);
     const [localView, setLocalView] = useState(view);
 
     const talentsBuilder = useTalentsBuilder({
         getInitialState: () => {
-            return talentsBuilderStateStorage.get(localHero)
+            return {
+                hero, 
+                ...talentsBuilderStateStorage.get(hero),
+            };
         },
         onAction: (newState, actionType) => {
             if (actionType === "load_state") { // Always loaded from storage
                 return;
             }
-            talentsBuilderStateStorage.set(localHero.code, newState);
+            talentsBuilderStateStorage.set(newState.hero.code, {
+                rank: newState.rank,
+                builderState: newState.builderState,
+            });
         },
-        allHeroTalents: localHero.talents,
     });
 
     const talentsCompendium = useTalentsCompendium({
         getInitialState: () => {
-            return compendiumStateStorage.get(localHero.code);
+            return {
+                hero, 
+                ...compendiumStateStorage.get(hero.code),
+            };
         },
         onAction: (newState, actionType) => {
             if (actionType === "load_state") { // Always loaded from storage
                 return;
             }
-            compendiumStateStorage.set(localHero.code, newState);
+            compendiumStateStorage.set(newState.hero.code, {
+                rank: newState.rank,
+            });
         },
-        allHeroTalents: localHero.talents,
     });
 
-    const loadLocalStateFromStorage = (view: TalentsPageView, hero: Hero) => {
+    const reloadBuilderOrCompendiumIfNeeded = (view: TalentsPageView, hero: Hero) => {
         if (view === "builder") {
-            talentsBuilder.loadState(talentsBuilderStateStorage.get(hero));
+            if (talentsBuilder.hero.code !== hero.code) {
+                talentsBuilder.loadState({
+                    hero,
+                    ...talentsBuilderStateStorage.get(hero),
+                });
+            }
         } else {
-            talentsCompendium.loadState(compendiumStateStorage.get(hero.code));
+            if (talentsCompendium.hero.code !== hero.code) {
+                talentsCompendium.loadState({
+                    hero,
+                    ...compendiumStateStorage.get(hero.code),
+                });
+            }
         }
-    };
+    }
 
     // Current known cases where this effect is necessary:
     // * direct url change (e.g. back and forward browser buttons)
     useEffect(() => {
-        const heroChanged = localHero.code !== hero.code;
-        const viewChanged = localView !== view;
-
-        console.log("= TPC = Checking if hero change from parent is happening", { 
-            from: localHero.code, 
-            to: hero.code 
-        }, heroChanged);
-        console.log("= TPC = Checking if view change from parent is happening", { 
-            from: localView, 
-            to: view 
-        }, viewChanged);
-
-        if (heroChanged || viewChanged) {
-            loadLocalStateFromStorage(view, hero);
-        }
-        if (heroChanged) {
-            setLocalHero(hero);
-        }
-        if (viewChanged) {
-            setLocalView(view);
-        }
+        reloadBuilderOrCompendiumIfNeeded(view, hero);
+        setLocalView(view); // will not do anything if same value
     }, [hero.code, view]);
+
+    const { 
+        hero: localHero, 
+        rank: localRank
+    } = localView === "builder" ? talentsBuilder : talentsCompendium;
 
     return html`
         <${Controls}
             hero=${localHero}
             view=${localView}
-            rank=${localView === "builder" 
-                ? talentsBuilder.rank 
-                : talentsCompendium.rank
-            }
+            rank=${localRank}
             onHeroChange=${(newHero: Hero) => {
-                loadLocalStateFromStorage(localView, newHero);
-                setLocalHero(newHero);
+                reloadBuilderOrCompendiumIfNeeded(localView, newHero);
                 onHeroChange(newHero);
             }}
             onViewChange=${(newView: TalentsPageView) => {
-                loadLocalStateFromStorage(newView, localHero);
+                reloadBuilderOrCompendiumIfNeeded(newView, localHero);
                 setLocalView(newView);
                 onViewChange(newView);
             }}
@@ -129,7 +129,6 @@ export function TalentsPageContent({
                         content: cls.listContent,
                     }
                 }}
-                hero=${localHero}
                 talentsBuilder=${talentsBuilder}
             />
         `}
@@ -141,7 +140,6 @@ export function TalentsPageContent({
                         content: cls.listContent,
                     }
                 }}
-                hero=${localHero}
                 talentsCompendium=${talentsCompendium}
             />
         `}

@@ -1,6 +1,5 @@
 import { html } from "htm/preact";
 
-import { Hero } from "../../../../../finalData/finalData";
 import { ListLabelRight } from "../../../../components/ListLabelRight/ListLabelRight";
 import { useBooleanState } from "../../../../hooks/useBooleanState";
 import { maxUsedTalents } from "../../consts/maxUsedTalents";
@@ -17,19 +16,22 @@ type Props = {
             content?: string;
         }
     }
-    hero: Hero;
     talentsBuilder: TalentsBuilder;
 }
 
 export function Builder({
     classes,
-    hero,
     talentsBuilder,
 }: Props) {
-    console.log("=== Builder rendering ===", { hero: hero.code });
+    console.log("=== Builder rendering ===", { hero: talentsBuilder.hero.code });
 
     const usedLabelScrollingAgain = useBooleanState(false);
     const preferredLabelScrollingAgain = useBooleanState(false);
+
+    const {
+        hero,
+        talents,
+    } = talentsBuilder;
 
     return html`
         <div class=${cls.builderRoot}>
@@ -37,7 +39,7 @@ export function Builder({
                 classes=${classes?.list}
                 label=Used 
                 heroCode=${hero.code} 
-                talents=${talentsBuilder.talents.used} 
+                talents=${talents.used} 
                 maxItems=${maxUsedTalents}
                 onStickyLabelScrollingAgain=${usedLabelScrollingAgain.set}
                 onClear=${talentsBuilder.clearUsed}
@@ -55,14 +57,14 @@ export function Builder({
                                 usedLabelScrollingAgain.is 
                                 && !preferredLabelScrollingAgain.is
                             }
-                            used=${talentsBuilder.talents.used.length}
+                            used=${talents.used.length}
                             maxUsed=${maxUsedTalents}
                         />
                     `,
                 }}
                 label=Preferred 
                 heroCode=${hero.code} 
-                talents=${talentsBuilder.talents.preferred} 
+                talents=${talents.preferred} 
                 onStickyLabelScrollingAgain=${preferredLabelScrollingAgain.set}
                 confirmBeforeClear
                 onClear=${talentsBuilder.clearPreferred}
@@ -77,15 +79,15 @@ export function Builder({
                         <${ListLabelRight}
                             className=${cls.listLabelRight}
                             visible=${preferredLabelScrollingAgain.is}
-                            used=${talentsBuilder.talents.used.length}
-                            preferred=${talentsBuilder.talents.preferred.length}
+                            used=${talents.used.length}
+                            preferred=${talents.preferred.length}
                             maxUsed=${maxUsedTalents}
                         />
                     `,
                 }}
                 label=Available 
                 heroCode=${hero.code} 
-                talents=${talentsBuilder.talents.available}
+                talents=${talents.available}
                 onTalentClick=${talentsBuilder.availableToUsed}
                 onTalentAltClick=${talentsBuilder.availableToPreferred}
                 onTalentHold=${talentsBuilder.availableToPreferred}

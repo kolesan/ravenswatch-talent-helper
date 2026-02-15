@@ -1,6 +1,9 @@
+import { Hero } from "../../../../../finalData/finalData";
+
 import { useTalentsCompendium } from "./useTalentsCompendium";
 
 export type TalentsCompendiumState = {
+    hero: Hero;
     rank: number;
 }
 

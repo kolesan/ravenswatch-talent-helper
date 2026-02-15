@@ -1,5 +1,3 @@
-import { useMemo } from "preact/hooks";
-
 import { Talent } from "../../../../../scripts/extractTalents/types";
 import { maxUsedTalents } from "../../consts/maxUsedTalents";
 import { TalentWithLockedFlag } from "../../types";
@@ -21,7 +19,7 @@ export function useBuilder({
         onAction,
     });
 
-    return useMemo(() => ({
+    return {
         state,
         loadState(newState: BuilderState) {
             dispatch({
@@ -86,5 +84,5 @@ export function useBuilder({
                 talent,
             });
         },
-    }), [state]);
+    };
 }

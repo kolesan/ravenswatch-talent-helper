@@ -11,13 +11,11 @@ import { calculateAvailableTalents } from "./utils/calculateAvailableTalents";
 type Params = {
     getInitialState: () => TalentsBuilderState;
     onAction: (state: TalentsBuilderState, actionType: TalentsBuilderActionType) => void;
-    allHeroTalents: Talent[];
 }
 
 export function useTalentsBuilder({
     getInitialState,
     onAction,
-    allHeroTalents,
 }: Params) {
     // init
     const initialState = useMemo(() => {
@@ -25,6 +23,7 @@ export function useTalentsBuilder({
     }, []);
 
     // state
+    const [hero, setHero] = useState(initialState.hero);
     const [rank, setRank] = useState(initialState.rank);
     const builder = useBuilder({
         getInitialState: () => {
@@ -35,6 +34,7 @@ export function useTalentsBuilder({
                 return;
             }
             onAction({
+                hero,
                 rank,
                 builderState: newBuilderState
             }, actionType);
@@ -46,11 +46,12 @@ export function useTalentsBuilder({
         return calculateAvailableTalents({
             rank, 
             builderState: builder.state, 
-            allTalents: allHeroTalents,
+            allTalents: hero.talents,
         });
-    }, [rank, builder, allHeroTalents]);
+    }, [rank, builder.state, hero.talents]);
 
     return useMemo(() => ({
+        hero,
         rank,
         talents: {
             used: builder.state.used,
@@ -58,18 +59,20 @@ export function useTalentsBuilder({
             available,
         },
         loadState(newState: TalentsBuilderState) {
-            builder.loadState(newState.builderState);
+            setHero(newState.hero);
             setRank(newState.rank);
+            builder.loadState(newState.builderState);
 
             onAction(newState, "load_state");
         },
         applyRank(rank: number) {
             const newBuilderState = applyRank(builder.state, rank);
 
-            builder.loadState(newBuilderState);
             setRank(rank);
+            builder.loadState(newBuilderState);
 
             onAction({
+                hero,
                 rank,
                 builderState: newBuilderState,
             }, "apply_rank");
@@ -95,5 +98,5 @@ export function useTalentsBuilder({
         availableToPreferred(talent: TalentWithLockedFlag) {
             builder.availableToPreferred(talent);
         },
-    }), [rank, builder, available]);
+    }), [hero, rank, builder.state, available]);
 }

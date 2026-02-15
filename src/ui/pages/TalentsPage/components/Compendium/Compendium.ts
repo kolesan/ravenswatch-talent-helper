@@ -1,7 +1,6 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { Hero } from "../../../../../finalData/finalData";
 import { MainList } from "../MainList/MainList";
 
 import { TalentsCompendium } from "./types";
@@ -16,25 +15,22 @@ type Props = {
             content?: string;
         }
     }
-    hero: Hero;
     talentsCompendium: TalentsCompendium;
 }
 
 export function Compendium({
     className,
     classes,
-    hero,
     talentsCompendium,
 }: Props) {
     console.log("=== Compendium rendering ===", { 
-        hero: hero.code
+        hero: talentsCompendium.hero.code
     });
 
     const {
-        starting,
-        standard,
-        final
-    } = talentsCompendium.talents;
+        hero,
+        talents,
+    } = talentsCompendium;
 
     return html`
         <div class=${clsx(cls.root, className)}>
@@ -47,7 +43,7 @@ export function Compendium({
                 showRanks
                 label=Starting 
                 heroCode=${hero.code} 
-                talents=${starting}
+                talents=${talents.starting}
             />
             <${MainList} 
                 classes=${{ 
@@ -58,7 +54,7 @@ export function Compendium({
                 showRanks
                 label=Standard 
                 heroCode=${hero.code} 
-                talents=${standard} 
+                talents=${talents.standard} 
             />
             <${MainList} 
                 classes=${{ 
@@ -69,7 +65,7 @@ export function Compendium({
                 showRanks
                 label=Final 
                 heroCode=${hero.code} 
-                talents=${final}
+                talents=${talents.final}
             />
         </div>
     `;

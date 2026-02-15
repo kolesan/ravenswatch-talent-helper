@@ -1,20 +1,16 @@
 import { useMemo, useState } from "preact/hooks";
 
-import { Talent } from "../../../../../scripts/extractTalents/types";
-
 import { TalentsCompendiumActionType, TalentsCompendiumState } from "./types";
 import { groupTalentsByType } from "./utils/groupTalentsByType";
 
 type Params = {
     getInitialState: () => TalentsCompendiumState;
     onAction: (state: TalentsCompendiumState, actionType: TalentsCompendiumActionType) => void;
-    allHeroTalents: Talent[];
 }
 
 export function useTalentsCompendium({
     getInitialState,
     onAction,
-    allHeroTalents,
 }: Params) {
     // init
     const initialState = useMemo(() => {
@@ -22,25 +18,31 @@ export function useTalentsCompendium({
     }, []);
 
     // state
+    const [hero, setHero] = useState(initialState.hero);
     const [rank, setRank] = useState(initialState.rank);
 
     // derived state
     const talents = useMemo(() => {
-        return groupTalentsByType(rank, allHeroTalents);
-    }, [rank, allHeroTalents]);
+        return groupTalentsByType(rank, hero.talents);
+    }, [rank, hero.talents]);
 
     return useMemo(() => ({
+        hero,
         rank,
         talents,
         loadState(newState: TalentsCompendiumState) {
+            setHero(newState.hero);
             setRank(newState.rank);
 
             onAction(newState, "load_state");
         },
-        applyRank(rank: number) {
-            setRank(rank);
+        applyRank(newRank: number) {
+            setRank(newRank);
 
-            onAction({ rank }, "apply_rank");
+            onAction({ 
+                hero,
+                rank: newRank, 
+            }, "apply_rank");
         },
-    }), [rank, talents]);
+    }), [hero, rank, talents]);
 }
