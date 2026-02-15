@@ -1,7 +1,7 @@
 import { LocalStorage } from "../../../../core/LocalStorage";
 import { SerializedLegendaryObjectsPageState } from "../../types";
 
-const key = "ravenswatch-run-helper_legendary-objects-page_state"
+const key = "rrh_objects_legendary";
 
 export const baseLegendaryObjectsPageStateStorage = {
     get(): SerializedLegendaryObjectsPageState | null {

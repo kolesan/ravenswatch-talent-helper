@@ -1,7 +1,7 @@
 import { LocalStorage } from "../../../../core/LocalStorage";
 import { SerializedTalentsPageUrlParamsState } from "../../types";
 
-const key = "ravenswatch-run-helper_talents-page_url-params"
+const key = "rrh_talents_url";
 
 export const baseTalentsPageUrlParamsStorage = {
     get(): SerializedTalentsPageUrlParamsState | null {

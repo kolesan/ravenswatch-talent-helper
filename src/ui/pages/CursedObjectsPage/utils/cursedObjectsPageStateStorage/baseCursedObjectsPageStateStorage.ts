@@ -1,7 +1,7 @@
 import { LocalStorage } from "../../../../core/LocalStorage";
 import { SerializedCursedObjectsPageState } from "../../types";
 
-const key = "ravenswatch-run-helper_cursed-objects-page_state"
+const key = "rrh_objects_cursed";
 
 export const baseCursedObjectsPageStateStorage = {
     get(): SerializedCursedObjectsPageState | null {
