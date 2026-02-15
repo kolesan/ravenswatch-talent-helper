@@ -58,6 +58,10 @@ export function useTalentsBuilder({
             available,
         },
         loadHero(newHero: Hero) {
+            if (newHero.code === hero.code) {
+                return;
+            }
+            
             const newHeroStoredState = loadFromStorage(newHero);
 
             setHero(newHero);

@@ -31,28 +31,21 @@ export function TalentsPageContent({
     });
 
     const [localView, setLocalView] = useState(view);
-
     const talentsBuilder = useTalentsBuilder({ initialHero: hero });
-
     const talentsCompendium = useTalentsCompendium({ initialHero: hero });
 
-    const reloadBuilderOrCompendiumIfNeeded = (view: TalentsPageView, hero: Hero) => {
+    const reloadViewContents = (view: TalentsPageView, hero: Hero) => {
         if (view === "builder") {
-            if (talentsBuilder.hero.code !== hero.code) {
-                talentsBuilder.loadHero(hero);
-            }
+            talentsBuilder.loadHero(hero);
         } else {
-            if (talentsCompendium.hero.code !== hero.code) {
-                talentsCompendium.loadHero(hero);
-            }
+            talentsCompendium.loadHero(hero);
         }
     }
 
-    // Current known cases where this effect is necessary:
-    // * direct url change (e.g. back and forward browser buttons)
+    // Needed for direct url change (e.g. back and forward browser buttons)
     useEffect(() => {
-        reloadBuilderOrCompendiumIfNeeded(view, hero);
-        setLocalView(view); // will not do anything if same value
+        reloadViewContents(view, hero);
+        setLocalView(view);
     }, [hero.code, view]);
 
     const { 
@@ -66,11 +59,11 @@ export function TalentsPageContent({
             view=${localView}
             rank=${localRank}
             onHeroChange=${(newHero: Hero) => {
-                reloadBuilderOrCompendiumIfNeeded(localView, newHero);
+                reloadViewContents(localView, newHero);
                 onHeroChange(newHero);
             }}
             onViewChange=${(newView: TalentsPageView) => {
-                reloadBuilderOrCompendiumIfNeeded(newView, localHero);
+                reloadViewContents(newView, localHero);
                 setLocalView(newView);
                 onViewChange(newView);
             }}
