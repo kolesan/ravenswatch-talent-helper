@@ -39,4 +39,12 @@
         min-width: var(--side-length);
         min-height: var(--side-length);
     }
+    .nonWrapableControls {
+        /* 
+            Force the wrapping of the talents switch to second row
+            in order for height to match what is used in list sticky header
+        */
+        width: 100%;
+        justify-content: center;
+    }
 }
