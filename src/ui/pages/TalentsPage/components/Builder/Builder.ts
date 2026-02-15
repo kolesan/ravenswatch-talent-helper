@@ -5,7 +5,7 @@ import { useBooleanState } from "../../../../hooks/useBooleanState";
 import { maxUsedTalents } from "../../consts/maxUsedTalents";
 import { MainList } from "../MainList/MainList";
 
-import { TalentsBuilder } from "./types";
+import { TalentsBuilder } from "../../hooks/useTalentsBuilder/types";
 
 import cls from "./Builder.module.css";
 

@@ -1,7 +1,7 @@
 import { Hero } from "../../../finalData/finalData";
 import { Talent } from "../../../scripts/extractTalents/types";
 
-import { BuilderState } from "./components/Builder/types";
+import { BuilderState } from "./components/Builder/hooks/useBuilderStateReducer/types";
 import { TalentsPageView } from "./talentsPageViews";
 
 export type LocalTalentsState = {

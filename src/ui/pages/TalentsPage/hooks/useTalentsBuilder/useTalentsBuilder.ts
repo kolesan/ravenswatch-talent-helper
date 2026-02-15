@@ -1,43 +1,42 @@
 import { useMemo, useState } from "preact/hooks";
 
+import { Hero } from "../../../../../finalData/finalData";
 import { Talent } from "../../../../../scripts/extractTalents/types";
+import { useBuilder } from "../../components/Builder/useBuilder";
+import { applyRank } from "../../components/Builder/utils/applyRank";
+import { calculateAvailableTalents } from "../../components/Builder/utils/calculateAvailableTalents";
 import { TalentWithLockedFlag } from "../../types";
 
-import { TalentsBuilderActionType, TalentsBuilderState } from "./types";
-import { useBuilder } from "./useBuilder";
-import { applyRank } from "./utils/applyRank";
-import { calculateAvailableTalents } from "./utils/calculateAvailableTalents";
+import { loadFromStorage } from "./utils/loadFromStorage";
+import { saveToStorage } from "./utils/saveToStorage";
 
 type Params = {
-    getInitialState: () => TalentsBuilderState;
-    onAction: (state: TalentsBuilderState, actionType: TalentsBuilderActionType) => void;
+    initialHero: Hero;
 }
 
 export function useTalentsBuilder({
-    getInitialState,
-    onAction,
+    initialHero,
 }: Params) {
     // init
-    const initialState = useMemo(() => {
-        return getInitialState();
+    const initialHeroState = useMemo(() => {
+        return loadFromStorage(initialHero);
     }, []);
 
     // state
-    const [hero, setHero] = useState(initialState.hero);
-    const [rank, setRank] = useState(initialState.rank);
+    const [hero, setHero] = useState(initialHero);
+    const [rank, setRank] = useState(initialHeroState.rank);
     const builder = useBuilder({
         getInitialState: () => {
-            return initialState.builderState;
+            return initialHeroState.builderState;
         },
         onAction: (newBuilderState, actionType) => {
             if (actionType === "load_state") {
                 return;
             }
-            onAction({
-                hero,
-                rank,
+            saveToStorage(hero, {
+                rank: rank,
                 builderState: newBuilderState
-            }, actionType);
+            });
         },
     });
 
@@ -58,24 +57,23 @@ export function useTalentsBuilder({
             preferred: builder.state.preferred,
             available,
         },
-        loadState(newState: TalentsBuilderState) {
-            setHero(newState.hero);
-            setRank(newState.rank);
-            builder.loadState(newState.builderState);
+        loadHero(newHero: Hero) {
+            const newHeroStoredState = loadFromStorage(newHero);
 
-            onAction(newState, "load_state");
+            setHero(newHero);
+            setRank(newHeroStoredState.rank);
+            builder.loadState(newHeroStoredState.builderState);
         },
-        applyRank(rank: number) {
-            const newBuilderState = applyRank(builder.state, rank);
+        applyRank(newRank: number) {
+            const newBuilderState = applyRank(builder.state, newRank);
 
-            setRank(rank);
+            setRank(newRank);
             builder.loadState(newBuilderState);
 
-            onAction({
-                hero,
-                rank,
-                builderState: newBuilderState,
-            }, "apply_rank");
+            saveToStorage(hero, { 
+                rank: newRank, 
+                builderState: newBuilderState 
+            });
         },
         clearUsed() {
             builder.clearUsed();

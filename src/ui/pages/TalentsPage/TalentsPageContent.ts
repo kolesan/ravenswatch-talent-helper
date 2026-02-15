@@ -4,13 +4,12 @@ import { useEffect, useState } from "preact/hooks";
 import { Hero } from "../../../finalData/finalData";
 
 import { Builder } from "./components/Builder/Builder";
-import { useTalentsBuilder } from "./components/Builder/useTalentsBuilder";
+import { useTalentsBuilder } from "./hooks/useTalentsBuilder/useTalentsBuilder";
 import { Compendium } from "./components/Compendium/Compendium";
 import { useTalentsCompendium } from "./components/Compendium/useTalentsCompendium";
 import { Controls } from "./components/Controls/Controls";
 import { TalentsPageView } from "./talentsPageViews";
 import { compendiumStateStorage } from "./utils/compendiumStateStorage/compendiumStateStorage";
-import { talentsBuilderStateStorage } from "./utils/talentsBuilderStateStorage/talentsBuilderStateStorage";
 
 import cls from "./TalentsPageContent.module.css";
 
@@ -34,23 +33,7 @@ export function TalentsPageContent({
 
     const [localView, setLocalView] = useState(view);
 
-    const talentsBuilder = useTalentsBuilder({
-        getInitialState: () => {
-            return {
-                hero, 
-                ...talentsBuilderStateStorage.get(hero),
-            };
-        },
-        onAction: (newState, actionType) => {
-            if (actionType === "load_state") { // Always loaded from storage
-                return;
-            }
-            talentsBuilderStateStorage.set(newState.hero.code, {
-                rank: newState.rank,
-                builderState: newState.builderState,
-            });
-        },
-    });
+    const talentsBuilder = useTalentsBuilder({ initialHero: hero });
 
     const talentsCompendium = useTalentsCompendium({
         getInitialState: () => {
@@ -72,10 +55,7 @@ export function TalentsPageContent({
     const reloadBuilderOrCompendiumIfNeeded = (view: TalentsPageView, hero: Hero) => {
         if (view === "builder") {
             if (talentsBuilder.hero.code !== hero.code) {
-                talentsBuilder.loadState({
-                    hero,
-                    ...talentsBuilderStateStorage.get(hero),
-                });
+                talentsBuilder.loadHero(hero);
             }
         } else {
             if (talentsCompendium.hero.code !== hero.code) {
