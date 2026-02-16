@@ -28,6 +28,9 @@
 
 .option {
     padding: 6px 4px;
+    
+    color: inherit;
+    text-decoration: none;
 }
 
 .optionSelected {

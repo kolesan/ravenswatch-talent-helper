@@ -26,19 +26,21 @@ export function TalentsViewSwitch({
             View
             <div class=${cls.options}>
                 ${talentsPageViews.map(it => html`
-                    <div 
+                    <a 
                         class=${clsx({
                             [cls.option]: true,
                             [cls.optionSelected]: it.value === view,
                         })}
                         key=${it.value}
+                        href=${it.value}
                         onClick=${(e: PointerEvent) => {
                             e.stopPropagation();
+                            e.preventDefault();
                             onSwitch(it.value);
                         }}
                     >
                         ${it.label}
-                    </div>
+                    </a>
                 `)}
             </div>
         </label>
