@@ -1,15 +1,15 @@
 import { MagicalObject, SerializedMagicalObject } from "../../../types";
 
-export type LegendaryObjectsPageState = {
+export type StorableLegendaryObjectsBuilderState = {
     used: MagicalObject[];
     preferred: MagicalObject[];
 };
 
-export type SerializedLegendaryObjectsPageState = {
+export type SerializedLegendaryObjectsBuilderState = {
     used: SerializedMagicalObject[];
     preferred: SerializedMagicalObject[];
 };
 
-export type DerivedLegendaryObjectsPageState = {
+export type DerivedLegendaryObjectsBuilderState = {
     available: MagicalObject[];
 };

@@ -1,10 +1,13 @@
 import { legendary } from "../../../../scrapedData/mergedItems/legendary";
 import { MagicalObject } from "../../../../types";
-import { DerivedLegendaryObjectsPageState, LegendaryObjectsPageState } from "../types";
+import {
+    DerivedLegendaryObjectsBuilderState,
+    StorableLegendaryObjectsBuilderState,
+} from "../types";
 
-export function getDerivedLegendaryObjectsPageState(
-    state: LegendaryObjectsPageState
-): DerivedLegendaryObjectsPageState {
+export function getDerivedLegendaryObjectsBuilderState(
+    state: StorableLegendaryObjectsBuilderState
+): DerivedLegendaryObjectsBuilderState {
     const {
         used,
         preferred,

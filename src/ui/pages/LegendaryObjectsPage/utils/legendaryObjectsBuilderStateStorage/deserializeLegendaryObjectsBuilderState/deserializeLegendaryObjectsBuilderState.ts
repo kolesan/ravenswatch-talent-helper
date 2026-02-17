@@ -1,17 +1,17 @@
 import { legendary } from "../../../../../../scrapedData/mergedItems/legendary";
 import { MagicalObject, SerializedMagicalObject } from "../../../../../../types";
 import { isTruthy } from "../../../../../utils/isTruthy";
-import { LegendaryObjectsPageState, SerializedLegendaryObjectsPageState } from "../../../types";
-import { defaultLegendaryObjectsPageState } from "../../defaultLegendaryObjectsPageState";
+import { StorableLegendaryObjectsBuilderState, SerializedLegendaryObjectsBuilderState } from "../../../types";
+import { defaultLegendaryObjectsBuilderState } from "../../defaultLegendaryObjectsBuilderState";
 
-export function deserializeLegendaryObjectsPageState(
-    currentStoredState: SerializedLegendaryObjectsPageState | null,
-): LegendaryObjectsPageState {
+export function deserializeLegendaryObjectsBuilderState(
+    currentStoredState: SerializedLegendaryObjectsBuilderState | null,
+): StorableLegendaryObjectsBuilderState {
     if (!currentStoredState) {
-        return defaultLegendaryObjectsPageState;
+        return defaultLegendaryObjectsBuilderState;
     }
 
-    const normalizedState: Partial<SerializedLegendaryObjectsPageState> = 
+    const normalizedState: Partial<SerializedLegendaryObjectsBuilderState> = 
         typeof currentStoredState === "object"
             ? currentStoredState || {} // additional check for null
             : {};

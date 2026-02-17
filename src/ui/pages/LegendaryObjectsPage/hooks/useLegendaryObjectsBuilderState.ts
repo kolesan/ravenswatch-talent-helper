@@ -1,7 +1,7 @@
 import { useReducer } from "preact/hooks";
 
 import { MagicalObject } from "../../../../types";
-import { LegendaryObjectsPageState } from "../types";
+import { StorableLegendaryObjectsBuilderState } from "../types";
 
 type Action =
     | { type: "clear_used" }
@@ -13,8 +13,8 @@ type Action =
     | { type: "object_from_used_to_available", object: MagicalObject }
     | { type: "object_from_used_to_preferred", object: MagicalObject };
 
-export function useLegendaryObjectsPageState(initialState: LegendaryObjectsPageState) {
-    return useReducer<LegendaryObjectsPageState, Action>((state, action) => {
+export function useLegendaryObjectsBuilderState(initialState: StorableLegendaryObjectsBuilderState) {
+    return useReducer<StorableLegendaryObjectsBuilderState, Action>((state, action) => {
         switch (action.type) {            
             case "clear_used": {
                 const preferredFromUsed = state.used.filter(it => it.preferred);

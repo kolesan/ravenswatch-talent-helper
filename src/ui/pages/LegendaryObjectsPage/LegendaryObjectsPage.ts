@@ -7,17 +7,17 @@ import { ObjectList } from "../../components/ObjectList";
 import { useBooleanState } from "../../hooks/useBooleanState";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
-import { useLegendaryObjectsPageState } from "./hooks/useLegendaryObjectsPageState";
-import { useSaveLegendaryObjectsPageStateToStorage } from "./hooks/useSaveLegendaryObjectsPageStateToStorage";
-import { defaultLegendaryObjectsPageState } from "./utils/defaultLegendaryObjectsPageState";
-import { getDerivedLegendaryObjectsPageState } from "./utils/getDerivedLegendaryObjectsPageState";
-import { legendaryObjectsPageStateStorage } from "./utils/legendaryObjectsPageStateStorage/legendaryObjectsPageStateStorage";
+import { useLegendaryObjectsBuilderState } from "./hooks/useLegendaryObjectsBuilderState";
+import { useSaveLegendaryObjectsBuilderStateToStorage } from "./hooks/useSaveLegendaryObjectsBuilderStateToStorage";
+import { defaultLegendaryObjectsBuilderState } from "./utils/defaultLegendaryObjectsBuilderState";
+import { getDerivedLegendaryObjectsBuilderState } from "./utils/getDerivedLegendaryObjectsBuilderState";
+import { legendaryObjectsBuilderStateStorage } from "./utils/legendaryObjectsBuilderStateStorage/legendaryObjectsBuilderStateStorage";
 
 import cls from "./LegendaryObjectsPage.module.css";
 
 const getInitialState = () => 
-    legendaryObjectsPageStateStorage.get() 
-    || defaultLegendaryObjectsPageState;
+    legendaryObjectsBuilderStateStorage.get() 
+    || defaultLegendaryObjectsBuilderState;
 
 const listLabelStuckAtPx = 56;
 
@@ -26,13 +26,13 @@ export function LegendaryObjectsPage() {
     
     const initialState = useMemo(getInitialState, []);
 
-    const [state, dispatch] = useLegendaryObjectsPageState(initialState);
+    const [state, dispatch] = useLegendaryObjectsBuilderState(initialState);
     const usedLabelScrollingAgain = useBooleanState(false);
     const preferredLabelScrollingAgain = useBooleanState(false);
 
-    useSaveLegendaryObjectsPageStateToStorage(state);
+    useSaveLegendaryObjectsBuilderStateToStorage(state);
 
-    const derivedState = getDerivedLegendaryObjectsPageState(state);
+    const derivedState = getDerivedLegendaryObjectsBuilderState(state);
 
     return html`
         <div class=${cls.root}>

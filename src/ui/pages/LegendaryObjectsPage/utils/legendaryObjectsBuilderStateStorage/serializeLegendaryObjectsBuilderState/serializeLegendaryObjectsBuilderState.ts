@@ -1,9 +1,9 @@
 import { MagicalObject } from "../../../../../../types";
-import { LegendaryObjectsPageState, SerializedLegendaryObjectsPageState } from "../../../types";
+import { StorableLegendaryObjectsBuilderState, SerializedLegendaryObjectsBuilderState } from "../../../types";
 
-export function serializeLegendaryObjectsPageState(
-    state: LegendaryObjectsPageState, 
-): SerializedLegendaryObjectsPageState {
+export function serializeLegendaryObjectsBuilderState(
+    state: StorableLegendaryObjectsBuilderState, 
+): SerializedLegendaryObjectsBuilderState {
     return {
         used: state.used.map(serializeObject),
         preferred: state.preferred.map(serializeObject),
