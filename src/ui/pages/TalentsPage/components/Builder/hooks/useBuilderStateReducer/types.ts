@@ -1,19 +1,23 @@
-import { Talent } from "../../../../../../../scripts/extractTalents/types";
-
-export type BuilderState = {
-    used: Talent[];
-    preferred: Talent[];
+export type BuilderState<T extends BuilderItem> = {
+    used: T[];
+    preferred: T[];
 }
 
-export type BuilderStateReducerAction =
-    | { type: "load_state", state: BuilderState }
+export type BuilderStateReducerAction<T extends BuilderItem> =
+    | { type: "load_state", state: BuilderState<T> }
     | { type: "clear_used" }
     | { type: "clear_preferred" }
-    | { type: "used_to_preferred", talent: Talent }
-    | { type: "used_to_available", talent: Talent }
-    | { type: "preferred_to_used", talent: Talent }
-    | { type: "preferred_to_available", talent: Talent }
-    | { type: "available_to_preferred", talent: Talent }
-    | { type: "available_to_used", talent: Talent };
+    | { type: "used_to_preferred", item: T }
+    | { type: "used_to_available", item: T }
+    | { type: "preferred_to_used", item: T }
+    | { type: "preferred_to_available", item: T }
+    | { type: "available_to_preferred", item: T }
+    | { type: "available_to_used", item: T };
 
-export type BuilderStateReducerActionType = BuilderStateReducerAction["type"];
+export type BuilderStateReducerActionType<T extends BuilderItem> = 
+    BuilderStateReducerAction<T>["type"];
+
+export type BuilderItem = {
+    code: string;
+    preferred?: boolean;
+};

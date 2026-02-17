@@ -1,19 +1,22 @@
-import { Talent } from "../../../../../scripts/extractTalents/types";
-import { maxUsedTalents } from "../../consts/maxUsedTalents";
-import { TalentWithLockedFlag } from "../../types";
-
-import { BuilderState, BuilderStateReducerActionType } from "./hooks/useBuilderStateReducer/types";
+import {
+    BuilderItem,
+    BuilderState,
+    BuilderStateReducerActionType,
+} from "./hooks/useBuilderStateReducer/types";
 import { useBuilderStateReducer } from "./hooks/useBuilderStateReducer/useBuilderStateReducer";
 
-type Params = {
-    getInitialState: () => BuilderState;
-    onAction: (state: BuilderState, actionType: BuilderStateReducerActionType) => void;
+type Params<T extends BuilderItem> = {
+    getInitialState: () => BuilderState<T>;
+    onAction: (
+        state: BuilderState<T>, 
+        actionType: BuilderStateReducerActionType<T>
+    ) => void;
 }
 
-export function useBuilder({
+export function useBuilder<T extends BuilderItem>({
     getInitialState,
     onAction,
-}: Params) {
+}: Params<T>) {
     const [state, dispatch] = useBuilderStateReducer({
         getInitialState,
         onAction,
@@ -21,7 +24,7 @@ export function useBuilder({
 
     return {
         state,
-        loadState(newState: BuilderState) {
+        loadState(newState: BuilderState<T>) {
             dispatch({
                 type: "load_state",
                 state: newState,
@@ -37,51 +40,36 @@ export function useBuilder({
                 type: "clear_preferred",
             });
         },
-        removeFromUsed(talent: Talent) {
+        removeFromUsed(item: T) {
             dispatch({
-                type: talent.preferred
+                type: item.preferred
                     ? "used_to_preferred"
                     : "used_to_available",
-                talent,
+                item,
             });
         },
-        preferredToUsed(talent: Talent) {
-            if (state.used.length >= maxUsedTalents) {
-                return;
-            }
-
+        preferredToUsed(item: T) {
             dispatch({
                 type: "preferred_to_used",
-                talent,
+                item,
             });
         },
-        preferredToAvailable(talent: Talent) {
+        preferredToAvailable(item: T) {
             dispatch({
                 type: "preferred_to_available",
-                talent,
+                item,
             });
         },
-        availableToUsed(talent: TalentWithLockedFlag) {
-            if (
-                talent.locked 
-                || state.used.length >= maxUsedTalents
-            ) {
-                return;
-            }
-
+        availableToUsed(item: T) {
             dispatch({
                 type: "available_to_used",
-                talent,
+                item,
             });
         },
-        availableToPreferred(talent: TalentWithLockedFlag) {
-            if (talent.locked) {
-                return;
-            }
-
+        availableToPreferred(item: T) {
             dispatch({
                 type: "available_to_preferred",
-                talent,
+                item,
             });
         },
     };

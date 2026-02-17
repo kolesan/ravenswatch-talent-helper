@@ -1,6 +1,8 @@
-import { BuilderState } from "../types";
+import { BuilderState, BuilderItem } from "../types";
 
-export function clearPreferred(state: BuilderState): BuilderState {
+export function clearPreferred<T extends BuilderItem>(
+    state: BuilderState<T>
+): BuilderState<T> {
     return {
         ...state,
         preferred: [],

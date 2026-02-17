@@ -7,7 +7,7 @@ import { BuilderState } from "../hooks/useBuilderStateReducer/types";
 
 type Params = {
     rank: number,
-    builderState: BuilderState,
+    builderState: BuilderState<Talent>,
     allTalents: Talent[],
 }
 

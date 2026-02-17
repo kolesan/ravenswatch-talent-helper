@@ -1,10 +1,12 @@
-import { Talent } from "../../../../../../../../scripts/extractTalents/types";
-import { BuilderState } from "../types";
+import { BuilderState, BuilderItem } from "../types";
 
-export function preferredToUsed(state: BuilderState, talent: Talent): BuilderState {
-    const used = [...state.used, talent];
+export function preferredToUsed<T extends BuilderItem>(
+    state: BuilderState<T>, 
+    item: T
+): BuilderState<T> {
+    const used = [...state.used, item];
     const preferred = state.preferred
-        .filter(it => it.code !== talent.code);
+        .filter(it => it.code !== item.code);
 
     return {
         used,

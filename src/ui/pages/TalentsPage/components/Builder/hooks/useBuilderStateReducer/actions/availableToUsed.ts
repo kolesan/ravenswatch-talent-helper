@@ -1,8 +1,10 @@
-import { Talent } from "../../../../../../../../scripts/extractTalents/types";
-import { BuilderState } from "../types";
+import { BuilderState, BuilderItem } from "../types";
 
-export function availableToUsed(state: BuilderState, talent: Talent): BuilderState {
-    const used = [...state.used, talent];
+export function availableToUsed<T extends BuilderItem>(
+    state: BuilderState<T>, 
+    item: T
+): BuilderState<T> {
+    const used = [...state.used, item];
 
     return {
         ...state,

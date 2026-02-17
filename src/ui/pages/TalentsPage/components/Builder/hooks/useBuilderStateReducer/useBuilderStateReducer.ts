@@ -8,24 +8,32 @@ import { preferredToAvailable } from "./actions/preferredToAvailable";
 import { preferredToUsed } from "./actions/preferredToUsed";
 import { usedToAvailable } from "./actions/usedToAvailable";
 import { usedToPreferred } from "./actions/usedToPreferred";
-import { BuilderState, BuilderStateReducerAction, BuilderStateReducerActionType } from "./types";
+import {
+    BuilderItem,
+    BuilderState,
+    BuilderStateReducerAction,
+    BuilderStateReducerActionType,
+} from "./types";
 
-type Params = {
-    getInitialState: () => BuilderState;
-    onAction: (newState: BuilderState, actionType: BuilderStateReducerActionType) => void;
+type Params<T extends BuilderItem> = {
+    getInitialState: () => BuilderState<T>;
+    onAction: (
+        newState: BuilderState<T>, 
+        actionType: BuilderStateReducerActionType<T>
+    ) => void;
 }
 
-export function useBuilderStateReducer({
+export function useBuilderStateReducer<T extends BuilderItem>({
     getInitialState,
     onAction,
-}: Params) {
+}: Params<T>) {
     const initialState = useMemo(() => {
         return getInitialState();
     }, []);
 
-    return useReducer<BuilderState, BuilderStateReducerAction>((state, action) => {
+    return useReducer<BuilderState<T>, BuilderStateReducerAction<T>>((state, action) => {
         // handleNewState
-        function hns(newState: BuilderState): BuilderState {
+        function hns(newState: BuilderState<T>): BuilderState<T> {
             onAction(newState, action.type);
             return newState;
         }
@@ -41,22 +49,22 @@ export function useBuilderStateReducer({
                 return hns(clearPreferred(state));
             }
             case "available_to_preferred": {
-                return hns(availableToPreferred(state, action.talent));
+                return hns(availableToPreferred(state, action.item));
             }
             case "available_to_used": {
-                return hns(availableToUsed(state, action.talent));
+                return hns(availableToUsed(state, action.item));
             }
             case "preferred_to_used": {
-                return hns(preferredToUsed(state, action.talent));
+                return hns(preferredToUsed(state, action.item));
             }
             case "preferred_to_available": {
-                return hns(preferredToAvailable(state, action.talent));
+                return hns(preferredToAvailable(state, action.item));
             }
             case "used_to_preferred": {
-                return hns(usedToPreferred(state, action.talent));
+                return hns(usedToPreferred(state, action.item));
             }
             case "used_to_available": {
-                return hns(usedToAvailable(state, action.talent));
+                return hns(usedToAvailable(state, action.item));
             }
             // Should never happen thanks to TS failing 
             // on dispatch() call with unknown action type

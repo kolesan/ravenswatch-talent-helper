@@ -5,6 +5,7 @@ import { Talent } from "../../../../../scripts/extractTalents/types";
 import { useBuilder } from "../../components/Builder/useBuilder";
 import { applyRank } from "../../components/Builder/utils/applyRank";
 import { calculateAvailableTalents } from "../../components/Builder/utils/calculateAvailableTalents";
+import { maxUsedTalents } from "../../consts/maxUsedTalents";
 import { TalentWithLockedFlag } from "../../types";
 
 import { loadFromStorage } from "./utils/loadFromStorage";
@@ -25,7 +26,7 @@ export function useTalentsBuilder({
     // state
     const [hero, setHero] = useState(initialHero);
     const [rank, setRank] = useState(initialHeroState.rank);
-    const builder = useBuilder({
+    const builder = useBuilder<Talent>({
         getInitialState: () => {
             return initialHeroState.builderState;
         },
@@ -89,15 +90,27 @@ export function useTalentsBuilder({
             builder.removeFromUsed(talent);
         },
         preferredToUsed(talent: Talent) {
+            if (builder.state.used.length >= maxUsedTalents) {
+                return;
+            }
             builder.preferredToUsed(talent);
         },
         preferredToAvailable(talent: Talent) {
             builder.preferredToAvailable(talent);
         },
         availableToUsed(talent: TalentWithLockedFlag) {
+            if (
+                talent.locked 
+                || builder.state.used.length >= maxUsedTalents
+            ) {
+                return;
+            }
             builder.availableToUsed(talent);
         },
         availableToPreferred(talent: TalentWithLockedFlag) {
+            if (talent.locked) {
+                return;
+            }
             builder.availableToPreferred(talent);
         },
     }), [hero, rank, builder.state, available]);

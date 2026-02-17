@@ -1,13 +1,15 @@
-import { Talent } from "../../../../../../../../scripts/extractTalents/types";
-import { BuilderState } from "../types";
+import { BuilderState, BuilderItem } from "../types";
 
-export function availableToPreferred(state: BuilderState, talent: Talent): BuilderState {
-    const preferredTalent = {
-        ...talent,
+export function availableToPreferred<T extends BuilderItem>(
+    state: BuilderState<T>, 
+    item: T
+): BuilderState<T> {
+    const preferredItem = {
+        ...item,
         preferred: true,
     };
 
-    const preferred = [...state.preferred, preferredTalent];
+    const preferred = [...state.preferred, preferredItem];
 
     return {
         ...state,
