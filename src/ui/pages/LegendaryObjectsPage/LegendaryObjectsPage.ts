@@ -1,38 +1,23 @@
 import { html } from "htm/preact";
-import { useMemo } from "preact/hooks";
 
-import { MagicalObject } from "../../../types";
 import { ListLabelRight } from "../../components/ListLabelRight/ListLabelRight";
 import { ObjectList } from "../../components/ObjectList";
 import { useBooleanState } from "../../hooks/useBooleanState";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
-import { useLegendaryObjectsBuilderState } from "./hooks/useLegendaryObjectsBuilderState";
-import { useSaveLegendaryObjectsBuilderStateToStorage } from "./hooks/useSaveLegendaryObjectsBuilderStateToStorage";
-import { defaultLegendaryObjectsBuilderState } from "./utils/defaultLegendaryObjectsBuilderState";
-import { getDerivedLegendaryObjectsBuilderState } from "./utils/getDerivedLegendaryObjectsBuilderState";
-import { legendaryObjectsBuilderStateStorage } from "./utils/legendaryObjectsBuilderStateStorage/legendaryObjectsBuilderStateStorage";
+import { useLegendaryObjectsBuilder } from "./hooks/useLegendaryObjectsBuilder/useLegendaryObjectsBuilder";
 
 import cls from "./LegendaryObjectsPage.module.css";
-
-const getInitialState = () => 
-    legendaryObjectsBuilderStateStorage.get() 
-    || defaultLegendaryObjectsBuilderState;
 
 const listLabelStuckAtPx = 56;
 
 export function LegendaryObjectsPage() {
     usePageTitle("Legendary Objects");
-    
-    const initialState = useMemo(getInitialState, []);
 
-    const [state, dispatch] = useLegendaryObjectsBuilderState(initialState);
+    const builder = useLegendaryObjectsBuilder();
+
     const usedLabelScrollingAgain = useBooleanState(false);
     const preferredLabelScrollingAgain = useBooleanState(false);
-
-    useSaveLegendaryObjectsBuilderStateToStorage(state);
-
-    const derivedState = getDerivedLegendaryObjectsBuilderState(state);
 
     return html`
         <div class=${cls.root}>
@@ -44,38 +29,13 @@ export function LegendaryObjectsPage() {
                 }}
                 label=Used 
                 labelStuckAtPx=${listLabelStuckAtPx}
-                objects=${state.used}
+                objects=${builder.state.used}
                 objectType=legendary
                 onStickyLabelScrollingAgain=${usedLabelScrollingAgain.set}
-                onClear=${() => {
-                    dispatch({
-                        type: "clear_used",
-                    });
-                }}
-                onObjectClick=${(object: MagicalObject) => {
-                    dispatch({
-                        type: object.preferred
-                            ? "object_from_used_to_preferred"
-                            : "object_from_used_to_available",
-                        object,
-                    });
-                }}
-                onObjectAltClick=${(object: MagicalObject) => {
-                    dispatch({
-                        type: object.preferred
-                            ? "object_from_used_to_preferred"
-                            : "object_from_used_to_available",
-                        object,
-                    });
-                }}
-                onObjectHold=${(object: MagicalObject) => {
-                    dispatch({
-                        type: object.preferred
-                            ? "object_from_used_to_preferred"
-                            : "object_from_used_to_available",
-                        object,
-                    });
-                }}
+                onClear=${builder.actions.clearUsed}
+                onObjectClick=${builder.actions.removeFromUsed}
+                onObjectAltClick=${builder.actions.removeFromUsed}
+                onObjectHold=${builder.actions.removeFromUsed}
             />
             <${ObjectList} 
                 className=${cls.list}
@@ -94,36 +54,17 @@ export function LegendaryObjectsPage() {
                                 usedLabelScrollingAgain.is 
                                 && !preferredLabelScrollingAgain.is
                             }
-                            used=${state.used.length}
+                            used=${builder.state.used.length}
                         />
                     `,
                 }}
-                objects=${state.preferred} 
+                objects=${builder.state.preferred} 
                 objectType=legendary
                 onStickyLabelScrollingAgain=${preferredLabelScrollingAgain.set}
-                onClear=${() => {
-                    dispatch({
-                        type: "clear_preferred",
-                    });
-                }}
-                onObjectClick=${(object: MagicalObject) => {
-                    dispatch({
-                        type: "object_from_preferred_to_used",
-                        object: object,
-                    });
-                }}
-                onObjectAltClick=${(object: MagicalObject) => {
-                    dispatch({
-                        type: "object_from_preferred_to_available",
-                        object: object,
-                    });
-                }}
-                onObjectHold=${(object: MagicalObject) => {
-                    dispatch({
-                        type: "object_from_preferred_to_available",
-                        object,
-                    });
-                }}
+                onClear=${builder.actions.clearPreferred}
+                onObjectClick=${builder.actions.preferredToUsed}
+                onObjectAltClick=${builder.actions.preferredToAvailable}
+                onObjectHold=${builder.actions.preferredToAvailable}
             />
             <${ObjectList} 
                 className=${cls.list}
@@ -138,31 +79,16 @@ export function LegendaryObjectsPage() {
                         <${ListLabelRight}
                             className=${cls.listLabelRight}
                             visible=${preferredLabelScrollingAgain.is}
-                            used=${state.used.length}
-                            preferred=${state.preferred.length}
+                            used=${builder.state.used.length}
+                            preferred=${builder.state.preferred.length}
                         />
                     `,
                 }}
-                objects=${derivedState.available} 
+                objects=${builder.state.available} 
                 objectType=legendary
-                onObjectClick=${(object: MagicalObject) => {
-                    dispatch({
-                        type: "object_from_available_to_used",
-                        object: object,
-                    });
-                }}
-                onObjectAltClick=${(object: MagicalObject) => {
-                    dispatch({
-                        type: "object_from_available_to_preferred",
-                        object: object,
-                    });
-                }}
-                onObjectHold=${(object: MagicalObject) => {
-                    dispatch({
-                        type: "object_from_available_to_preferred",
-                        object,
-                    });
-                }}
+                onObjectClick=${builder.actions.availableToUsed}
+                onObjectAltClick=${builder.actions.availableToPreferred}
+                onObjectHold=${builder.actions.availableToPreferred}
             />
         </div>
     `;
