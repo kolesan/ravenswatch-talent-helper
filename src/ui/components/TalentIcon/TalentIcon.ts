@@ -8,8 +8,8 @@ import cls from "./TalentIcon.module.css";
 
 type Props = {
     className?: string;
-    talent: TalentWithLockedFlag;
     heroCode: HeroCode;
+    talent: TalentWithLockedFlag;
 }
 
 const lockedTalentSrc = `/icons/talents/locked_talent.webp`;
@@ -17,8 +17,8 @@ const frameSrc = `/icons/talents/new/optimized/talent_frame_common.webp`;
 
 export function TalentIcon({
     className,
-    talent,
     heroCode,
+    talent,
 }: Props) {
     const { locked } = talent;
 

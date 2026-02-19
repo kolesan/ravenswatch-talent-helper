@@ -173,10 +173,7 @@ export function MainList({
                                             `}
                                         `}
                                     </div>
-                                    <${TalentDescription} 
-                                        isLocked=${talent.locked} 
-                                        talent=${talent} 
-                                    />
+                                    <${TalentDescription} talent=${talent} />
                                 </div>
                             </li>    
                         `;

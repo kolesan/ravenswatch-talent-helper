@@ -90,8 +90,6 @@
 }
 
 .listItem {
-    cursor: pointer;
-    border-radius: 4px;
     padding: 4px 2px;
 
     display: flex;
@@ -99,6 +97,9 @@
     gap: 4px;
 
     border: 2px solid transparent;
+    border-radius: 4px;
+
+    cursor: pointer;
 
     user-select: none;
 }

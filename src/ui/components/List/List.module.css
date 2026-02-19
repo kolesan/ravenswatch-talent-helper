@@ -84,14 +84,18 @@
 }
 
 .listItem {
+    padding: 4px 2px;
+    
     border: 2px solid transparent;
     border-radius: 4px;
 
     cursor: pointer;
+
+    user-select: none;
 }
 .listItem:hover {
     border: 2px solid #857243;
 }
 .listItem:not(:last-child) {
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
