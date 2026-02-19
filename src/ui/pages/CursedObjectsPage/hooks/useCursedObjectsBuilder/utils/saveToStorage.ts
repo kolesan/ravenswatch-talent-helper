@@ -1,7 +1,6 @@
-import { StorableLegendaryObjectsBuilderState } from "../../../types";
+import { StorableCursedObjectsBuilderState } from "../../../types";
 import { cursedObjectsBuilderStateStorage } from "../../../utils/cursedObjectsBuilderStateStorage/cursedObjectsBuilderStateStorage";
-import { legendaryObjectsBuilderStateStorage } from "../../../utils/legendaryObjectsBuilderStateStorage/legendaryObjectsBuilderStateStorage";
 
-export function saveToStorage(stateToStore: StorableLegendaryObjectsBuilderState) {
+export function saveToStorage(stateToStore: StorableCursedObjectsBuilderState) {
     cursedObjectsBuilderStateStorage.set(stateToStore);
 }
