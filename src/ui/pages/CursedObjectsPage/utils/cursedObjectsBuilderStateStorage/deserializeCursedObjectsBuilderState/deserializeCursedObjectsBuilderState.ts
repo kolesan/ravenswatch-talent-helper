@@ -1,17 +1,17 @@
 import { cursed } from "../../../../../../scrapedData/mergedItems/cursed";
 import { MagicalObject, SerializedMagicalObject } from "../../../../../../types";
 import { isTruthy } from "../../../../../utils/isTruthy";
-import { CursedObjectsPageState, SerializedCursedObjectsPageState } from "../../../types";
+import { StorableCursedObjectsBuilderState, SerializedCursedObjectsBuilderState } from "../../../types";
 import { defaultCursedObjectsPageState } from "../../defaultCursedObjectPageState";
 
-export function deserializeCursedObjectsPageState(
-    currentStoredState: SerializedCursedObjectsPageState | null,
-): CursedObjectsPageState {
+export function deserializeCursedObjectsBuilderState(
+    currentStoredState: SerializedCursedObjectsBuilderState | null,
+): StorableCursedObjectsBuilderState {
     if (!currentStoredState) {
         return defaultCursedObjectsPageState;
     }
 
-    const normalizedState: Partial<SerializedCursedObjectsPageState> = 
+    const normalizedState: Partial<SerializedCursedObjectsBuilderState> = 
         typeof currentStoredState === "object"
             ? currentStoredState || {} // additional check for null
             : {};

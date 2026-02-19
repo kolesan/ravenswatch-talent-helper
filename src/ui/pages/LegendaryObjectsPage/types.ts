@@ -9,7 +9,3 @@ export type SerializedLegendaryObjectsBuilderState = {
     used: SerializedMagicalObject[];
     preferred: SerializedMagicalObject[];
 };
-
-export type DerivedLegendaryObjectsBuilderState = {
-    available: MagicalObject[];
-};

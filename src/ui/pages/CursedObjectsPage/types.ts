@@ -1,15 +1,11 @@
 import { MagicalObject, SerializedMagicalObject } from "../../../types";
 
-export type CursedObjectsPageState = {
+export type StorableCursedObjectsBuilderState = {
     used: MagicalObject[];
     preferred: MagicalObject[];
 };
 
-export type SerializedCursedObjectsPageState = {
+export type SerializedCursedObjectsBuilderState = {
     used: SerializedMagicalObject[];
     preferred: SerializedMagicalObject[];
-};
-
-export type DerivedCursedObjectsPageState = {
-    available: MagicalObject[];
 };

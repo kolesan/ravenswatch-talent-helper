@@ -1,9 +1,9 @@
 import { MagicalObject } from "../../../../../../types";
-import { CursedObjectsPageState, SerializedCursedObjectsPageState } from "../../../types";
+import { StorableCursedObjectsBuilderState, SerializedCursedObjectsBuilderState } from "../../../types";
 
-export function serializeCursedObjectsPageState(
-    state: CursedObjectsPageState, 
-): SerializedCursedObjectsPageState {
+export function serializeCursedObjectsBuilderState(
+    state: StorableCursedObjectsBuilderState, 
+): SerializedCursedObjectsBuilderState {
     return {
         used: state.used.map(serializeObject),
         preferred: state.preferred.map(serializeObject),

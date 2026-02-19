@@ -1,6 +1,6 @@
-import { CursedObjectsPageState } from "../types";
+import { StorableCursedObjectsBuilderState } from "../types";
 
-export const defaultCursedObjectsPageState: CursedObjectsPageState = {
+export const defaultCursedObjectsPageState: StorableCursedObjectsBuilderState = {
     used: [],
     preferred: [],
 }
