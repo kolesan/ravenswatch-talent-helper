@@ -6,7 +6,7 @@ import { BuilderListItemActions } from "../../components/Builder/types";
 import { ObjectListItem } from "../../components/ObjectListItem";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
-import { useCursedObjectsBuilder } from "./hooks/useCursedObjectsBuilder/useCursedObjectsBuilder";
+import { useCursedObjectsBuilder } from "./hooks/useCursedObjectsBuilder";
 
 import cls from "./CursedObjectsPage.module.css";
 

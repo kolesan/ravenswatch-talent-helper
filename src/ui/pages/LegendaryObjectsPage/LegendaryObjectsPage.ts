@@ -6,7 +6,7 @@ import { BuilderListItemActions } from "../../components/Builder/types";
 import { ObjectListItem } from "../../components/ObjectListItem";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
-import { useLegendaryObjectsBuilder } from "./hooks/useLegendaryObjectsBuilder/useLegendaryObjectsBuilder";
+import { useLegendaryObjectsBuilder } from "./hooks/useLegendaryObjectsBuilder";
 
 import cls from "./LegendaryObjectsPage.module.css";
 
