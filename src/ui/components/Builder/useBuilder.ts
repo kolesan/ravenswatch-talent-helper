@@ -4,7 +4,7 @@ import {
     BuilderStateReducerActionType,
 } from "./hooks/useBuilderStateReducer/types";
 import { useBuilderStateReducer } from "./hooks/useBuilderStateReducer/useBuilderStateReducer";
-import { calculateAvailable } from "./utils/calculateAvailableTalents";
+import { calculateAvailable } from "./utils/calculateAvailable";
 
 type Params<T extends BuilderItem> = {
     getInitialState: () => BuilderState<T>;
