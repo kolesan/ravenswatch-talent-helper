@@ -1,39 +1,20 @@
-.root {
+.builderRoot {
     flex-grow: 1;
     min-height: 0;
-
-    padding: 12px 0 0;
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 16px;
 }
 
-.listRoot {
-    height: 100%;
-}
-.listLabel {
-    /* toolbar height */
-    top: 56px;
-    padding: 4px 20px;
-}
-.listContent {
-    padding: 0 16px;
-}
-
 @media (min-width: 1080px) {
-    .listRoot {
-        overflow-y: hidden;
-    }
-    .listLabel {
-        position: unset;
-    }
     .listLabelRight {
         display: none;
     }
 }
+
 @media (max-width: 1080px) {
-    .root {
+    .builderRoot {
         flex-grow: unset;
         min-height: unset;
 

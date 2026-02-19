@@ -37,8 +37,8 @@ export function CursedObjectsPage() {
     return html`
         <div class=${cls.root}>
             <${ObjectList} 
-                className=${cls.list}
                 classes=${{ 
+                    root: cls.listRoot,
                     label: cls.listLabel,
                     content: cls.listContent,
                 }}
@@ -78,8 +78,8 @@ export function CursedObjectsPage() {
                 }}
             />
             <${ObjectList} 
-                className=${cls.list}
                 classes=${{ 
+                    root: cls.listRoot,
                     label: cls.listLabel,
                     content: cls.listContent,
                 }}
@@ -126,8 +126,8 @@ export function CursedObjectsPage() {
                 }}
             />
             <${ObjectList} 
-                className=${cls.list}
                 classes=${{ 
+                    root: cls.listRoot,
                     label: cls.listLabel,
                     content: cls.listContent,
                 }}

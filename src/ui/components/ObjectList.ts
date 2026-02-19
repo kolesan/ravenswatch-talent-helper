@@ -7,8 +7,8 @@ import { List } from "./List/List";
 import { ObjectListItem } from "./ObjectListItem";
 
 type Props = {
-    className?: string;
     classes?: {
+        root?: string;
         label?: string;
         content?: string;
     };
@@ -28,7 +28,6 @@ type Props = {
 }
 
 export function ObjectList({
-    className,
     classes,
     label,
     labelStuckAtPx,
@@ -43,8 +42,7 @@ export function ObjectList({
     onObjectHold,
 }: Props) {
     return html`
-        <${List} 
-            className=${className}
+        <${List}
             classes=${classes}
             label=${label} 
             labelStuckAtPx=${labelStuckAtPx}

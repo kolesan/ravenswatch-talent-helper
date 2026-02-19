@@ -8,8 +8,8 @@ import { ClearListButton } from "../ClearListButton/ClearListButton";
 import cls from "./List.module.css";
 
 type Props<T> = {
-    className?: string;
     classes?: {
+        root?: string;
         label?: string;
         content?: string;
     };
@@ -23,8 +23,9 @@ type Props<T> = {
     };
     entityName?: string;
     items: T[];
-    renderItem: (item: T, index: number) => ComponentChildren;
+    maxItems?: number;
     confirmBeforeClear?: boolean;
+    renderItem: (item: T, index: number) => ComponentChildren;
     onClear?: () => void;
     onStickyLabelScrollingAgain?: (isScrollingAgain: boolean) => void;
 }
@@ -34,15 +35,15 @@ type WithCode = {
 }
 
 export function List<T extends WithCode>({
-    className,
     classes,
     label,
     labelStuckAtPx,
     slots,
     entityName,
     items,
-    renderItem,
+    maxItems,
     confirmBeforeClear,
+    renderItem,
     onClear,
     onStickyLabelScrollingAgain,
 }: Props<T>) {
@@ -58,7 +59,7 @@ export function List<T extends WithCode>({
     const empty = !items.length;
 
     return html`
-        <div class=${clsx(cls.listRoot, className)}>
+        <div class=${clsx(cls.listRoot, classes?.root)}>
             <div class=${cls.labelHeight}></div>
             <div class=${cls.labelContainer}>
                 <div 
@@ -69,7 +70,7 @@ export function List<T extends WithCode>({
                     ref=${stickyElemRef}
                 >
                     <div class=${cls.labelLeft}>
-                        ${label} ${items.length}
+                        ${label} ${items.length}${maxItems ? ` / ${maxItems}` : null}
                     </div>
                     <div class=${cls.labelMiddle}>
                         ${onClear && html`
