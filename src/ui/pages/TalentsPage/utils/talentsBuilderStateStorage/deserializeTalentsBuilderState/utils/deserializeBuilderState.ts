@@ -7,7 +7,7 @@ import { SerializedBuilderState, SerializedTalentState } from "../../types";
 export function deserializeBuilderState(
     allHeroTalents: Talent[],
     storedBuilderState: SerializedBuilderState | undefined,
-): BuilderState {
+): BuilderState<Talent> {
     if (!storedBuilderState) {
         return defaultBuilderState;
     }

@@ -12,7 +12,7 @@
     "Helper"
   ],
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently -k -n VITE,\"TSC \" -c green,blue --prefix \"{name} |\" \"vite\" \"tsc --noEmit --watch --pretty\"",
     "build": "vite build",
     "scrape": "tsx src/scripts/scrapeWiki/scrapeWiki.ts",
     "extractTalentTables": "tsx src/scripts/extractTalentTables/extractTalentTables.ts",
@@ -46,6 +46,7 @@
     "@types/jsdom": "^27.0.0",
     "@types/lodash.debounce": "^4.0.9",
     "@types/node": "^25.0.2",
+    "concurrently": "^9.2.1",
     "jsdom": "^27.3.0",
     "sharp": "^0.34.5",
     "tsx": "^4.21.0",

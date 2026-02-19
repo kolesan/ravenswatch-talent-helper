@@ -2,6 +2,7 @@ import { clsx } from "clsx";
 import { html } from "htm/preact";
 import { ComponentChildren } from "preact";
 
+import { noop } from "../../utils/noop";
 import { holder } from "../../utils/onHold";
 
 import cls from "./ListItem.module.css";
@@ -27,7 +28,9 @@ export function ListItem({
     onAltClick,
     onHold,
 }: Props) {
-    const hld = holder({ onHold });
+    const hld = holder({ 
+        onHold: onHold || noop,
+    });
 
     return html`
         <li 

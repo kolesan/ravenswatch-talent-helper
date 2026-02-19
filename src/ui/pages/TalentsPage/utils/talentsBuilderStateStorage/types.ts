@@ -1,8 +1,9 @@
+import { Talent } from "../../../../../scripts/extractTalents/types";
 import { BuilderState } from "../../components/Builder/hooks/useBuilderStateReducer/types";
 
 export type StorableHeroState = {
     rank: number;
-    builderState: BuilderState;
+    builderState: BuilderState<Talent>;
 }
 
 export type SerializedHeroState = {
