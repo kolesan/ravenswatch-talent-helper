@@ -1,6 +1,6 @@
 import { html } from "htm/preact";
 
-import { Tooltip } from "../../../../../../components/Tooltip/Tooltip";
+import { Tooltip } from "../Tooltip/Tooltip";
 
 import cls from "./PreferredIcon.module.css";
 

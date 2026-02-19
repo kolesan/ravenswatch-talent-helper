@@ -1,11 +1,11 @@
 import { html } from "htm/preact";
 
 import { MagicalObject, MagicalObjectType } from "../../types";
-import { PreferredIcon } from "../pages/TalentsPage/components/MainList/components/PreferredIcon/PreferredIcon";
 
 import { DescriptionList } from "./DescriptionList/DescriptionList";
 import { ListItem } from "./ListItem/ListItem";
 import { ObjectIcon } from "./ObjectIcon/ObjectIcon";
+import { PreferredIcon } from "./PreferredIcon/PreferredIcon";
 
 interface Props {
     className?: string;
