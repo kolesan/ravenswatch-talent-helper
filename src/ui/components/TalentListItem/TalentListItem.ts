@@ -38,12 +38,18 @@ export function TalentListItem({
         <${ListItem}
             className=${clsx(cls.talentListItemRoot, className)}
             name=${talent.name}
-            tools=${talent.preferred && html`
-                <${PreferredIcon} 
-                    lowerTooltip=${index === 0} 
-                />
+            tools=${html`
+                ${talent.preferred && html`
+                    <${PreferredIcon} 
+                        lowerTooltip=${index === 0} 
+                    />
+                `}
                 ${!talent.locked && html`
-                    <${TalentTags} talent=${talent} index=${index} />
+                    <${TalentTags} 
+                        className=${cls.talentTags}
+                        talent=${talent} 
+                        index=${index} 
+                    />
                     ${showRanks && talent.unlockedAtRank > 1 && html`
                         <${TalentRank} 
                             className=${cls.talentRank}
