@@ -1,6 +1,18 @@
+.listRoot {
+    height: 100%;
+}
 .listLabel {
     padding: 4px 20px;
 }
 .listContent {
     padding: 0 16px;
+}
+
+@media (min-width: 1080px) {
+    .listRoot {
+        overflow-y: hidden;
+    }
+    .listLabel {
+        position: unset;
+    }
 }

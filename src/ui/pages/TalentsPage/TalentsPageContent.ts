@@ -79,6 +79,7 @@ export function TalentsPageContent({
             <${Builder} 
                 classes=${{
                     list: {
+                        root: cls.listRoot,
                         label: cls.listLabel,
                         content: cls.listContent,
                     }

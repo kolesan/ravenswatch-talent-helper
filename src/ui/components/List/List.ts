@@ -73,6 +73,7 @@ export function List<T extends WithCode>({
                         [cls.label]: true,
                         [cls.labelStuck]: labelStuck,
                     }, classes?.label)} 
+                    style=${labelStuckAtPx && `top: ${labelStuckAtPx}px;`}
                     ref=${stickyElemRef}
                 >
                     <div class=${cls.labelLeft}>
