@@ -7,6 +7,19 @@
     column-gap: 16px;
 }
 
+.listItemLocked {
+    opacity: 0.8;
+    filter: brightness(0.9) contrast(0.9);
+}
+
+.listItemDisableHover:hover {
+    border: 2px solid transparent;
+
+    cursor: unset;
+
+    user-select: unset;
+}
+
 @media (max-width: 1080px) {
     .root {
         flex-grow: unset;

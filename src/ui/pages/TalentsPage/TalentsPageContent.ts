@@ -91,6 +91,7 @@ export function TalentsPageContent({
             <${Compendium} 
                 classes=${{
                     list: {
+                        root: cls.listRoot,
                         label: cls.listLabel,
                         content: cls.listContent,
                     }

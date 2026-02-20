@@ -1,7 +1,11 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { MainList } from "../MainList/MainList";
+import { Talent } from "../../../../../scripts/extractTalents/types";
+import { List } from "../../../../components/List/List";
+import { TalentListItem } from "../../../../components/TalentListItem/TalentListItem";
+import { listLabelStuckAtPx } from "../../consts/listLabelStuckAtPx";
+import { TalentWithLockedFlag } from "../../types";
 
 import { TalentsCompendium } from "./types";
 
@@ -11,6 +15,7 @@ type Props = {
     className?: string;
     classes?: {
         list?: {
+            root?: string,
             label?: string;
             content?: string;
         }
@@ -34,39 +39,47 @@ export function Compendium({
 
     return html`
         <div class=${clsx(cls.root, className)}>
-            <${MainList}
-                classes=${{ 
-                    label: classes?.list?.label,
-                    content: classes?.list?.content,
-                }}
-                disableHover
-                showRanks
-                label=Starting 
-                heroCode=${hero.code} 
-                talents=${talents.starting}
+            <${List}
+                label=${"Starting"}
+                items=${talents.starting}
+                ...${commonProps()}
             />
-            <${MainList} 
-                classes=${{ 
-                    label: classes?.list?.label,
-                    content: classes?.list?.content,
-                }}
-                disableHover
-                showRanks
-                label=Standard 
-                heroCode=${hero.code} 
-                talents=${talents.standard} 
+            <${List}
+                label=${"Standard"}
+                items=${talents.standard} 
+                ...${commonProps()}
             />
-            <${MainList} 
-                classes=${{ 
-                    label: classes?.list?.label,
-                    content: classes?.list?.content,
-                }}
-                disableHover
-                showRanks
-                label=Final 
-                heroCode=${hero.code} 
-                talents=${talents.final}
+            <${List}
+                label=${"Final"}
+                items=${talents.final} 
+                ...${commonProps()}
             />
         </div>
     `;
+
+    function commonProps() {
+        return {
+            classes: {
+                ...classes?.list,
+                listItem: (talent: TalentWithLockedFlag) => clsx({
+                    [cls.listItemDisableHover]: true,
+                    [cls.listItemLocked]: talent.locked,
+                }),
+            },
+            labelStuckAtPx: listLabelStuckAtPx,
+            canCountItemUsable: (talent: TalentWithLockedFlag) => !talent.locked,
+            renderItem: renderCompendiumItem,
+        };
+    }
+
+    function renderCompendiumItem(talent: Talent, index: number) {
+        return html`
+            <${TalentListItem}
+                showRanks
+                heroCode=${hero.code}
+                talent=${talent}
+                index=${index}
+            />
+        `;
+    }
 }

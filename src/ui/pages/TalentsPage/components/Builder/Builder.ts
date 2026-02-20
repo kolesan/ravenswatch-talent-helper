@@ -5,6 +5,7 @@ import { Talent } from "../../../../../scripts/extractTalents/types";
 import { Builder as BuilderCommon } from "../../../../components/Builder/Builder";
 import { BuilderListItemActions } from "../../../../components/Builder/types";
 import { TalentListItem } from "../../../../components/TalentListItem/TalentListItem";
+import { listLabelStuckAtPx } from "../../consts/listLabelStuckAtPx";
 import { maxUsedTalents } from "../../consts/maxUsedTalents";
 import { TalentsBuilder } from "../../hooks/useTalentsBuilder/types";
 import { TalentWithLockedFlag } from "../../types";
@@ -37,7 +38,6 @@ export function Builder({
                     content: classes?.list?.content,
                     listItem: (talent: TalentWithLockedFlag) => clsx({
                         [cls.listItemLocked]: talent.locked,
-                        [cls.listItemDisableHover]: talent.locked,
                     }),
                 }
             }}
@@ -61,7 +61,7 @@ export function Builder({
                 }
             }}
             entityName=${"talents"}
-            listLabelStuckAtPx=${154}
+            listLabelStuckAtPx=${listLabelStuckAtPx}
             maxUsedItems=${maxUsedTalents}
             canCountItemAvailable=${(talent: TalentWithLockedFlag) => !talent.locked}
             renderItem=${(

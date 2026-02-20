@@ -7,20 +7,16 @@
     column-gap: 16px;
 }
 
-
 .listItemLocked {
     opacity: 0.8;
     filter: brightness(0.9) contrast(0.9);
-}
 
-.listItemDisableHover:hover {
     border: 2px solid transparent;
 
     cursor: unset;
 
     user-select: unset;
 }
-
 
 @media (min-width: 1080px) {
     .listLabelRight {
