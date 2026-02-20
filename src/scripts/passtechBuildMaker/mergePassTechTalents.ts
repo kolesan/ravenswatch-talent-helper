@@ -66,14 +66,14 @@ function mergePasstechAndMyTalents(
 }
 
 
-function merge(mine: Talent, passtech: ParsedPasstechTalent): Talent {
+function merge(mine: Talent, passtech?: ParsedPasstechTalent): Talent {
     const { changePerLevel, ...mineRest } = mine;
     return {
         ...mineRest,
-        iconUrl: passtech.iconUrl,
-        description: passtech.description,
-        improvements: passtech.improvements,
-        degradations: passtech.degradations,
+        iconUrl: passtech?.iconUrl || null,
+        description: passtech?.description || [],
+        improvements: passtech?.improvements || [],
+        degradations: passtech?.degradations || [],
     }
 }
 
