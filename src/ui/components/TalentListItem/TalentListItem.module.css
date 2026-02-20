@@ -1,3 +1,8 @@
 .talentListItemRoot {
 
 }
+
+.talentRank {
+    margin-left: auto;
+    margin-right: 6px;
+}

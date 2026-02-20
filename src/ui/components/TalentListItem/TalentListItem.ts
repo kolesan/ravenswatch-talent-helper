@@ -45,7 +45,10 @@ export function TalentListItem({
                 ${!talent.locked && html`
                     <${TalentTags} talent=${talent} index=${index} />
                     ${showRanks && talent.unlockedAtRank > 1 && html`
-                        <${TalentRank} talent=${talent} />
+                        <${TalentRank} 
+                            className=${cls.talentRank}
+                            talent=${talent} 
+                        />
                     `}
                 `}
             `}
