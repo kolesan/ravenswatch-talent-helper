@@ -1,16 +1,3 @@
 .talentListItemRoot {
 
 }
-
-.locked {
-    opacity: 0.8;
-    filter: brightness(0.9) contrast(0.9);
-
-    cursor: unset;
-}
-
-.disableHover:hover {
-    border: 2px solid transparent;
-    cursor: unset;
-    user-select: unset;
-}

@@ -33,7 +33,7 @@ export function ListItem({
     });
 
     return html`
-        <li 
+        <div 
             class=${clsx(cls.root, className)}
             onClick=${(e: any) => {
                 if (hld.getHolding()) {

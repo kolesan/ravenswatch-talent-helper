@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { html } from "htm/preact";
 
 import { Talent } from "../../../../../scripts/extractTalents/types";
@@ -8,6 +9,7 @@ import { TalentListItem } from "../../../../components/TalentListItem/TalentList
 import { useBooleanState } from "../../../../hooks/useBooleanState";
 import { maxUsedTalents } from "../../consts/maxUsedTalents";
 import { TalentsBuilder } from "../../hooks/useTalentsBuilder/types";
+import { TalentWithLockedFlag } from "../../types";
 import { MainList } from "../MainList/MainList";
 
 import cls from "./Builder.module.css";
@@ -39,11 +41,15 @@ export function Builder({
     return html`
         <${BuilderCommon}
             classes=${{
-                root: cls.root,
+                root: cls.builderRoot,
                 list: { 
                     root: cls.listRoot,
                     label: cls.listLabel,
                     content: cls.listContent,
+                    listItem: (talent: TalentWithLockedFlag) => clsx({
+                        [cls.listItemLocked]: talent.locked,
+                        [cls.listItemDisableHover]: talent.locked,
+                    }),
                 }
             }}
             builder=${{
@@ -68,14 +74,15 @@ export function Builder({
             entityName=${"talents"}
             listLabelStuckAtPx=${154}
             maxUsedItems=${maxUsedTalents}
+            canCountItemAvailable=${(talent: TalentWithLockedFlag) => !talent.locked}
             renderItem=${(
-                item: Talent, 
+                talent: Talent, 
                 index: number,
                 actions: BuilderListItemActions,
             ) => html`
                 <${TalentListItem}
                     heroCode=${hero.code}
-                    talent=${item}
+                    talent=${talent}
                     index=${index}
                     onClick=${actions.onClick}
                     onAltClick=${actions.onAltClick}

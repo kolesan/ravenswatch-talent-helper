@@ -16,7 +16,6 @@ import cls from "./TalentListItem.module.css";
 interface Props {
     className?: string;
     showRanks?: boolean;
-    disableHover?: boolean;
     heroCode: HeroCode;
     talent: TalentWithLockedFlag;
     index: number;
@@ -28,7 +27,6 @@ interface Props {
 export function TalentListItem({
     className,
     showRanks,
-    disableHover,
     heroCode,
     talent,
     index,
@@ -38,10 +36,7 @@ export function TalentListItem({
 }: Props) {
     return html`
         <${ListItem}
-            className=${clsx(cls.talentListItemRoot, {
-                [cls.locked]: talent.locked,
-                [cls.disableHover]: disableHover || talent.locked,
-            }, className)}
+            className=${clsx(cls.talentListItemRoot, className)}
             name=${talent.name}
             tools=${talent.preferred && html`
                 <${PreferredIcon} 

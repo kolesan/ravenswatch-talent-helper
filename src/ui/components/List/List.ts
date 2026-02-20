@@ -12,6 +12,7 @@ type Props<T> = {
         root?: string;
         label?: string;
         content?: string;
+        listItem?: (item: T) => string;
     };
     label: string;
     // TODO: consider extracting sticky functionality out of List and into parent
@@ -25,6 +26,7 @@ type Props<T> = {
     items: T[];
     maxItems?: number;
     confirmBeforeClear?: boolean;
+    canCountItemUsable?: (item: T) => boolean;
     renderItem: (item: T, index: number) => ComponentChildren;
     onClear?: () => void;
     onStickyLabelScrollingAgain?: (isScrollingAgain: boolean) => void;
@@ -43,6 +45,7 @@ export function List<T extends WithCode>({
     items,
     maxItems,
     confirmBeforeClear,
+    canCountItemUsable,
     renderItem,
     onClear,
     onStickyLabelScrollingAgain,
@@ -57,6 +60,9 @@ export function List<T extends WithCode>({
     });
 
     const empty = !items.length;
+    const usableItemCount = canCountItemUsable
+        ? items.filter(canCountItemUsable).length
+        : items.length;
 
     return html`
         <div class=${clsx(cls.listRoot, classes?.root)}>
@@ -70,7 +76,7 @@ export function List<T extends WithCode>({
                     ref=${stickyElemRef}
                 >
                     <div class=${cls.labelLeft}>
-                        ${label} ${items.length}${maxItems ? ` / ${maxItems}` : null}
+                        ${label} ${usableItemCount}${maxItems ? ` / ${maxItems}` : null}
                     </div>
                     <div class=${cls.labelMiddle}>
                         ${onClear && html`
@@ -98,7 +104,10 @@ export function List<T extends WithCode>({
                 `}
                 <ul class=${cls.list}>
                     ${items.map((item, i) => html`
-                        <div class=${cls.listItem} key=${item.code}>
+                        <li 
+                            class=${clsx(cls.listItem, classes?.listItem?.(item))} 
+                            key=${item.code}
+                        >
                             ${renderItem(item, i)}
                         </div>
                     `)}

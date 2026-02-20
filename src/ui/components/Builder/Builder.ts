@@ -17,6 +17,7 @@ type Props<T extends BuilderItem> = {
             root?: string;
             label?: string;
             content?: string;
+            listItem?: (item: T) => string;
         }
     }
     builder: BuilderType<T>
@@ -25,6 +26,7 @@ type Props<T extends BuilderItem> = {
     maxUsedItems?: number;
     entityName: string;
     listLabelStuckAtPx: number;
+    canCountItemAvailable?: (item: T) => boolean;
     renderItem: BuilderListItemRenderer<T>;
 }
 
@@ -34,6 +36,7 @@ export function Builder<T extends BuilderItem>({
     maxUsedItems,
     entityName,
     listLabelStuckAtPx,
+    canCountItemAvailable,
     renderItem,
 }: Props<T>) {
     const usedLabelScrollingAgain = useBooleanState(false);
@@ -109,6 +112,7 @@ export function Builder<T extends BuilderItem>({
                 }}
                 items=${builder.derivedState.available} 
                 entityName=${entityName}
+                canCountItemUsable=${canCountItemAvailable}
                 renderItem=${(item: T, index: number) => {
                     return renderItem(item, index, {
                         onClick: () => !usedIsFull 
