@@ -71,6 +71,7 @@ export function List<T extends WithCode>({
                 <div 
                     class=${clsx({
                         [cls.label]: true,
+                        [cls.labelHeight]: true,
                         [cls.labelStuck]: labelStuck,
                     }, classes?.label)} 
                     style=${labelStuckAtPx && `top: ${labelStuckAtPx}px;`}
