@@ -827,7 +827,7 @@ export const scarlet: Talent[] = [
         ]
     },
     {
-        "code": "hunter's_souvenir_/_gusting_roar",
+        "code": "hunter's_souvenir_or_gusting_roar",
         "name": "Hunter's Souvenir / Gusting Roar",
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/scarlet/Ability_RED_Human_Ultimate_1_Skill.png",
         "type": "ultimate",
@@ -844,7 +844,7 @@ export const scarlet: Talent[] = [
         ]
     },
     {
-        "code": "grandmother's_souvenir_/_in_the_belly",
+        "code": "grandmother's_souvenir_or_in_the_belly",
         "name": "Grandmother's Souvenir / In the Belly",
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/scarlet/Ability_RED_Human_Ultimate_2_Skill.png",
         "type": "ultimate",
