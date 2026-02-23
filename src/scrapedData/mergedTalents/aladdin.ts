@@ -809,5 +809,37 @@ export const aladdin: Talent[] = [
             [],
             []
         ]
+    },
+    {
+        "code": "dream_wish",
+        "name": "Dream Wish",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/aladdin/Ability_Aladdin_Ultimate_1.png",
+        "type": "ultimate",
+        "unlockedAtRank": 1,
+        "description": [
+            "Consume {sk}150 Dream Shards{/s} to earn an additional {sk}TRAIT{/s} charge"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
+            []
+        ]
+    },
+    {
+        "code": "magic_carpet",
+        "name": "Magic Carpet",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/aladdin/Ability_Aladdin_Ultimate_2.png",
+        "type": "ultimate",
+        "unlockedAtRank": 6,
+        "description": [
+            "Ride the Magic Carpet, turning {sk}INTANGIBLE{/s} and dealing damage to enemies passed"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
+            []
+        ]
     }
 ];

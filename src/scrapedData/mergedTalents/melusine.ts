@@ -793,5 +793,37 @@ export const melusine: Talent[] = [
             [],
             []
         ]
+    },
+    {
+        "code": "water_bomb",
+        "name": "Water Bomb",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/melusine/Ability_Melusine_Ultimate_1.png",
+        "type": "ultimate",
+        "unlockedAtRank": 1,
+        "description": [
+            "Warp into a movable water sphere then release a giant splash, dealing huge damage to all nearby enemies"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
+            []
+        ]
+    },
+    {
+        "code": "wisp_ballet",
+        "name": "Wisp Ballet",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/melusine/Ability_Melusine_Ultimate_2.png",
+        "type": "ultimate",
+        "unlockedAtRank": 6,
+        "description": [
+            "Channel several autonomous {sk}WISPS{/s} that track and attack all nearby enemies"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
+            []
+        ]
     }
 ];

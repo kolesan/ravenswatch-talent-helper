@@ -2,6 +2,7 @@
 import { writeFile } from "fs/promises";
 
 import { Hero, HeroCode, heroes } from "../../data/heroes";
+import { isTruthy } from "../../ui/utils/isTruthy";
 import { descriptionKeyMaps } from "../../utils/descriptionKeyMaps";
 import { Talent, TalentType } from "../extractTalents/types";
 
@@ -58,22 +59,32 @@ function mergePasstechAndMyTalents(
     passtechTalents: ParsedPasstechTalent[], 
     myTalents: Talent[]
 ) {
-    return myTalents.map(mine => {
+    const merged = passtechTalents.map((passtech, i) => {
         // console.log(mine.code, passtechTalents.map(it => it.code));
-        const passtech = passtechTalents.find(it => it.code === mine.code);
-        return merge(mine, passtech);
+        const mine = myTalents.find(it => it.code === passtech.code);
+        return merge(passtech, i, mine);
     });
+    const fixedOrder = myTalents
+        .map(it => merged.find(m => m.code === it.code))
+        .filter(isTruthy);
+    return [
+        ...fixedOrder,
+        ...merged.slice(-2),
+    ];
 }
 
 
-function merge(mine: Talent, passtech?: ParsedPasstechTalent): Talent {
-    const { changePerLevel, ...mineRest } = mine;
+function merge(passtech: ParsedPasstechTalent, index: number, mine?: Talent): Talent {
     return {
-        ...mineRest,
-        iconUrl: passtech?.iconUrl || null,
-        description: passtech?.description || [],
-        improvements: passtech?.improvements || [],
-        degradations: passtech?.degradations || [],
+        code: passtech.code,
+        name: passtech.name,
+        iconUrl: passtech.iconUrl,
+        type: passtech.type,
+        unlockedAtRank: mine?.unlockedAtRank || (index === 27 ? 6 : 1),
+        multiplayerOnly: mine?.multiplayerOnly,
+        description: passtech.description,
+        improvements: passtech.improvements,
+        degradations: passtech.degradations,
     }
 }
 
@@ -85,7 +96,7 @@ function parseTalent(talent: PasstechTalent): ParsedPasstechTalent {
     } = parseDescriptions(talent.descriptions);
     return {
         code: nameToCode(talent.name),
-        name: talent.name,
+        name: talent.name.trim(),
         iconUrl: talent.icon,
         type: parseType(talent.tier),
         description,

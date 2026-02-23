@@ -3,7 +3,7 @@ import { Talent } from "../../scripts/extractTalents/types";
 export const romeo: Talent[] = [
     {
         "code": "kiss_the_bride",
-        "name": "Kiss The Bride",
+        "name": "Kiss the Bride",
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/romeo/Skill_Special_Quest_Dream_Shard.png",
         "type": "starting",
         "unlockedAtRank": 1,
@@ -187,7 +187,7 @@ export const romeo: Talent[] = [
     },
     {
         "code": "surge_of_bravery",
-        "name": "Surge of Bravery",
+        "name": "Surge of bravery",
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/romeo/Skill_Special_Buff_Attack.png",
         "type": "standard",
         "unlockedAtRank": 1,
@@ -371,10 +371,10 @@ export const romeo: Talent[] = [
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/romeo/Skill_Trait_Beam.png",
         "type": "standard",
         "unlockedAtRank": 2,
+        "multiplayerOnly": true,
         "description": [
             "Using {sk}TRAIT{/s} casts a beam towards Juliet for {sk}6{/s} second(s), dealing {si}33{/s} damage per second to crossed enemies"
         ],
-        "multiplayerOnly": true,
         "improvements": [
             [
                 "33"
@@ -793,6 +793,38 @@ export const romeo: Talent[] = [
             [],
             [],
             [],
+            []
+        ]
+    },
+    {
+        "code": "wild_waltz",
+        "name": "Wild Waltz",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/romeo/Ability_Romeo_Ultimate_1.png",
+        "type": "ultimate",
+        "unlockedAtRank": 1,
+        "description": [
+            "Romeo rushes towards Juliet to perform an {sk}INTANGIBLE{/s} dance dealing area damage"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
+            []
+        ]
+    },
+    {
+        "code": "black_roses",
+        "name": "Black Roses",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/romeo/Ability_Romeo_Ultimate_2.png",
+        "type": "ultimate",
+        "unlockedAtRank": 6,
+        "description": [
+            "Send a swarm of black Roses piercing through enemies"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
             []
         ]
     }

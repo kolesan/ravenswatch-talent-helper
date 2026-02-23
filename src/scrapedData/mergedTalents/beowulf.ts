@@ -784,5 +784,38 @@ export const beowulf: Talent[] = [
             [],
             []
         ]
+    },
+    {
+        "code": "dragon_flight",
+        "name": "Dragon Flight",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/beowulf/Ability_Beowulf_Ultimate_1.png",
+        "type": "ultimate",
+        "unlockedAtRank": 1,
+        "description": [
+            "{sk}Wyrm{/s} takes off and flies around, continuously breathing fire",
+            "Deals damage and applies {sk}IGNITE{/s} to all enemies hit. Beowulf can act at the same time"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
+            []
+        ]
+    },
+    {
+        "code": "raging_chain",
+        "name": "Raging Chain",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/beowulf/Ability_Beowulf_Ultimate_2.png",
+        "type": "ultimate",
+        "unlockedAtRank": 6,
+        "description": [
+            "Rush forward, then chain together a series of attacks with the sword and Wyrm"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
+            []
+        ]
     }
 ];

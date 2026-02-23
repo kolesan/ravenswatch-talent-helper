@@ -788,5 +788,41 @@ export const merlin: Talent[] = [
             [],
             []
         ]
+    },
+    {
+        "code": "standing_stone",
+        "name": "Standing Stone",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/merlin/Ability_Merlin_Ultimate_1.png",
+        "type": "ultimate",
+        "unlockedAtRank": 1,
+        "description": [
+            "Pulls a standing stone out of the ground, drawing the attention of enemies",
+            "The stone passively loses health and explodes when this reaches zero"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
+            []
+        ]
+    },
+    {
+        "code": "forbidden_spells",
+        "name": "Forbidden Spells",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/merlin/Ability_Merlin_Ultimate_2.png",
+        "type": "ultimate",
+        "unlockedAtRank": 6,
+        "description": [
+            "Grants access to three forbidden spells, to be cast as the next Ability used:",
+            "{sk}POWER:{/s} Cataclysm",
+            "{sk}SPECIAL:{/s} Unholy Strikes",
+            "{sk}DEFENSE:{/s} Blood Ritual"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
+            []
+        ]
     }
 ];

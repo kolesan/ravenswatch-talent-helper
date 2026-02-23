@@ -854,5 +854,37 @@ export const wukong: Talent[] = [
             [],
             []
         ]
+    },
+    {
+        "code": "monkey_clones",
+        "name": "Monkey Clones",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/sun_wukong/Ability_SunWukong_Ultimate_1.png",
+        "type": "ultimate",
+        "unlockedAtRank": 1,
+        "description": [
+            "Summons {sk}6{/s} clones in the area, which will fight nearby enemies and attract their attention"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
+            []
+        ]
+    },
+    {
+        "code": "transfiguration",
+        "name": "Transfiguration",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/sun_wukong/Ability_SunWukong_Ultimate_2.png",
+        "type": "ultimate",
+        "unlockedAtRank": 6,
+        "description": [
+            "Sun Wukong transforms into a copy of another random hero, with ALL their standard Talents activated, of Epic quality"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
+            []
+        ]
     }
 ];

@@ -806,5 +806,37 @@ export const snowqueen: Talent[] = [
             [],
             []
         ]
+    },
+    {
+        "code": "frost_ray",
+        "name": "Frost Ray",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/the_snow_queen/Ability_Snow_Queen_Ultimate_1.png",
+        "type": "ultimate",
+        "unlockedAtRank": 1,
+        "description": [
+            "Channel a frost ray to the ground that deals damage over time and creates {sk}FROST{/s} in a targetable area"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
+            []
+        ]
+    },
+    {
+        "code": "snowstorm",
+        "name": "Snowstorm",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/the_snow_queen/Ability_Snow_Queen_Ultimate_2.png",
+        "type": "ultimate",
+        "unlockedAtRank": 6,
+        "description": [
+            "Summon a snow storm that deals damage over time, inflicting all enemies within range with {sk}CHILLED{/s}"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
+            []
+        ]
     }
 ];

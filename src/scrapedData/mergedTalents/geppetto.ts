@@ -795,5 +795,37 @@ export const geppetto: Talent[] = [
             [],
             []
         ]
+    },
+    {
+        "code": "meca-puppet",
+        "name": "Meca-Puppet",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/geppetto/Ability_Geppetto_Ultimate_1.png",
+        "type": "ultimate",
+        "unlockedAtRank": 1,
+        "description": [
+            "Create an autonomous {sk}PUPPET{/s} that will attack close targets or follow Geppetto if there are no nearby enemies"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
+            []
+        ]
+    },
+    {
+        "code": "overclock",
+        "name": "Overclock",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/geppetto/Ability_Geppetto_Ultimate_2.png",
+        "type": "ultimate",
+        "unlockedAtRank": 6,
+        "description": [
+            "Make all {sk}DUMMIES{/s} spin around and track nearby enemies, dealing continuous damage all around"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
+            []
+        ]
     }
 ];
