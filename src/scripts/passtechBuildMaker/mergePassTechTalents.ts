@@ -106,7 +106,7 @@ function parseTalent(talent: PasstechTalent): ParsedPasstechTalent {
 }
 
 function nameToCode(name: string) {
-    return name.trim().replaceAll(" ", "_").toLowerCase();
+    return name.trim().replaceAll(" ", "_").replaceAll("/", "or").toLowerCase();
 }
 
 function parseType(tier: number) {
