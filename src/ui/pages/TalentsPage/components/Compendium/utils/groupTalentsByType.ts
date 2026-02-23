@@ -10,11 +10,13 @@ export function groupTalentsByType(
 
     const starting = withLockedMarked.filter(it => it.type === "starting");
     const standard = withLockedMarked.filter(it => it.type === "standard");
+    const ultimate = withLockedMarked.filter(it => it.type === "ultimate");
     const final = withLockedMarked.filter(it => it.type === "final");
 
     return {
         starting,
         standard,
+        ultimate,
         final,
     }
 }

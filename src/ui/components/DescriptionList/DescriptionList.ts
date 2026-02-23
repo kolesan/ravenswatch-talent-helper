@@ -98,8 +98,11 @@ function descriptionItemsToContent(
 function improvementText(improvements: string[][] | undefined, index: number) {
     const values = improvements?.map(it => it[index]);
 
-    const hasNumericValues = values?.[0] && /[0-9]/g.test(values?.[0]);
-    if (!hasNumericValues) {
+    const hasChangingValues = values?.[0] 
+        && /[0-9]/g.test(values[0]) 
+        && values.length > 1;
+
+    if (!hasChangingValues) {
         return undefined;
     }
 
@@ -109,8 +112,11 @@ function improvementText(improvements: string[][] | undefined, index: number) {
 function degradationText(degradations: string[][] | undefined, index: number) {
     const values = degradations?.map(it => it[index]);
 
-    const hasNumericValues = values?.[0] && /[0-9]/g.test(values?.[0]);
-    if (!hasNumericValues) {
+    const hasChangingValues = values?.[0] 
+        && /[0-9]/g.test(values[0]) 
+        && values.length > 1;
+
+    if (!hasChangingValues) {
         return undefined;
     }
 

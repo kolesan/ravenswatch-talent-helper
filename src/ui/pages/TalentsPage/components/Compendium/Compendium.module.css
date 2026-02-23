@@ -20,6 +20,12 @@
     user-select: unset;
 }
 
+.separatorItem {
+    border-top: 1px dashed;
+    margin-top: 4px;
+    padding-top: 16px;
+}
+
 @media (max-width: 1080px) {
     .root {
         flex-grow: unset;

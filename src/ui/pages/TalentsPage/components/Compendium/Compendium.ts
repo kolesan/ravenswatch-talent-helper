@@ -50,8 +50,11 @@ export function Compendium({
                 ...${commonProps()}
             />
             <${List}
-                label=${"Final"}
-                items=${talents.final} 
+                label=${"Ultimate / Final"}
+                items=${[
+                    ...talents.ultimate,
+                    ...talents.final,
+                ]} 
                 ...${commonProps()}
             />
         </div>
@@ -75,6 +78,10 @@ export function Compendium({
     function renderCompendiumItem(talent: Talent, index: number) {
         return html`
             <${TalentListItem}
+                className=${clsx({
+                    [cls.separatorItem]: talent.type === "final" 
+                        && talent.unlockedAtRank === 1
+                })}
                 showRanks
                 heroCode=${hero.code}
                 talent=${talent}
