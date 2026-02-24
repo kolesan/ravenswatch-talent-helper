@@ -4,10 +4,10 @@ import { html } from "htm/preact";
 import { Talent } from "../../../../../scripts/extractTalents/types";
 import { Builder } from "../../../../components/Builder/Builder";
 import { BuilderListItemActions } from "../../../../components/Builder/types";
-import { TalentListItem } from "../../../../components/TalentListItem/TalentListItem";
 import { listLabelStuckAtPx } from "../../consts/listLabelStuckAtPx";
 import { maxUsedTalents } from "../../consts/maxUsedTalents";
 import { TalentWithLockedFlag } from "../../types";
+import { TalentListItem } from "../TalentListItem/TalentListItem";
 
 import { TalentsBuilderType } from "./types";
 

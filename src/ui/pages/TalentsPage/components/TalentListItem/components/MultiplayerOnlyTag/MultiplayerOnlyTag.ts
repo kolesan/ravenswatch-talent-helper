@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { Tooltip } from "../../../../components/Tooltip/Tooltip";
+import { Tooltip } from "../../../../../../components/Tooltip/Tooltip";
 
 import cls from "./MultiplayerOnlyTag.module.css";
 

@@ -3,9 +3,9 @@ import { html } from "htm/preact";
 
 import { Talent } from "../../../../../scripts/extractTalents/types";
 import { List } from "../../../../components/List/List";
-import { TalentListItem } from "../../../../components/TalentListItem/TalentListItem";
 import { listLabelStuckAtPx } from "../../consts/listLabelStuckAtPx";
 import { TalentWithLockedFlag } from "../../types";
+import { TalentListItem } from "../TalentListItem/TalentListItem";
 
 import { TalentsCompendiumType } from "./types";
 

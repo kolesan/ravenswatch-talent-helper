@@ -1,8 +1,8 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { Talent } from "../../../../../scripts/extractTalents/types";
-import { Tooltip } from "../../../Tooltip/Tooltip";
+import { Talent } from "../../../../../../../scripts/extractTalents/types";
+import { Tooltip } from "../../../../../../components/Tooltip/Tooltip";
 
 import cls from "./TalentRank.module.css";
 

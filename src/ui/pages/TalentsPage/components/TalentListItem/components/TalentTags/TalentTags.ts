@@ -1,8 +1,8 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { Talent } from "../../../../../scripts/extractTalents/types";
-import { MultiplayerOnlyTag } from "../../../../pages/TalentsPage/components/MultiplayerOnlyTag/MultiplayerOnlyTag";
+import { Talent } from "../../../../../../../scripts/extractTalents/types";
+import { MultiplayerOnlyTag } from "../MultiplayerOnlyTag/MultiplayerOnlyTag";
 
 import cls from "./TalentTags.module.css";
 
