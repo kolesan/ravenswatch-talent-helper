@@ -7,7 +7,7 @@ import { BuilderListItemActions } from "../../../../components/Builder/types";
 import { TalentListItem } from "../../../../components/TalentListItem/TalentListItem";
 import { listLabelStuckAtPx } from "../../consts/listLabelStuckAtPx";
 import { maxUsedTalents } from "../../consts/maxUsedTalents";
-import { TalentsBuilder } from "../../hooks/useTalentsBuilder/types";
+import { TalentsBuilderType } from "../../hooks/useTalentsBuilder/types";
 import { TalentWithLockedFlag } from "../../types";
 
 import cls from "./Builder.module.css";
@@ -20,7 +20,7 @@ type Props = {
             content?: string;
         }
     }
-    talentsBuilder: TalentsBuilder;
+    talentsBuilder: TalentsBuilderType;
 }
 
 export function Builder({

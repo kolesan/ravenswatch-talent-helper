@@ -1,3 +1,3 @@
 import { useTalentsBuilder } from "./useTalentsBuilder";
 
-export type TalentsBuilder = ReturnType<typeof useTalentsBuilder>;
+export type TalentsBuilderType = ReturnType<typeof useTalentsBuilder>;
