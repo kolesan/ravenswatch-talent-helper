@@ -1,9 +1,7 @@
 import { Hero } from "../../../../../../finalData/finalData";
-import { compendiumStateStorage } from "../../../utils/compendiumStateStorage/compendiumStateStorage";
-import { StorableCompendiumHeroState } from "../../../utils/compendiumStateStorage/types";
+import { talentsCompendiumStateStorage } from "../../../utils/talentsCompendiumStateStorage/talentsCompendiumStateStorage";
+import { StorableTalentsCompendiumHeroState } from "../../../utils/talentsCompendiumStateStorage/types";
 
-export function saveToStorage(hero: Hero, newState: StorableCompendiumHeroState) {
-    compendiumStateStorage.set(hero.code, {
-        rank: newState.rank,
-    });
+export function saveToStorage(hero: Hero, newState: StorableTalentsCompendiumHeroState) {
+    talentsCompendiumStateStorage.set(hero.code, newState);
 }

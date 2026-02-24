@@ -1,22 +1,13 @@
 import { Talent } from "../../../../../scripts/extractTalents/types";
-import { BuilderState } from "../../components/Builder/hooks/useBuilderStateReducer/types";
+import { BuilderState } from "../../../../components/Builder/hooks/useBuilderStateReducer/types";
+import { SerializedBuilderState } from "../../../../components/Builder/utils/builderStateStorage/types";
 
-export type StorableHeroState = {
+export type StorableTalentsBuilderHeroState = {
     rank: number;
     builderState: BuilderState<Talent>;
 }
 
-export type SerializedHeroState = {
+export type SerializedTalentsBuilderHeroState = {
     rank: number;
     builderState: SerializedBuilderState;
-}
-
-export type SerializedBuilderState = {
-    used: SerializedTalentState[];
-    preferred: SerializedTalentState[];
-}
-
-export type SerializedTalentState = {
-    code: string;
-    preferred?: boolean;
 }

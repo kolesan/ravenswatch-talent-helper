@@ -7,9 +7,9 @@ import { TalentListItem } from "../../../../components/TalentListItem/TalentList
 import { listLabelStuckAtPx } from "../../consts/listLabelStuckAtPx";
 import { TalentWithLockedFlag } from "../../types";
 
-import { TalentsCompendium } from "./types";
+import { TalentsCompendiumType } from "./types";
 
-import cls from "./Compendium.module.css";
+import cls from "./TalentsCompendium.module.css";
 
 type Props = {
     className?: string;
@@ -20,10 +20,10 @@ type Props = {
             content?: string;
         }
     }
-    talentsCompendium: TalentsCompendium;
+    talentsCompendium: TalentsCompendiumType;
 }
 
-export function Compendium({
+export function TalentsCompendium({
     className,
     classes,
     talentsCompendium,

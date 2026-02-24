@@ -3,9 +3,9 @@ import { useEffect, useState } from "preact/hooks";
 
 import { Hero } from "../../../finalData/finalData";
 
-import { Builder } from "./components/Builder/Builder";
-import { Compendium } from "./components/Compendium/Compendium";
 import { Controls } from "./components/Controls/Controls";
+import { TalentsBuilder } from "./components/TalentsBuilder/TalentsBuilder";
+import { TalentsCompendium } from "./components/TalentsCompendium/TalentsCompendium";
 import { useTalentsBuilder } from "./hooks/useTalentsBuilder/useTalentsBuilder";
 import { useTalentsCompendium } from "./hooks/useTalentsCompendium/useTalentsCompendium";
 import { TalentsPageView } from "./talentsPageViews";
@@ -36,9 +36,9 @@ export function TalentsPageContent({
 
     const reloadViewContents = (view: TalentsPageView, hero: Hero) => {
         if (view === "builder") {
-            talentsBuilder.loadHero(hero);
+            talentsBuilder.actions.loadHero(hero);
         } else {
-            talentsCompendium.loadHero(hero);
+            talentsCompendium.actions.loadHero(hero);
         }
     }
 
@@ -69,14 +69,14 @@ export function TalentsPageContent({
             }}
             onRankChange=${(newRank: number) => {
                 if (localView === "builder") {
-                    talentsBuilder.applyRank(newRank);
+                    talentsBuilder.actions.applyRank(newRank);
                 } else {
-                    talentsCompendium.applyRank(newRank);
+                    talentsCompendium.actions.applyRank(newRank);
                 }
             }}
         />
         ${localView === "builder" && html`
-            <${Builder} 
+            <${TalentsBuilder} 
                 classes=${{
                     list: {
                         root: cls.listRoot,
@@ -88,7 +88,7 @@ export function TalentsPageContent({
             />
         `}
         ${localView === "compendium" && html`
-            <${Compendium} 
+            <${TalentsCompendium} 
                 classes=${{
                     list: {
                         root: cls.listRoot,

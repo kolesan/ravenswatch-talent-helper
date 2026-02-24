@@ -2,15 +2,16 @@ import clsx from "clsx";
 import { html } from "htm/preact";
 
 import { Talent } from "../../../../../scripts/extractTalents/types";
-import { Builder as BuilderCommon } from "../../../../components/Builder/Builder";
+import { Builder } from "../../../../components/Builder/Builder";
 import { BuilderListItemActions } from "../../../../components/Builder/types";
 import { TalentListItem } from "../../../../components/TalentListItem/TalentListItem";
 import { listLabelStuckAtPx } from "../../consts/listLabelStuckAtPx";
 import { maxUsedTalents } from "../../consts/maxUsedTalents";
-import { TalentsBuilderType } from "../../hooks/useTalentsBuilder/types";
 import { TalentWithLockedFlag } from "../../types";
 
-import cls from "./Builder.module.css";
+import { TalentsBuilderType } from "./types";
+
+import cls from "./TalentsBuilder.module.css";
 
 type Props = {
     classes?: {
@@ -23,13 +24,13 @@ type Props = {
     talentsBuilder: TalentsBuilderType;
 }
 
-export function Builder({
+export function TalentsBuilder({
     classes,
     talentsBuilder,
 }: Props) {
     console.log("=== Builder rendering ===", { hero: talentsBuilder.hero.code });
     return html`
-        <${BuilderCommon}
+        <${Builder}
             classes=${{
                 root: cls.builderRoot,
                 list: { 
@@ -41,25 +42,7 @@ export function Builder({
                     }),
                 }
             }}
-            builder=${{
-                state: {
-                    used: talentsBuilder.talents.used,
-                    preferred: talentsBuilder.talents.preferred,
-                },
-                derivedState: {
-                    available: talentsBuilder.talents.available,
-                },
-                actions: {
-                    loadState: talentsBuilder.loadHero,
-                    clearUsed: talentsBuilder.clearUsed,
-                    clearPreferred: talentsBuilder.clearPreferred,
-                    removeFromUsed: talentsBuilder.removeFromUsed,
-                    preferredToUsed: talentsBuilder.preferredToUsed,
-                    preferredToAvailable: talentsBuilder.preferredToAvailable,
-                    availableToUsed: talentsBuilder.availableToUsed,
-                    availableToPreferred: talentsBuilder.availableToPreferred,
-                }
-            }}
+            builder=${talentsBuilder.builder}
             entityName=${"talents"}
             listLabelStuckAtPx=${listLabelStuckAtPx}
             maxUsedItems=${maxUsedTalents}

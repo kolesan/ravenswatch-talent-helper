@@ -1,4 +1,4 @@
-.builderRoot {
+.root {
     flex-grow: 1;
     min-height: 0;
 
@@ -7,10 +7,7 @@
     column-gap: 16px;
 }
 
-.listItemLocked {
-    opacity: 0.8;
-    filter: brightness(0.9) contrast(0.9);
-
+.listItemDisableHover:hover {
     border: 2px solid transparent;
 
     cursor: unset;
@@ -18,14 +15,19 @@
     user-select: unset;
 }
 
-@media (min-width: 1080px) {
-    .listLabelRight {
-        display: none;
-    }
+.listItemLocked {
+    opacity: 0.8;
+    filter: brightness(0.9) contrast(0.9);
+}
+
+.separatorItem {
+    border-top: 1px dashed #94969299;
+    margin-top: 4px;
+    padding-top: 16px;
 }
 
 @media (max-width: 1080px) {
-    .builderRoot {
+    .root {
         flex-grow: unset;
         min-height: unset;
 

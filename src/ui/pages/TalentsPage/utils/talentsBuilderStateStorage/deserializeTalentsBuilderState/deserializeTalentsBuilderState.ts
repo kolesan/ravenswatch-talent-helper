@@ -1,19 +1,18 @@
-import { Hero } from "../../../../../../finalData/finalData";
+import { Talent } from "../../../../../../scripts/extractTalents/types";
+import { deserializeBuilderState } from "../../../../../components/Builder/utils/builderStateStorage/deserializeBuilderState/deserializeBuilderState";
 import { deserializeRank } from "../../storage/deserialization/deserializeRank";
-import { SerializedHeroState, StorableHeroState } from "../types";
-
-import { deserializeBuilderState } from "./utils/deserializeBuilderState";
+import { SerializedTalentsBuilderHeroState, StorableTalentsBuilderHeroState } from "../types";
 
 export function deserializeTalentsBuilderState(
-    currentStoredState: SerializedHeroState | null,
-    hero: Hero,
-): StorableHeroState {
+    currentStoredState: SerializedTalentsBuilderHeroState | null,
+    allHeroTalents: Talent[],
+): StorableTalentsBuilderHeroState {
     const rank = deserializeRank(
         currentStoredState?.rank
     );
     const builderState = deserializeBuilderState(
-        hero.talents, 
-        currentStoredState?.builderState
+        currentStoredState?.builderState || null,
+        allHeroTalents, 
     );
 
     return {

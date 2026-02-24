@@ -1,17 +1,17 @@
 import { HeroCode } from "../../../../../data/heroes";
 import { LocalStorage } from "../../../../core/LocalStorage";
 
-import { SerializedCompendiumHeroState } from "./types";
+import { SerializedTalentsCompendiumHeroState } from "./types";
 
 function key(heroCode: HeroCode) {
     return `rrh_talents_compendium_${heroCode}`;
 }
 
-export const baseCompendiumStateStorage = {
-    get(heroCode: HeroCode): SerializedCompendiumHeroState | null {
+export const baseTalentsCompendiumStateStorage = {
+    get(heroCode: HeroCode): SerializedTalentsCompendiumHeroState | null {
         return LocalStorage.get(key(heroCode));
     },
-    set(heroCode: HeroCode, state: SerializedCompendiumHeroState) {
+    set(heroCode: HeroCode, state: SerializedTalentsCompendiumHeroState) {
         LocalStorage.set(key(heroCode), state);
     }
 }

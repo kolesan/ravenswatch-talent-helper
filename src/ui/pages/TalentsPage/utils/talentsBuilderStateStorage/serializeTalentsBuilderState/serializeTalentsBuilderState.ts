@@ -1,24 +1,12 @@
-import { Talent } from "../../../../../../scripts/extractTalents/types";
-import { SerializedHeroState, SerializedTalentState, StorableHeroState } from "../types";
-
-type Params = Omit<StorableHeroState, "heroCode">;
+import { serializeBuilderState } from "../../../../../components/Builder/utils/builderStateStorage/serializeBuilderState/serializeBuilderState";
+import { SerializedTalentsBuilderHeroState, StorableTalentsBuilderHeroState } from "../types";
 
 export function serializeTalentsBuilderState({
     rank,
     builderState,
-}: Params): SerializedHeroState {
+}: StorableTalentsBuilderHeroState): SerializedTalentsBuilderHeroState {
     return {
         rank,
-        builderState: {
-            used: builderState.used.map(serializeTalent),
-            preferred: builderState.preferred.map(serializeTalent),
-        }
+        builderState: serializeBuilderState(builderState),
     };
-}
-
-function serializeTalent(talent: Talent): SerializedTalentState {
-    return {
-        code: talent.code,
-        preferred: talent.preferred,
-    }
 }

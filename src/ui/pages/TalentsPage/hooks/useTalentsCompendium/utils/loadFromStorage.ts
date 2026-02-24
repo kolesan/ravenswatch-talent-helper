@@ -1,6 +1,6 @@
 import { Hero } from "../../../../../../finalData/finalData";
-import { compendiumStateStorage } from "../../../utils/compendiumStateStorage/compendiumStateStorage";
+import { talentsCompendiumStateStorage } from "../../../utils/talentsCompendiumStateStorage/talentsCompendiumStateStorage";
 
 export function loadFromStorage(hero: Hero) {
-    return compendiumStateStorage.get(hero.code);
+    return talentsCompendiumStateStorage.get(hero.code);
 }

@@ -1,4 +1,4 @@
-.root {
+.builderRoot {
     flex-grow: 1;
     min-height: 0;
 
@@ -10,26 +10,20 @@
 .listItemLocked {
     opacity: 0.8;
     filter: brightness(0.9) contrast(0.9);
-}
-
-.listItemDisableHover:hover {
-    border: 2px solid transparent;
 
     cursor: unset;
 
     user-select: unset;
 }
-
-.separatorItem {
-    border-top: 1px dashed #94969299;
-    margin-top: 4px;
-    padding-top: 16px;
+.listItemLocked:hover {
+    border: 2px solid transparent;
 }
 
 @media (max-width: 1080px) {
-    .root {
+    .builderRoot {
         flex-grow: unset;
         min-height: unset;
+
         grid-template-columns: unset;
         grid-template-rows: auto;
         row-gap: 22px;
