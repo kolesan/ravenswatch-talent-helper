@@ -2,7 +2,7 @@ import { legendary } from "../../../../scrapedData/mergedItems/legendary";
 import { useBuilder } from "../../../components/Builder/useBuilder";
 import { builderStateStorage } from "../../../components/Builder/utils/builderStateStorage/builderStateStorage";
 
-const storageKey = "rrh_objects_legendary";
+export const storageKey = "rrh_objects_legendary";
 
 export function useLegendaryObjectsBuilder() {
     return useBuilder({

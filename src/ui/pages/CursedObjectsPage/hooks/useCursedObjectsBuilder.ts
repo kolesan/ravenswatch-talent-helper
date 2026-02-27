@@ -2,7 +2,7 @@ import { cursed } from "../../../../scrapedData/mergedItems/cursed";
 import { useBuilder } from "../../../components/Builder/useBuilder";
 import { builderStateStorage } from "../../../components/Builder/utils/builderStateStorage/builderStateStorage";
 
-const storageKey = "rrh_objects_cursed";
+export const storageKey = "rrh_objects_cursed";
 
 export function useCursedObjectsBuilder() {
     return useBuilder({
