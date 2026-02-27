@@ -18,8 +18,6 @@ export function App() {
 function Content() {
     const location = useRouter();
 
-    console.log("App Content rendered", { location });
-
     return html`
         <${Toolbar} />
         ${

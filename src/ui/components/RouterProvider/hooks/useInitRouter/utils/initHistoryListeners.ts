@@ -8,19 +8,16 @@ export function initHistoryListeners(cb: (location: string) => void) {
 
 function handlePopState(cb: (location: string) => void) {
     return function(e: any) {
-        console.log("-------- Pop State detected", { url: e?.target?.window?.location?.pathname });
         cb(e?.target?.window?.location?.pathname);
     }
 }
 function handlePushState(cb: (location: string) => void) {
     return function(e: any) {
-        console.log("-------- Push State detected", { url: e.arguments[2] });
         cb(e.arguments[2]);
     }
 }
 function handleReplaceState(cb: (location: string) => void) {
     return function(e: any) {
-        console.log("-------- Replace State detected", { url: e.arguments[2] });
         cb(e.arguments[2]);
     }
 }

@@ -25,11 +25,6 @@ export function TalentsPageContent({
     onHeroChange,
     onViewChange,
 }: Props) {
-    console.log("= TPC RENDERING =", {
-        hero: hero.code,
-        view
-    });
-
     const [localView, setLocalView] = useState(view);
     const talentsBuilder = useTalentsBuilder({ initialHero: hero });
     const talentsCompendium = useTalentsCompendium({ initialHero: hero });

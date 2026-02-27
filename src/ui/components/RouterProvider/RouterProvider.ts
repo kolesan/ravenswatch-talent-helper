@@ -17,7 +17,6 @@ export function RouterProvider({
 
     useInitRouter({ 
         onLocationChange: location => {
-            console.log("location changed", { url: location });
             setLoc(location);
         }
     });

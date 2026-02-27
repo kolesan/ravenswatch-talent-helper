@@ -13,8 +13,6 @@ import { TalentsPageView } from "./talentsPageViews";
 import { calculatePageTitle } from "./utils/calculatePageTitle";
 
 export function TalentsPage() {
-    console.log("============== TalentsPage rendering ================");
-
     const {
         hero: urlHero,
         view: urlView,

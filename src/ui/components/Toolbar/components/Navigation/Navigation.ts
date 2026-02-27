@@ -21,7 +21,6 @@ export function Navigation({
     className,
 }: Props) {
     const location = useRouter();
-    console.log("Navigation rendered", { location });
     return html`
         <div class=${clsx(cls.navigationRoot, className)}>
             ${items.map(it => html`

@@ -19,7 +19,6 @@ export function Link({
             class=${className}
             href=${href}
             onClick=${(e: any) => {
-                console.log("Link clicked", href);
                 e.preventDefault();
                 hst.push(href);
             }}

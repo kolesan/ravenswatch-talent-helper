@@ -13,10 +13,6 @@ export function useHandleTalentsPageUrl(
     // Load stored params for later comparison
     const storedUrlParams = useMemo(() => {
         const storedParams = talentsPageUrlParamsStorage.get();
-        console.log("Loading stored params", {
-            hero: storedParams.hero.code, 
-            view: storedParams.view
-        });
         return storedParams;
     }, [urlHero?.code, urlView]);
 
@@ -25,7 +21,6 @@ export function useHandleTalentsPageUrl(
 
     // Store new url params if different from old ones
     useEffect(() => {
-        console.log("Url params change detected. Checking if need to save params to storage");
         if (
             urlHero?.code && urlHero.code !== storedUrlHero.code
             || urlView && urlView !== storedUrlView
@@ -34,10 +29,6 @@ export function useHandleTalentsPageUrl(
                 hero: urlHero || storedUrlHero, 
                 view: urlView || storedUrlView,
             };
-            console.log("Saving new url params to storage:", {
-                hero: paramsToStore.hero.code, 
-                view: paramsToStore.view
-            });
             talentsPageUrlParamsStorage.set(paramsToStore);
         }
     }, [urlHero?.code, urlView]);
@@ -46,14 +37,12 @@ export function useHandleTalentsPageUrl(
     // we do a "redirect" (history replace) to a fully correct url
     // with stored params used instead of missing ones
     useEffect(() => {
-        console.log("Url params change detected. Checking if redirect is needed");
         if (!urlHero || !urlView) {
             const newPathParams = {
                 hero: (urlHero || storedUrlHero).code, 
                 view: urlView || storedUrlView,
             };
             const newPath = pages.talents.constructPath(newPathParams);
-            console.log("Redirecting to:", { url: newPath}, newPathParams);
             hst.replace(newPath);
         }
     }, [urlHero?.code, urlView]);

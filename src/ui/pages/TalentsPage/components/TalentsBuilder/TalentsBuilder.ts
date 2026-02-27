@@ -28,7 +28,6 @@ export function TalentsBuilder({
     classes,
     talentsBuilder,
 }: Props) {
-    console.log("=== Builder rendering ===", { hero: talentsBuilder.hero.code });
     return html`
         <${Builder}
             classes=${{

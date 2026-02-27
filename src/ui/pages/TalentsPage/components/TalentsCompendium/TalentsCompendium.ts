@@ -28,10 +28,6 @@ export function TalentsCompendium({
     classes,
     talentsCompendium,
 }: Props) {
-    console.log("=== Compendium rendering ===", { 
-        hero: talentsCompendium.hero.code
-    });
-
     const {
         hero,
         talents,
