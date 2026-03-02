@@ -10,6 +10,7 @@ import cls from "./ListItem.module.css";
 interface Props {
     className?: string;
     name: string;
+    interactive?: boolean;
     tools: ComponentChildren;
     iconElement: ComponentChildren;
     descriptionElement: ComponentChildren;
@@ -21,6 +22,7 @@ interface Props {
 export function ListItem({
     className,
     name,
+    interactive,
     tools,
     iconElement,
     descriptionElement,
@@ -34,7 +36,9 @@ export function ListItem({
 
     return html`
         <div 
-            class=${clsx(cls.root, className)}
+            class=${clsx(cls.root, {
+                [cls.interactive]: interactive
+            }, className)}
             onClick=${(e: any) => {
                 if (hld.getHolding()) {
                     return;

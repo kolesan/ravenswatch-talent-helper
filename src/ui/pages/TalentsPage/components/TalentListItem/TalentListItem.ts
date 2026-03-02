@@ -15,6 +15,7 @@ import cls from "./TalentListItem.module.css";
 
 interface Props {
     className?: string;
+    interactive?: boolean;
     showRanks?: boolean;
     heroCode: HeroCode;
     talent: TalentWithLockedFlag;
@@ -26,6 +27,7 @@ interface Props {
 
 export function TalentListItem({
     className,
+    interactive,
     showRanks,
     heroCode,
     talent,
@@ -38,6 +40,7 @@ export function TalentListItem({
         <${ListItem}
             className=${clsx(cls.talentListItemRoot, className)}
             name=${talent.name}
+            interactive=${interactive}
             tools=${html`
                 ${talent.preferred && html`
                     <${PreferredIcon} 

@@ -30,6 +30,7 @@ export function ObjectListItem({
         <${ListItem}
             className=${className}
             name=${object.name}
+            interactive
             tools=${object.preferred && html`
                 <${PreferredIcon} lowerTooltip=${index === 0} />
             `}

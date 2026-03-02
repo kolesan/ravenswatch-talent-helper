@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import { html } from "htm/preact";
 
-import { Talent } from "../../../../../scripts/extractTalents/types";
 import { Builder } from "../../../../components/Builder/Builder";
 import { BuilderListItemActions } from "../../../../components/Builder/types";
 import { listLabelStuckAtPx } from "../../consts/listLabelStuckAtPx";
@@ -36,9 +35,6 @@ export function TalentsBuilder({
                     root: classes?.list?.root,
                     label: classes?.list?.label,
                     content: classes?.list?.content,
-                    listItem: (talent: TalentWithLockedFlag) => clsx({
-                        [cls.listItemLocked]: talent.locked,
-                    }),
                 }
             }}
             builder=${talentsBuilder.builder}
@@ -47,11 +43,15 @@ export function TalentsBuilder({
             maxUsedItems=${maxUsedTalents}
             canCountItemAvailable=${(talent: TalentWithLockedFlag) => !talent.locked}
             renderItem=${(
-                talent: Talent, 
+                talent: TalentWithLockedFlag, 
                 index: number,
                 actions: BuilderListItemActions,
             ) => html`
                 <${TalentListItem}
+                    className=${clsx({ 
+                        [cls.listItemLocked]: talent.locked 
+                    })}
+                    interactive=${!talent.locked}
                     heroCode=${talentsBuilder.hero.code}
                     talent=${talent}
                     index=${index}

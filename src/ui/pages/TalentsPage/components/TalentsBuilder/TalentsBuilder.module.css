@@ -10,13 +10,6 @@
 .listItemLocked {
     opacity: 0.8;
     filter: brightness(0.9) contrast(0.9);
-
-    cursor: unset;
-
-    user-select: unset;
-}
-.listItemLocked:hover {
-    border: 2px solid transparent;
 }
 
 @media (max-width: 1080px) {

@@ -1,7 +1,19 @@
 .root {
+    padding: 4px 2px;
+
     display: flex;
     align-items: center;
     gap: 4px;
+    
+    border: 2px solid transparent;
+    border-radius: 4px;
+}
+.interactive {
+    cursor: pointer;
+    user-select: none;
+}
+.interactive:hover {
+    border: 2px solid #857243;
 }
 
 .iconContainer {

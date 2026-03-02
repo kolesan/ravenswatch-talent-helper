@@ -12,7 +12,6 @@ type Props<T> = {
         root?: string;
         label?: string;
         content?: string;
-        listItem?: (item: T) => string;
     };
     label: string;
     // TODO: consider extracting sticky functionality out of List and into parent
@@ -106,12 +105,9 @@ export function List<T extends WithCode>({
                 `}
                 <ul class=${cls.list}>
                     ${items.map((item, i) => html`
-                        <li 
-                            class=${clsx(cls.listItem, classes?.listItem?.(item))} 
-                            key=${item.code}
-                        >
+                        <li key=${item.code}>
                             ${renderItem(item, i)}
-                        </div>
+                        </li>
                     `)}
                 </ul>
             </div>

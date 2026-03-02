@@ -17,7 +17,6 @@ type Props<T extends BuilderItem> = {
             root?: string;
             label?: string;
             content?: string;
-            listItem?: (item: T) => string;
         }
     }
     builder: BuilderType<T>
