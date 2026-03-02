@@ -1,15 +1,8 @@
 .root {
-    flex-grow: 1;
-    min-height: 0;
-
     padding: 12px 0 0;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 16px;
 }
 
-.list {
+.listRoot {
     height: 100%;
 }
 .listLabel {
@@ -22,7 +15,7 @@
 }
 
 @media (min-width: 1080px) {
-    .list {
+    .listRoot {
         overflow-y: hidden;
     }
     .listLabel {

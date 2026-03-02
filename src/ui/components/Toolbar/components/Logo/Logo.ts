@@ -1,6 +1,7 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
-import { Link } from "wouter-preact";
+
+import { Link } from "../../../RouterProvider/Link";
 
 import cls from "./Logo.module.css";
 
@@ -13,7 +14,7 @@ export function Logo({
 }: Props) {
     return html`
         <${Link} 
-            class=${clsx(cls.logoRoot, className)}
+            className=${clsx(cls.logoRoot, className)}
             href="/"
         >
             <img 

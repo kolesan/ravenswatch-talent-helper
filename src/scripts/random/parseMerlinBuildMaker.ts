@@ -1,7 +1,5 @@
 import { Talent, TalentType } from "../extractTalents/types";
 
-
-
 const parsedTalents = getMerlinTalents()
     .map(parseTalent)
     .filter(it => it.type !== "ultimate");
@@ -19,9 +17,9 @@ function merge(mine: any): Talent {
     const theirs = parsedTalents.find(it => it.code === mine.code);
     return {
         ...mineRest,
-        iconUrl: theirs.iconUrl,
-        description: theirs.description,
-        improvements: theirs.improvements,
+        iconUrl: theirs?.iconUrl || null,
+        description: theirs?.description || [],
+        improvements: theirs?.improvements || [],
     }
 }
 

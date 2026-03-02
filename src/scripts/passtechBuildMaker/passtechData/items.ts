@@ -522,5 +522,5 @@ export function items() {
             "quality_name": "Cursed",
             "icon": "http://dt-live-3.passtechgames.com:8080/objects/images/Icon_Object_WitchBroom.png"
         }
-    ];
+    ] as const;
 }

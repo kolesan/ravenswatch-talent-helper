@@ -1,23 +1,38 @@
 type Page = {
-    path: string;
     label: string;
+    path: string;
+}
+type WithPathConstruction<T = void> = {
+    constructPath: (params: T) => string;
+    deconstructPath: (path: string) => T;
 }
 
-const talents: Page = {
-    path: "/talents",
+type TalentsPageParams = {
+    hero: string;
+    view: string;
+}
+const talents: Page & WithPathConstruction<TalentsPageParams> = {
     label: "Talents",
+    path: "/talents",
+    constructPath({ hero, view }) { 
+        return `${this.path}/${hero}/${view}`;
+    },
+    deconstructPath(path: string) {
+        const [_, __, hero, view] = path.split("/");
+        return { hero, view };
+    },
 }
 const legendaryObjects: Page = {
-    path: "/objects/legendary",
     label: "Legendary Objects",
+    path: "/objects/legendary",
 }
 const cursedObjects: Page = {
-    path: "/objects/cursed",
     label: "Cursed Objects",
+    path: "/objects/cursed",
 }
 const help: Page = {
-    path: "/help",
     label: "Help",
+    path: "/help",
 }
 
 export const pages = {

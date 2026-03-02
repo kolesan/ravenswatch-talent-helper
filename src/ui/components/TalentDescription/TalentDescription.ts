@@ -1,24 +1,22 @@
 import { html } from "htm/preact";
 
-import { Talent } from "../../../scripts/extractTalents/types";
+import { TalentWithLockedFlag } from "../../pages/TalentsPage/types";
 import { DescriptionList } from "../DescriptionList/DescriptionList";
 
 import { UnlockedAtRank } from "./components/UnlockedAtRank/UnlockedAtRank";
 
 interface Props {
     className?: string;
-    isLocked: boolean;
-    talent: Talent;
+    talent: TalentWithLockedFlag;
 }
 
 export function TalentDescription({
     className,
-    isLocked,
     talent,
 }: Props) {
     return html`
         <div class=${className}>
-            ${isLocked ? html`
+            ${talent.locked ? html`
                 <${UnlockedAtRank} 
                     rank=${talent.unlockedAtRank} 
                 />

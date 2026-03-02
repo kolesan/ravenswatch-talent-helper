@@ -9,7 +9,7 @@
     column-gap: 16px;
 }
 
-.list {
+.listRoot {
     height: 100%;
 }
 .listLabel {
@@ -22,14 +22,11 @@
 }
 
 @media (min-width: 1080px) {
-    .list {
+    .listRoot {
         overflow-y: hidden;
     }
     .listLabel {
         position: unset;
-    }
-    .listLabelRight {
-        display: none;
     }
 }
 @media (max-width: 1080px) {

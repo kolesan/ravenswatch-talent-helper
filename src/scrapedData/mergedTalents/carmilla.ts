@@ -242,7 +242,7 @@ export const carmilla: Talent[] = [
     },
     {
         "code": "go_for_the_throat",
-        "name": "Go For The Throat",
+        "name": "Go for the Throat",
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/carmilla/Skill_Special_Critical_Distance.png",
         "type": "standard",
         "unlockedAtRank": 1,
@@ -831,6 +831,43 @@ export const carmilla: Talent[] = [
             [],
             [],
             [],
+            []
+        ]
+    },
+    {
+        "code": "impalement",
+        "name": "Impalement",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/carmilla/Ability_Carmilla_Ultimate_1.png",
+        "type": "ultimate",
+        "unlockedAtRank": 1,
+        "description": [
+            "Consume all {sd}BLOOD{/s} to launch a series of blood spikes errupting from the ground in front, dealing damage to enemies passed"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
+            [
+                "BLOOD"
+            ]
+        ]
+    },
+    {
+        "code": "blood_lash",
+        "name": "Blood Lash",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/carmilla/Ability_Carmilla_Ultimate_2.png",
+        "type": "ultimate",
+        "unlockedAtRank": 6,
+        "description": [
+            "Summon a whip of blood, dealing area damage",
+            "Next {si}12{/s} {sk}ATTACKS{/s} use the whip to strike in large areas"
+        ],
+        "improvements": [
+            [
+                "12"
+            ]
+        ],
+        "degradations": [
             []
         ]
     }

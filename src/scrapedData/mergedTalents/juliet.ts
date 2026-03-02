@@ -3,7 +3,7 @@ import { Talent } from "../../scripts/extractTalents/types";
 export const juliet: Talent[] = [
     {
         "code": "kiss_the_groom",
-        "name": "Kiss The Groom",
+        "name": "Kiss the Groom",
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/juliet/Skill_Special_Quest_Dream_Shard.png",
         "type": "starting",
         "unlockedAtRank": 1,
@@ -68,11 +68,11 @@ export const juliet: Talent[] = [
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/juliet/Skill_Power_Quest_Explode.png",
         "type": "starting",
         "unlockedAtRank": 2,
+        "multiplayerOnly": true,
         "description": [
             "{sk}Quest (x10):{/s} Hitting an enemy by exploding Romeo's Rose with a {sk}PERFECT SHOT{/s} grants {sk}+1.0 DMG{/s}",
             "{sk}Complete:{/s} Rose explosions triggered with a {sk}PERFECT SHOT{/s} gain {sk}+50%{/s} range and deals {si}+20%{/s} damage"
         ],
-        "multiplayerOnly": true,
         "improvements": [
             [
                 "+20%"
@@ -100,10 +100,10 @@ export const juliet: Talent[] = [
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/juliet/Skill_Passive_Bonus_Object.png",
         "type": "starting",
         "unlockedAtRank": 5,
+        "multiplayerOnly": true,
         "description": [
             "Whenever they obtain a {sk}Magical Object{/s}, Juliet and Romeo have a {si}20%{/s}/{si}10%{/s}/{si}5%{/s} chance to gift the other the same common, rare or epic {sk}Magical Object{/s}"
         ],
-        "multiplayerOnly": true,
         "improvements": [
             [
                 "20%",
@@ -441,10 +441,10 @@ export const juliet: Talent[] = [
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/juliet/Skill_Attack_Rose_AOE.png",
         "type": "standard",
         "unlockedAtRank": 3,
+        "multiplayerOnly": true,
         "description": [
             "{sk}ATTACKS{/s} hitting Romeo's Roses make them spin, dealing {si}60%{/s} of Juliet's {sk}ATTACK{/s} damage all around "
         ],
-        "multiplayerOnly": true,
         "improvements": [
             [
                 "60%"
@@ -502,10 +502,10 @@ export const juliet: Talent[] = [
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/juliet/Skill_Dash_Shield.png",
         "type": "standard",
         "unlockedAtRank": 4,
+        "multiplayerOnly": true,
         "description": [
             "Crossing through a Hero using {sk}DASH{/s} grants {si}20{/s} {sk}SHIELD{/s} for {sk}6{/s} seconds to Juliet and all Heroes crossed"
         ],
-        "multiplayerOnly": true,
         "improvements": [
             [
                 "20"
@@ -803,6 +803,39 @@ export const juliet: Talent[] = [
             [],
             [],
             [],
+            []
+        ]
+    },
+    {
+        "code": "wild_waltz",
+        "name": "Wild Waltz",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/juliet/Ability_Juliet_Ultimate_1.png",
+        "type": "ultimate",
+        "unlockedAtRank": 1,
+        "description": [
+            "Juliet rushes towards Romeo to perform an {sk}INTANGIBLE{/s} dance dealing area damage"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
+            []
+        ]
+    },
+    {
+        "code": "poison_flask",
+        "name": "Poison Flask",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/juliet/Ability_Juliet_Ultimate_2.png",
+        "type": "ultimate",
+        "unlockedAtRank": 6,
+        "description": [
+            "Throw a poison flask in the air",
+            "Trigger {sk}ULTIMATE{/s} again at the right time to shoot the flask and make it explode, dealing damage in a wide area"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
             []
         ]
     }

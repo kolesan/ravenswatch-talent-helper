@@ -1,0 +1,22 @@
+.rankSliderRoot {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    
+    font-family: ravenswatch;
+    text-transform: uppercase;
+    
+    -webkit-tap-highlight-color: transparent;
+}
+
+.rankSliderRoot input {
+    cursor: pointer;
+
+    max-width: 130px;
+}
+
+@media (max-width: 400px) {
+    .rankSliderRoot input {
+        max-width: 80px;
+    }
+}

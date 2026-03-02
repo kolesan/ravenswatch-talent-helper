@@ -2,6 +2,7 @@ import { clsx } from "clsx";
 import { html } from "htm/preact";
 import { ComponentChildren } from "preact";
 
+import { noop } from "../../utils/noop";
 import { holder } from "../../utils/onHold";
 
 import cls from "./ListItem.module.css";
@@ -9,6 +10,7 @@ import cls from "./ListItem.module.css";
 interface Props {
     className?: string;
     name: string;
+    interactive?: boolean;
     tools: ComponentChildren;
     iconElement: ComponentChildren;
     descriptionElement: ComponentChildren;
@@ -20,6 +22,7 @@ interface Props {
 export function ListItem({
     className,
     name,
+    interactive,
     tools,
     iconElement,
     descriptionElement,
@@ -27,11 +30,15 @@ export function ListItem({
     onAltClick,
     onHold,
 }: Props) {
-    const hld = holder({ onHold });
+    const hld = holder({ 
+        onHold: onHold || noop,
+    });
 
     return html`
-        <li 
-            class=${clsx(cls.root, className)}
+        <div 
+            class=${clsx(cls.root, {
+                [cls.interactive]: interactive
+            }, className)}
             onClick=${(e: any) => {
                 if (hld.getHolding()) {
                     return;

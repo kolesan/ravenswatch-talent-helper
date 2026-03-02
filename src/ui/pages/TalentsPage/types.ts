@@ -1,40 +1,16 @@
 import { Hero } from "../../../finalData/finalData";
 import { Talent } from "../../../scripts/extractTalents/types";
 
-export type AppState = {
+import { TalentsPageView } from "./talentsPageViews";
+
+export type StorableTalentsPageUrlParamsState = {
     hero: Hero;
-    rank: number;
-    talents: TalentsState;
+    view: TalentsPageView;
 }
 
-export type TalentsState = {
-    used: Talent[];
-    preferred: Talent[];
-}
-
-export type LocalTalentsState = {
-    available: Talent[];
-    locked: Talent[];
-}
-
-export type SerializedAppState = {
-    currentHeroCode: string;
-    heroes: Record<string, SerializedHeroState>;
-}
-
-export type SerializedHeroState = {
-    rank: number;
-    talents: SerializedTalentsState;
-}
-
-export type SerializedTalentsState = {
-    used: SerializedTalent[];
-    preferred: SerializedTalent[];
-}
-
-export type SerializedTalent = {
-    code: string;
-    preferred?: boolean;
+export type SerializedTalentsPageUrlParamsState = {
+    hero: string;
+    view: string;
 }
 
 export type TalentWithLockedFlag = Talent & {

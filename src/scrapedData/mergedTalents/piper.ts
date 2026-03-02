@@ -791,5 +791,38 @@ export const piper: Talent[] = [
             [],
             []
         ]
+    },
+    {
+        "code": "unchained_melody",
+        "name": "Unchained Melody",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/the_pied_piper/Ability_Piper_Ultimate_1.png",
+        "type": "ultimate",
+        "unlockedAtRank": 1,
+        "description": [
+            "Continuously play notes that target the closest enemy",
+            "Movement is FORCED but the direction can be controlled"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
+            []
+        ]
+    },
+    {
+        "code": "plague_of_rats",
+        "name": "Plague of Rats",
+        "iconUrl": "http://dt-live-3.passtechgames.com:8080/heroes/the_pied_piper/Ability_Piper_Ultimate_2.png",
+        "type": "ultimate",
+        "unlockedAtRank": 6,
+        "description": [
+            "Channel a melody to control a swarm of rats that rushes forward and deals damage over a large area"
+        ],
+        "improvements": [
+            []
+        ],
+        "degradations": [
+            []
+        ]
     }
 ];

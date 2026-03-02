@@ -1,8 +1,9 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
-import { Link, useLocation } from "wouter-preact";
 
 import { pages } from "../../../../../../pages";
+import { Link } from "../../../RouterProvider/Link";
+import { useRouter } from "../../../RouterProvider/RouterProvider";
 
 import cls from "./Navigation.module.css";
 
@@ -19,7 +20,7 @@ const items = [
 export function Navigation({
     className,
 }: Props) {
-    const [location] = useLocation();
+    const location = useRouter();
     return html`
         <div class=${clsx(cls.navigationRoot, className)}>
             ${items.map(it => html`

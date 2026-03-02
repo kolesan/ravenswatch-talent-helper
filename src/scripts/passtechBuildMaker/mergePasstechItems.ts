@@ -7,7 +7,6 @@ import { descriptionKeyMaps } from "../../utils/descriptionKeyMaps";
 
 import { ParsedPasstechItem, PasstechItem } from "./types";
 
-
 const {
     legendary: passtechLegendary,
     cursed: passtechCursed,
@@ -68,10 +67,10 @@ function mergePasstechAndMyItems(
 }
 
 
-function merge(mine: MagicalObject, passtech: ParsedPasstechItem): MagicalObject {
+function merge(mine: MagicalObject, passtech?: ParsedPasstechItem): MagicalObject {
     return {
         ...mine,
-        description: passtech.description,
+        description: passtech?.description || [],
     };
 }
 
