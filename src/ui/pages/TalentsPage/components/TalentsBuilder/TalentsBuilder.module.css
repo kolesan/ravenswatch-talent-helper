@@ -7,11 +7,6 @@
     column-gap: 16px;
 }
 
-.listItemLocked {
-    opacity: 0.8;
-    filter: brightness(0.9) contrast(0.9);
-}
-
 @media (max-width: 1080px) {
     .builderRoot {
         flex-grow: unset;

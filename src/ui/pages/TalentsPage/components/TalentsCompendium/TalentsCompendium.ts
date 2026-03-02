@@ -1,7 +1,6 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { Talent } from "../../../../../scripts/extractTalents/types";
 import { List } from "../../../../components/List/List";
 import { listLabelStuckAtPx } from "../../consts/listLabelStuckAtPx";
 import { TalentWithLockedFlag } from "../../types";
@@ -58,27 +57,21 @@ export function TalentsCompendium({
 
     function commonProps() {
         return {
-            classes: {
-                ...classes?.list,
-                listItem: (talent: TalentWithLockedFlag) => clsx({
-                    [cls.listItemDisableHover]: true,
-                    [cls.listItemLocked]: talent.locked,
-                }),
-            },
+            classes: classes?.list,
             labelStuckAtPx: listLabelStuckAtPx,
             canCountItemUsable: (talent: TalentWithLockedFlag) => !talent.locked,
             renderItem: renderCompendiumItem,
         };
     }
 
-    function renderCompendiumItem(talent: Talent, index: number) {
+    function renderCompendiumItem(talent: TalentWithLockedFlag, index: number) {
         return html`
             <${TalentListItem}
                 className=${clsx({
                     [cls.separatorItem]: talent.type === "final" 
-                        && talent.unlockedAtRank === 1
+                        && talent.unlockedAtRank === 1,
                 })}
-                showRanks
+                showRank
                 heroCode=${hero.code}
                 talent=${talent}
                 index=${index}

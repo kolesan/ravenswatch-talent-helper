@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { html } from "htm/preact";
 
 import { Builder } from "../../../../components/Builder/Builder";
@@ -48,9 +47,6 @@ export function TalentsBuilder({
                 actions: BuilderListItemActions,
             ) => html`
                 <${TalentListItem}
-                    className=${clsx({ 
-                        [cls.listItemLocked]: talent.locked 
-                    })}
                     interactive=${!talent.locked}
                     heroCode=${talentsBuilder.hero.code}
                     talent=${talent}

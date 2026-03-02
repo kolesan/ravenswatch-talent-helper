@@ -2,11 +2,11 @@ import clsx from "clsx";
 import { html } from "htm/preact";
 
 import { HeroCode } from "../../../../../data/heroes";
-import { TalentWithLockedFlag } from "../../types";
 import { ListItem } from "../../../../components/ListItem/ListItem";
 import { PreferredIcon } from "../../../../components/PreferredIcon/PreferredIcon";
 import { TalentDescription } from "../../../../components/TalentDescription/TalentDescription";
 import { TalentIcon } from "../../../../components/TalentIcon/TalentIcon";
+import { TalentWithLockedFlag } from "../../types";
 
 import { TalentRank } from "./components/TalentRank/TalentRank";
 import { TalentTags } from "./components/TalentTags/TalentTags";
@@ -16,7 +16,7 @@ import cls from "./TalentListItem.module.css";
 interface Props {
     className?: string;
     interactive?: boolean;
-    showRanks?: boolean;
+    showRank?: boolean;
     heroCode: HeroCode;
     talent: TalentWithLockedFlag;
     index: number;
@@ -28,7 +28,7 @@ interface Props {
 export function TalentListItem({
     className,
     interactive,
-    showRanks,
+    showRank,
     heroCode,
     talent,
     index,
@@ -38,7 +38,9 @@ export function TalentListItem({
 }: Props) {
     return html`
         <${ListItem}
-            className=${clsx(cls.talentListItemRoot, className)}
+            className=${clsx(cls.talentListItemRoot, { 
+                [cls.locked]: talent.locked,
+            }, className)}
             name=${talent.name}
             interactive=${interactive}
             tools=${html`
@@ -53,7 +55,7 @@ export function TalentListItem({
                         talent=${talent} 
                         index=${index} 
                     />
-                    ${showRanks && talent.unlockedAtRank > 1 && html`
+                    ${showRank && talent.unlockedAtRank > 1 && html`
                         <${TalentRank} 
                             className=${cls.talentRank}
                             talent=${talent} 
