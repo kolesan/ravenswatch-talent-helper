@@ -20,8 +20,6 @@ type Props<T extends BuilderItem> = {
         }
     }
     builder: BuilderType<T>
-    // props below should be taken a look at and probably refactored
-    // double check other props just in case as well
     maxUsedItems?: number;
     entityName: string;
     listLabelStuckAtPx: number;
