@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import cls from "./ListLabelRight.module.css";
+import cls from "./PreviousListsItemCounts.module.css";
 
 type Props = {
     className?: string;
@@ -11,7 +11,7 @@ type Props = {
     maxUsed?: number;
 }
 
-export function ListLabelRight({
+export function PreviousListsItemCounts({
     className,
     visible,
     used,

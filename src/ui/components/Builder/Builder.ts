@@ -4,7 +4,7 @@ import { html } from "htm/preact";
 import { useBooleanState } from "../../hooks/useBooleanState";
 import { List } from "../List/List";
 
-import { ListLabelRight } from "./components/ListLabelRight/ListLabelRight";
+import { PreviousListsItemCounts } from "./components/PreviousListsItemCounts/PreviousListsItemCounts";
 import { BuilderItem } from "./hooks/useBuilderStateReducer/types";
 import { BuilderListItemRenderer, BuilderType } from "./types";
 
@@ -70,7 +70,7 @@ export function Builder<T extends BuilderItem>({
                 labelStuckAtPx=${listLabelStuckAtPx}
                 slots=${{
                     labelRight: html`
-                        <${ListLabelRight} 
+                        <${PreviousListsItemCounts} 
                             className=${cls.listLabelRight}
                             visible=${
                                 usedLabelScrollingAgain.is 
@@ -101,7 +101,7 @@ export function Builder<T extends BuilderItem>({
                 labelStuckAtPx=${listLabelStuckAtPx}
                 slots=${{
                     labelRight: html`
-                        <${ListLabelRight}
+                        <${PreviousListsItemCounts}
                             className=${cls.listLabelRight}
                             visible=${preferredLabelScrollingAgain.is}
                             used=${builder.state.used.length}
