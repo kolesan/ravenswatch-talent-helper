@@ -38,7 +38,7 @@ export function TalentListItem({
 }: Props) {
     return html`
         <${ListItem}
-            className=${clsx(cls.talentListItemRoot, { 
+            className=${clsx({
                 [cls.locked]: talent.locked,
             }, className)}
             name=${talent.name}

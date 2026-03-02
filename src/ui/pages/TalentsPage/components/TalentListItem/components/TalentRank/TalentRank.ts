@@ -17,7 +17,7 @@ export function TalentRank({
 }: Props) {
     return html`
         <${Tooltip} 
-            className=${clsx(cls.talentRankRoot, className)} 
+            className=${className} 
             left
             title=${`Unlocked at Rank ${talent.unlockedAtRank}`}
         >
