@@ -25,7 +25,7 @@ export function TalentsPageContent({
     onHeroChange,
     onViewChange,
 }: Props) {
-    const [localView, setLocalView] = useState(view);
+    const [localViewState, setLocalViewState] = useState(view);
     const talentsBuilder = useTalentsBuilder({ initialHero: hero });
     const talentsCompendium = useTalentsCompendium({ initialHero: hero });
 
@@ -40,37 +40,37 @@ export function TalentsPageContent({
     // Needed for direct url change (e.g. back and forward browser buttons)
     useEffect(() => {
         reloadViewContents(view, hero);
-        setLocalView(view);
+        setLocalViewState(view);
     }, [hero.code, view]);
 
     const { 
         hero: localHero, 
         rank: localRank
-    } = localView === "builder" ? talentsBuilder : talentsCompendium;
+    } = localViewState === "builder" ? talentsBuilder : talentsCompendium;
 
     return html`
         <${Controls}
             hero=${localHero}
-            view=${localView}
+            view=${localViewState}
             rank=${localRank}
             onHeroChange=${(newHero: Hero) => {
-                reloadViewContents(localView, newHero);
+                reloadViewContents(localViewState, newHero);
                 onHeroChange(newHero);
             }}
             onViewChange=${(newView: TalentsPageView) => {
                 reloadViewContents(newView, localHero);
-                setLocalView(newView);
+                setLocalViewState(newView);
                 onViewChange(newView);
             }}
             onRankChange=${(newRank: number) => {
-                if (localView === "builder") {
+                if (localViewState === "builder") {
                     talentsBuilder.actions.applyRank(newRank);
                 } else {
                     talentsCompendium.actions.applyRank(newRank);
                 }
             }}
         />
-        ${localView === "builder" && html`
+        ${localViewState === "builder" && html`
             <${TalentsBuilder} 
                 classes=${{
                     list: {
@@ -82,7 +82,7 @@ export function TalentsPageContent({
                 talentsBuilder=${talentsBuilder}
             />
         `}
-        ${localView === "compendium" && html`
+        ${localViewState === "compendium" && html`
             <${TalentsCompendium} 
                 classes=${{
                     list: {

@@ -3,16 +3,16 @@ import { BuilderItem } from "../../../hooks/useBuilderStateReducer/types";
 import { SerializedBuilderItem, SerializedBuilderState, StorableBuilderState } from "../types";
 
 export function deserializeBuilderState<T extends BuilderItem>(
-    currentStoredState: SerializedBuilderState | null,
+    storedState: SerializedBuilderState | null,
     allItems: T[],
 ): StorableBuilderState<T> {
-    if (!currentStoredState) {
+    if (!storedState) {
         return { used: [], preferred: [] };
     }
 
     const normalizedState: Partial<SerializedBuilderState> = 
-        typeof currentStoredState === "object"
-            ? currentStoredState || {} // additional check for null
+        typeof storedState === "object"
+            ? storedState || {} // additional check for null
             : {};
 
     const storedUsed = normalizedState.used;
