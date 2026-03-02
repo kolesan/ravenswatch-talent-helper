@@ -28,9 +28,6 @@
     .listLabel {
         position: unset;
     }
-    .listLabelRight {
-        display: none;
-    }
 }
 @media (max-width: 1080px) {
     .root {

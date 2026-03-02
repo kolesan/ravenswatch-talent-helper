@@ -29,7 +29,7 @@ export function TalentsPageContent({
     const talentsBuilder = useTalentsBuilder({ initialHero: hero });
     const talentsCompendium = useTalentsCompendium({ initialHero: hero });
 
-    const reloadViewContents = (view: TalentsPageView, hero: Hero) => {
+    const reloadContents = (view: TalentsPageView, hero: Hero) => {
         if (view === "builder") {
             talentsBuilder.actions.loadHero(hero);
         } else {
@@ -39,7 +39,7 @@ export function TalentsPageContent({
 
     // Needed for direct url change (e.g. back and forward browser buttons)
     useEffect(() => {
-        reloadViewContents(view, hero);
+        reloadContents(view, hero);
         setLocalViewState(view);
     }, [hero.code, view]);
 
@@ -54,11 +54,11 @@ export function TalentsPageContent({
             view=${localViewState}
             rank=${localRank}
             onHeroChange=${(newHero: Hero) => {
-                reloadViewContents(localViewState, newHero);
+                reloadContents(localViewState, newHero);
                 onHeroChange(newHero);
             }}
             onViewChange=${(newView: TalentsPageView) => {
-                reloadViewContents(newView, localHero);
+                reloadContents(newView, localHero);
                 setLocalViewState(newView);
                 onViewChange(newView);
             }}
