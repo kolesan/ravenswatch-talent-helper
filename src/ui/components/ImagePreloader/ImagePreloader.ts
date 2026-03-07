@@ -24,6 +24,16 @@ const cursedObjectPageImages = [
     ...cursedObjects,
 ];
 
+const allImagesNoParticularOrder: string[] = [
+    ...legendaryObjectPageImages,
+    ...cursedObjectPageImages,
+    ...heroes.asArray.flatMap(getTalentImageUrls),
+    imagePathUtils.feather,
+    imagePathUtils.talents.locked,
+    imagePathUtils.talents.frames.common,
+    imagePathUtils.talents.frames.ultimate,
+]
+
 export function ImagePreloader() {
     const images = useMemo(() => {
         return calculateImageUrls(location.pathname);
@@ -31,6 +41,32 @@ export function ImagePreloader() {
 
     console.log(images);
 
+    // ==== let the browser load what is on screen and     ====
+    // ==== then trigger all images with low fetchPriority ====
+    // TODO
+
+
+    // ==== just trigger all images with low fetchPriority ====
+    // ==== hoping browser will fetch what he needs asap ====
+    // seems to work well enough if rendered after the page component
+    // can feel a bit of lag while downloads are triggered though
+    return html`
+        <div 
+            style=${`
+                visibility: hidden; 
+                height: 0; 
+                width: 0; 
+                pointer-events: none; 
+                overflow: hidden;
+            `}
+        >
+            ${allImagesNoParticularOrder.map(it => html`
+                <img src=${it} height=0 width=0 decoding="async" fetchpriority="low" />
+            `)}
+        </div>
+    `;
+
+    // ==== fetchPriority high for high images, low for everything else ====
     return html`
         <div 
             style=${`
@@ -50,7 +86,7 @@ export function ImagePreloader() {
         </div>
     `;
 
-    // ==== promises etc. ====
+    // ==== promises, idleCallback, etc. ====
     const canRenderCache = useBooleanState(false);
     useEffect(() => {
         const startTime = Date.now();

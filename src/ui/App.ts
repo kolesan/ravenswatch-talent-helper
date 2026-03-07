@@ -10,10 +10,10 @@ import { TalentsPage } from "./pages/TalentsPage/TalentsPage";
 
 export function App() {
     return html`
-        <${ImagePreloader} />
         <${RouterProvider}>
             <${Content} />
         </${RouterProvider}>
+        <${ImagePreloader} />
     `;
 }
 
