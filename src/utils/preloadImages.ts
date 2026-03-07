@@ -26,7 +26,7 @@ const images = [
 export async function preloadImages() {
     console.log("Preloading: ", images.length, " images");
     images.forEach(async src => {
-        // console.log("Preloading: ", src);
+        console.log("Preloading: ", src);
         // const img = new Image();
         // img.src = src;
     });

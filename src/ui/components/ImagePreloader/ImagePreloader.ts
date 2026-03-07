@@ -7,6 +7,8 @@ import { cursed } from "../../../scrapedData/mergedItems/cursed";
 import { legendary } from "../../../scrapedData/mergedItems/legendary";
 import { imagePathUtils } from "../../../utils/imagePathUtils";
 import { talentsPageUrlParamsStorage } from "../../pages/TalentsPage/utils/talentsPageUrlParamsStorage/talentsPageUrlParamsStorage";
+import { useBooleanState } from "../../hooks/useBooleanState";
+import { idleCallbackPromise } from "./utils/idleCallbackPromise";
 
 const legendaryObjects = legendary
     .map(it => imagePathUtils.objects.byCode("legendary", it.code));
@@ -26,36 +28,103 @@ export function ImagePreloader() {
     const images = useMemo(() => {
         return calculateImageUrls(location.pathname);
     }, []);
+
     console.log(images);
-    useEffect(() => {
-        images.lowPriorityImages.map(src => {
-            const img = new Image();
-            img.decoding = "async";
-            img.src = src;
-            // img.decode();
-        });
-    }, []);
-    // return null;
+
     return html`
-        <div style="visibility: hidden; height: 0; width: 0; pointer-events: none;">
+        <div 
+            style=${`
+                visibility: hidden; 
+                height: 0; 
+                width: 0; 
+                pointer-events: none; 
+                overflow: hidden;
+            `}
+        >
             ${images.highPriorityImages.map(it => html`
+                <img src=${it} height=0 width=0 decoding="async" fetchpriority="high" />
+            `)}
+            ${images.lowPriorityImages.map(it => html`
+                <img src=${it} height=0 width=0 decoding="async" fetchpriority="low" />
+            `)}
+        </div>
+    `;
+
+    // ==== promises etc. ====
+    const canRenderCache = useBooleanState(false);
+    useEffect(() => {
+        const startTime = Date.now();
+        const highPriorityImageDecodingPromises = images.highPriorityImages
+            .map((src, i) => {
+                return idleCallbackPromise()
+                    .then(() => {
+                        const img = new Image();
+                        img.src = src;
+                        return new Promise<void>(res => setTimeout(() => {
+                            img.decode().then(res);
+                        }, 1600));
+                    });
+                // return new Promise<void>(res => setTimeout(() => {
+                //     const img = new Image();
+                //     img.src = src;
+                //     requestIdleCallback(() => {
+                //         img.decode().then(res);
+                //     });
+                // }, 1*i));
+            });
+        Promise.all(highPriorityImageDecodingPromises).then(() => {
+            console.log(Date.now() - startTime, "ms. High Priority");
+            const lowPriorityImageDecodingPromises = images.lowPriorityImages
+                .map((src, i) => {
+                    return idleCallbackPromise()
+                        .then(() => {
+                            const img = new Image();
+                            img.decoding = "async";
+                            img.src = src;
+                            return img.decode();
+                        });
+
+                    // const img = new Image();
+                    // img.decoding = "async";
+                    // img.src = src;
+                    // return img.decode();
+
+                    // return new Promise<void>(res => setTimeout(() => {
+                    //     const img = new Image();
+                    //     img.src = src;
+                    //     requestIdleCallback(() => {
+                    //         img.decode().then(res);
+                    //     });
+                    // }, 1*i));
+
+                });
+            Promise.all(lowPriorityImageDecodingPromises).then(() => {
+                console.log(Date.now() - startTime, "ms. Low Priority");
+                canRenderCache.on();
+            });
+        })
+    }, []);
+    return html`
+        <div 
+            style=${`
+                visibility: hidden; 
+                height: 0; 
+                width: 0; 
+                pointer-events: none; 
+                overflow: hidden;
+            `}
+        >
+            ${canRenderCache.is && images.allImages.map(it => html`
                 <img src=${it} height=0 width=0 decoding="async" />
             `)}
         </div>
     `;
-    // return html`
-    //     <div style="visibility: hidden; height: 0; width: 0; pointer-events: none;">
-    //         ${images.map(it => html`
-    //             <img src=${it} height=0 width=0 decoding="async" />
-    //         `)}
-    //     </div>
-    // `;
 }
 
 function calculateImageUrls(currentPath: string) {
     const {
         hightPriorityTalentsPageImages,
-        lowPriorityTalentsPageImages
+        lowPriorityTalentsPageImages,
     } = calculateTalentsPageImages(currentPath);
 
     let highPriorityImages: string[] = [];
@@ -73,15 +142,23 @@ function calculateImageUrls(currentPath: string) {
     let lowPriorityImages: string[] = [];
     if (currentPath.includes(pages.cursedObjects.path)) {
         lowPriorityImages.push(...legendaryObjectPageImages);
+        lowPriorityImages.push(...lowPriorityTalentsPageImages);
     } else if (currentPath.includes(pages.legendaryObjects.path)) {
         lowPriorityImages.push(...cursedObjectPageImages);
+        lowPriorityImages.push(...lowPriorityTalentsPageImages);
+    } else if (currentPath.includes(pages.talents.path)) {
+        lowPriorityImages.push(...lowPriorityTalentsPageImages);
+        lowPriorityImages.push(...cursedObjectPageImages);
+        lowPriorityImages.push(...legendaryObjectPageImages);
     }
-
-    lowPriorityImages.push(...lowPriorityTalentsPageImages);
 
     return {
         highPriorityImages,
         lowPriorityImages,
+        allImages: [
+            ...highPriorityImages,
+            ...lowPriorityImages,
+        ]
     };
 }
 
