@@ -55,7 +55,7 @@ export function HeroSelect({
                             [cls.inputImage]: true,
                             [cls[`${value.code}InputImg`]]: true,
                         })}
-                        src=${`/icons/heroes/optimized/${value.code}.webp`}
+                        src=${`/icons/heroes/${value.code}.webp`}
                         height=256
                         width=256
                     />

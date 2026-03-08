@@ -3,7 +3,7 @@ import { useEffect, useState } from "preact/hooks";
 
 const imageModules = import.meta.glob([
     '/public/art/*',
-    '/public/icons/heroes/optimized/**/*',
+    '/public/icons/heroes/*',
     '/public/icons/talents/new/optimized/**/*',
     '/public/icons/talents/locked_talent*',
     '/public/icons/feather*',
