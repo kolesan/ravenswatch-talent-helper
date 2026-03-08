@@ -15,10 +15,10 @@ export const imagePathUtils = {
     },
     objects: {
         byCode(type: string, code: string) {
-            return `${objects}/new/optimized/${type}/${code}.webp`;
+            return `${objects}/${type}/${code}.webp`;
         },
         frame(type: string) {
-            return `${objects}/new/optimized/${type}/frame.webp`;
+            return `${objects}/${type}/frame.webp`;
         }
     },
     feather: `/icons/feather.webp`,

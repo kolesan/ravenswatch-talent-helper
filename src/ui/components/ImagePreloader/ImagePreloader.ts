@@ -7,7 +7,7 @@ const imageModules = import.meta.glob([
     '/public/icons/talents/new/optimized/**/*',
     '/public/icons/talents/locked_talent*',
     '/public/icons/feather*',
-    '/public/icons/objects/new/optimized/**/*',
+    '/public/icons/objects/**/*',
     '!**/*Wiki/*',
 ]);
 
