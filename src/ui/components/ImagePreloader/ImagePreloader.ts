@@ -2,13 +2,13 @@ import { html } from "htm/preact";
 import { useEffect, useState } from "preact/hooks";
 
 const imageModules = import.meta.glob([
+    '/public/art/newResampled/*',
+    '/public/icons/heroes/optimized/**/*',
     '/public/icons/talents/new/optimized/**/*',
-    '!**/*Wiki/*',
     '/public/icons/talents/locked_talent*',
     '/public/icons/feather*',
     '/public/icons/objects/new/optimized/**/*',
-    '/public/icons/heroes/optimized/**/*',
-    '/public/art/newResampled/*',
+    '!**/*Wiki/*',
     '!**/*experiments/*',
 ]);
 
@@ -37,7 +37,7 @@ export function ImagePreloader() {
             const batch = urls.slice(i, i + urlBatchSize);
             setTimeout(() => {
                 setUrlsToRender(urlsToRender => [...urlsToRender, ...batch]);
-            }, 300 + i * 2);
+            }, 200 + i * 2);
         }
     }, []);
 
