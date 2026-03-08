@@ -5,7 +5,7 @@ import { Hero } from "../../../../../../../finalData/finalData";
 import { useBooleanState } from "../../../../../../hooks/useBooleanState";
 import { useOnClickOutside } from "../../../../hooks/useOnClickOutside";
 
-import { HeroImagesDownloadEnforcer } from "./components/HeroImagesDownloadEnforcer";
+import { HeroArtPreloader } from "./components/HeroArtPreloader";
 import { HeroSelectItem } from "./components/HeroSelectItem/HeroSelectItem";
 
 import cls from "./HeroSelect.module.css";
@@ -55,10 +55,11 @@ export function HeroSelect({
                             [cls.inputImage]: true,
                             [cls[`${value.code}InputImg`]]: true,
                         })}
-                        src=${`/icons/heroes/optimized/${value.code}.webp`}
+                        src=${`/icons/heroes/${value.code}.webp`}
                         height=256
                         width=256
                     />
+                    <${HeroArtPreloader} heroCode=${value.code} />
                 </div>
                 <div 
                     class=${clsx({
@@ -83,7 +84,6 @@ export function HeroSelect({
                     `)}
                 </div>
             `}
-            <${HeroImagesDownloadEnforcer} />
         </div>
     `;
 }

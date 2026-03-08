@@ -19,7 +19,7 @@ export function HeroSelectItem({
     return html`
         <div
             class=${clsx(cls.heroSelectItemRoot, className)}
-            style=${`background-image: url("/art/newResampled/${hero.code}.webp");`}
+            style=${`background-image: url("/art/${hero.code}.webp");`}
             key=${hero.code}
             onClick=${() => {
                 onChange(hero);
@@ -28,7 +28,7 @@ export function HeroSelectItem({
             <div class=${cls.itemImageContainer}>
                 <img
                     class=${clsx(cls.itemImage, cls[hero.code])}
-                    src=${`/icons/heroes/optimized/${hero.code}.webp`}
+                    src=${`/icons/heroes/${hero.code}.webp`}
                     height=256
                     width=256
                 />

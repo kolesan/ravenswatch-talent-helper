@@ -1,5 +1,6 @@
 import { html } from "htm/preact";
 
+import { ImagePreloader } from "./components/ImagePreloader/ImagePreloader";
 import { RouterProvider, useRouter } from "./components/RouterProvider/RouterProvider";
 import { Toolbar } from "./components/Toolbar/Toolbar";
 import { CursedObjectsPage } from "./pages/CursedObjectsPage/CursedObjectsPage";
@@ -12,6 +13,7 @@ export function App() {
         <${RouterProvider}>
             <${Content} />
         </${RouterProvider}>
+        <${ImagePreloader} />
     `;
 }
 
