@@ -21,7 +21,7 @@ export function HeroArtPreloader({
                 pointer-events: none;
                 overflow: hidden;
             `}
-            src=${`/art/newResampled/${heroCode}.webp`}
+            src=${`/art/${heroCode}.webp`}
             height=0
             width=0
             decoding="async"

@@ -143,77 +143,77 @@
 */
 /* TODO consider using filter instead of blend mode and background color */
 :global(.scarletBgArt).inputActive, :global(.scarletBgArt).input:active {
-    background-image: url("/art/newResampled/scarlet.webp");
+    background-image: url("/art/scarlet.webp");
 }
 :global(.piperBgArt).inputActive, :global(.piperBgArt).input:active {
-    background-image: url("/art/newResampled/piper.webp");
+    background-image: url("/art/piper.webp");
 }
 :global(.beowulfBgArt).inputActive, :global(.beowulfBgArt).input:active {
-    background-image: url("/art/newResampled/beowulf.webp");
+    background-image: url("/art/beowulf.webp");
 }
 :global(.snowqueenBgArt).inputActive, :global(.snowqueenBgArt).input:active {
-    background-image: url("/art/newResampled/snowqueen.webp");
+    background-image: url("/art/snowqueen.webp");
 }
 :global(.aladdinBgArt).inputActive, :global(.aladdinBgArt).input:active {
-    background-image: url("/art/newResampled/aladdin.webp");
+    background-image: url("/art/aladdin.webp");
 }
 :global(.melusineBgArt).inputActive, :global(.melusineBgArt).input:active {
-    background-image: url("/art/newResampled/melusine.webp");
+    background-image: url("/art/melusine.webp");
 }
 :global(.geppettoBgArt).inputActive, :global(.geppettoBgArt).input:active {
-    background-image: url("/art/newResampled/geppetto.webp");
+    background-image: url("/art/geppetto.webp");
 }
 :global(.wukongBgArt).inputActive, :global(.wukongBgArt).input:active {
-    background-image: url("/art/newResampled/wukong.webp");
+    background-image: url("/art/wukong.webp");
 }
 :global(.carmillaBgArt).inputActive, :global(.carmillaBgArt).input:active {
-    background-image: url("/art/newResampled/carmilla.webp");
+    background-image: url("/art/carmilla.webp");
 }
 :global(.romeoBgArt).inputActive, :global(.romeoBgArt).input:active {
-    background-image: url("/art/newResampled/romeo.webp");
+    background-image: url("/art/romeo.webp");
 }
 :global(.julietBgArt).inputActive, :global(.julietBgArt).input:active {
-    background-image: url("/art/newResampled/juliet.webp");
+    background-image: url("/art/juliet.webp");
 }
 :global(.merlinBgArt).inputActive, :global(.merlinBgArt).input:active {
-    background-image: url("/art/newResampled/merlin.webp");
+    background-image: url("/art/merlin.webp");
 }
 
 @media (hover: hover) and (pointer: fine) {
     :global(.scarletBgArt):hover {
-        background-image: url("/art/newResampled/scarlet.webp");
+        background-image: url("/art/scarlet.webp");
     }
     :global(.piperBgArt):hover {
-        background-image: url("/art/newResampled/piper.webp");
+        background-image: url("/art/piper.webp");
     }
     :global(.beowulfBgArt):hover {
-        background-image: url("/art/newResampled/beowulf.webp");
+        background-image: url("/art/beowulf.webp");
     }
     :global(.snowqueenBgArt):hover {
-        background-image: url("/art/newResampled/snowqueen.webp");
+        background-image: url("/art/snowqueen.webp");
     }
     :global(.aladdinBgArt):hover {
-        background-image: url("/art/newResampled/aladdin.webp");
+        background-image: url("/art/aladdin.webp");
     }
     :global(.melusineBgArt):hover {
-        background-image: url("/art/newResampled/melusine.webp");
+        background-image: url("/art/melusine.webp");
     }
     :global(.geppettoBgArt):hover {
-        background-image: url("/art/newResampled/geppetto.webp");
+        background-image: url("/art/geppetto.webp");
     }
     :global(.wukongBgArt):hover {
-        background-image: url("/art/newResampled/wukong.webp");
+        background-image: url("/art/wukong.webp");
     }
     :global(.carmillaBgArt):hover {
-        background-image: url("/art/newResampled/carmilla.webp");
+        background-image: url("/art/carmilla.webp");
     }
     :global(.romeoBgArt):hover {
-        background-image: url("/art/newResampled/romeo.webp");
+        background-image: url("/art/romeo.webp");
     }
     :global(.julietBgArt):hover {
-        background-image: url("/art/newResampled/juliet.webp");
+        background-image: url("/art/juliet.webp");
     }
     :global(.merlinBgArt):hover {
-        background-image: url("/art/newResampled/merlin.webp");
+        background-image: url("/art/merlin.webp");
     }
 }
