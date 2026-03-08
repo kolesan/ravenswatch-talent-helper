@@ -4,11 +4,9 @@ import { useEffect, useState } from "preact/hooks";
 const imageModules = import.meta.glob([
     '/public/art/*',
     '/public/icons/heroes/*',
-    '/public/icons/talents/new/optimized/**/*',
-    '/public/icons/talents/locked_talent*',
+    '/public/icons/talents/**/*',
     '/public/icons/feather*',
     '/public/icons/objects/**/*',
-    '!**/*Wiki/*',
 ]);
 
 const urls = Object.keys(imageModules).map(it => it.replace("/public", ""));

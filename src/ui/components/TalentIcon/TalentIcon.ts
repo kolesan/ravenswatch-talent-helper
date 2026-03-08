@@ -13,8 +13,8 @@ type Props = {
 }
 
 const lockedTalentSrc = `/icons/talents/locked_talent.webp`;
-const commonFrameSrc = `/icons/talents/new/optimized/talent_frame_common.webp`;
-const ultimateFrameSrc = `/icons/talents/new/optimized/ultimate_frame.webp`;
+const commonFrameSrc = `/icons/talents/talent_frame_common.webp`;
+const ultimateFrameSrc = `/icons/talents/ultimate_frame.webp`;
 
 export function TalentIcon({
     className,
@@ -29,7 +29,7 @@ export function TalentIcon({
         `;
     }
 
-    const talentSrc = `/icons/talents/new/optimized/${heroCode}/${talent.code}.webp`;
+    const talentSrc = `/icons/talents/${heroCode}/${talent.code}.webp`;
     const frameSrc = talent.type === "ultimate" ? ultimateFrameSrc : commonFrameSrc;
 
     return html`

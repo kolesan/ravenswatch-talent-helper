@@ -5,12 +5,12 @@ const objects = `${base}/objects`;
 export const imagePathUtils = {
     talents: {
         frames: {
-            common: `${talents}/new/optimized/talent_frame_common.webp`,
-            ultimate: `${talents}/new/optimized/ultimate_frame.webp`,
+            common: `${talents}/talent_frame_common.webp`,
+            ultimate: `${talents}/ultimate_frame.webp`,
         },
         locked: `${talents}/locked_talent.webp`,
         byCode(heroCode: string, talentCode: string) {
-            return `${talents}/new/optimized/${heroCode}/${talentCode}.webp`;
+            return `${talents}/${heroCode}/${talentCode}.webp`;
         },
     },
     objects: {
