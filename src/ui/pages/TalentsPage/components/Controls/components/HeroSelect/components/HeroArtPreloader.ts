@@ -9,7 +9,8 @@ type Props = {
 /**
  * This component triggers the download of current hero art asap,
  * in order to reduce the time when the user can see flicker 
- * if he hovers over hero select quickly
+ * if he hovers over hero select quickly 
+ * (when it's the first page load and none of the art is in memory yet)
  */
 export function HeroArtPreloader({
     heroCode,
