@@ -10,11 +10,12 @@ const urls = Object.keys(imageModules).map(it => it.replace("/public", ""));
 const urlBatchSize = 20;
 
 /**
- * This component renders a list of img elements with all images from the public folder.
+ * This component renders a list of img elements with all content related images 
+ * from the public folder.
  * 
  * This is done in order for the browser to prefetch all images used in the app
  * and also to keep the images decoded and in memory 
- * when the user switches between pages or heroes, so that there is no more 
+ * when the user switches between pages or heroes, so that there is no 
  * image flicker after the first load.
  * 
  * The images start to render after a delay to give the browser time to trigger
