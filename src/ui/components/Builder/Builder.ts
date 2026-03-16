@@ -3,10 +3,14 @@ import { html } from "htm/preact";
 
 import { useBooleanState } from "../../hooks/useBooleanState";
 import { List } from "../List/List";
+import { Snackbar } from "../Snackbar/Snackbar";
+import { useSnackbar } from "../Snackbar/useSnackbar";
 
 import { PreviousListsItemCounts } from "./components/PreviousListsItemCounts/PreviousListsItemCounts";
 import { BuilderItem } from "./hooks/useBuilderStateReducer/types";
 import { BuilderListItemRenderer, BuilderType } from "./types";
+import { onAction } from "./utils/onAction";
+import { onItemAction } from "./utils/onItemAction";
 
 import cls from "./Builder.module.css";
 
@@ -38,6 +42,7 @@ export function Builder<T extends BuilderItem>({
 }: Props<T>) {
     const usedLabelScrollingAgain = useBooleanState(false);
     const preferredLabelScrollingAgain = useBooleanState(false);
+    const snackbar = useSnackbar();
 
     const usedIsFull = maxUsedItems !== undefined 
         && builder.state.used.length >= maxUsedItems;
@@ -52,12 +57,22 @@ export function Builder<T extends BuilderItem>({
                 items=${builder.state.used} 
                 maxItems=${maxUsedItems}
                 onStickyLabelScrollingAgain=${usedLabelScrollingAgain.set}
-                onClear=${builder.actions.clearUsed}
+                onClear=${onAction({
+                    showMsg: snackbar.show,
+                    action: builder.actions.clearUsed, 
+                    msg: "Used list cleared",
+                })}
                 renderItem=${(item: T, index: number) => {
+                    const removeFromUsed = onItemAction({
+                        showMsg: snackbar.show,
+                        action: builder.actions.removeFromUsed, 
+                        msg: "removed from Used",
+                        item, 
+                    });
                     return renderItem(item, index, {
-                        onClick: () => builder.actions.removeFromUsed(item),
-                        onAltClick: () => builder.actions.removeFromUsed(item),
-                        onHold: () => builder.actions.removeFromUsed(item),
+                        onClick: removeFromUsed,
+                        onAltClick: removeFromUsed,
+                        onHold: removeFromUsed,
                     });
                 }}
             />
@@ -81,14 +96,31 @@ export function Builder<T extends BuilderItem>({
                 items=${builder.state.preferred} 
                 entityName=${entityName}
                 onStickyLabelScrollingAgain=${preferredLabelScrollingAgain.set}
-                onClear=${builder.actions.clearPreferred}
+                onClear=${onAction({
+                    showMsg: snackbar.show,
+                    action: builder.actions.clearPreferred, 
+                    msg: "Preferred list cleared",
+                })}
                 confirmBeforeClear
                 renderItem=${(item: T, index: number) => {
+                    const moveToUsed = onItemAction({
+                        showMsg: snackbar.show,
+                        predicate: () => !usedIsFull,
+                        failedPredicateMsg: "Can't move: Used list is full",
+                        action: builder.actions.preferredToUsed,
+                        msg: "moved to Used",
+                        item,
+                    });
+                    const moveToAvailable = onItemAction({
+                        showMsg: snackbar.show,
+                        action: builder.actions.preferredToAvailable,
+                        msg: "removed from Preferred",
+                        item,
+                    });
                     return renderItem(item, index, {
-                        onClick: () => !usedIsFull
-                            && builder.actions.preferredToUsed(item),
-                        onAltClick: () => builder.actions.preferredToAvailable(item),
-                        onHold: () => builder.actions.preferredToAvailable(item),
+                        onClick: moveToUsed,
+                        onAltClick: moveToAvailable,
+                        onHold: moveToAvailable,
                     });
                 }}
             />
@@ -111,14 +143,32 @@ export function Builder<T extends BuilderItem>({
                 entityName=${entityName}
                 canCountItemUsable=${canCountItemAvailable}
                 renderItem=${(item: T, index: number) => {
+                    const moveToUsed = onItemAction({
+                        showMsg: snackbar.show,
+                        predicate: () => !usedIsFull,
+                        failedPredicateMsg: "Can't move: Used list is full",
+                        action: builder.actions.availableToUsed,
+                        msg: "moved to Used",
+                        item,
+                    });
+                    const moveToPreferred = onItemAction({
+                        showMsg: snackbar.show,
+                        action: builder.actions.availableToPreferred,
+                        msg: "moved to Preferred",
+                        item,
+                    });
                     return renderItem(item, index, {
-                        onClick: () => !usedIsFull 
-                            && builder.actions.availableToUsed(item),
-                        onAltClick: () => builder.actions.availableToPreferred(item),
-                        onHold: () => builder.actions.availableToPreferred(item),
+                        onClick: moveToUsed,
+                        onAltClick: moveToPreferred,
+                        onHold: moveToPreferred,
                     });
                 }}
             />
         </div>
+        <${Snackbar} 
+            open=${snackbar.open}
+            text=${snackbar.text}
+            onClose=${snackbar.hide}
+        />
     `;
 }

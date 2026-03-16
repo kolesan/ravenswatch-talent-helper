@@ -1,0 +1,15 @@
+.snackbarContainerRoot {
+    position: fixed;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    
+    display: none;
+}
+
+@media (max-width: 1080px) {
+    .snackbarContainerRoot {
+        display: unset;
+    }
+}

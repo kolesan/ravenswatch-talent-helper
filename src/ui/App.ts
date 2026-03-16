@@ -2,6 +2,7 @@ import { html } from "htm/preact";
 
 import { ImagePreloader } from "./components/ImagePreloader/ImagePreloader";
 import { RouterProvider, useRouter } from "./components/RouterProvider/RouterProvider";
+import { SnackbarContainer } from "./components/SnackbarContainer/SnackbarContainer";
 import { Toolbar } from "./components/Toolbar/Toolbar";
 import { CursedObjectsPage } from "./pages/CursedObjectsPage/CursedObjectsPage";
 import { HelpPage } from "./pages/HelpPage/HelpPage";
@@ -14,6 +15,7 @@ export function App() {
             <${Content} />
         </${RouterProvider}>
         <${ImagePreloader} />
+        <${SnackbarContainer} />
     `;
 }
 

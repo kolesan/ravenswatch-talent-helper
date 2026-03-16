@@ -18,6 +18,7 @@ export type BuilderStateReducerActionType<T extends BuilderItem> =
     BuilderStateReducerAction<T>["type"];
 
 export type BuilderItem = {
+    name: string;
     code: string;
     preferred?: boolean;
 };

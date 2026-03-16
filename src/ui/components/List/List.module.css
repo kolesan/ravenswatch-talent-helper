@@ -37,6 +37,7 @@
     background-color: #181614;
 
     pointer-events: auto;
+    user-select: none;
 }
 .labelLeft {
 }
