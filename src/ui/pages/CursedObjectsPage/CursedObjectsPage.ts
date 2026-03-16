@@ -26,7 +26,7 @@ export function CursedObjectsPage() {
                 }
             }}
             builder=${builder}
-            entityName=${"objects"}
+            entityName=${"object"}
             listLabelStuckAtPx=${56}
             renderItem=${(
                 item: MagicalObject, 

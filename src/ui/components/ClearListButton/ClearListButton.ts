@@ -26,7 +26,7 @@ export function ClearListButton({
 }: Props) {
     const confirmOpen = useBooleanState(false);
 
-    const renderedEntityName = entityName || "items";
+    const renderedEntityName = `${entityName}s` || "items";
     const renderedListName = listName
         ? html`the <span class=${cls.listName}>${listName}</span>` 
         : html`this`;

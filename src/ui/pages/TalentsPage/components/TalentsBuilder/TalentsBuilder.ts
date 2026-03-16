@@ -37,7 +37,7 @@ export function TalentsBuilder({
                 }
             }}
             builder=${talentsBuilder.builder}
-            entityName=${"talents"}
+            entityName=${"talent"}
             listLabelStuckAtPx=${listLabelStuckAtPx}
             maxUsedItems=${maxUsedTalents}
             canCountItemAvailable=${(talent: TalentWithLockedFlag) => !talent.locked}
