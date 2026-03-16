@@ -34,6 +34,9 @@ export function LegendaryObjectsPage() {
                 actions: BuilderListItemActions,
             ) => html`
                 <${ObjectListItem}
+                    classes=${{
+                        interactive: cls.interactiveListItem,
+                    }}
                     index=${index}
                     object=${item}
                     objectType=${"legendary"}

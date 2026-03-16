@@ -8,7 +8,10 @@ import { ObjectIcon } from "./ObjectIcon/ObjectIcon";
 import { PreferredIcon } from "./PreferredIcon/PreferredIcon";
 
 interface Props {
-    className?: string;
+    classes?: {
+        root?: string;
+        interactive?: string;
+    };
     index: number;
     object: MagicalObject;
     objectType: MagicalObjectType;
@@ -18,7 +21,7 @@ interface Props {
 }
 
 export function ObjectListItem({
-    className,
+    classes,
     index,
     object,
     objectType,
@@ -28,7 +31,10 @@ export function ObjectListItem({
 }: Props) {
     return html`
         <${ListItem}
-            className=${className}
+            classes=${{ 
+                root: classes?.root,
+                interactive: classes?.interactive,
+            }}
             name=${object.name}
             interactive
             tools=${object.preferred && html`

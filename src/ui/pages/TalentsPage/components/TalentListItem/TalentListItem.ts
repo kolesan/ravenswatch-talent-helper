@@ -38,9 +38,11 @@ export function TalentListItem({
 }: Props) {
     return html`
         <${ListItem}
-            className=${clsx({
-                [cls.locked]: talent.locked,
-            }, className)}
+            classes=${{
+                root: clsx({
+                    [cls.locked]: talent.locked,
+                }, className)
+            }}
             name=${talent.name}
             interactive=${interactive}
             tools=${html`

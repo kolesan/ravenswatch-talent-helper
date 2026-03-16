@@ -8,7 +8,10 @@ import { holder } from "../../utils/onHold";
 import cls from "./ListItem.module.css";
 
 interface Props {
-    className?: string;
+    classes?: {
+        root?: string;
+        interactive?: string;
+    };
     name: string;
     interactive?: boolean;
     tools: ComponentChildren;
@@ -20,7 +23,7 @@ interface Props {
 }
 
 export function ListItem({
-    className,
+    classes,
     name,
     interactive,
     tools,
@@ -37,8 +40,9 @@ export function ListItem({
     return html`
         <div 
             class=${clsx(cls.root, {
-                [cls.interactive]: interactive
-            }, className)}
+                [cls.interactive]: interactive,
+                [classes?.interactive || ""]: interactive,
+            }, classes?.root)}
             onClick=${(e: any) => {
                 if (hld.getHolding()) {
                     return;

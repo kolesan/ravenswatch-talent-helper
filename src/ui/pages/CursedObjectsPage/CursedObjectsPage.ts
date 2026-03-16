@@ -34,6 +34,9 @@ export function CursedObjectsPage() {
                 actions: BuilderListItemActions,
             ) => html`
                 <${ObjectListItem}
+                    classes=${{
+                        interactive: cls.interactiveListItem,
+                    }}
                     index=${index}
                     object=${item}
                     objectType=${"cursed"}
