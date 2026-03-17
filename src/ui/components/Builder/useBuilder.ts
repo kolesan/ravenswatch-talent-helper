@@ -54,9 +54,7 @@ export function useBuilder<T extends BuilderItem>({
             },
             removeFromUsed(item: T) {
                 dispatch({
-                    type: item.preferred
-                        ? "used_move_item_to_preferred"
-                        : "used_remove_item",
+                    type: "used_remove_item",
                     item,
                 });
             },

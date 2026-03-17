@@ -7,7 +7,6 @@ import { usedClear } from "./actions/usedClear";
 import { preferredRemoveItem } from "./actions/preferredRemoveItem";
 import { preferredMoveItemToUsed } from "./actions/preferredMoveItemToUsed";
 import { usedRemoveItem } from "./actions/usedRemoveItem";
-import { usedMoveItemToPreferred } from "./actions/usedMoveItemToPreferred";
 import {
     BuilderItem,
     BuilderState,
@@ -47,9 +46,6 @@ export function useBuilderStateReducer<T extends BuilderItem>({
             }
             case "used_remove_item": {
                 return hns(usedRemoveItem(state, action.item));
-            }
-            case "used_move_item_to_preferred": {
-                return hns(usedMoveItemToPreferred(state, action.item));
             }
             case "used_clear": {
                 return hns(usedClear(state));

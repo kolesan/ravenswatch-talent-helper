@@ -6,9 +6,12 @@ export function usedRemoveItem<T extends BuilderItem>(
 ): BuilderState<T> {
     const used = state.used
         .filter(it => it.code !== item.code);
+    const preferred = item.preferred
+        ? [...state.preferred, item]
+        : state.preferred;
 
     return {
-        ...state,
         used,
+        preferred,
     };
 }
