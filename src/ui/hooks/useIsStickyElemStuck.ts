@@ -20,6 +20,21 @@ const defaultParams: Required<Params> = {
 
 const scrollingAgainThreshold = 0.7;
 
+/**
+ * This hook is used for detecting when a sticky component
+ * is in the "stuck" position. Most often to add some styling like
+ * a bottom box shadow.
+ * 
+ * @param params.enabled controls whether the whole logic is operational
+ * @param params.stuckAtPx should be set to where the element is expected to be stuck
+ * @param params.onStartingToScrollAgain triggered when the element hits 
+ * the bottom of it's parent, becomes unstuck and is scrolling up normally again
+ * @param params.doLog controls whether logging info is printed to browser console
+ * 
+ * @returns result.stickyElemRef the ref that needs to be set to the sticky element
+ * ref prop
+ * @returns result.isStuck signifies whether the element is currently in "stuck" position
+ */
 export function useIsStickyElemStuck(params?: Params) {
     const { 
         enabled = defaultParams.enabled,

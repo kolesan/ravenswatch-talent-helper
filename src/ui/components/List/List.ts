@@ -14,9 +14,6 @@ type Props<T> = {
         content?: string;
     };
     label: string;
-    // TODO: consider extracting sticky functionality out of List and into parent
-    // might have issues with there being 3 lists tho and so 3 hook calls
-    // in the parent
     labelStuckAtPx?: number;
     slots?: {
         labelRight?: ComponentChildren;
