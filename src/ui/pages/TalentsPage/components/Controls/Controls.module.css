@@ -1,7 +1,5 @@
 .controlsRoot {
     position: sticky;
-    /* height of the toolbar */
-    top: 56px;
     z-index: 2;
 
     /* has to be forced for better sticky list headers performance */

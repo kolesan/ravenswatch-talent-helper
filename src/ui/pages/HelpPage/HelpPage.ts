@@ -4,6 +4,8 @@ import { html } from "htm/preact";
 import { useIsStickyElemStuck } from "../../hooks/useIsStickyElemStuck";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
+import { rightsStuckAtPx } from "./rightsStuckAtPx";
+
 import cls from "./HelpPage.module.css";
 
 type Props = {
@@ -19,7 +21,7 @@ export function HelpPage({
         stickyElemRef, 
         isStuck: rightsStuck 
     } = useIsStickyElemStuck({
-        stuckAtPx: 56,
+        stuckAtPx: rightsStuckAtPx,
     });
 
     return html`
@@ -28,6 +30,7 @@ export function HelpPage({
                 class=${clsx(cls.rights, {
                     [cls.rightsStuck!]: rightsStuck,
                 })} 
+                style=${`top: ${rightsStuckAtPx}px;`}
                 ref=${stickyElemRef}
             >
                 This is an unofficial, fan-made project.

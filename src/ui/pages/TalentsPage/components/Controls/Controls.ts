@@ -3,6 +3,7 @@ import { html } from "htm/preact";
 
 import { Hero, heroes } from "../../../../../finalData/finalData";
 import { useIsStickyElemStuck } from "../../../../hooks/useIsStickyElemStuck";
+import { controlsStuckAtPx } from "../../consts/controlsStuckAtPx";
 import { TalentsPageView } from "../../talentsPageViews";
 
 import { HeroSelect } from "./components/HeroSelect/HeroSelect";
@@ -32,7 +33,7 @@ export function Controls({
         stickyElemRef,
         isStuck: controlsStuck
     } = useIsStickyElemStuck({
-        stuckAtPx: 56,
+        stuckAtPx: controlsStuckAtPx,
     });
 
     return html`
@@ -40,6 +41,7 @@ export function Controls({
             class=${clsx(cls.controlsRoot, {
                 [cls.controlsStuck!]: controlsStuck
             })}
+            style=${`top: ${controlsStuckAtPx}px;`}
             ref=${stickyElemRef}
         >
             <div class=${cls.nonWrapableControls}>
