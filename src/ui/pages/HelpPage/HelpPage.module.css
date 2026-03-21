@@ -45,6 +45,10 @@
     margin-bottom: 10px;
 }
 
+.textContainer p {
+    margin-top: 10px;
+}
+
 .i {
     color: #ede2b9b1;
 }

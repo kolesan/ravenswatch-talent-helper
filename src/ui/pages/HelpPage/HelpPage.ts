@@ -38,8 +38,8 @@ export function HelpPage({
             </div>
             <div class=${cls.textContainer}>
                 <div>
+                    <h3>About</h3>
                     <p>
-                        <h3>About</h3>
                         This is a fan-made web app intended to help you track what talents 
                         and magical objects are still available during a
                         ${" "}
@@ -59,8 +59,8 @@ export function HelpPage({
                         reroll star or not.
                     </p>
 
+                    <h3>How it works</h3>
                     <p>
-                        <h3>How it works</h3>
                         Pick a hero, set his rank and you get a list of available standard
                         talents. You can then either add talents
                         to a list of Preferred (Favorite) talents or directly to the
@@ -70,8 +70,8 @@ export function HelpPage({
                         The Legendary and Cursed Objects pages work the same way.
                     </p>
 
+                    <h3>Controls</h3>
                     <p>
-                        <h3>Controls</h3>
                         1. <span class=${cls.i}>Click</span> an <span class=${cls.i}>Available</span> list item to move it to <span class=${cls.i}>Used</span>.<br/>
                         <span class=${cls.i}>Alt+Click</span> to mark as <span class=${cls.i}>Preferred</span>.<br/>
                         2. <span class=${cls.i}>Click</span> a <span class=${cls.i}>Preferred</span> list item to move it to <span class=${cls.i}>Used</span>.<br/>
@@ -80,8 +80,8 @@ export function HelpPage({
                         4. <span class=${cls.i}>Holding Click</span> for a while works the same as <span class=${cls.i}>Alt+Click</span> (this is mostly for mobile users).
                     </p>
                     
+                    <h3>Contacts</h3>
                     <p>
-                        <h3>Contacts</h3>
                         If you want to contact the author for any reason, drop an email here:
                         ${" "}
                         <a 
