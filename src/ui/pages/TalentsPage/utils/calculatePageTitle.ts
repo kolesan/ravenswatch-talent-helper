@@ -1,4 +1,4 @@
-import { Hero } from "../../../../data/heroes";
+import { Hero } from "../../../../finalData/finalData";
 import { TalentsPageView, talentsPageViews } from "../talentsPageViews";
 
 export function calculatePageTitle(
