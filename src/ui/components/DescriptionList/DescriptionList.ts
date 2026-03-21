@@ -19,7 +19,6 @@ export function DescriptionList({
     degradations,
 }: Props) {
     const content = descriptionItemsToContent(description);
-    // TODO rethink this structure
     return html`
         <div>
             ${description.map((_, i) => html`
@@ -63,7 +62,6 @@ export function DescriptionList({
     `;
 }
 
-// TODO extract to separate utils or components
 type DescriptionItemContent = ReturnType<typeof descriptionItemsToContent>[number][number];
 type GetTitleParams = {
     content: DescriptionItemContent,
@@ -87,14 +85,12 @@ function getTitle({
 function descriptionItemsToContent(
     description: string[]
 ) {
-    // TODO fix this mutation design
     let improvementIndex = { value: 0 };
     let degradationIndex = { value: 0 };
     return description.map(it => {
         return descriptionItemContent(it, improvementIndex, degradationIndex);
     });
 }
-// TODO remove copy paste
 function improvementText(improvements: string[][] | undefined, index: number) {
     const values = improvements?.map(it => it[index]);
 

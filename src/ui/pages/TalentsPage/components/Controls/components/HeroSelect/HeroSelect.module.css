@@ -132,16 +132,7 @@
     border: 1px solid #52493381;
 }
 
-/* 
-    TODO consider an absolute positioned element (img probably)
-    stretched to look as if it's the background
-    with the hero code in js taken from a variable
-    instead of this
 
-    think about other approaches to solving this
-    e.g. try the "style" attribute in js again
-*/
-/* TODO consider using filter instead of blend mode and background color */
 :global(.scarletBgArt).inputActive, :global(.scarletBgArt).input:active {
     background-image: url("/art/scarlet.webp");
 }
