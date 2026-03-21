@@ -2,9 +2,9 @@ import sharp from "sharp";
 
 import { listDirFilesSyncRecursive } from "../utils/listDirFilesSyncRecursive";
 
-const baseTalentScreenshotsDir = "public\\art\\new";
+const baseDir = "public\\art\\new";
 
-const files = listDirFilesSyncRecursive(baseTalentScreenshotsDir);
+const files = listDirFilesSyncRecursive(baseDir);
 
 files.forEach(file => {
     sharp(file)
@@ -18,6 +18,6 @@ files.forEach(file => {
 
 function outputFilePath(filePath: string) {
     return filePath
-        .replace(baseTalentScreenshotsDir, "public\\art\\newResampled\\")
+        .replace(baseDir, "public\\art\\newResampled\\")
         .replace(".jpg", ".webp");
 }
