@@ -28,7 +28,7 @@ export function Snackbar({
     return createPortal(html`
         <div 
             class=${clsx(cls.snackbarRoot, {
-                [cls.shown]: open,
+                [cls.shown!]: open,
             }, className)}
             onClick=${onClose}
         >

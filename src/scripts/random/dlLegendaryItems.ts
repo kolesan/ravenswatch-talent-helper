@@ -31,6 +31,11 @@ legendaryItemUrls.forEach((it, i) => {
             .then(res => res.arrayBuffer())
             .then(arrayBuffer => {
                 const dirName = "/public/icons/items/new/legendary";
+
+                if (!legendary[i]) {
+                    return;
+                }
+                
                 const fileName = legendary[i].code;
 
                 const filePath = `${dirName}/${fileName}.png`;

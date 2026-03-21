@@ -7,7 +7,10 @@ let i = 0;
 function getNextHeroPage() {
     return {
         promise: new Promise<void>((res) => {
-            scrapeHeroPage(heroes.asArray[i++]);
+            const hero = heroes.asArray[i++];
+            if (hero) {
+                scrapeHeroPage(hero);
+            }
             res();
         }),
         getPromiseAfterThat: i === heroes.asArray.length

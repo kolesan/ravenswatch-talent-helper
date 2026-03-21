@@ -14,6 +14,11 @@ files.forEach(file => {
     console.log(`Optimizing talent icon from '${file}'`);
 
     const heroName = file.replace(`${baseDir}\\`,"").split("\\")[0];
+
+    if (!heroName) {
+        throw new Error("Problem with hero name, can not optimize talent icons: " + file);
+    }
+
     const newDir = `${newBaseDir}\\${heroName}`;
 
     mkdirSync(newDir, { recursive: true });

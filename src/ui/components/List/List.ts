@@ -65,10 +65,8 @@ export function List<T extends WithCode>({
             <div class=${cls.labelHeight}></div>
             <div class=${cls.labelContainer}>
                 <div 
-                    class=${clsx({
-                        [cls.label]: true,
-                        [cls.labelHeight]: true,
-                        [cls.labelStuck]: labelStuck,
+                    class=${clsx(cls.label, cls.labelHeight, {
+                        [cls.labelStuck!]: labelStuck,
                     }, classes?.label)} 
                     style=${labelStuckAtPx && `top: ${labelStuckAtPx}px;`}
                     ref=${stickyElemRef}

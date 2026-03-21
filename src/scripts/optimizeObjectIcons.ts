@@ -14,6 +14,11 @@ files.forEach(file => {
     console.log(`Optimizing object icon from '${file}'`);
 
     const objectType = file.replace(`${baseDir}\\`,"").split("\\")[0];
+
+    if (!objectType) {
+        throw new Error("Problem with object type, can not optimize object icons: " + file);
+    }
+
     const newDir = `${newBaseDir}\\${objectType}`;
 
     mkdirSync(newDir, { recursive: true });

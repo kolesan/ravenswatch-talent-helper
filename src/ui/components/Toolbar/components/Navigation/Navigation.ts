@@ -25,9 +25,8 @@ export function Navigation({
         <div class=${clsx(cls.navigationRoot, className)}>
             ${items.map(it => html`
                 <${Link} 
-                    className=${clsx({
-                        [cls.navigationItem]: true,
-                        [cls.navigationItemActive]: location.includes(it.path),
+                    className=${clsx(cls.navigationItem, {
+                        [cls.navigationItemActive!]: location.includes(it.path),
                     })}
                     href=${it.path}
                 >

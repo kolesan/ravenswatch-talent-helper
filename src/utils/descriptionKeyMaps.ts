@@ -38,7 +38,7 @@ export const descriptionKeyMaps = {
             const tagValues = Object.values(myTagsRest);
             for(let i = 0; i < tagValues.length; i++) {
                 const tagValue = tagValues[i];
-                if (s.includes(tagValue)) {
+                if (tagValue && s.includes(tagValue)) {
                     return tagValue;
                 }
             }

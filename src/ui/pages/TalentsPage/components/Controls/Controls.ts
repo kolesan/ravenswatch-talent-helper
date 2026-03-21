@@ -37,9 +37,8 @@ export function Controls({
 
     return html`
         <div 
-            class=${clsx({
-                [cls.controlsRoot]: true,
-                [cls.controlsStuck]: controlsStuck
+            class=${clsx(cls.controlsRoot, {
+                [cls.controlsStuck!]: controlsStuck
             })}
             ref=${stickyElemRef}
         >

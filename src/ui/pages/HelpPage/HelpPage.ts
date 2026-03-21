@@ -25,9 +25,8 @@ export function HelpPage({
     return html`
         <div class=${clsx(cls.helpPageRoot, className)}>
             <div 
-                class=${clsx({
-                    [cls.rights]: true,
-                    [cls.rightsStuck]: rightsStuck,
+                class=${clsx(cls.rights, {
+                    [cls.rightsStuck!]: rightsStuck,
                 })} 
                 ref=${stickyElemRef}
             >

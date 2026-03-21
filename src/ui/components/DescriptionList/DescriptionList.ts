@@ -26,7 +26,7 @@ export function DescriptionList({
                     key=${i} 
                     class=${cls.descriptionListItem} 
                 >
-                    ${content[i].map(it => {
+                    ${content[i] && content[i].map(it => {
                         if (!it.className) {
                             return it.cleanContent;
                         }

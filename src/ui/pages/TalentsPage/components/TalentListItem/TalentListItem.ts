@@ -40,7 +40,7 @@ export function TalentListItem({
         <${ListItem}
             classes=${{
                 root: clsx({
-                    [cls.locked]: talent.locked,
+                    [cls.locked!]: talent.locked,
                 }, className)
             }}
             name=${talent.name}

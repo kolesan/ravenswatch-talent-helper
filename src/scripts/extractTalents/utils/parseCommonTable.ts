@@ -27,6 +27,10 @@ export function parseCommonTable(row: HTMLTableRowElement) {
         multiplayerOnly
     });
 
+    if (!code || !name || !unlockedAtRank || !description) {
+        throw new Error("Could not parse talent" + row);
+    }
+
     const talent: Talent = {
         code,
         name,

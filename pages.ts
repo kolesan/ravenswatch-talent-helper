@@ -8,8 +8,8 @@ type WithPathConstruction<T = void> = {
 }
 
 type TalentsPageParams = {
-    hero: string;
-    view: string;
+    hero: string | undefined;
+    view: string | undefined;
 }
 const talents: Page & WithPathConstruction<TalentsPageParams> = {
     label: "Talents",

@@ -17,9 +17,8 @@ export function Help({
     const location = useRouter();
     return html`
         <${Link} 
-            className=${clsx({
-                [cls.helpRoot]: true,
-                [cls.helpRootActive]: location.includes(pages.help.path),
+            className=${clsx(cls.helpRoot, {
+                [cls.helpRootActive!]: location.includes(pages.help.path),
             }, className)}
             href=${pages.help.path}
         >

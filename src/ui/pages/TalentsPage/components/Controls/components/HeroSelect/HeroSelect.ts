@@ -38,23 +38,19 @@ export function HeroSelect({
             onClick=${open.toggle}
         >
             <div 
-                class=${clsx({
-                    [cls.input]: true,
-                    [`${value.code}BgArt`]: true, 
-                    [cls.inputActive]: open.is
+                class=${clsx(cls.input, `${value.code}BgArt`, {
+                    [cls.inputActive!]: open.is
                 })}
             >
                 <div 
-                    class=${clsx({
-                        [cls.inputImageContainer]: true,
-                        [cls[`${value.code}InputImgContainer`]]: true,
-                    }, classes?.portraitContainer)}
+                    class=${clsx(
+                        cls.inputImageContainer, 
+                        cls[`${value.code}InputImgContainer`], 
+                        classes?.portraitContainer
+                    )}
                 >
                     <img
-                        class=${clsx({
-                            [cls.inputImage]: true,
-                            [cls[`${value.code}InputImg`]]: true,
-                        })}
+                        class=${clsx(cls.inputImage, cls[`${value.code}InputImg`])}
                         src=${`/icons/heroes/${value.code}.webp`}
                         height=256
                         width=256
@@ -62,10 +58,7 @@ export function HeroSelect({
                     <${HeroArtPreloader} heroCode=${value.code} />
                 </div>
                 <div 
-                    class=${clsx({
-                        [cls.inputText]: true, 
-                        [cls[`${value.code}InputText`]]: true,
-                    })}
+                    class=${clsx(cls.inputText, cls[`${value.code}InputText`])}
                 >
                     ${value.name}
                 </div>

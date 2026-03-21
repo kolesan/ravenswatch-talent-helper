@@ -35,7 +35,7 @@ const allRaw = {
 let heroesFinalArray: Hero[] = [];
 let heroesFinal: Partial<Record<HeroCode, Hero>> = {};
 for (let i = 0; i < heroesRaw.asArray.length; i++) {
-    const heroRaw = heroesRaw.asArray[i];
+    const heroRaw = heroesRaw.asArray[i]!;
 
     const mergedTalents = allRaw[heroRaw.code];
 

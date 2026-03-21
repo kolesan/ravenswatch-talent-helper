@@ -52,6 +52,10 @@ export function useIsStickyElemStuck(params?: Params) {
         }
         new IntersectionObserver(
             ([e]) => {
+                if (!e) {
+                    return;
+                }
+
                 // if less than 100% of an element is 
                 // inside the intersection root (+top margin) we consider the
                 // element stuck, because one pixel has already crossed

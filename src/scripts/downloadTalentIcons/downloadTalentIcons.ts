@@ -16,7 +16,7 @@ const heroesToDownloadIconsFor = [
 
 let i = 0;
 function getNextPromise() {
-    const hero = heroesToDownloadIconsFor[i];
+    const hero = heroesToDownloadIconsFor[i]!;
     console.log(`${i + 1}/${heroesToDownloadIconsFor.length} hero ${hero.name}`);
     i++;
     return {
@@ -47,7 +47,7 @@ function downloadHeroTalentIcons(hero: Hero) {
 
     let i = 0;
     function getNextPromise() {
-        const talent = talents[i];
+        const talent = talents[i]!;
         console.log(`${i + 1}/${talents.length} talent '${talent.name}'`);
         i++;
         return {

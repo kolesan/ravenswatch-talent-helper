@@ -1,5 +1,9 @@
-export function getUnlockedAtRank(cell: HTMLTableCellElement) {
-    const text = cell.textContent.trim();
+export function getUnlockedAtRank(cell: HTMLTableCellElement | undefined) {
+    const text = cell?.textContent.trim();
+
+    if (!text) {
+        return undefined;
+    }
 
     if (
         text.includes("default")

@@ -23,11 +23,10 @@ export function Tooltip({
 }: Props) {
     return html`
         <${element} 
-            class=${clsx({ 
-                [cls.tooltip]: true,
-                [cls.tooltipHidden]: !title,
-                [cls.tooltipLower]: lower,
-                [cls.tooltipLeft]: left,
+            class=${clsx(cls.tooltip, {
+                [cls.tooltipHidden!]: !title,
+                [cls.tooltipLower!]: lower,
+                [cls.tooltipLeft!]: left,
                 [className || ""]: !!className,
             })}
             data-tooltip=${title || undefined}

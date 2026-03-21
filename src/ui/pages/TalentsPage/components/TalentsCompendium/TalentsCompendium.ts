@@ -68,7 +68,7 @@ export function TalentsCompendium({
         return html`
             <${TalentListItem}
                 className=${clsx({
-                    [cls.separatorItem]: talent.type === "final" 
+                    [cls.separatorItem!]: talent.type === "final" 
                         && talent.unlockedAtRank === 1,
                 })}
                 showRank

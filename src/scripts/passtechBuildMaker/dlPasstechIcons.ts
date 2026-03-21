@@ -4,7 +4,7 @@ import { HeroCode, heroes } from "../../data/heroes";
 import { Talent } from "../extractTalents/types";
 
 for (let i = 0; i < heroes.asArray.length; i++) {
-    const hero = heroes.asArray[i];
+    const hero = heroes.asArray[i]!;
 
     const mergedTalents = await getMergedTalents(hero.code);
 
@@ -24,7 +24,7 @@ async function getMergedTalents(
 
 async function downloadIcons(heroCode: HeroCode, talents: Talent[]) {
     for (let i = 0; i < talents.length; i++) {
-        const talent = talents[i];
+        const talent = talents[i]!;
 
         if (!talent.iconUrl) {
             console.log("No icon url for: ", talent.code);

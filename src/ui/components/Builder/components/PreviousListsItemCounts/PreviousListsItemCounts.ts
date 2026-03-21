@@ -25,7 +25,7 @@ export function PreviousListsItemCounts({
     return html`
         <div 
             class=${clsx(cls.listLabelRightRoot, {
-                [cls.visible]: visible,
+                [cls.visible!]: visible,
             }, className)}
         >
             <div>Used: ${used}${renderedMaxUsed}</div>

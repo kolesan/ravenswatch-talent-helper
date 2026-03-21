@@ -27,9 +27,8 @@ export function TalentsViewSwitch({
             <div class=${cls.options}>
                 ${talentsPageViews.map(it => html`
                     <a 
-                        class=${clsx({
-                            [cls.option]: true,
-                            [cls.optionSelected]: it.value === view,
+                        class=${clsx(cls.option, {
+                            [cls.optionSelected!]: it.value === view,
                         })}
                         key=${it.value}
                         href=${it.value}
@@ -50,5 +49,5 @@ export function TalentsViewSwitch({
 function nextOption(current: TalentsPageView): TalentsPageView {
     const currentIndex = talentsPageViews.findIndex(it => it.value === current);
     const nextIndex = (currentIndex + 1) % talentsPageViews.length;
-    return talentsPageViews[nextIndex].value;
+    return talentsPageViews[nextIndex]!.value;
 }

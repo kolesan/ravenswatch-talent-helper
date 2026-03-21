@@ -9,7 +9,7 @@ import { Talent, TalentType } from "../extractTalents/types";
 import { ParsedPasstechTalent, PasstechTalent } from "./types";
 
 for (let i = 0; i < heroes.asArray.length; i++) {
-    const hero = heroes.asArray[i];
+    const hero = heroes.asArray[i]!;
 
     const parsedPasstechTalents = await parsePasstechTalents(hero.code);
     const myTalents = await getMyTalents(hero.code);
@@ -116,7 +116,7 @@ function parseType(tier: number) {
         2: "ultimate",
         3: "final",
     }
-    return map[tier];
+    return map[tier] || "unknown_talent_type";
 }
 
 function parseDescriptions(descriptions: string[]) {
@@ -124,7 +124,9 @@ function parseDescriptions(descriptions: string[]) {
     const improvements = parsedDescriptions.map(parseDescriptionTags(improvementTag()));
     const degradations = parsedDescriptions.map(parseDescriptionTags(degradationTag()));
     return {
-        description: parseDescription(descriptions[0]),
+        description: descriptions[0]
+            ? parseDescription(descriptions[0])
+            : [],
         improvements,
         degradations,
     }

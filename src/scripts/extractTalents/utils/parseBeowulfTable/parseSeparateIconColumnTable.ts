@@ -19,6 +19,10 @@ export function parseSeparateIconColumnTable(row: HTMLTableRowElement) {
     const description = getDescription(cells[4]);
     const changePerLevel = getChangePerLevel(cells[5]);
 
+    if (!code || !name || !unlockedAtRank || !description) {
+        throw new Error("Could not parse talent" + row);
+    }
+
     const talent: Talent = {
         code,
         name,

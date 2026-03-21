@@ -31,6 +31,11 @@ itemUrls.forEach((it, i) => {
             .then(res => res.arrayBuffer())
             .then(arrayBuffer => {
                 const dirName = "public/icons/items/new/cursed";
+                
+                if (!cursed[i]) {
+                    return;
+                }
+
                 const fileName = cursed[i].code;
 
                 const filePath = `${dirName}/${fileName}.png`;

@@ -40,7 +40,7 @@ export function ListItem({
     return html`
         <div 
             class=${clsx(cls.root, {
-                [cls.interactive]: interactive,
+                [cls.interactive!]: interactive,
                 [classes?.interactive || ""]: interactive,
             }, classes?.root)}
             onClick=${(e: any) => {

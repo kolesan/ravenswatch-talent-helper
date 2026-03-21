@@ -49,14 +49,16 @@ function parseType(tier: number) {
         2: "ultimate",
         3: "final",
     }
-    return map[tier];
+    return map[tier] || "unknown_talent_type";
 }
 
 function parseDescriptions(descriptions: string[]) {
     const parsedDescriptions = descriptions.map(parseDescription);
     const improvements = parsedDescriptions.map(parseImprovements);
     return {
-        description: parseDescription(descriptions[0]),
+        description: descriptions[0] 
+            ? parseDescription(descriptions[0]) 
+            : [],
         improvements,
     }
 }
@@ -763,5 +765,5 @@ function getMerlinTalentsMine() {
                 ""
             ]
         }
-    ];
+    ] as const;
 }

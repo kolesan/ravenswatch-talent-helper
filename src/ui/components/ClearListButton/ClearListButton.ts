@@ -34,7 +34,7 @@ export function ClearListButton({
     return html`
         <div 
             class=${clsx(cls.clearListButtonRoot, {
-                [cls.clearListButtonDisabled]: disabled 
+                [cls.clearListButtonDisabled!]: disabled 
             }, className)}
             onClick=${() => {
                 if (disabled) {

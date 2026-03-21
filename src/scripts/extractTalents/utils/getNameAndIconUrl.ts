@@ -1,8 +1,8 @@
-export function getNameAndIconUrl(cell: HTMLTableCellElement) {
-    const rawName = cell.textContent.trim();
-    const multiplayerOnly = rawName.endsWith("*") ;
-    const name = rawName.replaceAll("*", "");
-    const iconUrl = cell.querySelector("a")?.getAttribute("href") || null;
+export function getNameAndIconUrl(cell: HTMLTableCellElement | undefined) {
+    const rawName = cell?.textContent.trim();
+    const multiplayerOnly = rawName?.endsWith("*");
+    const name = rawName?.replaceAll("*", "");
+    const iconUrl = cell?.querySelector("a")?.getAttribute("href") || null;
     return {
         name,
         iconUrl,

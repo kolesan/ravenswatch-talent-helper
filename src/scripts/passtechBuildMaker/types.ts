@@ -23,6 +23,6 @@ export type PasstechItem = {
 export type ParsedPasstechItem = {
     name: string;
     code: string;
-    type: "legendary" | "cursed";
+    type: "legendary" | "cursed" | undefined;
     description: string[];
 };
