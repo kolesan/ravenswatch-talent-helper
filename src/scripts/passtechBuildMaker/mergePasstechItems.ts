@@ -1,7 +1,7 @@
 import { writeFile } from "fs/promises";
 
-import { cursed } from "../../scrapedData/items/cursed";
-import { legendary } from "../../scrapedData/items/legendary";
+import { cursed } from "../../data/items/cursed";
+import { legendary } from "../../data/items/legendary";
 import { MagicalObject } from "../../types";
 import { descriptionKeyMaps } from "../../utils/descriptionKeyMaps";
 
