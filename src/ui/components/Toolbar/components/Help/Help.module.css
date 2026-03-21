@@ -17,8 +17,10 @@
     text-decoration: none;
 }
 
-.helpRoot:hover {
-    background-color: #aa8787;
+@media (hover: hover) and (pointer: fine) {
+    .helpRoot:hover {
+        background-color: #aa8787;
+    }
 }
 
 .helpRootActive {
