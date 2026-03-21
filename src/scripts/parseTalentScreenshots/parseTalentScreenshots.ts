@@ -2,6 +2,10 @@ import sharp from "sharp";
 
 import { listDirFilesSyncRecursive } from "../utils/listDirFilesSyncRecursive";
 
+// Screenshots were Deprecated (and moved to image_archive) in favor of images 
+// downloaded from original buildmaker site. 
+// Leaving this script and path here just in case might find
+// it useful later e.g. for examples of working with images
 const baseTalentScreenshotsDir = "src\\data\\screenshots\\talents";
 
 const files = listDirFilesSyncRecursive(baseTalentScreenshotsDir);

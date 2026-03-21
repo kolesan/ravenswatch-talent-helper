@@ -19,8 +19,6 @@
     "extractTalents": "tsx src/scripts/extractTalents/extractTalents.ts",
     "extractTalentsWatch": "tsx watch src/scripts/extractTalents/extractTalents.ts",
     "downloadTalentIcons": "tsx src/scripts/downloadTalentIcons/downloadTalentIcons.ts",
-    "parseTalentScreenshots": "tsx src/scripts/parseTalentScreenshots/parseTalentScreenshots.ts",
-    "parseItemScreenshots": "tsx src/scripts/parseItemScreenshots/parseItemScreenshots.ts",
     "random": "tsx src/scripts/optimizeObjectIcons.ts",
     "randomWatch": "tsx watch src/scripts/random/randomWatch.ts"
   },

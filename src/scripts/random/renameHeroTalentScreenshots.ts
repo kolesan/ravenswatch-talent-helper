@@ -8,6 +8,10 @@ const hero = heroes.all.melusine;
 const heroCode = hero.code;
 const importName = `${heroCode}Order`;
 
+// Screenshots were Deprecated (and moved to image_archive) in favor of images 
+// downloaded from original buildmaker site. 
+// Leaving this script and path here just in case might find
+// it useful later e.g. for examples of working with images
 const screenshots = listDirFilesSyncRecursive(
     `src\\data\\screenshots\\talents\\${heroCode}`
 );
