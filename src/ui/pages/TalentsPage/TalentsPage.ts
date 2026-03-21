@@ -6,7 +6,7 @@ import { Spinner } from "../../components/Spinner/Spinner";
 import { hst } from "../../core/hst";
 import { usePageTitle } from "../../hooks/usePageTitle";
 
-import { useHandleTalentsPageUrl } from "./hooks/useHandleTalentsPageUrl";
+import { useHandleTalentsPageUrlChange } from "./hooks/useHandleTalentsPageUrlChange";
 import { useTalentsPageUrlParams } from "./hooks/useTalentsPageUrlParams";
 import { TalentsPageContent } from "./TalentsPageContent";
 import { TalentsPageView } from "./talentsPageViews";
@@ -20,7 +20,7 @@ export function TalentsPage() {
 
     usePageTitle(calculatePageTitle(urlHero, urlView));
 
-    useHandleTalentsPageUrl(urlHero, urlView);
+    useHandleTalentsPageUrlChange(urlHero, urlView);
 
     if (!urlHero || !urlView) {
         return html`<${Spinner} />`;
