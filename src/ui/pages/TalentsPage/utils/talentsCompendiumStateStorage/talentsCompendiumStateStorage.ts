@@ -1,4 +1,4 @@
-import { HeroCode } from "../../../../uiData/heroes";
+import { HeroCode } from "../../../../uiData/types";
 
 import { baseTalentsCompendiumStateStorage } from "./baseTalentsCompendiumStateStorage";
 import { deserializeTalentsCompendiumState } from "./deserializeTalentsCompendiumState/deserializeTalentsCompendiumState";

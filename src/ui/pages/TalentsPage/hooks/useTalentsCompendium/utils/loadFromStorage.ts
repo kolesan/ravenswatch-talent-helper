@@ -1,4 +1,4 @@
-import { Hero } from "../../../../../uiData/heroes";
+import { Hero } from "../../../../../uiData/types";
 import { talentsCompendiumStateStorage } from "../../../utils/talentsCompendiumStateStorage/talentsCompendiumStateStorage";
 
 export function loadFromStorage(hero: Hero) {

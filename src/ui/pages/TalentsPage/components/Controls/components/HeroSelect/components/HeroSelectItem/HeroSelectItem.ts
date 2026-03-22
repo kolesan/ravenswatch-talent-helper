@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { Hero } from "../../../../../../../../uiData/heroes";
+import { Hero } from "../../../../../../../../uiData/types";
 
 import cls from "./HeroSelectItem.module.css";
 

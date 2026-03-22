@@ -1,4 +1,4 @@
-import { Hero } from "../../../../uiData/heroes";
+import { Hero } from "../../../../uiData/types";
 import { Talent } from "../../../../../scripts/extractTalents/types";
 import { BuilderType } from "../../../../components/Builder/types";
 
