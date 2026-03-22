@@ -1,4 +1,4 @@
-import { Hero } from "../../../../../ui_data/heroes";
+import { Hero } from "../../../../../uiData/heroes";
 import { talentsBuilderStateStorage } from "../../../utils/talentsBuilderStateStorage/talentsBuilderStateStorage";
 import { StorableTalentsBuilderHeroState } from "../../../utils/talentsBuilderStateStorage/types";
 

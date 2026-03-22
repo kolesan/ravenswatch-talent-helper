@@ -1,7 +1,7 @@
 import { html } from "htm/preact";
 import { useEffect, useState } from "preact/hooks";
 
-import { Hero } from "../../ui_data/heroes";
+import { Hero } from "../../uiData/heroes";
 
 import { Controls } from "./components/Controls/Controls";
 import { TalentsBuilder } from "./components/TalentsBuilder/TalentsBuilder";

@@ -1,4 +1,4 @@
-import { Hero } from "../../../../../ui_data/heroes";
+import { Hero } from "../../../../../uiData/heroes";
 import { talentsCompendiumStateStorage } from "../../../utils/talentsCompendiumStateStorage/talentsCompendiumStateStorage";
 import { StorableTalentsCompendiumHeroState } from "../../../utils/talentsCompendiumStateStorage/types";
 
