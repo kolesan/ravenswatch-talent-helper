@@ -1,4 +1,4 @@
-import { heroes } from "../../data/heroes";
+import { heroesBase } from "../../data/heroesBase";
 import { runPromiseChain } from "../utils/runPromiseChain";
 
 import { scrapeHeroPage } from "./utils/scrapeHeroPage";
@@ -7,13 +7,13 @@ let i = 0;
 function getNextHeroPage() {
     return {
         promise: new Promise<void>((res) => {
-            const hero = heroes.asArray[i++];
+            const hero = heroesBase.asArray[i++];
             if (hero) {
                 scrapeHeroPage(hero);
             }
             res();
         }),
-        getPromiseAfterThat: i === heroes.asArray.length
+        getPromiseAfterThat: i === heroesBase.asArray.length
             ? undefined
             : getNextHeroPage,
     }

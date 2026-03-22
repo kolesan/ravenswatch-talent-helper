@@ -1,7 +1,7 @@
-import { heroes } from "../../data/heroes";
+import { heroesBase } from "../../data/heroesBase";
 
 import { extractHeroTalentsToFile } from "./utils/extractHeroTalentsToFile";
 
-heroes.asArray.forEach(extractHeroTalentsToFile);
+heroesBase.asArray.forEach(extractHeroTalentsToFile);
 
 // extractHeroTalentsToFile(heroes.all.juliet);

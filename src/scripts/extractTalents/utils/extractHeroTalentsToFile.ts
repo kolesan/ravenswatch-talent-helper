@@ -2,16 +2,16 @@ import { readFileSync } from "fs";
 import { writeFile } from "fs/promises";
 import { JSDOM } from "jsdom";
 
-import { Hero } from "../../../data/heroes";
+import { HeroBase } from "../../../data/heroesBase";
 import { heroTalentsFileName } from "../../utils/heroTalentsFileName";
 import { heroTalentTableFileName } from "../../utils/heroTalentTableFileName";
 
 import { applyIngameOrder } from "./applyIngameOrder/applyIngameOrder";
 import { applyManualFixes } from "./applyIngameOrder/applyManualFixes/applyManualFixes";
-import { chooseParseer } from "./chooseParseer";
+import { chooseParser } from "./chooseParser";
 import { fixApostrophes } from "./fixApostrophes";
 
-export function extractHeroTalentsToFile(hero: Hero) {
+export function extractHeroTalentsToFile(hero: HeroBase) {
     const fileName = heroTalentTableFileName(hero);
     const fileText = readFileSync(fileName, 'utf-8');
     const fileDom = new JSDOM(fileText);
@@ -29,7 +29,7 @@ export function extractHeroTalentsToFile(hero: Hero) {
     const rowsToParse = rows;
 
     const talents = rowsToParse
-        .map(chooseParseer(hero))
+        .map(chooseParser(hero))
         .map(fixApostrophes)
         .map(applyManualFixes(hero))
         .reduce(applyIngameOrder(hero), []);

@@ -1,4 +1,4 @@
-import { Hero } from "../../../../data/heroes";
+import { HeroBase } from "../../../../data/heroesBase";
 import { Talent } from "../../types";
 
 import { aladdinOrder } from "./consts/aladdinOrder";
@@ -13,7 +13,7 @@ import { scarletOrder } from "./consts/scarletOrder";
 import { snowqueenOrder } from "./consts/snowqueenOrder";
 import { wukongOrder } from "./consts/wukongOrder";
 
-const orderMap: Partial<Record<Hero["code"], string[]>> = {
+const orderMap: Partial<Record<HeroBase["code"], string[]>> = {
     scarlet: scarletOrder,
     piper: piperOrder,
     beowulf: beowulfOrder,
@@ -27,7 +27,7 @@ const orderMap: Partial<Record<Hero["code"], string[]>> = {
     juliet: julietOrder,
 }
 
-export function applyIngameOrder(hero: Hero) {
+export function applyIngameOrder(hero: HeroBase) {
     const order = orderMap[hero.code];
     
     if (!order) {

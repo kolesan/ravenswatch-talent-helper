@@ -1,11 +1,11 @@
 import { writeFile } from "fs/promises";
 
-import { Hero } from "../../../data/heroes";
+import { HeroBase } from "../../../data/heroesBase";
 import { heroPageFileName } from "../../utils/heroPageFileName";
 
 import { fetchPage } from "./fetchPage";
 
-export function scrapeHeroPage(hero: Hero) {
+export function scrapeHeroPage(hero: HeroBase) {
     console.log(`Scraping '${hero.name}' from '${hero.wikiUrl}'`);
     return fetchPage(hero.wikiUrl)
         .then(pageText => {

@@ -1,14 +1,14 @@
-import { Hero, HeroCode } from "../../../data/heroes";
+import { HeroBase, HeroBaseCode } from "../../../data/heroesBase";
 
 import { parseSeparateIconColumnTable } from "./parseBeowulfTable/parseSeparateIconColumnTable";
 import { parseCommonTable } from "./parseCommonTable";
 
-const heroesWithSeparateIconColumnTables: HeroCode[] = [
+const heroesWithSeparateIconColumnTables: HeroBaseCode[] = [
     "beowulf",
     "snowqueen",
 ]
 
-export function chooseParseer(hero: Hero) {
+export function chooseParser(hero: HeroBase) {
     if (heroesWithSeparateIconColumnTables.includes(hero.code)) {
         return parseSeparateIconColumnTable;
     }

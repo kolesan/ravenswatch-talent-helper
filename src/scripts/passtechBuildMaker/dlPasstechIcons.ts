@@ -1,10 +1,10 @@
 import { mkdir, writeFile } from "node:fs/promises";
 
-import { HeroCode, heroes } from "../../data/heroes";
+import { HeroBaseCode, heroesBase } from "../../data/heroesBase";
 import { Talent } from "../extractTalents/types";
 
-for (let i = 0; i < heroes.asArray.length; i++) {
-    const hero = heroes.asArray[i]!;
+for (let i = 0; i < heroesBase.asArray.length; i++) {
+    const hero = heroesBase.asArray[i]!;
 
     const mergedTalents = await getMergedTalents(hero.code);
 
@@ -15,14 +15,14 @@ for (let i = 0; i < heroes.asArray.length; i++) {
 }
 
 async function getMergedTalents(
-    heroCode: HeroCode
+    heroCode: HeroBaseCode
 ): Promise<Talent[]> {
     const mergedTalentsFile = await import(`../../scrapedData/mergedTalents/${heroCode}`);
     // console.log(mergedTalentsFile[heroCode]);
     return mergedTalentsFile[heroCode];
 }
 
-async function downloadIcons(heroCode: HeroCode, talents: Talent[]) {
+async function downloadIcons(heroCode: HeroBaseCode, talents: Talent[]) {
     for (let i = 0; i < talents.length; i++) {
         const talent = talents[i]!;
 

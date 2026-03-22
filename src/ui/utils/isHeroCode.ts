@@ -1,5 +1,5 @@
-import { HeroCode, heroCodes } from "../../data/heroes";
+import { HeroCode, heroes } from "../../finalData/finalData";
 
 export function isHeroCode(v: unknown): v is HeroCode {
-    return !!heroCodes.find(it => it === v);
+    return !!heroes.asArray.find(it => it.code === v);
 }

@@ -1,13 +1,13 @@
-import { Hero, HeroCode } from "../../../../../data/heroes";
+import { HeroBase, HeroBaseCode } from "../../../../../data/heroesBase";
 import { Talent } from "../../../types";
 
 type TalentTransformCb = (talent: Talent) => Talent;
 
-export function applyManualFixes(hero: Hero) {
+export function applyManualFixes(hero: HeroBase) {
     return map[hero.code] || noop;
 }
 
-const map: Partial<Record<HeroCode, TalentTransformCb>> = {
+const map: Partial<Record<HeroBaseCode, TalentTransformCb>> = {
     beowulf,
 }
 

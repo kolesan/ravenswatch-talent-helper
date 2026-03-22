@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { html } from "htm/preact";
 
-import { HeroCode } from "../../../../../data/heroes";
+import { HeroCode } from "../../../../../finalData/finalData";
 import { ListItem } from "../../../../components/ListItem/ListItem";
 import { PreferredIcon } from "../../../../components/PreferredIcon/PreferredIcon";
 import { TalentDescription } from "../../../../components/TalentDescription/TalentDescription";

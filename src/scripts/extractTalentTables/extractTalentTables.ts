@@ -2,11 +2,11 @@ import { readFileSync } from "fs";
 import { writeFile } from "fs/promises";
 import { JSDOM } from "jsdom";
 
-import { heroes } from "../../data/heroes";
+import { heroesBase } from "../../data/heroesBase";
 import { heroPageFileName } from "../utils/heroPageFileName";
 import { heroTalentTableFileName } from "../utils/heroTalentTableFileName";
 
-heroes.asArray.forEach(hero => {
+heroesBase.asArray.forEach(hero => {
     const fileName = heroPageFileName(hero);
     const fileText = readFileSync(fileName, 'utf-8');
     const fileDom = new JSDOM(fileText);

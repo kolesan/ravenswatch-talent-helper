@@ -1,12 +1,12 @@
-import { Hero, heroes } from "../../data/heroes";
+import { HeroBase, heroesBase } from "../../data/heroesBase";
 
 import { Talent } from "../extractTalents/types";
 
 [
-    heroes.all.melusine,
+    heroesBase.all.melusine,
 ].forEach(printTalentCodes);
 
-function printTalentCodes(hero: Hero) {
+function printTalentCodes(hero: HeroBase) {
     import(`../../scrapedData/heroTalents/${hero.code}.json`)
         .then(module => {
             console.log("=============================");

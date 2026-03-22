@@ -1,15 +1,15 @@
 
 import { writeFile } from "fs/promises";
 
-import { Hero, HeroCode, heroes } from "../../data/heroes";
+import { HeroBase, HeroBaseCode, heroesBase } from "../../data/heroesBase";
 import { isTruthy } from "../../ui/utils/isTruthy";
 import { descriptionKeyMaps } from "../../utils/descriptionKeyMaps";
 import { Talent, TalentType } from "../extractTalents/types";
 
 import { ParsedPasstechTalent, PasstechTalent } from "./types";
 
-for (let i = 0; i < heroes.asArray.length; i++) {
-    const hero = heroes.asArray[i]!;
+for (let i = 0; i < heroesBase.asArray.length; i++) {
+    const hero = heroesBase.asArray[i]!;
 
     const parsedPasstechTalents = await parsePasstechTalents(hero.code);
     const myTalents = await getMyTalents(hero.code);
@@ -22,7 +22,7 @@ for (let i = 0; i < heroes.asArray.length; i++) {
     await writeTalentsToFile(hero, mergedTalents);
 }
 
-function writeTalentsToFile(hero: Hero, mergedTalents: Talent[]) {
+function writeTalentsToFile(hero: HeroBase, mergedTalents: Talent[]) {
     const talentsJson = JSON.stringify(mergedTalents, null, "    ");
 
     const content = `import { Talent } from "../../scripts/extractTalents/types";
@@ -40,7 +40,7 @@ export const ${hero.code}: Talent[] = ${talentsJson};`;
 }
 
 async function parsePasstechTalents(
-    heroCode: HeroCode
+    heroCode: HeroBaseCode
 ): Promise<ParsedPasstechTalent[]> {
     const passtechTalentsFile = await import(`./passtechData/${heroCode}`);
     const talents = passtechTalentsFile[heroCode]();
@@ -48,7 +48,7 @@ async function parsePasstechTalents(
 }
 
 async function getMyTalents(
-    heroCode: HeroCode
+    heroCode: HeroBaseCode
 ): Promise<Talent[]> {
     const myTalentsFile = await import(`../../scrapedData/heroTalents/${heroCode}`);
     // console.log(myTalentsFile.default);

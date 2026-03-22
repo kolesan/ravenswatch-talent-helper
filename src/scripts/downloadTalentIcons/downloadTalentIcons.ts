@@ -1,6 +1,6 @@
 import { readFileSync } from "fs";
 
-import { Hero, heroes } from "../../data/heroes";
+import { HeroBase, heroesBase } from "../../data/heroesBase";
 import { Talent } from "../extractTalents/types";
 import { heroTalentsFileName } from "../utils/heroTalentsFileName";
 import { runPromiseChain } from "../utils/runPromiseChain";
@@ -8,8 +8,8 @@ import { runPromiseChain } from "../utils/runPromiseChain";
 import { fetchAndSaveIcon } from "./utils/fetchAndSaveIcon";
 
 const heroesToDownloadIconsFor = [
-    heroes.all.romeo,
-    heroes.all.juliet
+    heroesBase.all.romeo,
+    heroesBase.all.juliet
 ]
 
 // ============================================================
@@ -39,7 +39,7 @@ runPromiseChain({
 
 // ============================================================
 
-function downloadHeroTalentIcons(hero: Hero) {
+function downloadHeroTalentIcons(hero: HeroBase) {
     const fileName = heroTalentsFileName(hero);
     const fileText = readFileSync(fileName, 'utf-8');
 

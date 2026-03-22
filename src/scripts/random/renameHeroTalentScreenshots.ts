@@ -1,9 +1,9 @@
 import { renameSync } from "fs";
 
-import { heroes } from "../../data/heroes";
+import { heroesBase } from "../../data/heroesBase";
 import { listDirFilesSyncRecursive } from "../utils/listDirFilesSyncRecursive";
 
-const hero = heroes.all.melusine;
+const hero = heroesBase.all.melusine;
 
 const heroCode = hero.code;
 const importName = `${heroCode}Order`;
