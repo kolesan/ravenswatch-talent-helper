@@ -1,9 +1,9 @@
-import { Hero, heroes } from "../../../ui/ui_data/heroes";
-import { LocalStorage } from "../../../ui/core/LocalStorage";
-import { storageKey as newCursedObjectsKey } from "../../../ui/pages/CursedObjectsPage/hooks/useCursedObjectsBuilder";
-import { storageKey as newLegendaryObjectsKey } from "../../../ui/pages/LegendaryObjectsPage/hooks/useLegendaryObjectsBuilder";
-import { baseTalentsBuilderStateStorage } from "../../../ui/pages/TalentsPage/utils/talentsBuilderStateStorage/baseTalentsBuilderStateStorage";
-import { baseTalentsPageUrlParamsStorage } from "../../../ui/pages/TalentsPage/utils/talentsPageUrlParamsStorage/baseTalentsPageUrlParamsStorage";
+import { LocalStorage } from "../../../core/LocalStorage";
+import { storageKey as newCursedObjectsKey } from "../../../pages/CursedObjectsPage/hooks/useCursedObjectsBuilder";
+import { storageKey as newLegendaryObjectsKey } from "../../../pages/LegendaryObjectsPage/hooks/useLegendaryObjectsBuilder";
+import { baseTalentsBuilderStateStorage } from "../../../pages/TalentsPage/utils/talentsBuilderStateStorage/baseTalentsBuilderStateStorage";
+import { baseTalentsPageUrlParamsStorage } from "../../../pages/TalentsPage/utils/talentsPageUrlParamsStorage/baseTalentsPageUrlParamsStorage";
+import { Hero, heroes } from "../../../ui_data/heroes";
 
 const oldTalentsKey = "ravenswatch-run-helper_state";
 const oldLegendaryObjectsKey = "ravenswatch-run-helper_legendary-objects-page_state";

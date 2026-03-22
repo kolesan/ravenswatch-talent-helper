@@ -2,7 +2,7 @@ import { html } from "htm/preact";
 import { render } from "preact";
 
 import { App } from "./src/ui/App";
-import { migrateLocalStorage } from "./src/utils/migrateLocalStorage/migrateLocalStorage";
+import { migrateLocalStorage } from "./src/ui/migration/migrateLocalStorage/migrateLocalStorage";
 
 migrateLocalStorage("v1");
 
