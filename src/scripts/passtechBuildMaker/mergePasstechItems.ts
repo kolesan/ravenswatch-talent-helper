@@ -1,28 +1,18 @@
 import { writeFile } from "fs/promises";
 
-import { cursed } from "../../data/items/cursed";
-import { legendary } from "../../data/items/legendary";
 import { MagicalObject, MagicalObjectType } from "../../types";
 import { descriptionKeyMaps } from "../../utils/descriptionKeyMaps";
 
 import { ParsedPasstechItem, PasstechItem } from "./types";
 
-const {
-    legendary: passtechLegendary,
-    cursed: passtechCursed,
-} = await parsePasstechItems();
 
-const mergedLegendaryItems = mergePasstechAndMyItems(
-    passtechLegendary, 
-    legendary
-);
-const mergedCursedItems = mergePasstechAndMyItems(
-    passtechCursed, 
-    cursed
-);
+const passtechItems = await parsePasstechItems();
 
-await writeItemsToFile("legendary", mergedLegendaryItems);
-await writeItemsToFile("cursed", mergedCursedItems);
+const legendaryObjects = passtechItems.legendary.map(passtechItemToMagicalObject);
+const cursedObjects = passtechItems.cursed.map(passtechItemToMagicalObject);
+
+await writeItemsToFile("legendary", legendaryObjects);
+await writeItemsToFile("cursed", cursedObjects);
 
 
 function writeItemsToFile(type: MagicalObjectType, mergedItems: MagicalObject[]) {
@@ -42,6 +32,16 @@ export const ${type}: MagicalObject[] = ${itemsJson};`;
         ));
 }
 
+
+function passtechItemToMagicalObject(passtech: ParsedPasstechItem): MagicalObject {
+    return {
+        code: passtech.code,
+        name: passtech.name,
+        description: passtech.description,
+    };
+}
+
+
 async function parsePasstechItems(): Promise<{
     legendary: ParsedPasstechItem[];
     cursed: ParsedPasstechItem[];
@@ -52,25 +52,6 @@ async function parsePasstechItems(): Promise<{
     return {
         legendary: parsed.filter(it => it.type === "legendary"),
         cursed: parsed.filter(it => it.type === "cursed"),
-    };
-}
-
-function mergePasstechAndMyItems(
-    passtechItems: ParsedPasstechItem[], 
-    myItems: MagicalObject[]
-) {
-    return myItems.map(mine => {
-        // console.log(mine.code, passtechItems.map(it => it.code));
-        const passtech = passtechItems.find(it => it.code === mine.code);
-        return merge(mine, passtech);
-    });
-}
-
-
-function merge(mine: MagicalObject, passtech?: ParsedPasstechItem): MagicalObject {
-    return {
-        ...mine,
-        description: passtech?.description || [],
     };
 }
 

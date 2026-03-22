@@ -65,10 +65,10 @@ export const legendary: MagicalObject[] = [
         ]
     },
     {
-        "code": "vorpal_blade",
-        "name": "Vorpal Blade",
+        "code": "sun_crown",
+        "name": "Sun Crown",
         "description": [
-            "Any damage you deal kills standard enemies below {sk}20%{/s} Health or elite enemies below {sk}10%{/s} Health"
+            "Improves the rarity of all {sk}Talents{/s} already learned and all future {sk}Talents{/s} once selected"
         ]
     },
     {
@@ -87,18 +87,18 @@ export const legendary: MagicalObject[] = [
         ]
     },
     {
+        "code": "vorpal_blade",
+        "name": "Vorpal Blade",
+        "description": [
+            "Any damage you deal kills standard enemies below {sk}20%{/s} Health or elite enemies below {sk}10%{/s} Health"
+        ]
+    },
+    {
         "code": "water_of_life",
         "name": "Water of Life",
         "description": [
             "{sk}VITALITY{/s} {si}+25{/s}",
             "Prevents lethal damage and restores all health instead (once per chapter)"
-        ]
-    },
-    {
-        "code": "sun_crown",
-        "name": "Sun Crown",
-        "description": [
-            "Improves the rarity of all {sk}Talents{/s} already learned and all future {sk}Talents{/s} once selected"
         ]
     }
 ];

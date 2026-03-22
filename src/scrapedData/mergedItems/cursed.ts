@@ -39,11 +39,11 @@ export const cursed: MagicalObject[] = [
         ]
     },
     {
-        "code": "oni_mask",
-        "name": "Oni Mask",
+        "code": "devil's_pocket",
+        "name": "Devil's Pocket",
         "description": [
-            "{sk}DMG{/s} {si}+15{/s} for each {sk}Cursed Magical Object{/s}",
-            "{sk}ARMOR{/s} {sd}-10{/s} for each {sk}Legendary Magical Object{/s}"
+            "{sd}50%{/s} of collected dream fragments are absorbed by the Devil's Pocket until it is full ({sk}400{/s} required)",
+            "Once full, increases {sk}crit chance{/s} by {si}50%{/s}"
         ]
     },
     {
@@ -91,18 +91,18 @@ export const cursed: MagicalObject[] = [
         ]
     },
     {
+        "code": "oni_mask",
+        "name": "Oni Mask",
+        "description": [
+            "{sk}DMG{/s} {si}+15{/s} for each {sk}Cursed Magical Object{/s}",
+            "{sk}ARMOR{/s} {sd}-10{/s} for each {sk}Legendary Magical Object{/s}"
+        ]
+    },
+    {
         "code": "witch's_broom",
         "name": "Witch's Broom",
         "description": [
             "{sk}DASH{/s} makes the Hero {si}INTANGIBLE{/s} but any damage taken is increased by {sd}+15%{/s}"
-        ]
-    },
-    {
-        "code": "devil's_pocket",
-        "name": "Devil's Pocket",
-        "description": [
-            "{sd}50%{/s} of collected dream fragments are absorbed by the Devil's Pocket until it is full ({sk}400{/s} required)",
-            "Once full, increases {sk}crit chance{/s} by {si}50%{/s}"
         ]
     }
 ];
