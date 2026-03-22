@@ -1,6 +1,6 @@
 import { writeFile } from "fs/promises";
 
-import { HeroBase } from "../../../data/heroesBase";
+import { HeroBase } from "../../../data/types";
 import { heroPageFileName } from "../../utils/heroPageFileName";
 
 import { fetchPage } from "./fetchPage";

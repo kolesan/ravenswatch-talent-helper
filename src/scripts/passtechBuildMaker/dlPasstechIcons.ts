@@ -1,6 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 
-import { HeroBaseCode, heroesBase } from "../../data/heroesBase";
+import { heroesBase } from "../../data/heroesBase";
+import { HeroBaseCode } from "../../data/types";
 import { Talent } from "../extractTalents/types";
 
 for (let i = 0; i < heroesBase.asArray.length; i++) {

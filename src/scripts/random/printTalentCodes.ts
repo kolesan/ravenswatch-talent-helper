@@ -1,4 +1,5 @@
-import { HeroBase, heroesBase } from "../../data/heroesBase";
+import { heroesBase } from "../../data/heroesBase";
+import { HeroBase } from "../../data/types";
 
 import { Talent } from "../extractTalents/types";
 

@@ -1,7 +1,8 @@
 
 import { writeFile } from "fs/promises";
 
-import { HeroBase, HeroBaseCode, heroesBase } from "../../data/heroesBase";
+import { heroesBase } from "../../data/heroesBase";
+import { HeroBase, HeroBaseCode } from "../../data/types";
 import { isTruthy } from "../../ui/utils/isTruthy";
 import { descriptionKeyMaps } from "../../utils/descriptionKeyMaps";
 import { Talent, TalentType } from "../extractTalents/types";

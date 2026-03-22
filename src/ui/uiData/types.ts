@@ -1,4 +1,4 @@
-import { HeroBase } from "../../data/heroesBase";
+import { HeroBase } from "../../data/types";
 import { Talent } from "../../scripts/extractTalents/types";
 
 export type Hero = Omit<HeroBase, "wikiUrl"> & {
