@@ -1,9 +1,11 @@
 import { html } from "htm/preact";
 
+import { MagicalObjectType } from "../../../types";
+
 import cls from "./ObjectIcon.module.css";
 
 interface Props {
-    type: "legendary" | "cursed";
+    type: MagicalObjectType;
     code: string;
 }
 

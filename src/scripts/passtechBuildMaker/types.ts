@@ -1,3 +1,4 @@
+import { MagicalObjectType } from "../../types";
 import { Talent } from "../extractTalents/types";
 
 export type PasstechTalent = {
@@ -23,6 +24,6 @@ export type PasstechItem = {
 export type ParsedPasstechItem = {
     name: string;
     code: string;
-    type: "legendary" | "cursed" | undefined;
+    type: MagicalObjectType | undefined;
     description: string[];
 };

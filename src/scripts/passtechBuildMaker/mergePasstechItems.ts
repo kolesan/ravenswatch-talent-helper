@@ -2,7 +2,7 @@ import { writeFile } from "fs/promises";
 
 import { cursed } from "../../data/items/cursed";
 import { legendary } from "../../data/items/legendary";
-import { MagicalObject } from "../../types";
+import { MagicalObject, MagicalObjectType } from "../../types";
 import { descriptionKeyMaps } from "../../utils/descriptionKeyMaps";
 
 import { ParsedPasstechItem, PasstechItem } from "./types";
@@ -25,7 +25,7 @@ await writeItemsToFile("legendary", mergedLegendaryItems);
 await writeItemsToFile("cursed", mergedCursedItems);
 
 
-function writeItemsToFile(type: string, mergedItems: MagicalObject[]) {
+function writeItemsToFile(type: MagicalObjectType, mergedItems: MagicalObject[]) {
     const itemsJson = JSON.stringify(mergedItems, null, "    ");
 
     const content = `import { MagicalObject } from "../../types";
@@ -88,8 +88,8 @@ function nameToCode(name: string) {
     return name.trim().replaceAll(" ", "_").toLowerCase();
 }
 
-function parseType(qualityName: string) {
-    const map: Record<string, "cursed" | "legendary"> = {
+function parseType(qualityName: PasstechItem["quality_name"]) {
+    const map: Partial<Record<PasstechItem["quality_name"], MagicalObjectType>> = {
         "Legendary": "legendary",
         "Cursed": "cursed",
     };
