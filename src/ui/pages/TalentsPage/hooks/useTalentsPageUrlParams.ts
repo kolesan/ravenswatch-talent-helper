@@ -1,5 +1,5 @@
 import { pages } from "../../../../../pages";
-import { heroes } from "../../../../finalData/finalData";
+import { heroes } from "../../../ui_data/heroes";
 import { useRouter } from "../../../components/RouterProvider/RouterProvider";
 import { isTalentsPageView } from "../talentsPageViews";
 

@@ -1,3 +1,3 @@
-import { heroes } from "../../../../finalData/finalData";
+import { heroes } from "../../../ui_data/heroes";
 
 export const defaultHero = heroes.all.scarlet;

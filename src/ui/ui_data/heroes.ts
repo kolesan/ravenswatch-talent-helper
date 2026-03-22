@@ -1,17 +1,17 @@
-import { HeroBase, heroesBase } from "../data/heroesBase";
-import { aladdin } from "../scrapedData/mergedTalents/aladdin";
-import { beowulf } from "../scrapedData/mergedTalents/beowulf";
-import { carmilla } from "../scrapedData/mergedTalents/carmilla";
-import { geppetto } from "../scrapedData/mergedTalents/geppetto";
-import { juliet } from "../scrapedData/mergedTalents/juliet";
-import { melusine } from "../scrapedData/mergedTalents/melusine";
-import { merlin } from "../scrapedData/mergedTalents/merlin";
-import { piper } from "../scrapedData/mergedTalents/piper";
-import { romeo } from "../scrapedData/mergedTalents/romeo";
-import { scarlet } from "../scrapedData/mergedTalents/scarlet";
-import { snowqueen } from "../scrapedData/mergedTalents/snowqueen";
-import { wukong } from "../scrapedData/mergedTalents/wukong";
-import { Talent } from "../scripts/extractTalents/types";
+import { HeroBase, heroesBase } from "../../data/heroesBase";
+import { aladdin } from "../../scrapedData/mergedTalents/aladdin";
+import { beowulf } from "../../scrapedData/mergedTalents/beowulf";
+import { carmilla } from "../../scrapedData/mergedTalents/carmilla";
+import { geppetto } from "../../scrapedData/mergedTalents/geppetto";
+import { juliet } from "../../scrapedData/mergedTalents/juliet";
+import { melusine } from "../../scrapedData/mergedTalents/melusine";
+import { merlin } from "../../scrapedData/mergedTalents/merlin";
+import { piper } from "../../scrapedData/mergedTalents/piper";
+import { romeo } from "../../scrapedData/mergedTalents/romeo";
+import { scarlet } from "../../scrapedData/mergedTalents/scarlet";
+import { snowqueen } from "../../scrapedData/mergedTalents/snowqueen";
+import { wukong } from "../../scrapedData/mergedTalents/wukong";
+import { Talent } from "../../scripts/extractTalents/types";
 
 export type Hero = Omit<HeroBase, "wikiUrl"> & {
     talents: Talent[];

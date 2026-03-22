@@ -1,6 +1,6 @@
 import { useMemo, useState } from "preact/hooks";
 
-import { Hero } from "../../../../../finalData/finalData";
+import { Hero } from "../../../../ui_data/heroes";
 import { markIfLocked } from "../../utils/markIfLocked";
 
 import { groupTalentsByType } from "./utils/groupTalentsByType";

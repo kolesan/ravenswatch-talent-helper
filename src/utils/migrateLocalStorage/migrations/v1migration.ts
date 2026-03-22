@@ -1,4 +1,4 @@
-import { Hero, heroes } from "../../../finalData/finalData";
+import { Hero, heroes } from "../../../ui/ui_data/heroes";
 import { LocalStorage } from "../../../ui/core/LocalStorage";
 import { storageKey as newCursedObjectsKey } from "../../../ui/pages/CursedObjectsPage/hooks/useCursedObjectsBuilder";
 import { storageKey as newLegendaryObjectsKey } from "../../../ui/pages/LegendaryObjectsPage/hooks/useLegendaryObjectsBuilder";
