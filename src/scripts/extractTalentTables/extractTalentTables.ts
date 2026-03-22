@@ -2,7 +2,7 @@ import { readFileSync } from "fs";
 import { writeFile } from "fs/promises";
 import { JSDOM } from "jsdom";
 
-import { heroesBase } from "../../data/heroesBase";
+import { heroesBase } from "../../data/heroes/heroesBase";
 import { heroPageFileName } from "../utils/heroPageFileName";
 import { heroTalentTableFileName } from "../utils/heroTalentTableFileName";
 

@@ -1,7 +1,7 @@
 import { readFileSync } from "fs";
 
-import { heroesBase } from "../../data/heroesBase";
-import { HeroBase } from "../../data/types";
+import { heroesBase } from "../../data/heroes/heroesBase";
+import { HeroBase } from "../../data/heroes/types";
 import { Talent } from "../extractTalents/types";
 import { heroTalentsFileName } from "../utils/heroTalentsFileName";
 import { runPromiseChain } from "../utils/runPromiseChain";

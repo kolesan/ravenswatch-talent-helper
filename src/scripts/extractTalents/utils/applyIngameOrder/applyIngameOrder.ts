@@ -1,4 +1,4 @@
-import { HeroBase } from "../../../../data/types";
+import { HeroBase } from "../../../../data/heroes/types";
 import { Talent } from "../../types";
 
 import { aladdinOrder } from "./consts/aladdinOrder";

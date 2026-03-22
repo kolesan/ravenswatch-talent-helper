@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from "fs/promises";
 
-import { HeroBase } from "../../../data/types";
+import { HeroBase } from "../../../data/heroes/types";
 import { Talent } from "../../extractTalents/types";
 import { heroTalentIconDirName } from "../../utils/heroTalentIconDirName";
 import { heroTalentIconFileName } from "../../utils/heroTalentIconFileName";

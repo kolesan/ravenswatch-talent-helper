@@ -1,7 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 
-import { heroesBase } from "../../data/heroesBase";
-import { HeroBaseCode } from "../../data/types";
+import { heroesBase } from "../../data/heroes/heroesBase";
+import { HeroBaseCode } from "../../data/heroes/types";
 import { Talent } from "../extractTalents/types";
 
 for (let i = 0; i < heroesBase.asArray.length; i++) {

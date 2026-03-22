@@ -1,4 +1,4 @@
-import { heroesBase } from "../../../data/heroesBase";
+import { heroesBase } from "../../../data/heroes/heroesBase";
 import { aladdin } from "../../../scrapedData/mergedTalents/aladdin";
 import { beowulf } from "../../../scrapedData/mergedTalents/beowulf";
 import { carmilla } from "../../../scrapedData/mergedTalents/carmilla";
