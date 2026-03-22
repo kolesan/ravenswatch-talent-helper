@@ -11,5 +11,5 @@ A web app that shows you what talents are still available for your character dur
     1. In the network tab find the response with the talents of the new hero
     1. Save this data in `TODO`
 1. TODO describe how the talents should be merged and placed in the merged folder
-1. In `src\ui\uiData\heroes.ts` import the talents for the new hero and add them to the `talentsByHero` map
+1. In `src\ui\uiData\utils\injectBaseHeroesWithTalents.ts` import the talents for the new hero and add them to the `talentsByHero` map
 1. 
