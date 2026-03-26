@@ -15,6 +15,7 @@
     "dev": "concurrently -k -n VITE,\"TSC \" -c green,blue --prefix \"{name} |\" \"vite\" \"tsc --noEmit --watch --pretty\"",
     "build": "vite build",
     "generateMagicalObjects": "tsx src/scripts/generateMagicalObjects/generateMagicalObjects",
+    "downloadObjectIcons": "tsx src/scripts/downloadObjectIcons",
     "random": "tsx src/scripts/random.ts",
     "randomWatch": "tsx watch src/scripts/randomWatch.ts"
   },

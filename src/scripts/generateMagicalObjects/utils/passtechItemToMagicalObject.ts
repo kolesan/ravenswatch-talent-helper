@@ -9,5 +9,6 @@ export function passtechItemToMagicalObject(
         code: passtech.code,
         name: passtech.name,
         description: passtech.description,
+        iconUrl: passtech.iconUrl,
     };
 }

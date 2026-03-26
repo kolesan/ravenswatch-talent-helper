@@ -29,6 +29,7 @@ function parseItem(item: PasstechItem): ParsedPasstechItem {
         code: nameToCode(name),
         name,
         description: parseDescription(item.description),
+        iconUrl: item.icon,
     };
 }
 

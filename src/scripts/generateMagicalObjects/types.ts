@@ -13,6 +13,7 @@ export type ParsedPasstechItem = {
     code: string;
     name: string;
     description: string[];
+    iconUrl: string;
 };
 
 export type ParsedPasstechItemType = "legendary" | "cursed";
