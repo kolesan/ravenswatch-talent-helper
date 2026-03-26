@@ -1,4 +1,4 @@
-import { MagicalObject } from "../../types";
+import { MagicalObject } from "./types";
     
 export const legendary: MagicalObject[] = [
     {

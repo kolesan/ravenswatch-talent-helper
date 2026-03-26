@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "concurrently -k -n VITE,\"TSC \" -c green,blue --prefix \"{name} |\" \"vite\" \"tsc --noEmit --watch --pretty\"",
     "build": "vite build",
-    "mergePasstechItems": "tsx src/scripts/passtechBuildMaker/mergePasstechItems.ts",
+    "generateMagicalObjects": "tsx src/scripts/generateMagicalObjects/generateMagicalObjects",
     "random": "tsx src/scripts/random.ts",
     "randomWatch": "tsx watch src/scripts/randomWatch.ts"
   },
