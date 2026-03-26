@@ -1,6 +1,6 @@
 import { html } from "htm/preact";
 
-import { MagicalObject } from "../../types";
+import { MagicalObject } from "../uiData/objects/types";
 
 import { DescriptionList } from "./DescriptionList/DescriptionList";
 import { ListItem } from "./ListItem/ListItem";

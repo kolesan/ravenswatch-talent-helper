@@ -5,8 +5,3 @@ export type MagicalObject = {
     description: string[];
     preferred?: boolean;
 };
-
-export type SerializedMagicalObject = {
-    code: string;
-    preferred?: boolean;
-};
