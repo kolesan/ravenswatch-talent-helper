@@ -1,4 +1,4 @@
-import { HeroCode } from "../../../../uiData/types";
+import { HeroCode } from "../../../../uiData/heroes/types";
 import { LocalStorage } from "../../../../core/LocalStorage";
 
 import { SerializedTalentsBuilderHeroState } from "./types";

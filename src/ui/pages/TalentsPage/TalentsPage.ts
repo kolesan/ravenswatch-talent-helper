@@ -1,7 +1,7 @@
 import { html } from "htm/preact";
 
 import { pages } from "../../../../pages";
-import { Hero } from "../../uiData/types";
+import { Hero } from "../../uiData/heroes/types";
 import { Spinner } from "../../components/Spinner/Spinner";
 import { hst } from "../../core/hst";
 import { usePageTitle } from "../../hooks/usePageTitle";

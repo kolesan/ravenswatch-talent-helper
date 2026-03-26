@@ -1,5 +1,5 @@
-import { heroes } from "../../../../../../uiData/heroes";
-import { Hero } from "../../../../../../uiData/types";
+import { heroes } from "../../../../../../uiData/heroes/heroes";
+import { Hero } from "../../../../../../uiData/heroes/types";
 import { isHeroCode } from "../../../../../../utils/isHeroCode";
 import { defaultHero } from "../../../defaultHero";
 

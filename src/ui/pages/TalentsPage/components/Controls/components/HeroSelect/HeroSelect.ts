@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { html } from "htm/preact";
 
-import { Hero } from "../../../../../../uiData/types";
+import { Hero } from "../../../../../../uiData/heroes/types";
 import { useBooleanState } from "../../../../../../hooks/useBooleanState";
 import { useOnClickOutside } from "../../../../hooks/useOnClickOutside";
 

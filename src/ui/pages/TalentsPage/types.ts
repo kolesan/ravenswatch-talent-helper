@@ -1,4 +1,4 @@
-import { Hero } from "../../uiData/types";
+import { Hero } from "../../uiData/heroes/types";
 import { Talent } from "../../../scripts/extractTalents/types";
 
 import { TalentsPageView } from "./talentsPageViews";

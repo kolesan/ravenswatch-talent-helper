@@ -3,8 +3,8 @@ import { storageKey as newCursedObjectsKey } from "../../../pages/CursedObjectsP
 import { storageKey as newLegendaryObjectsKey } from "../../../pages/LegendaryObjectsPage/hooks/useLegendaryObjectsBuilder";
 import { baseTalentsBuilderStateStorage } from "../../../pages/TalentsPage/utils/talentsBuilderStateStorage/baseTalentsBuilderStateStorage";
 import { baseTalentsPageUrlParamsStorage } from "../../../pages/TalentsPage/utils/talentsPageUrlParamsStorage/baseTalentsPageUrlParamsStorage";
-import { heroes } from "../../../uiData/heroes";
-import { Hero } from "../../../uiData/types";
+import { heroes } from "../../../uiData/heroes/heroes";
+import { Hero } from "../../../uiData/heroes/types";
 
 const oldTalentsKey = "ravenswatch-run-helper_state";
 const oldLegendaryObjectsKey = "ravenswatch-run-helper_legendary-objects-page_state";

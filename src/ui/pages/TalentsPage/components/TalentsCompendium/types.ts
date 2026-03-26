@@ -1,4 +1,4 @@
-import { Hero } from "../../../../uiData/types";
+import { Hero } from "../../../../uiData/heroes/types";
 import { TalentWithLockedFlag } from "../../types";
 
 export type TalentsCompendiumType = {

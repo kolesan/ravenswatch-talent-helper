@@ -1,7 +1,7 @@
 import { useEffect } from "preact/hooks";
 
 import { pages } from "../../../../../pages";
-import { Hero } from "../../../uiData/types";
+import { Hero } from "../../../uiData/heroes/types";
 import { hst } from "../../../core/hst";
 import { TalentsPageView } from "../talentsPageViews";
 import { talentsPageUrlParamsStorage } from "../utils/talentsPageUrlParamsStorage/talentsPageUrlParamsStorage";
