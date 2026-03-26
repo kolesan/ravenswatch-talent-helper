@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from "fs/promises";
 
-import { legendary } from "./data/items/legendary";
+import { legendary } from "../data/items/legendary";
 
 const base = "https://buildmaker.ravenswatch.com";
 

@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from "fs/promises";
 
-import { cursed } from "./data/items/cursed";
+import { cursed } from "../data/items/cursed";
 
 const base = "https://buildmaker.ravenswatch.com";
 
