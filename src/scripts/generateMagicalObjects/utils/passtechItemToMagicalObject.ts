@@ -1,10 +1,11 @@
 import { MagicalObject } from "../../../data/objects/types";
-import { ParsedPasstechItem } from "../types";
+import { CursedParsedPasstechItem, LegendaryParsedPasstechItem } from "../types";
 
 export function passtechItemToMagicalObject(
-    passtech: ParsedPasstechItem
+    passtech: LegendaryParsedPasstechItem | CursedParsedPasstechItem
 ): MagicalObject {
     return {
+        type: passtech.type,
         code: passtech.code,
         name: passtech.name,
         description: passtech.description,

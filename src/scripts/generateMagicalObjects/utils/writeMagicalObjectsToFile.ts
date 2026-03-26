@@ -1,7 +1,6 @@
 import { writeFile } from "fs/promises";
 
-import { MagicalObject } from "../../../data/objects/types";
-import { MagicalObjectType } from "../../../types";
+import { MagicalObject, MagicalObjectType } from "../../../data/objects/types";
 
 export function writeMagicalObjectsToFile(
     dir: string,

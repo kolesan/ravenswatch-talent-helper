@@ -1,6 +1,6 @@
 import { html } from "htm/preact";
 
-import { MagicalObject, MagicalObjectType } from "../../types";
+import { MagicalObject } from "../../types";
 
 import { DescriptionList } from "./DescriptionList/DescriptionList";
 import { ListItem } from "./ListItem/ListItem";
@@ -14,7 +14,6 @@ interface Props {
     };
     index: number;
     object: MagicalObject;
-    objectType: MagicalObjectType;
     onClick?: () => void;
     onAltClick?: () => void;
     onHold?: () => void;
@@ -24,7 +23,6 @@ export function ObjectListItem({
     classes,
     index,
     object,
-    objectType,
     onClick,
     onAltClick,
     onHold,
@@ -41,15 +39,10 @@ export function ObjectListItem({
                 <${PreferredIcon} lowerTooltip=${index === 0} />
             `}
             iconElement=${html`
-                <${ObjectIcon}
-                    type=${objectType}
-                    code=${object.code}
-                />
+                <${ObjectIcon} object=${object} />
             `}
             descriptionElement=${html`
-                <${DescriptionList}
-                    description=${object.description}
-                />
+                <${DescriptionList} description=${object.description} />
             `}
             onClick=${onClick}
             onAltClick=${onAltClick}

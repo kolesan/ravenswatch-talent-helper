@@ -39,7 +39,6 @@ export function CursedObjectsPage() {
                     }}
                     index=${index}
                     object=${item}
-                    objectType=${"cursed"}
                     onClick=${actions.onClick}
                     onAltClick=${actions.onAltClick}
                     onHold=${actions.onHold}

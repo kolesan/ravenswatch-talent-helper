@@ -1,4 +1,5 @@
 export type MagicalObject = {
+    type: "legendary" | "cursed";
     code: string;
     name: string;
     description: string[];
@@ -9,5 +10,3 @@ export type SerializedMagicalObject = {
     code: string;
     preferred?: boolean;
 };
-
-export type MagicalObjectType = "legendary" | "cursed";

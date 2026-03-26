@@ -2,6 +2,7 @@ import { MagicalObject } from "./types";
     
 export const cursed: MagicalObject[] = [
     {
+        "type": "cursed",
         "code": "baba_yaga's_mortar",
         "name": "Baba Yaga's Mortar",
         "description": [
@@ -10,6 +11,7 @@ export const cursed: MagicalObject[] = [
         ]
     },
     {
+        "type": "cursed",
         "code": "balor's_eye",
         "name": "Balor's eye",
         "description": [
@@ -17,6 +19,7 @@ export const cursed: MagicalObject[] = [
         ]
     },
     {
+        "type": "cursed",
         "code": "black_lotus",
         "name": "Black Lotus",
         "description": [
@@ -24,6 +27,7 @@ export const cursed: MagicalObject[] = [
         ]
     },
     {
+        "type": "cursed",
         "code": "bloody_mary's_mirror",
         "name": "Bloody Mary's Mirror",
         "description": [
@@ -32,6 +36,7 @@ export const cursed: MagicalObject[] = [
         ]
     },
     {
+        "type": "cursed",
         "code": "cauldron_of_dyrnwch",
         "name": "Cauldron of Dyrnwch",
         "description": [
@@ -39,6 +44,7 @@ export const cursed: MagicalObject[] = [
         ]
     },
     {
+        "type": "cursed",
         "code": "devil's_pocket",
         "name": "Devil's Pocket",
         "description": [
@@ -47,6 +53,7 @@ export const cursed: MagicalObject[] = [
         ]
     },
     {
+        "type": "cursed",
         "code": "fast-walker_boots",
         "name": "Fast-walker Boots",
         "description": [
@@ -54,6 +61,7 @@ export const cursed: MagicalObject[] = [
         ]
     },
     {
+        "type": "cursed",
         "code": "hope_diamond",
         "name": "Hope Diamond",
         "description": [
@@ -61,6 +69,7 @@ export const cursed: MagicalObject[] = [
         ]
     },
     {
+        "type": "cursed",
         "code": "hungry_grass",
         "name": "Hungry grass",
         "description": [
@@ -69,6 +78,7 @@ export const cursed: MagicalObject[] = [
         ]
     },
     {
+        "type": "cursed",
         "code": "mad_hat",
         "name": "Mad Hat",
         "description": [
@@ -77,6 +87,7 @@ export const cursed: MagicalObject[] = [
         ]
     },
     {
+        "type": "cursed",
         "code": "nightmare_ichor",
         "name": "Nightmare ichor",
         "description": [
@@ -84,6 +95,7 @@ export const cursed: MagicalObject[] = [
         ]
     },
     {
+        "type": "cursed",
         "code": "nightmare_thorn",
         "name": "Nightmare Thorn",
         "description": [
@@ -91,6 +103,7 @@ export const cursed: MagicalObject[] = [
         ]
     },
     {
+        "type": "cursed",
         "code": "oni_mask",
         "name": "Oni Mask",
         "description": [
@@ -99,6 +112,7 @@ export const cursed: MagicalObject[] = [
         ]
     },
     {
+        "type": "cursed",
         "code": "witch's_broom",
         "name": "Witch's Broom",
         "description": [

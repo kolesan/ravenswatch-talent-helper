@@ -1,25 +1,33 @@
 import { items } from "../../../data/passtechResponses/items/items";
-import { MagicalObjectType } from "../../../types";
 import { descriptionKeyMaps } from "../../../utils/descriptionKeyMaps";
-import { ParsedPasstechItem, PasstechItem } from "../types";
+import {
+    CursedParsedPasstechItem,
+    LegendaryParsedPasstechItem,
+    ParsedPasstechItem,
+    ParsedPasstechItemType,
+    PasstechItem,
+} from "../types";
+
+import { isCursed } from "./isCursed";
+import { isLegendary } from "./isLegendary";
 
 export async function parsePasstechItems(): Promise<{
-    legendary: ParsedPasstechItem[];
-    cursed: ParsedPasstechItem[];
+    legendary: LegendaryParsedPasstechItem[];
+    cursed: CursedParsedPasstechItem[];
 }> {
     const parsed = items.map(parseItem);
     return {
-        legendary: parsed.filter(it => it.type === "legendary"),
-        cursed: parsed.filter(it => it.type === "cursed"),
+        legendary: parsed.filter(isLegendary),
+        cursed: parsed.filter(isCursed),
     };
 }
 
 function parseItem(item: PasstechItem): ParsedPasstechItem {
     const name = item.name.replaceAll("’", "'");
     return {
+        type: parseType(item.quality_name),
         code: nameToCode(name),
         name,
-        type: parseType(item.quality_name),
         description: parseDescription(item.description),
     };
 }
@@ -29,7 +37,7 @@ function nameToCode(name: string) {
 }
 
 function parseType(qualityName: PasstechItem["quality_name"]) {
-    const map: Partial<Record<PasstechItem["quality_name"], MagicalObjectType>> = {
+    const map: Partial<Record<PasstechItem["quality_name"], ParsedPasstechItemType>> = {
         "Legendary": "legendary",
         "Cursed": "cursed",
     };

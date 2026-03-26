@@ -1,20 +1,18 @@
 import { html } from "htm/preact";
 
-import { MagicalObjectType } from "../../../types";
+import { MagicalObject } from "../../../types";
 
 import cls from "./ObjectIcon.module.css";
 
 interface Props {
-    type: MagicalObjectType;
-    code: string;
+    object: MagicalObject;
 }
 
 export function ObjectIcon({
-    type,
-    code,
+    object,
 }: Props) {
-    const objectSrc = `/icons/objects/${type}/${code}.webp`;
-    const frameSrc = `/icons/objects/${type}/frame.webp`;
+    const objectSrc = `/icons/objects/${object.type}/${object.code}.webp`;
+    const frameSrc = `/icons/objects/${object.type}/frame.webp`;
 
     return html`
         <div class=${cls.imgContainer}>

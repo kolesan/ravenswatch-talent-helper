@@ -2,6 +2,7 @@ import { MagicalObject } from "./types";
     
 export const legendary: MagicalObject[] = [
     {
+        "type": "legendary",
         "code": "excalibur",
         "name": "Excalibur",
         "description": [
@@ -9,6 +10,7 @@ export const legendary: MagicalObject[] = [
         ]
     },
     {
+        "type": "legendary",
         "code": "father_time's_hourglass",
         "name": "Father Time's Hourglass",
         "description": [
@@ -16,6 +18,7 @@ export const legendary: MagicalObject[] = [
         ]
     },
     {
+        "type": "legendary",
         "code": "golden_coat_of_chainmail",
         "name": "Golden Coat of Chainmail",
         "description": [
@@ -23,6 +26,7 @@ export const legendary: MagicalObject[] = [
         ]
     },
     {
+        "type": "legendary",
         "code": "holy_grail",
         "name": "Holy Grail",
         "description": [
@@ -30,6 +34,7 @@ export const legendary: MagicalObject[] = [
         ]
     },
     {
+        "type": "legendary",
         "code": "nibelungen_ring",
         "name": "Nibelungen Ring",
         "description": [
@@ -37,6 +42,7 @@ export const legendary: MagicalObject[] = [
         ]
     },
     {
+        "type": "legendary",
         "code": "philosopher's_stone",
         "name": "Philosopher's Stone",
         "description": [
@@ -44,6 +50,7 @@ export const legendary: MagicalObject[] = [
         ]
     },
     {
+        "type": "legendary",
         "code": "raven_effigy",
         "name": "Raven effigy",
         "description": [
@@ -51,6 +58,7 @@ export const legendary: MagicalObject[] = [
         ]
     },
     {
+        "type": "legendary",
         "code": "ring_of_dispel",
         "name": "Ring of Dispel",
         "description": [
@@ -58,6 +66,7 @@ export const legendary: MagicalObject[] = [
         ]
     },
     {
+        "type": "legendary",
         "code": "seven-league_boots",
         "name": "Seven-league boots",
         "description": [
@@ -65,6 +74,7 @@ export const legendary: MagicalObject[] = [
         ]
     },
     {
+        "type": "legendary",
         "code": "sun_crown",
         "name": "Sun Crown",
         "description": [
@@ -72,6 +82,7 @@ export const legendary: MagicalObject[] = [
         ]
     },
     {
+        "type": "legendary",
         "code": "swan_cloak",
         "name": "Swan Cloak",
         "description": [
@@ -79,6 +90,7 @@ export const legendary: MagicalObject[] = [
         ]
     },
     {
+        "type": "legendary",
         "code": "tamatebako",
         "name": "Tamatebako",
         "description": [
@@ -87,6 +99,7 @@ export const legendary: MagicalObject[] = [
         ]
     },
     {
+        "type": "legendary",
         "code": "vorpal_blade",
         "name": "Vorpal Blade",
         "description": [
@@ -94,6 +107,7 @@ export const legendary: MagicalObject[] = [
         ]
     },
     {
+        "type": "legendary",
         "code": "water_of_life",
         "name": "Water of Life",
         "description": [

@@ -1,5 +1,3 @@
-import { MagicalObjectType } from "../../types";
-
 export type PasstechItem = {
     id: string;
     name: string;
@@ -11,8 +9,18 @@ export type PasstechItem = {
 }
 
 export type ParsedPasstechItem = {
-    name: string;
+    type: ParsedPasstechItemType | undefined;
     code: string;
-    type: MagicalObjectType | undefined;
+    name: string;
     description: string[];
 };
+
+export type ParsedPasstechItemType = "legendary" | "cursed";
+
+export type LegendaryParsedPasstechItem = Omit<ParsedPasstechItem, "type"> & {
+    type: "legendary";
+}
+
+export type CursedParsedPasstechItem = Omit<ParsedPasstechItem, "type"> & {
+    type: "cursed";
+}

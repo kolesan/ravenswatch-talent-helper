@@ -39,7 +39,6 @@ export function LegendaryObjectsPage() {
                     }}
                     index=${index}
                     object=${item}
-                    objectType=${"legendary"}
                     onClick=${actions.onClick}
                     onAltClick=${actions.onAltClick}
                     onHold=${actions.onHold}
