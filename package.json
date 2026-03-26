@@ -15,8 +15,8 @@
     "dev": "concurrently -k -n VITE,\"TSC \" -c green,blue --prefix \"{name} |\" \"vite\" \"tsc --noEmit --watch --pretty\"",
     "build": "vite build",
     "mergePasstechItems": "tsx src/scripts/passtechBuildMaker/mergePasstechItems.ts",
-    "random": "tsx src/scripts/optimizeObjectIcons.ts",
-    "randomWatch": "tsx watch src/scripts/random/randomWatch.ts"
+    "random": "tsx src/scripts/random.ts",
+    "randomWatch": "tsx watch src/scripts/randomWatch.ts"
   },
   "homepage": "https://github.com/kolesan/ravenswatch-talent-helper#readme",
   "bugs": {
