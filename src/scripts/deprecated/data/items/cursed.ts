@@ -1,6 +1,6 @@
-import { MagicalObject } from "../../../../types";
+import { MagicalObjectDeprecated } from "../../types";
 
-export const cursed: MagicalObject[] = [
+export const cursed: MagicalObjectDeprecated[] = [
     {
         code: "baba_yaga's_mortar",
         name: "Baba Yaga's Mortar",

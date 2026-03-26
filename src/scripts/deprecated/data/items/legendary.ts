@@ -1,6 +1,6 @@
-import { MagicalObject } from "../../../../types";
+import { MagicalObjectDeprecated } from "../../types";
 
-export const legendary: MagicalObject[] = [
+export const legendary: MagicalObjectDeprecated[] = [
     {
         code: "excalibur",
         name: "Excalibur",
