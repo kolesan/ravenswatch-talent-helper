@@ -1,11 +1,11 @@
 
 import { writeFile } from "fs/promises";
 
-import { heroesBase } from "../../data/heroes/heroesBase";
-import { HeroBase, HeroBaseCode } from "../../data/heroes/types";
-import { isTruthy } from "../../ui/utils/isTruthy";
-import { descriptionKeyMaps } from "../../utils/descriptionKeyMaps";
-import { Talent, TalentType } from "../extractTalents/types";
+import { heroesBase } from "../../../data/heroes/heroesBase";
+import { HeroBase, HeroBaseCode } from "../../../data/heroes/types";
+import { isTruthy } from "../../../ui/utils/isTruthy";
+import { descriptionKeyMaps } from "../../../utils/descriptionKeyMaps";
+import { Talent, TalentType } from "../../extractTalents/types";
 
 import { ParsedPasstechTalent, PasstechTalent } from "./types";
 

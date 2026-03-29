@@ -1,4 +1,4 @@
-import { Talent } from "../extractTalents/types";
+import { Talent } from "../../extractTalents/types";
 
 export type PasstechTalent = {
     id: string;
