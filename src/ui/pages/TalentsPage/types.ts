@@ -1,5 +1,4 @@
 import { Hero } from "../../uiData/heroes/types";
-import { Talent } from "../../../scripts/extractTalents/types";
 
 import { TalentsPageView } from "./talentsPageViews";
 
@@ -11,8 +10,4 @@ export type StorableTalentsPageUrlParamsState = {
 export type SerializedTalentsPageUrlParamsState = {
     hero: string;
     view: string;
-}
-
-export type TalentWithLockedFlag = Talent & {
-    locked?: boolean;
 }

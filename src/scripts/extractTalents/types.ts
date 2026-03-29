@@ -1,20 +1,6 @@
-export type Talent = {
-    code: string;
-    name: string;
-    iconUrl: string | null;
-    type: TalentType;
-    unlockedAtRank: number;
-    description: string[];
-    improvements?: string[][];
-    degradations?: string[][];
-    changePerLevel?: string[];
-    multiplayerOnly?: boolean;
-    preferred?: boolean;
-}
+import { TalentMerged } from "../../data/heroes/talents/types";
 
-export type TalentType = 
-      "starting" 
-    | "standard" 
-    | "ultimate" 
-    | "final"
-    | "unknown_talent_type";
+export type Talent = Omit<TalentMerged, "iconUrl"> & {
+    preferred?: boolean;
+    locked?: boolean;
+}

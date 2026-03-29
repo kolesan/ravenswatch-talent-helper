@@ -1,9 +1,8 @@
 import { useMemo, useState } from "preact/hooks";
 
-import { Hero } from "../../../../uiData/heroes/types";
 import { Talent } from "../../../../../scripts/extractTalents/types";
 import { useBuilder } from "../../../../components/Builder/useBuilder";
-import { TalentWithLockedFlag } from "../../types";
+import { Hero } from "../../../../uiData/heroes/types";
 import { markIfLocked } from "../../utils/markIfLocked";
 
 import { applyRank } from "./utils/applyRank";
@@ -72,13 +71,13 @@ export function useTalentsBuilder({
             ...builder,
             actions: {
                 ...builder.actions,
-                availableToUsed(talent: TalentWithLockedFlag) {
+                availableToUsed(talent: Talent) {
                     if (talent.locked) {
                         return;
                     }
                     builder.actions.availableToUsed(talent);
                 },
-                availableToPreferred(talent: TalentWithLockedFlag) {
+                availableToPreferred(talent: Talent) {
                     if (talent.locked) {
                         return;
                     }

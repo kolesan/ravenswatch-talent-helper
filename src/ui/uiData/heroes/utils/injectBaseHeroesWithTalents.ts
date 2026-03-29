@@ -11,10 +11,11 @@ import { romeo } from "../../../../data/heroes/talents/merged/romeo";
 import { scarlet } from "../../../../data/heroes/talents/merged/scarlet";
 import { snowqueen } from "../../../../data/heroes/talents/merged/snowqueen";
 import { wukong } from "../../../../data/heroes/talents/merged/wukong";
+import { TalentMerged } from "../../../../data/heroes/talents/types";
 import { Talent } from "../../../../scripts/extractTalents/types";
 import { Hero, HeroCode, HeroRecord } from "../types";
-    
-const talentsByHero: Record<HeroCode, Talent[]> = {
+
+const talentsByHero: Record<HeroCode, TalentMerged[]> = {
     scarlet,
     piper,
     beowulf,
@@ -35,10 +36,13 @@ export function injectBaseHeroesWithTalents() {
     for (let i = 0; i < heroesBase.asArray.length; i++) {
         const heroBase = heroesBase.asArray[i]!;
 
+        const talents = talentsByHero[heroBase.code];
+        const uiTalents = talents.map(toUiTalent);
+
         const hero: Hero = {
             code: heroBase.code,
             name: heroBase.name,
-            talents: talentsByHero[heroBase.code],
+            talents: uiTalents,
         };
 
         heroesObj[heroBase.code] = hero;
@@ -47,5 +51,18 @@ export function injectBaseHeroesWithTalents() {
     return {
         asObj: heroesObj as HeroRecord,
         asArray: Object.values(heroesObj),
+    }
+}
+
+function toUiTalent(talentMerged: TalentMerged): Talent {
+    return {
+        code: talentMerged.code,
+        name: talentMerged.name,
+        type: talentMerged.type,
+        unlockedAtRank: talentMerged.unlockedAtRank,
+        multiplayerOnly: talentMerged.multiplayerOnly,
+        description: talentMerged.description,
+        improvements: talentMerged.improvements,
+        degradations: talentMerged.degradations,
     }
 }

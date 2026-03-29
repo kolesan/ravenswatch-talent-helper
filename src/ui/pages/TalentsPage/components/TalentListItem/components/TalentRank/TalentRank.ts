@@ -1,4 +1,3 @@
-import { clsx } from "clsx";
 import { html } from "htm/preact";
 
 import { Talent } from "../../../../../../../scripts/extractTalents/types";
