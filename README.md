@@ -14,3 +14,34 @@ A web app that shows you what talents are still available for your character dur
 1. TODO describe how the talents should be merged and placed in the merged folder
 1. In `src\ui\uiData\utils\injectBaseHeroesWithTalents.ts` import the talents for the new hero and add them to the `talentsByHero` map
 1. 
+
+## Adding a new item
+1. Go to the official buildmaker app at `https://buildmaker.ravenswatch.com/`
+1. Open browser Dev Tools Network tab
+1. Open a build creation screen for any hero
+1. Check the Network tab for a request to `/api/game-items?lang=en`. The response 
+should have a list of all items in the game
+1. Copy that response into `src\data\passtechResponses\items\items.ts`
+    1. Double check all changes in the git diff just in case
+1. Run the magical object generation script using
+    ```
+    npm run generateMagicalObjects
+    ```
+    This script parses the Buildmaker items and generates legendary
+    and cursed magical objects usable in this app.
+
+    You should see the new items appear in `src\data\objects\cursed.ts` and `src\data\objects\legendary.ts`. 
+        
+    1. Double check all the changes in the git diff viewer just in case.
+1. Download new magical object icons
+    1. Go into `src\scripts\downloadObjectIcons.ts` and modify the filter callbacks
+    in the `legendaryObjects` and/or `cursedObjects` array creation at the start of the script, so that only the new items, that you want to download the icons for, are left in the array
+    1. At this point you can comment out the actual downloading and add a console log
+    to double check what items are in the arrays
+    1. Now trigger the download using
+        ```
+        npm run downloadObjectIcons
+        ```
+    1. You should see the new icons appear in the `public\icons\objects\new\cursed` 
+    and/or `public\icons\objects\new\legendary` folders
+1. TODO item icon optimization
