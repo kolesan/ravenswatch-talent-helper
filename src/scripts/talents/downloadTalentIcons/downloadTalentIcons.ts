@@ -1,9 +1,10 @@
 import { heroesBase } from "../../../data/heroes/heroesBase";
 import { downloadIcons } from "../../utils/downloadIcons";
+import { baseTalentIconsNewDir } from "../consts";
 
 import { getMergedTalents } from "./utils/getMergedTalents";
 
-const baseDir = "public/icons/talents/new";
+const baseDir = baseTalentIconsNewDir;
 
 const heroes = [
     heroesBase.all.merlin

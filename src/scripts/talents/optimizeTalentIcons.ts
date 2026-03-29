@@ -1,9 +1,10 @@
 import { mkdirSync } from "node:fs";
 import sharp from "sharp";
 
-import { listDirFilesSyncRecursive } from "./utils/listDirFilesSyncRecursive";
+import { listDirFilesSyncRecursive } from "../utils/listDirFilesSyncRecursive";
+import { baseTalentIconsNewDir } from "./consts";
 
-const baseDir = "public/icons/talents/new";
+const baseDir = baseTalentIconsNewDir;
 const newBaseDir = `${baseDir}/optimized`
 
 mkdirSync(newBaseDir, { recursive: true });

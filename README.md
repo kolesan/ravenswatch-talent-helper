@@ -61,7 +61,13 @@ This will start vite dev mode with hot reload, check console for details on the 
         ```
         New icons should appear in `public/icons/talents/new/{heroName}` e.g. `public/icons/talents/new/merlin`
 1. Optimize the new talent icons
-1. TODO download talent icons, hero icon and hero art
+    1. Run the optimization script
+        ```
+        npm run optimizeTalentIcons
+        ```
+        New icons should appear in `public/icons/talents/new/optimized/{heroName}` e.g. `public/icons/talents/new/optimized/merlin`
+1. Move the optimized talent icons to `public/icons/talents/{heroName}` e.g. `public/icons/talents/merlin`
+1. TODO download and optimize hero icon and hero art
 
 ## Adding new items (magical objects)
 1. Go to the official buildmaker app at `https://buildmaker.ravenswatch.com/`
