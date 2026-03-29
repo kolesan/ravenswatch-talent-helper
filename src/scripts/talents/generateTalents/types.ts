@@ -1,11 +1,11 @@
-import { Talent } from "../../extractTalents/types";
+import { TalentType } from "../../../data/heroes/talents/types";
 
-export type PasstechTalent = {
-    id: string;
+export type ParsedPasstechTalent = {
+    code: string;
     name: string;
-    tier: number;
-    icon: string;
-    descriptions: string[];
-};
-
-export type ParsedPasstechTalent = Omit<Talent, "unlockedAtRank">;
+    iconUrl: string;
+    type: TalentType;
+    description: string[];
+    improvements: string[][];
+    degradations: string[][];
+}

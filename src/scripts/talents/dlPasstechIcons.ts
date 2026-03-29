@@ -1,8 +1,10 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "fs/promises";
+import { pathToFileURL } from "url";
 
 import { heroesBase } from "../../data/heroes/heroesBase";
 import { HeroBaseCode } from "../../data/heroes/types";
 import { Talent } from "../extractTalents/types";
+
 
 for (let i = 0; i < heroesBase.asArray.length; i++) {
     const hero = heroesBase.asArray[i]!;
@@ -15,11 +17,15 @@ for (let i = 0; i < heroesBase.asArray.length; i++) {
     await downloadIcons(hero.code, mergedTalents);
 }
 
+
+const talentsPath = (heroCode: HeroBaseCode) =>
+    `${process.cwd()}/src/data/heroes/talents/merged/${heroCode}`;
+
 async function getMergedTalents(
     heroCode: HeroBaseCode
 ): Promise<Talent[]> {
-    const mergedTalentsFile = await import(`../../scrapedData/mergedTalents/${heroCode}`);
-    // console.log(mergedTalentsFile[heroCode]);
+    const moduleUrl = pathToFileURL(talentsPath(heroCode)).href;
+    const mergedTalentsFile = await import(moduleUrl);
     return mergedTalentsFile[heroCode];
 }
 
@@ -35,7 +41,7 @@ async function downloadIcons(heroCode: HeroBaseCode, talents: Talent[]) {
         console.log("Fetching icon: ", talent.code);
 
         const resp = await fetch(talent.iconUrl);
-        await new Promise<void>(res => setTimeout(() => { res(); }, 300));
+        await new Promise<void>(res => setTimeout(() => { res(); }, 500));
         const data = await resp.arrayBuffer();
         
         const dirName = `public/icons/talents/new/${heroCode}`;
