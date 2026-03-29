@@ -15,10 +15,10 @@ This will start vite dev mode with hot reload, check console for details on the 
     1. New items
 1. Make sure all the changes are reflected in this app
 
-## Adding new hero
+## Adding a new hero
 1. Add the hero to the `heroesManualOrigin` object in `src\data\heroesManualOrigin.ts`
     1. The property name will be the `code` of the new hero in the whole app, so choose a good value. 
-        * It should be clear understandable and simple, and it should not have uppercase letters or any strange symbols. Temember that it will be used in the url in the browser and also in the filesystem e.g. choose `snowqueen`✅ instead of `snowQueen`❌
+        * It should be clear understandable and simple, and it should not have uppercase letters or any strange symbols. Remember that it will be used in the url in the browser and also in the filesystem e.g. choose `snowqueen`✅ instead of `snowQueen`❌
 1. Download passtech talent data for the hero from the official buildmaker app at `https://buildmaker.ravenswatch.com/`.
     1. Open browser dev tools Network tab
     1. Open new build creation screen
@@ -27,10 +27,33 @@ This will start vite dev mode with hot reload, check console for details on the 
     1. The `skills` property in the response should have an array of the heroes talents
         * Copy this data to `src\data\passtechResponses\heroes\{heroCode}.ts` e.g. `src\data\passtechResponses\heroes\merlin.ts`
         * See existing heroes for an example of how this data should be stored exactly
-    1. 
-1. TODO describe how the talents should be merged and placed in the merged folder
-1. In `src\ui\uiData\utils\injectBaseHeroesWithTalents.ts` import the talents for the new hero and add them to the `talentsByHero` map
-1. 
+1. Generate a manual list of heroes talents based on the data from the buildmaker
+    1. Modify the `hero` constant in the manual talent list template generation script `src\scripts\talents\generateManualTalentsTemplate\generateManualTalentsTemplate.ts` so it runs for the new hero
+    1. Run the manual talent list template generation script
+        ```
+        npm run generateManualTalentsTemplate
+        ```
+        The file should appear in `src\data\heroes\talents\manual` with the hero code as the file name e.g. `src\data\heroes\talents\manual\merlin.ts`
+    1. Fix the order of the talents in the generated template file so they match the in game order completely
+        * The app tries to copy this one to one from the game itself, not the buildmaker app or wiki or anything else
+    1. Fix the `unlockedAtRank` properties of the manual talents so they match the game one to one
+    1. Add any other properties that are not available in the buildmaker response e.g. the `multiplayerOnly` property for *Romeo* and *Juliet* talents
+1. Generate the merged talents by running
+    ```
+    npm run generateTalents
+    ```
+    The file should appear in `src\data\heroes\talents\merged` e.g. `src\data\heroes\talents\merged\merlin.ts`
+1. In `src\ui\uiData\heroes\utils\injectBaseHeroesWithTalents.ts` import the talents for the new hero and add them to the `talentsByHero` map e.g.
+    ```
+    import { merlin } from "../../../../data/heroes/talents/merged/merlin";
+    ...
+        
+    const talentsByHero: Record<HeroCode, Talent[]> = {
+        ...
+        merlin,
+    };
+    ```
+1. TODO download talent icons, hero icon and hero art
 
 ## Adding new items (magical objects)
 1. Go to the official buildmaker app at `https://buildmaker.ravenswatch.com/`
