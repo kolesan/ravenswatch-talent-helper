@@ -8,7 +8,8 @@ const newDir = `${baseDir}/optimized`
 
 mkdirSync(newDir, { recursive: true });
 
-const files = listDirFilesSyncRecursive(baseDir);
+const files = listDirFilesSyncRecursive(baseDir)
+    .filter(it => it.includes("newHero"));
 
 files.forEach(file => {
     console.log(`Optimizing hero portrait icon from '${file}'`);

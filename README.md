@@ -53,20 +53,33 @@ This will start vite dev mode with hot reload, check console for details on the 
         merlin,
     };
     ```
-1. Download the new hero talent icons
-    1. Modify the `heroes` array in `src\scripts\talents\downloadTalentIcons\downloadTalentIcons.ts` so it includes the heroes you want to download the icons for (probably just the new hero)
-    1. Run the download script
-        ```
-        npm run downloadTalentIcons
-        ```
-        New icons should appear in `public/icons/talents/new/{heroName}` e.g. `public/icons/talents/new/merlin`
-1. Optimize the new talent icons
-    1. Run the optimization script
-        ```
-        npm run optimizeTalentIcons
-        ```
-        New icons should appear in `public/icons/talents/new/optimized/{heroName}` e.g. `public/icons/talents/new/optimized/merlin`
-1. Move the optimized talent icons to `public/icons/talents/{heroName}` e.g. `public/icons/talents/merlin`
+1. Handle the talent icons
+    1. Download the new hero talent icons
+        1. Modify the `heroes` array in `src\scripts\talents\downloadTalentIcons\downloadTalentIcons.ts` so it includes the heroes you want to download the icons for (probably just the new hero)
+        1. Run the download script
+            ```
+            npm run downloadTalentIcons
+            ```
+            New icons should appear in `public/icons/talents/new/{heroName}` e.g. `public/icons/talents/new/merlin`
+    1. Optimize the new talent icons
+        1. Run the optimization script
+            ```
+            npm run optimizeTalentIcons
+            ```
+            New icons should appear in `public/icons/talents/new/optimized/{heroName}` e.g. `public/icons/talents/new/optimized/merlin`
+    1. Move the optimized talent icons to `public/icons/talents/{heroName}` e.g. `public/icons/talents/merlin`
+    1. Delete any unneeded temporary files, e.g. unoptimized icons in the `/new` folder
+1. Handle the hero icon
+    1. To download hero icon go to `https://buildmaker.ravenswatch.com/` and copy the png of the hero from the buildmaker to `public\icons\heroes\{heroName}.webp` e.g. `public\icons\heroes\merlin.webp`
+    1. Optimize the new hero icon 
+        1. Modify the `.filter` of the `files` constant in the `optimizeHeroIcons.ts` script so it matches your new hero
+        1. Run the optimization script
+            ```
+            npm run optimizeHeroIcons
+            ```
+            The new optimized icon should appear in `public/icons/heroes/optimized`
+    1. Move the new icon to `public/icons/heroes` 
+    1. Delete the unoptimized icon
 1. TODO download and optimize hero icon and hero art
 
 ## Adding new items (magical objects)
