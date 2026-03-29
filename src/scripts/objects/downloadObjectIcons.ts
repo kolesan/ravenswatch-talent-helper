@@ -1,10 +1,11 @@
-import { cursed } from "../data/objects/cursed";
-import { legendary } from "../data/objects/legendary";
-import { MagicalObject, MagicalObjectType } from "../data/objects/types";
+import { cursed } from "../../data/objects/cursed";
+import { legendary } from "../../data/objects/legendary";
+import { MagicalObject, MagicalObjectType } from "../../data/objects/types";
+import { downloadIcons } from "../utils/downloadIcons";
 
-import { downloadIcons } from "./utils/downloadIcons";
+import { baseObjectsNewDir } from "./consts";
 
-const baseDir = "public/icons/objects/new";
+const baseDir = baseObjectsNewDir;
 
 // e.g. Merlin patch where Sun crown and Devil's pocket was added
 const legendaryObjects = legendary

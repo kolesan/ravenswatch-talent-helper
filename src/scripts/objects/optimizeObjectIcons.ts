@@ -1,25 +1,27 @@
 import { mkdirSync } from "node:fs";
 import sharp from "sharp";
 
-import { listDirFilesSyncRecursive } from "./utils/listDirFilesSyncRecursive";
+import { listDirFilesSyncRecursive } from "../utils/listDirFilesSyncRecursive";
 
-const baseDir = "public\\icons\\objects\\new";
-const newBaseDir = `${baseDir}\\optimized`
+import { baseObjectsNewDir } from "./consts";
 
-mkdirSync(newBaseDir, { recursive: true });
+const baseDir = baseObjectsNewDir;
+const optimizedBaseDir = `${baseDir}/optimized`;
+
+mkdirSync(optimizedBaseDir, { recursive: true });
 
 const files = listDirFilesSyncRecursive(baseDir);
 
 files.forEach(file => {
     console.log(`Optimizing object icon from '${file}'`);
 
-    const objectType = file.replace(`${baseDir}\\`,"").split("\\")[0];
+    const objectType = file.replace(`${baseDir}/`,"").split("/")[0];
 
     if (!objectType) {
         throw new Error("Problem with object type, can not optimize object icons: " + file);
     }
 
-    const newDir = `${newBaseDir}\\${objectType}`;
+    const newDir = `${optimizedBaseDir}/${objectType}`;
 
     mkdirSync(newDir, { recursive: true });
 
@@ -34,7 +36,7 @@ files.forEach(file => {
 });
 
 function outputFilePath(filePath: string, objectType:string, newDir: string) {
-    const baseObjectDir = `${baseDir}\\${objectType}`;
+    const baseObjectDir = `${baseDir}/${objectType}`;
     return filePath
         .replace(baseObjectDir, newDir)
         .replace(".png", ".webp");

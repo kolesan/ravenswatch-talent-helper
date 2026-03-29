@@ -3,8 +3,8 @@ import sharp from "sharp";
 import { listDirFilesSyncRecursive } from "./utils/listDirFilesSyncRecursive";
 import { mkdirSync } from "node:fs";
 
-const baseDir = "public\\icons\\heroes";
-const newDir = `${baseDir}\\optimized`
+const baseDir = "public/icons/heroes";
+const newDir = `${baseDir}/optimized`
 
 mkdirSync(newDir, { recursive: true });
 

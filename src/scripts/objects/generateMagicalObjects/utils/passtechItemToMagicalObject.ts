@@ -1,4 +1,4 @@
-import { MagicalObject } from "../../../data/objects/types";
+import { MagicalObject } from "../../../../data/objects/types";
 import { CursedParsedPasstechItem, LegendaryParsedPasstechItem } from "../types";
 
 export function passtechItemToMagicalObject(

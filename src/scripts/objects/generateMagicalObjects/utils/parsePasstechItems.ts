@@ -1,5 +1,5 @@
-import { items } from "../../../data/passtechResponses/items/items";
-import { descriptionKeyMaps } from "../../../utils/descriptionKeyMaps";
+import { items } from "../../../../data/passtechResponses/items/items";
+import { descriptionKeyMaps } from "../../../../utils/descriptionKeyMaps";
 import {
     CursedParsedPasstechItem,
     LegendaryParsedPasstechItem,
