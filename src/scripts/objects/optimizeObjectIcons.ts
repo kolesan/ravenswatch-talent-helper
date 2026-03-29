@@ -3,9 +3,9 @@ import sharp from "sharp";
 
 import { listDirFilesSyncRecursive } from "../utils/listDirFilesSyncRecursive";
 
-import { baseObjectsNewDir } from "./consts";
+import { baseObjectIconsNewDir } from "./consts";
 
-const baseDir = baseObjectsNewDir;
+const baseDir = baseObjectIconsNewDir;
 const optimizedBaseDir = `${baseDir}/optimized`;
 
 mkdirSync(optimizedBaseDir, { recursive: true });

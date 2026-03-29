@@ -1,2 +1,2 @@
-export const baseObjectsDir = "public/icons/objects";
-export const baseObjectsNewDir = `${baseObjectsDir}/new`;
+export const baseObjectIconsDir = "public/icons/objects";
+export const baseObjectIconsNewDir = `${baseObjectIconsDir}/new`;

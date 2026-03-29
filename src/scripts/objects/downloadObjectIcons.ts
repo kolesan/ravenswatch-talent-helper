@@ -3,9 +3,9 @@ import { legendary } from "../../data/objects/legendary";
 import { MagicalObject, MagicalObjectType } from "../../data/objects/types";
 import { downloadIcons } from "../utils/downloadIcons";
 
-import { baseObjectsNewDir } from "./consts";
+import { baseObjectIconsNewDir } from "./consts";
 
-const baseDir = baseObjectsNewDir;
+const baseDir = baseObjectIconsNewDir;
 
 // e.g. Merlin patch where Sun crown and Devil's pocket was added
 const legendaryObjects = legendary
