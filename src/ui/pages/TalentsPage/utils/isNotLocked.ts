@@ -1,5 +1,5 @@
 
-import { Talent } from "../../../../scripts/extractTalents/types";
+import { Talent } from "../../../uiData/heroes/talents/types";
 
 import { isLocked } from "./isLocked";
 

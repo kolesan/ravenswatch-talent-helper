@@ -12,7 +12,7 @@ import { scarlet } from "../../../../data/heroes/talents/merged/scarlet";
 import { snowqueen } from "../../../../data/heroes/talents/merged/snowqueen";
 import { wukong } from "../../../../data/heroes/talents/merged/wukong";
 import { TalentMerged } from "../../../../data/heroes/talents/types";
-import { Talent } from "../../../../scripts/extractTalents/types";
+import { Talent } from "../talents/types";
 import { Hero, HeroCode, HeroRecord } from "../types";
 
 const talentsByHero: Record<HeroCode, TalentMerged[]> = {

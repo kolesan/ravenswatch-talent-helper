@@ -1,6 +1,6 @@
 import { html } from "htm/preact";
 
-import { Talent } from "../../../../../scripts/extractTalents/types";
+import { Talent } from "../../../../uiData/heroes/talents/types";
 import { Builder } from "../../../../components/Builder/Builder";
 import { BuilderListItemActions } from "../../../../components/Builder/types";
 import { listLabelStuckAtPx } from "../../consts/listLabelStuckAtPx";

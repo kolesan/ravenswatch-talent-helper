@@ -1,4 +1,4 @@
-import { Talent } from "../../../../../../scripts/extractTalents/types";
+import { Talent } from "../../../../../uiData/heroes/talents/types";
 import { deserializeBuilderState } from "../../../../../components/Builder/utils/builderStateStorage/deserializeBuilderState/deserializeBuilderState";
 import { deserializeRank } from "../../storage/deserialization/deserializeRank";
 import { SerializedTalentsBuilderHeroState, StorableTalentsBuilderHeroState } from "../types";

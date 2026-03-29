@@ -1,4 +1,4 @@
-import { Talent } from "../../../../scripts/extractTalents/types";
+import { Talent } from "../../../uiData/heroes/talents/types";
 
 export function markIfLocked(heroRank: number) {
     return function(talent: Talent) {

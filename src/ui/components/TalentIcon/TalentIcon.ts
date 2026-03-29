@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { Talent } from "../../../scripts/extractTalents/types";
+import { Talent } from "../../uiData/heroes/talents/types";
 import { HeroCode } from "../../uiData/heroes/types";
 
 import cls from "./TalentIcon.module.css";

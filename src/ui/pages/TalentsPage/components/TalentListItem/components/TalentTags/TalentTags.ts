@@ -1,6 +1,6 @@
 import { html } from "htm/preact";
 
-import { Talent } from "../../../../../../../scripts/extractTalents/types";
+import { Talent } from "../../../../../../uiData/heroes/talents/types";
 import { MultiplayerOnlyTag } from "../MultiplayerOnlyTag/MultiplayerOnlyTag";
 
 type Props = {

@@ -1,4 +1,4 @@
-import { Talent } from "../../../../../../scripts/extractTalents/types";
+import { Talent } from "../../../../../uiData/heroes/talents/types";
 import { BuilderState } from "../../../../../components/Builder/hooks/useBuilderStateReducer/types";
 import { isNotLocked } from "../../../utils/isNotLocked";
 

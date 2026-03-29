@@ -1,4 +1,4 @@
-import { Talent } from "../../../../../scripts/extractTalents/types";
+import { Talent } from "../../../../uiData/heroes/talents/types";
 import { Hero } from "../../../../uiData/heroes/types";
 
 export type TalentsCompendiumType = {
