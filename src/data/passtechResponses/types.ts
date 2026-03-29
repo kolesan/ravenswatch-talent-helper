@@ -5,3 +5,13 @@ export type PasstechTalent = {
     icon: string;
     descriptions: string[];
 };
+
+export type PasstechItem = {
+    id: string;
+    name: string;
+    description: string;
+    effect: string | null;
+    quality: number;
+    quality_name: "Common" | "Rare" | "Epic" | "Legendary" | "Cursed";
+    icon: string;
+};

@@ -1,11 +1,11 @@
 import { items } from "../../../../data/passtechResponses/items/items";
+import { PasstechItem } from "../../../../data/passtechResponses/types";
 import { descriptionKeyMaps } from "../../../../utils/descriptionKeyMaps";
 import {
     CursedParsedPasstechItem,
     LegendaryParsedPasstechItem,
     ParsedPasstechItem,
     ParsedPasstechItemType,
-    PasstechItem,
 } from "../types";
 
 import { isCursed } from "./isCursed";

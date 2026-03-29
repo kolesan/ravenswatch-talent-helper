@@ -1,4 +1,6 @@
-export const items = [
+import { PasstechItem } from "../types";
+
+export const items: PasstechItem[] = [
     {
         "id": "9cca82a3-37c8-4aef-867b-aa03b3a1e325",
         "name": "Dreamcatcher",
