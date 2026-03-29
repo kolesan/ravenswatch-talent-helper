@@ -43,7 +43,8 @@ export const ${hero.code}: Talent[] = ${talentsJson};`;
 async function parsePasstechTalents(
     heroCode: HeroBaseCode
 ): Promise<ParsedPasstechTalent[]> {
-    const passtechTalentsFile = await import(`./passtechData/${heroCode}`);
+    const passtechTalentsFile = 
+        await import(`../../data/passtechResponses/heroes/${heroCode}`);
     const talents = passtechTalentsFile[heroCode]();
     return talents.map(parseTalent);
 }
