@@ -1,4 +1,4 @@
-import { HeroBase, HeroBaseCode } from "../../../../../../src/data/heroes/types";
+import { HeroBase, HeroBaseCode } from "../../../../../types";
 import { Talent } from "../../../types";
 
 type TalentTransformCb = (talent: Talent) => Talent;

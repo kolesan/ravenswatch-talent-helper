@@ -1,6 +1,6 @@
 import { renameSync } from "fs";
 
-import { heroesBase } from "../../src/data/heroes/heroesBase";
+import { heroesBase } from "../heroesBase";
 
 import { listDirFilesSyncRecursive } from "./utils/listDirFilesSyncRecursive";
 
@@ -9,9 +9,11 @@ const hero = heroesBase.all.melusine;
 const heroCode = hero.code;
 const importName = `${heroCode}Order`;
 
-const screenshots = listDirFilesSyncRecursive(
-    `src\\data\\screenshots\\talents\\${heroCode}`
-);
+// Screenshots were removed from the repo and related scripts were deprecated
+// const baseTalentScreenshotsDir = `src\\data\\screenshots\\talents\\${heroCode}`;
+const baseTalentScreenshotsDir = "";
+
+const screenshots = listDirFilesSyncRecursive(baseTalentScreenshotsDir);
 
 const manualOrderOverride = [
     "geyser",

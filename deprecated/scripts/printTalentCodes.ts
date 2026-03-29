@@ -1,5 +1,5 @@
-import { heroesBase } from "../../src/data/heroes/heroesBase";
-import { HeroBase } from "../../src/data/heroes/types";
+import { heroesBase } from "../heroesBase";
+import { HeroBase } from "../types";
 
 import { Talent } from "./extractTalents/types";
 

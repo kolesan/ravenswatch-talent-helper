@@ -1,5 +1,5 @@
-import { HeroBase } from "../../../src/data/heroes/types";
+import { HeroBase } from "../../types";
 
 export function heroTalentTableFileName(hero: HeroBase) {
-    return `./src/scrapedData/heroTalentTables/${hero.code}.html`;
+    return `./src/deprecated/scrapedData/heroTalentTables/${hero.code}.html`;
 }

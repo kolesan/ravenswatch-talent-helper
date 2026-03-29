@@ -1,4 +1,4 @@
-import { heroesBase } from "../../../src/data/heroes/heroesBase";
+import { heroesBase } from "../../heroesBase";
 import { runPromiseChain } from "../utils/runPromiseChain";
 
 import { scrapeHeroPage } from "./utils/scrapeHeroPage";

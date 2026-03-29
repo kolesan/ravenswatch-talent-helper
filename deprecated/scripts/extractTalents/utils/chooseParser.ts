@@ -1,4 +1,4 @@
-import { HeroBase, HeroBaseCode } from "../../../../src/data/heroes/types";
+import { HeroBase, HeroBaseCode } from "../../../types";
 
 import { parseSeparateIconColumnTable } from "./parseBeowulfTable/parseSeparateIconColumnTable";
 import { parseCommonTable } from "./parseCommonTable";

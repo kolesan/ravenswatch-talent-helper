@@ -1,10 +1,10 @@
 import { mkdir, writeFile } from "fs/promises";
 
-import { HeroBase } from "../../../../src/data/heroes/types";
 import { Talent } from "../../extractTalents/types";
 
 import { heroTalentIconDirName } from "./heroTalentIconDirName";
 import { heroTalentIconFileName } from "./heroTalentIconFileName";
+import { HeroBase } from "../../../types";
 
 export function fetchAndSaveIcon(hero: HeroBase, talent: Talent) {
     console.log(`Fetching '${hero.name}'s '${talent.name}' talent icon`);

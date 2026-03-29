@@ -2,7 +2,9 @@ import sharp from "sharp";
 
 import { listDirFilesSyncRecursive } from "./utils/listDirFilesSyncRecursive";
 
-const baseItemScreenshotsDir = "src\\data\\screenshots\\items";
+// Screenshots were removed from the repo and related scripts were deprecated
+// const baseItemScreenshotsDir = "src\\data\\screenshots\\items";
+const baseItemScreenshotsDir = "";
 
 const files = listDirFilesSyncRecursive(baseItemScreenshotsDir);
 

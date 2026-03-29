@@ -1,12 +1,12 @@
 import { readFileSync } from "fs";
 
-import { heroesBase } from "../../../src/data/heroes/heroesBase";
-import { HeroBase } from "../../../src/data/heroes/types";
 import { runPromiseChain } from "../utils/runPromiseChain";
 import { Talent } from "../extractTalents/types";
 import { heroTalentsFileName } from "../utils/heroTalentsFileName";
 
 import { fetchAndSaveIcon } from "./utils/fetchAndSaveIcon";
+import { HeroBase } from "../../types";
+import { heroesBase } from "../../heroesBase";
 
 const heroesToDownloadIconsFor = [
     heroesBase.all.romeo,

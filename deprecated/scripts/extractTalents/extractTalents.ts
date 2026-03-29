@@ -1,4 +1,4 @@
-import { heroesBase } from "../../../src/data/heroes/heroesBase";
+import { heroesBase } from "../../heroesBase";
 
 import { extractHeroTalentsToFile } from "./utils/extractHeroTalentsToFile";
 
