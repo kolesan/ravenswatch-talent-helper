@@ -16,7 +16,8 @@ files.forEach(file => {
 
     const sharpFile = sharp(file);
 
-    sharpFile.webp()
+    sharpFile
+        .webp()
         .toFile(outputFilePath(file))
         .then(info => console.log("Success", { w: info.width, h: info.height }))
         .catch((err) => console.log("Error:", file, err));

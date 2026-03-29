@@ -60,17 +60,17 @@ This will start vite dev mode with hot reload, check console for details on the 
             ```
             npm run downloadTalentIcons
             ```
-            New icons should appear in `public/icons/talents/new/{heroName}` e.g. `public/icons/talents/new/merlin`
+            New icons should appear in `public/icons/talents/new/{heroCode}` e.g. `public/icons/talents/new/merlin`
     1. Optimize the new talent icons
         1. Run the optimization script
             ```
             npm run optimizeTalentIcons
             ```
-            New icons should appear in `public/icons/talents/new/optimized/{heroName}` e.g. `public/icons/talents/new/optimized/merlin`
-    1. Move the optimized talent icons to `public/icons/talents/{heroName}` e.g. `public/icons/talents/merlin`
-    1. Delete any unneeded temporary files, e.g. unoptimized icons in the `/new` folder
+            New icons should appear in `public/icons/talents/new/optimized/{heroCode}` e.g. `public/icons/talents/new/optimized/merlin`
+    1. Move the optimized talent icons to `public/icons/talents/{heroCode}` e.g. `public/icons/talents/merlin`
+    1. Delete any unneeded temporary files, e.g. unoptimized icons in the `/new` folder  (move to archive)
 1. Handle the hero icon
-    1. To download hero icon go to `https://buildmaker.ravenswatch.com/` and copy the png of the hero from the buildmaker to `public\icons\heroes\{heroName}.webp` e.g. `public\icons\heroes\merlin.webp`
+    1. To download hero icon go to `https://buildmaker.ravenswatch.com/` and copy the png of the hero from the buildmaker to `public\icons\heroes\{heroCode}.webp` e.g. `public\icons\heroes\merlin.webp`
     1. Optimize the new hero icon 
         1. Modify the `.filter` of the `files` constant in the `optimizeHeroIcons.ts` script so it matches your new hero
         1. Run the optimization script
@@ -79,8 +79,43 @@ This will start vite dev mode with hot reload, check console for details on the 
             ```
             The new optimized icon should appear in `public/icons/heroes/optimized`
     1. Move the new icon to `public/icons/heroes` 
-    1. Delete the unoptimized icon
-1. TODO download and optimize hero icon and hero art
+    1. Delete the unoptimized icon (move to archive)
+1. Handle the hero art
+    1. Downloading the art
+        1. Not sure where is the best place to get the hero art so far the best bet was the fandom wiki
+        1. Find the hero art
+        1. Decide what part of the image you want to see behind the hero icon and name in the hero selection component
+        1. Cut out a square with the same dimensions as other hero arts out of the image
+        1. Make any adjustments - e.g. upscale with ai, modify colors, make it brighter etc. (had to do that for Merlin's art because it looked very bad by default)
+        1. Save the art as a jpg in `public/art/{heroCode}.jpg`
+    1. Optimizing the art
+        1. Modify the `.filter` of the `files` constant in the `optimizeArt.ts` script so it matches your new hero
+        1. Run the optimization script
+            ```
+            npm run optimizeArt
+            ```
+            The new optimized art should appear in `public/art/optimized`
+    1. Move the art to `public/art` 
+    1. Delete the unoptimized art (move to archive)
+1. Run the app in dev mode and double check that the new hero looks and operates normally. Check:
+    1. Talents
+        1. Descriptions and all the `improvements` and `degradations` in the descriptions
+        1. Icons
+        1. Names
+        1. How they are moved to used or preferred and back
+        1. If the they are saved to local storage properly and loaded back from it
+        1. Double check all tooltips
+    1. Check that the hero is switched properly and is loaded from local storage
+    1. Check that the hero switch looks good
+    1. Check the url
+    1. You might need to do manual micro adjustments to the hero icon placement (some of the other heroes needed that)
+    1. Hero name might need micro adjustments like the names of some other heroes needed
+    1. Some css classes use the hero name, double check those
+    1. Double check that both `builder` and `compendium` views look good
+    1. Double check how the rank slider works for this new hero
+    1. Double check that TS is compiling properly
+1. Delete leftover temporary files if there are any (move to archive)
+1. Check git diff screen, commit, push, check netlify preview, deploy, check prod, enjoy
 
 ## Adding new items (magical objects)
 1. Go to the official buildmaker app at `https://buildmaker.ravenswatch.com/`
@@ -126,5 +161,5 @@ This will start vite dev mode with hot reload, check console for details on the 
     1. Names
     1. How they are moved to used or preferred and back
     1. If the they are saved to local storage properly and loaded back from it
-1. Delete the temporary icons in the `new` and `optimized` folders
+1. Delete the temporary icons in the `new` and `optimized` folders (move to archive)
 1. Check git diff screen, commit, push, check netlify preview, deploy, check prod, enjoy

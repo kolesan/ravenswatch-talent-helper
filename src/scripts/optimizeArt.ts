@@ -1,16 +1,23 @@
+import { mkdirSync } from "fs";
 import sharp from "sharp";
 
 import { listDirFilesSyncRecursive } from "./utils/listDirFilesSyncRecursive";
 
-const baseDir = "public/art/new";
+const baseDir = "public/art";
+const newDir = `${baseDir}/optimized`
 
-const files = listDirFilesSyncRecursive(baseDir);
+mkdirSync(newDir, { recursive: true });
+
+const files = listDirFilesSyncRecursive(baseDir)
+    .filter(it => it.includes("newHero"));
 
 files.forEach(file => {
-    sharp(file)
-        .webp({
-            quality: 80,
-        })
+    console.log(`Optimizing hero art from '${file}'`);
+
+    const sharpFile = sharp(file);
+
+    sharpFile
+        .webp()
         .toFile(outputFilePath(file))
         .then(info => console.log("Success", { w: info.width, h: info.height }))
         .catch((err) => console.log("Error:", file, err));
@@ -18,6 +25,6 @@ files.forEach(file => {
 
 function outputFilePath(filePath: string) {
     return filePath
-        .replace(baseDir, "public/art/newResampled/")
+        .replace(baseDir, newDir)
         .replace(".jpg", ".webp");
 }
