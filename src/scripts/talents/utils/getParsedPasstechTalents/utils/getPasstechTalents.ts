@@ -1,7 +1,7 @@
 import { pathToFileURL } from "url";
 
-import { HeroBaseCode } from "../../../../data/heroes/types";
-import { PasstechTalent } from "../../../../data/passtechResponses/types";
+import { HeroBaseCode } from "../../../../../data/heroes/types";
+import { PasstechTalent } from "../../../../../data/passtechResponses/types";
 
 const talentsPath = (heroCode: HeroBaseCode) =>
     `${process.cwd()}/src/data/passtechResponses/heroes/talents/${heroCode}`;

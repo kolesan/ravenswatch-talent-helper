@@ -1,7 +1,7 @@
-import { TalentType } from "../../../../data/heroes/talents/types";
-import { PasstechTalent } from "../../../../data/passtechResponses/types";
-import { descriptionKeyMaps } from "../../../../utils/descriptionKeyMaps";
-import { ParsedPasstechTalent } from "../types";
+import { TalentType } from "../../../../../data/heroes/talents/types";
+import { PasstechTalent } from "../../../../../data/passtechResponses/types";
+import { descriptionKeyMaps } from "../../../../../utils/descriptionKeyMaps";
+import { ParsedPasstechTalent } from "../../../types";
 
 export function parsePasstechTalents(
     passtechTalents: PasstechTalent[]

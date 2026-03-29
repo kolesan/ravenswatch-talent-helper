@@ -1,6 +1,6 @@
 import { TalentManual, TalentMerged } from "../../../../data/heroes/talents/types";
 import { isTruthy } from "../../../../ui/utils/isTruthy";
-import { ParsedPasstechTalent } from "../types";
+import { ParsedPasstechTalent } from "../../types";
 
 export function mergePasstechAndManualTalents(
     manualTalents: TalentManual[],

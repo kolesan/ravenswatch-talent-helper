@@ -1,4 +1,4 @@
-import { TalentType } from "../../../data/heroes/talents/types";
+import { TalentType } from "../../data/heroes/talents/types";
 
 export type ParsedPasstechTalent = {
     code: string;
