@@ -53,6 +53,14 @@ This will start vite dev mode with hot reload, check console for details on the 
         merlin,
     };
     ```
+1. Download the new hero talent icons
+    1. Modify the `heroes` array in `src\scripts\talents\downloadTalentIcons\downloadTalentIcons.ts` so it includes the heroes you want to download the icons for (probably just the new hero)
+    1. Run the download script
+        ```
+        npm run downloadTalentIcons
+        ```
+        New icons should appear in `public/icons/talents/new/{heroName}` e.g. `public/icons/talents/new/merlin`
+1. Optimize the new talent icons
 1. TODO download talent icons, hero icon and hero art
 
 ## Adding new items (magical objects)
