@@ -7,16 +7,27 @@ npm run dev
 ```
 This will start vite dev mode with hot reload, check console for details on the host and port
 
+# When a new patch is released
+1. Carefully check all patchnotes for:
+    1. Item changes
+    1. Talent changes
+    1. New heroes
+    1. New items
+1. Make sure all the changes are reflected in this app
+
 ## Adding new hero
 1. Add the hero to the `heroesManualOrigin` object in `src\data\heroesManualOrigin.ts`
     1. The property name will be the `code` of the new hero in the whole app, so choose a good value. 
-        * It should be clear understandable and simple, and it should not have uppercase letters or any strange symbols. Temember that it will be used in the url in the browser and also in the filesystem e.g. `snowqueen`✅ instead of `snowQueen`❌
+        * It should be clear understandable and simple, and it should not have uppercase letters or any strange symbols. Temember that it will be used in the url in the browser and also in the filesystem e.g. choose `snowqueen`✅ instead of `snowQueen`❌
 1. Download passtech talent data for the hero from the official buildmaker app at `https://buildmaker.ravenswatch.com/`.
     1. Open browser dev tools Network tab
     1. Open new build creation screen
     1. Choose the new hero
-    1. In the network tab find the response with the talents of the new hero
-    1. Save this data in `TODO`
+    1. In the network tab find the response with the talents of the new hero e.g. `/api/game-heroes/merlin?lang=en`
+    1. The `skills` property in the response should have an array of the heroes talents
+        * Copy this data to `src\data\passtechResponses\heroes\{heroCode}.ts` e.g. `src\data\passtechResponses\heroes\merlin.ts`
+        * See existing heroes for an example of how this data should be stored exactly
+    1. 
 1. TODO describe how the talents should be merged and placed in the merged folder
 1. In `src\ui\uiData\utils\injectBaseHeroesWithTalents.ts` import the talents for the new hero and add them to the `talentsByHero` map
 1. 
