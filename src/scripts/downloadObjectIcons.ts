@@ -1,31 +1,26 @@
-import { mkdir, writeFile } from "node:fs/promises";
-
 import { cursed } from "../data/objects/cursed";
 import { legendary } from "../data/objects/legendary";
-import { MagicalObject } from "../data/objects/types";
+import { MagicalObject, MagicalObjectType } from "../data/objects/types";
 
-const objects = [...legendary, ...cursed];
+import { downloadIcons } from "./utils/downloadIcons";
+
+const baseDir = "public/icons/objects/new";
+
+// e.g. Merlin patch where Sun crown and Devil's pocket was added
+const legendaryObjects = legendary
+    .filter(it => it.code.includes("crown"));
+const cursedObjects = cursed
+    .filter(it => it.code.includes("devil"));
+
+
+downloadObjects("legendary", legendaryObjects);
+downloadObjects("cursed", cursedObjects);
+
+
+async function downloadObjects(type: MagicalObjectType, objects: MagicalObject[]) {
+    console.log();
+    console.log(`Downloading '${type}' object icons`);
+    downloadIcons(`${baseDir}/${type}`, objects);
+}
 
 console.log();
-console.log("Downloading object icons");
-
-for (let i = 0; i < objects.length; i++) {
-    await downloadIcon(objects[i]!);
-}
-
-async function downloadIcon(object: MagicalObject) {
-    console.log("Fetching icon: ", object.code);
-
-    const resp = await fetch(object.iconUrl);
-    await new Promise<void>(res => setTimeout(() => { res(); }, 500));
-    const data = await resp.arrayBuffer();
-    
-    const dirName = `public/icons/objects/new`;
-    const fileName = `${object.code}.png`;
-    const filePath = `${dirName}/${fileName}`;
-
-    await mkdir(dirName, { recursive: true })
-        .then(() => writeFile(filePath, Buffer.from(data)))
-        .then(() => console.log(`Success: ${filePath}`))
-        .catch(err => console.log(`Error: ${filePath}`, err));
-}
