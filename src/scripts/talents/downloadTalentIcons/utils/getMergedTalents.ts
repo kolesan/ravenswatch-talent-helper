@@ -11,7 +11,7 @@ export async function getMergedTalents(
 ): Promise<TalentMerged[]> {
     const moduleUrl = pathToFileURL(talentsPath(heroCode)).href;
 
-    const myTalentsFile = await import(moduleUrl);
+    const mergedTalentsFile = await import(moduleUrl);
 
-    return myTalentsFile[heroCode];
+    return mergedTalentsFile[heroCode];
 }

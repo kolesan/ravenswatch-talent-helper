@@ -8,7 +8,6 @@ const baseDir = baseTalentIconsNewDir;
 
 const heroes = [
     heroesBase.all.merlin,
-    heroesBase.all.beowulf,
 ];
 
 for (let i = 0; i < heroes.length; i++) {
@@ -19,5 +18,5 @@ for (let i = 0; i < heroes.length; i++) {
     console.log();
     console.log("Downloading icons for: ", hero.code);
 
-    await downloadIcons(`${baseDir}/${hero.code}`, mergedTalents.slice(-3));
+    await downloadIcons(`${baseDir}/${hero.code}`, mergedTalents);
 }

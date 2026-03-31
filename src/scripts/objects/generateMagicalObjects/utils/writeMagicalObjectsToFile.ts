@@ -11,7 +11,8 @@ export function writeMagicalObjectsToFile(
 
     const content = `import { MagicalObject } from "./types";
     
-export const ${type}: MagicalObject[] = ${itemsJson};`;
+export const ${type}: MagicalObject[] = ${itemsJson};
+`;
 
     return writeFile(`${dir}/${type}.ts`, content)
         .then(() => console.log(

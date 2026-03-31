@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "fs/promises";
 
 type Downloadable = {
     code: string;

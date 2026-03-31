@@ -11,7 +11,7 @@ export async function getManualTalents(
 ): Promise<TalentManual[]> {
     const moduleUrl = pathToFileURL(talentsPath(heroCode)).href;
 
-    const myTalentsFile = await import(moduleUrl);
+    const manualTalentsFile = await import(moduleUrl);
 
-    return myTalentsFile[heroCode];
+    return manualTalentsFile[heroCode];
 }
