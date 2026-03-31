@@ -1,12 +1,12 @@
 import clsx from "clsx";
 import { html } from "htm/preact";
 
-import { HeroCode } from "../../../../../data/heroes";
+import { Talent } from "../../../../uiData/heroes/talents/types";
 import { ListItem } from "../../../../components/ListItem/ListItem";
 import { PreferredIcon } from "../../../../components/PreferredIcon/PreferredIcon";
 import { TalentDescription } from "../../../../components/TalentDescription/TalentDescription";
 import { TalentIcon } from "../../../../components/TalentIcon/TalentIcon";
-import { TalentWithLockedFlag } from "../../types";
+import { HeroCode } from "../../../../uiData/heroes/types";
 
 import { TalentRank } from "./components/TalentRank/TalentRank";
 import { TalentTags } from "./components/TalentTags/TalentTags";
@@ -18,7 +18,7 @@ interface Props {
     interactive?: boolean;
     showRank?: boolean;
     heroCode: HeroCode;
-    talent: TalentWithLockedFlag;
+    talent: Talent;
     index: number;
     onClick?: () => void;
     onAltClick?: () => void;

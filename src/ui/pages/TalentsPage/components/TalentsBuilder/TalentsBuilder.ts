@@ -1,10 +1,10 @@
 import { html } from "htm/preact";
 
+import { Talent } from "../../../../uiData/heroes/talents/types";
 import { Builder } from "../../../../components/Builder/Builder";
 import { BuilderListItemActions } from "../../../../components/Builder/types";
 import { listLabelStuckAtPx } from "../../consts/listLabelStuckAtPx";
 import { maxUsedTalents } from "../../consts/maxUsedTalents";
-import { TalentWithLockedFlag } from "../../types";
 import { TalentListItem } from "../TalentListItem/TalentListItem";
 
 import { TalentsBuilderType } from "./types";
@@ -40,9 +40,9 @@ export function TalentsBuilder({
             entityName=${"talent"}
             listLabelStuckAtPx=${listLabelStuckAtPx}
             maxUsedItems=${maxUsedTalents}
-            canCountItemAvailable=${(talent: TalentWithLockedFlag) => !talent.locked}
+            canCountItemAvailable=${(talent: Talent) => !talent.locked}
             renderItem=${(
-                talent: TalentWithLockedFlag, 
+                talent: Talent, 
                 index: number,
                 actions: BuilderListItemActions,
             ) => html`

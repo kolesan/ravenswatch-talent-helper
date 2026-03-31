@@ -1,6 +1,6 @@
 import { html } from "htm/preact";
 
-import { MagicalObject } from "../../../types";
+import { MagicalObject } from "../../uiData/objects/types";
 import { Builder } from "../../components/Builder/Builder";
 import { BuilderListItemActions } from "../../components/Builder/types";
 import { ObjectListItem } from "../../components/ObjectListItem";
@@ -39,7 +39,6 @@ export function CursedObjectsPage() {
                     }}
                     index=${index}
                     object=${item}
-                    objectType=${"cursed"}
                     onClick=${actions.onClick}
                     onAltClick=${actions.onAltClick}
                     onHold=${actions.onHold}

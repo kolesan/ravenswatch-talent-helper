@@ -1,15 +1,15 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { HeroCode } from "../../../data/heroes";
-import { TalentWithLockedFlag } from "../../pages/TalentsPage/types";
+import { Talent } from "../../uiData/heroes/talents/types";
+import { HeroCode } from "../../uiData/heroes/types";
 
 import cls from "./TalentIcon.module.css";
 
 type Props = {
     className?: string;
     heroCode: HeroCode;
-    talent: TalentWithLockedFlag;
+    talent: Talent;
 }
 
 const lockedTalentSrc = `/icons/talents/locked_talent.webp`;

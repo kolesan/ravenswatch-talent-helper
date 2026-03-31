@@ -1,4 +1,4 @@
-import { Talent } from "../../../../../../scripts/extractTalents/types";
+import { Talent } from "../../../../../uiData/heroes/talents/types";
 
 export function groupTalentsByType(allTalents: Talent[]) {
     const starting = allTalents.filter(it => it.type === "starting");

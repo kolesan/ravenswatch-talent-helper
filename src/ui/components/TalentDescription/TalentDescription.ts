@@ -1,13 +1,13 @@
 import { html } from "htm/preact";
 
-import { TalentWithLockedFlag } from "../../pages/TalentsPage/types";
+import { Talent } from "../../uiData/heroes/talents/types";
 import { DescriptionList } from "../DescriptionList/DescriptionList";
 
 import { UnlockedAtRank } from "./components/UnlockedAtRank/UnlockedAtRank";
 
 interface Props {
     className?: string;
-    talent: TalentWithLockedFlag;
+    talent: Talent;
 }
 
 export function TalentDescription({

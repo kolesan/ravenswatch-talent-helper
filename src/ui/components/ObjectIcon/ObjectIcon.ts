@@ -1,18 +1,18 @@
 import { html } from "htm/preact";
 
+import { MagicalObject } from "../../uiData/objects/types";
+
 import cls from "./ObjectIcon.module.css";
 
 interface Props {
-    type: "legendary" | "cursed";
-    code: string;
+    object: MagicalObject;
 }
 
 export function ObjectIcon({
-    type,
-    code,
+    object,
 }: Props) {
-    const objectSrc = `/icons/objects/${type}/${code}.webp`;
-    const frameSrc = `/icons/objects/${type}/frame.webp`;
+    const objectSrc = `/icons/objects/${object.type}/${object.code}.webp`;
+    const frameSrc = `/icons/objects/${object.type}/frame.webp`;
 
     return html`
         <div class=${cls.imgContainer}>

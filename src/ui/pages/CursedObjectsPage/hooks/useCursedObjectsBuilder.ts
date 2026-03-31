@@ -1,6 +1,6 @@
-import { cursed } from "../../../../scrapedData/mergedItems/cursed";
 import { useBuilder } from "../../../components/Builder/useBuilder";
 import { builderStateStorage } from "../../../components/Builder/utils/builderStateStorage/builderStateStorage";
+import { cursed } from "../../../uiData/objects/cursed";
 
 export const storageKey = "rrh_objects_cursed";
 

@@ -1,8 +1,7 @@
-import { Talent } from "../../../../scripts/extractTalents/types";
-import { TalentWithLockedFlag } from "../types";
+import { Talent } from "../../../uiData/heroes/talents/types";
 
 export function markIfLocked(heroRank: number) {
-    return function(talent: Talent): TalentWithLockedFlag {
+    return function(talent: Talent) {
         if (talent.unlockedAtRank > heroRank) {
             return {
                 ...talent,

@@ -2,8 +2,8 @@ import { clsx } from "clsx";
 import { html } from "htm/preact";
 
 import { List } from "../../../../components/List/List";
+import { Talent } from "../../../../uiData/heroes/talents/types";
 import { listLabelStuckAtPx } from "../../consts/listLabelStuckAtPx";
-import { TalentWithLockedFlag } from "../../types";
 import { TalentListItem } from "../TalentListItem/TalentListItem";
 
 import { TalentsCompendiumType } from "./types";
@@ -59,12 +59,12 @@ export function TalentsCompendium({
         return {
             classes: classes?.list,
             labelStuckAtPx: listLabelStuckAtPx,
-            canCountItemUsable: (talent: TalentWithLockedFlag) => !talent.locked,
+            canCountItemUsable: (talent: Talent) => !talent.locked,
             renderItem: renderCompendiumItem,
         };
     }
 
-    function renderCompendiumItem(talent: TalentWithLockedFlag, index: number) {
+    function renderCompendiumItem(talent: Talent, index: number) {
         return html`
             <${TalentListItem}
                 className=${clsx({

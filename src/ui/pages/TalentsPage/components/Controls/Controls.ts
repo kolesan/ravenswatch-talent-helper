@@ -1,8 +1,9 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { Hero, heroes } from "../../../../../finalData/finalData";
 import { useIsStickyElemStuck } from "../../../../hooks/useIsStickyElemStuck";
+import { heroes } from "../../../../uiData/heroes/heroes";
+import { Hero } from "../../../../uiData/heroes/types";
 import { controlsStuckAtPx } from "../../consts/controlsStuckAtPx";
 import { TalentsPageView } from "../../talentsPageViews";
 

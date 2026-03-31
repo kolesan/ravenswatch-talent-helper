@@ -1,5 +1,5 @@
-import { Hero } from "../../../../../finalData/finalData";
-import { Talent } from "../../../../../scripts/extractTalents/types";
+import { Hero } from "../../../../uiData/heroes/types";
+import { Talent } from "../../../../uiData/heroes/talents/types";
 import { BuilderType } from "../../../../components/Builder/types";
 
 export type TalentsBuilderType = {

@@ -1,12 +1,12 @@
-import { Hero } from "../../../../../finalData/finalData";
-import { TalentWithLockedFlag } from "../../types";
+import { Talent } from "../../../../uiData/heroes/talents/types";
+import { Hero } from "../../../../uiData/heroes/types";
 
 export type TalentsCompendiumType = {
     hero: Hero;
     talents: {
-        starting: TalentWithLockedFlag[];
-        standard: TalentWithLockedFlag[];
-        ultimate: TalentWithLockedFlag[];
-        final: TalentWithLockedFlag[];
+        starting: Talent[];
+        standard: Talent[];
+        ultimate: Talent[];
+        final: Talent[];
     };
 };
