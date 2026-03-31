@@ -1,6 +1,6 @@
 import { mkdirSync } from "fs";
 
-import { listDirFilesSyncRecursive } from "../../utils/listDirFilesSyncRecursive";
+import { listDirFilesSyncRecursive } from "./listDirFilesSyncRecursive";
 
 import { optimizeImage } from "./optimizeImage";
 
