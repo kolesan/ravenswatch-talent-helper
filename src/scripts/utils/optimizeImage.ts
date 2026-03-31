@@ -26,16 +26,6 @@ export function optimizeImage({
         
         mkdirSync(newDir, { recursive: true });
 
-        // console.log({
-        //     subdir_____: subdir,
-        //     baseDir____: baseDir,
-        //     oldDir_____: oldDir,
-        //     filePath___: filePath,
-        //     newBaseDir_: newBaseDir,
-        //     newDir_____: newDir,
-        //     newFilePath,
-        // });
-
         sharp(filePath)
             .webp()
             .toFile(newFilePath)
