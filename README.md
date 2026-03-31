@@ -87,14 +87,14 @@ This will start vite dev mode with hot reload, check console for details on the 
         1. Decide what part of the image you want to see behind the hero icon and name in the hero selection component
         1. Cut out a square with the same dimensions as other hero arts out of the image
         1. Make any adjustments - e.g. upscale with ai, modify colors, make it brighter etc. (had to do that for Merlin's art because it looked very bad by default)
-        1. Save the art as a jpg in `public/art/{heroCode}.jpg`
+        1. Save the art as a jpg in `public/art/new/{heroCode}.jpg`
     1. Optimizing the art
         1. Modify the `.filter` of the `files` constant in the `optimizeArt.ts` script so it matches your new hero
         1. Run the optimization script
             ```
             npm run optimizeArt
             ```
-            The new optimized art should appear in `public/art/optimized`
+            The new optimized art should appear in `public/art/new/optimized`
     1. Move the art to `public/art` 
     1. Delete the unoptimized art (move to archive)
 1. Run the app in dev mode and double check that the new hero looks and operates normally. Check:
