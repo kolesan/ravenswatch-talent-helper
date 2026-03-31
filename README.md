@@ -60,25 +60,24 @@ This will start vite dev mode with hot reload, check console for details on the 
             ```
             npm run downloadTalentIcons
             ```
-            New icons should appear in `public/icons/talents/new/{heroCode}` e.g. `public/icons/talents/new/merlin`
+            New icons should appear in `public\icons\talents\new\{heroCode}` e.g. `public\icons\talents\new\merlin`
     1. Optimize the new talent icons
         1. Run the optimization script
             ```
             npm run optimizeTalentIcons
             ```
-            New icons should appear in `public/icons/talents/new/optimized/{heroCode}` e.g. `public/icons/talents/new/optimized/merlin`
-    1. Move the optimized talent icons to `public/icons/talents/{heroCode}` e.g. `public/icons/talents/merlin`
-    1. Delete any unneeded temporary files, e.g. unoptimized icons in the `/new` folder  (move to archive)
+            New icons should appear in `public\icons\talents\new\optimized\{heroCode}` e.g. `public\icons\talents\new\optimized\merlin`
+    1. Move the optimized talent icons to `public\icons\talents\{heroCode}` e.g. `public\icons\talents\merlin`
+    1. Delete any unneeded temporary files, e.g. unoptimized icons in the `\new` folder  (move to archive)
 1. Handle the hero icon
-    1. To download hero icon go to `https://buildmaker.ravenswatch.com/` and copy the png of the hero from the buildmaker to `public\icons\heroes\{heroCode}.webp` e.g. `public\icons\heroes\merlin.webp`
+    1. To download hero icon go to `https://buildmaker.ravenswatch.com/` and copy the png of the hero from the buildmaker to `public\icons\heroes\new\{heroCode}.png` e.g. `public\icons\heroes\merlin.png`
     1. Optimize the new hero icon 
-        1. Modify the `.filter` of the `files` constant in the `optimizeHeroIcons.ts` script so it matches your new hero
         1. Run the optimization script
             ```
             npm run optimizeHeroIcons
             ```
-            The new optimized icon should appear in `public/icons/heroes/optimized`
-    1. Move the new icon to `public/icons/heroes` 
+            The new optimized icon should appear in `public\icons\heroes\new\optimized`
+    1. Move the new icon to `public\icons\heroes` 
     1. Delete the unoptimized icon (move to archive)
 1. Handle the hero art
     1. Downloading the art
@@ -87,15 +86,15 @@ This will start vite dev mode with hot reload, check console for details on the 
         1. Decide what part of the image you want to see behind the hero icon and name in the hero selection component
         1. Cut out a square with the same dimensions as other hero arts out of the image
         1. Make any adjustments - e.g. upscale with ai, modify colors, make it brighter etc. (had to do that for Merlin's art because it looked very bad by default)
-        1. Save the art as a jpg in `public/art/new/{heroCode}.jpg`
+        1. Save the art as a jpg in `public\art\new\{heroCode}.jpg` (historically those were usually .jpg's but the optimization will turn anything in to webp so it does not matter)
     1. Optimizing the art
         1. Modify the `.filter` of the `files` constant in the `optimizeArt.ts` script so it matches your new hero
         1. Run the optimization script
             ```
             npm run optimizeArt
             ```
-            The new optimized art should appear in `public/art/new/optimized`
-    1. Move the art to `public/art` 
+            The new optimized art should appear in `public\art\new\optimized`
+    1. Move the art to `public\art` 
     1. Delete the unoptimized art (move to archive)
 1. Run the app in dev mode and double check that the new hero looks and operates normally. Check:
     1. Talents

@@ -1,30 +1,8 @@
-import sharp from "sharp";
+import { optimizeImages } from "./utils/optimizeImages";
 
-import { listDirFilesSyncRecursive } from "./utils/listDirFilesSyncRecursive";
-import { mkdirSync } from "node:fs";
+const baseDir = "public/icons/heroes/new";
 
-const baseDir = "public/icons/heroes";
-const newDir = `${baseDir}/optimized`
-
-mkdirSync(newDir, { recursive: true });
-
-const files = listDirFilesSyncRecursive(baseDir)
-    .filter(it => it.includes("newHero"));
-
-files.forEach(file => {
-    console.log(`Optimizing hero portrait icon from '${file}'`);
-
-    const sharpFile = sharp(file);
-
-    sharpFile
-        .webp()
-        .toFile(outputFilePath(file))
-        .then(info => console.log("Success", { w: info.width, h: info.height }))
-        .catch((err) => console.log("Error:", file, err));
+optimizeImages({
+    baseDir: baseDir,
+    newBaseDir: `${baseDir}/optimized`,
 });
-
-function outputFilePath(filePath: string) {
-    return filePath
-        .replace(baseDir, newDir)
-        .replace(".png", ".webp");
-}
