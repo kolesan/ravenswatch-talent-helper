@@ -1,42 +1,7 @@
-import { mkdirSync } from "node:fs";
-import sharp from "sharp";
-
-import { listDirFilesSyncRecursive } from "../utils/listDirFilesSyncRecursive";
 import { baseTalentIconsNewDir } from "./consts";
+import { optimizeImages } from "./utils/optimizeImages";
 
-const baseDir = baseTalentIconsNewDir;
-const newBaseDir = `${baseDir}/optimized`
-
-mkdirSync(newBaseDir, { recursive: true });
-
-const files = listDirFilesSyncRecursive(baseDir);
-
-files.forEach(file => {
-    console.log(`Optimizing talent icon from '${file}'`);
-
-    const heroName = file.replace(`${baseDir}/`,"").split("/")[0];
-
-    if (!heroName) {
-        throw new Error("Problem with hero name, can not optimize talent icons: " + file);
-    }
-
-    const newDir = `${newBaseDir}/${heroName}`;
-
-    mkdirSync(newDir, { recursive: true });
-
-    console.log({newDir, file});
-
-    const sharpFile = sharp(file);
-
-    sharpFile.webp()
-        .toFile(outputFilePath(file, heroName, newDir))
-        .then(info => console.log("Success", { w: info.width, h: info.height }))
-        .catch((err) => console.log("Error:", file, err));
+optimizeImages({
+    baseDir: baseTalentIconsNewDir,
+    newBaseDir: `${baseTalentIconsNewDir}/optimized`
 });
-
-function outputFilePath(filePath: string, heroName:string, newDir: string) {
-    const baseHeroDir = `${baseDir}/${heroName}`;
-    return filePath
-        .replace(baseHeroDir, newDir)
-        .replace(".png", ".webp");
-}
