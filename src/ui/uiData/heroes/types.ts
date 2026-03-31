@@ -2,7 +2,7 @@ import { HeroBase } from "../../../data/heroes/types";
 
 import { Talent } from "./talents/types";
 
-export type Hero = Omit<HeroBase, "wikiUrl"> & {
+export type Hero = HeroBase & {
     talents: Talent[];
 }
 

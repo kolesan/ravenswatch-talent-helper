@@ -1,50 +1,38 @@
 export const heroesManualOrigin = {
     scarlet: {
-        name: "Scarlet",
-        wikiUrl: "https://ravenswatch.fandom.com/wiki/Scarlet,_The_Red_Hood",
+        name: "Scarlet"
     },
     piper: {
-        name: "The Pied Piper",
-        wikiUrl: "https://ravenswatch.fandom.com/wiki/The_Pied_Piper",
+        name: "The Pied Piper"
     },
     beowulf: {
-        name: "Beowulf",
-        wikiUrl: "https://ravenswatch.fandom.com/wiki/Beowulf",
+        name: "Beowulf"
     },
     snowqueen: {
-        name: "The Snow Queen",
-        wikiUrl: "https://ravenswatch.fandom.com/wiki/The_Snow_Queen",
+        name: "The Snow Queen"
     },
     aladdin: {
-        name: "Aladdin",
-        wikiUrl: "https://ravenswatch.fandom.com/wiki/Aladdin",
+        name: "Aladdin"
     },
     melusine: {
-        name: "Melusine",
-        wikiUrl: "https://ravenswatch.fandom.com/wiki/Melusine",
+        name: "Melusine"
     },
     geppetto: {
-        name: "Geppetto",
-        wikiUrl: "https://ravenswatch.fandom.com/wiki/Geppetto",
+        name: "Geppetto"
     },
     wukong: {
-        name: "Sun Wukong",
-        wikiUrl: "https://ravenswatch.fandom.com/wiki/Sun_Wukong",
+        name: "Sun Wukong"
     },
     carmilla: {
-        name: "Carmilla",
-        wikiUrl: "https://ravenswatch.fandom.com/wiki/Carmilla",
+        name: "Carmilla"
     },
     romeo: {
-        name: "Romeo",
-        wikiUrl: "https://ravenswatch.fandom.com/wiki/Romeo",
+        name: "Romeo"
     },
     juliet: {
-        name: "Juliet",
-        wikiUrl: "https://ravenswatch.fandom.com/wiki/Juliet",
+        name: "Juliet"
     },
     merlin: {
-        name: "Merlin",
-        wikiUrl: "https://ravenswatch.fandom.com/wiki/Merlin",
+        name: "Merlin"
     },
 } as const;
