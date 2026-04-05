@@ -3,7 +3,7 @@ import { HeroBaseCode } from "data/heroes/types";
 import { ParsedPasstechTalent } from "../../types";
 
 import { getPasstechTalents } from "./utils/getPasstechTalents";
-import { parsePasstechTalents } from "./utils/parsePasstechTalents";
+import { parsePasstechTalents } from "./utils/parsePasstechTalents/parsePasstechTalents";
 
 export async function getParsedPasstechTalents(
     heroCode: HeroBaseCode
