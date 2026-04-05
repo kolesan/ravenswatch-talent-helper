@@ -1,10 +1,10 @@
 import { html } from "htm/preact";
 
-import { pages } from "../../../../pages";
-import { Hero } from "../../uiData/heroes/types";
 import { Spinner } from "../../components/Spinner/Spinner";
 import { hst } from "../../core/hst";
 import { usePageTitle } from "../../hooks/usePageTitle";
+import { pages } from "../../pages";
+import { Hero } from "../../uiData/heroes/types";
 
 import { useHandleTalentsPageUrlChange } from "./hooks/useHandleTalentsPageUrlChange";
 import { useTalentsPageUrlParams } from "./hooks/useTalentsPageUrlParams";
