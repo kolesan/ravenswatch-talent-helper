@@ -12,10 +12,8 @@
     background-position: center;
     background-color: #514c3d;
     background-blend-mode: multiply;
-}
-.heroSelectItemRoot:hover {
-    color: #afbca1; 
-    background-blend-mode: unset;
+
+    user-select: none;
 }
 .itemImageContainer {
     position: relative;
@@ -50,8 +48,15 @@
 .itemText {
     font-size: 17px;
 }
-.heroSelectItemRoot:hover .itemText {
-    font-size: 18px;
+
+@media (hover: hover) and (pointer: fine) {
+    .heroSelectItemRoot:hover {
+        color: #afbca1; 
+        background-blend-mode: unset;
+    }
+    .heroSelectItemRoot:hover .itemText {
+        font-size: 18px;
+    }
 }
 
 .scarlet {
