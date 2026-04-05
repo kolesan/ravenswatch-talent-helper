@@ -1,16 +1,18 @@
 import { items } from "data/passtechResponses/items/items";
 import { PasstechItem } from "data/passtechResponses/types";
-import { descriptionKeyMaps } from "utils/descriptionKeyMaps";
+import { nameCleanup } from "scripts/utils/nameCleanup";
+import { nameToCode } from "scripts/utils/nameToCode";
+import { parsePasstechDescription } from "scripts/utils/parsePasstechDescription";
 
 import {
     CursedParsedPasstechItem,
     LegendaryParsedPasstechItem,
     ParsedPasstechItem,
-    ParsedPasstechItemType,
 } from "../types";
 
 import { isCursed } from "./isCursed";
 import { isLegendary } from "./isLegendary";
+import { parsePasstechItemType } from "./parsePasstechItemType";
 
 export async function parsePasstechItems(): Promise<{
     legendary: LegendaryParsedPasstechItem[];
@@ -24,35 +26,12 @@ export async function parsePasstechItems(): Promise<{
 }
 
 function parseItem(item: PasstechItem): ParsedPasstechItem {
-    const name = item.name.replaceAll("’", "'");
+    const name = nameCleanup(item.name);
     return {
-        type: parseType(item.quality_name),
+        type: parsePasstechItemType(item.quality_name),
         code: nameToCode(name),
         name,
-        description: parseDescription(item.description),
+        description: parsePasstechDescription(item.description),
         iconUrl: item.icon,
     };
-}
-
-function nameToCode(name: string) {
-    return name.trim().replaceAll(" ", "_").toLowerCase();
-}
-
-function parseType(qualityName: PasstechItem["quality_name"]) {
-    const map: Partial<Record<PasstechItem["quality_name"], ParsedPasstechItemType>> = {
-        "Legendary": "legendary",
-        "Cursed": "cursed",
-    };
-    return map[qualityName];
-}
-
-function parseDescription(description: string) {
-    const initialCleanup = description
-        .split("• ")
-        .filter(Boolean)
-        .map(it => it.replaceAll(/ \(currently: .*?\)/g, ""))
-        .map(it => it.replaceAll("\n", ""))
-
-    return initialCleanup
-        .map(descriptionKeyMaps.passtechToMyTag.apply);
 }
