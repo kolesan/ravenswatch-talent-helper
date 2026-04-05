@@ -1,4 +1,4 @@
-import { LocalStorage } from "../../core/LocalStorage";
+import { LocalStorage } from "ui/core/LocalStorage";
 
 import { v1migration } from "./migrations/v1migration";
 

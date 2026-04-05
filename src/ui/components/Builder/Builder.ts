@@ -1,7 +1,8 @@
 import clsx from "clsx";
 import { html } from "htm/preact";
 
-import { useBooleanState } from "../../hooks/useBooleanState";
+import { useBooleanState } from "ui/hooks/useBooleanState";
+
 import { List } from "../List/List";
 import { Snackbar } from "../Snackbar/Snackbar";
 import { useSnackbar } from "../Snackbar/useSnackbar";

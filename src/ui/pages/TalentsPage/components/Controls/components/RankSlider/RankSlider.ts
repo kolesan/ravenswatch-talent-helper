@@ -1,8 +1,8 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { rankConsts } from "../../../../consts/rankConsts";
-import { minmaxRank } from "../../../../utils/minmaxRank";
+import { rankConsts } from "TalentsPage/consts/rankConsts";
+import { minmaxRank } from "TalentsPage/utils/minmaxRank";
 
 import cls from "./RankSlider.module.css";
 

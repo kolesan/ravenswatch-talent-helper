@@ -1,8 +1,9 @@
 import { html } from "htm/preact";
 
-import { Talent } from "../../../../uiData/heroes/talents/types";
-import { Builder } from "../../../../components/Builder/Builder";
-import { BuilderListItemActions } from "../../../../components/Builder/types";
+import { Builder } from "ui/components/Builder/Builder";
+import { BuilderListItemActions } from "ui/components/Builder/types";
+import { Talent } from "ui/uiData/heroes/talents/types";
+
 import { listLabelStuckAtPx } from "../../consts/listLabelStuckAtPx";
 import { maxUsedTalents } from "../../consts/maxUsedTalents";
 import { TalentListItem } from "../TalentListItem/TalentListItem";

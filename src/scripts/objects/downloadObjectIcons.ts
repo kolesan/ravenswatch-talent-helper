@@ -1,6 +1,7 @@
-import { cursed } from "../../data/objects/cursed";
-import { legendary } from "../../data/objects/legendary";
-import { MagicalObject, MagicalObjectType } from "../../data/objects/types";
+import { cursed } from "data/objects/cursed";
+import { legendary } from "data/objects/legendary";
+import { MagicalObject, MagicalObjectType } from "data/objects/types";
+
 import { downloadIcons } from "../utils/downloadIcons";
 
 import { baseObjectIconsNewDir } from "./consts";

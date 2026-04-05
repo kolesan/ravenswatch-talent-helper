@@ -1,4 +1,5 @@
-import { serializeBuilderState } from "../../../../../components/Builder/utils/builderStateStorage/serializeBuilderState/serializeBuilderState";
+import { serializeBuilderState } from "ui/components/Builder/utils/builderStateStorage/serializeBuilderState/serializeBuilderState";
+
 import { SerializedTalentsBuilderHeroState, StorableTalentsBuilderHeroState } from "../types";
 
 export function serializeTalentsBuilderState({

@@ -1,6 +1,6 @@
 import { html } from "htm/preact";
 
-import { MagicalObject } from "../../uiData/objects/types";
+import { MagicalObject } from "ui/uiData/objects/types";
 
 import cls from "./ObjectIcon.module.css";
 

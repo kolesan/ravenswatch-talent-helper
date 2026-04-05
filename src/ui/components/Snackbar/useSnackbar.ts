@@ -1,7 +1,7 @@
 import { useState } from "preact/hooks";
 
-import { useBooleanState } from "../../hooks/useBooleanState";
-import { useVar } from "../../hooks/useVar";
+import { useBooleanState } from "ui/hooks/useBooleanState";
+import { useVar } from "ui/hooks/useVar";
 
 export function useSnackbar() {
     const open = useBooleanState(false);

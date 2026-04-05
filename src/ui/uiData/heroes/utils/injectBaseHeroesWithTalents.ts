@@ -1,17 +1,18 @@
-import { heroesBase } from "../../../../data/heroes/heroesBase";
-import { aladdin } from "../../../../data/heroes/talents/merged/aladdin";
-import { beowulf } from "../../../../data/heroes/talents/merged/beowulf";
-import { carmilla } from "../../../../data/heroes/talents/merged/carmilla";
-import { geppetto } from "../../../../data/heroes/talents/merged/geppetto";
-import { juliet } from "../../../../data/heroes/talents/merged/juliet";
-import { melusine } from "../../../../data/heroes/talents/merged/melusine";
-import { merlin } from "../../../../data/heroes/talents/merged/merlin";
-import { piper } from "../../../../data/heroes/talents/merged/piper";
-import { romeo } from "../../../../data/heroes/talents/merged/romeo";
-import { scarlet } from "../../../../data/heroes/talents/merged/scarlet";
-import { snowqueen } from "../../../../data/heroes/talents/merged/snowqueen";
-import { wukong } from "../../../../data/heroes/talents/merged/wukong";
-import { TalentMerged } from "../../../../data/heroes/talents/types";
+import { heroesBase } from "data/heroes/heroesBase";
+import { aladdin } from "data/heroes/talents/merged/aladdin";
+import { beowulf } from "data/heroes/talents/merged/beowulf";
+import { carmilla } from "data/heroes/talents/merged/carmilla";
+import { geppetto } from "data/heroes/talents/merged/geppetto";
+import { juliet } from "data/heroes/talents/merged/juliet";
+import { melusine } from "data/heroes/talents/merged/melusine";
+import { merlin } from "data/heroes/talents/merged/merlin";
+import { piper } from "data/heroes/talents/merged/piper";
+import { romeo } from "data/heroes/talents/merged/romeo";
+import { scarlet } from "data/heroes/talents/merged/scarlet";
+import { snowqueen } from "data/heroes/talents/merged/snowqueen";
+import { wukong } from "data/heroes/talents/merged/wukong";
+import { TalentMerged } from "data/heroes/talents/types";
+
 import { Talent } from "../talents/types";
 import { Hero, HeroCode, HeroRecord } from "../types";
 

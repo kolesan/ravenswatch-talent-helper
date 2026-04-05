@@ -1,6 +1,7 @@
-import { useRouter } from "../../../components/RouterProvider/RouterProvider";
-import { pages } from "../../../pages";
-import { heroes } from "../../../uiData/heroes/heroes";
+import { useRouter } from "ui/components/RouterProvider/RouterProvider";
+import { pages } from "ui/pages";
+import { heroes } from "ui/uiData/heroes/heroes";
+
 import { isTalentsPageView } from "../talentsPageViews";
 
 export function useTalentsPageUrlParams() {

@@ -1,7 +1,7 @@
 import {
     SerializedTalentsPageUrlParamsState,
     StorableTalentsPageUrlParamsState,
-} from "../../../types";
+} from "TalentsPage/types";
 
 import { deserializeHero } from "./utils/deserializeHero";
 import { deserializeView } from "./utils/deserializeView";

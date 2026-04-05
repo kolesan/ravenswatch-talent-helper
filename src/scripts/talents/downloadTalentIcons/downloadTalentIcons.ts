@@ -1,5 +1,6 @@
-import { heroesBase } from "../../../data/heroes/heroesBase";
-import { downloadIcons } from "../../utils/downloadIcons";
+import { heroesBase } from "data/heroes/heroesBase";
+import { downloadIcons } from "scripts/utils/downloadIcons";
+
 import { baseTalentIconsNewDir } from "../consts";
 
 import { getMergedTalents } from "./utils/getMergedTalents";

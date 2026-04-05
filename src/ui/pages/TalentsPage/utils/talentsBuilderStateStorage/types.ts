@@ -1,6 +1,6 @@
-import { Talent } from "../../../../uiData/heroes/talents/types";
-import { BuilderState } from "../../../../components/Builder/hooks/useBuilderStateReducer/types";
-import { SerializedBuilderState } from "../../../../components/Builder/utils/builderStateStorage/types";
+import { Talent } from "ui/uiData/heroes/talents/types";
+import { BuilderState } from "ui/components/Builder/hooks/useBuilderStateReducer/types";
+import { SerializedBuilderState } from "ui/components/Builder/utils/builderStateStorage/types";
 
 export type StorableTalentsBuilderHeroState = {
     rank: number;

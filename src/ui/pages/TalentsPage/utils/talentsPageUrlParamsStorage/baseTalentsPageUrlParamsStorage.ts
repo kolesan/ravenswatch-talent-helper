@@ -1,5 +1,6 @@
-import { LocalStorage } from "../../../../core/LocalStorage";
-import { SerializedTalentsPageUrlParamsState } from "../../types";
+import { LocalStorage } from "ui/core/LocalStorage";
+
+import { SerializedTalentsPageUrlParamsState } from "TalentsPage/types";
 
 const key = "rrh_talents_url";
 

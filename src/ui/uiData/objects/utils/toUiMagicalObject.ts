@@ -1,4 +1,5 @@
-import { MagicalObject as MagicalObjectRaw } from "../../../../data/objects/types";
+import { MagicalObject as MagicalObjectRaw } from "data/objects/types";
+
 import { MagicalObject } from "../types";
 
 export function toUiMagicalObject(

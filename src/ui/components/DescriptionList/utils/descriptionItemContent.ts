@@ -1,4 +1,4 @@
-import { descriptionKeyMaps } from "../../../../utils/descriptionKeyMaps";
+import { descriptionKeyMaps } from "utils/descriptionKeyMaps";
 
 const splitter = descriptionKeyMaps.myTagWithBreakPlaceholder.breakPlaceholder;
 

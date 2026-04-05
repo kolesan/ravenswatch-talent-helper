@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { TalentsPageView, talentsPageViews } from "../../../../talentsPageViews";
+import { TalentsPageView, talentsPageViews } from "TalentsPage/talentsPageViews";
 
 import cls from "./TalentsViewSwitch.module.css";
 

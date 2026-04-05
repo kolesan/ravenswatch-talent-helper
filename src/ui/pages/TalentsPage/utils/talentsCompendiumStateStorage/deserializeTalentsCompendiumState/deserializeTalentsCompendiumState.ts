@@ -1,4 +1,5 @@
-import { deserializeRank } from "../../storage/deserialization/deserializeRank";
+import { deserializeRank } from "TalentsPage/utils/storage/deserialization/deserializeRank";
+
 import { SerializedTalentsCompendiumHeroState, StorableTalentsCompendiumHeroState } from "../types";
 
 export function deserializeTalentsCompendiumState(

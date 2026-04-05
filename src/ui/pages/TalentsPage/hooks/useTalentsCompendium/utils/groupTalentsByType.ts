@@ -1,4 +1,4 @@
-import { Talent } from "../../../../../uiData/heroes/talents/types";
+import { Talent } from "ui/uiData/heroes/talents/types";
 
 export function groupTalentsByType(allTalents: Talent[]) {
     const starting = allTalents.filter(it => it.type === "starting");

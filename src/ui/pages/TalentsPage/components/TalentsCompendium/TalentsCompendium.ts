@@ -1,8 +1,9 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { List } from "../../../../components/List/List";
-import { Talent } from "../../../../uiData/heroes/talents/types";
+import { List } from "ui/components/List/List";
+import { Talent } from "ui/uiData/heroes/talents/types";
+
 import { listLabelStuckAtPx } from "../../consts/listLabelStuckAtPx";
 import { TalentListItem } from "../TalentListItem/TalentListItem";
 

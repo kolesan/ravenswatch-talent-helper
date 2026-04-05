@@ -1,5 +1,5 @@
-import { HeroCode } from "../../../../uiData/heroes/types";
-import { LocalStorage } from "../../../../core/LocalStorage";
+import { HeroCode } from "ui/uiData/heroes/types";
+import { LocalStorage } from "ui/core/LocalStorage";
 
 import { SerializedTalentsCompendiumHeroState } from "./types";
 

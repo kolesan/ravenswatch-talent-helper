@@ -1,6 +1,6 @@
 import { html } from "htm/preact";
 
-import { HeroCode } from "../../../../../../../uiData/heroes/types";
+import { HeroCode } from "ui/uiData/heroes/types";
 
 type Props = {
     heroCode: HeroCode;

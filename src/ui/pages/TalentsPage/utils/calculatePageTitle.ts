@@ -1,4 +1,5 @@
-import { Hero } from "../../../uiData/heroes/types";
+import { Hero } from "ui/uiData/heroes/types";
+
 import { TalentsPageView, talentsPageViews } from "../talentsPageViews";
 
 export function calculatePageTitle(

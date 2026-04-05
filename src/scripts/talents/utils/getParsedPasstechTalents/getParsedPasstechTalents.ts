@@ -1,4 +1,5 @@
-import { HeroBaseCode } from "../../../../data/heroes/types";
+import { HeroBaseCode } from "data/heroes/types";
+
 import { ParsedPasstechTalent } from "../../types";
 
 import { getPasstechTalents } from "./utils/getPasstechTalents";

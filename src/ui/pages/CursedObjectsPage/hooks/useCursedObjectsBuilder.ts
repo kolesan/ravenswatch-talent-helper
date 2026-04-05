@@ -1,6 +1,6 @@
-import { useBuilder } from "../../../components/Builder/useBuilder";
-import { builderStateStorage } from "../../../components/Builder/utils/builderStateStorage/builderStateStorage";
-import { cursed } from "../../../uiData/objects/cursed";
+import { useBuilder } from "ui/components/Builder/useBuilder";
+import { builderStateStorage } from "ui/components/Builder/utils/builderStateStorage/builderStateStorage";
+import { cursed } from "ui/uiData/objects/cursed";
 
 export const storageKey = "rrh_objects_cursed";
 

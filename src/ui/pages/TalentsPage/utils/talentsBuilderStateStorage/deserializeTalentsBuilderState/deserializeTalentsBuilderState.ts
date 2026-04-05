@@ -1,6 +1,8 @@
-import { Talent } from "../../../../../uiData/heroes/talents/types";
-import { deserializeBuilderState } from "../../../../../components/Builder/utils/builderStateStorage/deserializeBuilderState/deserializeBuilderState";
-import { deserializeRank } from "../../storage/deserialization/deserializeRank";
+import { deserializeBuilderState } from "ui/components/Builder/utils/builderStateStorage/deserializeBuilderState/deserializeBuilderState";
+import { Talent } from "ui/uiData/heroes/talents/types";
+
+import { deserializeRank } from "TalentsPage/utils/storage/deserialization/deserializeRank";
+
 import { SerializedTalentsBuilderHeroState, StorableTalentsBuilderHeroState } from "../types";
 
 export function deserializeTalentsBuilderState(

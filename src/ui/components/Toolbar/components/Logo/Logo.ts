@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { Link } from "../../../RouterProvider/Link";
+import { Link } from "ui/components/RouterProvider/Link";
 
 import cls from "./Logo.module.css";
 

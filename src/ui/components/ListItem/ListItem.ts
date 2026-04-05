@@ -2,8 +2,8 @@ import { clsx } from "clsx";
 import { html } from "htm/preact";
 import { ComponentChildren } from "preact";
 
-import { noop } from "../../utils/noop";
-import { holder } from "../../utils/onHold";
+import { noop } from "ui/utils/noop";
+import { holder } from "ui/utils/onHold";
 
 import cls from "./ListItem.module.css";
 

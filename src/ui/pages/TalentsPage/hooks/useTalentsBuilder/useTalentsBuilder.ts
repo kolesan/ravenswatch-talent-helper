@@ -1,8 +1,9 @@
 import { useMemo, useState } from "preact/hooks";
 
-import { Talent } from "../../../../uiData/heroes/talents/types";
-import { useBuilder } from "../../../../components/Builder/useBuilder";
-import { Hero } from "../../../../uiData/heroes/types";
+import { useBuilder } from "ui/components/Builder/useBuilder";
+import { Talent } from "ui/uiData/heroes/talents/types";
+import { Hero } from "ui/uiData/heroes/types";
+
 import { markIfLocked } from "../../utils/markIfLocked";
 
 import { applyRank } from "./utils/applyRank";

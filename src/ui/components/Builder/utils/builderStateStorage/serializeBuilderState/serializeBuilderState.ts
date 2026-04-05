@@ -1,4 +1,5 @@
-import { BuilderItem } from "../../../hooks/useBuilderStateReducer/types";
+import { BuilderItem } from "ui/components/Builder/hooks/useBuilderStateReducer/types";
+
 import { SerializedBuilderState, StorableBuilderState } from "../types";
 
 export function serializeBuilderState<T extends BuilderItem>(

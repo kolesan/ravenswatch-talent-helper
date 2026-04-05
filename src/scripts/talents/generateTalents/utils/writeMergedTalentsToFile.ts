@@ -1,7 +1,7 @@
 import { writeFile } from "fs/promises";
 
-import { TalentMerged } from "../../../../data/heroes/talents/types";
-import { HeroBase } from "../../../../data/heroes/types";
+import { TalentMerged } from "data/heroes/talents/types";
+import { HeroBase } from "data/heroes/types";
 
 export function writeMergedTalentsToFile(hero: HeroBase, talents: TalentMerged[]) {
     const talentsJson = JSON.stringify(talents, null, "    ");

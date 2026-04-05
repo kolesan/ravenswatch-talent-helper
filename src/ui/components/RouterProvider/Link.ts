@@ -1,7 +1,7 @@
 import { html } from "htm/preact";
 import { ComponentChildren } from "preact";
 
-import { hst } from "../../core/hst";
+import { hst } from "ui/core/hst";
 
 type Props = {
     className?: string;

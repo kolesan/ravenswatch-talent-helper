@@ -1,7 +1,7 @@
 import { html } from "htm/preact";
 
-import { Talent } from "../../../../../../uiData/heroes/talents/types";
-import { Tooltip } from "../../../../../../components/Tooltip/Tooltip";
+import { Tooltip } from "ui/components/Tooltip/Tooltip";
+import { Talent } from "ui/uiData/heroes/talents/types";
 
 import cls from "./TalentRank.module.css";
 

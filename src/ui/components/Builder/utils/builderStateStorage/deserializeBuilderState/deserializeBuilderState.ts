@@ -1,5 +1,6 @@
-import { isTruthy } from "../../../../../utils/isTruthy";
-import { BuilderItem } from "../../../hooks/useBuilderStateReducer/types";
+import { BuilderItem } from "ui/components/Builder/hooks/useBuilderStateReducer/types";
+import { isTruthy } from "ui/utils/isTruthy";
+
 import { SerializedBuilderItem, SerializedBuilderState, StorableBuilderState } from "../types";
 
 export function deserializeBuilderState<T extends BuilderItem>(

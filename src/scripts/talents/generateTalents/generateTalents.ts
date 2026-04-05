@@ -1,4 +1,5 @@
-import { heroesBase } from "../../../data/heroes/heroesBase";
+import { heroesBase } from "data/heroes/heroesBase";
+
 import { getParsedPasstechTalents } from "../utils/getParsedPasstechTalents/getParsedPasstechTalents";
 
 import { getManualTalents } from "./utils/getManualTalents";

@@ -2,7 +2,7 @@ import {
     defaultTalentsPageView,
     isTalentsPageView,
     TalentsPageView,
-} from "../../../../talentsPageViews";
+} from "TalentsPage/talentsPageViews";
 
 export function deserializeView(
     view: unknown

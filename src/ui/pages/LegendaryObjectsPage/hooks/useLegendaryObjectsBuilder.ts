@@ -1,6 +1,6 @@
-import { useBuilder } from "../../../components/Builder/useBuilder";
-import { builderStateStorage } from "../../../components/Builder/utils/builderStateStorage/builderStateStorage";
-import { legendary } from "../../../uiData/objects/legendary";
+import { useBuilder } from "ui/components/Builder/useBuilder";
+import { builderStateStorage } from "ui/components/Builder/utils/builderStateStorage/builderStateStorage";
+import { legendary } from "ui/uiData/objects/legendary";
 
 export const storageKey = "rrh_objects_legendary";
 

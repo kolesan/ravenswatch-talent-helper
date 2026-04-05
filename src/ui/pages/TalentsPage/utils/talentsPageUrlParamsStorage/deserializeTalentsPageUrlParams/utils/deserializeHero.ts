@@ -1,7 +1,8 @@
-import { heroes } from "../../../../../../uiData/heroes/heroes";
-import { Hero } from "../../../../../../uiData/heroes/types";
-import { isHeroCode } from "../../../../../../utils/isHeroCode";
-import { defaultHero } from "../../../defaultHero";
+import { heroes } from "ui/uiData/heroes/heroes";
+import { Hero } from "ui/uiData/heroes/types";
+import { isHeroCode } from "ui/utils/isHeroCode";
+
+import { defaultHero } from "TalentsPage/utils/defaultHero";
 
 export function deserializeHero(
     heroCode: unknown

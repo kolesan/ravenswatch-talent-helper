@@ -1,4 +1,4 @@
-import { StorableTalentsPageUrlParamsState } from "../../types";
+import { StorableTalentsPageUrlParamsState } from "TalentsPage/types";
 
 import { baseTalentsPageUrlParamsStorage } from "./baseTalentsPageUrlParamsStorage";
 import { deserializeTalentsPageUrlParams } from "./deserializeTalentsPageUrlParams/deserializeTalentsPageUrlParams";

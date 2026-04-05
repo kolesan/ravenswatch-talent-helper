@@ -1,5 +1,6 @@
-import { heroesBase } from "../../../data/heroes/heroesBase";
-import { TalentManual } from "../../../data/heroes/talents/types";
+import { heroesBase } from "data/heroes/heroesBase";
+import { TalentManual } from "data/heroes/talents/types";
+
 import { getParsedPasstechTalents } from "../utils/getParsedPasstechTalents/getParsedPasstechTalents";
 
 import { unlockedAtExample } from "./consts/unlockedAtExample";

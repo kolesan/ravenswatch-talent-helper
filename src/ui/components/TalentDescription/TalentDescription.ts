@@ -1,6 +1,7 @@
 import { html } from "htm/preact";
 
-import { Talent } from "../../uiData/heroes/talents/types";
+import { Talent } from "ui/uiData/heroes/talents/types";
+
 import { DescriptionList } from "../DescriptionList/DescriptionList";
 
 import { UnlockedAtRank } from "./components/UnlockedAtRank/UnlockedAtRank";

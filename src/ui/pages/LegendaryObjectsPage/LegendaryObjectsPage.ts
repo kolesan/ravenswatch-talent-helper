@@ -1,10 +1,10 @@
 import { html } from "htm/preact";
 
-import { MagicalObject } from "../../uiData/objects/types";
-import { Builder } from "../../components/Builder/Builder";
-import { BuilderListItemActions } from "../../components/Builder/types";
-import { ObjectListItem } from "../../components/ObjectListItem";
-import { usePageTitle } from "../../hooks/usePageTitle";
+import { MagicalObject } from "ui/uiData/objects/types";
+import { Builder } from "ui/components/Builder/Builder";
+import { BuilderListItemActions } from "ui/components/Builder/types";
+import { ObjectListItem } from "ui/components/ObjectListItem";
+import { usePageTitle } from "ui/hooks/usePageTitle";
 
 import { useLegendaryObjectsBuilder } from "./hooks/useLegendaryObjectsBuilder";
 

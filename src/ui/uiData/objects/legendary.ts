@@ -1,4 +1,4 @@
-import { legendary as legendaryRaw } from "../../../data/objects/legendary";
+import { legendary as legendaryRaw } from "data/objects/legendary";
 
 import { toUiMagicalObject } from "./utils/toUiMagicalObject";
 

@@ -1,9 +1,9 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { pages } from "../../../../pages";
-import { Link } from "../../../RouterProvider/Link";
-import { useRouter } from "../../../RouterProvider/RouterProvider";
+import { Link } from "ui/components/RouterProvider/Link";
+import { useRouter } from "ui/components/RouterProvider/RouterProvider";
+import { pages } from "ui/pages";
 
 import cls from "./Help.module.css";
 

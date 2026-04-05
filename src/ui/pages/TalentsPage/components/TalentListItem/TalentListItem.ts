@@ -1,12 +1,12 @@
 import clsx from "clsx";
 import { html } from "htm/preact";
 
-import { Talent } from "../../../../uiData/heroes/talents/types";
-import { ListItem } from "../../../../components/ListItem/ListItem";
-import { PreferredIcon } from "../../../../components/PreferredIcon/PreferredIcon";
-import { TalentDescription } from "../../../../components/TalentDescription/TalentDescription";
-import { TalentIcon } from "../../../../components/TalentIcon/TalentIcon";
-import { HeroCode } from "../../../../uiData/heroes/types";
+import { Talent } from "ui/uiData/heroes/talents/types";
+import { ListItem } from "ui/components/ListItem/ListItem";
+import { PreferredIcon } from "ui/components/PreferredIcon/PreferredIcon";
+import { TalentDescription } from "ui/components/TalentDescription/TalentDescription";
+import { TalentIcon } from "ui/components/TalentIcon/TalentIcon";
+import { HeroCode } from "ui/uiData/heroes/types";
 
 import { TalentRank } from "./components/TalentRank/TalentRank";
 import { TalentTags } from "./components/TalentTags/TalentTags";

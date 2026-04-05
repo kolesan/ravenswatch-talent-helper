@@ -2,7 +2,8 @@ import clsx from "clsx";
 import { html } from "htm/preact";
 import { ComponentChildren } from "preact";
 
-import { useIsStickyElemStuck } from "../../hooks/useIsStickyElemStuck";
+import { useIsStickyElemStuck } from "ui/hooks/useIsStickyElemStuck";
+
 import { ClearListButton } from "../ClearListButton/ClearListButton";
 
 import cls from "./List.module.css";

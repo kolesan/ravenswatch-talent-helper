@@ -9,5 +9,17 @@
         "target": "ES2020",
         "moduleResolution": "Bundler",
         "noUncheckedIndexedAccess": true,
+        "baseUrl": "src",
+        "paths": {
+            "TalentsPage/*": ["ui/pages/TalentsPage/*"],
+            "LegendaryObjectsPage/*": ["ui/pages/LegendaryObjectsPage/*"],
+            "CursedObjectsPage/*": ["ui/pages/CursedObjectsPage/*"],
+            "HelpPage/*": ["ui/pages/HelpPage/*"],
+
+            "data/*": ["data/*"],
+            "ui/*": ["ui/*"],
+            "utils/*": ["utils/*"],
+            "scripts/*": ["scripts/*"],
+        }
     }
 }

@@ -1,6 +1,7 @@
-import { Talent } from "../../../../../uiData/heroes/talents/types";
-import { BuilderState } from "../../../../../components/Builder/hooks/useBuilderStateReducer/types";
-import { isNotLocked } from "../../../utils/isNotLocked";
+import { BuilderState } from "ui/components/Builder/hooks/useBuilderStateReducer/types";
+import { Talent } from "ui/uiData/heroes/talents/types";
+
+import { isNotLocked } from "TalentsPage/utils/isNotLocked";
 
 export function applyRank(
     state: BuilderState<Talent>, 

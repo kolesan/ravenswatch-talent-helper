@@ -1,7 +1,7 @@
 import {
     SerializedTalentsPageUrlParamsState,
     StorableTalentsPageUrlParamsState,
-} from "../../../types";
+} from "TalentsPage/types";
 
 export function serializeTalentsPageUrlParams(
     stateToStore: StorableTalentsPageUrlParamsState

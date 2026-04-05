@@ -1,8 +1,8 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
-import { useIsStickyElemStuck } from "../../hooks/useIsStickyElemStuck";
-import { usePageTitle } from "../../hooks/usePageTitle";
+import { useIsStickyElemStuck } from "ui/hooks/useIsStickyElemStuck";
+import { usePageTitle } from "ui/hooks/usePageTitle";
 
 import { rightsStuckAtPx } from "./rightsStuckAtPx";
 

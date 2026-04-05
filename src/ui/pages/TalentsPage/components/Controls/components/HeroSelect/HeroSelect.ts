@@ -1,9 +1,10 @@
 import clsx from "clsx";
 import { html } from "htm/preact";
 
-import { Hero } from "../../../../../../uiData/heroes/types";
-import { useBooleanState } from "../../../../../../hooks/useBooleanState";
-import { useOnClickOutside } from "../../../../hooks/useOnClickOutside";
+import { useBooleanState } from "ui/hooks/useBooleanState";
+import { Hero } from "ui/uiData/heroes/types";
+
+import { useOnClickOutside } from "TalentsPage/hooks/useOnClickOutside";
 
 import { HeroArtPreloader } from "./components/HeroArtPreloader";
 import { HeroSelectItem } from "./components/HeroSelectItem/HeroSelectItem";
