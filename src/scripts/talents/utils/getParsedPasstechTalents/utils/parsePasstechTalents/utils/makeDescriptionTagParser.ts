@@ -1,16 +1,9 @@
-export function parseTalentDescriptionTags(tag: string) {
-    const parseFn = parseDescriptionTag(tag);
-
-    return function(description: string[]) {
-        return parseFn(description.join(" "));
-    }
-}
-
-function parseDescriptionTag(tag: string) {
+export function makeDescriptionTagParser(tag: string) {
     const cleanTag = tag.replaceAll(/[\{\}]/g, "");
 
-    return function(description: string) {
+    return function(description: string[]) {
         const parsed = description
+            .join(" ")
             .matchAll(new RegExp(`{${cleanTag}}.*?{/s}`, "g")).toArray()
             .map(it => it[0])
             .filter(it => !it.includes("+0%"))

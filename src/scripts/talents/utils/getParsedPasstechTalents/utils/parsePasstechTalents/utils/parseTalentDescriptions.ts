@@ -1,12 +1,12 @@
 import { parsePasstechDescription } from "scripts/utils/parsePasstechDescription";
 import { descriptionKeyMaps } from "utils/descriptionKeyMaps";
 
-import { parseTalentDescriptionTags } from "./parseTalentDescriptionTags";
+import { makeDescriptionTagParser } from "./makeDescriptionTagParser";
 
 const { tags } = descriptionKeyMaps.myTags;
 
-const parseImprovements = parseTalentDescriptionTags(tags.improvement);
-const parseDegradations = parseTalentDescriptionTags(tags.degradation);
+const parseImprovements = makeDescriptionTagParser(tags.improvement);
+const parseDegradations = makeDescriptionTagParser(tags.degradation);
 
 export function parseTalentDescriptions(descriptions: string[]) {
     const parsedDescriptions = descriptions.map(parsePasstechDescription);
