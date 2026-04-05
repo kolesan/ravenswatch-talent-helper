@@ -30,6 +30,13 @@ export function Tooltip({
                 [className || ""]: !!className,
             })}
             data-tooltip=${title || undefined}
+            onPointerDown=${(e: PointerEvent) => {
+                // Needed to be able to click on elements with a tooltip
+                // to see their tooltip on touch devices
+                // without triggering the underlying elements pointer down
+                // which might interfere with showing the tooltip
+                e.stopPropagation();
+            }}
         >
             ${children}
         </${element} >

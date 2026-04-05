@@ -12,8 +12,10 @@
     cursor: pointer;
     user-select: none;
 }
-.interactive:hover {
-    border: 2px solid #766742;
+@media (hover: hover) and (pointer: fine) {
+    .interactive:hover {
+        border: 2px solid #766742;
+    }
 }
 
 .iconContainer {

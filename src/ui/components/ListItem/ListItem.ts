@@ -2,10 +2,11 @@ import { clsx } from "clsx";
 import { html } from "htm/preact";
 import { ComponentChildren } from "preact";
 
-import { noop } from "ui/utils/noop";
-import { holder } from "ui/utils/onHold";
+import { holder } from "ui/utils/holder";
 
 import cls from "./ListItem.module.css";
+
+const hld = holder();
 
 interface Props {
     classes?: {
@@ -33,9 +34,6 @@ export function ListItem({
     onAltClick,
     onHold,
 }: Props) {
-    const hld = holder({ 
-        onHold: onHold || noop,
-    });
 
     return html`
         <div 
@@ -43,19 +41,23 @@ export function ListItem({
                 [cls.interactive!]: interactive,
                 [classes?.interactive || ""]: interactive,
             }, classes?.root)}
-            onClick=${(e: any) => {
-                if (hld.getHolding()) {
-                    return;
-                }
-
-                if (e.altKey) {
-                    onAltClick?.();
-                } else {
-                    onClick?.();
+            onContextMenu=${(e: PointerEvent) => { 
+                if (e.pointerType === "touch") {
+                    e.preventDefault(); 
                 }
             }}
-            onPointerDown=${hld.onPointerDown}
-            onPointerUp=${hld.onPointerUp}
+            onPointerDown=${hld.onPointerDown({ 
+                onHold 
+            })}
+            onPointerUp=${hld.onPointerUp({ 
+                onClick: e => {
+                    if (e.altKey) {
+                        onAltClick?.();
+                    } else {
+                        onClick?.();
+                    }
+                }
+            })}
             onPointerCancel=${hld.onPointerUp}
             onPointerMove=${hld.onPointerMove}
         >

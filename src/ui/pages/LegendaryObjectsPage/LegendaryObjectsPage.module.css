@@ -12,8 +12,10 @@
     padding: 0 16px;
 }
 
-.interactiveListItem:hover {
-    border: 2px solid #b89b45;
+@media (hover: hover) and (pointer: fine) {
+    .interactiveListItem:hover {
+        border: 2px solid #b89b45;
+    }
 }
 
 @media (min-width: 1080px) {
