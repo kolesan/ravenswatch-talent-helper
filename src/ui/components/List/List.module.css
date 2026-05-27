@@ -38,6 +38,8 @@
 
     pointer-events: auto;
     user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
 }
 .labelLeft {
 }

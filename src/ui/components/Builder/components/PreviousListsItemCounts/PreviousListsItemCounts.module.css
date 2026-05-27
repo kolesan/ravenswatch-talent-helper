@@ -12,6 +12,8 @@
     font-size: 12px;
 
     user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
 
     opacity: 0;
     transition: opacity 300ms ease;
@@ -21,4 +23,6 @@
     opacity: 0.9;
 
     user-select: unset;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
 }

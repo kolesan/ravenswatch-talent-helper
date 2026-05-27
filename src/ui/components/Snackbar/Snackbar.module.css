@@ -11,6 +11,8 @@
     transition: opacity 300ms ease;
 
     user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
 }
 .shown {
     opacity: 0.8;

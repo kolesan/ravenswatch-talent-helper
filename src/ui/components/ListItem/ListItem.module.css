@@ -11,6 +11,8 @@
 .interactive {
     cursor: pointer;
     user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
 }
 @media (hover: hover) and (pointer: fine) {
     .interactive:hover {
