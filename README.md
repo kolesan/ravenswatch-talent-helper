@@ -171,3 +171,11 @@ This will start vite dev mode with hot reload, check console for details on the 
     1. If the they are saved to local storage properly and loaded back from it
 1. Delete the temporary icons in the `new` and `optimized` folders (move to archive)
 1. Check git diff screen, commit, push, check netlify preview, deploy, check prod, enjoy
+
+## Handling minor updates to heroes
+1. Download hero talents using `downloadTalents`
+    ```
+    npm run downloadTalents
+    ```
+1. Check git diff to see what changed for what heroes
+1. Follow the new hero talent addition guide to ensure talent changes are reflected in the app UI

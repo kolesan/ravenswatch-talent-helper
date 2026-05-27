@@ -101,7 +101,7 @@ export const merlin: TalentMerged[] = [
         "type": "starting",
         "unlockedAtRank": 5,
         "description": [
-            "{sk}Quest (x3):{/s} Collect Excalibur, the Holy Grail or Father Time's Hourglass to gain {sk}+1{/s} {sk}Star(s) of Fate{/s}",
+            "{sk}Quest (x3):{/s} Collect Excalibur, the Holy Grail or Father Time's Hourglass to gain {sk}+2{/s} {sk}Star(s) of Fate{/s}",
             "{sk}Complete:{/s} Gain {sk}+1 TRAIT charge{/s} and all critical damage will increase by {si}40%{/s}"
         ],
         "improvements": [
@@ -223,20 +223,20 @@ export const merlin: TalentMerged[] = [
         "type": "standard",
         "unlockedAtRank": 1,
         "description": [
-            "Casting a Sacred Spell ({sk}DEFENSE{/s}) reduces {sk}TRAIT{/s} cooldown by {si}4{/s} seconds "
+            "Casting a Sacred Spell ({sk}DEFENSE{/s}) reduces {sk}TRAIT{/s} cooldown by {si}2{/s} seconds "
         ],
         "improvements": [
             [
-                "4"
+                "2"
             ],
             [
-                "5"
+                "2.5"
             ],
             [
-                "6"
+                "3"
             ],
             [
-                "7"
+                "3.5"
             ]
         ],
         "degradations": [
@@ -584,21 +584,21 @@ export const merlin: TalentMerged[] = [
         "type": "standard",
         "unlockedAtRank": 7,
         "description": [
-            "The {sk}Blessing{/s} Spell also applies a {sk}10{/s} {sk}SHIELD{/s} for {sk}6{/s} seconds to the Hero affected",
-            "When this expires or is destroyed, it deals {si}60{/s} area damage"
+            "The {sk}Blessing{/s} Spell also applies {sk}10{/s} {sk}SHIELD{/s} for {sk}6{/s} seconds to the Hero affected",
+            "When this expires or is destroyed, it deals {si}80{/s} area damage"
         ],
         "improvements": [
             [
-                "60"
+                "80"
             ],
             [
-                "75"
+                "100"
             ],
             [
-                "90"
+                "120"
             ],
             [
-                "105"
+                "140"
             ]
         ],
         "degradations": [
@@ -645,7 +645,7 @@ export const merlin: TalentMerged[] = [
         "type": "standard",
         "unlockedAtRank": 8,
         "description": [
-            "{sk}TRAIT{/s} triggers a lightning strike on up to nearby {si}4{/s} enemies",
+            "{sk}TRAIT{/s} triggers a lightning strike on up to {si}4{/s} nearby enemies",
             "Lightning strikes deal {sk}80{/s} damage each and are stronger if fewer enemies are hit"
         ],
         "improvements": [
