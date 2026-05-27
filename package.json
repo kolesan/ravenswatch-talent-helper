@@ -22,6 +22,7 @@
     "optimizeTalentIcons": "tsx src/scripts/talents/optimizeTalentIcons",
     "optimizeHeroIcons": "tsx src/scripts/optimizeHeroIcons",
     "optimizeArt": "tsx src/scripts/optimizeArt",
+    "downloadItems": "tsx src/scripts/objects/downloadItems",
     "generateMagicalObjects": "tsx src/scripts/objects/generateMagicalObjects/generateMagicalObjects",
     "downloadObjectIcons": "tsx src/scripts/objects/downloadObjectIcons",
     "optimizeObjectIcons": "tsx src/scripts/objects/optimizeObjectIcons",

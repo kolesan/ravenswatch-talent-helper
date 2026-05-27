@@ -48,7 +48,7 @@ export const items: PasstechItem[] = [
     },
     {
         "id": "a848f17e-7745-491e-8d54-4bdac4a53b87",
-        "name": "Leprechaun coin",
+        "name": "Leprechaun Coin",
         "description": "• For each <span class=\"key_words\">Star of Fate</span> spent, gain <span class=\"improvement\">+25</span> <span class=\"key_words\">Dream Shards</span>",
         "effect": "Rerolling a choice is free the first time",
         "quality": 1,
@@ -121,7 +121,7 @@ export const items: PasstechItem[] = [
     {
         "id": "065f7aa8-ffdd-4f89-8448-d10a5d5b0231",
         "name": "Fairy Dust",
-        "description": "• When taking damage, gain <span class=\"improvement\">10</span> <span class=\"key_words\">SHIELD</span> (at most every 30 seconds)",
+        "description": "• When taking damage, gain <span class=\"improvement\">10</span> <span class=\"key_words\">SHIELD</span> (at most every <span class=\"key_words\">30</span> seconds)",
         "effect": "<span class=\"improvement\">+50%</span> to any <span class=\"key_words\">SHIELD</span> applied or received",
         "quality": 2,
         "quality_name": "Rare",
@@ -156,7 +156,7 @@ export const items: PasstechItem[] = [
     },
     {
         "id": "11a27be4-56bd-4ac4-9522-b0057b32ae97",
-        "name": "Queen of Hearts card",
+        "name": "Queen of Hearts Card",
         "description": "• Passively heals <span class=\"improvement\">1%</span> Max Health every <span class=\"key_words\">5</span> seconds",
         "effect": "<span class=\"improvement\">+30</span> <span class=\"key_words\">DMG</span> when at full Health",
         "quality": 2,
@@ -301,7 +301,7 @@ export const items: PasstechItem[] = [
     {
         "id": "1142fbda-1840-4e0a-8884-b390d63d99a9",
         "name": "Holy Grail",
-        "description": "• When in combat, <span class=\"key_words\">DEFENSE</span> restores <span class=\"improvement\">8</span> health to all nearby heroes (at most every <span class=\"key_words\">5</span> seconds)",
+        "description": "• When in combat, <span class=\"key_words\">DEFENSE</span> restores <span class=\"improvement\">10</span> health to all nearby heroes (at most every <span class=\"key_words\">5</span> seconds)",
         "effect": null,
         "quality": 4,
         "quality_name": "Legendary",
@@ -327,7 +327,7 @@ export const items: PasstechItem[] = [
     },
     {
         "id": "be909acb-09c8-4263-a32c-801100456409",
-        "name": "Raven effigy",
+        "name": "Raven Effigy",
         "description": "• <span class=\"key_words\">POWER</span> and <span class=\"key_words\">SPECIAL</span> gain <span class=\"improvement\">+1</span> charge(s)",
         "effect": null,
         "quality": 4,
@@ -345,7 +345,7 @@ export const items: PasstechItem[] = [
     },
     {
         "id": "bf3b6640-3510-4c34-ae21-6d94a1279543",
-        "name": "Seven-league boots",
+        "name": "Seven-league Boots",
         "description": "• Remove <span class=\"key_words\">DASH</span>'s cooldown whenever you use <span class=\"key_words\">POWER</span>, <span class=\"key_words\">SPECIAL</span> or <span class=\"key_words\">DEFENSE</span>",
         "effect": null,
         "quality": 4,
@@ -408,7 +408,7 @@ export const items: PasstechItem[] = [
     },
     {
         "id": "ab769b40-5514-468c-bb75-ce4e1dda5de6",
-        "name": "Balor's eye",
+        "name": "Balor's Eye",
         "description": "• <span class=\"key_words\">POWER</span> and <span class=\"key_words\">SPECIAL</span> extra charges are <span class=\"degradation\">removed</span> to get <span class=\"improvement\">+100%</span> damage per extra charge to those abilities",
         "effect": null,
         "quality": 5,
@@ -427,7 +427,7 @@ export const items: PasstechItem[] = [
     {
         "id": "6230939b-f39c-4e82-9505-b99fb4a41d0a",
         "name": "Bloody Mary’s Mirror",
-        "description": "• Gain <span class=\"improvement\">+0.5</span> <span class=\"key_words\">DMG</span> per <span class=\"key_words\">VITALITY</span> point\n• <span class=\"key_words\">VITALITY</span> now increases maximum health by only <span class=\"degradation\">0.5%</span> per point (from 1%)",
+        "description": "• Gain <span class=\"improvement\">+0.5</span> <span class=\"key_words\">DMG</span> per <span class=\"key_words\">VITALITY</span> point\n• <span class=\"key_words\">VITALITY</span> now increases maximum health by only <span class=\"degradation\">0.5%</span> per point (from <span class=\"key_words\">1%</span>)",
         "effect": null,
         "quality": 5,
         "quality_name": "Cursed",
@@ -471,7 +471,7 @@ export const items: PasstechItem[] = [
     },
     {
         "id": "ba795594-f13a-4b65-8ac1-4d19b2cdc408",
-        "name": "Hungry grass",
+        "name": "Hungry Grass",
         "description": "• <span class=\"key_words\">Healing Orbs</span> grant <span class=\"key_words\">DMG</span> <span class=\"improvement\">+1</span>\n• <span class=\"degradation\">Stacks are lost</span> at Death's Door",
         "effect": null,
         "quality": 5,
@@ -489,7 +489,7 @@ export const items: PasstechItem[] = [
     },
     {
         "id": "b8b2c9fe-787c-4e35-b9bb-9ffcffc47c22",
-        "name": "Nightmare ichor",
+        "name": "Nightmare Ichor",
         "description": "• <span class=\"key_words\">SPECIAL</span> deals <span class=\"improvement\">+100%</span> damage but has a <span class=\"degradation\">+50%</span> increased cooldown",
         "effect": null,
         "quality": 5,

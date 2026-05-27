@@ -17,15 +17,19 @@ This will start vite dev mode with hot reload, check console for details on the 
 
 ## Adding a new hero
 1. Add the hero to the `heroesManualOrigin` object in `src\data\heroesManualOrigin.ts`
-    1. The property name will be the `code` of the new hero in the whole app, so choose a good value. 
-        * It should be clear understandable and simple, and it should not have uppercase letters or any strange symbols. Remember that it will be used in the url in the browser and also in the filesystem e.g. choose `snowqueen`✅ instead of `snowQueen`❌
-    1. You can use the `downloadHeroes` script to see if any new heroes were added
+    1. Use the `downloadHeroes` script
         ```
         npm run downloadHeroes
         ```
-        You should see any new heroes, if they were added, in the git diff of the `passtechHeroes.ts` file
-    1. Don't forget to add `passtechCode` property for the new hero. It will later be used in the talent download script
+        You should see any new heroes in the git diff of the `passtechHeroes.ts` file
+    1. The property name will be the `code` of the new hero in the whole app, so choose a good value. 
+        * It should be clear understandable and simple, and it should not have uppercase letters or any strange symbols. Remember that it will be used in the url in the browser and also in the filesystem e.g. choose `snowqueen`✅ instead of `snowQueen`❌
+    1. Don't forget to add `passtechCode` property for the new hero, it is called `raw_name` in the passtech response. It will later be used in the talent download script
 1. Download passtech talent data for the hero from the official buildmaker app at `https://buildmaker.ravenswatch.com/`.
+    1. UPDATE: You can now use the `downloadTalents` script for this step
+        ```
+        npm run downloadTalents
+        ```
     1. Open browser dev tools Network tab
     1. Open new build creation screen
     1. Choose the new hero
@@ -33,10 +37,6 @@ This will start vite dev mode with hot reload, check console for details on the 
     1. The `skills` property in the response should have an array of the heroes talents
         * Copy this data to `src\data\passtechResponses\heroes\{heroCode}.ts` e.g. `src\data\passtechResponses\heroes\merlin.ts`
         * See existing heroes for an example of how this data should be stored exactly
-    1. Alternatively you can use the `downloadTalents` script for this
-        ```
-        npm run downloadTalents
-        ```
 1. Generate a manual list of heroes talents based on the data from the buildmaker
     1. Modify the `hero` constant in the manual talent list template generation script `src\scripts\talents\generateManualTalentsTemplate\generateManualTalentsTemplate.ts` so it runs for the new hero
     1. Run the manual talent list template generation script
@@ -127,6 +127,10 @@ This will start vite dev mode with hot reload, check console for details on the 
 1. Check git diff screen, commit, push, check netlify preview, deploy, check prod, enjoy
 
 ## Adding new items (magical objects)
+1. UPDATE: Instead of downloading the items response manually you can now use the `downloadItems` script 
+    ```
+    npm run downloadItems
+    ```
 1. Go to the official buildmaker app at `https://buildmaker.ravenswatch.com/`
 1. Open browser Dev Tools Network tab
 1. Open a build creation screen for any hero
@@ -174,9 +178,17 @@ This will start vite dev mode with hot reload, check console for details on the 
 1. Check git diff screen, commit, push, check netlify preview, deploy, check prod, enjoy
 
 ## Handling minor updates to heroes
-1. Download hero talents using `downloadTalents`
+1. Download hero talents using `downloadTalents` script
     ```
     npm run downloadTalents
     ```
 1. Check git diff to see what changed for what heroes
 1. Follow the new hero talent addition guide to ensure talent changes are reflected in the app UI
+
+## Handling minor updates to items
+1. Download items using `downloadItems` script
+    ```
+    npm run downloadItems
+    ```
+1. Check git diff to see what changed for what items
+1. Follow the new item addition guide to ensure item changes are reflected in the app UI

@@ -14,7 +14,7 @@ export const cursed: MagicalObject[] = [
     {
         "type": "cursed",
         "code": "balor's_eye",
-        "name": "Balor's eye",
+        "name": "Balor's Eye",
         "description": [
             "{sk}POWER{/s} and {sk}SPECIAL{/s} extra charges are {sd}removed{/s} to get {si}+100%{/s} damage per extra charge to those abilities"
         ],
@@ -35,7 +35,7 @@ export const cursed: MagicalObject[] = [
         "name": "Bloody Mary's Mirror",
         "description": [
             "Gain {si}+0.5{/s} {sk}DMG{/s} per {sk}VITALITY{/s} point",
-            "{sk}VITALITY{/s} now increases maximum health by only {sd}0.5%{/s} per point (from 1%)"
+            "{sk}VITALITY{/s} now increases maximum health by only {sd}0.5%{/s} per point (from {sk}1%{/s})"
         ],
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/objects/images/Icon_Object_BloodyMaryMirror.png"
     },
@@ -79,7 +79,7 @@ export const cursed: MagicalObject[] = [
     {
         "type": "cursed",
         "code": "hungry_grass",
-        "name": "Hungry grass",
+        "name": "Hungry Grass",
         "description": [
             "{sk}Healing Orbs{/s} grant {sk}DMG{/s} {si}+1{/s}",
             "{sd}Stacks are lost{/s} at Death's Door"
@@ -99,7 +99,7 @@ export const cursed: MagicalObject[] = [
     {
         "type": "cursed",
         "code": "nightmare_ichor",
-        "name": "Nightmare ichor",
+        "name": "Nightmare Ichor",
         "description": [
             "{sk}SPECIAL{/s} deals {si}+100%{/s} damage but has a {sd}+50%{/s} increased cooldown"
         ],
