@@ -73,6 +73,14 @@
     max-width: 72px;
     margin-bottom: -2px;
 }
+@media (max-width: 320px) {
+    .root {
+        width: 150px;
+    }
+    .inputText {
+        font-size: 16px;
+    }
+}
 .inputArrow {
     transform: rotate(90deg);
     padding-top: 4px;
@@ -130,6 +138,7 @@
 
     border-radius: 4px;
     border: 1px solid #52493381;
+    background-color: #524933;
 
     overscroll-behavior: none;
 }

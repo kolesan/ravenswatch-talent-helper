@@ -10,8 +10,6 @@ import { TalentListItem } from "../TalentListItem/TalentListItem";
 
 import { TalentsBuilderType } from "./types";
 
-import cls from "./TalentsBuilder.module.css";
-
 type Props = {
     classes?: {
         list?: {
@@ -30,7 +28,6 @@ export function TalentsBuilder({
     return html`
         <${Builder}
             classes=${{
-                root: cls.builderRoot,
                 list: { 
                     root: classes?.list?.root,
                     label: classes?.list?.label,

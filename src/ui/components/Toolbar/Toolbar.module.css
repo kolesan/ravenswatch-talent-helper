@@ -23,6 +23,7 @@
 @media (max-width: 1080px) {
     .toolbarRoot {
         gap: 8px;
+        margin-bottom: 2px;
     }
 }
 

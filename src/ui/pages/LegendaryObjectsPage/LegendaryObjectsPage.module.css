@@ -25,17 +25,4 @@
     .listLabel {
         position: unset;
     }
-    .listLabelRight {
-        display: none;
-    }
-}
-@media (max-width: 1080px) {
-    .root {
-        flex-grow: unset;
-        min-height: unset;
-
-        grid-template-columns: unset;
-        grid-template-rows: auto;
-        row-gap: 22px;
-    }
 }

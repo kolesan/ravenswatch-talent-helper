@@ -15,8 +15,19 @@
     max-width: 130px;
 }
 
+.output {
+    /* fixes the layout shift on rank 4 */
+    width: 9px; 
+}
+
 @media (max-width: 400px) {
     .rankSliderRoot input {
         max-width: 80px;
+    }
+}
+
+@media (max-width: 350px) {
+    .rankSliderRoot input {
+        max-width: 70px;
     }
 }

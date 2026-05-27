@@ -29,7 +29,7 @@ export function RankSlider({
                     onChange(minmaxRank(+e.currentTarget.value));
                 }}
             />
-            <output>${value}</output>
+            <output class=${cls.output}>${value}</output>
         </label>
     `;
 }

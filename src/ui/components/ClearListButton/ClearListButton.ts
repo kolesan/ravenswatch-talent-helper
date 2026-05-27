@@ -47,7 +47,7 @@ export function ClearListButton({
                 }
             }}
         >
-            Clear list
+            Clear<span class=${cls.buttonTextListWord}> list</span>
         </div>
         <${ConfirmDialog}
             message=${html`
