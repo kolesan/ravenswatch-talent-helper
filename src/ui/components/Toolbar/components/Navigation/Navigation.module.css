@@ -35,3 +35,9 @@
         width: min-content;
     }
 }
+
+@media (max-width: 320px) {
+    .navigationRoot {
+        font-size: 16px;
+    }
+}

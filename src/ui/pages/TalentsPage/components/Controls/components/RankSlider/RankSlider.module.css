@@ -20,3 +20,9 @@
         max-width: 80px;
     }
 }
+
+@media (max-width: 350px) {
+    .rankSliderRoot input {
+        max-width: 70px;
+    }
+}

@@ -18,6 +18,12 @@
 
     background-color: inherit;
 }
+@media (max-width: 350px) {
+    .controlsRoot {
+        padding-top: 2px;
+        margin-bottom: 6px;
+    }
+}
 .controlsStuck {
     box-shadow: 4px 10px 10px 0px rgba(0, 0, 0, 0.2);
 }

@@ -41,6 +41,11 @@
     -webkit-user-select: none;
     -webkit-touch-callout: none;
 }
+@media (max-width: 350px) {
+    .label {
+        font-size: 22px;
+    }
+}
 .labelLeft {
 }
 .labelMiddle {
