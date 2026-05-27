@@ -19,6 +19,11 @@ This will start vite dev mode with hot reload, check console for details on the 
 1. Add the hero to the `heroesManualOrigin` object in `src\data\heroesManualOrigin.ts`
     1. The property name will be the `code` of the new hero in the whole app, so choose a good value. 
         * It should be clear understandable and simple, and it should not have uppercase letters or any strange symbols. Remember that it will be used in the url in the browser and also in the filesystem e.g. choose `snowqueen`✅ instead of `snowQueen`❌
+    1. You can use the `downloadHeroes` script to see if any new heroes were added
+        ```
+        npm run downloadHeroes
+        ```
+    1. Don't forget to add `passtechCode` property for the new hero. It will later be used in the talent download script
 1. Download passtech talent data for the hero from the official buildmaker app at `https://buildmaker.ravenswatch.com/`.
     1. Open browser dev tools Network tab
     1. Open new build creation screen
@@ -27,6 +32,10 @@ This will start vite dev mode with hot reload, check console for details on the 
     1. The `skills` property in the response should have an array of the heroes talents
         * Copy this data to `src\data\passtechResponses\heroes\{heroCode}.ts` e.g. `src\data\passtechResponses\heroes\merlin.ts`
         * See existing heroes for an example of how this data should be stored exactly
+    1. Alternatively you can use the `downloadTalents` script for this
+        ```
+        npm run downloadTalents
+        ```
 1. Generate a manual list of heroes talents based on the data from the buildmaker
     1. Modify the `hero` constant in the manual talent list template generation script `src\scripts\talents\generateManualTalentsTemplate\generateManualTalentsTemplate.ts` so it runs for the new hero
     1. Run the manual talent list template generation script

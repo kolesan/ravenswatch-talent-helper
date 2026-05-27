@@ -14,6 +14,8 @@
   "scripts": {
     "dev": "concurrently -k -n VITE,\"TSC \" -c green,blue --prefix \"{name} |\" \"vite\" \"tsc --noEmit --watch --pretty\"",
     "build": "vite build",
+    "downloadHeroes": "tsx src/scripts/talents/downloadHeroes",
+    "downloadTalents": "tsx src/scripts/talents/downloadTalents",
     "generateManualTalentsTemplate": "tsx src/scripts/talents/generateManualTalentsTemplate/generateManualTalentsTemplate",
     "generateTalents": "tsx src/scripts/talents/generateTalents/generateTalents",
     "downloadTalentIcons": "tsx src/scripts/talents/downloadTalentIcons/downloadTalentIcons",
