@@ -1,21 +1,38 @@
-import { heroesBase } from "data/heroes/heroesBase";
+import { mkdir, writeFile } from "fs/promises";
 
-// Download hero list
+
 const url = "https://buildmaker.ravenswatch.com/api/game-heroes?lang=en";
-const resp = await fetch(url);
-await new Promise<void>(res => setTimeout(() => { res(); }, 500));
-const data = await resp.json();
 
-// Parse hero list
-const heroes = data.map((hero: any) => ({
-    name: hero.name,
-    passtechCode: hero.raw_name,
-}));
+const dir = "src/data/passtechResponses/heroes";
 
-const newHeroes = heroes.filter((hero: any) => {
-    return !heroesBase.asArray.find(it => it.name === hero.name);
-})
+await downloadHeroes(dir);
 
-// Print hero list
-console.log({ heroes });
-console.log({ newHeroes });
+
+async function downloadHeroes(dir: string) {
+    const resp = await fetch(url);
+    const data = await resp.json();
+
+    await mkdir(dir, { recursive: true })
+        .then(() => writeHeroesToFile(dir, data));
+}
+
+function writeHeroesToFile(dir: string, heroes: any[]) {
+    const heroesJson = JSON.stringify(heroes, null, "    ");
+
+    const content = `import { PasstechHero } from "../types";
+
+export const passtechHeroes: PasstechHero[] = ${heroesJson};
+`;
+
+    const fileName = `passtechHeroes.ts`;
+    const filePath = `${dir}/${fileName}`;
+
+    return writeFile(filePath, content)
+        .then(() => console.log(
+            `Success writing Passtech heroes to file`
+        ))
+        .catch(err => console.log(
+            `Error writing Passtech heroes to file: `, 
+            err
+        ));
+}

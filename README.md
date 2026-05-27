@@ -23,6 +23,7 @@ This will start vite dev mode with hot reload, check console for details on the 
         ```
         npm run downloadHeroes
         ```
+        You should see any new heroes, if they were added, in the git diff of the `passtechHeroes.ts` file
     1. Don't forget to add `passtechCode` property for the new hero. It will later be used in the talent download script
 1. Download passtech talent data for the hero from the official buildmaker app at `https://buildmaker.ravenswatch.com/`.
     1. Open browser dev tools Network tab
