@@ -33,7 +33,7 @@ export const legendary: MagicalObject[] = [
         "code": "holy_grail",
         "name": "Holy Grail",
         "description": [
-            "When in combat, {sk}DEFENSE{/s} restores {si}8{/s} health to all nearby heroes (at most every {sk}5{/s} seconds)"
+            "When in combat, {sk}DEFENSE{/s} restores {si}10{/s} health to all nearby heroes (at most every {sk}5{/s} seconds)"
         ],
         "iconUrl": "http://dt-live-3.passtechgames.com:8080/objects/images/Icon_Object_HolyGrail.png"
     },
@@ -58,7 +58,7 @@ export const legendary: MagicalObject[] = [
     {
         "type": "legendary",
         "code": "raven_effigy",
-        "name": "Raven effigy",
+        "name": "Raven Effigy",
         "description": [
             "{sk}POWER{/s} and {sk}SPECIAL{/s} gain {si}+1{/s} charge(s)"
         ],
@@ -76,7 +76,7 @@ export const legendary: MagicalObject[] = [
     {
         "type": "legendary",
         "code": "seven-league_boots",
-        "name": "Seven-league boots",
+        "name": "Seven-league Boots",
         "description": [
             "Remove {sk}DASH{/s}'s cooldown whenever you use {sk}POWER{/s}, {sk}SPECIAL{/s} or {sk}DEFENSE{/s}"
         ],

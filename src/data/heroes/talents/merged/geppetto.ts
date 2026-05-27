@@ -618,8 +618,8 @@ export const geppetto: TalentMerged[] = [
         "type": "standard",
         "unlockedAtRank": 8,
         "description": [
-            "Instantly create {si}1{/s} {sk}random magical object(s){/s}",
-            "Each upgrade to this Talent will create an additional item"
+            "First time this Talent is chosen, instantly create {si}1{/s} {sk}random magical object(s){/s} ",
+            "Each upgrade to this Talent will create an additional item once"
         ],
         "improvements": [
             [

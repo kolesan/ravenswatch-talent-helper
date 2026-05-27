@@ -1,38 +1,50 @@
 export const heroesManualOrigin = {
     scarlet: {
-        name: "Scarlet"
+        name: "Scarlet", 
+        passtechCode: 'scarlet',
     },
     piper: {
-        name: "The Pied Piper"
+        name: "The Pied Piper", 
+        passtechCode: 'the_pied_piper',
     },
     beowulf: {
-        name: "Beowulf"
+        name: "Beowulf", 
+        passtechCode: 'beowulf',
     },
     snowqueen: {
-        name: "The Snow Queen"
+        name: "The Snow Queen", 
+        passtechCode: 'the_snow_queen',
     },
     aladdin: {
-        name: "Aladdin"
+        name: "Aladdin", 
+        passtechCode: 'aladdin',
     },
     melusine: {
-        name: "Melusine"
+        name: "Melusine", 
+        passtechCode: 'melusine',
     },
     geppetto: {
-        name: "Geppetto"
+        name: "Geppetto", 
+        passtechCode: 'geppetto',
     },
     wukong: {
-        name: "Sun Wukong"
+        name: "Sun Wukong", 
+        passtechCode: 'sun_wukong',
     },
     carmilla: {
-        name: "Carmilla"
+        name: "Carmilla", 
+        passtechCode: 'carmilla',
     },
     romeo: {
-        name: "Romeo"
+        name: "Romeo", 
+        passtechCode: 'romeo',
     },
     juliet: {
-        name: "Juliet"
+        name: "Juliet", 
+        passtechCode: 'juliet',
     },
     merlin: {
-        name: "Merlin"
+        name: "Merlin", 
+        passtechCode: 'merlin',
     },
 } as const;

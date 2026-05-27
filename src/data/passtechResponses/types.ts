@@ -1,3 +1,12 @@
+export type PasstechHero = {
+    name: string;
+    raw_name: string;
+    description: string;
+    icon: string;
+    bw_icon: string;
+    illustration: string;
+};
+
 export type PasstechTalent = {
     id: string;
     name: string;

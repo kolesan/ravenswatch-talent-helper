@@ -91,10 +91,10 @@ export const geppetto: PasstechTalent[] = [
         "tier": 1,
         "icon": "http://dt-live-3.passtechgames.com:8080/heroes/geppetto/Skill_Passive_Create_Objects.png",
         "descriptions": [
-            "• Instantly create <span class=\"improvement\">1</span> <span class=\"key_words\">random magical object(s)</span>\n• Each upgrade to this Talent will create an additional item",
-            "• Instantly create <span class=\"improvement\">2</span> <span class=\"key_words\">random magical object(s)</span>\n• Each upgrade to this Talent will create an additional item",
-            "• Instantly create <span class=\"improvement\">3</span> <span class=\"key_words\">random magical object(s)</span>\n• Each upgrade to this Talent will create an additional item",
-            "• Instantly create <span class=\"improvement\">4</span> <span class=\"key_words\">random magical object(s)</span>\n• Each upgrade to this Talent will create an additional item"
+            "• First time this Talent is chosen, instantly create <span class=\"improvement\">1</span> <span class=\"key_words\">random magical object(s)</span> \n• Each upgrade to this Talent will create an additional item once",
+            "• First time this Talent is chosen, instantly create <span class=\"improvement\">2</span> <span class=\"key_words\">random magical object(s)</span> \n• Each upgrade to this Talent will create an additional item once",
+            "• First time this Talent is chosen, instantly create <span class=\"improvement\">3</span> <span class=\"key_words\">random magical object(s)</span> \n• Each upgrade to this Talent will create an additional item once",
+            "• First time this Talent is chosen, instantly create <span class=\"improvement\">4</span> <span class=\"key_words\">random magical object(s)</span> \n• Each upgrade to this Talent will create an additional item once"
         ]
     },
     {

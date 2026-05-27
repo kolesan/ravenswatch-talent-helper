@@ -7,6 +7,7 @@ export function injectManuaOriginHeroesWithCodes() {
         const hero: HeroBase = {
             code: heroCode,
             name: v.name,
+            passtechCode: v.passtechCode,
         };
         return {
             ...acc,

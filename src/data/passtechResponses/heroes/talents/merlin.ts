@@ -55,10 +55,10 @@ export const merlin: PasstechTalent[] = [
         "tier": 1,
         "icon": "http://dt-live-3.passtechgames.com:8080/heroes/merlin/Skill_Defense_Power_Shield.png",
         "descriptions": [
-            "• The <span class=\"key_words\">Blessing</span> Spell also applies a <span class=\"key_words\">10</span> <span class=\"key_words\">SHIELD</span> for <span class=\"key_words\">6</span> seconds to the Hero affected\n• When this expires or is destroyed, it deals <span class=\"improvement\">60</span> area damage",
-            "• The <span class=\"key_words\">Blessing</span> Spell also applies a <span class=\"key_words\">10</span> <span class=\"key_words\">SHIELD</span> for <span class=\"key_words\">6</span> seconds to the Hero affected\n• When this expires or is destroyed, it deals <span class=\"improvement\">75</span> area damage",
-            "• The <span class=\"key_words\">Blessing</span> Spell also applies a <span class=\"key_words\">10</span> <span class=\"key_words\">SHIELD</span> for <span class=\"key_words\">6</span> seconds to the Hero affected\n• When this expires or is destroyed, it deals <span class=\"improvement\">90</span> area damage",
-            "• The <span class=\"key_words\">Blessing</span> Spell also applies a <span class=\"key_words\">10</span> <span class=\"key_words\">SHIELD</span> for <span class=\"key_words\">6</span> seconds to the Hero affected\n• When this expires or is destroyed, it deals <span class=\"improvement\">105</span> area damage"
+            "• The <span class=\"key_words\">Blessing</span> Spell also applies <span class=\"key_words\">10</span> <span class=\"key_words\">SHIELD</span> for <span class=\"key_words\">6</span> seconds to the Hero affected\n• When this expires or is destroyed, it deals <span class=\"improvement\">80</span> area damage",
+            "• The <span class=\"key_words\">Blessing</span> Spell also applies <span class=\"key_words\">10</span> <span class=\"key_words\">SHIELD</span> for <span class=\"key_words\">6</span> seconds to the Hero affected\n• When this expires or is destroyed, it deals <span class=\"improvement\">100</span> area damage",
+            "• The <span class=\"key_words\">Blessing</span> Spell also applies <span class=\"key_words\">10</span> <span class=\"key_words\">SHIELD</span> for <span class=\"key_words\">6</span> seconds to the Hero affected\n• When this expires or is destroyed, it deals <span class=\"improvement\">120</span> area damage",
+            "• The <span class=\"key_words\">Blessing</span> Spell also applies <span class=\"key_words\">10</span> <span class=\"key_words\">SHIELD</span> for <span class=\"key_words\">6</span> seconds to the Hero affected\n• When this expires or is destroyed, it deals <span class=\"improvement\">140</span> area damage"
         ]
     },
     {
@@ -235,10 +235,10 @@ export const merlin: PasstechTalent[] = [
         "tier": 1,
         "icon": "http://dt-live-3.passtechgames.com:8080/heroes/merlin/Skill_Trait_Lightning.png",
         "descriptions": [
-            "• <span class=\"key_words\">TRAIT</span> triggers a lightning strike on up to nearby <span class=\"improvement\">4</span> enemies\n• Lightning strikes deal <span class=\"key_words\">80</span> damage each and are stronger if fewer enemies are hit",
-            "• <span class=\"key_words\">TRAIT</span> triggers a lightning strike on up to nearby <span class=\"improvement\">5</span> enemies\n• Lightning strikes deal <span class=\"key_words\">80</span> damage each and are stronger if fewer enemies are hit",
-            "• <span class=\"key_words\">TRAIT</span> triggers a lightning strike on up to nearby <span class=\"improvement\">6</span> enemies\n• Lightning strikes deal <span class=\"key_words\">80</span> damage each and are stronger if fewer enemies are hit",
-            "• <span class=\"key_words\">TRAIT</span> triggers a lightning strike on up to nearby <span class=\"improvement\">7</span> enemies\n• Lightning strikes deal <span class=\"key_words\">80</span> damage each and are stronger if fewer enemies are hit"
+            "• <span class=\"key_words\">TRAIT</span> triggers a lightning strike on up to <span class=\"improvement\">4</span> nearby enemies\n• Lightning strikes deal <span class=\"key_words\">80</span> damage each and are stronger if fewer enemies are hit",
+            "• <span class=\"key_words\">TRAIT</span> triggers a lightning strike on up to <span class=\"improvement\">5</span> nearby enemies\n• Lightning strikes deal <span class=\"key_words\">80</span> damage each and are stronger if fewer enemies are hit",
+            "• <span class=\"key_words\">TRAIT</span> triggers a lightning strike on up to <span class=\"improvement\">6</span> nearby enemies\n• Lightning strikes deal <span class=\"key_words\">80</span> damage each and are stronger if fewer enemies are hit",
+            "• <span class=\"key_words\">TRAIT</span> triggers a lightning strike on up to <span class=\"improvement\">7</span> nearby enemies\n• Lightning strikes deal <span class=\"key_words\">80</span> damage each and are stronger if fewer enemies are hit"
         ]
     },
     {
@@ -247,10 +247,10 @@ export const merlin: PasstechTalent[] = [
         "tier": 0,
         "icon": "http://dt-live-3.passtechgames.com:8080/heroes/merlin/Skill_Trait_Quest_Gain_Charge.png",
         "descriptions": [
-            "• <span class=\"key_words\">Quest (x3):</span> Collect Excalibur, the Holy Grail or Father Time's Hourglass to gain <span class=\"key_words\">+1</span> <span class=\"key_words\">Star(s) of Fate</span>\n• <span class=\"key_words\">Complete:</span> Gain <span class=\"key_words\">+1 TRAIT charge</span> and all critical damage will increase by <span class=\"improvement\">40%</span>",
-            "• <span class=\"key_words\">Quest (x3):</span> Collect Excalibur, the Holy Grail or Father Time's Hourglass to gain <span class=\"key_words\">+1</span> <span class=\"key_words\">Star(s) of Fate</span>\n• <span class=\"key_words\">Complete:</span> Gain <span class=\"key_words\">+1 TRAIT charge</span> and all critical damage will increase by <span class=\"improvement\">50%</span>",
-            "• <span class=\"key_words\">Quest (x3):</span> Collect Excalibur, the Holy Grail or Father Time's Hourglass to gain <span class=\"key_words\">+1</span> <span class=\"key_words\">Star(s) of Fate</span>\n• <span class=\"key_words\">Complete:</span> Gain <span class=\"key_words\">+1 TRAIT charge</span> and all critical damage will increase by <span class=\"improvement\">60%</span>",
-            "• <span class=\"key_words\">Quest (x3):</span> Collect Excalibur, the Holy Grail or Father Time's Hourglass to gain <span class=\"key_words\">+1</span> <span class=\"key_words\">Star(s) of Fate</span>\n• <span class=\"key_words\">Complete:</span> Gain <span class=\"key_words\">+1 TRAIT charge</span> and all critical damage will increase by <span class=\"improvement\">70%</span>"
+            "• <span class=\"key_words\">Quest (x3):</span> Collect Excalibur, the Holy Grail or Father Time's Hourglass to gain <span class=\"key_words\">+2</span> <span class=\"key_words\">Star(s) of Fate</span>\n• <span class=\"key_words\">Complete:</span> Gain <span class=\"key_words\">+1 TRAIT charge</span> and all critical damage will increase by <span class=\"improvement\">40%</span>",
+            "• <span class=\"key_words\">Quest (x3):</span> Collect Excalibur, the Holy Grail or Father Time's Hourglass to gain <span class=\"key_words\">+2</span> <span class=\"key_words\">Star(s) of Fate</span>\n• <span class=\"key_words\">Complete:</span> Gain <span class=\"key_words\">+1 TRAIT charge</span> and all critical damage will increase by <span class=\"improvement\">50%</span>",
+            "• <span class=\"key_words\">Quest (x3):</span> Collect Excalibur, the Holy Grail or Father Time's Hourglass to gain <span class=\"key_words\">+2</span> <span class=\"key_words\">Star(s) of Fate</span>\n• <span class=\"key_words\">Complete:</span> Gain <span class=\"key_words\">+1 TRAIT charge</span> and all critical damage will increase by <span class=\"improvement\">60%</span>",
+            "• <span class=\"key_words\">Quest (x3):</span> Collect Excalibur, the Holy Grail or Father Time's Hourglass to gain <span class=\"key_words\">+2</span> <span class=\"key_words\">Star(s) of Fate</span>\n• <span class=\"key_words\">Complete:</span> Gain <span class=\"key_words\">+1 TRAIT charge</span> and all critical damage will increase by <span class=\"improvement\">70%</span>"
         ]
     },
     {
@@ -259,10 +259,10 @@ export const merlin: PasstechTalent[] = [
         "tier": 1,
         "icon": "http://dt-live-3.passtechgames.com:8080/heroes/merlin/Skill_Trait_Reduce_Cooldown_After_Defense.png",
         "descriptions": [
-            "• Casting a Sacred Spell (<span class=\"key_words\">DEFENSE</span>) reduces <span class=\"key_words\">TRAIT</span> cooldown by <span class=\"improvement\">4</span> seconds ",
-            "• Casting a Sacred Spell (<span class=\"key_words\">DEFENSE</span>) reduces <span class=\"key_words\">TRAIT</span> cooldown by <span class=\"improvement\">5</span> seconds ",
-            "• Casting a Sacred Spell (<span class=\"key_words\">DEFENSE</span>) reduces <span class=\"key_words\">TRAIT</span> cooldown by <span class=\"improvement\">6</span> seconds ",
-            "• Casting a Sacred Spell (<span class=\"key_words\">DEFENSE</span>) reduces <span class=\"key_words\">TRAIT</span> cooldown by <span class=\"improvement\">7</span> seconds "
+            "• Casting a Sacred Spell (<span class=\"key_words\">DEFENSE</span>) reduces <span class=\"key_words\">TRAIT</span> cooldown by <span class=\"improvement\">2</span> seconds ",
+            "• Casting a Sacred Spell (<span class=\"key_words\">DEFENSE</span>) reduces <span class=\"key_words\">TRAIT</span> cooldown by <span class=\"improvement\">2.5</span> seconds ",
+            "• Casting a Sacred Spell (<span class=\"key_words\">DEFENSE</span>) reduces <span class=\"key_words\">TRAIT</span> cooldown by <span class=\"improvement\">3</span> seconds ",
+            "• Casting a Sacred Spell (<span class=\"key_words\">DEFENSE</span>) reduces <span class=\"key_words\">TRAIT</span> cooldown by <span class=\"improvement\">3.5</span> seconds "
         ]
     },
     {
