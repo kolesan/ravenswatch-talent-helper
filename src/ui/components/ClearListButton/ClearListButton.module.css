@@ -36,3 +36,9 @@
 .listName {
     font-weight: 600;
 }
+
+@media (max-width: 320px) {
+    .buttonTextListWord {
+        display: none;
+    }
+}
