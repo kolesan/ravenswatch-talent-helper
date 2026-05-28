@@ -34,7 +34,6 @@ export function ListItem({
     onAltClick,
     onHold,
 }: Props) {
-
     return html`
         <div 
             class=${clsx(cls.root, {
@@ -58,7 +57,7 @@ export function ListItem({
                     }
                 }
             })}
-            onPointerCancel=${hld.onPointerUp}
+            onPointerCancel=${hld.onPointerCancel}
             onPointerMove=${hld.onPointerMove}
         >
             <div class=${cls.iconContainer}>

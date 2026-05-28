@@ -1,4 +1,6 @@
 const defaultHoldDelayMs = 450;
+const noLongerAClickDelayMs = 300;
+const pointerMovementTresholdPx = 7;
 
 type Params = {
     holdDelayMs?: number;
@@ -9,7 +11,15 @@ type OnPointerDownParams = {
 }
 
 type OnPointerUpParams = {
-    onClick?: (e: PointerEvent) => void;
+    onClick: (e: PointerEvent) => void;
+}
+
+function getX(e: PointerEvent) {
+    return e.screenX;
+}
+
+function getY(e: PointerEvent) {
+    return e.screenY;
 }
 
 export function holder(params?: Params) {
@@ -17,6 +27,7 @@ export function holder(params?: Params) {
 
     let startX = 0;
     let startY = 0;
+    let holdStartTime: number | null = null;
     let holdTimer: NodeJS.Timeout | null = null;
 
     function onPointerDown({
@@ -27,13 +38,19 @@ export function holder(params?: Params) {
                 return;
             }
 
-            startX = e.clientX;
-            startY = e.clientY;
-
+            startX = getX(e);
+            startY = getY(e);
+            holdStartTime = Date.now();
             holdTimer = setTimeout(() => {
                 onHold?.();
                 cancelHold();
             }, delay);
+
+            // Needed for iPhone overscroll screen bounce effect
+            window.addEventListener('scroll', cancelHold, {
+                passive: true,
+                once: true,
+            });
         }
     }
 
@@ -41,18 +58,15 @@ export function holder(params?: Params) {
         onClick,
     }: OnPointerUpParams) {
         return function(e: PointerEvent) {
-            if (holdTimer) {
-                onClick?.(e);
+            if (holdTimer && !heldTooLongForAClick() && !pointerMovedTooMuch(e)) {
+                onClick(e);
             }
             cancelHold();
         }
     }
 
     function onPointerMove(e: PointerEvent) {
-        const dx = e.clientX - startX;
-        const dy = e.clientY - startY;
-
-        if (Math.hypot(dx, dy) > 10) {
+        if (pointerMovedTooMuch(e)) {
             cancelHold();
         }
     }
@@ -60,13 +74,27 @@ export function holder(params?: Params) {
     function cancelHold() {
         if (holdTimer) {
             clearTimeout(holdTimer);
+            holdStartTime = null;
             holdTimer = null;
+            window.removeEventListener('scroll', cancelHold);
         }
+    }
+
+    function heldTooLongForAClick() {
+        return holdStartTime 
+            && ((Date.now() - holdStartTime) > noLongerAClickDelayMs);
+    }
+
+    function pointerMovedTooMuch(e: PointerEvent) {
+        const dx = getX(e) - startX;
+        const dy = getY(e) - startY;
+        return Math.hypot(dx, dy) > pointerMovementTresholdPx;
     }
 
     return {
         onPointerDown,
         onPointerUp,
         onPointerMove,
+        onPointerCancel: cancelHold,
     };
 }
