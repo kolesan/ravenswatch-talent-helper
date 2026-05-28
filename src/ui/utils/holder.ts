@@ -1,4 +1,4 @@
-const defaultHoldDelayMs = 450;
+const defaultHoldDelayMs = 400;
 const noLongerAClickDelayMs = 300;
 const pointerMovementTresholdPx = 7;
 
