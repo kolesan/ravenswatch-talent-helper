@@ -49,7 +49,7 @@ export function List<T extends WithCode>({
 }: Props<T>) {
     const { 
         stickyElemRef, 
-        isStuck: labelStuck 
+        isStuck: labelStuck,
     } = useIsStickyElemStuck({
         enabled: !!labelStuckAtPx,
         stuckAtPx: labelStuckAtPx,

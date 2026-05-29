@@ -56,12 +56,15 @@ export function useIsStickyElemStuck(params?: Params) {
                     return;
                 }
 
-                // if less than 100% of an element is 
+                // if less than 99%* of an element is 
                 // inside the intersection root (+top margin) we consider the
                 // element stuck, because one pixel has already crossed
                 // the roots top border but position sticky won't let it 
                 // move any further
-                setIsStuck(e.intersectionRatio < 1);
+                // * had to reduce from 100% to 99% because on macbook on safari
+                // for some reason intersection was registered while in other
+                // browsers it wasn't
+                setIsStuck(e.intersectionRatio < 0.99);
 
                 onStartingToScrollAgain?.(e.intersectionRatio < scrollingAgainThreshold);
 
