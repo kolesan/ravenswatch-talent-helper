@@ -142,6 +142,16 @@
 
     overscroll-behavior: none;
 }
+@supports (-moz-appearance: none) {
+    .items {
+        /* 
+            workaround for "max-height: fit-content" not working properly on Firefox.
+            Current value is item height * hero count (72*11=794).
+            Will need to adjust manually if hero count or item height changes 
+        */
+        max-height: 794px;
+    }
+}
 
 
 :global(.scarletBgArt).inputActive, :global(.scarletBgArt).input:active {
