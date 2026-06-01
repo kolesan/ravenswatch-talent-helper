@@ -128,11 +128,11 @@
 
     width: 100%;
     /* 
-        91vh - 150px are specific hand picked values - a compromise 
+        90vh - 150px are specific hand picked values - a compromise 
         between showing all heroes on high height view 
         and not cutting away too much on low height view
     */
-    height: calc(91vh - 150px);
+    height: calc(90vh - 150px);
     max-height: fit-content;
     min-height: 80px;
 
