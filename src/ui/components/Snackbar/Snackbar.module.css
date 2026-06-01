@@ -13,7 +13,10 @@
     user-select: none;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
+
+    pointer-events: none;
 }
 .shown {
     opacity: 0.8;
+    pointer-events: auto;
 }
