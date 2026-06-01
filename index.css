@@ -53,6 +53,12 @@ ul {
     padding: 0;
 }
 
+@supports (-moz-appearance: none) {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: #949692 #444543;
+    }
+}
 *::-webkit-scrollbar {
     width: 6px;
 }
