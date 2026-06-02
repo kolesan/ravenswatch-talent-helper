@@ -19,7 +19,7 @@ export function TalentsViewSwitch({
     return html`
         <label 
             class=${clsx(cls.talentsViewSwitchRoot, className)}
-            onClick=${() => {
+            onPointerUp=${() => {
                 onSwitch(nextOption(view));
             }}
         >
@@ -32,10 +32,20 @@ export function TalentsViewSwitch({
                         })}
                         key=${it.value}
                         href=${it.value}
-                        onClick=${(e: PointerEvent) => {
+                        onPointerUp=${(e: PointerEvent) => {
                             e.stopPropagation();
                             e.preventDefault();
+
+                            // This improves how the middle click to open
+                            // the view in another window is handled
+                            if (e.button !== 0) {
+                                return;
+                            }
+
                             onSwitch(it.value);
+                        }}
+                        onClick=${(e: any) => {
+                            e.preventDefault();
                         }}
                     >
                         ${it.label}

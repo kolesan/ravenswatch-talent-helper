@@ -30,7 +30,7 @@ export function Snackbar({
             class=${clsx(cls.snackbarRoot, {
                 [cls.shown!]: open,
             }, className)}
-            onClick=${onClose}
+            onPointerUp=${onClose}
         >
             ${text}
         </div>

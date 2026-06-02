@@ -33,7 +33,7 @@ export function ConfirmDialog({
     return createPortal(html`
         <div 
             class=${cls.confirmDialogBackdrop}
-            onClick=${onClose}
+            onPointerUp=${onClose}
         >
         </div>
         <div class=${clsx(cls.confirmDialogRoot, className)}>
@@ -43,7 +43,7 @@ export function ConfirmDialog({
                 </div>
                 <div 
                     class=${clsx(cls.button, cls.closeButton)} 
-                    onClick=${onClose}
+                    onPointerUp=${onClose}
                 >
                     <span class=${cls.closeButtonText}>
                         ✕
@@ -56,7 +56,7 @@ export function ConfirmDialog({
             <div class=${cls.buttons}>
                 <div 
                     class=${clsx(cls.button, cls.confirmButton)}
-                    onClick=${() => {
+                    onPointerUp=${() => {
                         onConfirm();
                         onClose();
                     }}
@@ -65,7 +65,7 @@ export function ConfirmDialog({
                 </div>
                 <div 
                     class=${clsx(cls.button, cls.cancelButton)}
-                    onClick=${onClose}
+                    onPointerUp=${onClose}
                 >
                     Cancel
                 </div>

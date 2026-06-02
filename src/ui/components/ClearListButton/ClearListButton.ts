@@ -36,7 +36,7 @@ export function ClearListButton({
             class=${clsx(cls.clearListButtonRoot, {
                 [cls.clearListButtonDisabled!]: disabled 
             }, className)}
-            onClick=${() => {
+            onPointerUp=${() => {
                 if (disabled) {
                     return;
                 }

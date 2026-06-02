@@ -36,7 +36,7 @@ export function HeroSelect({
         <div 
             class=${clsx(cls.root, className)}
             ref=${ref}
-            onClick=${open.toggle}
+            onPointerUp=${open.toggle}
         >
             <div 
                 class=${clsx(cls.input, `${value.code}BgArt`, {

@@ -21,7 +21,7 @@ export function HeroSelectItem({
             class=${clsx(cls.heroSelectItemRoot, className)}
             style=${`background-image: url("/art/${hero.code}.webp");`}
             key=${hero.code}
-            onClick=${() => {
+            onPointerUp=${() => {
                 onChange(hero);
             }}
         >
