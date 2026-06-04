@@ -1,6 +1,8 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
+import { Anchor } from "ui/components/Anchor/Anchor";
+
 import { TalentsPageView, talentsPageViews } from "TalentsPage/talentsPageViews";
 
 import cls from "./TalentsViewSwitch.module.css";
@@ -26,30 +28,18 @@ export function TalentsViewSwitch({
             View
             <div class=${cls.options}>
                 ${talentsPageViews.map(it => html`
-                    <a 
-                        class=${clsx(cls.option, {
+                    <${Anchor}
+                        className=${clsx(cls.option, {
                             [cls.optionSelected!]: it.value === view,
                         })}
                         key=${it.value}
                         href=${it.value}
-                        onPointerUp=${(e: PointerEvent) => {
-                            e.stopPropagation();
-                            e.preventDefault();
-
-                            // This improves how the middle click to open
-                            // the view in another window is handled
-                            if (e.button !== 0) {
-                                return;
-                            }
-
+                        onPointerUp=${() => {
                             onSwitch(it.value);
-                        }}
-                        onClick=${(e: any) => {
-                            e.preventDefault();
                         }}
                     >
                         ${it.label}
-                    </a>
+                    </${Anchor}
                 `)}
             </div>
         </label>

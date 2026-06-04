@@ -3,6 +3,8 @@ import { ComponentChildren } from "preact";
 
 import { hst } from "ui/core/hst";
 
+import { Anchor } from "../Anchor/Anchor";
+
 type Props = {
     className?: string;
     href: string;
@@ -15,25 +17,14 @@ export function Link({
     children,
 }: Props) {
     return html`
-        <a 
-            class=${className}
+        <${Anchor}
+            className=${className}
             href=${href}
-            onPointerUp=${(e: any) => {
-                e.preventDefault();
-
-                // This improves how the middle click to open
-                // the view in another window is handled
-                if (e.button !== 0) {
-                    return;
-                }
-
+            onPointerUp=${() => {
                 hst.push(href);
-            }}
-            onClick=${(e: any) => {
-                e.preventDefault();
             }}
         >
             ${children}
-        </a>
+        </${Anchor}
     `;
 }
