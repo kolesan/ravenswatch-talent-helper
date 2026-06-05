@@ -1,8 +1,12 @@
+import clsx from "clsx";
 import { html } from "htm/preact";
 import { ComponentChildren } from "preact";
 
+import cls from "./Anchor.module.css";
+
 type Props = {
     className?: string;
+    style?: string;
     href: string;
     onPointerUp: () => void;
     children: ComponentChildren;
@@ -10,13 +14,15 @@ type Props = {
 
 export function Anchor({
     className,
+    style,
     href,
     onPointerUp,
     children,
 }: Props) {
     return html`
         <a 
-            class=${className}
+            class=${clsx(cls.anchor, className)}
+            style=${style}
             href=${href}
             onPointerUp=${(e: PointerEvent) => {
                 e.stopPropagation();

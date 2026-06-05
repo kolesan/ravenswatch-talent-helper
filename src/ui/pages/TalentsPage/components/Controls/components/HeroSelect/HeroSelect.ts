@@ -73,7 +73,10 @@ export function HeroSelect({
                         <${HeroSelectItem} 
                             key=${it.code}
                             hero=${it}
-                            onChange=${onChange}
+                            onChange=${(hero: Hero) => {
+                                onChange(hero);
+                                open.off();
+                            }}
                         />
                     `)}
                 </div>

@@ -1,6 +1,8 @@
 import { clsx } from "clsx";
 import { html } from "htm/preact";
 
+import { Anchor } from "ui/components/Anchor/Anchor";
+import { pages } from "ui/pages";
 import { Hero } from "ui/uiData/heroes/types";
 
 import cls from "./HeroSelectItem.module.css";
@@ -17,10 +19,14 @@ export function HeroSelectItem({
     onChange,
 }: Props) {
     return html`
-        <div
-            class=${clsx(cls.heroSelectItemRoot, className)}
+        <${Anchor}
+            className=${clsx(cls.heroSelectItemRoot, className)}
             style=${`background-image: url("/art/${hero.code}.webp");`}
             key=${hero.code}
+            href=${pages.talents.constructPath({
+                hero: hero.code,
+                view: "currentViewPlaceholder",
+            })}
             onPointerUp=${() => {
                 onChange(hero);
             }}
@@ -38,6 +44,6 @@ export function HeroSelectItem({
                     ${hero.name}
                 </div>
             </div>
-        </div>
+        </${Anchor}>
     `;
 }
